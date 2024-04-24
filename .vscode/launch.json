@@ -1,0 +1,32 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "MkDocs Serve",
+            "type": "debugpy",
+            "python": "/usr/local/bin/python",
+            "request": "launch",
+            "program": "/usr/local/bin/mkdocs",
+            "args": [
+                "serve"
+            ],
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "name": "MkDocs Serve (PDF)",
+            "type": "debugpy",
+            "python": "/usr/local/bin/python",
+            "request": "launch",
+            "program": "/usr/local/bin/mkdocs",
+            "args": [
+                "serve"
+            ],
+            "console": "integratedTerminal",
+            "env": {
+                "ENABLE_PDF_EXPORT": "1"
+            },
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
