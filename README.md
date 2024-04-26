@@ -12,4 +12,4 @@ Repository for the Low Power Room Display Project's (LPRD) documentation.
 - [Benjamin Klaric](https://github.com/bklaric1)
 - [Jannis Gröger](https://github.com/ynnys)
 - [Julia Reuter](https://github.com/jr3511)
-- [Stasa Lukic](link.to.github.profile)
+- [Stasa Lukic](https://github.com/AsatsTerris)
