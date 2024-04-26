@@ -10,7 +10,7 @@ Der Low Power Room Display (LPRD) ist ein Projekt, das sich mit der Entwicklung 
 - [Benjamin Klaric](https://github.com/bklaric1)
 - [Jannis Gröger](https://github.com/ynnys)
 - [Julia Reuter](https://github.com/jr3511)
-- [Stasa Lukic](link.to.github.profile)
+- [Stasa Lukic](https://github.com/AsatsTerris)
 
 ## Lizenz
 
