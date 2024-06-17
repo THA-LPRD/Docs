@@ -4,7 +4,7 @@
         {
             "name": "MkDocs Serve",
             "type": "debugpy",
-            "python": "/usr/local/bin/python",
+            "python": "/usr/bin/python",
             "request": "launch",
             "program": "/usr/local/bin/mkdocs",
             "args": [
@@ -16,7 +16,7 @@
         {
             "name": "MkDocs Serve (PDF)",
             "type": "debugpy",
-            "python": "/usr/local/bin/python",
+            "python": "/usr/bin/python",
             "request": "launch",
             "program": "/usr/local/bin/mkdocs",
             "args": [
