@@ -6,8 +6,7 @@ Der Low Power Room Display (LPRD) ist ein Projekt, das sich mit der Entwicklung 
 
 - [Mario Wegmann](https://github.com/Marioheld) (Projektleiter)
 - [Ahmet Emirhan Göktaş](https://github.com/InfinitePain) (Softwareleiter)
-- [Alihan Sari](https://github.com/Alichandroo) (Hardwareleiter)
-- [Benjamin Klaric](https://github.com/bklaric1)
+- [Benjamin Klaric](https://github.com/bklaric1) (Hardwareleiter)
 - [Jannis Gröger](https://github.com/ynnys)
 - [Julia Reuter](https://github.com/jr3511)
 - [Stasa Lukic](https://github.com/AsatsTerris)
