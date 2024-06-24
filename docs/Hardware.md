@@ -2,12 +2,20 @@
 
 ## Auswahl des Mikrocontrollers
 
-## Auswahl der Displays
+## Auswahl der Displaytechnologie
 
-## Auswahl der Akkukomponenten
+## Zusammenbau der Akkupacks
+
+## Auswahl der PCB-Komponenten
 
 ## Platinen Design
+
+## Zusammenbau der PCBs
+
+## Gehäuse
 
 ## Zusammenbau des Displaymoduls
 
 ## Strommessung von Mikrocontroller und Display
+
+## ADC Messung

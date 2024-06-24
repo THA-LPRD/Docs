@@ -1,11 +1,20 @@
 # Praktische und Theoretische Grundlagen
 
-## Verwendete Technologien, Recherche
+## Recherchierte Technologien (nur vergleiche / kapitel 5 auswahl argumentieren)
+
+## Mikrocontroller
 
 ## Stromsparende Display Technologien
 
 ## Akku Technologien
 
-## Bibliotheken und Frameworks
+## Funktechnologien
 
-## Aufbau der Display Bitmaps
+## Bildverarbeitung 
+
+## Energiemanagement
+
+## Firmwarebibliotheken
+
+## Webframeworks @Mario Wegmann
+  

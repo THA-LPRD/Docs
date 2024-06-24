@@ -1,15 +1,13 @@
 # Firmware
 
-## Systemsteuerung
+## Entwicklungsumgebung
 
-### Hardware Management
+## Anforderungen
 
-### Sleep
+## Klassendiagramm
+
+## Wirelesskommunikation
+
+## Systemansteuerung
 
 ## E-Paper Display API
-
-### Generische API
-
-### Beispiel Treiber
-
-## HTTP Server

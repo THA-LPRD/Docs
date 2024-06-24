@@ -1,11 +1,9 @@
 # Webentwicklung
 
-## Framework und Library Auswahl (Kapitel 2)
+## Framework und Library Auswahl
 
 ## Konvertierungsverfahren (HTML → PNG → Bitmap)
 
-## Komprimierungsalgorithmus (Lauflängenkomp.)
+## IndexClient.html
 
-## Abstrakte Beschreibung, kein Code benennen
-
-## Konkrete Implementierung
+## Linux Server

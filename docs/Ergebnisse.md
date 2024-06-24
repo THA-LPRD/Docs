@@ -1,7 +1,7 @@
 # Ergebnisse
 
-## Versuchsbeschreibung: Probelauf darstellen
+## Versuchsbeschreibung
 
-## Messergebnisse: Rohe Darstellung der Daten
+## Messergebnisse
 
-## Interpretation: Auswertung der Daten
+## Interpretation
