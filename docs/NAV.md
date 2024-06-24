@@ -11,10 +11,7 @@
 * [Fazit](Fazit.md)
 * [Glossar](Glossar.md)
 
-
-<!-- me not understand in notiion ?! -->
 * [Beschreibung der Lösung](BeschreibungDerLösung.md)
 
-<!-- später löschen -->
 * [Über LPRD](about.md)
 
