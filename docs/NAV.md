@@ -1,6 +1,4 @@
 * [Startseite](index.md)
-
-<!-- Hauptdoku -->
 * [Einleitung](Einleitung.md)
 * [Praktische und Theoretische Grundlagen](PraktischeUTheoretischeGrund.md)
 * [Stand der Wissenschaft und Technik](StandDerWissenschaftUndTechnik.md)
