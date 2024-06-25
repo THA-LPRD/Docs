@@ -5,6 +5,7 @@
 ## Auswahl der Displaytechnologie
 
 ## Zusammenbau der Akkupacks
+**Mario Wegmann**
 //TODO
 Warum Nickelband?
 Grafiken Aufbau Akkuzellen
