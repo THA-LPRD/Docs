@@ -16,7 +16,7 @@
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
 <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
- <link href="assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+<link href="assets/stylesheets/glightbox.min.css" rel="stylesheet"><style>
     html.glightbox-open { overflow: initial; height: 100%; }
     .gslide-title { margin-top: 0px; user-select: text; }
     .gslide-desc { color: #666; user-select: text; }
@@ -25,7 +25,7 @@
     .gdesc-inner { font-size: 0.75rem; }
     body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
     body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="assets/javascripts/glightbox.min.js"></script></head>
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="assets/javascripts/glightbox.min.js"></script></link></head>
 <body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
@@ -416,8 +416,36 @@
 </a>
 <h1 id="low-power-room-display">Low Power Room Display<a class="headerlink" href="#low-power-room-display" title="Permanent link">¶</a></h1>
 <hr/>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="img/LPRD-Logo.svg"><img alt="LPRD" src="img/LPRD-Logo.svg" width="30%"/></a></p>
+<!-- Die Nummerierung wird automatisch für das Dokument erstellt, dabei ist es wichtig eine eindeutige ID festzulegen mit #ID -->
+<!-- So wird ein Bild angegeben -->
+<!-- Keyword "Figure:" <Bildunterschrift> -->
+<p><figure id="_fig_logo"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="img/LPRD-Logo.svg"><img alt="" src="img/LPRD-Logo.svg" width="30%"/></a><figcaption>Abbildung 1: Das ist ein Bild </figcaption></figure></p>
+<!-- So wird ein Bild referenziert -->
+<p>In <a href="#_fig_logo">Abbildung 1</a> ist folgendes zu sehen. </p>
+<!-- So wird eine Tabelle angegeben -->
+<!-- Keyword "Table:" Abbildung <Nummer>: <Tabellenunterschrift> -->
+<table id="_tab_example">
+<caption style="caption-side:bottom">Tabelle 1: Das ist eine Tabelle </caption><thead>
+<tr>
+<th>heading 1</th>
+<th>heading 2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>content 1</td>
+<td>content 2</td>
+</tr>
+<tr>
+<td>content 3</td>
+<td>content 4</td>
+</tr>
+</tbody>
+</table>
+<!-- So wird eine Tabelle referenziert -->
+<p>In <a href="#_tab_example">Tabelle 1</a> ist folgendes zu sehen. </p>
 <hr/>
+<p>Hallo</p>
 <p>Project documentation for the Low Power Room Display (LPRD) project.</p>
 <!-- Content moved into the footer -->
 </article>
@@ -494,16 +522,17 @@
 <span class="md-icon" title="Letztes Update">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"></path></svg>
 </span>
-<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 24, 2024</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 25, 2024</span>
 </span>
 <!-- Date of creation -->
 <!-- Authors (git-authors plugin) -->
 <span class="md-source-file__fact">
 <span class="md-icon" title="Mitwirkende">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 5.5A3.5 3.5 0 0 1 15.5 9a3.5 3.5 0 0 1-3.5 3.5A3.5 3.5 0 0 1 8.5 9 3.5 3.5 0 0 1 12 5.5M5 8c.56 0 1.08.15 1.53.42-.15 1.43.27 2.85 1.13 3.96C7.16 13.34 6.16 14 5 14a3 3 0 0 1-3-3 3 3 0 0 1 3-3m14 0a3 3 0 0 1 3 3 3 3 0 0 1-3 3c-1.16 0-2.16-.66-2.66-1.62a5.536 5.536 0 0 0 1.13-3.96c.45-.27.97-.42 1.53-.42M5.5 18.25c0-2.07 2.91-3.75 6.5-3.75s6.5 1.68 6.5 3.75V20h-13v-1.75M0 20v-1.5c0-1.39 1.89-2.56 4.45-2.9-.59.68-.95 1.62-.95 2.65V20H0m24 0h-3.5v-1.75c0-1.03-.36-1.97-.95-2.65 2.56.34 4.45 1.51 4.45 2.9V20Z"></path></svg>
 </span>
 <nav>
-<a href="mailto:emirhangoktas01@gmail.com">Emirhan Göktaş</a>
+<a href="mailto:emirhangoktas01@gmail.com">Emirhan Göktaş</a>, 
+            <a href="mailto:mario.wegmann@hs-augsburg.de">mwegmann</a>
 </nav>
 </span>
 <!-- Authors (git-committers plugin) -->
