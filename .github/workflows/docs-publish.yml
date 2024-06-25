@@ -53,6 +53,7 @@ jobs:
           pip install mkdocs-literate-nav
           pip install mike
           pip install mkdocs-glightbox
+          pip install mkdocs-caption
       - name: Clone mkdocs-to-pdf fork
         run: |
           git clone https://github.com/domWalters/mkdocs-to-pdf.git
