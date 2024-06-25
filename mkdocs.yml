@@ -8,6 +8,29 @@ repo_url: https://github.com/THA-LPRD
 edit_uri: docs/blob/dev/docs/
 
 plugins:
+  - caption:
+      cross_reference_text: '{page_title}/{local_ref}'
+      table: 
+        enable: true
+        start_index: 1
+        increment_index: 1
+        position: bottom
+        default_id: '_table-{index}'
+        reference_text: 'Tabelle {index}'
+        caption_prefix: 'Tabelle {index}:'
+        markdown_identifier: 'Table:'
+        allow_indented_caption: True
+      figure: 
+        enable: true
+        start_index: 1
+        increment_index: 1
+        position: bottom
+        default_id: '_figure-{index}'
+        reference_text: 'Abbildung {index}'
+        caption_prefix: 'Abbildung {index}:'
+        markdown_identifier: 'Figure:'
+        allow_indented_caption: True
+        ignore_alt: False
   - search
   - git-revision-date-localized:
       type: date
@@ -31,29 +54,6 @@ plugins:
       caption_position: bottom
       background: white
       shadow: true
-  - caption:
-      cross_reference_text: '{page_title}/{local_ref}'
-      table: 
-        enable: true
-        start_index: 1
-        increment_index: 1
-        position: bottom
-        default_id: '_table-{index}'
-        reference_text: ''
-        caption_prefix: ''
-        markdown_identifier: 'Table:'
-        allow_indented_caption: True
-      figure: 
-        enable: true
-        start_index: 1
-        increment_index: 1
-        position: bottom
-        default_id: '_figure-{index}'
-        reference_text: ''
-        caption_prefix: ''
-        markdown_identifier: 'Figure:'
-        allow_indented_caption: True
-        ignore_alt: False
   - with-pdf:
       author: LPRD Maintainers
       copyright: Copyright &copy; 2024 LPRD Project Maintainers
