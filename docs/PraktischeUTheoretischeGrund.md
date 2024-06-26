@@ -44,7 +44,9 @@ Noch mehr Stromeinsparung kann mit dem Deep-sleep realisiert werden. Dabei werde
 
 Fast alle Websites werden heutzutage dynamisch generiert. //TODO Damit Websiten für ein breites Spektrum an Besuchern ansprechend ist wird Targeting eingesetzt. Ein Beispiel hierfür ist Geotargeting, der Webserver erkennt das eine Frage aus einem bestimmten Land oder Region kommt und leitet den Besucher direkt auf die Niederlassungen des Unternehmens, welche für den Besucher am nächsten liegen. 
 
+Zudem wächst auch das Angebot an Webanwendungen rapide an. //TODO Webanwedungen sind Applikationen die direkt im Webbroswer ausgeführt werden können und somit keine Installation beim Nutzer voraussezten. 
 
+Um solche dynamische Websiten zu erstellen, bedarf es  
 
 ### Webframeworks
 

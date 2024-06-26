@@ -45,5 +45,8 @@ Abschlißend wurde Kapton Klebeband verwendet um das Akkupack mit einer isoliere
 ## Zusammenbau des Displaymoduls
 
 ## Strommessung von Mikrocontroller und Display
+### Versuchsaufbau
+**Mario Wegmann**
+Da das 
 
 ## ADC Messung
