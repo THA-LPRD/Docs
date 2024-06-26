@@ -1,13 +1,16 @@
-# Marktanalyse aktueller Trends und Technologien 
+# Marktanalyse aktueller Trends und Technologien im Bereich digitaler Raumanzeigen @Julia Reuter
 
-Die Motivation des Projektteams lag bei der Entwicklung der Low-Power Raumanzeige hauptsächlich in der Steigerung der Effizienz und des eigenen Komforts, wodurch das Projekt eher als Nischenprodukt für den internen Gebrauch angesehen wurde.
+Die Motivation des Projektteams lag bei erster Betrachtung des Projektes Low-Power Raumanzeige für die THA hauptsächlich in der Steigerung der Effizienz und des eigenen Komforts, wodurch das Projekt eher als Nischenprodukt für den internen Gebrauch angesehen wurde.
+Diese Einstellung änderte sich jedoch schnell nach einiger Recherche.
 
-Diese Einsicht änderte sich nach einiger Recherche jedoch drastisch.
-Nicht nur ist der potenzielle Markt für eine Low-Power Raumanzeige aufgrund der vielfältigen Einsatzgebiete in Büroräumen, Krankenhäusern oder Bildungseinrichtungen relativ groß, sondern auch im Hinblick auf das Thema Umwelt und Nachhaltigkeit lange nicht ausgeschöpft.
-So wird beispielsweise eine effiziente Nutzung von Räumen durch klare Erkennbarkeit der Belegung ermöglicht und durch intelligente Verwaltung könnten sogar unnötige Heiz- und Beleuchtungskosten reduziert werden, wenn der Raum gerade nicht genutzt wird. Darüber hinaus kann auf papierbasierte Stundenpläne und Türschilder verzichtet werden, was nicht nur den damit verbundenen Verlwaltungsaufwand, sondern auch die benötigten Ressourcen reduziert.
+Nicht nur ist der potenzielle Markt für eine Low-Power Raumanzeige aufgrund der vielfältigen Einsatzgebiete in Büroräumen, Krankenhäusern, Bildungseinrichtungen, usw. relativ groß, sondern auch im Hinblick auf das Thema Umwelt, Nachhaltigkeit und Digitalisierung, lange nicht ausgeschöpft.
+So wird beispielsweise eine effiziente Nutzung von Räumen durch klare Erkennbarkeit der Belegung ermöglicht und durch intelligente Verwaltung können sogar unnötige Heiz- und Beleuchtungskosten reduziert werden, wenn der Raum gerade nicht genutzt wird. Darüber hinaus kann auf papierbasierte Stundenpläne und Türschilder verzichtet werden, was nicht nur den damit verbundenen personellen Verwaltungsaufwand zur Instandhaltung deutlich verringert, sondern auch die bislang verwendeten Ressourcen minimiert.
 
-Gerade deshalb gibt es bereits einige Unternehmen, die dieses Potenzial erkannt und entsprechende Produkte entwickelt haben.
-Im Folgenden werden deshalb fünf hauptsächlich deutsche Unternehmen analysiert, welche als Inspiration für die eigene Raumanzeige dienten und durch ihr breites Spektrum dem Team zu neuen Ansätzen verhalfen.
+All dieses Aspekte sind Merkmale für ein durchaus zukunfttaugliches Produkt und gerade deshalb gibt es bereits einige Unternehmen, die dieses Potenzial erkannt und entsprechende Produkte entwickelt haben.
+
+Im Folgenden werden nun vier hauptsächlich deutsche Unternehmen analysiert, welche als Inspiration für die eigene Raumanzeige dienten und durch ihr breites Spektrum dem Team zu neuen Ansätzen und Ideen verhalfen.
+
+## Analyse einiger Konkurrenzprodukte
 
 Bei den ausgewählten Unternehmen und Produkten handelt es sich um:
 
@@ -16,7 +19,7 @@ Bei den ausgewählten Unternehmen und Produkten handelt es sich um:
 - **Display** der Firma ROOMZ in Freiburg (Schweiz)[^3]
 - **Touchscreen-Display** der Firma Beetronics in Düsseldorf[^4]
 
-Im Hinblick auf das Projekt lag der Fokus der Recherche auf folgenden Aspekten, welche im Anschluss, falls verfügbar, tabellarisch([](#_tab_3.1)) aufgelistet werden:
+Im Hinblick auf das Projekt lag der Fokus der Recherche auf folgenden Aspekten, welche im Anschluss tabellarisch (s. [](#_tab_3.1)) aufgelistet werden: 
 
 - Display Art (LCD oder E-Paper)
 - Farbunterstützung
@@ -27,63 +30,60 @@ Im Hinblick auf das Projekt lag der Fokus der Recherche auf folgenden Aspekten, 
 
 ## Produktvergleich ausgewählter Unternehmen
 
-Table: [] { #_tab_3.1 }
+Table: Übersicht und Vergleich der 4 ausgewählten Raumanzeigen { #_tab_3.1 }
 
 | Produkt                | Display Art            | Farbunterstützung                | Ansteuerung/Netzprotokoll                    | Batterie und geschätzte Laufzeit           | Betrieb (Kundenschnittstelle)                                 | Besondere Features                                                                                         |
 |------------------------|------------------------|----------------------|---------------------------------------------|--------------------------------------|-----------------------------------------|-----------------------------------------------------------------------------------------------------------|
 | **Wizepanel[^5]**          | E-Paper                | Schwarz-Weiß, 16 Graustufen | 868 MHz Ultra Low Power Funk, eigene Funksender | 10 x AA-Lithium-Primärzellen, bis zu 20 Jahre | Zentrale Serverkomponente: Inhaltsübertragung und Geräteverwaltung | Bereits in den Server integrierte Adapter für MS Exchange, iCal/ICS, Google Calendars, Excel,... Auch WebUntis wird unterstütztENA[^8]|
-| **Digitales Türschild[^6]**| Touch-Screen (kein E-Paper) | Farbe                |  Ethernet, NFC-Option verfügbar               | Power over Ethernet (PoE) → ein Kabelanschluss nötig | Keine Angabe                           | LEDs rund um Display (rot, gelb, grün) zur Hervorhebung der Raumbelegung, Sofortbuchung über Touch/NFC      |
+| **Digitales Türschild[^6]**| Touch-Screen (kein E-Paper) | Farbe                |  Ethernet, NFC-Option verfügbar               | Power over Ethernet (PoE) → Kabelanschluss nötig | Keine Angabe                           | LEDs rund um Display (rot, gelb, grün) zur Hervorhebung der Raumbelegung, Sofortbuchung über Touch/NFC      |
 | **ROOMZ[^3]**              | E-Paper                | Schwarz-Weiß         | WLAN                                        | 8000mAh, 4 Jahre                      | MyRoomz-App zur Buchung einzelner definierter Arbeitsbereiche[^10] | MyRoomz-App bietet Lageplanansicht des Gebäudes mit Übersicht aller Räume mit Markierung ob sie belegt sind oder nicht[^10], ROOMZ Sensor zur Vermeidung von Ghost-Meetings [^9], Sofortbuchung über Touchleiste am Gehäuse |
 | **Beetronics[^7]**         | High Brightness Full HD Touchscreen | Farbe                | Display Port, HDMI, VGA, USB-C, Unterstützung aller gängigen Betriebssysteme | Netzteil (d.h. Stromanschluss) denn braucht 12.7W (Betrieb)/0.4W (Standby) | Einfaches Plug-and-Play, sonst eigener Treiber für verschiedene Betriebssysteme verfügbar | Keine spezifischen Features angegeben, aber allgemein sehr vielfältig universell einsetzbar                                                                       |
 
-## Marktanalyse und Trends
+## Auswertung der Rechercheergebnisse
 
-Die Nachfrage nach Low-Power Raumanzeigen wächst stetig, da Unternehmen und Bildungseinrichtungen verstärkt auf nachhaltige und energieeffiziente Lösungen setzen. E-Paper-Displays bieten hier klare Vorteile gegenüber LCD-Displays, insbesondere in Umgebungen, wo eine ständige Stromversorgung nicht gewährleistet oder nicht erwünscht ist.
+### Vor- und Nachteile der einzelnen Produkte
 
-### Gründe und Ursachen für die steigende Nachfrage
+Table: Vor-und Nachteile der 4 Displayprodukte { #_tab_3.2 }
 
-**Nachhaltigkeit und Energieeffizienz:**
+| Hersteller     | Vorteile                                                                                               | Nachteile                                                                                      |
+| -------------- | ------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------- |
+| **Wizepanel**  | - E-Paper-Technologie: Geringer Energieverbrauch                                                     | - Schwarz-weiß Display: Keine Farbdarstellung möglich                                        |
+|                | - Lange Akkulaufzeit: Bis zu 20 Jahre                                                                | - Eigene Funksender zur Datenübertragung werden benötigt: Abhängigkeit von zusätzlicher Hardware                             |
+|                | - Ultra Low Power Funk: Energiesparende und drahtlose Kommunikation                                                     |                                                                                               |
+|                | - Serverintegration: Unterstützung für gängige Kalender- und Verwaltungssysteme               |                                                                                               |
+| **digitalSIGNAGE** | - Touch-Screen und Farbe: Interaktive und ansprechende Benutzeroberfläche                         | - Power over Ethernet (PoE): Benötigt eine Kabelverbindung, externe Abhängigkeit      |
+|                | - NFC-Option und Ethernet: Flexibilität bei der Ansteuerung                                           | - Keine Angaben zur Akku-Laufzeit: Unklarheit über Energieeffizienz vermutlich aber eher gering aufgrund der Displaytechnologie   |
+|                | - LEDs zur Raumbelegung: Visuelle Hinweise zur Raumverfügbarkeit                        |                                                                                               |
+| **ROOMZ**      | - E-Paper-Technologie: Geringer Energieverbrauch                                                      | - Schwarz-weiß Display: Keine Farbdarstellung möglich                                         |
+|                | - WLAN: Einfache Integration in bestehende Netzwerke                                                  |                                                                                               |
+|                | - Lange Akkulaufzeit: Bis zu 4 Jahre                                                                  |                                                                                               |
+|                | - MyRoomz-App: Umfassende Funktionen zur Raumbuchung und -verwaltung, auch über mobile Endgeräte                                 |                                                                                               |
+| **Beetronics** | - High Brightness Full HD Touchscreen: Hervorragende Bildqualität und interaktive Möglichkeiten       | - Verhältnismäßig sehr hoher Energieverbrauch        |
+|                | - Vielseitige Anschlussmöglichkeiten: Unterstützung für Display Port, HDMI, VGA, USB-C; Flexibiliät in der Ansteuerung                | - Kabelgebunden: Abhängigkeit von ständiger Stromquelle.                                       |
 
-1. **EU-Richtlinien und Umweltvorgaben:**
-   Die Europäische Union hat strenge Vorgaben zur Reduktion des Energieverbrauchs und zur Förderung nachhaltiger Technologien. Die Ökodesign-Richtlinie (2009/125/EG) legt fest, dass energieverbrauchsrelevante Produkte bestimmte Effizienzanforderungen erfüllen müssen. Unternehmen sind daher gezwungen, energieeffiziente Lösungen zu implementieren, um die gesetzlichen Vorgaben einzuhalten und mögliche Strafzahlungen zu vermeiden.
+### Abgeleitete Kriterien für das eigene Produkt
 
-2. **Betriebskosten und Umweltbewusstsein:**
-   Durch den geringeren Energieverbrauch von E-Paper-Displays können Unternehmen ihre Betriebskosten signifikant senken. Dies ist besonders relevant in großen Einrichtungen mit vielen Anzeigegeräten. Zudem tragen Unternehmen durch den Einsatz solcher Technologien aktiv zur Reduktion ihres CO₂-Fußabdrucks bei, was wiederum ihrem Image als umweltbewusste Organisation zugutekommt.
+Basierend auf der Analyse der Vor- und Nachteile der Konkurrenzprodukte (vgl. [](#_tab_3.2)) sollten folgende Eigenschaften in die eigene Low-Power Raumanzeige integriert werden, um die grundlegenden Markanforderungen zu erfüllen:
 
-**Kabellose Kommunikation:**
+1. **E-Paper-Technologie:** Für minimalen Energieverbrauch und lange Akkulaufzeit
+2. **Lange Akkulaufzeit:** Nutzung von effizienten Batterien für eine wartungsarme Lösung und unabhängigen Betrieb
+3. **Drahtlose Kommunikation:** WLAN oder Funk für flexible und einfache Installation sowie geringem Energieverbrauch
+4. **Integration in bestehende Systeme:** Unterstützung für gängige Kalender- und Verwaltungssysteme (z.B. iCal/ICS oder WebUntis) über zentrale Serverkomponenten zur effizienten Verwaltung und Nutzung
 
-1. **Einfache Installation und Wartung:**
-   Geräte mit drahtloser Kommunikation, wie WLAN oder Low-Power-Funk, sind einfacher zu installieren und zu warten. Sie benötigen keine aufwändige Verkabelung, was besonders in großen Gebäudekomplexen oder historischen Bauten von Vorteil ist. Dies spart nicht nur Zeit und Kosten bei der Installation, sondern reduziert auch den Wartungsaufwand erheblich.
+### Ansätze zur Verbesserung der Konkurrenzfähigkeit auf dem Markt
 
-2. **Flexibilität und Mobilität:**
-   Kabellose Systeme bieten eine höhere Flexibilität und Mobilität. Räume können leicht umgestaltet oder umfunktioniert werden, ohne dass die Infrastruktur für Anzeigegeräte angepasst werden muss. Dies ist besonders in dynamischen Umgebungen wie Universitäten oder modernen Bürolandschaften von Vorteil.
+Um sich von den zahlreichen Konkurrenzprodukten abzuheben, gibt es einige Ansätze.
+Denn auch wenn es sich um ein E-Paper Display handelt, wäre es eine Idee eine gewisse Interaktion für zum Beispiel spontane Raumbuchung eingeplanen, die energiesparend und auch ohne Touchfunktion umsetzbar ist. Auch ein farbiges E-Paper-Display würde dazu beitragen das eher schlichtes Produkt für den Benutzer optisch ansprechender zu gestalten.
+Das zentrale Alleinstellungsmerkmal ist jedoch das Entwickeln eines Konzeptes, indem keine zusätzliche externe Infrastruktur gebraucht wird. Denn alle obigen System werden zentral über eine Serverkomponente gesteuert und brauchen ggf. sogar eigene Funkverteiler. 
+Dies ist für den Benutzer mit viel Aufwand und Kosten verbunden und lohnt sich nur für sehr große Organisationen. 
 
-**Integration in bestehende Systeme:**
+Zudem ist man stets von einer externen Softwarekomponente abhängig, denn die Display Ansteuerungsschnittstelle wird ebenfalls vom Hersteller in Form von einem Server (vgl. Wizepanel) oder einer App (vgl. ROOMZ) geliefert, sodass hier eine weitere große Abhängigkeit entsteht.
 
-1. **Effizienzsteigerung durch nahtlose Integration:**
-   Die Fähigkeit, sich nahtlos in bestehende Kalender- und Verwaltungssysteme zu integrieren, erleichtert die Verwaltung und Nutzung der Raumanzeigen erheblich. Dies führt zu einer effizienteren Raumnutzung und besseren organisatorischen Abläufen. Systeme wie MS Exchange, Google Calendars oder spezielle Buchungssysteme wie WebUntis sind weit verbreitet und ihre Integration in Anzeigegeräte spart Zeit und reduziert Fehlerquellen.
+Genau hier sieht das Projektteam die potentielle Stärke ihrer Raumanzeige. Es soll ein standalone-System darstellen, dass sowohl völlig unabhängig von jeglicher zusätzlicher Soft- und Hardware ist und autark funkionieren kann.
+Gleichzeitig besteht die Möglichkeit eine zentrale Verwaltungskomponente zu integrieren, um auch mehrere Displays verwalten zu können. 
+Diese Flexibilität gekoppelt mit der Prämisse, das System Open-Source zu gestalten, sprich der Kunde kann nach Belieben das System erweitern und anpassen, sorgt für ein Alleinstellungsmerkmal auf dem Markt.
 
-2. **Zentrale Verwaltung und Kontrolle:**
-   Durch die Integration in bestehende Systeme können alle Raumanzeigen zentral verwaltet und kontrolliert werden. Updates und Änderungen können schnell und einfach durchgeführt werden, ohne dass physische Eingriffe an den Geräten notwendig sind. Dies erhöht die Effizienz und Reaktionsfähigkeit der IT-Abteilungen.
-
-**Interaktive Funktionen:**
-
-1. **Verbesserte Benutzererfahrung:**
-   Touch-Displays und NFC-Technologie ermöglichen eine direkte Interaktion mit dem Gerät, was für Sofortbuchungen und Echtzeit-Updates nützlich ist. Nutzer können schnell und einfach Räume buchen oder Informationen abrufen, was die Benutzererfahrung erheblich verbessert.
-
-2. **Erhöhte Nutzungseffizienz:**
-   Interaktive Funktionen helfen dabei, die Nutzungseffizienz der Räume zu steigern. Durch Echtzeit-Updates und Sofortbuchungen können Leerstände minimiert und die Raumbelegung optimiert werden. Dies führt zu einer besseren Auslastung der verfügbaren Ressourcen und somit zu einer höheren Kosteneffizienz.
-
-## Fazit
-
-Die Analyse zeigt, dass sich die betrachteten Produkte grundsätzlich in zwei Kategorien einteilen lassen:
-
-1. **Moderne Gadgets:** Diese Kategorie umfasst LCD-Displays mit zahlreichen Funktionalitäten und mächtigen Betriebssystemen. Der Stromverbrauch ist hierbei nicht kritisch, da diese Geräte kabelgebunden betrieben werden.
-2. **Low-Power Geräte:** Diese Geräte verzichten auf externe Stromversorgung und Verkabelung, was zu einer langen Akkulaufzeit führt. Viele Funktionalitäten werden ausgelagert, beispielsweise an einen Server, der fertig verarbeitete Informationen an das Gerät sendet.
-
-Unser Ziel ist es, ein Produkt in der zweiten Kategorie zu entwickeln. Obwohl der kabelgebundene Betrieb hinsichtlich Kommunikation und Verbrauch komfortabel ist und Raum für viele Features und Spielereien lässt, ist die Low-Power-Variante praktischer, effizienter und umweltschonender. Diese Eigenschaften sind besonders im Anwendungsgebiet einer Hochschule von großem Vorteil, da eine einfache, wartungsarme und nachhaltige Lösung bevorzugt wird.
-
-Zusammenfassend kann festgestellt werden, dass der Markt für Low-Power Raumanzeigen vielversprechend ist und durch technologische Innovationen weiter wachsen wird. Durch die Fokussierung auf E-Paper-Technologie und drahtlose Kommunikation bietet unser Projekt eine zukunftssichere und umweltfreundliche Lösung, die den Anforderungen moderner Arbeits- und Lernumgebungen gerecht wird.
+Die Low-Power Raumanzeige ist somit nicht nur für die Hochschule attraktiv sondern auch in kleinern Kreisen und sogar im privaten Gebrauch einsetzbar.
 
 ## Quellen
 
