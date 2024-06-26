@@ -55,3 +55,8 @@ Ein Webframework erleichtert die Entwicklung von Webanwendungen, indem es wieder
 Gerade im Bereich der Webanwendungen lässt sich ein rasantes Tempo erkennen und viele Technologien entwickeln sich rasch oder ändern gar die Richtung. //TODO
 
 Die Grundbausteine einer Webanwendung sind HTML für den Inhalt, CSS für das Layout und JavaScript für Clientsitige interaktivität. Auf dem Server sind beliebte Programmiersprachen PHP, Python, Ruby, C# und auch JavaScript. 
+
+DOM Manipulation
+EMS
+TypeScript
+Postgress und MySQL
