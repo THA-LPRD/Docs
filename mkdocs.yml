@@ -61,7 +61,7 @@ plugins:
       back_cover: true
       cover_title: Low Power Room Display
       cover_subtitle: Dokumentation des LPRD-Projekts
-      enabled_if_env: ENABLE_PDF_EXPORT
+      enabled_if_env: PDF
 
 
 theme:
@@ -123,6 +123,9 @@ markdown_extensions:
   - abbr
   - toc:
       permalink: true
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
 
 extra:
   version:
