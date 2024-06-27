@@ -20,8 +20,8 @@ Verbaut werden die einzelnen Komponenten in einem kompakten 3D-gedruckten Gehäu
 
 ## 2. Allgemeine Software-Funktionen
 
-Da die gesamte Ansteuerung des Systems über einen Mikrocontroller erfolgt, muss dieser entsprechend programmiert werden. Dem Benutzer soll es ermöglicht werden über eine einfache und intuitive Schnittstelle, wie beispielsweise eine Website, das Display mit Inhalten zu versorgen. So kann er ohne viel Aufwand Bilddateien auf der Website hochladen und mit nur einem Klick über eine WLAN-Verbindung an das Modul schicken. Auch die Displayverwaltung und diverse Einstellungen kann über diese Art von Interface bequem gesteuert werden.
-
+Da die gesamte Ansteuerung des Systems über einen Mikrocontroller erfolgt, muss dieser entsprechend programmiert werden. Er bildet die zentrale Steuereinheit, die sich mit entsprechender Firmware um das Empfangen und Senden von Daten, die Displayansteuerung und das Powermanagement kümmert. 
+Durch ihn soll es dem Benutzer ermöglicht werden, über eine einfache und intuitive Schnittstelle, wie beispielsweise eine Website, das Display mit Inhalten zu versorgen. So können ohne viel Aufwand, Bilddateien auf der Website hochladen und mit nur einem Klick über eine WLAN-Verbindung an das Modul geschickt werden. Auch die Displayverwaltung und diverse Einstellungen werden über diese Art von Interface bequem gesteuert.
 
 ## 3. Potentielle Einsatzgebiete der Low-Power Raumanzeige
 
