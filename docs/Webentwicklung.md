@@ -43,7 +43,7 @@ Table: Die Systemeigenschaften der vom RZ erhaltenen VM.  { #_tab_MW_1 }
 | Hostname | lprd |
 
 Zudem wurde vom RZ auch gleich ein DNS Eintrag gesetzt und die Domain lprd.informatik.tha.de verweist auf diese VM. 
-Neben dem Betriebssystem liefert die VM auch gleich noch eine Firewall standardmäßig mit, hier setzt das RZ die Variante arno-iptables ein [MW_01](Quellenverzeichnis.md). 
+Neben dem Betriebssystem liefert die VM auch gleich noch eine Firewall standardmäßig mit, hier setzt das RZ die Variante arno-iptables ein [[MW_01]](Quellenverzeichnis.md#MW_01). 
 
 ### Ersteinrichtung
 
