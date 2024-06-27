@@ -78,7 +78,6 @@ Wie Li-Ion-Akkus, benötigen die LiFePO~4~-Akkus auch eine Schutzschaltung in Fo
 Die einzige Nachteil dieser Akku-technologie ist, dass im Vergleich zu den reinen Li-Ion-Akkus, die Nennspannung niedrieger liegt, bei 3,3V im Vergleich zu 3,7V.
 
 
-## Akku Technologien
 <!-- STASA -->
 ## Funktechnologien @Stasa Lukic
 
