@@ -30,9 +30,9 @@ Die Kombination dieser Technologien ermöglich effizient eine benutzerfreundlich
 
 ### Testumgebung
 
-Als Testumgebung wurde beim Rechenzentrum (RZ) eine Linux VM beantragt. Die vom Rechenzentrum erhaltene VM weißt die in []( #_tab_MW_1 ) genannten Eigenschaften auf
+Als Testumgebung wurde beim Rechenzentrum (RZ) eine Linux VM beantragt. Die vom Rechenzentrum erhaltene VM weißt die in []( #_tab_MW_01 ) genannten Eigenschaften auf
 
-Table: Die Systemeigenschaften der vom RZ erhaltenen VM.  { #_tab_MW_1 }
+Table: Die Systemeigenschaften der vom RZ erhaltenen VM.  { #_tab_MW_01 }
 
 | Eigenschaft | Wert |
 |-------|------|
