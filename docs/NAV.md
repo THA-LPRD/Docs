@@ -11,5 +11,6 @@
 * [Fazit](Fazit.md)
 * [Glossar](Glossar.md)
 * [Beschreibung der Lösung](BeschreibungDerLösung.md)
+* [Quellenverzeichnis](Quellenverzeichnis.md)
 * [Über LPRD](about.md)
 
