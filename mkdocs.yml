@@ -123,6 +123,9 @@ markdown_extensions:
   - abbr
   - toc:
       permalink: true
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
 
 extra:
   version:

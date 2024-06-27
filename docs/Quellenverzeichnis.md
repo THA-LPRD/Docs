@@ -13,3 +13,4 @@ Autor, Titel, Bezugsquelle, Zugriffsdatum, Herausgabedatum
 <a id="MW_05">[MW_05] Mehere Autoren, Nextcloud Server Sourcecode, [https://github.com/nextcloud/server/tree/master](https://github.com/nextcloud/server/tree/master), 2024-06-27, 2024-06-27</a>
 
 <a id="MW_06">[MW_06] Mehere Autoren, ESP32 Sleep Modes, [https://docs.espressif.com/projects/esp-idf/en/stable/esp32/api-reference/system/sleep_modes.html?highlight=deep%20sleep](https://docs.espressif.com/projects/esp-idf/en/stable/esp32/api-reference/system/sleep_modes.html?highlight=deep%20sleep), 2024-06-27, 2024-05-09</a>
+
