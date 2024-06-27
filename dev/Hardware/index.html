@@ -508,6 +508,23 @@
   
 
       
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Quellenverzeichnis/" class="md-tabs__link">
+        
+  
+    
+  
+  Quellenverzeichnis
+
+      </a>
+    </li>
+  
+
+      
     </ul>
   </div>
 </nav>
@@ -881,6 +898,39 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Gehäuse">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#anforderungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Anforderungen
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#design" class="md-nav__link">
+    <span class="md-ellipsis">
+      Design
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prototyping" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prototyping
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1111,6 +1161,26 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Quellenverzeichnis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quellenverzeichnis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1198,6 +1268,28 @@ Zuletzt sollte vor dem Verbinden darauf geachtet werden, dass die Zellen die gle
 <h2 id="platinen-design">Platinen Design<a class="headerlink" href="#platinen-design" title="Permanent link">¶</a></h2>
 <h2 id="zusammenbau-der-pcbs">Zusammenbau der PCBs<a class="headerlink" href="#zusammenbau-der-pcbs" title="Permanent link">¶</a></h2>
 <h2 id="gehause">Gehäuse<a class="headerlink" href="#gehause" title="Permanent link">¶</a></h2>
+<p><em>Jannis Gröger</em></p>
+<h3 id="anforderungen">Anforderungen<a class="headerlink" href="#anforderungen" title="Permanent link">¶</a></h3>
+<p>Beim Entwurf des Gehäuse für das Low Power Raumdisplay sind die funktionalen Anforderungen einfach gehalten. Da das Gerät im Einsatz später stationär platziert ist, ist es weder mechanischen Stößen noch einer Art von Vibration zu schützen. Zudem wird es nicht in der Hand bedient, weshalb es auch keinen mechanischen Druck ausgesetzt ist. Daher ist nicht auf ein besonders robustes Material zu achten.</p>
+<p>Da der Einsatzort hauptsächlich im Gebäudeinneren vorgesehen ist,  ist ein Schutz gegen jegliche Art von Wasser zu vernachlässigen. Da das Display als Bendienung zwei Benutzerknöpfe besitzt, muss das Gehäuse gegen Berühren mit Fingern geschätzt werden, also sollte der Schutz gegen Berührung mindestens der Schutzart zwei zugeordnet werden können. <a href="../Quellenverzeichnis/#jg_02">[JG_02]</a></p>
+<p>Die Low Power Raumanzeige besitzt elektronische Komponenten, die keine großen Wärmemengen produzieren. Lediglich beim Laden der Akkupacks könnte ein kritische Wärmemenge entstehen, weswegen diese leicht aus dem Gehöuse entfernbar sein sollten, dass beim Laden genug Abwärme durch natürliche Konvektion gegeben ist.</p>
+<p>Da die Informationsanzeige mit WLAN mit dem Gerät des Betreibers kommunziert, Sollte das Gehäuse die Komponenten nicht zu sehr elektromagnetisch von außen abschirmen und auch elektromagnetische Felder nach außen hin zulassen, da ansonten die Kommunkation gestört werden und das Displaymodul nicht mehr seine volle Funktionsfähigkeit aufweisen kann.</p>
+<h3 id="design">Design<a class="headerlink" href="#design" title="Permanent link">¶</a></h3>
+<p>Zum Entwickeln des 3D-Modells wird die CAD-Software "Autodesk Fusion" genutzt. Das Vorgehen hierbei besteht primär aus der Erstellung einer Skizze, aus der dann verschiedene Fläche extrudiert werden. Um komplexere Konstruktionen zu erlauben, wird dieses Vorgehen wiederholt, wobei die Skizzenfläche eine Oberfläche einer bereits vorhandenen Extrusion ist. Die beiden Gehäuse bestehen jeweils aus drei Teilen: </p>
+<ul>
+<li>Einer Front, in der das Display sitzt</li>
+<li>Einer Halterung für die Platinen des Displays, die an der Front angebracht wird</li>
+<li>einer Rückseite, in der an der Rückwand die Halterungen für Akkupack und selbst entworfener Platine befestigt sind.</li>
+</ul>
+<p>Diese Teile werden jeweil mit Gewindeschrauben mit 2,5mm durchmesser verbunden. Die Rückseite kann konstruktionstechnisch nochmal in einen Quader für elektronische Bauteile und einer Schale für das Display unterteilt werden. Diese Teile sind jedoch fest an ihren Kanten verbunden (vgl ABB !!!!!!!!!!!!!!!!!!!!!!). Im folgenden werden die einzelnen Merkmale, die dem Gehäuse hinzugefügt werden, erläutert.</p>
+<p>Um die einzelnen Komponenten im Inneren des Gehäuses zu fixieren, müssen für jede einzelne eine spezifische Halterung angefertigt werden. Die Akkupacks werden durch vier L-förmige Säulen, die jeweils eine Ecke der Packs umschließen, vor dem Hin und Herrutschen bewahrt. Das Herausfallen nach Vorne verhindert ein Steg, der mit zwei Schrauben über dem Akkupack angebracht wird. Die Platine wird durch zwei gegenüberliegende Nuten in der Unterseite des Gehäuses und einer konstruierten Wand im Gehäuse gehalten, indem sie seitlich in die Nuten eingeschoben wird. Hierbei wird an der Seite des Gehäuses eine Bohrung angebracht, um auch im montierten Zustand der Low Power Raumanzeige Zugang zum USB-C Anschluss des Mikrocontrollers zu haben.</p>
+<p>Da das Displaymodul wie oben erwähnt nicht in der Hand gehalten wird sondern fest vor bspw einem Hörsaal einer Hochschule platziert werden soll, werden an der Rückwand des Gehäuses zwei Langloch-Einhängeöffnungen angebracht. Um das Display dann an der Wand aufzuhängen, müssen einfach zwei Schrauben in der Wand eingeschraubt werden. Diese werden in die Öffnungen eingefädelt, dann wird das Displaymodul nach unten geschoben und ist damit an der Wand fixiert. Damit das Displaymodul auch mobil eingesetzt werden kann, wie beispielsweise bei einem Messestand, wird die untere Fläche des Gehäuses angeschrägt, dass man das Display stabil auf einen Tisch stellen kann.</p>
+<p>Wie bereits genannt, soll die Bedienung des Low Power Raumdisplays über einen Bentzerknopf gesteuert werden. Um die Benutzerfreundlichkeit zu gewährleisten, wird dieser an der Front des Displaymoduls angebracht, damit er leicht zugänglich und für alle sichtbar ist. Zusätzlich sollen die eingebauten "Boot"- und "Reset"-Knöpfe des ESP32 ebenso benutzbar bleiben, allerdings nur für den System-Administrator. Deshalb werden hierfür kleine Löcher an der Rückseite des Gehäuses angebracht, dass die Knöpfe ähnlich wie beim SIM Karten Slot eines Handys mit Hilfe eines schmalen Werkzeugs gedrückt werden können. Durch die Platzierung auf der Rückseite sind die Löcher zunächst für die Person, die vor dem Display steht, nicht sichtbar, sondern erst dann erreichbar, wenn das Displaymodul von der Wand genommen wird.</p>
+<p>Die Halterungen für die Platinen der Beiden Epaper-Displays sind einfache Konstruktionen aus schmalen Stegen, die zylinderförmige Extrusionen besitzen, um die Platinen festzuschrauben. Hierbei unterscheiden sich die beiden Halterungen in ihren Dimensionen, da nicht nur die beiden Displays selbst, sondern auch die zugehörigen Platinen unterschiedliche Maße besitzen.</p>
+<p>Die Front des Gehäuses besitzt einen rechteckigen Ausschnitt mit einer Falz nach innen, in die das Display dann gelegt wird. Um das Display vor hineinfallen ins Gehäuse zu schützen, wird einmal die Platinenhalterung direkt an der Rückseitige des Displays angebracht und zusätzlich noch kleine Überhänge konstruiert, die das Display von hinten stützen. Desweiteren ist ein rechteckigen Ausschnitt für den Benutzerknopf in der Front angebracht. </p>
+<h3 id="prototyping">Prototyping<a class="headerlink" href="#prototyping" title="Permanent link">¶</a></h3>
+<p>Da es sich bei dem LoW Power Raumdisplay um eine Projektarbeit handelt und zunächst keine Serienproduktion vorgesehen ist, beschränkt sich die Entwicklung des Gehäuses auf den Entwurf zweier Prototypen, einmal mit einem 1.3-Zoll-Display und einmal mit einem 9.7-Zoll-Display. Hierbei wird das Rapid-Prototyping-Verfahren des Fused-Deposition-Modelling angewandt, da es neben geringen Kosten auch genug Stabilität für die genannten Anforderungen aufweist. Zudem ist es dem Projektteam möglich, direkt im eigenen Labor der Technischen Hochschule Augsburg dieses Verfahren anzuwenden. Es werden mehrere sogenannte FDM-Drucker zur Verfügung gestellt, ebenso wie die CAD-Software Inventor-Softwarepaket der Firma Autodesk. <a href="../Quellenverzeichnis/#jg_04">[JG_04]</a></p>
+<p>Die verwendeten FDM-Drucker beschränken sich auf die Modelle 2 Extended+, 3 und S5 der Marke Ultimaker. Diese Drucker verwenden Filamente aus Polyactiden, kurz PLA, oder Polyethylenterephtalat mit Glykolmodifikation, auch PETG genannt mit einem Durchmesser von 2,85mm<sup>2</sup>. Die Materialien unterscheiden sich nur leicht in ihren Eigenschaften, wobei PETG stabiler und haltbarer ist, PLA dagegen ist hitzebeständiger und biologisch abbaubar.<a href="../Quellenverzeichnis/#jg_05">[JG_05]</a> Beide Materialien sind in ihrer Stabilität und hitzebeständigkeit für den Zweck des Low Power Displays ausreichend.</p>
 <h2 id="zusammenbau-des-displaymoduls">Zusammenbau des Displaymoduls<a class="headerlink" href="#zusammenbau-des-displaymoduls" title="Permanent link">¶</a></h2>
 <h2 id="strommessung-von-mikrocontroller-und-display">Strommessung von Mikrocontroller und Display<a class="headerlink" href="#strommessung-von-mikrocontroller-und-display" title="Permanent link">¶</a></h2>
 <h3 id="versuchsaufbau">Versuchsaufbau<a class="headerlink" href="#versuchsaufbau" title="Permanent link">¶</a></h3>
@@ -1491,6 +1583,7 @@ Zuletzt sollte vor dem Verbinden darauf geachtet werden, dass die Zellen die gle
         <nav>
             
             <a href="mailto:118850444+bklaric1@users.noreply.github.com">Benjamin Klaric</a>, 
+            <a href="mailto:jannisgroeger@gmail.com">Jannis</a>, 
             <a href="mailto:benjamin.klaric01@gmail.com">bklaric</a>, 
             <a href="mailto:mario.wegmann@hs-augsburg.de">mwegmann</a>, 
             <a href="mailto:lukic.stasa@outlook.com">stasa</a>
