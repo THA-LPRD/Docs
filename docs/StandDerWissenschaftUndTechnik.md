@@ -14,10 +14,10 @@ Im Folgenden werden nun vier hauptsächlich deutsche Unternehmen analysiert, wel
 
 Bei den ausgewählten Unternehmen und Produkten handelt es sich um:
 
-- **Wizepanel** der Firma Wilke Technology in Aachen[^1]
-- **Digitales Türschild** der Firma digitalSIGNAGE in Hamburg[^2]
-- **Display** der Firma ROOMZ in Freiburg (Schweiz)[^3]
-- **Touchscreen-Display** der Firma Beetronics in Düsseldorf[^4]
+- **Wizepanel** der Firma Wilke Technology in Aachen [[JR_01]](Quellenverzeichnis.md#jr_01)
+- **Digitales Türschild** der Firma digitalSIGNAGE in Hamburg [[JR_02]](Quellenverzeichnis.md#jr_02)
+- **Display** der Firma ROOMZ in Freiburg (Schweiz) [[JR_03]](Quellenverzeichnis.md#jr_03)
+- **Touchscreen-Display** der Firma Beetronics in Düsseldorf [[JR_04]](Quellenverzeichnis.md#jr_04)
 
 Im Hinblick auf das Projekt lag der Fokus der Recherche auf folgenden Aspekten, welche im Anschluss tabellarisch (s. [](#_tab_3.1)) aufgelistet werden: 
 
@@ -34,16 +34,16 @@ Table: Übersicht und Vergleich der 4 ausgewählten Raumanzeigen { #_tab_3.1 }
 
 | Produkt                | Display Art            | Farbunterstützung                | Ansteuerung/Netzprotokoll                    | Batterie und geschätzte Laufzeit           | Betrieb (Kundenschnittstelle)                                 | Besondere Features                                                                                         |
 |------------------------|------------------------|----------------------|---------------------------------------------|--------------------------------------|-----------------------------------------|-----------------------------------------------------------------------------------------------------------|
-| **Wizepanel[^5]**          | E-Paper                | Schwarz-Weiß, 16 Graustufen | 868 MHz Ultra Low Power Funk, eigene Funksender | 10 x AA-Lithium-Primärzellen, bis zu 20 Jahre | Zentrale Serverkomponente: Inhaltsübertragung und Geräteverwaltung | Bereits in den Server integrierte Adapter für MS Exchange, iCal/ICS, Google Calendars, Excel,... Auch WebUntis wird unterstütztENA[^8]|
-| **Digitales Türschild[^6]**| Touch-Screen (kein E-Paper) | Farbe                |  Ethernet, NFC-Option verfügbar               | Power over Ethernet (PoE) → Kabelanschluss nötig | Keine Angabe                           | LEDs rund um Display (rot, gelb, grün) zur Hervorhebung der Raumbelegung, Sofortbuchung über Touch/NFC      |
-| **ROOMZ[^3]**              | E-Paper                | Schwarz-Weiß         | WLAN                                        | 8000mAh, 4 Jahre                      | MyRoomz-App zur Buchung einzelner definierter Arbeitsbereiche[^10] | MyRoomz-App bietet Lageplanansicht des Gebäudes mit Übersicht aller Räume mit Markierung ob sie belegt sind oder nicht[^10], ROOMZ Sensor zur Vermeidung von Ghost-Meetings [^9], Sofortbuchung über Touchleiste am Gehäuse |
-| **Beetronics[^7]**         | High Brightness Full HD Touchscreen | Farbe                | Display Port, HDMI, VGA, USB-C, Unterstützung aller gängigen Betriebssysteme | Netzteil (d.h. Stromanschluss) denn braucht 12.7W (Betrieb)/0.4W (Standby) | Einfaches Plug-and-Play, sonst eigener Treiber für verschiedene Betriebssysteme verfügbar | Keine spezifischen Features angegeben, aber allgemein sehr vielfältig universell einsetzbar                                                                       |
+| **Wizepanel [[JR_05]](Quellenverzeichnis.md#jr_05)**          | E-Paper                | Schwarz-Weiß, 16 Graustufen | 868 MHz Ultra Low Power Funk, eigene Funksender | 10 x AA-Lithium-Primärzellen, bis zu 20 Jahre | Zentrale Serverkomponente: Inhaltsübertragung und Geräteverwaltung | Bereits in den Server integrierte Adapter für MS Exchange, iCal/ICS, Google Calendars, Excel,... Auch WebUntis wird unterstützt [[JR_08]](Quellenverzeichnis.md#jr_08)|
+| **Digitales Türschild [[JR_06]](Quellenverzeichnis.md#jr_06)**| Touch-Screen (kein E-Paper) | Farbe                |  Ethernet, NFC-Option verfügbar               | Power over Ethernet (PoE) → Kabelanschluss nötig | Keine Angabe                           | LEDs rund um Display (rot, gelb, grün) zur Hervorhebung der Raumbelegung, Sofortbuchung über Touch/NFC      |
+| **ROOMZ [[JR_03]](Quellenverzeichnis.md#jr_03)**              | E-Paper                | Schwarz-Weiß         | WLAN                                        | 8000mAh, 4 Jahre                      | MyRoomz-App zur Buchung einzelner definierter Arbeitsbereiche [[JR_10]](Quellenverzeichnis.md#jr_10) | MyRoomz-App bietet Lageplanansicht des Gebäudes mit Übersicht aller Räume mit Markierung ob sie belegt sind oder nicht [[JR_10]](Quellenverzeichnis.md#jr_10), ROOMZ Sensor zur Vermeidung von Ghost-Meetings [[JR_09]](Quellenverzeichnis.md#jr_09), Sofortbuchung über Touchleiste am Gehäuse |
+| **Beetronics [[JR_07]](Quellenverzeichnis.md#jr_07)**         | High Brightness Full HD Touchscreen | Farbe                | Display Port, HDMI, VGA, USB-C, Unterstützung aller gängigen Betriebssysteme | Netzteil (d.h. Stromanschluss) denn braucht 12.7W (Betrieb)/0.4W (Standby) | Einfaches Plug-and-Play, sonst eigener Treiber für verschiedene Betriebssysteme verfügbar | Keine spezifischen Features angegeben, aber allgemein sehr vielfältig universell einsetzbar                                                                       |
 
 ## Auswertung der Rechercheergebnisse
 
 ### Vor- und Nachteile der einzelnen Produkte
 
-Table: Vor-und Nachteile der 4 Displayprodukte { #_tab_3.2 }
+Table: Vor-und Nachteile der vier Displayprodukte { #_tab_3.2 }
 
 | Hersteller     | Vorteile                                                                                               | Nachteile                                                                                      |
 | -------------- | ------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------- |
@@ -73,28 +73,17 @@ Basierend auf der Analyse der Vor- und Nachteile der Konkurrenzprodukte (vgl. []
 ### Ansätze zur Verbesserung der Konkurrenzfähigkeit auf dem Markt
 
 Um sich von den zahlreichen Konkurrenzprodukten abzuheben, gibt es einige Ansätze.
-Denn auch wenn es sich um ein E-Paper Display handelt, wäre es eine Idee eine gewisse Interaktion für zum Beispiel spontane Raumbuchung eingeplanen, die energiesparend und auch ohne Touchfunktion umsetzbar ist. Auch ein farbiges E-Paper-Display würde dazu beitragen das eher schlichtes Produkt für den Benutzer optisch ansprechender zu gestalten.
-Das zentrale Alleinstellungsmerkmal ist jedoch das Entwickeln eines Konzeptes, indem keine zusätzliche externe Infrastruktur gebraucht wird. Denn alle obigen System werden zentral über eine Serverkomponente gesteuert und brauchen ggf. sogar eigene Funkverteiler. 
+Denn auch wenn es sich um ein E-Paper Display handelt, besteht die Möglichkeit eine gewisse Benutzerinteraktion für zum Beispiel spontane Raumbuchung zu integrieren, die energiesparend und auch ohne Touchfunktion umsetzbar ist. Auch ein E-Paper-Display mit Farbunterstützung würde dazu beitragen das eher schlichtes Produkt für den Kunden optisch ansprechender zu gestalten und sich von der Masse abzuheben.
+
+Das zentrale Alleinstellungsmerkmal ist jedoch das Entwickeln eines möglichst generischen Konzeptes, das sehr flexibel einsetzbar ist.
+Denn eine Einschränkung obigen System ist, dass alle zentral über eine Serverkomponente gesteuert werden und teilweise sogar eigene Funkverteiler brauchen.
 Dies ist für den Benutzer mit viel Aufwand und Kosten verbunden und lohnt sich nur für sehr große Organisationen. 
 
 Zudem ist man stets von einer externen Softwarekomponente abhängig, denn die Display Ansteuerungsschnittstelle wird ebenfalls vom Hersteller in Form von einem Server (vgl. Wizepanel) oder einer App (vgl. ROOMZ) geliefert, sodass hier eine weitere große Abhängigkeit entsteht.
 
-Genau hier sieht das Projektteam die potentielle Stärke ihrer Raumanzeige. Es soll ein standalone-System darstellen, dass sowohl völlig unabhängig von jeglicher zusätzlicher Soft- und Hardware ist und autark funkionieren kann.
-Gleichzeitig besteht die Möglichkeit eine zentrale Verwaltungskomponente zu integrieren, um auch mehrere Displays verwalten zu können. 
-Diese Flexibilität gekoppelt mit der Prämisse, das System Open-Source zu gestalten, sprich der Kunde kann nach Belieben das System erweitern und anpassen, sorgt für ein Alleinstellungsmerkmal auf dem Markt.
+Genau hier setzt das Projektteam an und entwickelt ein Konzept, indem die Raumanzeige nicht zwingend eine zusätzliche externe Infrastruktur benötigt. 
+Es soll ein Option für eine Standalone-Funktionalität geben, sodass das Low-Power Display sowohl völlig unabhängig von jeglicher zusätzlicher Soft- und Hardware ist und autark funkionieren kann.
+Gleichzeitig besteht weiterhin die Möglichkeit eine zentrale Verwaltungskomponente zu integrieren, um auch mehrere Displays verwalten zu können. 
+Diese Flexibilität gekoppelt mit der Prämisse, das System Open-Source zu gestalten, sorgt für eine hohe Konkurrenzfähigkeit auf dem Markt. 
 
-Die Low-Power Raumanzeige ist somit nicht nur für die Hochschule attraktiv sondern auch in kleinern Kreisen und sogar im privaten Gebrauch einsetzbar.
-
-## Quellen
-
-[^1]: [Wizepanel Wilke Technology (zuletzt aufgerufen am 25.06.24)](https://wizepanel.de/produkte/#schilder)
-[^2]: [digitalSIGNAGE Digitale Türschilder (zuletzt aufgerufen am 25.06.24)](https://www.digitalsignage.de/digitale-tuerschilder.html)
-[^3]: [ROOMZ Display (zuletzt aufgerufen am 25.06.24)](https://roomz.io/roomz_display)
-[^4]: [Beetronics Touchscreen-Displays (zuletzt aufgerufen am 25.06.24)](https://www.beetronics.de/c-touchscreens)
-[^5]: [Wizepanel 9"7 classic (zuletzt aufgerufen am 25.06.24)](https://wizepanel.de/downloads/DATA_Sheet_WizePanel_97_Classic_DE.pdf)
-[^6]: [digitalSIGNAGE betrachtetes Digitales Türschild (zuletzt aufgerufen am 25.06.24)](https://www.digitalsignage.de/portfolio-hardware/xds-1078d-digital-signage-signboard.html)
-[^7]: [Beetronics 10 Zoll Touchscreen Datenblatt (zuletzt aufgerufen am 25.06.24)](https://www.beetronics.de/datasheets/product/341)
-[^8]: [Wizepanel Handbuch, S.52 (zuletzt aufgerufen am 25.06.24)](https://wizepanel.de/downloads/WizePanel_Manual_EN.pdf)
-[^9]: [Roomz Sensor (zuletzt aufgerufen am 25.06.24)](https://roomz.io/roomz_sensor/?lang=de)
-[^10]:[myRoomz App (zuletzt aufgerufen am 25.06.24)](https://roomz.io/myroomz-arbeitsplatzmanagement/?lang=de)
-
+Der Kunde kann somit nach Belieben das System erweitern und anpassen, wodurch die Low-Power Raumanzeige nicht nur für die Hochschule attraktiv ist sondern auch in kleinern Kreisen und sogar im privaten Gebrauch eingesetzt werden kann.
