@@ -36,6 +36,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://tha-lprd.github.io/Docs/dev/Handbuch/</loc>
+         <lastmod>2024-06-27</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://tha-lprd.github.io/Docs/dev/Hardware/</loc>
          <lastmod>2024-06-27</lastmod>
          <changefreq>daily</changefreq>
