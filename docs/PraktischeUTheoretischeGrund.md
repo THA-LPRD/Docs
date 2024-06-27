@@ -15,7 +15,7 @@
 ## Energiemanagement
 **Mario Wegmann**
 
-Computer verbrauchen auch ohne aktive Aufgabe Strom. Ohne spzeielle Anweisungen an den Computer wird der Stromverbrauch nicht gedrosselt, wodurch Energie verschwendet wird. Bei PCs fallen hierbei ACPI Sleep States ein, ACPI steht dabei für Advanced Configuration and Power Interface und ist ein offener Industriestandard für die Energieverwaltung bei Desktop-Computern //TODO Wikipedia. Die sogenannten ACPI sleep states ermöglichen es dem Betriebssystem zu steuern, welche Komponenten gedrosselt oder gar komplett abgeschaltet werden, um den Stromverbrauch zu minimieren. Auch bei Mikrocontrollern gibt es mehere Mechamisem, womit der Stromverbrauch reduziert werden kann. Da ein geringer Stromverbrauch eines der wichtigsten Kriterien diese Projekts ist, werden hier beispielhaft die Sleep States eines ESP32 erläutert. 
+Computer verbrauchen auch ohne aktive Aufgabe Strom. Ohne spzeielle Anweisungen an den Computer wird der Stromverbrauch nicht gedrosselt, wodurch Energie verschwendet wird. Bei PCs fallen hierbei ACPI Sleep States ein, ACPI steht dabei für Advanced Configuration and Power Interface und ist ein offener Industriestandard für die Energieverwaltung bei Computern [MW_02](Quellenverzeichnis.md). Die sogenannten ACPI sleep states ermöglichen es dem Betriebssystem zu steuern, welche Komponenten gedrosselt oder gar komplett abgeschaltet werden, um den Stromverbrauch zu minimieren. Auch bei Mikrocontrollern gibt es mehere Mechamisem, womit der Stromverbrauch reduziert werden kann. Da ein geringer Stromverbrauch eines der wichtigsten Kriterien diese Projekts ist, werden hier beispielhaft die Sleep States eines ESP32 erläutert. 
 
 ### Einfaches Delay
 
@@ -23,7 +23,7 @@ Die einfachste Möglichkeit einen ESP32 Mikrocontroller keine konkrete Aufgabe z
 
 ### Der Light-sleep Modus
 
-Deutlich besser ist da schon der Light-sleep. Wird dieser Modus aktiviert, so werden die teilweise Clock-Signale der digitale Peripherie, der meisten Teile des RAMs und der CPUs ausgeschalten und die Versorgungsspannung reduziert, dieses Verfahren nennt sich Clock-Gating //TODO Dadurch kann der Stromverbrauch deutlich reduziert werden, wie hoch die Reduktion ist, wird im Kapitel //TODO gemessen. Beim ESP32 gibt es nun verschiede Wakeup Sources um den Light-sleep wieder zu beenden. Unter anderem sind folgende Wakeup Sources möglich: 
+Deutlich besser ist da schon der Light-sleep. Wird dieser Modus aktiviert, so werden die teilweise Clock-Signale der digitale Peripherie, der meisten Teile des RAMs und der CPUs ausgeschalten und die Versorgungsspannung reduziert, dieses Verfahren nennt sich Clock-Gating [MW_03](Quellenverzeichnis.md). Dadurch kann der Stromverbrauch deutlich reduziert werden, wie hoch die Reduktion ist, wird im Kapitel [7.9 Strommessung von Mikrocontroller und Display](Hardware.md#strommessung-von-mikrocontroller-und-display) gemessen. Beim ESP32 gibt es nun verschiede Wakeup Sources um den Light-sleep wieder zu beenden. Unter anderem sind folgende Wakeup Sources möglich: 
 
 * Timer
 * Touchpad
@@ -42,21 +42,26 @@ Noch mehr Stromeinsparung kann mit dem Deep-sleep realisiert werden. Dabei werde
 ## Webanwendungen
 **Mario Wegmann**
 
-Fast alle Websites werden heutzutage dynamisch generiert. //TODO Damit Websiten für ein breites Spektrum an Besuchern ansprechend ist wird Targeting eingesetzt. Ein Beispiel hierfür ist Geotargeting, der Webserver erkennt das eine Frage aus einem bestimmten Land oder Region kommt und leitet den Besucher direkt auf die Niederlassungen des Unternehmens, welche für den Besucher am nächsten liegen. 
+Aufgrund den anforderungen und der komplexität von Websiten ist es nicht mehr praktikabel Inhalte komplett händisch in HTML, CSS und JavaScript zu erstellen. Zu groß und fehleranfällig ist die Wartung eines solchen manuel erstellten Konstrukts. Ein Beispiel hierfür wäre das erweiteren einer neuen Unterseite in der Menüleiste. Hier müsste jede andere Unterseite anegpasst werden, um die neue Unterseite von allen anderen Unterseiten aus zu erreichen. 
 
-Zudem wächst auch das Angebot an Webanwendungen rapide an. //TODO Webanwedungen sind Applikationen die direkt im Webbroswer ausgeführt werden können und somit keine Installation beim Nutzer voraussezten. 
+Stattdessen hat es sich etabliert für Websiten mit viel statischen Inhalt sogenannte Static Site Generators zu nutzen. Hierbei liegt der Fokus nur noch auf die Erstellung des eigentlichen Inhalts über eine simple Textdatei. Nach Fertigstellung des Inhalts erzeugt der Generator dann das restliche Gerüst der Website, so werden die Unterseiten generiert, das Navigationsmenü erstellt, Bilder optimiert und das Layout anhand des angegebenen Themes angewendet. 
 
-Um solche dynamische Websiten zu erstellen, bedarf es  
+Neben Websiten mit statischen Inhalten gibt es auch Websiten, dessen Inhalt dynamisch erstellt wird. In Social Media ist die Anzahl an Inhalten so enorm, das es nicht praktikabel wäre allen Personen die gleiche Timeline anzuzeigen. Stattdessenn wird pro Benutzer eine auf Ihn spezialisierte Timeline beim Aufruf generiert. 
 
-### Webframeworks
+Zuletzt gibt es auch Anwendungen die über den Webbrowser laufen und somit keine lokale Installation benötigen, ein Beispiel wäre hierfür die NextCloud, womit sich Dateien abspeichern, erstellen, ordnen und teilen lassen. Dank vieler Erweiterungen 
 
-Ein Webframework erleichtert die Entwicklung von Webanwendungen, indem es wiederkehrende Aufgaben vereinfacht und die Wiederverwendung von Code fördert. Durch die Abstraktion und Strukturierung von Code sowie die Objektorientierung der Daten wird die Entwicklungszeit verkürzt und die Wartbarkeit großer Anwendungen erheblich verbessert. Solche Frameworks bieten integrierte Lösungen für häufige Herausforderungen und unterstützen bewährte Designmuster, was zu effizienteren und besser strukturierten Entwicklungsprozessen führt. //TODO 
+Die letzen beiden genannten Kategorien erfordern viele Komponenten die zusammenarbeiten müssen um den Benutzer eine performante und benutzerfreundliche Erfahrung zu ermöglichen. Daher haben sich mehr und mehr verschiedene Technologien im Web entwickelt, die mit unterschiedlsichen Herangehensweisen versuchen die Anfoderungen zu erfüllen. 
 
-Gerade im Bereich der Webanwendungen lässt sich ein rasantes Tempo erkennen und viele Technologien entwickeln sich rasch oder ändern gar die Richtung. //TODO
 
-Die Grundbausteine einer Webanwendung sind HTML für den Inhalt, CSS für das Layout und JavaScript für Clientsitige interaktivität. Auf dem Server sind beliebte Programmiersprachen PHP, Python, Ruby, C# und auch JavaScript. 
+### Webtechnologien
+
+Moderne Webbrowser haben sich auf drei Programmiersprachen geeinigt um Websiten anzuzeigen. HTML beschreibt den Inhalt an sich, CSS beschreibt das aussehen und layout und JavaScript sorgt für die interaktivität im Browser beim Benutzer. Wie das Ergebnis in diesen drei Sprachen generiert wird bleibt dem Webserver überlassen. Prinzipiell lässt sich fast jede Programmiersprache verwenden um Websitecode zu erzeugen, beliebt sind jedoch PHP, Python, Ruby, C# und JavaScript (Node.JS) [MW_04](Quellenverzeichnis.md). 
+
+Für die realisierung werden Frameworks genutzt, ähnlich wie bei Static Site Generators, unterstützen Frameworks bei der realisierung von Websiten, indem es wiederkehrende Aufgaben vereinfacht und die Wiederverwendung von Code fördert. Durch die Abstraktion und Strukturierung von Code sowie die Objektorientierung der Daten wird die Entwicklungszeit verkürzt und die Wartbarkeit großer Anwendungen erheblich verbessert. NextCloud verwendet beispielsweise das PHP Framework Symfony [MW_05](Quellenverzeichnis.md)
+
 
 DOM Manipulation
 EMS
 TypeScript
+React
 Postgress und MySQL

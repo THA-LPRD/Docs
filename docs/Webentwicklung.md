@@ -11,14 +11,18 @@
 
 ### Verwendete Technologien
 
-Wie im Kapitel //TODO bereits erläutert ist es für die Entwicklung einer Webanwendung sehr sinnvoll ein Webframework einzusetzen. 
-Hierbei gibt es eine große Auswahl an möglichen Frameworks und auch Serverseitigen Programmiersprachen. Da JavaScript bereits im Standalone-Modus, wie auch im Netzwerk-Modus, verwendet wird um die Interaktion mit dem Displaymodul zu realisieren, ist es naheliegend, auch auf dem Server JavaScript zu nutzen. Diese Entscheidung ermöglichte eine einheitliche Codebasis sowohl im Frontend als auch im Backend, was die Entwicklung effizienter und die Wartung der Anwendung einfacher macht und zuletzt auch das erlernen neuer Programmiersprachen auf eine reduziert. Zudem wurde die Möglichkeit genutzt TypeScript anstatt Vanilla JavaScript zu verwenden, um die Vorteile zu nutzen, welche bereits im Kapitel //TODO erwähnt wurden. 
+Wie im Kapitel [3.9.1 Webtechnologien](PraktischeUTheoretischeGrund.md#webtechnologien) bereits erläutert ist es für die Entwicklung einer Webanwendung sehr sinnvoll ein Webframework einzusetzen. 
+Hierbei gibt es eine große Auswahl an möglichen Frameworks und auch Serverseitigen Programmiersprachen. Da JavaScript bereits im Standalone-Modus, wie auch im Netzwerk-Modus, verwendet wird um die Interaktion mit dem Displaymodul zu realisieren, ist es naheliegend, auch auf dem Server JavaScript zu nutzen. Diese Entscheidung ermöglichte eine einheitliche Codebasis sowohl im Frontend als auch im Backend, was die Entwicklung effizienter und die Wartung der Anwendung einfacher macht und zuletzt auch das erlernen neuer Programmiersprachen auf eine reduziert. Zudem wurde die Möglichkeit genutzt TypeScript anstatt Vanilla JavaScript zu verwenden, um die Vorteile zu nutzen, welche ebenso bereits im Kapitel [3.9.1 Webtechnologien](PraktischeUTheoretischeGrund.md#webtechnologien) erwähnt wurden. 
 
 Für das Frontend wurde React ausgewählt. Durch React lassen sich Komponenten realisieren, welche modular wiederverwendet werden können. Dadurch wird es vermieden doppelten Code zu verfassen und Änderungen an einer Komponente werden global in der gesamten Webanwendung wiedergespiegelt. 
 
 Als Webframework wurde Next.js ausgewählt, da es React unter anderem um serverseitiges Rendering erweitert. Darüber hinaus bietet Next.js eine nahtlose Integration von API-Routen und Middleware, was die Entwicklung von Full-Stack-Anwendungen erleichtert. 
 
 Für das speichern der Daten wurde PostgresSQL als Datenbank ausgewählt. Als ORM wurde Prisma gewählt.  //TODO
+Prisma ist ein Object-Relational-Mapper (ORM). ORMs ermöglichen das typensichere Arbeiten in objektroientierten Programmiersprachen 
+
+
+Prisma ORM ist nützlich, weil es die Arbeit mit Datenbanken durch typsichere, deklarative Datenmodellierung und effiziente Datenbankmigrationen erheblich vereinfacht und optimiert. Es generiert automatisch TypeScript-Typen, was zu umfassender Typsicherheit und intelligenter Autovervollständigung in IDEs führt, wodurch die Produktivität und Codequalität verbessert werden. Prisma abstrahiert komplexe SQL-Abfragen und ermöglicht einfache CRUD-Operationen, reduziert die Notwendigkeit für manuelles SQL-Schreiben und minimiert potenzielle Fehler. Zudem unterstützt es verschiedene Datenbanksysteme und verfügt über eine starke Community sowie umfangreiche Dokumentation, was den Einstieg und die kontinuierliche Nutzung erleichtert.
 
 Für den Webserver wurden Linux und Docker verwendet. Das quelloffene Linux ist bekannt für seine Stabilität, Sicherheit und Performance, was es zu einer idealen Wahl für den Einsatz als Webserver macht. Docker ergänzt diese Vorteile durch die Bereitstellung einer containerisierten Umgebung, die eine konsistente und isolierte Ausführung von Anwendungen ermöglicht. Dies erleichtert die Skalierung und Verwaltung der Anwendung erheblich und sorgt dafür, dass sie in unterschiedlichen Umgebungen gleichbleibend funktioniert. Docker-Container bieten zudem eine einfache Möglichkeit, Abhängigkeiten zu verwalten und die Bereitstellung von Updates zu automatisieren. 
 
@@ -39,7 +43,7 @@ Table: Die Systemeigenschaften der vom RZ erhaltenen VM.  { #_tab_MW_1 }
 | Hostname | lprd |
 
 Zudem wurde vom RZ auch gleich ein DNS Eintrag gesetzt und die Domain lprd.informatik.tha.de verweist auf diese VM. 
-Neben dem Betriebssystem liefert die VM auch gleich noch eine Firewall standardmäßig mit, hier setzt das RZ die Variante arno-iptables ein. [MW_01] 
+Neben dem Betriebssystem liefert die VM auch gleich noch eine Firewall standardmäßig mit, hier setzt das RZ die Variante arno-iptables ein [MW_01](Quellenverzeichnis.md). 
 
 ### Ersteinrichtung
 
