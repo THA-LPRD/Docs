@@ -67,7 +67,7 @@ Der Zweck der VM ist primär die Entwicklung der Webanwendung und somit nicht de
 Für eine produktive Umgebung ist eine sorgfältig überlegte Backupstrategie unabdingbar. Hierbei sollte genaustens überlegt werden, wie der Backupprozess implementiert und automatisiert wird und wie erstellte Backups auf Konsistenz und wiederherstellbarkeit überprüft werden können. Auch der Speicherort von Backups sollte bedacht werden und der 3-2-1 Regel folgen. 
 
 //TODO
-Grafik Techstack
+Grafik Techstack ohne Logos
 
 
 
