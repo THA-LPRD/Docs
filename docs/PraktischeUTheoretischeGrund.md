@@ -44,10 +44,6 @@ Bistabile LCD Displays haben den Vorteil das sie im gegensatz zu LCD keinen durc
 ### ePaper
 ePaper hat ein ähnliches Konzept wie Bistabile LCD Displays, sie verbrauchen nur dann Strom wenn das Bild aktuellsiert wird. Hier werden geladene Farbpartikel in sehr kleinen Zellen eingesperrt. Je nach welche Ladung auf eine Zelle ausgeübt wird, werden manche Farbpartikel angezogen oder weggestoßen. Der Nachteil ist das die Aktuellsierung eines Bildes je nach ePaper Display technologie sehr lange dauern kann, das ist weil, wie man sich vorstellen kann man muss man einen Pixel mehrmals laden um wirklich alle Farbpartikel abzustoßen die man abstoßen will oder genau umgekehrt. Das resultiert in einer Aktuelliesierungs rate von bis zu 26 Sekunden oder Kürzer je nach Farbleistung. Ein weiter Nachteil ist das Farbpartikel nur Negativ oder Positiv geladen werden können, was in nur 2 Farben resultiert. Durch mehrere Ebenen kann das Display mehrere Farben annehmen, aber bei weitem nicht so viele wie beim Bistablem LCD. Der Vorteil ist das sie noch weniger Strom verbauchen beim aktuellsieren als die Bistablien LCDs[[STA_07]](Quellenverzeichnis.md#STA_07).
 
-
-<!-- https://www.orientdisplay.com/de/knowledge-base/oled-basics/how-does-oled-work/#:~:text=OLED%20funktioniert%20wie%20eine%20LED,Materialien%20sind%20Gelb%20und%20Blau.
-https://www.orientdisplay.com/de/knowledge-base/lcd-basics/bistable-lcd/#:~:text=Bistabiles%20LCD%20kann%20ein%20Bild,wenn%20die%20Stromversorgung%20unterbrochen%20wird
-https://www.glyn.de/produkte/displays/epaper-displays/wie-funktionieren-epaper/ -->
 ## Akku Technologien
 <!-- STASA -->
 ## Funktechnologien
