@@ -1,9 +1,10 @@
 # Einleitung
+
 _Jannis Gröger_
 
 ## Motivation
 <!-- Hinführen zum Thema, Leser interessieren -->
-Ob es bei Meetingräumen einer Firma, Klassenzimmern einer Schule, Seminarräumen einer Tagungsstätte oder Vorlesungssälen der Hochschule ist - anzuzeigen, ob dieser Raum belegt ist und was dort gerade stattfindet, ist eine Herausforderung für den Betreiber und die Lösung für Schüler, Mitarbeiter oder Tagende nicht gerade benutzerfreundlich. Das Austauschen von Papieren, die die Raumbelegungsdaten anzeigt, bedeutet einen hohen Mehraufwand für Zuständige und einen nicht nachhaltigen Ressourcenverbrauch, während sich bei der Verwendung von digitalen Lösungen immer wieder die Frage nach der benötigten Infrastruktur zur Stromversorgung dieser Anzeigen stellt. 
+Ob es bei Meetingräumen einer Firma, Klassenzimmern einer Schule, Seminarräumen einer Tagungsstätte oder Vorlesungssälen der Hochschule ist - anzuzeigen, ob dieser Raum belegt ist und was dort gerade stattfindet, ist eine Herausforderung für den Betreiber und die Lösung für Schüler, Mitarbeiter oder Tagende nicht gerade benutzerfreundlich. Das Austauschen von Papieren, die die Raumbelegungsdaten anzeigt, bedeutet einen hohen Mehraufwand für Zuständige und einen nicht nachhaltigen Ressourcenverbrauch, während sich bei der Verwendung von digitalen Lösungen immer wieder die Frage nach der benötigten Infrastruktur zur Stromversorgung dieser Anzeigen stellt.
 
 Aus diesem Grund sind so genannte Low Power Raumanzeigen eine interessante Alternative zu oben genannten Lösungen, da sie durch Optimierung des Stromverbrauchs nicht nur sehr energieeffizient, sondern durch Darstellen der Informationen auf einem Display eine umweltschonende Lösung für das Problem bieten. Darüber hinaus können solche Raumanzeigen meist über eine zentrale Software verwaltet und gesteuert werden und besitzen neben den oben genannten Nutzungsmöglichkeiten ein breites Anwendungsspektrum.  
 
