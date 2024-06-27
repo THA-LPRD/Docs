@@ -746,6 +746,48 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#auswahl-der-akkukomponenten" class="md-nav__link">
+    <span class="md-ellipsis">
+      Auswahl der Akkukomponenten
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Auswahl der Akkukomponenten">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#akku" class="md-nav__link">
+    <span class="md-ellipsis">
+      Akku
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bms" class="md-nav__link">
+    <span class="md-ellipsis">
+      BMS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ladegerat" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ladegerät
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#zusammenbau-der-akkupacks" class="md-nav__link">
     <span class="md-ellipsis">
       Zusammenbau der Akkupacks
@@ -1097,7 +1139,39 @@
 
 <h1 id="hardware">Hardware<a class="headerlink" href="#hardware" title="Permanent link">¶</a></h1>
 <h2 id="auswahl-des-mikrocontrollers">Auswahl des Mikrocontrollers<a class="headerlink" href="#auswahl-des-mikrocontrollers" title="Permanent link">¶</a></h2>
+<ul>
+<li>GPIO’s</li>
+<li>Stromverbrauch</li>
+<li>Vorteile (Charger, …)</li>
+<li>Bauform</li>
+<li>Speicher</li>
+</ul>
 <h2 id="auswahl-der-displaytechnologie">Auswahl der Displaytechnologie<a class="headerlink" href="#auswahl-der-displaytechnologie" title="Permanent link">¶</a></h2>
+<h2 id="auswahl-der-akkukomponenten">Auswahl der Akkukomponenten<a class="headerlink" href="#auswahl-der-akkukomponenten" title="Permanent link">¶</a></h2>
+<h4 id="akku">Akku<a class="headerlink" href="#akku" title="Permanent link">¶</a></h4>
+<p>Der ausgewählte Akku, aus verschiedenen Akku-Technologien, die in Kapitel 2 genannt waren, war der klassische Li-Ion-Akku, aus mehreren Gründen. Aufgrund der Anzahl und Position des Systems, die von Akku betrieben sein wurde, war der Sicherheitsaspekt ein entscheidender Faktor. Deswegen wurden die LiPo-Akkus nicht mehr betrachtet.  
+Der Vergleich zwischen Li-Ion-Akkus und LiFePo<sub>4</sub>-Akkus hatte eindeutige Unterschiede geliefert. Die LiFePo<sub>4</sub>-Akkus repräsentieren die sicherste Variante, andererseits hatten die Li-Ion-Akkus eine höhere Nennspannung von 3,7V.  
+Aus Sicherheitsblick betrachtet wurden die LiFePo<sub>4</sub>-Akkus ausgewählt. Die Nennspannung von 3,2V hat jedoch gegen die LiFePo<sub>4</sub>-Akkus gesprochen, da der ausgewählte Mikrocontroller, nämlich den XIAO ESP32-S3, Betriebsspannung zwischen 3,2V und 4,2V angefordert hat. Obwohl die LiFePo<sub>4</sub>-Akkus die Betriebsspannung liefern konnten, konnten sie das System nicht betreiben, da die genannte Betriebsspannung in Fall ohne schwere Last gemeint ist. Wegen dies wurden allerdings die Li-Ion-Akkus gewählt.  
+Der nächste Schritt war, eine vernünftige Kapazität zu finden, sodass die Akkus das System lang genug betreiben konnten. Dazu hat man die Schätzungen mit Verbrauchmessungen unterstützt und ungefähr die benötigte Akku-Kapazität geschätzt. Eine Akkulaufzeit von einem Jahr war gewünscht und dementsprechend war die Große des Akkus gewählt, nämlich ~10000 mAh.  
+Ein Akku mit so einer Kapazität war aber nicht einfach zu finden. Deswegen wurde das Akkupack aus zwei ~5000 mAh Akkus gebaut. Um von zwei ~5000 mAh auf die gewünschte Kapazität zu kommen, wurden die Akkus in parallel verbunden, da so die Kapazität sich verdoppelt; im Vergleich, wenn man die in Reihe anschließt, so wird die Spannung verdoppelt.<br>
+Bei der Suche nach Akkus muss man einige Sachen beachten. Der Formfaktor der Akku, minimale Kapazität, ob der Akku schon ein eingebautes BMS hat und der Entladestrom.<br>
+Es würde die BAK N21700CD-53E ausgewählt, die auf <a href="#_fig_akku">Abbildung 1</a> zu sehen ist.</p>
+<p><figure id="_fig_akku"><a class="glightbox" href="../img/Li-Ion-Akku.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../img/Li-Ion-Akku.png" width="60%">Abbildung 3</a><figcaption>Abbildung 1: Li-Ion-Akku <a href="../Quellenverzeichnis/#bk_09">[BK_09]</a> </figcaption></figure></p>
+<p>Aus der Tabelle der technischen Daten auf der <a href="#_fig_akku_tabelle">Abbildung 1</a> des betrachteten Akkus ist es klar zu sehen, dass alle benötigten Parameter erfüllt sind. Der Formfaktor ist aus der Durchmesser und Höhe (die ersten zwei Ziffern von Durchmesser und normalerweise erste drei Ziffern von Höhe → 21700).  </p>
+<p><figure id="_fig_akku_tabelle"><a class="glightbox" href="../img/Li-Ion-Akku-Tabelle.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../img/Li-Ion-Akku-Tabelle.png" width="60%">Abbildung 2</a><figcaption>Abbildung 2: Technische Daten von BAK N21700CD-53E <a href="../Quellenverzeichnis/#bk_09">[BK_10]</a> </figcaption></figure></p>
+<h4 id="bms">BMS<a class="headerlink" href="#bms" title="Permanent link">¶</a></h4>
+<p>Um den Akkupack sicher betreiben zu können, wurde ein BMS benötigt. Wie bereits in Kapitel 2 unter Akku-Technologien erwähnt, schützt ein BMS die Akkus vor Tiefentladung, Überladung, Kurzschluss und Überstrom.  </p>
+<p>Beim genaueren Blick auf ein 1S-BMS, auf <a href="#_fig_bms">Abbildung 3</a>, wo 1S die Anzahl der Zellen in Serie repräsentiert, erkennt man ein IC und zwei NMOS-Transistoren. Die NMOS-Transistoren dienen als Schalter, die vom IC durch Gate-Spannung angesteuert werden.  </p>
+<p><strong>Überladungsschutz</strong>: Wenn die Ladespannung 4,2V überschreitet, sendet der IC ein Signal, das die Gate-Spannung eines NMOS-Transistors steuert, wodurch dieser den Stromkreis unterbricht.  </p>
+<p><strong>Tiefentladungsschutz</strong>: Bei Tiefentladung wird ein ähnlicher Mechanismus aktiviert, allerdings bei 2,5V. Der IC sendet ein Signal an den zweiten NMOS-Transistor, um den Stromfluss zu unterbrechen, sobald die Spannung einen kritischen Wert erreicht.  </p>
+<p><strong>Überstromschutz</strong>: Der IC überwacht den Stromfluss kontinuierlich. Wenn der Strom über den zulässigen Grenzwert steigt, schaltet der IC einen der NMOS-Transistoren ab, um den Stromfluss zu unterbrechen und die Batterie vor Schäden zu schützen.  </p>
+<p><strong>Kurzschlussschutz</strong>: Auch bei einem Kurzschluss, bei dem sehr hohe Ströme fließen, erkennt der IC diese Situation und unterbricht sofort den Stromfluss durch Abschalten der NMOS-Transistoren.  </p>
+<p>Das BMS, das auf <a href="#_fig_bms"></a> dargestellt ist, liefert alle diese Features und wurde für den Aufbau von dem Akkupack ausgewählt.  </p>
+<p><figure id="_fig_akku"><a class="glightbox" href="../img/Li-Ion-BMS.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../img/Li-Ion-BMS.png" width="60%"></a><figcaption>Abbildung 3: Li-Ion-Akku <a href="../Quellenverzeichnis/#bk_11">[BK_11]</a> </figcaption></figure></p>
+<h4 id="ladegerat">Ladegerät<a class="headerlink" href="#ladegerat" title="Permanent link">¶</a></h4>
+<p>Wie bereits in Kapitel 2 unter Akku-Technologien erwähnt, benötigen die Li-Ion-Akkus ein spezielles Ladegerät, nämlich ein Ladegerät, der in die Lage ist beim Laden der Akkus, erste 80% konstanter Strom zu liefern und danach 20% die Akkus mit konstanter Spannung zu laden. 
+Man kann solche Ladegeräten ohen viele Schwierigkeiten finden, sind allerdings teuer. Bei der Suche nach einen muss man eine Sache beachten, nämlich den Zellenanzahl. Die ausgewählte Ladegerät ist auf die <a href="#_fig_ladegeraet">Abbildung 4</a> zu sehen.</p>
+<p><figure id="_fig_ladegeraet"><a class="glightbox" href="../img/Li-Ion-Ladegeraet.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../img/Li-Ion-Ladegeraet.png" width="60%"></a><figcaption>Abbildung 4: Ladegerät für Li-Ion-Akkus <a href="../Quellenverzeichnis/#bk_12">[BK_12]</a> </figcaption></figure></p>
 <h2 id="zusammenbau-der-akkupacks">Zusammenbau der Akkupacks<a class="headerlink" href="#zusammenbau-der-akkupacks" title="Permanent link">¶</a></h2>
 <p><strong>Mario Wegmann</strong>
 //TODO
@@ -1129,8 +1203,8 @@ Zuletzt sollte vor dem Verbinden darauf geachtet werden, dass die Zellen die gle
 <h3 id="versuchsaufbau">Versuchsaufbau<a class="headerlink" href="#versuchsaufbau" title="Permanent link">¶</a></h3>
 <p><strong>Mario Wegmann</strong></p>
 <p>Der Prozess um ein Bild per WLAN zu empfangen, zu verarbeiten und es auf einem ePaper Display darzustellen ist sehr umfangreich und während den verschiedenen Phasen ist der Stromverbrauch sehr schwankend. Daher kann mit einer staatischen Strommessung kein aussagekräftiges Messergebnis produziert werden. Um den Strom dynamisch zu messen und dabei schnelle Änderungen sichtbar zu machen eignet sich daher ein Oszilloskop als Messinstrument. Da das Oszilloskop jedoch nur Spannungen messen kann muss hier der Umweg über einen Shunt-Widerstand gemacht werden. Der Shunt-Wiederstand wird dabei in Reihe zwischen der zu messenden Last und der Masse geschaltet, mit einem Tastkopf an beiden Enden des Shunt-Widerstands verbunden, kann nun der Spannungsabfall über den Shunt-Widerstand gemessen werden. Abschließend kann über das Ohm'sche Gesetz aus dem Widerstandswert und der Spannung der durchflossene Strom berechnet werden. Viele Oszilloskope bieten daher auch die Möglichkeit an, die Achsenbeschriftung auf mA Umzuschalten um Messergebnisse mit der korrekten Einheit festhalten zu können. Es muss jedoch beachtet werden, dass das Oszilloskope nicht automatisch das Ohm'sche Gesetz anwendet, da es keine Kenntniss über den Widerstandswert hat. Somit muss dies bei den Messergebnissen mit verrechnet werden, oder alternativ darauf geachtet werden, dass der Widerstandwert des Shunt-Widerstands 1 Ω so genau wie möglich erreicht. Des weiteren ist unbedingt darauf zu achten das der Shunt-Widerstand zwischen Last und Masse hängt, wenn es sich um eine netzbetriebene Schaltung handelt. Zwar wäre das Messergebnis theoretisch auch korrekt, jedoch würde durch die Erdung der Masse am Tastkopft ein Kurzschluss entstehen, wenn die Masse vom Tastkopft mit einer anderem Spannungspegel, als der Masse der Schaltung verbunden wird. Dieser Kurzschluss könnte das Oszilloskop beschädigen. </p>
-<p>In <a href="#_fig_MW_01">Abbildung 1</a> erkennt man den Versuchsaufbau für die Messung. Als Spannungsquelle dient ein Labornetzteil. Vom Pluspol des Labornetzteils führt ein Draht zum V<sub>cc</sub> Pin des ESP32. Von GND des ESP32 führ ein Draht zum 1 Ω Shunt Widerstand. An diesem ist auch der Tastkopf des Oszilloskopes angeschlossen. Nach dem Shunt Widerstand führ ein Draht zu einem Multimeter. Das Multimeter dient zur Kontrolle, ob die vom Oszilloskop ausgegebenen Werte plausibel sind. Abschließend ist die der zweite Kontakt vom Multimeter mit dem Minuspol des Labornetzteils verbunden. </p>
-<p><figure id="_fig_MW_01"><a class="glightbox" href="../img/Strommessung_7_6.jpeg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../img/Strommessung_7_6.jpeg" width="80%"></a><figcaption>Abbildung 1: Der Versuchsaufbau mit Oszilloskop, Multimeter und Labornetzteil </figcaption></figure></p>
+<p>In <a href="#_fig_MW_01">Abbildung 5</a> erkennt man den Versuchsaufbau für die Messung. Als Spannungsquelle dient ein Labornetzteil. Vom Pluspol des Labornetzteils führt ein Draht zum V<sub>cc</sub> Pin des ESP32. Von GND des ESP32 führ ein Draht zum 1 Ω Shunt Widerstand. An diesem ist auch der Tastkopf des Oszilloskopes angeschlossen. Nach dem Shunt Widerstand führ ein Draht zu einem Multimeter. Das Multimeter dient zur Kontrolle, ob die vom Oszilloskop ausgegebenen Werte plausibel sind. Abschließend ist die der zweite Kontakt vom Multimeter mit dem Minuspol des Labornetzteils verbunden. </p>
+<p><figure id="_fig_MW_01"><a class="glightbox" href="../img/Strommessung_7_6.jpeg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../img/Strommessung_7_6.jpeg" width="80%"></a><figcaption>Abbildung 5: Der Versuchsaufbau mit Oszilloskop, Multimeter und Labornetzteil </figcaption></figure></p>
 <h3 id="messergebnisse">Messergebnisse<a class="headerlink" href="#messergebnisse" title="Permanent link">¶</a></h3>
 <p><strong>Mario Wegmann</strong></p>
 <p>In <a href="#_tab_MW_02">Tabelle 1</a> kann man einen kompletten Refresh des 7,6 Zoll großen Displays erkennen. Hierbei wird auf dem ePaper Display zuerst weiß gestellt, anschließend wird nach einer Pause eine in der Firmware hard codierte Bitmap auf dem Display angezeigt. Zum Abschluss wird erneut ein weißes Bild dargestellt. In diesem Teilversuch wurde der Stromverbrauch vom WLAN noch nicht gemossen. </p>
@@ -1416,6 +1490,8 @@ Zuletzt sollte vor dem Verbinden darauf geachtet werden, dass die Zellen die gle
         </span>
         <nav>
             
+            <a href="mailto:118850444+bklaric1@users.noreply.github.com">Benjamin Klaric</a>, 
+            <a href="mailto:benjamin.klaric01@gmail.com">bklaric</a>, 
             <a href="mailto:mario.wegmann@hs-augsburg.de">mwegmann</a>, 
             <a href="mailto:lukic.stasa@outlook.com">stasa</a>
         </nav>
