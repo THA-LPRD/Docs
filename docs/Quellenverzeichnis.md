@@ -1,5 +1,28 @@
 # Quellenverzeichnis
 
+
+<a id="jg_01"></a>[JG_01] Prof. Dr. D. Wöhrle, Prof. Dr. Hendrik Wöhrle, Materialien in Rechnern und digitalen Computern, [https://onlinelibrary.wiley.com/doi/full/10.1002/ciuz.201900004](https://onlinelibrary.wiley.com/doi/full/10.1002/ciuz.201900004), Zugriffsdatum: 2024-06-20, Herausgabedatum: 2020-02-05
+
+<a id="jg_02"></a>[JG_02] Jens Lienig, Hans Brümmer, Elektronische Gerätetechnik, Springer Vieweg Berlin, Heidelberg, Herausgabedatum: 2024-05-03
+
+<a id="jg_03"></a>[JG_03] Sandor Vanja, Christian Weber, Helmut Bley, Klaus Zeman, CAx für Ingenieure, Springer-Verlag Berlin Heidelberg, 2. Auflage 2009
+
+<a id="jg_04"></a>[JG_04] Hubert Högl, Fablab, [https://onlinelibrary.wiley.com/doi/full/10.1002/ciuz.201900004](https://onlinelibrary.wiley.com/doi/full/10.1002/ciuz.201900004), Zugriffsdatum: 2024-06-27, Herausgabedatum: 2023-02-01
+
+
+<a id="jg_05"></a> [JG_05] Thomas Jackson, Vollständig vergleichende Analys PLA vs. PETG, [https://sunlu.com.de/blogs/products-knowledge/vollstandige-vergleichende-analyse-pla-vs-petg#:~:text=PLA%20ist%20ein%20biologisch%20abbaubarer,sich%20aber%20leichter%20drucken%20l%C3%A4sst.](https://sunlu.com.de/blogs/products-knowledge/vollstandige-vergleichende-analyse-pla-vs-petg#:~:text=PLA%20ist%20ein%20biologisch%20abbaubarer,sich%20aber%20leichter%20drucken%20l%C3%A4sst.), Zugriffsdatum: 2024-06-27, Herausgabedatum: 2024-02-21
+
+- <a id="jr_01"></a>[JR_01] Wizepanel Wilke Technology [https://wizepanel.de/produkte/#schilder](https://wizepanel.de/produkte/#schilder), zuletzt aufgerufen am 25.06.24
+- <a id="jr_02"></a>[JR_02] digitalSIGNAGE Digitale Türschilder [https://www.digitalsignage.de/digitale-tuerschilder.html](https://www.digitalsignage.de/digitale-tuerschilder.html), zuletzt aufgerufen am 25.06.24
+- <a id="jr_03"></a>[JR_03] ROOMZ Display [https://roomz.io/roomz_display](https://roomz.io/roomz_display), zuletzt aufgerufen am 25.06.24
+- <a id="jr_04"></a>[JR_04] Beetronics Touchscreen-Displays [https://www.beetronics.de/c-touchscreens](https://www.beetronics.de/c-touchscreens), zuletzt aufgerufen am 25.06.24
+- <a id="jr_05"></a>[JR_05] Wizepanel 9"7 classic Datenblatt [https://wizepanel.de/downloads/DATA_Sheet_WizePanel_97_Classic_DE.pdf](https://wizepanel.de/downloads/DATA_Sheet_WizePanel_97_Classic_DE.pdf), zuletzt aufgerufen am 25.06.24
+- <a id="jr_06"></a>[JR_06] digitalSIGNAGE digitales Signboard [https://www.digitalsignage.de/portfolio-hardware/xds-1078d-digital-signage-signboard.html](https://www.digitalsignage.de/portfolio-hardware/xds-1078d-digital-signage-signboard.html), zuletzt aufgerufen am 25.06.24
+- <a id="jr_07"></a>[JR_07] Beetronics 10 Zoll Touchscreen Datenblatt [https://www.beetronics.de/datasheets/product/341](https://www.beetronics.de/datasheets/product/341), zuletzt aufgerufen am 25.06.24
+- <a id="jr_08"></a>[JR_08] Wizepanel Handbuch, S.52 [https://wizepanel.de/downloads/WizePanel_Manual_EN.pdf](https://wizepanel.de/downloads/WizePanel_Manual_EN.pdf), zuletzt aufgerufen am 25.06.24
+- <a id="jr_09"></a>[JR_09] ROOMZ Sensor [https://roomz.io/roomz_sensor/?lang=de](https://roomz.io/roomz_sensor/?lang=de), zuletzt aufgerufen am 25.06.24
+- <a id="jr_09"></a>[JR_10] myRoomz App [https://roomz.io/roomz_sensor/?lang=de](https://roomz.io/roomz_sensor/?lang=de), zuletzt aufgerufen am 25.06.24
+
 Autor, Titel, Bezugsquelle, Zugriffsdatum, Herausgabedatum 
 
 <a id="STA_01">[STA_01] https://wiki.seeedstudio.com/xiao_esp32s3_getting_started/</a>
