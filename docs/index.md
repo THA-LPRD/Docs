@@ -1,3 +1,7 @@
+---
+fontsize: 44pt
+---
+
 # Low Power Room Display
 
 ---
@@ -6,6 +10,7 @@
 Beispiel: Erstes Bild im Kapitel 2.1 -> Abbildung 2.1.1 -->
 
 <!-- So wird ein Bild angegeben -->
+
 <!-- Keyword "Figure:" Abbildung <Nummer>: <Bildunterschrift> -->
 Figure: Abbildung 2.1.1: Das ist ein Bild { #_fig_211 }
 

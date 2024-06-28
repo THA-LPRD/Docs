@@ -62,7 +62,8 @@ plugins:
       cover_title: Low Power Room Display
       cover_subtitle: Dokumentation des LPRD-Projekts
       enabled_if_env: PDF
-
+      exclude_pages:
+        - 'about/'
 
 theme:
   name: material
