@@ -1,7 +1,9 @@
 # Systemkonzept
+**Julia Reuter**
+
 Basierend auf den Rechercheergebnissen aus Kapitel 3 hat das Team folgendes Systemkonzept für die Low-Power Raumanzeige entwickelt.
 
-## 1. Grundaufbau der Hardware
+## Grundaufbau der Hardware
 
 Figure: Visualisierung des Grundkonzepts des Systems { #_fig_konzept }
 
@@ -18,12 +20,12 @@ Angedacht sind zudem zwei Knöpfe, die Benutzerinteraktionen ermöglichen. Zum B
 Verbaut werden die einzelnen Komponenten in einem kompakten 3D-gedruckten Gehäuse, welches sich einfach und ohne externe Kabel montieren lässt.
 
 
-## 2. Allgemeine Software-Funktionen
+## Allgemeine Software-Funktionen
 
 Da die gesamte Ansteuerung des Systems über einen Mikrocontroller erfolgt, muss dieser entsprechend programmiert werden. Er bildet die zentrale Steuereinheit, die sich mit entsprechender Firmware um das Empfangen und Senden von Daten, die Displayansteuerung und das Powermanagement kümmert. 
 Durch ihn soll es dem Benutzer ermöglicht werden, über eine einfache und intuitive Schnittstelle, wie beispielsweise eine Website, das Display mit Inhalten zu versorgen. So können ohne viel Aufwand, Bilddateien auf der Website hochladen und mit nur einem Klick über eine WLAN-Verbindung an das Modul geschickt werden. Auch die Displayverwaltung und diverse Einstellungen werden über diese Art von Interface bequem gesteuert.
 
-## 3. Potentielle Einsatzgebiete der Low-Power Raumanzeige
+## Potentielle Einsatzgebiete der Low-Power Raumanzeige
 
 In der Projektdefinition ist die Hochschule als konkreter Kunde genannt, weshalb der Fokus vor allem auf diesen spezifischen Anwendungsfall gerichtet ist. Hier besteht die Hauptidee darin, die Raumverfügbarkeit in Echtzeit anzuzeigen und über das Stattfinden von Veranstaltungen, Vorlesungen und Seminaren zu informieren. 
 
@@ -40,9 +42,9 @@ Im Standalone-Modus kann das Display am flexibelsten eingesetzt werden, da keine
 
 Im Netzwerkmodus ist das Konzept ähnlich, mit dem Unterschied, dass sich sowohl das Displaymodul als auch das Client-Gerät im gleichen WLAN, wie zum Beispiel dem eigenen Heimnetzwerk, befinden und kommunizieren.
 
-## 4. Die 3 Betriebsmodi der Raumanzeige im Vergleich
+## Die drei Betriebsmodi der Raumanzeige im Vergleich
 
-### **Standalone**
+### Standalone
 
 ![Grafik zum Konzept des Standalone-Modus](img/Standalone.png){ width=90% }
 
@@ -54,7 +56,7 @@ Im Netzwerkmodus ist das Konzept ähnlich, mit dem Unterschied, dass sich sowohl
 |             | - Ideal für mobile Einsätze und Privatpersonen                                                    |                                                                                                    |
 
 
-### **Netzwerk**
+### Netzwerk
 
 ![Grafik zum Konzept des Netzwerk-Modus](img/netzwerk.png){ width=90% }
 
@@ -66,7 +68,7 @@ Im Netzwerkmodus ist das Konzept ähnlich, mit dem Unterschied, dass sich sowohl
 
 
 
-### **Server**
+### Server
 
 ![Grafik zum Konzept des Server-Modus](img/server.png){ width=90% }
 

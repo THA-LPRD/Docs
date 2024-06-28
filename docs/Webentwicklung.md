@@ -1,10 +1,38 @@
 # Webentwicklung
 
 ## Framework und Library Auswahl
+**Julia Reuter**
 
-## Konvertierungsverfahren (HTML → PNG → Bitmap)
+Die Interaktion zwischen Benutzer und Raumanzeige soll so einfach und unkompliziert wie möglich gehalten werden und dennoch genügend Funktionalitäten unterstützen.
+Sie erfolgt deshalb über eine selbsterstellte Webseite, die mithilfe von HTML5, CSS und JavaScript designt wurde und über den ESP32-Webserver gehostet wird. 
+Als externe Bibliothek verwendet die Benutzerwebseite nur die Javascript Library Html2Canvas.
 
-## IndexClient.html
+## Webseitenaufbau und -funktionalitäten
+**Julia Reuter**
+
+Eine zentrale Funktion ist das Hochladen von PNG-Dateien. Nutzer können PNG-Bilder hochladen, die exakt auf die Pixeldimensionen des Displays abgestimmt sind. Vor jedem Upload überprüft die Webseite, ob das Bild die korrekten Dimensionen hat. Falls die Abmessungen nicht stimmen, wird der Upload abgelehnt und der Nutzer erhält eine entsprechende Fehlermeldung. Erst wenn die Bildgröße korrekt ist, wird die Datei mittels HTTP POST an den Server gesendet.
+
+Ein weiteres Highlight ist die Möglichkeit, HTML-Designs hochzuladen. Nutzer können HTML-Code eingeben und in Echtzeit eine Vorschau anzeigen lassen. Der Ablauf beginnt mit der Eingabe des HTML-Codes in ein Textfeld. Die Webseite rendert diesen Code und zeigt eine Vorschau des Designs an. Anschließend wird der HTML-Code in ein Bild umgewandelt und erneut auf die korrekten Dimensionen überprüft. Wenn die Abmessungen stimmen, wird das Bild mittels HTTP POST an den Server gesendet.
+
+Zusätzlich stehen vordefinierte HTML-Vorlagen zur Auswahl. Nutzer können eine Vorlage wählen, anpassen und in einer Vorschau anzeigen lassen. Das modifizierte Design wird in ein Bild umgewandelt, überprüft und bei korrekten Dimensionen an den Server gesendet.
+
+Die Einstellungsseite der Low-Power-Raumanzeige bietet umfassende Konfigurationsmöglichkeiten. Nutzer können den Betriebsmodus der Anzeige (Standalone, Netzwerk, Server) ändern. Sie wählen den gewünschten Modus aus einem Dropdown-Menü, und die Auswahl wird mittels HTTP POST an den Server gesendet. Der Server bestätigt die Änderung und die Webseite zeigt eine entsprechende Rückmeldung an.
+
+Ebenso können Nutzer das Display-Modul konfigurieren, indem sie es aus einem Dropdown-Menü auswählen. Die Auswahl wird wiederum mittels HTTP POST an den Server gesendet und der Server bestätigt die Änderung.
+
+Für die WiFi-Konfiguration können Nutzer die SSID und das Passwort eingeben. Diese Daten werden mittels HTTP POST an den Server gesendet, und der Server bestätigt die Änderung. Nutzer können auch das Log Level für die serielle Konsole einstellen, indem sie das gewünschte Level aus einem Dropdown-Menü wählen und die Auswahl an den Server senden.
+
+Für die HTTP-Authentifizierung können Benutzer Zugangsdaten eingeben und speichern. Diese Daten werden mittels HTTP POST an den Server gesendet und vom Server bestätigt. Die HTTPS-Einstellungen erlauben es den Nutzern, HTTPS zu aktivieren und die entsprechenden Zertifikatsdateien hochzuladen. Wenn HTTPS aktiviert ist, werden die Felder zum Hochladen der Zertifikats- und Schlüsseldateien sichtbar. Die Dateien werden dann ebenfalls mittels HTTP POST an den Server gesendet.
+
+### Datenübertragung zwischen Webseite und Server
+Die Kommunikation mit dem Server erfolgt über asynchrone HTTP-Anfragen, auch bekannt als AJAX (Asynchronous JavaScript and XML). 
+
+HTTP (Hypertext Transfer Protocol) ist das grundlegende Protokoll für die Datenübertragung im Web. Es definiert, wie Nachrichten formatiert und übertragen werden und wie Webserver und -browser auf verschiedene Befehle reagieren. In diesem Kontext werden Daten wie Formularinhalte über HTTP POST-Anfragen an den Server gesendet. Diese Anfragen beinhalten die Daten im Nachrichtentext, wodurch sie für den Server zugänglich gemacht werden.
+
+AJAX erweitert diese Funktionalität, indem es ermöglicht, HTTP-Anfragen asynchron zu senden. Das bedeutet, dass Daten im Hintergrund ausgetauscht werden können, ohne die Benutzeroberfläche zu unterbrechen. Dies wird durch die Verwendung von JavaScript erreicht, das HTTP-Anfragen erstellt und verarbeitet. Der Server antwortet auf diese Anfragen mit Daten, die dann vom JavaScript in der Webseite verarbeitet und angezeigt werden. Diese Methode verbessert die Benutzerfreundlichkeit und Reaktionsfähigkeit der Webseite erheblich.
+
+Diese Technologie ermöglicht es, Daten mit dem Server auszutauschen und die Webseite zu aktualisieren, ohne die gesamte Seite neu zu laden. Dies sorgt für eine reibungslose und effiziente Benutzererfahrung.
+
 
 ## Linux Server
 **Mario Wegmann**
