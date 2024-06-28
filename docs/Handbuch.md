@@ -5,8 +5,6 @@
 
 In der folgenden Anleitung werden Platzhalter mit <Platzhaltername> markiert. 
 ### Grundinstallation
-// TODO
-NETDATA
 
 sudo apt-get install git
 
@@ -82,34 +80,48 @@ sudo apt-get install docker
 
 ### Unterseiten
 
-Nachdem die Anwendung gestartet wurde kann die Adresse im Browser eingegeben werden. Die Startseite zeigt das Menü für die Unterseiten an. Es gibt zwei Unterseiten, unter "Displays" werden alle bereits bekannten Displays aufgelistet. In der Unterseite "Assets" werden alle vorhanden Assets angezeigt.
+Nachdem die Anwendung gestartet wurde kann die Adresse im Browser eingegeben werden. Die Startseite, wie in [](#_fig_WA_Startseite) ersichtlich, zeigt das Menü für die Unterseiten an. Es gibt zwei Unterseiten, unter "Displays" werden alle bereits bekannten Displays aufgelistet. In der Unterseite "Assets" werden alle vorhanden Assets angezeigt. 
 
-// TODO Grafik
+Figure: Die Startseite der Webanwendung { #_fig_WA_Startseite }
+
+![](img/Handbuch/WA-Startseite.png){ width=60% }
 
 ### Neues Asset erstellen
 
-Es gibt zwei Möglichkeiten ein Asset zu erstellen, es kann entweder ein fertiges PNG hochgeladen werden, oder ein PNG aus einem HTML Code erstellt werden. 
+Es gibt zwei Möglichkeiten ein Asset zu erstellen, es kann entweder ein fertiges PNG hochgeladen werden, oder ein PNG aus einem HTML Code erstellt werden. Dazu kann in der "Assets"-Unterseite, welche in [](#_fig_WA_Assets) ersichtlich ist, einer der beiden Vorgänge über die Knöpfe gestartet werden. 
 
-// TODO Grafik
+Figure: Eine Übersicht über alle vorhanden Assets { #_fig_WA_Assets }
+
+![](img/Handbuch/WA-Assets.png){ width=60% }
 
 
 **PNG hochladen**
 
 Ein PNG kann auf der Unterseite Assets über den "Hochladen"-Knopf hochgeladen werden. 
-Bei hochladen muss darauf geachtet werden, dass das PNG in der richtigen Auflösung für das Display ist, welches später das Asset anzeigen soll. Ebenso kann ein Name für das Asset und wie lange es angezeigt werden soll angegeben werden. Das hochladen beginnt mit einem Druck auf den "Hochladen"-Knopf.  
+Bei hochladen muss darauf geachtet werden, dass das PNG in der richtigen Auflösung für das Display ist, welches später das Asset anzeigen soll. Ebenso kann ein Name für das Asset und wie lange es angezeigt werden soll angegeben werden. Das hochladen beginnt mit einem Druck auf den "Hochladen"-Knopf. Die [](#_fig_WA_Upload) zeigt das Formular. 
 
-// TODO Grafik
+Figure: Das Formular zum hochladen von bestehenden PNGs { #_fig_WA_Upload }
+
+![](img/Handbuch/WA-Asset-Upload.png){ width=60% }
+
 
 **PNG aus HTML erstellen**
-Auf der Unterseite Assets gibt es auch den "Erstellen aus HTML"-Knopf, dieser öffnet ein Formular, in dem der Assetname, die Anzeigedauer und der HTML Code eingegeben werden kann. Nach dem druck auf den "Generieren"-Knopf wird ein PNG erstellt und lokal abgelegt. 
+Auf der Unterseite Assets gibt es auch den "Erstellen aus HTML"-Knopf, dieser öffnet ein Formular, in dem der Assetname, die Anzeigedauer und der HTML Code eingegeben werden kann. Nach dem druck auf den "Generieren"-Knopf wird ein PNG erstellt und lokal abgelegt. Die [](#_fig_WA_HTML) zeigt das Formular. 
 
 
-// TODO Grafik
+Figure: Das Formular zum erstellen von PNGs aus HTML Code { #_fig_WA_HTML }
+
+![](img/Handbuch/WA-Asset-HTML.png){ width=60% }
+
 
 ### Vorhandenes Asset bearbeiten
 
-In der "Assets" Übersichtsseite kann jedes vorhandene Asset ausgewählt werden um eine Detailansicht anzuzeigen. Dort können der Name, die Anzeigedauer und der HTML Code bearbeitet werden. 
+In der "Assets" Übersichtsseite kann jedes vorhandene Asset ausgewählt werden um eine Detailansicht, welche in [](#_fig_WA_Asset_Details) ersichtlich ist, anzuzeigen. Dort können der Name, die Anzeigedauer und der HTML Code bearbeitet werden. 
 Ebenso kann ein Asset auch gelöscht werden. 
+
+Figure: Die Detailansicht eines Assets { #_fig_WA_Asset_Details }
+
+![](img/Handbuch/WA-Asset-Details.png){ width=60% }
 
 ### Neues Displaymodul verbinden
 
@@ -121,8 +133,19 @@ Nachdem die Erstkonfiguration gespeichert und das Displaymodul neu gestartet wur
 
 Falls das Displaymodul sich zum ersten mal mit diesem Server verbindet, wird es automatisch in der Datenbank eingetragen, anschließend geht das Display in den Deep-sleep Modus. 
 
-// TODO Grafik
+### Vorhandenes Display bearbeiten
 
+Ähnlich wie bei der Assets Übersicht, können auch die Displays in der "Display"-Unterseite, welche in [](#_fig_WA_Displays) dargestellt ist, bearbeitet werden. In der Detailansicht, diese ist in [](#_fig_WA_Display_Details) zu erkennen, eines Displays kann die MAC-Adresse und der Zeitpunkt, zu dem sich das Display zum letzen mal beim Server gemeldet hat, eingesehen werden. Der Name des Displays und die Auflösung können bearbeitet werden. 
+
+Zuletzt kann ein Display auch wieder gelöscht werden. 
+
+Figure: Die Übersichtsseite aller Displays { #_fig_WA_Displays}
+
+![](img/Handbuch/WA-Displays.png){ width=60% }
+
+Figure: Die Detailansicht eines Displays { #_fig_WA_Display_Details}
+
+![](img/Handbuch/WA-Display-Details.png){ width=60% }
 
 ### Neues Asset auf dem Display anzeigen
 
@@ -130,13 +153,7 @@ Sobald ein Displaymodul sich in der Webanwendung registriet hat, kann in der Web
 
 Mit einem Tastendruck auf den vorderseitigen Knopf, kann das Display aus dem Deep-sleep Modus wieder aufgeweckt werden. Immer nach dem Aufwecken versucht das Displaymodul sich mit dem Server zu verbinden und eine neue Konfiguration zu erhalten. Die Konfiguration enthält die URL des aktuell anzuzeigenden Assets und eine Dauer in Sekunden, die angiebt, wie lange das Asset angezeigt werden soll. 
 
-Das Displaymodul lädt anschließend das Asset von der angegebenen URL herunter, zeigt es an und versetzt sich anschließend wieder in den Deep-sleep Modus. Zusätzlich wird noch ein Wakeup Timer auf die angegebene Dauer gesetzt. Dieser Timer weckt somit das Displaymodul automatisch nach ablauf der Anzeigedauer auf, damit sich das Displaymodul ein neues anzuzeigendes Asset herunterlädt.  
-
-### Vorhandenes Display bearbeiten
-
-Ähnlich wie bei der Assets Übersicht, können auch die Displays in der "Display"-Unterseite bearbeitet werden. In der Detailansicht eines Displays kann die MAC-Adresse und der Zeitpunkt, zu dem sich das Display zum letzen mal beim Server gemeldet hat, eingesehen werden. Der Name des Displays und die Auflösung können bearbeitet werden. 
-
-Zuletzt kann ein Display auch wieder gelöscht werden. 
+Das Displaymodul lädt anschließend das Asset von der angegebenen URL herunter, zeigt es an und versetzt sich anschließend wieder in den Deep-sleep Modus. Zusätzlich wird noch ein Wakeup Timer auf die angegebene Dauer gesetzt. Dieser Timer weckt somit das Displaymodul automatisch nach ablauf der Anzeigedauer auf, damit sich das Displaymodul ein neues anzuzeigendes Asset herunterlädt. 
 
 ## Quellen
 https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent?platform=linux#generating-a-new-ssh-key 

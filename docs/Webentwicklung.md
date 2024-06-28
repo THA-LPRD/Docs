@@ -24,7 +24,7 @@ Für den Webserver wurden Linux und Docker verwendet. Das quelloffene Linux ist 
 
 Die Kombination dieser Technologien ermöglich effizient eine benutzerfreundliche, performante und wartbare Webanwendung zu entwicklen.
 
-Wie die Einzelkomponenten zusammenspielen ist in (#_fig_MW_techstack) ersichtlich.
+Wie die Einzelkomponenten zusammenspielen ist in [](#_fig_MW_techstack) ersichtlich.
 
 Figure: Der Techstack der Webanwendung { #_fig_MW_techstack }
 
