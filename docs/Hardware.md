@@ -1,40 +1,51 @@
 # Hardware
 
 ## Auswahl des Mikrocontrollers
-- GPIO’s
-- Stromverbrauch
-- Vorteile (Charger, …)
-- Bauform
-- Speicher
+**Benjamin Klaric**
+
+In der Tabelle in Kapitel [3.1 Mikrocontroller](PraktischeUTheoretischeGrund.md#mikrocontroller) wurde schon die verschiedenen Möglichkeiten zur Auswahl von Mikrocontroller dargestellt. Wenn man die Anforderungen, wie Anzahl GPIO Pins, Stromvebrauch in Sleep Modi, Bauform, Interne Speicher und mögliche Vorteile neben den anderen, wie z.B. interngebauten Ladegerät, erschiet schon ein eindeutigen Gewinner, in Form von XIAO ESP32-S3.  
+Der verschiedene STM32 Mikrocontrollern waren auch lange Zeit in Betrachtung, wurden aber rausgelassen, ausgrund die Tatsache, dass die kein eingebauten WiFi Modul haben.
+Der XIAO ESP32-S3 mit seinem kleinen Formfaktor, sehr geringen Stromverbrauch in Deep Sleep Modus, enormen Internenspeicher (im Vergleich mit anderen Kandidaten) und Möglichkeit, die Akku über das USB-C Anschluss zu laden machen den Mikrocontroller sehr flexibel und für das Systemanforderungen passend. [[BK_07]](Quellenverzeichnis.md#BK_07)  
+Der Prozessor, der auf dem Mikrocontroller läuft, ist der leistungsstarke Xtensa LX7 dual-core, 32-bit Prozessor, mit bis zu 240 MHz Taktfrequenz. Mit internent 512 KB SRAM Speicher ist der in der Lage viele Operationen und Funktionen lokal durchzuführen. Neben den SRAM Speicher ist der Mikrocontroller auch extern mit 8 MB Flash und 8 MB PSRAM Speicher ausgestattet. Der Mikrocontroller ist auch mit internent Hardware Watchdog Timers ausgestattet, die in der Fall, wo Mikrocontroller hängend geblieben ist, eine Möglichkeit von Neustart des Systems anbietet. [[BK_08]](Quellenverzeichnis.md#BK_08)  
+Ausgrund der niedrigen Idle Strom von 22 mA und noch niedrigere Deep Sleep Strom von 14 μA stellt sich das Modul perfekt für ein autarkes System. Die Möglichkeit von laden der Akkus durch das USB-C ist natürlich auch von Vorteil, allerdings mit einen niedrigen Ladestrom von 100 mA. Und dass alles befindet sich auf eine kleine Platine mit Maßen 21x17,5 mm, der ungefähre Große von einen 2€ Münze. [[BK_07]](Quellenverzeichnis.md#BK_07)  
+Der XIAO ESP32-S3 bietet genugend GPIO Pins, was auf [Abildung 7.xx](#_fig_xiao_esp) zu sehen ist.
+
+Figure: Pinout von XIAO ESP32-S3 [[BK_07]](Quellenverzeichnis.md#BK_07) { #_fig_xiao_esp }
+
+![](img/XIAO_Pinout.png){ width=60% }
+
+Der XIAO ESP32-S3 hat eingebauten Akkuanschlussen, die direkt mit dem SGM40567 ....... //TODO mehr über den Charger sagen und Schaltung von dem kurz erklären. Vielleicht, oder halt rauslassen, oder über etwas wichtigeres schreiben.  
 
 ## Auswahl der Displaytechnologie
 
 
 ## Auswahl der Akkukomponenten
-#### Akku
-Der ausgewählte Akku, aus verschiedenen Akku-Technologien, die in Kapitel 2 genannt waren, war der klassische Li-Ion-Akku, aus mehreren Gründen. Aufgrund der Anzahl und Position des Systems, die von Akku betrieben sein wurde, war der Sicherheitsaspekt ein entscheidender Faktor. Deswegen wurden die LiPo-Akkus nicht mehr betrachtet.  
+**Benjamin Klaric**
+
+**Akku**  
+Der ausgewählte Akku, aus verschiedenen Akku-Technologien, die in [3.3.1 Vergleich und Auswahl von verschiedenen Akku-Technologien](PraktischeUTheoretischeGrund.md#vergleich-und-auswahl-von-verschiedenen-akku-technologien) genannt waren, war der klassische Li-Ion-Akku, aus mehreren Gründen. Aufgrund der Anzahl und Position des Systems, die von Akku betrieben sein wurde, war der Sicherheitsaspekt ein entscheidender Faktor. Deswegen wurden die LiPo-Akkus nicht mehr betrachtet.  
 Der Vergleich zwischen Li-Ion-Akkus und LiFePo~4~-Akkus hatte eindeutige Unterschiede geliefert. Die LiFePo~4~-Akkus repräsentieren die sicherste Variante, andererseits hatten die Li-Ion-Akkus eine höhere Nennspannung von 3,7V.  
 Aus Sicherheitsblick betrachtet wurden die LiFePo~4~-Akkus ausgewählt. Die Nennspannung von 3,2V hat jedoch gegen die LiFePo~4~-Akkus gesprochen, da der ausgewählte Mikrocontroller, nämlich den XIAO ESP32-S3, Betriebsspannung zwischen 3,2V und 4,2V angefordert hat. Obwohl die LiFePo~4~-Akkus die Betriebsspannung liefern konnten, konnten sie das System nicht betreiben, da die genannte Betriebsspannung in Fall ohne schwere Last gemeint ist. Wegen dies wurden allerdings die Li-Ion-Akkus gewählt.  
 Der nächste Schritt war, eine vernünftige Kapazität zu finden, sodass die Akkus das System lang genug betreiben konnten. Dazu hat man die Schätzungen mit Verbrauchmessungen unterstützt und ungefähr die benötigte Akku-Kapazität geschätzt. Eine Akkulaufzeit von einem Jahr war gewünscht und dementsprechend war die Große des Akkus gewählt, nämlich ~10000 mAh.  
 Ein Akku mit so einer Kapazität war aber nicht einfach zu finden. Deswegen wurde das Akkupack aus zwei ~5000 mAh Akkus gebaut. Um von zwei ~5000 mAh auf die gewünschte Kapazität zu kommen, wurden die Akkus in parallel verbunden, da so die Kapazität sich verdoppelt; im Vergleich, wenn man die in Reihe anschließt, so wird die Spannung verdoppelt.  
 Bei der Suche nach Akkus muss man einige Sachen beachten. Der Formfaktor der Akku, minimale Kapazität, ob der Akku schon ein eingebautes BMS hat und der Entladestrom.  
-Es würde die BAK N21700CD-53E ausgewählt, die auf [](#_fig_akku) zu sehen ist.
+Es würde die BAK N21700CD-53E ausgewählt, die auf [Abildung 7.xx](#_fig_akku) zu sehen ist.
 
-Figure: Li-Ion-Akku [[BK_09]](Quellenverzeichnis.md#bk_09) { #_fig_akku }
+Figure: Li-Ion-Akku [[BK_09]](Quellenverzeichnis.md#BK_09) { #_fig_akku }
 
 ![](img/Li-Ion-Akku.png){ width=60% }
 
 
-Aus der Tabelle der technischen Daten auf der [](#_fig_akku_tabelle) des betrachteten Akkus ist es klar zu sehen, dass alle benötigten Parameter erfüllt sind. Der Formfaktor ist aus der Durchmesser und Höhe (die ersten zwei Ziffern von Durchmesser und normalerweise erste drei Ziffern von Höhe → 21700).  
+Aus der Tabelle der technischen Daten auf der [Abildung 7.xx](#_fig_akku_tabelle) des betrachteten Akkus ist es klar zu sehen, dass alle benötigten Parameter erfüllt sind. Der Formfaktor ist aus der Durchmesser und Höhe (die ersten zwei Ziffern von Durchmesser und normalerweise erste drei Ziffern von Höhe → 21700).  
 
-Figure: Technische Daten von BAK N21700CD-53E [[BK_10]](Quellenverzeichnis.md#bk_09) { #_fig_akku_tabelle }
+Figure: Technische Daten von BAK N21700CD-53E [[BK_09]](Quellenverzeichnis.md#BK_09) { #_fig_akku_tabelle }
 
 ![](img/Li-Ion-Akku-Tabelle.png){ width=60% }
 
-#### BMS
-Um den Akkupack sicher betreiben zu können, wurde ein BMS benötigt. Wie bereits in Kapitel 2 unter Akku-Technologien erwähnt, schützt ein BMS die Akkus vor Tiefentladung, Überladung, Kurzschluss und Überstrom.  
+**BMS**  
+Um den Akkupack sicher betreiben zu können, wurde ein BMS benötigt. Wie bereits in [3.3 Akku-Technologien](PraktischeUTheoretischeGrund.md#akku-technologien) unter Akku-Technologien erwähnt, schützt ein BMS die Akkus vor Tiefentladung, Überladung, Kurzschluss und Überstrom.  
 
-Beim genaueren Blick auf ein 1S-BMS, auf [](#_fig_bms), wo 1S die Anzahl der Zellen in Serie repräsentiert, erkennt man ein IC und zwei NMOS-Transistoren. Die NMOS-Transistoren dienen als Schalter, die vom IC durch Gate-Spannung angesteuert werden.  
+Beim genaueren Blick auf ein 1S-BMS, auf [Abildung 7.xx](#_fig_bms), wo 1S die Anzahl der Zellen in Serie repräsentiert, erkennt man ein IC und zwei NMOS-Transistoren. Die NMOS-Transistoren dienen als Schalter, die vom IC durch Gate-Spannung angesteuert werden.  
 
 **Überladungsschutz**: Wenn die Ladespannung 4,2V überschreitet, sendet der IC ein Signal, das die Gate-Spannung eines NMOS-Transistors steuert, wodurch dieser den Stromkreis unterbricht.  
 
@@ -44,17 +55,17 @@ Beim genaueren Blick auf ein 1S-BMS, auf [](#_fig_bms), wo 1S die Anzahl der Zel
 
 **Kurzschlussschutz**: Auch bei einem Kurzschluss, bei dem sehr hohe Ströme fließen, erkennt der IC diese Situation und unterbricht sofort den Stromfluss durch Abschalten der NMOS-Transistoren.  
 
-Das BMS, das auf [](#_fig_bms) dargestellt ist, liefert alle diese Features und wurde für den Aufbau von dem Akkupack ausgewählt.  
+Das BMS, das auf [Abildung 7.xx](#_fig_bms) dargestellt ist, liefert alle diese Features und wurde für den Aufbau von dem Akkupack ausgewählt.  
 
-Figure: Li-Ion-Akku [[BK_11]](Quellenverzeichnis.md#bk_11) { #_fig_akku }
+Figure: Li-Ion-Akku [[BK_10]](Quellenverzeichnis.md#BK_10) { #_fig_akku }
 
 ![](img/Li-Ion-BMS.png){ width=60% }
 
-#### Ladegerät
-Wie bereits in Kapitel 2 unter Akku-Technologien erwähnt, benötigen die Li-Ion-Akkus ein spezielles Ladegerät, nämlich ein Ladegerät, der in die Lage ist beim Laden der Akkus, erste 80% konstanter Strom zu liefern und danach 20% die Akkus mit konstanter Spannung zu laden. 
-Man kann solche Ladegeräten ohen viele Schwierigkeiten finden, sind allerdings teuer. Bei der Suche nach einen muss man eine Sache beachten, nämlich den Zellenanzahl. Die ausgewählte Ladegerät ist auf die [](#_fig_ladegeraet) zu sehen.
+**Ladegerät**  
+Wie bereits in Kapitel 2 unter Akku-Technologien erwähnt, benötigen die Li-Ion-Akkus ein spezielles Ladegerät, nämlich ein Ladegerät, der in die Lage ist beim Laden der Akkus, erste 80% konstanter Strom zu liefern und danach 20% die Akkus mit konstanter Spannung zu laden.  
+Man kann solche Ladegeräten ohen viele Schwierigkeiten finden, sind allerdings teuer. Bei der Suche nach einen muss man eine Sache beachten, nämlich den Zellenanzahl. Die ausgewählte Ladegerät ist auf die [Abildung 7.xx](#_fig_ladegeraet) zu sehen.
 
-Figure: Ladegerät für Li-Ion-Akkus [[BK_12]](Quellenverzeichnis.md#bk_12) { #_fig_ladegeraet }
+Figure: Ladegerät für Li-Ion-Akkus [[BK_11]](Quellenverzeichnis.md#BK_11) { #_fig_ladegeraet }
 
 ![](img/Li-Ion-Ladegeraet.png){ width=60% }
 
@@ -88,11 +99,14 @@ Lithium-Ionen Zellen sind wärmeempfindlich und daher ist Weichlöten kein geeig
 ### Isolieren des Akkupacks
 Abschlißend wurde Kapton Klebeband verwendet um das Akkupack mit einer isolierenden Schicht zu umhüllen. Dadurch wird vermieden, dass unkontrolliert die Batteriepole mit anderen leitfähigen Materialen in berührung kommen und sämtlicher Strom über das BMS geleitet wird. Kapton Klebeband ist dabei ein sehr guter elektrischer und thermischer Isolator. 
 
-## Auswahl der PCB-Komponenten
+## Schaltungsentwurf
+**Benjamin Klaric**
 
 ## Platinen Design
+**Benjamin Klaric**
 
 ## Zusammenbau der PCBs
+**Benjamin Klaric**
 
 ## Gehäuse
 
@@ -154,9 +168,9 @@ Figure: Der Versuchsaufbau mit Oszilloskop, Multimeter und Labornetzteil { #_fig
 ### Messergebnisse
 **Mario Wegmann**
 
-In []( #_tab_MW_02 ) kann man einen kompletten Refresh des 7,6 Zoll großen Displays erkennen. Hierbei wird auf dem ePaper Display zuerst weiß gestellt, anschließend wird nach einer Pause eine in der Firmware hard codierte Bitmap auf dem Display angezeigt. Zum Abschluss wird erneut ein weißes Bild dargestellt. In diesem Teilversuch wurde der Stromverbrauch vom WLAN noch nicht gemossen. 
+In []( #_tab_MW_02 ) kann man einen kompletten Refresh des 9,6 Zoll großen Displays erkennen. Hierbei wird auf dem ePaper Display zuerst weiß gestellt, anschließend wird nach einer Pause eine in der Firmware hard codierte Bitmap auf dem Display angezeigt. Zum Abschluss wird erneut ein weißes Bild dargestellt. In diesem Teilversuch wurde der Stromverbrauch vom WLAN noch nicht gemossen. 
 
-Table: Der Stromverbrauch aufgeteilt in Zeitabschnitte beim 7,6" Display { #_tab_MW_02 }
+Table: Der Stromverbrauch aufgeteilt in Zeitabschnitte beim 9,6" Display { #_tab_MW_02 }
 
 | Bereich | Zustand	| Avg. Strom  [mA] |	Zeit [s] |
 |-|-|-|-|
@@ -185,5 +199,7 @@ Table: Der Stromverbrauch aufgeteilt in Zeitabschnitte beim 7,6" Display { #_tab
 
 
 ### Interpretation
+**Benjamin Klaric**
 
 ## ADC Messung
+**Benjamin Klaric**
