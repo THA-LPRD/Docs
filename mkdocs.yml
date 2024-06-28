@@ -16,8 +16,8 @@ plugins:
         increment_index: 1
         position: bottom
         default_id: '_table-{index}'
-        reference_text: 'Tabelle {index}'
-        caption_prefix: 'Tabelle {index}:'
+        reference_text: ''
+        caption_prefix: ''
         markdown_identifier: 'Table:'
         allow_indented_caption: True
       figure: 
@@ -26,8 +26,8 @@ plugins:
         increment_index: 1
         position: bottom
         default_id: '_figure-{index}'
-        reference_text: 'Abbildung {index}'
-        caption_prefix: 'Abbildung {index}:'
+        reference_text: ''
+        caption_prefix: ''
         markdown_identifier: 'Figure:'
         allow_indented_caption: True
         ignore_alt: False
