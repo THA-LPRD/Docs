@@ -271,16 +271,6 @@
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../Quellenverzeichnis/">
-        
-  
-    
-  
-  Quellenverzeichnis
-
-      </a>
-</li>
-<li class="md-tabs__item">
 <a class="md-tabs__link" href="../about/">
         
   
@@ -297,6 +287,16 @@
     
   
   Quellenverzeichnis
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../Handbuch/">
+        
+  
+    
+  
+  Handbuch
 
       </a>
 </li>
@@ -419,13 +419,6 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../Quellenverzeichnis/">
-<span class="md-ellipsis">
-    Quellenverzeichnis
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="../about/">
 <span class="md-ellipsis">
     Über LPRD
@@ -436,6 +429,13 @@
 <a class="md-nav__link" href="../Quellenverzeichnis/">
 <span class="md-ellipsis">
     Quellenverzeichnis
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Handbuch/">
+<span class="md-ellipsis">
+    Handbuch
   </span>
 </a>
 </li>
@@ -450,7 +450,49 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"></path></svg>
 </a>
 <h1 id="glossar">Glossar<a class="headerlink" href="#glossar" title="Permanent link">¶</a></h1>
+<p><a id="GL_01"><strong>Displaymodul</strong></a></p>
+<p>Komplettes Set bestehend aus Display, Mikrocontroller, Akku, Platine und Gehäuse. </p>
+<p><a id="GL_02"><strong>Display</strong></a></p>
+<p>Das Display, welches angesteuert und mit Strom und Daten versorgt werden muss. </p>
+<p>&lt;figure-caption identifier="Figure" id=_fig_MW_ePaper } </p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/ePaper-Display.png"><img alt="" src="../img/ePaper-Display.png"/></a> { width=30% &gt;</p>
+<p>Ein exemplarisches ePaper Display </p>
+<p><figure-caption-end></figure-caption-end></p>
+<p>Test</p>
+<p><a id="GL_03"><strong>Mikrocontroller</strong></a></p>
+<p>Im Displaymodul verbauter Computer, welcher drahtlos mit Clients kommunizieren kann und die Ansteuerung des Displays übernimmt. </p>
+<p><a id="GL_04"><strong>Mikrocontroller Webserver</strong></a></p>
+<p>Kann immer Bitmaps über HTTP empfangen und im (Standalonemodus) zusätzlich die Client-Website an einen Client ausliefern. </p>
+<p><a id="GL_05"><strong>Client</strong></a></p>
+<p>Gerät (Smartphone, Tablet, Computer) worüber der Benutzer, mittels eines Browsers, mit dem Displaymodul direkt (Standalonemodus) oder alternativ mit dem zentralen Webserver (Servermodus) kommuniziert. </p>
+<p><a id="GL_06"><strong>Client Website</strong></a></p>
+<p>Die im Client sichtbare Website bestehend aus HTML, CSS und JavaScript. </p>
+<p><a id="GL_07"><strong>Server</strong></a></p>
+<p>Linux-Container, welcher den zentralen Webserver betreibt. </p>
+<p><a id="GL_08"><strong>Server Webserver</strong></a></p>
+<p>Die Anwendung läuft auf dem Server 24/7. Kann sich Daten von externen Quellen holen, diese von HTML in Bitmaps konvertieren und die Bitmaps an Displaymodule verteilen. </p>
+<p><a id="GL_09"><strong>Server Website</strong></a></p>
+<p>Website für den Client, welche auf dem zentralen Webserver läuft und womit sich mehrere Displaymodule steuern lassen. </p>
+<p><a id="GL_10"><strong>Standalonemodus</strong></a></p>
+<p>Der Client kommuniziert direkt mit dem Mikrocontroller, dabei erstellt der Mikrocontroller selber ein WLAN. Der Mikrocontroller arbeitet also als WLAN Access-Point. </p>
+<p><a id="GL_11"><strong>Netzwerkmodus</strong></a></p>
+<p>Der Client kommuniziert direkt mit dem Mikrocontroller, dabei wird ein vorhandenes WLAN benutzt. Der Mikrocontroller arbeitet also als WLAN-Client. </p>
+<p><a id="GL_12"><strong>Servermodus</strong></a></p>
+<p>Der Client kommuniziert nur über den Server Webserver mit dem Mikrocontroller, dabei wird ein vorhandenes WLAN benutzt. Der Mikrocontroller arbeitet also als WLAN-Client.</p>
+<p><a id="GL_13"><strong>Asset</strong></a></p>
+<p>Den Inhalt, den ein Displaymodul anzeigen soll. Ein Asset wird als PNG dem Displaymodul zur Verfügung gestellt. Die Bezeichnung Asset unterscheidet sich von einem Bild in dem Aspekt, dass ein Asset eine Gültigkeitsdauer hat und auch aus HTML-Code generiert werden kann. Erst für die Übertragung an ein Displaymodul wird ein Asset in ein Bild gewandelt. </p>
 <!-- Content moved into the footer -->
+<!-- <style>
+p, figcaption, ul, caption, table {
+    /* font-family: Verdana, Geneva, Tahoma, sans-serif !important; */
+    font-size: 13px;
+    /* font-size: 1rem; */
+}
+
+td {
+    padding: 4px 12px;
+}
+</style> -->
 </article>
 </div>
 <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
@@ -525,7 +567,7 @@
 <span class="md-icon" title="Letztes Update">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"></path></svg>
 </span>
-<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 28, 2024</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 29, 2024</span>
 </span>
 <!-- Date of creation -->
 <!-- Authors (git-authors plugin) -->
@@ -534,8 +576,8 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 5.5A3.5 3.5 0 0 1 15.5 9a3.5 3.5 0 0 1-3.5 3.5A3.5 3.5 0 0 1 8.5 9 3.5 3.5 0 0 1 12 5.5M5 8c.56 0 1.08.15 1.53.42-.15 1.43.27 2.85 1.13 3.96C7.16 13.34 6.16 14 5 14a3 3 0 0 1-3-3 3 3 0 0 1 3-3m14 0a3 3 0 0 1 3 3 3 3 0 0 1-3 3c-1.16 0-2.16-.66-2.66-1.62a5.536 5.536 0 0 0 1.13-3.96c.45-.27.97-.42 1.53-.42M5.5 18.25c0-2.07 2.91-3.75 6.5-3.75s6.5 1.68 6.5 3.75V20h-13v-1.75M0 20v-1.5c0-1.39 1.89-2.56 4.45-2.9-.59.68-.95 1.62-.95 2.65V20H0m24 0h-3.5v-1.75c0-1.03-.36-1.97-.95-2.65 2.56.34 4.45 1.51 4.45 2.9V20Z"></path></svg>
 </span>
 <nav>
-<a href="mailto:benjamin.klaric01@gmail.com">Benjamin Klaric</a>, 
-            <a href="mailto:jul.reuter@web.de">jr3511</a>
+<a href="mailto:mario.wegmann@tha.de">Marioheld</a>, 
+            <a href="mailto:mario.wegmann@hs-augsburg.de">mwegmann</a>
 </nav>
 </span>
 <!-- Authors (git-committers plugin) -->

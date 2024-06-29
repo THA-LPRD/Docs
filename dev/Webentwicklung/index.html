@@ -271,16 +271,6 @@
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../Quellenverzeichnis/">
-        
-  
-    
-  
-  Quellenverzeichnis
-
-      </a>
-</li>
-<li class="md-tabs__item">
 <a class="md-tabs__link" href="../about/">
         
   
@@ -297,6 +287,16 @@
     
   
   Quellenverzeichnis
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../Handbuch/">
+        
+  
+    
+  
+  Handbuch
 
       </a>
 </li>
@@ -423,17 +423,24 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#linux-server">
+<a class="md-nav__link" href="#linux-webanwendung">
 <span class="md-ellipsis">
-      Linux Server
+      Linux Webanwendung
     </span>
 </a>
-<nav aria-label="Linux Server" class="md-nav">
+<nav aria-label="Linux Webanwendung" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#verwendete-technologien">
 <span class="md-ellipsis">
       Verwendete Technologien
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#aufbau-der-webanwendung">
+<span class="md-ellipsis">
+      Aufbau der Webanwendung
     </span>
 </a>
 </li>
@@ -459,9 +466,9 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#datensicherung">
+<a class="md-nav__link" href="#datensicherung-und-monitoring">
 <span class="md-ellipsis">
-      Datensicherung
+      Datensicherung und Monitoring
     </span>
 </a>
 </li>
@@ -500,13 +507,6 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../Quellenverzeichnis/">
-<span class="md-ellipsis">
-    Quellenverzeichnis
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="../about/">
 <span class="md-ellipsis">
     Über LPRD
@@ -517,6 +517,13 @@
 <a class="md-nav__link" href="../Quellenverzeichnis/">
 <span class="md-ellipsis">
     Quellenverzeichnis
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Handbuch/">
+<span class="md-ellipsis">
+    Handbuch
   </span>
 </a>
 </li>
@@ -534,20 +541,214 @@
 <h2 id="framework-und-library-auswahl">Framework und Library Auswahl<a class="headerlink" href="#framework-und-library-auswahl" title="Permanent link">¶</a></h2>
 <h2 id="konvertierungsverfahren-html-png-bitmap">Konvertierungsverfahren (HTML → PNG → Bitmap)<a class="headerlink" href="#konvertierungsverfahren-html-png-bitmap" title="Permanent link">¶</a></h2>
 <h2 id="web-bneutzer-oberflache">Web Bneutzer Oberfläche<a class="headerlink" href="#web-bneutzer-oberflache" title="Permanent link">¶</a></h2>
-<h2 id="linux-server">Linux Server<a class="headerlink" href="#linux-server" title="Permanent link">¶</a></h2>
+<h2 id="linux-webanwendung">Linux Webanwendung<a class="headerlink" href="#linux-webanwendung" title="Permanent link">¶</a></h2>
 <p><strong>Mario Wegmann</strong></p>
 <h3 id="verwendete-technologien">Verwendete Technologien<a class="headerlink" href="#verwendete-technologien" title="Permanent link">¶</a></h3>
-<p>Wie im Kapitel <a href="../PraktischeUTheoretischeGrund/#webtechnologien">3.9.1 Webtechnologien</a> bereits erläutert ist es für die Entwicklung einer Webanwendung sehr sinnvoll ein Webframework einzusetzen. 
-Hierbei gibt es eine große Auswahl an möglichen Frameworks und auch Serverseitigen Programmiersprachen. Da JavaScript bereits im Standalone-Modus, wie auch im Netzwerk-Modus, verwendet wird um die Interaktion mit dem Displaymodul zu realisieren, ist es naheliegend, auch auf dem Server JavaScript zu nutzen. Diese Entscheidung ermöglichte eine einheitliche Codebasis sowohl im Frontend als auch im Backend, was die Entwicklung effizienter und die Wartung der Anwendung einfacher macht und zuletzt auch das erlernen neuer Programmiersprachen auf eine reduziert. Zudem wurde die Möglichkeit genutzt TypeScript anstatt Vanilla JavaScript zu verwenden, um die Vorteile zu nutzen, welche ebenso bereits im Kapitel <a href="../PraktischeUTheoretischeGrund/#webtechnologien">3.9.1 Webtechnologien</a> erwähnt wurden. </p>
-<p>Für das Frontend wurde React ausgewählt. Durch React lassen sich Komponenten realisieren, welche modular wiederverwendet werden können. Dadurch wird es vermieden doppelten Code zu verfassen und Änderungen an einer Komponente werden global in der gesamten Webanwendung wiedergespiegelt. </p>
+<p>Wie im Kapitel <a href="../PraktischeUTheoretischeGrund/#webtechnologien">3.9.1 Webtechnologien</a> bereits erläutert, ist es für die Entwicklung einer komplexeren Webanwendung sehr sinnvoll, ein Webframework einzusetzen. 
+Hierbei gibt es eine große Auswahl an möglichen Frameworks und auch serverseitigen Programmiersprachen. Da JavaScript bereits im Standalonemodus, wie auch im Netzwerk-Modus, verwendet wird, um die Interaktion mit dem Displaymodul zu realisieren, ist es naheliegend, auch auf dem Server JavaScript zu nutzen. Diese Entscheidung ermöglichte eine einheitliche Codebasis sowohl im Frontend als auch im Backend, was die Entwicklung effizienter und die Wartung der Anwendung einfacher macht und zuletzt auch das Erlernen neuer Programmiersprachen auf eine reduziert. Zudem wurde die Möglichkeit genutzt, TypeScript anstatt JavaScript zu verwenden, um die Vorteile zu nutzen, welche ebenso bereits im Kapitel <a href="../PraktischeUTheoretischeGrund/#webtechnologien">3.9.1 Webtechnologien</a> erwähnt wurden. </p>
+<p>Für das Frontend wurde React ausgewählt. Durch React lassen sich Komponenten realisieren, welche modular wiederverwendet werden können. Dadurch wird es vermieden, doppelten Code zu verfassen und Änderungen an einer Komponente werden global in der gesamten Webanwendung widergespiegelt. </p>
 <p>Als Webframework wurde Next.js ausgewählt, da es React unter anderem um serverseitiges Rendering erweitert. Darüber hinaus bietet Next.js eine nahtlose Integration von API-Routen und Middleware, was die Entwicklung von Full-Stack-Anwendungen erleichtert. </p>
-<p>Für das speichern der Daten wurde PostgresSQL als Datenbank ausgewählt. Als ORM wurde Prisma gewählt.  //TODO
-Prisma ist ein Object-Relational-Mapper (ORM). ORMs ermöglichen das typensichere Arbeiten in objektroientierten Programmiersprachen </p>
-<p>Prisma ORM ist nützlich, weil es die Arbeit mit Datenbanken durch typsichere, deklarative Datenmodellierung und effiziente Datenbankmigrationen erheblich vereinfacht und optimiert. Es generiert automatisch TypeScript-Typen, was zu umfassender Typsicherheit und intelligenter Autovervollständigung in IDEs führt, wodurch die Produktivität und Codequalität verbessert werden. Prisma abstrahiert komplexe SQL-Abfragen und ermöglicht einfache CRUD-Operationen, reduziert die Notwendigkeit für manuelles SQL-Schreiben und minimiert potenzielle Fehler. Zudem unterstützt es verschiedene Datenbanksysteme und verfügt über eine starke Community sowie umfangreiche Dokumentation, was den Einstieg und die kontinuierliche Nutzung erleichtert.</p>
+<p>Für das Speichern der Daten wurde PostgreSQL als Datenbank ausgewählt. Hierbei wird Prisma ORM als Zwischenschicht eingesetzt, damit die Modelle der relationanlen Datenbank als Objekte mit statischen Typen generiert werden. </p>
 <p>Für den Webserver wurden Linux und Docker verwendet. Das quelloffene Linux ist bekannt für seine Stabilität, Sicherheit und Performance, was es zu einer idealen Wahl für den Einsatz als Webserver macht. Docker ergänzt diese Vorteile durch die Bereitstellung einer containerisierten Umgebung, die eine konsistente und isolierte Ausführung von Anwendungen ermöglicht. Dies erleichtert die Skalierung und Verwaltung der Anwendung erheblich und sorgt dafür, dass sie in unterschiedlichen Umgebungen gleichbleibend funktioniert. Docker-Container bieten zudem eine einfache Möglichkeit, Abhängigkeiten zu verwalten und die Bereitstellung von Updates zu automatisieren. </p>
-<p>Die Kombination dieser Technologien ermöglich effizient eine benutzerfreundliche, performante und wartbare Webanwendung zu entwicklen. </p>
+<p>Die Kombination dieser Technologien ermöglicht effizient eine benutzerfreundliche, performante und wartbare Webanwendung zu entwickeln. </p>
+<p>Wie die Einzelkomponenten zusammenspielen, ist in <a href="#_fig_MW_techstack"></a> ersichtlich.</p>
+<p><figure id="_fig_MW_techstack"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="img/Techstack.png"><img alt="" src="img/Techstack.png" width="60%"/></a><figcaption> Der Techstack der Webanwendung </figcaption></figure></p>
+<p>Der Code wurde größtenteils in VSCode verfasst und mit der Versionskontrolle git auf GitHub verwaltet. </p>
+<h3 id="aufbau-der-webanwendung">Aufbau der Webanwendung<a class="headerlink" href="#aufbau-der-webanwendung" title="Permanent link">¶</a></h3>
+<p><strong>Datenbankstruktur</strong></p>
+<p>In der PostgreSQL Datenbank gibt es zwei Tabellen, die erste Tabelle enthält alle Displaymodule, der Aufbau einer Displaymodul-Entität ist in <a href="#_tab_MW_Display"></a> erkennbar. Hierbei wird als Primary Key die MAC-Adresse verwendet, da diese bei der Produktion vom Hersteller eindeutig vergeben wird, eignet sich diese sehr gut als Primary Key. Des Weiteren werden ein frei definierbarer Anzeigename, die Auflösung des verbauten ePaper Displays, der Zeitpunkt, wann sich das Displaymodul das letzte Mal mit dem Server verbunden hat und das aktuell festgelegte Asset hinterlegt. 
+In <a href="#_tab_MW_Asset"></a> ist die Asset-Entität aufgelistet, diese besteht aus einer zufällig generierten cuid für den Primary Key, einer Typenangabe, ob statisch oder dynamisch, einem frei definierbaren Anzeigename, der Dateipfad auf dem Server Dateisystem, dem HTML Code für das Erstellen des Assets, sofern es über HTML generiert wird und die Anzeigedauer. Die PNGs werden lokal auf dem Dateisystem des Servers abgelegt, somit kann die Datenbank einerseits schlank bleiben und der Webserver kann die PNGs einfach ausliefern. </p>
+<p>Die meisten Eigenschaften wurden als optional deklariert, damit die Entitäten auch schon erstellt werden können, auch wenn noch nicht alle Eigenschaften bekannt sind. </p>
+<table id="_tab_MW_Display">
+<caption style="caption-side:bottom"> Die Display-Entität </caption><thead>
+<tr>
+<th>Key</th>
+<th>Type</th>
+<th>Eigenschaft</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mac_adr</td>
+<td>String</td>
+<td>MAC-Adresse, Primary Key</td>
+</tr>
+<tr>
+<td>friendly_name</td>
+<td>String</td>
+<td>Anzeigename, Optional</td>
+</tr>
+<tr>
+<td>width</td>
+<td>Int</td>
+<td>Breite des Displays</td>
+</tr>
+<tr>
+<td>height</td>
+<td>Int</td>
+<td>Höhe des Displays</td>
+</tr>
+<tr>
+<td>last_seen</td>
+<td>DateTime</td>
+<td>Zuletzt gesehen, Optional</td>
+</tr>
+<tr>
+<td>currentAsset</td>
+<td>String</td>
+<td>Aktuell anzuzeigendes Asset, Optional</td>
+</tr>
+<tr>
+<td>currentAssetType</td>
+<td>String</td>
+<td>Typ des aktuell anzuzeigenden Assets, Optional</td>
+</tr>
+</tbody>
+</table>
+<table id="_tab_MW_Asset">
+<caption style="caption-side:bottom"> Die Asset-Entität </caption><thead>
+<tr>
+<th>Key</th>
+<th>Type</th>
+<th>Eigenschaft</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>String</td>
+<td>Primary Key, cuid Algorithumus</td>
+</tr>
+<tr>
+<td>type</td>
+<td>Type</td>
+<td>Art des Assets, Optional, Kann "STATIC" oder "DYNAMIC" sein</td>
+</tr>
+<tr>
+<td>friendly_name</td>
+<td>String</td>
+<td>Anzeigename, Optional</td>
+</tr>
+<tr>
+<td>file_path</td>
+<td>String</td>
+<td>Pfad auf dem Dateisystem des Servers, Optional</td>
+</tr>
+<tr>
+<td>html</td>
+<td>String</td>
+<td>HTML Code zum generieren des PNGs, Optional</td>
+</tr>
+<tr>
+<td>valid_for</td>
+<td>Int</td>
+<td>Anzeigedauer des Assets, Optional</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Backend</strong></p>
+<p>Für eine standardisierte Verwendung der Daten wurde eine REST-API-Schnittstelle umgesetzt. So können mit GET-Anfragen Daten angefragt, mit PUT-Anfragen Daten bearbeitet und mit DELETE-Anfragen Daten auch gelöscht werden. Sowohl das Frontend als auch die Displaymodule verwenden diese REST-API. </p>
+<p>Eine vollständige Übersicht der möglichen REST-API-Aufrufe ist in Tabelle <a href="#_tab_MW_03"></a> ersichtlich. Platzhalter in eckigen Klammern werden dabei dynamisch in der Anfrage berücksichtigt. </p>
+<table id="_tab_MW_03">
+<caption style="caption-side:bottom"> Die Unterstützen REST-API Aufrufe der Webanwendung </caption><thead>
+<tr>
+<th>URL</th>
+<th>Methode</th>
+<th>Body</th>
+<th>Rückgabe</th>
+<th>Zweck</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>api/v1/assets</td>
+<td>GET</td>
+<td>-</td>
+<td>JSON</td>
+<td>Gibt alle vorhandenen Assets in JSON zurück.</td>
+</tr>
+<tr>
+<td>api/v1/assets</td>
+<td>PUT</td>
+<td>HTML Form</td>
+<td>JSON</td>
+<td>Erstellt ein neues Asset. Falls im HTML Form ein Key <code>html</code> enthalten ist, wird der Inhalt als HTML interpretiert und ein PNG davon erzeugt und lokal abgespeichert. Falls im HTML Form eine PNG-Datei enthalten ist, so wird diese lokal abgespeichert.</td>
+</tr>
+<tr>
+<td>api/v1/assets/[ID]</td>
+<td>GET</td>
+<td>-</td>
+<td>JSON</td>
+<td>Gibt das Asset mit der übergebenen ID als JSON zurück.</td>
+</tr>
+<tr>
+<td>api/v1/assets/[ID]</td>
+<td>PUT</td>
+<td>HTML Form</td>
+<td>HTTP Status</td>
+<td>Aktualisiert die Daten des Assets mit der passenden ID, falls HTML mitgesendet wird, so wird das PNG neu genriert und lokal abgespeichert.</td>
+</tr>
+<tr>
+<td>api/v1/assets/[ID]</td>
+<td>DELETE</td>
+<td>-</td>
+<td>HTTP Status</td>
+<td>Löscht das Asset mit der übergebenen ID.</td>
+</tr>
+<tr>
+<td>api/v1/displays</td>
+<td>GET</td>
+<td>-</td>
+<td>JSON</td>
+<td>Gibt alle vorhandenen Displaymodule in JSON zurück.</td>
+</tr>
+<tr>
+<td>api/v1/displays/[MAC]</td>
+<td>GET</td>
+<td>-</td>
+<td>JSON</td>
+<td>Gibt das Displaymodule mit der passenden MAC-Adresse in JSON zurück.</td>
+</tr>
+<tr>
+<td>api/v1/displays/[MAC]</td>
+<td>PUT</td>
+<td>HTML Form oder JSON</td>
+<td>HTTP Status</td>
+<td>Aktualisiert die Infos des Displaymoduls mit der MAC-Adresse oder setzt das zugewiesene Asset neu.</td>
+</tr>
+<tr>
+<td>api/v1/displays/[MAC]</td>
+<td>DELETE</td>
+<td>-</td>
+<td>HTTP Status</td>
+<td>Löscht das Displaymodul mit der MAC-Adresse aus der Datenbank.</td>
+</tr>
+<tr>
+<td>api/v1/displays/config/[MAC]</td>
+<td>GET</td>
+<td>-</td>
+<td>JSON</td>
+<td>Gibt als JSON zurück, welches Asset gerade für das Displaymodul mit der MAC-Adresse zugewiesen ist und wie lange es angezeigt werden soll.</td>
+</tr>
+<tr>
+<td>api/v1/displays/register/[MAC]</td>
+<td>PUT</td>
+<td>JSON</td>
+<td>JSON</td>
+<td>Erstellt das Displaymodul mit der MAC-Adresse neu in der Datenbank und gibt das neu erstellte Displaymodul als JSON zurück.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Frontend</strong></p>
+<p>Im Frontend gibt es fünf Unterseiten. Die Startseite enthält das Menü zu den anderen beiden Hauptunterseiten »Displays« und »Assets«. In der Unterseite »Displays« befindet sich eine Auflistung aller dem Server bekannten Displaymodulen. Ein Displaymodul registriert sich dabei beim Server selbst, da es im Servermodus die Register-URL aufruft und sich dem Server so bekannt macht. In <a href="#_fig_WA_Displays"></a> ist erkennbar, dass jedes Displaymodul seinem mit seinem Anzeigenamen und auch einer Vorschau des aktuell zugewiesenen Assets dargestellt wird. Ein Displaymodul kann in der Übersicht angeklickt werden, wodurch sich eine Detailansichtsseite öffnet. In dieser Detailseite, welche <a href="#_fig_WA_Display_Details"></a> zeigt, können die Metadaten des Displays bearbeitet und gespeichert werden. Zusätzlich werden alle Assets angezeigt, sobald ein Asset angeklickt wird, wird dieses als neues Asset dem Display zugewiesen. </p>
+<p><figure id="_fig_WA_Displays"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/Handbuch/WA-Displays.png"><img alt="" src="../img/Handbuch/WA-Displays.png" width="60%"/></a><figcaption> Die Übersichtsseite aller Displays </figcaption></figure></p>
+<p>Ähnlich verhält es sich mit der zweiten Hauptunterseite »Assets«, die unter <a href="#_fig_WA_Assets"></a> erkennbar ist. Auch hier werden alle vorhandenen Assets aufgelistet und können ausgewählt werden, um eine Detailansicht, wie in <a href="#_fig_WA_Display_Details"></a> gezeigt, zu öffnen und die Metadaten zu bearbeiten und das Asset zu löschen. Im Gegensatz zu Displaymodulen können Assets händisch angelegt werden, entweder kann dafür eine PNG-Datei hochgeladen oder HTML-Code eingetragen werden, welcher abschließend wieder ein PNG produziert. Die Abbildungen <a href="#_fig_WA_Upload"></a> und <a href="#_fig_WA_HTML"></a> zeigen jeweils die beiden Vorgänge. </p>
+<p><figure id="_fig_WA_Assets"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/Handbuch/WA-Assets.png"><img alt="" src="../img/Handbuch/WA-Assets.png" width="60%"/></a><figcaption> Eine Übersicht über alle vorhanden Assets </figcaption></figure></p>
+<p><figure id="_fig_WA_Display_Details"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/Handbuch/WA-Display-Details.png"><img alt="" src="../img/Handbuch/WA-Display-Details.png" width="60%"/></a><figcaption> Die Detailansicht eines Displays </figcaption></figure></p>
+<p><figure id="_fig_WA_Upload"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/Handbuch/WA-Asset-Upload.png"><img alt="" src="../img/Handbuch/WA-Asset-Upload.png" width="60%"/></a><figcaption> Das Formular zum hochladen von bestehenden PNGs </figcaption></figure></p>
+<p><figure id="_fig_WA_HTML"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/Handbuch/WA-Asset-HTML.png"><img alt="" src="../img/Handbuch/WA-Asset-HTML.png" width="60%"/></a><figcaption> Das Formular zum erstellen von PNGs aus HTML Code </figcaption></figure></p>
 <h3 id="testumgebung">Testumgebung<a class="headerlink" href="#testumgebung" title="Permanent link">¶</a></h3>
-<p>Als Testumgebung wurde beim Rechenzentrum (RZ) eine Linux VM beantragt. Die vom Rechenzentrum erhaltene VM weißt die in <a href="#_tab_MW_01"></a> genannten Eigenschaften auf</p>
+<p>Als Testumgebung wurde beim Rechenzentrum (RZ) eine Linux-VM beantragt. Die vom Rechenzentrum erhaltene VM hat die in <a href="#_tab_MW_01"></a> genannten Eigenschaften. </p>
 <table id="_tab_MW_01">
 <caption style="caption-side:bottom"> Die Systemeigenschaften der vom RZ erhaltenen VM.  </caption><thead>
 <tr>
@@ -578,25 +779,33 @@ Prisma ist ein Object-Relational-Mapper (ORM). ORMs ermöglichen das typensicher
 </tr>
 </tbody>
 </table>
-<p>Zudem wurde vom RZ auch gleich ein DNS Eintrag gesetzt und die Domain lprd.informatik.tha.de verweist auf diese VM. 
+<p>Zudem wurde vom RZ auch gleich ein DNS-Eintrag gesetzt und die Domain lprd.informatik.tha.de verweist auf diese VM. 
 Neben dem Betriebssystem liefert die VM auch gleich noch eine Firewall standardmäßig mit, hier setzt das RZ die Variante arno-iptables ein <a href="../Quellenverzeichnis/#MW_01">[MW_01]</a>. </p>
 <h3 id="ersteinrichtung">Ersteinrichtung<a class="headerlink" href="#ersteinrichtung" title="Permanent link">¶</a></h3>
 <p>Der administrative Zugriff auf die VM erfolgt über SSH. 
-Nach der Übergabe wurden zuerst die standard Zugangsdaten der VM durch neue Zugangsdaten ersetzt und die SSH Anmeldung des root Benutzer gesperrt. Ebenso wurden für die Personen, welche Zugriff auf die VM benötigen jeweils neue Benuzter angelegt. Dabei wurde als Benutzerauthentifizierung SSH-Keys als Authentifizierungsmethode verwendet. 
-Anschließend wurden die installierten Pakete mit dem Advanced Packaging Tool (apt) Paketmanager auf die neuste Version aktualisiert. </p>
-<p>Damit die VM während der Dauer des Projekts zuverlässig läuft und Probleme frühzeitig erkannt werden wurde eine Monitoring Lösung aufgesetzt und mit dem Discord Server der Projektgruppe verbunden. Die hier eingesetzte Lösung nennt sich Netdata. Der Netdata Agent ist opensource und kann kostenlos eingesetzt werden, dieser bringt von Haus aus viele Vorlagen mit um das Gesamtsystem gut zu überwachen und Warnungen, sowie Fehler proaktiv an die Administratoren zu melden. Taucht ein Fehler auf dem Server auf, so wird in der hier verwendenten Konfiguration, direkt eine Nachricht auf dem Discord der Projektgruppe gesendet.  </p>
+Nach der Übergabe wurden zuerst die Standardzugangsdaten der VM durch neue Zugangsdaten ersetzt und die SSH-Anmeldung des Root-Benutzers gesperrt. Ebenso wurden für die Personen, welche Zugriff auf die VM benötigen, jeweils neue Benutzer angelegt. Dabei wurden als Benutzerauthentifizierung SSH-Keys als Authentifizierungsmethode verwendet. 
+Anschließend wurden die installierten Pakete mit dem Advanced Packaging Tool (apt) Paketmanager auf die neueste Version aktualisiert. </p>
 <h3 id="einrichtung-der-webanwendung">Einrichtung der Webanwendung<a class="headerlink" href="#einrichtung-der-webanwendung" title="Permanent link">¶</a></h3>
 <p>Nach der erfolgreichen Grundinstallation kann mit dem Aufsetzen der Testumgebung der Webanwendung begonnen werden. 
-Dafür werden zuerst die Pakete git und docker über den apt Packetmanager installiert. </p>
-<p>Docker</p>
-<h3 id="datensicherung">Datensicherung<a class="headerlink" href="#datensicherung" title="Permanent link">¶</a></h3>
-<p>Der Zweck der VM ist primär die Entwicklung der Webanwendung und somit nicht der produktive Einsatz. Da der Quellcode der Webanwendung über Git verwaltet wird und die Daten innerhalb der Datenbank reine Testdaten sind, wurde auf das einrichten einer Datensicherung verzichtet. </p>
-<p>Für eine produktive Umgebung ist eine sorgfältig überlegte Backupstrategie unabdingbar. Hierbei sollte genaustens überlegt werden, wie der Backupprozess implementiert und automatisiert wird und wie erstellte Backups auf Konsistenz und wiederherstellbarkeit überprüft werden können. Auch der Speicherort von Backups sollte bedacht werden und der 3-2-1 Regel folgen. </p>
-<p>//TODO
-Grafik Techstack</p>
-<p>Wie im Kapitel //TODO bereits erläutert ist es für die Entwicklung einer Webanwendung sehr sinnvoll ein Webframework einzusetzen. Hierbei gibt es eine große Auswahl an möglichen Frameworks und auch Serverseitigen Programmiersprachen. Da für Funktionen wie 
-Es bietet sich an im Rahmen der Projektarbeit für die Serverseitige Programmiersprache auch JavaScript einzusetzen, da bereits ein großteil des Websitecodes vom Standalone und Netzwerkmodus auf JavaScript setzt, damit dieser im Webbrowser des zugreifenden Benutzers ausgeführt werden kann. Für das Front</p>
+Dafür werden zuerst die Pakete git und docker über den apt Paketmanager installiert. </p>
+<p>Die PostgreSQL-Datenbank wurde in einem Docker Container eingerichtet. Anschließend konnte das GitHub-Projekt lokal auf dem Server geklont werden. Vor dem ersten Start der Webanwendung kann mit Prisma ORM die Datenbank konfiguriert und initialisiert werden, Prisma ORM verwendet dabei die Informationen, die in der schema.prisma Datei angegeben sind. Danach lässt sich mit einem npm Befehl ein Development Server starten. </p>
+<p>Änderungen am Code werden nach dem Speichern der Quelldatei sofort in den laufenden Development Server eingepflegt, was eine schnelle und effiziente Entwicklung ermöglicht. </p>
+<h3 id="datensicherung-und-monitoring">Datensicherung und Monitoring<a class="headerlink" href="#datensicherung-und-monitoring" title="Permanent link">¶</a></h3>
+<p>Der Zweck der VM ist primär die Entwicklung der Webanwendung und somit nicht der produktive Einsatz. Da der Quellcode der Webanwendung über Git verwaltet wird und die Daten innerhalb der Datenbank reine Testdaten sind, wurde auf das Einrichten einer Datensicherung verzichtet. </p>
+<p>Für eine produktive Umgebung ist eine sorgfältig überlegte Backupstrategie unabdingbar. Hierbei sollte genaustens überlegt werden, wie der Backupprozess implementiert und automatisiert wird und wie erstellte Backups auf Konsistenz und Wiederherstellbarkeit überprüft werden können. Auch der Speicherort von Backups sollte bedacht werden und der 3-2-1 Regel folgen. </p>
+<p>Auch wurde keine Monitoringlösung verwendet, um den Zustand der VM und der darauf laufenden Dienste zu überwachen, auch hier ist es sinnvoll, ein Konzept für die Produktivumgebung auszuarbeiten.</p>
 <!-- Content moved into the footer -->
+<!-- <style>
+p, figcaption, ul, caption, table {
+    /* font-family: Verdana, Geneva, Tahoma, sans-serif !important; */
+    font-size: 13px;
+    /* font-size: 1rem; */
+}
+
+td {
+    padding: 4px 12px;
+}
+</style> -->
 </article>
 </div>
 <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
@@ -671,7 +880,7 @@ Es bietet sich an im Rahmen der Projektarbeit für die Serverseitige Programmier
 <span class="md-icon" title="Letztes Update">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"></path></svg>
 </span>
-<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 27, 2024</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 29, 2024</span>
 </span>
 <!-- Date of creation -->
 <!-- Authors (git-authors plugin) -->
