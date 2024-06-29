@@ -265,17 +265,9 @@ Figure: Der Versuchsaufbau mit Oszilloskop, Multimeter und Labornetzteil { #_fig
 
 
 ### Messergebnisse
-**Benjamin Klaric**  
-
-In [Abbildung 7.xx](#_fig_BK_20) ist der vollständige Refresh eines 7,3-Zoll-Displays dargestellt. Der Vorgang beginnt mit dem Anzeigen eines weißen Bildes, gefolgt von einer einsekündigen Delay. Anschließend wird eine fest kodierte Bitmap der Katze auf dem Display angezeigt. Nach einer Delay von drei Sekunden wird erneut ein weißes Bild dargestellt, gefolgt von einer zweisekündigen Delay, um den Ablauf eines vollständigen Refreshs abzuschließen. Schließlich wechselt das System in den Deep-Sleep-Modus. Der Stromverbrauch des WLANs wurde in dieser Darstellung nicht berücksichtigt.  
-
-Figure: Plot von dem Stromvebrauch in Zeitabschnitten beim 7,3" Display { #_fig_BK_20 }
-
-![](img/Plot-Stromvebrauch.png){ width=90% }
-
 **Mario Wegmann**  
 
-In []( #_tab_MW_02 ) kann man einen kompletten Refresh des 7,3 Zoll großen Displays erkennen. Hierbei wird auf dem ePaper Display zuerst weiß gestellt, anschließend wird nach einer Pause eine in der Firmware hart codierte Bitmap auf dem Display angezeigt. Zum Abschluss wird erneut ein weißes Bild dargestellt. In diesem Teilversuch wurde der Stromverbrauch vom WLAN noch nicht gemessen. Für diesen Versuch wurde Democode von Hersteller WaveShare verwendet, welcher in der Quelle zu finden ist [[MW_09]](Quellenverzeichnis.md#MW_09). 
+In [Tabelle 7.xx]( #_tab_MW_02 ) kann man einen kompletten Refresh des 7,3 Zoll großen Displays erkennen. Hierbei wird auf dem ePaper Display zuerst weiß gestellt, anschließend wird nach einer Pause eine in der Firmware hart codierte Bitmap auf dem Display angezeigt. Zum Abschluss wird erneut ein weißes Bild dargestellt. In diesem Teilversuch wurde der Stromverbrauch vom WLAN noch nicht gemessen. Für diesen Versuch wurde Democode von Hersteller WaveShare verwendet, welcher in der Quelle zu finden ist [[MW_09]](Quellenverzeichnis.md#MW_09).
 
 Table: Der Stromverbrauch aufgeteilt in Zeitabschnitte beim 7,3" Display { #_tab_MW_02 }
 
@@ -304,7 +296,17 @@ Table: Der Stromverbrauch aufgeteilt in Zeitabschnitte beim 7,3" Display { #_tab
 | 21. |  Delay	| 49,09 |	2,008 |
 | 22. |  Deep-sleep	| 9,777 |	5,001 |
 
-In []( #_tab_MW_9_7_Strom ) sieht man die Messwerte vom Stromverbrauch beim 9,7 Zoll Display. Hierbei wird der ESP32 und das zugehörige Treiber-Board mit Strom versorgt, anschließend das Treiber-Board initialisiert und nach den Eigenschaften des angeschlossenen ePaper Displays gefragt. Erst danach wird die Bitmap zuerst an das Treiber-Board übertragen und dann vom Treiber-Board auf das Display. Abschließend wird das Treiber-Board in den Idle wieder gesetzt und zum Schluss der ESP32 zusätzlich in den Deep-sleep. Für diesen Versuch wurde Democode von GitHub verwendet, welcher in der Quelle zu finden ist [[MW_10]](Quellenverzeichnis.md#MW_10). 
+**Benjamin Klaric**  
+
+In [Abbildung 7.xx](#_fig_BK_20) sind die geplotteten Werten von der [Tabelle 7.xx]( #_tab_MW_02 ) grapisch dargestellt.
+
+Figure: Plot von dem Stromvebrauch in Zeitabschnitten beim 7,3" Display { #_fig_BK_20 }
+
+![](img/Plot-Stromverbrauch.png){ width=90% }
+
+**Mario Wegmann**  
+
+In [Tabelle 7.xx]( #_tab_MW_9_7_Strom ) sieht man die Messwerte vom Stromverbrauch beim 9,7 Zoll Display. Hierbei wird der ESP32 und das zugehörige Treiber-Board mit Strom versorgt, anschließend das Treiber-Board initialisiert und nach den Eigenschaften des angeschlossenen ePaper Displays gefragt. Erst danach wird die Bitmap zuerst an das Treiber-Board übertragen und dann vom Treiber-Board auf das Display. Abschließend wird das Treiber-Board in den Idle wieder gesetzt und zum Schluss der ESP32 zusätzlich in den Deep-sleep. Für diesen Versuch wurde Democode von GitHub verwendet, welcher in der Quelle zu finden ist [[MW_10]](Quellenverzeichnis.md#MW_10).
 
 Table: Der Stromverbrauch aufgeteilt in Zeitabschnitte beim 9,7" Display { #_tab_MW_9_7_Strom }
 
@@ -318,6 +320,14 @@ Table: Der Stromverbrauch aufgeteilt in Zeitabschnitte beim 9,7" Display { #_tab
 |6.	| Bildschirminhalt auf dem ePaper Display darstellen |109,9|	0,865|
 | 7. | Idle mit angeschalteten Treiber-Board  |66,48|	0,954|
 | 8.	| Deep-sleep angeschalteten Treiber-Board | 29,22 |	5,002|
+
+**Benjamin Klaric**  
+
+In [Abbildung 7.xx](#_fig_BK_21) sind die geplotteten Werten von der [Tabelle 7.xx]( #_tab_MW_9_7_Strom ) grapisch dargestellt.
+
+Figure: Plot von dem Stromvebrauch in Zeitabschnitten beim 9,7" Display { #_fig_BK_21 }
+
+![](img/Plot-Stromverbrauch-2.png){ width=60% }
 
 ### Interpretation
 **Benjamin Klaric**  
