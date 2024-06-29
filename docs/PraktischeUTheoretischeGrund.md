@@ -135,15 +135,15 @@ Figure: Indexed Bitmap { #_fig_indexbmp }
 ## Energiemanagement
 **Mario Wegmann**
 
-Computer verbrauchen auch ohne aktive Aufgabe Strom. Ohne spzeielle Anweisungen an den Computer wird der Stromverbrauch nicht gedrosselt, wodurch Energie verschwendet wird. Bei PCs fallen hierbei ACPI Sleep States ein, ACPI steht dabei für Advanced Configuration and Power Interface und ist ein offener Industriestandard für die Energieverwaltung bei Computern [[MW_02]](Quellenverzeichnis.md#MW_02). Die sogenannten ACPI sleep states ermöglichen es dem Betriebssystem zu steuern, welche Komponenten gedrosselt oder gar komplett abgeschaltet werden, um den Stromverbrauch zu minimieren. Auch bei Mikrocontrollern gibt es mehere Mechamisem, womit der Stromverbrauch reduziert werden kann. Da ein geringer Stromverbrauch eines der wichtigsten Kriterien diese Projekts ist, werden hier beispielhaft die Sleep States eines ESP32 erläutert. 
+Computer verbrauchen auch ohne aktive Aufgabe Strom. Ohne spezielle Anweisungen an den Computer wird der Stromverbrauch nicht gedrosselt, wodurch Energie verschwendet wird. Bei PCs fallen hierbei ACPI sleep states ein, ACPI steht dabei für Advanced Configuration and Power Interface und ist ein offener Industriestandard für die Energieverwaltung bei Computern [[MW_02]](Quellenverzeichnis.md#MW_02). Die sogenannten ACPI sleep states ermöglichen es dem Betriebssystem zu steuern, welche Komponenten gedrosselt oder gar komplett abgeschaltet werden, um den Stromverbrauch zu minimieren. Auch bei Mikrocontrollern gibt es mehrere Mechanismen, womit der Stromverbrauch reduziert werden kann. Da ein geringer Stromverbrauch eine der wichtigsten Kriterien dieses Projekts ist, werden hier beispielhaft die Sleep States eines ESP32 erläutert. 
 
 ### Einfaches Delay
 
-Die einfachste Möglichkeit einen ESP32 Mikrocontroller keine konkrete Aufgabe zu geben, ist mit einem Delay. Die Funktion heißt in der Arduino IDE `Delay()` und lässt einen Parameter zu, welcher angiebt, wie viele Mikrosekunden der Mikrocontroller warten soll. In der ESP-IDF heißt die Funktion `vTaskDelay()`, hier kann auch ein Parameter für die Wartedauer übergeben werden. Der Parameter nimmt jedoch nicht Millisekunden, sondern Ticks an. Die Ticks sind abhängig von der Tick Frequenz, daher müssen die Millisekunden mit der Funktion `pdMSTOTICKS()` in Ticks umgewandelt werden. Während dem aktiven warten werden jedoch keine Komponenten aktiv abgeschaltet oder gedrosselt, lediglich der Prozessor läuft nicht auf Vollast. 
+Die einfachste Möglichkeit, einem ESP32 Mikrocontroller keine konkrete Aufgabe zu geben, ist mit einem Delay. Die Funktion heißt in der Arduino IDE `Delay()` und lässt einen Parameter zu, welcher angibt, wie viele Mikrosekunden der Mikrocontroller warten soll. In der ESP-IDF heißt die Funktion `vTaskDelay()`, hier kann auch ein Parameter für die Wartedauer übergeben werden. Der Parameter nimmt jedoch nicht Millisekunden, sondern Ticks an. Die Ticks sind abhängig von der Tick-Frequenz, daher müssen die Millisekunden mit der Funktion `pdMSTOTICKS()` in Ticks umgewandelt werden. Während dem aktiven Wartens werden jedoch keine Komponenten aktiv abgeschaltet oder gedrosselt, lediglich der Prozessor läuft nicht auf Vollast. 
 
 ### Der Light-sleep Modus
 
-Deutlich besser ist da schon der Light-sleep. Wird dieser Modus aktiviert, so werden die teilweise Clock-Signale der digitale Peripherie, der meisten Teile des RAMs und der CPUs ausgeschalten und die Versorgungsspannung reduziert, dieses Verfahren nennt sich Clock-Gating [[MW_03]](Quellenverzeichnis.md#MW_03). Dadurch kann der Stromverbrauch deutlich reduziert werden, wie hoch die Reduktion ist, wird im Kapitel [7.9 Strommessung von Mikrocontroller und Display](Hardware.md#strommessung-von-mikrocontroller-und-display) gemessen. Beim ESP32 gibt es nun verschiede Wakeup Sources um den Light-sleep wieder zu beenden. Unter anderem sind folgende Wakeup Sources möglich: 
+Deutlich besser ist da schon der Light-sleep. Wird dieser Modus aktiviert, so werden die teilweise Clock-Signale der digitalen Peripherie, der meisten Teile des RAMs und der CPUs ausgeschalten und die Versorgungsspannung reduziert, dieses Verfahren nennt sich Clock-Gating [[MW_03]](Quellenverzeichnis.md#MW_03). Dadurch kann der Stromverbrauch deutlich reduziert werden, wie hoch die Reduktion ist, wird im Kapitel [7.9 Strommessung von Mikrocontroller und Display](Hardware.md#strommessung-von-mikrocontroller-und-display) gemessen. Beim ESP32 gibt es nun verschiedene Wakeup Sources, um den Light-sleep wieder zu beenden. Unter anderem sind folgende Wakeup Sources möglich: 
 
 * Timer
 * Touchpad
@@ -155,7 +155,7 @@ Nach einem Wakeup Event wird der State wiederhergestellt und der Mikrocontroller
 
 ### Der Deep-sleep Modus
 
-Noch mehr Stromeinsparung kann mit dem Deep-sleep realisiert werden. Dabei werden die oben genannten Komponenten nicht nur clock-gated, sondern komplett abgeschaltet, somit bleibt nur noch der RTC Controller und dessen Memory und der ULP Coprocessor aktiv. Viele der zuvor genannten Wakeup Sources können auch verwendet werden um den ESP32 aus dem Deep-sleep heraus aufzuwecken, ausnahmen sind hierbei jedoch die meisten GPIO Pins und UART. Des weiteren ist anzumerken, dass nach dem Aufwecken aus dem Deep-sleep der ESP32 kein State wiederhergestellt wird. Die Firmware fängt also von vorne an und auch Daten die während dem Deep-sleep nicht verloren gehen dürfen müssen separat in nicht-flüchtigen Speicher abgelegt werden. [[MW_06]](Quellenverzeichnis.md#MW_06)
+Noch mehr Stromeinsparung kann mit dem Deep-sleep realisiert werden. Dabei werden die oben genannten Komponenten nicht nur clock-gated, sondern komplett abgeschaltet, somit bleibt nur noch der RTC-Controller und dessen Memory und der ULP Coprocessor aktiv. Viele der zuvor genannten Wakeup Sources können auch verwendet werden, um den ESP32 aus dem Deep-sleep heraus aufzuwecken. Ausnahmen sind hierbei jedoch die meisten GPIO Pins und UART. Des Weiteren ist anzumerken, dass nach dem Aufwecken aus dem Deep-sleep der ESP32 kein State wiederhergestellt wird. Die Firmware fängt also von vorne an und auch Daten, die während dem Deep-sleep nicht verloren gehen dürfen, müssen separat in nicht-flüchtigen Speicher abgelegt werden. [[MW_06]](Quellenverzeichnis.md#MW_06)
 
 ## Firmwarebibliotheken
 
@@ -207,26 +207,26 @@ Nach dem Prototyping und ausführlichen Testen, kann das überzeugende Modell sc
 ## Webanwendungen
 **Mario Wegmann**
 
-Aufgrund den anforderungen und der komplexität von größeren Websiten ist es nicht mehr praktikabel Inhalte komplett händisch in HTML, CSS und JavaScript zu erstellen. Zu groß und fehleranfällig ist die Wartung eines solchen manuel erstellten Konstrukts. Ein Beispiel hierfür wäre das erweiteren einer neuen Unterseite in der Menüleiste. Hier müsste jede andere Unterseite anegpasst werden, um die neue Unterseite von allen anderen Unterseiten aus zu erreichen. 
+Aufgrund der Anforderungen und der Komplexität von größeren Webseiten ist es nicht mehr praktikabel, Inhalte komplett händisch in HTML, CSS und JavaScript zu erstellen. Zu groß und fehleranfällig ist die Wartung eines solchen manuell erstellten Konstrukts. Ein Beispiel hierfür wäre das Erweitern einer neuen Unterseite in der Menüleiste. Hier müsste jede andere Unterseite angepasst werden, um die neue Unterseite von allen anderen Unterseiten aus zu erreichen. 
 
-Stattdessen hat es sich etabliert für Websiten mit viel statischen Inhalt sogenannte Static Site Generators zu nutzen. Hierbei liegt der Fokus nur noch auf die Erstellung des eigentlichen Inhalts über eine simple Textdatei. Nach Fertigstellung des Inhalts erzeugt der Generator dann das restliche Gerüst der Website, so werden die Unterseiten generiert, das Navigationsmenü erstellt, Bilder optimiert und das Layout anhand des angegebenen Themes angewendet. 
+Stattdessen hat es sich etabliert, für Websites mit viel statischem Inhalt sogenannte Static Site Generators zu nutzen. Hierbei liegt der Fokus nur noch auf der Erstellung des eigentlichen Inhalts über eine simple Textdatei. Nach Fertigstellung des Inhalts erzeugt der Generator dann das restliche Gerüst der Website, so werden die Unterseiten generiert, das Navigationsmenü erstellt, Bilder optimiert und das Layout anhand des angegebenen Themes angewendet. 
 
-Neben Websiten mit statischen Inhalten gibt es auch Websiten, dessen Inhalt dynamisch erstellt wird. In Social Media ist die Anzahl an Inhalten so enorm, das es nicht praktikabel wäre allen Personen die gleiche Timeline anzuzeigen. Stattdessenn wird pro Benutzer eine auf Ihn spezialisierte Timeline beim Aufruf generiert. 
+Neben Websites mit statischen Inhalten gibt es auch Websites, deren Inhalt dynamisch erstellt wird. In Social Media ist die Anzahl an Inhalten so enorm, dass es nicht praktikabel wäre, allen Personen die gleiche Timeline anzuzeigen. Stattdessen wird pro Benutzer eine auf ihn spezialisierte Timeline beim Aufruf generiert. 
 
-Zuletzt gibt es auch Anwendungen die über den Webbrowser laufen und somit keine lokale Installation benötigen, ein Beispiel wäre hierfür die NextCloud, womit sich Dateien abspeichern, erstellen, ordnen und teilen lassen. Dank vieler Erweiterungen 
+Zuletzt gibt es auch Anwendungen, die über den Webbrowser laufen und somit keine lokale Installation benötigen, ein Beispiel wäre hierfür die Nextcloud, womit sich Dateien abspeichern, erstellen, ordnen und teilen lassen. Dank vieler Erweiterungen. 
 
-Die letzen beiden genannten Kategorien erfordern viele Komponenten die zusammenarbeiten müssen um den Benutzer eine performante und benutzerfreundliche Erfahrung zu ermöglichen. Daher haben sich mehr und mehr verschiedene Technologien im Web entwickelt, die mit unterschiedlsichen Herangehensweisen versuchen die Anfoderungen zu erfüllen. 
+Die letzten beiden genannten Kategorien erfordern viele Komponenten, die zusammenarbeiten müssen, um dem Benutzer eine performante und benutzerfreundliche Erfahrung zu ermöglichen. Daher haben sich mehr und mehr verschiedene Technologien im Web entwickelt, die mit unterschiedlichen Herangehensweisen versuchen, die Anforderungen zu erfüllen. 
 
-Dennoch gibts es auch noch Anwendungsfälle, wo es durchaus sinvoll ist bewusst auf weitere Technologien zu verzichten und nur mit HTML, CSS und JavaScript zu arbeiten. Ein Anwendungsfall wäre der Embedded Bereich, da dort die Ressourcen sehr knapp sind und somit die Last für Anfragen möglichst auf den zugreifenden Client ausgelagert werden sollten. 
+Dennoch gibt es auch noch Anwendungsfälle, wo es durchaus sinnvoll ist, bewusst auf weitere Technologien zu verzichten und nur mit HTML, CSS und JavaScript zu arbeiten. Ein Anwendungsfall wäre der Embedded Bereich, da dort die Ressourcen sehr knapp sind und somit die Last für Anfragen möglichst auf den zugreifenden Client ausgelagert werden sollten. 
 
 ### Webtechnologien
 **Mario Wegmann**
 
-Moderne Webbrowser haben sich auf die drei Programmiersprachen HTML, CSS und JavaScript geeinigt um Websiten darzustellen.
+Moderne Webbrowser haben sich auf die drei Programmiersprachen HTML, CSS und JavaScript geeinigt, um Webseiten darzustellen.
 
 **HyperText Markup Language (HTML)** 
 
-HTML definiert die Struktur und den Inhalt einer Webseite durch die Verwendung von Tags HTML bildet das Gerüst einer Webseite, indem es Text, Bilder, Links, Videos und andere Elemente einbindet und organisiert.
+HTML definiert die Struktur und den Inhalt einer Webseite durch die Verwendung von HTML-Tags. HTML bildet das Gerüst einer Webseite, indem es Text, Bilder, Links, Videos und andere Elemente einbindet und organisiert. 
 
 **Cascading Style Sheets (CSS)**
 
@@ -234,11 +234,11 @@ CSS ist eine Stylesheet-Sprache, die verwendet wird, um das Aussehen und Layout 
 
 **JavaScript**
 
-JavaScript ist eine Programmiersprache, welche im Browser ausgeführt werden kann und somit für interaktivität auf der Clientseite sorgt. JavaScript nutz die Technik der DOM Manipulation um den Inhalt des geladene HTMLs nachträglich zu modifizieren. Das Document Object Model (DOM) beschreibt den Aufbau der einzelnen HTML Elemente als Baumstruktur, diese Elemente können mit JavaScript gelesen, hinzugefügt, verändert und gelöscht werden. TypeScript ist eine Erweiterung von JavaScript und erweitert die Sprache um statische Typen, damit können Fehler im Programmcode früher erkannt´ und die Codequalität verbessert werden. 
+JavaScript ist eine Programmiersprache, welche im Browser ausgeführt werden kann und somit für Interaktivität auf der Clientseite sorgt. JavaScript nutzt die Technik der DOM-Manipulation, um den Inhalt des geladenen HTML nachträglich zu modifizieren. Das Document Object Model (DOM) beschreibt den Aufbau der einzelnen HTML-Elemente als Baumstruktur, diese Elemente können mit JavaScript gelesen, hinzugefügt, verändert und gelöscht werden. TypeScript ist eine Erweiterung von JavaScript und erweitert die Sprache um statische Typen, damit können Fehler im Programmcode früher erkannt und die Codequalität verbessert werden. 
 
 **React**
 
-React ist eine JavaScript-Bibliothek zur Erstellung von Benutzeroberflächen. Sie verwendet eine komponentenbasierte Architektur, die es Entwicklern ermöglicht, wiederverwendbare UI-Komponenten zu erstellen und den Status von Anwendungen effizient zu verwalten. React nutzt einen virtuellen DOM zur Optimierung von Updates und zur Verbesserung der Performance. Neben React sind Vue, Angular und Svelte weitere bekannte Frontent-Bibliotheken. 
+React ist eine JavaScript-Bibliothek zur Erstellung von Benutzeroberflächen. Sie verwendet eine komponentenbasierte Architektur, die es Entwicklern ermöglicht, wiederverwendbare UI-Komponenten zu erstellen und den Status von Anwendungen effizient zu verwalten. React nutzt einen virtuellen DOM zur Optimierung von Updates und zur Verbesserung der Performance. Neben React sind Vue, Angular und Svelte weitere bekannte Frontend-Bibliotheken. 
 
 **Structured Query Language (SQL)**
 
@@ -246,7 +246,7 @@ SQL ist eine standardisierte Programmiersprache, die zur Verwaltung und Manipula
 
 **Object Relational Mapper (ORM)**
 
-ORMs sind nützlich, weil es die Arbeit mit Datenbanken durch typsichere, deklarative Datenmodellierung und effiziente Datenbankmigrationen erheblich vereinfachen und optimieren. Prisma ORM ist beispielsweise ein ORM, welches automatisch TypeScript-Typen generiert. Dies ermöglicht Typensicherheit und die nutzung von Autovervollständigung im Editor, wodurch die Produktivität und Codequalität verbessert wird. ORMs reduzieren die Notwendigkeit für manuelles SQL-Schreiben und minimieren somit potenzielle Fehler. Zudem unterstützen sie verschiedene Datenbanksysteme, somit ist ein wechsel des RDBMS mit nur wenig Änderung am Code möglich.
+ORMs sind nützlich, weil sie die Arbeit mit Datenbanken durch typsichere, deklarative Datenmodellierung und effiziente Datenbankmigrationen erheblich vereinfachen und optimieren. Prisma ORM ist beispielsweise ein ORM, welches automatisch TypeScript-Typen generiert. Dies ermöglicht Typensicherheit und die Nutzung von Autovervollständigung im Editor, wodurch die Produktivität und Codequalität verbessert wird. ORMs reduzieren die Notwendigkeit für manuelles SQL-Schreiben und minimieren somit potenzielle Fehler. Zudem unterstützen sie verschiedene Datenbanksysteme, somit ist ein Wechsel des RDBMS mit nur wenig Änderungen am Code möglich.
 
 **PostgreSQL**
 
@@ -254,10 +254,10 @@ PostgreSQL ist ein relationale Datenbankmanagementsystem (RDBMS). Ein RDBMS ist 
 
 **Webserver**
 
-Es gibt verschiedene Möglichkeiten wie HTML, CSS und JavaScript bei einer Anfragen an den Webserver generiert werden können. Der Code kann komplett statisch auf dem Webserver abgelegt sein, oder auch dynamisch bei der Anfrage generiert werden. Prinzipiell lässt sich für den letzeren Fall fast jede Programmiersprache verwenden, beliebt sind jedoch PHP, Python, Ruby, C# und JavaScript (Node.JS) [[MW_04]](Quellenverzeichnis.md#MW_04).
+Es gibt verschiedene Möglichkeiten, wie HTML, CSS und JavaScript bei einer Anfrage an den Webserver generiert werden können. Der Code kann komplett statisch auf dem Webserver abgelegt sein oder auch dynamisch bei der Anfrage generiert werden. Prinzipiell lässt sich für den letzten Fall fast jede Programmiersprache verwenden, beliebt sind jedoch PHP, Python, Ruby, C# und JavaScript (Node.JS) [[MW_04]](Quellenverzeichnis.md#MW_04).
 
-Für die Umsetzung werden häufig Frameworks genutzt, ähnlich wie bei Static Site Generators, unterstützen Frameworks bei der realisierung von Websiten, indem es wiederkehrende Aufgaben vereinfacht und die Wiederverwendung von Code fördert. Durch die Abstraktion und Strukturierung von Code sowie die Objektorientierung der Daten wird die Entwicklungszeit verkürzt und die Wartbarkeit großer Anwendungen erheblich verbessert. NextCloud verwendet beispielsweise das PHP Framework Symfony [[MW_05]](Quellenverzeichnis.md#MW_05)
+Für die Umsetzung werden häufig Frameworks genutzt, ähnlich wie bei Static Site Generators, unterstützen Frameworks bei der Realisierung von Websites, indem es wiederkehrende Aufgaben vereinfacht und die Wiederverwendung von Code fördert. Durch die Abstraktion und Strukturierung von Code sowie die Objektorientierung der Daten wird die Entwicklungszeit verkürzt und die Wartbarkeit großer Anwendungen erheblich verbessert. NextCloud verwendet beispielsweise das PHP Framework Symfony [[MW_05]](Quellenverzeichnis.md#MW_05)
 
 **Reverse Proxy**
 
-Ein Reverse Proxy ermöglicht das anbieten von meheren Webanwendungen auf dem selben Server. Typischerweise nutzen Browser für HTTP Anfragen den Port 80 und für HTTPS den Port 443. Da mehere Webanwendungen auf dem gleichen System die Ports nicht mehrfach verwenden können, müssten andere Ports verwendet werden, was aber unpraktikabel für den Benutzer der Webanwendung ist. Der Einsatz eines Reverse Proxies bietet hier mehr flexibilität. Dieser hört als einziger auf die beiden Ports und nimmt die Anfragen entgegen, anhand verschiedenere Eigenschaften, wie z.B. Domainname im HTTP Header, kann dann die Entscheidung getroffen werden, an welchen Webserverdienst die Anfrage weitergeleitet wird. Reverse Proxies bieten hierbei oft noch weitere Funktionen an, wie die Lastverteilung auf mehere Dienste, das verschlüsseln der Verbindung mit HTTPS, oder auch das schützen der Webanwendung durch nur authentifizierten Zugriff über HTTP Basic Auth. 
+Ein Reverse Proxy ermöglicht das Anbieten von mehreren Webanwendungen auf demselben Server. Typischerweise nutzen Browser für HTTP-Anfragen den Port 80 und für HTTPS den Port 443. Da mehrere Webanwendungen auf dem gleichen System die Ports nicht mehrfach verwenden können, müssten andere Ports verwendet werden, was aber unpraktikabel für den Benutzer der Webanwendung ist. Der Einsatz eines Reverse Proxies bietet hier mehr Flexibilität. Dieser hört als einziger auf die beiden Ports und nimmt die Anfragen entgegen, anhand verschiedener Eigenschaften, wie z.B. Domainname im HTTP-Header, kann dann die Entscheidung getroffen werden, an welchen Webserverdienst die Anfrage weitergeleitet wird. Reverse Proxies bieten hierbei oft noch weitere Funktionen an, wie die Lastverteilung auf mehreren Dienste, das Verschlüsseln der Verbindung mit HTTPS, oder auch das Schützen der Webanwendung durch nur authentifizierten Zugriff über HTTP Basic Auth. 

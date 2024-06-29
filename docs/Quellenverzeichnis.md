@@ -108,3 +108,8 @@ Autor, Titel, Bezugsquelle, Zugriffsdatum, Herausgabedatum
 <a id="MW_07">[MW_07] Korthauer, Reiner: "Handbuch Lithium-Ionen-Batterien", Berlin, Heidelberg: Springer Berlin / Heidelberg, 2024-06-28, 2013, S. 237 - 247</a>
 
 <a id="MW_08">[MW_08] Mehrere Autoren, Gebrauchsanweisung Kerpu Punktschweißgerät, [https://m.media-amazon.com/images/I/91dqZ7Y1-TL.pdf](https://m.media-amazon.com/images/I/91dqZ7Y1-TL.pdf), 2024-06-28, 2022-11-15, S. 4</a>
+
+<a id="MW_09">[MW_10] Mehrere Autoren, E-Paper ESP32 Driver Board Demo Code, [https://files.waveshare.com/upload/5/50/E-Paper_ESP32_Driver_Board_Code.7z](https://files.waveshare.com/upload/5/50/E-Paper_ESP32_Driver_Board_Code.7z), 2024-06-29, 2024-04-22</a>
+
+<a id="MW_10">[MW_10] Mehrere Autoren, Quick hack to port the IT8951 display driver to Arduino
+, [https://github.com/clashman/it8951](https://github.com/clashman/it8951), 2024-06-29, 2019-11-14</a>
