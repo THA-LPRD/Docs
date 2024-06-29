@@ -1,40 +1,49 @@
 # Hardware
 
 ## Auswahl des Mikrocontrollers
-- GPIO’s
-- Stromverbrauch
-- Vorteile (Charger, …)
-- Bauform
-- Speicher
+**Benjamin Klaric**
+
+In der Tabelle in Kapitel [3.1 Mikrocontroller](PraktischeUTheoretischeGrund.md#mikrocontroller) wurden schon die verschiedenen Möglichkeiten zur Auswahl von Mikrocontrollern dargestellt. Wenn man die Anforderungen, wie Anzahl GPIO Pins, Stromverbrauch in Sleep Modi, Bauform, interne Speicher und mögliche Vorteile über den anderen, wie z. B. intern gebauten Ladegerät, erschien schon ein eindeutiger Gewinner, in Form von XIAO ESP32-S3.  
+Die verschiedenen STM32 Mikrocontroller waren auch lange Zeit in Betrachtung, wurden aber herausgelassen aufgrund der Tatsache, dass sie kein eingebautes Wi-Fi-Modul haben.  
+Der XIAO ESP32-S3 mit seinem kleinen Formfaktor, sehr geringen Stromverbrauch in Deep Sleep Modus, enormen Internen speicher (im Vergleich mit anderen Kandidaten) und Möglichkeit, die Akku über den USB-C-Anschluss zu laden, machen den Mikrocontroller sehr flexibel und für das Systemanforderungen passend. [[BK_07]](Quellenverzeichnis.md#BK_07)  
+Der Prozessor, der auf dem Mikrocontroller läuft, ist der leistungsstarke Xtensa LX7 Dual-Core, 32-Bit-Prozessor, mit bis zu 240 MHz Taktfrequenz. Mit internen 512 KB SRAM-Speichern ist er in der Lage, viele Operationen und Funktionen lokal durchzuführen. Neben dem SRAM-Speicher ist der Mikrocontroller auch extern mit 8 MB Flash und 8 MB PSRAM Speicher ausgestattet. Der Mikrocontroller ist auch mit interner Hardware Watchdog Timers ausgestattet, die in dem Fall, wo der Mikrocontroller hängend geblieben ist, eine Möglichkeit von Neustart des Systems anbietet. [[BK_08]](Quellenverzeichnis.md#BK_08)  
+Aufgrund der niedrigen Idle Strom von 22 mA und noch niedrigere Deep Sleep Strom von 14 μA stellt sich das Modul perfekt für ein autarkes System. Die Möglichkeit von Laden der Akkus durch das USB-C ist natürlich auch von Vorteil, allerdings mit einem niedrigen Ladestrom von 100 mA. Und das alles befindet sich auf einer kleinen Platine mit Maßen 21x17,5 mm, der ungefähre Große von einer 2-Euro-Münze. [[BK_07]](Quellenverzeichnis.md#BK_07)  
+Der XIAO ESP32-S3 stellt elf GPIO Pins zur Verfügung, was auf [Abildung 7.xx](#_fig_BK_03) zu sehen ist. Von diesen elf GPIO-Pins sind neun analoge Pins, an die man analoge Signale anschließen kann. Neben den UART-Pins, die für die serielle Kommunikation mit dem Mikrocontroller genutzt werden, bietet der XIAO ESP32-S3 auch eine SPI- und eine I2C-Schnittstelle. Diese Schnittstellen sind serielle synchrone Datenbusse, die zur Kommunikation mit verschiedenen Peripheriegeräten verwendet werden. Der 5V-Pin ist nur dann aktiv, wenn das Modul über den USB-C-Anschluss betrieben wird. Andererseits ist der 3,3V-Pin ist immer aktiv und dient als regulierter Ausgang mit einem maximalen Strom von 700 mA. [[BK_07]](Quellenverzeichnis.md#BK_07)  
+
+Figure: Pinout von XIAO ESP32-S3 [[BK_07]](Quellenverzeichnis.md#BK_07) { #_fig_BK_03 }
+
+![](img/XIAO_Pinout.png){ width=85% }
 
 ## Auswahl der Displaytechnologie
 
 
 ## Auswahl der Akkukomponenten
-#### Akku
-Der ausgewählte Akku, aus verschiedenen Akku-Technologien, die in Kapitel 2 genannt waren, war der klassische Li-Ion-Akku, aus mehreren Gründen. Aufgrund der Anzahl und Position des Systems, die von Akku betrieben sein wurde, war der Sicherheitsaspekt ein entscheidender Faktor. Deswegen wurden die LiPo-Akkus nicht mehr betrachtet.  
+**Benjamin Klaric**
+
+**Akku**  
+Der ausgewählte Akku, aus verschiedenen Akku-Technologien, die in [3.3.1 Vergleich und Auswahl von verschiedenen Akku-Technologien](PraktischeUTheoretischeGrund.md#vergleich-und-auswahl-von-verschiedenen-akku-technologien) genannt waren, war der klassische Li-Ion-Akku, aus mehreren Gründen. Aufgrund der Anzahl und Position des Systems, die von Akku betrieben sein wurde, war der Sicherheitsaspekt ein entscheidender Faktor. Deswegen wurden die LiPo-Akkus nicht mehr betrachtet.  
 Der Vergleich zwischen Li-Ion-Akkus und LiFePo~4~-Akkus hatte eindeutige Unterschiede geliefert. Die LiFePo~4~-Akkus repräsentieren die sicherste Variante, andererseits hatten die Li-Ion-Akkus eine höhere Nennspannung von 3,7V.  
 Aus Sicherheitsblick betrachtet wurden die LiFePo~4~-Akkus ausgewählt. Die Nennspannung von 3,2V hat jedoch gegen die LiFePo~4~-Akkus gesprochen, da der ausgewählte Mikrocontroller, nämlich den XIAO ESP32-S3, Betriebsspannung zwischen 3,2V und 4,2V angefordert hat. Obwohl die LiFePo~4~-Akkus die Betriebsspannung liefern konnten, konnten sie das System nicht betreiben, da die genannte Betriebsspannung in Fall ohne schwere Last gemeint ist. Wegen dies wurden allerdings die Li-Ion-Akkus gewählt.  
 Der nächste Schritt war, eine vernünftige Kapazität zu finden, sodass die Akkus das System lang genug betreiben konnten. Dazu hat man die Schätzungen mit Verbrauchmessungen unterstützt und ungefähr die benötigte Akku-Kapazität geschätzt. Eine Akkulaufzeit von einem Jahr war gewünscht und dementsprechend war die Große des Akkus gewählt, nämlich ~10000 mAh.  
 Ein Akku mit so einer Kapazität war aber nicht einfach zu finden. Deswegen wurde das Akkupack aus zwei ~5000 mAh Akkus gebaut. Um von zwei ~5000 mAh auf die gewünschte Kapazität zu kommen, wurden die Akkus in parallel verbunden, da so die Kapazität sich verdoppelt; im Vergleich, wenn man die in Reihe anschließt, so wird die Spannung verdoppelt.  
 Bei der Suche nach Akkus muss man einige Sachen beachten. Der Formfaktor der Akku, minimale Kapazität, ob der Akku schon ein eingebautes BMS hat und der Entladestrom.  
-Es würde die BAK N21700CD-53E ausgewählt, die auf [](#_fig_akku) zu sehen ist.
+Es würde die BAK N21700CD-53E ausgewählt, die auf [Abildung 7.xx](#_fig_BK_04) zu sehen ist.
 
-Figure: Li-Ion-Akku [[BK_09]](Quellenverzeichnis.md#bk_09) { #_fig_akku }
+Figure: Li-Ion-Akku [[BK_09]](Quellenverzeichnis.md#BK_09) { #_fig_BK_04 }
 
 ![](img/Li-Ion-Akku.png){ width=60% }
 
 
-Aus der Tabelle der technischen Daten auf der [](#_fig_akku_tabelle) des betrachteten Akkus ist es klar zu sehen, dass alle benötigten Parameter erfüllt sind. Der Formfaktor ist aus der Durchmesser und Höhe (die ersten zwei Ziffern von Durchmesser und normalerweise erste drei Ziffern von Höhe → 21700).  
+Aus der Tabelle der technischen Daten auf der [Abildung 7.xx](#_fig_BK_05) des betrachteten Akkus ist es klar zu sehen, dass alle benötigten Parameter erfüllt sind. Der Formfaktor ist aus der Durchmesser und Höhe (die ersten zwei Ziffern von Durchmesser und normalerweise erste drei Ziffern von Höhe → 21700).  
 
-Figure: Technische Daten von BAK N21700CD-53E [[BK_10]](Quellenverzeichnis.md#bk_09) { #_fig_akku_tabelle }
+Figure: Technische Daten von BAK N21700CD-53E [[BK_09]](Quellenverzeichnis.md#BK_09) { #_fig_BK_05 }
 
-![](img/Li-Ion-Akku-Tabelle.png){ width=60% }
+![](img/Li-Ion-Akku-Tabelle.png){ width=65% }
 
-#### BMS
-Um den Akkupack sicher betreiben zu können, wurde ein BMS benötigt. Wie bereits in Kapitel 2 unter Akku-Technologien erwähnt, schützt ein BMS die Akkus vor Tiefentladung, Überladung, Kurzschluss und Überstrom.  
+**BMS**  
+Um den Akkupack sicher betreiben zu können, wurde ein BMS benötigt. Wie bereits in [3.3 Akku-Technologien](PraktischeUTheoretischeGrund.md#akku-technologien) unter Akku-Technologien erwähnt, schützt ein BMS die Akkus vor Tiefentladung, Überladung, Kurzschluss und Überstrom.  
 
-Beim genaueren Blick auf ein 1S-BMS, auf [](#_fig_bms), wo 1S die Anzahl der Zellen in Serie repräsentiert, erkennt man ein IC und zwei NMOS-Transistoren. Die NMOS-Transistoren dienen als Schalter, die vom IC durch Gate-Spannung angesteuert werden.  
+Beim genaueren Blick auf ein 1S 2MOS BMS, auf [Abildung 7.xx](#_fig_BK_06), wo 1S die Anzahl der Zellen in Serie repräsentiert, erkennt man ein IC und zwei MOSFET Transistoren auf die Vorderseite. Die MOSFET Transistoren sind nämlich die NMOS-Transistoren und dienen als Schalter, die vom IC durch Gate-Spannung angesteuert werden.  
 
 **Überladungsschutz**: Wenn die Ladespannung 4,2V überschreitet, sendet der IC ein Signal, das die Gate-Spannung eines NMOS-Transistors steuert, wodurch dieser den Stromkreis unterbricht.  
 
@@ -44,17 +53,17 @@ Beim genaueren Blick auf ein 1S-BMS, auf [](#_fig_bms), wo 1S die Anzahl der Zel
 
 **Kurzschlussschutz**: Auch bei einem Kurzschluss, bei dem sehr hohe Ströme fließen, erkennt der IC diese Situation und unterbricht sofort den Stromfluss durch Abschalten der NMOS-Transistoren.  
 
-Das BMS, das auf [](#_fig_bms) dargestellt ist, liefert alle diese Features und wurde für den Aufbau von dem Akkupack ausgewählt.  
+Das BMS, das auf [Abildung 7.xx](#_fig_BK_06) dargestellt ist, liefert alle diese Features und wurde für den Aufbau von dem Akkupack ausgewählt.  
 
-Figure: Li-Ion-Akku [[BK_11]](Quellenverzeichnis.md#bk_11) { #_fig_akku }
+Figure: 1S 2MOS Batteriemanagementsystem [[BK_10]](Quellenverzeichnis.md#BK_10) { #_fig_BK_06 }
 
 ![](img/Li-Ion-BMS.png){ width=60% }
 
-#### Ladegerät
-Wie bereits in Kapitel 2 unter Akku-Technologien erwähnt, benötigen die Li-Ion-Akkus ein spezielles Ladegerät, nämlich ein Ladegerät, der in die Lage ist beim Laden der Akkus, erste 80% konstanter Strom zu liefern und danach 20% die Akkus mit konstanter Spannung zu laden. 
-Man kann solche Ladegeräten ohen viele Schwierigkeiten finden, sind allerdings teuer. Bei der Suche nach einen muss man eine Sache beachten, nämlich den Zellenanzahl. Die ausgewählte Ladegerät ist auf die [](#_fig_ladegeraet) zu sehen.
+**Ladegerät**  
+Wie bereits in [3.3 Akku-Technologien](PraktischeUTheoretischeGrund.md#akku-technologien), benötigen die Li-Ion-Akkus ein spezielles Ladegerät, nämlich ein Ladegerät, der in die Lage ist beim Laden der Akkus, erste 80% konstanter Strom zu liefern und danach 20% die Akkus mit konstanter Spannung zu laden.  
+Man kann solche Ladegeräten ohen viele Schwierigkeiten finden, sind allerdings teuer. Bei der Suche nach einen muss man eine Sache beachten, nämlich den Zellenanzahl. Die ausgewählte Ladegerät ist auf die [Abildung 7.xx](#_fig_BK_07) zu sehen.  
 
-Figure: Ladegerät für Li-Ion-Akkus [[BK_12]](Quellenverzeichnis.md#bk_12) { #_fig_ladegeraet }
+Figure: Ladegerät für Li-Ion-Akkus [[BK_11]](Quellenverzeichnis.md#BK_11) { #_fig_BK_07 }
 
 ![](img/Li-Ion-Ladegeraet.png){ width=60% }
 
@@ -88,11 +97,110 @@ Lithium-Ionen Zellen sind wärmeempfindlich und daher ist Weichlöten kein geeig
 ### Isolieren des Akkupacks
 Abschlißend wurde Kapton Klebeband verwendet um das Akkupack mit einer isolierenden Schicht zu umhüllen. Dadurch wird vermieden, dass unkontrolliert die Batteriepole mit anderen leitfähigen Materialen in berührung kommen und sämtlicher Strom über das BMS geleitet wird. Kapton Klebeband ist dabei ein sehr guter elektrischer und thermischer Isolator. 
 
-## Auswahl der PCB-Komponenten
+## Schaltungsentwurf
+**Benjamin Klaric**  
+
+Um das gesamte System optimal zu gestalten, wurde eine Platine entworfen, die alle benötigten Komponenten und Schaltungen integriert, um die normale Funktionalität des Systems zu gewährleisten. Für die Entwicklung der Platine war ein präziser Schaltungsentwurf mit den richtigen Komponenten erforderlich. Der Schaltungsentwurf sowie der Platinentwurf wurden mithilfe der ECAD-Software KiCad erstellt. Die Auswahl der geeigneten Komponenten sowie eine detaillierte Beschreibung der Schaltung sind im folgenden Abschnitt beschrieben.  
+Alle Komponenten, die in der Schaltung beinhaltet sind, befinden sich in dem sogenannten Bill of Materials (kurz BOM).  
+
+**Ganze Schaltung**  
+Auf die [Abildung 7.xx](#_fig_BK_08) ist die vollständige Schaltung mit allen Teilschaltungen dargestellt.  
+
+Figure: Ganze Schaltung für das Mainboard des Systems { #_fig_BK_08 }
+
+![](img/Schaltung/Ganze-Schaltung.png){ width=80% }
+
+Wenn man die [Abildung 7.xx](#_fig_BK_08) betrachtet, sind die Verbindungen zwischen den Teilschaltungen und die Gesamtverdrahtung der Schaltung sichtbar. Spätere Abschnitte behandeln jede Teilschaltung einzeln, und es wird empfohlen, zur Gesamtabbildung der Schaltung zurückzukehren, um die Verbindung der erklärten Teilschaltungen im Gesamtkontext zu sehen.  
+Ganz links in der Abbildung ist ein 100 nF Kondensator, speziell C5, zwischen 3,3V (V~CC~) und Ground (GND) parallel geschaltet. Dieser dient als Entkopplungskondensator, um Spannungsschwankungen zu reduzieren und die Stabilität der Stromversorgung sicherzustellen. Der 100 nF Kondensator fängt hochfrequente Störungen ab und glättet diese. Dadurch verbessert er die Betriebssicherheit des Systems, insbesondere während schneller Schaltvorgänge, indem er eine stabile Spannungsversorgung gewährleistet und die Signalqualität erhöht. Dieser Wert von 100 nF ist ein Standardwert für Entkopplungskondensatoren bei niedrigen Frequenzen. [[BK_12]](Quellenverzeichnis.md#BK_12) [[BK_13]](Quellenverzeichnis.md#BK_13)  
+Ein Kondensator mit der 1210 Bauform wurde aus Platzgründen gewählt, obwohl jeder 100 nF Kondensator diese Aufgabe erfüllen könnte. Die Wahl der Bauform von Kondensator und anderer Bauteile wurde entsprechend den Platzanforderungen getroffen.  
+
+**Mikrocontroller**  
+Wenn man die Teilschaltung des Mikrocontrollers auf der [Abildung 7.xx](#_fig_BK_09) betrachtet, fällt auf, dass außer dem Mikrocontroller keine weiteren Komponenten zu sehen sind. Die gesamte Schaltung wurde in Teilschaltungen oder sogenannte Subsheets, wie das Feature in KiCad genannt ist, aufgeteilt, um sie übersichtlicher darzustellen.  
+
+Figure: Ausgänge des Mikrocontrollers { #_fig_BK_09 }
+
+![](img/Schaltung/Mikrocontroller.png){ width=60% }
+
+In dieser Teilschaltung sind die Ausgänge des Mikrocontrollers hierarchischen Labels mit entsprechenden Namen zugeordnet.  
+
+**Akkuanschlüsse**  
+Die Akkuanschlüsse in der Teilschaltung beinhalten einen Stecker, konkret den J1, sowie einen Spannungsteiler, der aus R5 und R6 besteht. Diese Komponenten sind auf der [Abildung 7.xx](#_fig_BK_10) dargestellt.  
+
+Figure: Schaltung von Akkuanschlüsse { #_fig_BK_10 }
+
+![](img/Schaltung/Akkuanschlüsse.png){ width=50% }
+
+Der Akkupack ist über den Stecker mit den Akkuanschlüssen des Mikrocontrollers verbunden. Parallel dazu ist ein Spannungsteiler aufgebaut. Der Zweck dieses Spannungsteilers besteht darin, die Spannung des Akkupacks zu messen, indem ein analoger GPIO-Pin des XIAO ESP32-S3 verwendet wird. Dadurch wird der Zustand des Akkupacks genau überwacht, um sicherzustellen, dass ausreichend Spannung für den Mikrocontroller bereitgestellt wird.  
+
+**Display-Enable**  
+Auf der [Abildung 7.xx](#_fig_BK_11) ist die sogenannte Display-Enable Schaltung zu sehen. Man kann drei Widerstände, nämlich den R1, R2 und R3 erkennen, neben den zwei MOSFETs, einen NMOS und einen PMOS Transistor.
+
+Figure: Schaltung von Display Enable { #_fig_BK_11 }
+
+![](img/Schaltung/Enable.png){ width=70% }
+
+Der E-Paper Technologie von Displays verbraucht tatsächlich keinen Strom im Idle-Zustand. Das gleiche kann aber nicht für die kleinen Zwischenplatinen gesagt werden, die Parallelport-Kommunikationsverfahren zu SPI übersetzen. Diese verbrauchen ständig Strom, was eine unerwünschte Folge ist. Um den Stromverbrauch zu optimieren, wurde eine Schaltung entworfen, die die Stromversorgung des Displays durch Code trennt.  
+Um die Schaltung per Code ansteuern zu können, wurden zwei MOSFETs verwendet: ein N-Channel MOSFET und ein P-Channel MOSFET. Der Ausgang des Mikrocontrollers geht über den 180 Ω Widerstand, nämlich R2, auf das Gate des N-Channel MOSFET (U3). Der 180 Ω Widerstand dient dazu, den Gate-Strom zu begrenzen und das Schalten des Transistors zu stabilisieren. Dazu wird auch ein Pulldown-Widerstand (R1) eingesetzt, da beim Einschalten des Mikrocontrollers der EN-Ausgang nicht sofort auf 0V gesetzt sein könnte. Ein Wert von 10 kΩ ist ein Standardwert, weil er ausreichend ist, um das Gate sicher auf 0V zu ziehen, ohne signifikant Strom zu verbrauchen. Um ein unnötiges Einschalten des NMOS zu vermeiden, wurde der Pulldown-Widerstand gesetzt.  
+Die Source-Leitung des NMOS ist mit dem Ground verbunden, da dies dem Funktionsprinzip des NMOS entspricht. Die Drain-Leitung ist mit dem Gate des P-Channel MOSFET (U4) verbunden und auch mit einem Pull-up-Widerstand (R3). Der Pull-up-Widerstand sorgt dafür, dass das Gate des PMOS auf 3,3V gehalten wird, wenn der NMOS nicht leitend ist, wodurch der PMOS ausgeschaltet bleibt.  
+Der NMOS-Transistor (U3) schaltet ein, wenn der EN-Pin des Mikrocontrollers auf High (3,3V) geht. Dadurch wird das Gate des PMOS-Transistors auf 0V gezogen. Der PMOS-Transistor (U4) schaltet ein, wenn das Gate auf 0V gezogen wird, wodurch die Verbindung zwischen VCC und Switch geschlossen wird.  
+Die ausgewählten MOSFETs wurden aufgrund ihrer niedrigen Schwellenspannung und ihres geringen R_DS(on)-Widerstands gewählt, was eine effiziente und zuverlässige Schaltung ermöglicht.  
+
+**Switch**  
+Man kann auf der [Abildung 7.xx](#_fig_BK_12) ein Switch erkennen, der dafür zuständig ist, die Betriebsspannung des Displays auszuwählen, zwischen direkten 3,3V oder dem Ausgang von Booster Schaltung.
+
+Figure: Switch für Ansteuerung der Betriebsspannung { #_fig_BK_12 }
+
+![](img/Schaltung/Switch.png){ width=50% }
+
+Der Switch wird per Bedarf mittels menschlichen Einfluss die Leitung zur Betriebsspannung von Display umleiten, zu Booster Schaltung oder direkt mit dem 3,3V Ausgang von Mikrocontroller verbinden. Diese Funktionalität ist so ausgedacht, sodass man die Platine generisch halten kann, um verschiedene Displays mit verschiedenen Betriebsspannungen anzusteuern.  
+
+**Boost-Converter**  
+Die Boost-Converter Schaltung, die auf der [Abildung 7.xx](#_fig_BK_13) dargestellt ist, hat die Aufgabe, die Betriebsspannung zu erhöhen.  
+
+Figure: Booster Schaltung { #_fig_BK_13 }
+
+![](img/Schaltung/Booster.png){ width=70% }
+
+Der Boost-Converter befindet sich in der Mitte der Schaltung. Die L1 speichert Energie in ihrem Magnetfeld, wenn Strom durch sie fließt. Während der Schaltzyklen des Boost-Converters wird diese Energie verwendet, um die Spannung am Ausgang zu erhöhen. Wenn der Schalter innerhalb des Moduls geschlossen ist, fließt Strom durch die Induktivität und speichert Energie. Wenn der Schalter öffnet, wird die gespeicherte Energie freigesetzt, wodurch die Spannung über der Induktivität ansteigt und die Ausgangsspannung erhöht wird. Das Ausgangskondensator, nämlich den C3, glättet die Ausgangsspannung und reduziert das Rauschen am Ausgang des Boost-Converters. Die L1 zusammen mit C3 nennt sich ein LC-Glied und dient als ein Tiefpassfilter, das hochfrequente Störungen und Rauschen herausfiltert und eine gleichmäßige Gleichspannung liefert. Der Eingangskondensator C1 reduziert Spannungsrauschen und glättet die Eingangsspannung, bevor sie in die Schaltung eintritt. Die sogennante Bypass Kondensator C2 dient dazu, hochfrequente Störungen und Rauschen herauszufiltern. Der C4 Kondensator wird verwendet, um elektromagnetische Interferenzen (EMI) zu reduzieren. Er hilft dabei, Rauschen und Störungen zu filtern, die durch die Schaltung erzeugt werden könnten und sorgt für eine saubere Ausgangsspannung.  
+Der Boost-Converter hat intern auch eine galvanische Trennung. Diese galvanische Trennung dient dazu, elektrische Isolation zwischen dem Eingang und dem Ausgang zu gewährleisten. Sie schützt vor elektrischen Störungen und sorgt dafür, dass keine direkten elektrischen Verbindungen zwischen den beiden Seiten bestehen. In diesem speziellen Fall wurde jedoch entschieden, die galvanische Trennung nicht zu nutzen, wegen niedrigen Leistungsanforderung des Systems und der Tatsache, dass die elektrische Isolation in Form von galvanischer Trennung nicht kritisch ist. [[BK_14]](Quellenverzeichnis.md#BK_14)  
+
+**IIC-Erweiterung**  
+Auf der [Abildung 7.xx](#_fig_BK_14) sind die IIC Ausgänge des Mikrocontrollers dargestellt, mit jeweils einem Pull-up Widerstand von 10 kΩ.  
+
+Figure: IIC-Ausgänge { #_fig_BK_14 }
+
+![](img/Schaltung/IIC.png){ width=30% }
+
+Die IIC Pins von dem Mikrocontroller wurden auf die Platine frei zugänglich gemacht, sodass die Erweiterungsmöglichkeiten in Form eines Sensors oder Ähnliches einfacher zu implementieren sind. Momentan bleiben die unverbunden.  
+
+**Refresh-Knopf**  
+Die benötigte Knopf ist auf der [Abildung 7.xx](#_fig_BK_15) dargestellt. Die wird für manuelles Refresh des Displays benutzt.  
+
+Figure: Schaltung von Refresh-Knopf { #_fig_BK_15 }
+
+![](img/Schaltung/Knopf.png){ width=40% }
+
+Wenn ein mechanischer Schalter oder Taster betätigt wird, kann es zu kurzen ungewollten Kontakten kommen, die als Prellen bezeichnet werden. Diese entstehen durch die mechanische Federung und Vibrationen des Schalters. In elektronischen Schaltungen kann dieses Prellen zu Fehlfunktionen führen, insbesondere wenn der Taster als Trigger dient.  
+Der verwendete Knopf benötigt eine Entprellschaltung, um zuverlässig zu funktionieren, da er eine maximale Prellzeit von 10 ms aufweist. [[BK_15]](Quellenverzeichnis.md#BK_15)  
+Um das Prellen zu beseitigen, wird ein RC-Glied eingebaut, das als Hochpassfilter fungiert. Wenn der Taster offen ist, lädt sich der Kondensator C6 über die Widerstände R4 und R7 auf, wodurch die Spannung langsamer ansteigt. Ist der Taster geschlossen, wird der Kondensator über R4 mit einer kontrollierten Geschwindigkeit entladen. Der Widerstand R7 hat einen Wert von 10 kΩ, da es sich um einen Pull-up-Widerstand handelt. Für R4 wird ein Wert von 75 kΩ gewählt, um in Kombination mit dem Kondensator von 100 nF die gewünschte Zeitkonstante zu erreichen. [[BK_16]](Quellenverzeichnis.md#BK_16)  
+
+**Displayanschlüsse**  
+Die dargestellte Ausgänge auf der [Abildung 7.xx](#_fig_BK_16), nämlich den J2 Komponente, sind die Ausgänge, die man direkt mit dem Display über Dupont Pins verbinden kann.  
+
+Figure: Ausgänge für das Display { #_fig_BK_16 }
+
+![](img/Schaltung/Displayanschlüsse.png){ width=20% }
+
+Die erste sieben Ausgänge kömmen direkt von dem Mikrocontroller, wobei der achte Ausgang, konkret den V~cc~ Ausgang, von dem Switch abhängig ist.  
 
 ## Platinen Design
+**Benjamin Klaric**  
+- Über Autorouter reden  
+- Über Design Rules von Aisler reden  
+- Was für eine Platine von Aisler wir gekauft haben  
 
 ## Zusammenbau der PCBs
+**Benjamin Klaric**  
 
 ## Gehäuse
 
@@ -143,18 +251,27 @@ Die verwendeten FDM-Drucker beschränken sich auf die Modelle 2 Extended+, 3 und
 ### Versuchsaufbau
 **Mario Wegmann**
 
-Der Prozess um ein Bild per WLAN zu empfangen, zu verarbeiten und es auf einem ePaper Display darzustellen ist sehr umfangreich und während den verschiedenen Phasen ist der Stromverbrauch sehr schwankend. Daher kann mit einer staatischen Strommessung kein aussagekräftiges Messergebnis produziert werden. Um den Strom dynamisch zu messen und dabei schnelle Änderungen sichtbar zu machen eignet sich daher ein Oszilloskop als Messinstrument. Da das Oszilloskop jedoch nur Spannungen messen kann muss hier der Umweg über einen Shunt-Widerstand gemacht werden. Der Shunt-Wiederstand wird dabei in Reihe zwischen der zu messenden Last und der Masse geschaltet, mit einem Tastkopf an beiden Enden des Shunt-Widerstands verbunden, kann nun der Spannungsabfall über den Shunt-Widerstand gemessen werden. Abschließend kann über das Ohm'sche Gesetz aus dem Widerstandswert und der Spannung der durchflossene Strom berechnet werden. Viele Oszilloskope bieten daher auch die Möglichkeit an, die Achsenbeschriftung auf mA Umzuschalten um Messergebnisse mit der korrekten Einheit festhalten zu können. Es muss jedoch beachtet werden, dass das Oszilloskope nicht automatisch das Ohm'sche Gesetz anwendet, da es keine Kenntniss über den Widerstandswert hat. Somit muss dies bei den Messergebnissen mit verrechnet werden, oder alternativ darauf geachtet werden, dass der Widerstandwert des Shunt-Widerstands 1 Ω so genau wie möglich erreicht. Des weiteren ist unbedingt darauf zu achten das der Shunt-Widerstand zwischen Last und Masse hängt, wenn es sich um eine netzbetriebene Schaltung handelt. Zwar wäre das Messergebnis theoretisch auch korrekt, jedoch würde durch die Erdung der Masse am Tastkopft ein Kurzschluss entstehen, wenn die Masse vom Tastkopft mit einer anderem Spannungspegel, als der Masse der Schaltung verbunden wird. Dieser Kurzschluss könnte das Oszilloskop beschädigen. 
+Der Prozess um ein Bild per WLAN zu empfangen, zu verarbeiten und es auf einem ePaper Display darzustellen ist sehr umfangreich und während den verschiedenen Phasen ist der Stromverbrauch sehr schwankend. Daher kann mit einer staatischen Strommessung kein aussagekräftiges Messergebnis produziert werden. Um den Strom dynamisch zu messen und dabei schnelle Änderungen sichtbar zu machen eignet sich daher ein Oszilloskop als Messinstrument. Da das Oszilloskop jedoch nur Spannungen messen kann muss hier der Umweg über einen Shunt-Widerstand gemacht werden. Der Shunt-Wiederstand wird dabei in Reihe zwischen der zu messenden Last und der Masse geschaltet, mit einem Tastkopf an beiden Enden des Shunt-Widerstands verbunden, kann nun der Spannungsabfall über den Shunt-Widerstand gemessen werden. Abschließend kann über das Ohm'sche Gesetz aus dem Widerstandswert und der Spannung der durchflossene Strom berechnet werden. Viele Oszilloskope bieten daher auch die Möglichkeit an, die Achsenbeschriftung auf mA Umzuschalten um Messergebnisse mit der korrekten Einheit festhalten zu können. Es muss jedoch beachtet werden, dass das Oszilloskope nicht automatisch das Ohm'sche Gesetz anwendet, da es keine Kenntniss über den Widerstandswert hat. Somit muss dies bei den Messergebnissen mit verrechnet werden, oder alternativ darauf geachtet werden, dass der Widerstandwert des Shunt-Widerstands 1 Ω so genau wie möglich erreicht. Des weiteren ist unbedingt darauf zu achten das der Shunt-Widerstand zwischen Last und Masse hängt, wenn es sich um eine netzbetriebene Schaltung handelt. Zwar wäre das Messergebnis theoretisch auch korrekt, jedoch würde durch die Erdung der Masse am Tastkopft ein Kurzschluss entstehen, wenn die Masse vom Tastkopft mit einer anderem Spannungspegel, als der Masse der Schaltung verbunden wird. Dieser Kurzschluss könnte das Oszilloskop beschädigen.  
 
-In [](#_fig_MW_01) erkennt man den Versuchsaufbau für die Messung. Als Spannungsquelle dient ein Labornetzteil. Vom Pluspol des Labornetzteils führt ein Draht zum V~cc~ Pin des ESP32. Von GND des ESP32 führ ein Draht zum 1 Ω Shunt Widerstand. An diesem ist auch der Tastkopf des Oszilloskopes angeschlossen. Nach dem Shunt Widerstand führ ein Draht zu einem Multimeter. Das Multimeter dient zur Kontrolle, ob die vom Oszilloskop ausgegebenen Werte plausibel sind. Abschließend ist die der zweite Kontakt vom Multimeter mit dem Minuspol des Labornetzteils verbunden. 
+In [](#_fig_MW_01) erkennt man den Versuchsaufbau für die Messung. Als Spannungsquelle dient ein Labornetzteil. Vom Pluspol des Labornetzteils führt ein Draht zum V~cc~ Pin des ESP32. Von GND des ESP32 führ ein Draht zum 1 Ω Shunt Widerstand. An diesem ist auch der Tastkopf des Oszilloskopes angeschlossen. Nach dem Shunt Widerstand führ ein Draht zu einem Multimeter. Das Multimeter dient zur Kontrolle, ob die vom Oszilloskop ausgegebenen Werte plausibel sind. Abschließend ist die der zweite Kontakt vom Multimeter mit dem Minuspol des Labornetzteils verbunden.  
 
 Figure: Der Versuchsaufbau mit Oszilloskop, Multimeter und Labornetzteil { #_fig_MW_01 }
 
 ![](img/Strommessung_7_6.jpeg){ width=80% }
 
-### Messergebnisse
-**Mario Wegmann**
 
-In []( #_tab_MW_02 ) kann man einen kompletten Refresh des 7,6 Zoll großen Displays erkennen. Hierbei wird auf dem ePaper Display zuerst weiß gestellt, anschließend wird nach einer Pause eine in der Firmware hard codierte Bitmap auf dem Display angezeigt. Zum Abschluss wird erneut ein weißes Bild dargestellt. In diesem Teilversuch wurde der Stromverbrauch vom WLAN noch nicht gemossen. 
+### Messergebnisse
+**Benjamin Klaric**  
+
+In [Abbildung 7.xx](#_fig_BK_20) ist der vollständige Refresh eines 7,3-Zoll-Displays dargestellt. Der Vorgang beginnt mit dem Anzeigen eines weißen Bildes, gefolgt von einer einsekündigen Delay. Anschließend wird eine fest kodierte Bitmap der Katze auf dem Display angezeigt. Nach einer Delay von drei Sekunden wird erneut ein weißes Bild dargestellt, gefolgt von einer zweisekündigen Delay, um den Ablauf eines vollständigen Refreshs abzuschließen. Schließlich wechselt das System in den Deep-Sleep-Modus. Der Stromverbrauch des WLANs wurde in dieser Darstellung nicht berücksichtigt.  
+
+Figure: Plot von dem Stromvebrauch in Zeitabschnitten beim 7,3" Display { #_fig_BK_20 }
+
+![](img/Plot-Stromvebrauch.png){ width=90% }
+
+**Mario Wegmann**  
+
+In []( #_tab_MW_02 ) kann man einen kompletten Refresh des 7,6 Zoll großen Displays erkennen. Hierbei wird auf dem ePaper Display zuerst weiß gestellt, anschließend wird nach einer Pause eine in der Firmware hard codierte Bitmap auf dem Display angezeigt. Zum Abschluss wird erneut ein weißes Bild dargestellt. In diesem Teilversuch wurde der Stromverbrauch vom WLAN noch nicht gemossen.  
 
 Table: Der Stromverbrauch aufgeteilt in Zeitabschnitte beim 7,6" Display { #_tab_MW_02 }
 
@@ -185,5 +302,26 @@ Table: Der Stromverbrauch aufgeteilt in Zeitabschnitte beim 7,6" Display { #_tab
 
 
 ### Interpretation
+**Benjamin Klaric**  
+
+Der Stromvebrauch sowohl von dem 7,3 Zoll als auch von dem 9,7 Zoll liefern eine angemessene Vebrauch im Zeit von einen vollen Refresh. Es gibt aber ein paar Sachen die man berücksichtigen muss, nämlich die Tatsache, dass ein vollen Refresh nicht jedes Mal durchgeführt sein muss und das der Stromvebrauch zusammen mit WiFi funken nicht in diesem Aufbau gemossen war.  
+Die Erklärung, das den vollen Refresh nicht jedes Mal gemacht sein muss, liegt an den Spezifikationen von dem Display. Ein Display soll nach eine längere Zeit ohne Refresh, ein vollen Refresh bekommen. [[BK_20]](Quellenverzeichnis.md#BK_20) Das verringert die Zeit, wo das System mit vollen Last arbeitet und damit auch den durchscnittliche Verbrauch.  
+Den WiFi Verbrauch wurde nicht berucksichtigen, da dieser Verbrauch von vielen Parametern abhägig war, die in der Zeit von Strommessung noch nicht festgegeben sein konnten, wie der Optimierung von Code, der WiFi Nutzung ansteuert und die Tatsache, dass das Modul, die für Strommesung benutzt war, später nicht mehr benutzt wurde, wegen höhen Stromverbrauch in Deep Sleep Modus.  
+In nächsten Abschnitt erfolgt ein genaueren Blick auf gemessenen Werten und deren Bedeutung.  
+
+**Stromverbrauch von 7,3" Display**  
+Das 7,3" Display hat eine längere Refresh-Zeit, was darauf zurückzuführen ist, dass es vier anstatt zwei Farben darstellen kann. Diese zusätzliche Farbunterstützung führt zu einer längeren Arbeitszeit und somit zu einem erhöhten Stromverbrauch. Der durchschnittliche Stromverbrauch des Displays kann anhand des Plots aus [Abbildung 7.xx](#_fig_BK_20) berechnet werden. Dieser liegt bei 62 mA über einen Zeitraum von 54,853 Sekunden, wobei der Verbrauch stark von der Länge der Arbeitszeit abhängt.  
+Durch den Verzicht auf einen vollständigen Refresh und die Nutzung eines Mikrocontrollers wie dem XIAO ESP32-S3, der im Deep-Sleep-Modus einen sehr geringen Stromverbrauch von 14 μA im Vergleich zu 9,78 mA aufweist, kann der durchschnittliche Stromverbrauch des Systems signifikant reduziert werden. Dies führt zu einer effizienteren Nutzung und einer Verringerung des Gesamtenergiebedarfs über längere Zeiträume.  
+
+**Stromverbrauch von 9,7" Display**  
+Das 9,7-Zoll-Display zeichnet sich durch eine sehr kurze Refresh-Zeit aus, was jedoch zu einem höheren Stromverbrauch bei jedem Refresh führt. Über einen Zeitraum von 4,885 Sekunden beträgt der durchschnittliche Stromverbrauch 97 mA. Dieser erhöhte Durchschnittsverbrauch wird durch die verkürzte Betriebszeit ausgeglichen.  
+In []( #_tab_MW_02 ) wird verdeutlicht, dass trotz des höheren Stromverbrauchs des 9,7-Zoll-Displays der Gesamtenergieverbrauch aufgrund der schnellen Refresh-Zeit kompensiert wird.  
 
 ## ADC Messung
+**Benjamin Klaric**  
+
+[Abildung 7.xx](#_fig_BK_21)  
+
+Figure: Plot von 50 Messwerten bei jedem Spannungspegel { #_fig_BK_21 }
+
+![](img/ADC-Plot.png){ width=100% }
