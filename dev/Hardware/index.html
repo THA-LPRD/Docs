@@ -771,11 +771,8 @@ Die dargestellte Ausgänge auf der <a href="#_fig_BK_16">Abildung 7.xx</a>, näm
 <p>In <a href="#_fig_MW_01"></a> erkennt man den Versuchsaufbau für die Messung. Als Spannungsquelle dient ein Labornetzteil. Vom Pluspol des Labornetzteils führt ein Draht zum V<sub>cc</sub> Pin des ESP32. Von GND des ESP32 führt ein Draht zum 1 Ω Shunt Widerstand. An diesem ist auch der Tastkopf des Oszilloskopes angeschlossen. Nach dem Shunt Widerstand führt ein Draht zu einem Multimeter. Das Multimeter dient zur Kontrolle, ob die vom Oszilloskop ausgegebenen Werte plausibel sind. Abschließend ist der zweite Kontakt vom Multimeter mit dem Minuspol des Labornetzteils verbunden. </p>
 <p><figure id="_fig_MW_01"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/Strommessung_7_6.jpeg"><img alt="" src="../img/Strommessung_7_6.jpeg" width="80%"/></a><figcaption> Der Versuchsaufbau mit Oszilloskop, Multimeter und Labornetzteil </figcaption></figure></p>
 <h3 id="messergebnisse">Messergebnisse<a class="headerlink" href="#messergebnisse" title="Permanent link">¶</a></h3>
-<p><strong>Benjamin Klaric</strong> </p>
-<p>In <a href="#_fig_BK_20">Abbildung 7.xx</a> ist der vollständige Refresh eines 7,3-Zoll-Displays dargestellt. Der Vorgang beginnt mit dem Anzeigen eines weißen Bildes, gefolgt von einer einsekündigen Delay. Anschließend wird eine fest kodierte Bitmap der Katze auf dem Display angezeigt. Nach einer Delay von drei Sekunden wird erneut ein weißes Bild dargestellt, gefolgt von einer zweisekündigen Delay, um den Ablauf eines vollständigen Refreshs abzuschließen. Schließlich wechselt das System in den Deep-Sleep-Modus. Der Stromverbrauch des WLANs wurde in dieser Darstellung nicht berücksichtigt.  </p>
-<p><figure id="_fig_BK_20"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/Plot-Stromvebrauch.png"><img alt="" src="../img/Plot-Stromvebrauch.png" width="90%"/></a><figcaption> Plot von dem Stromvebrauch in Zeitabschnitten beim 7,3" Display </figcaption></figure></p>
 <p><strong>Mario Wegmann</strong> </p>
-<p>In <a href="#_tab_MW_02"></a> kann man einen kompletten Refresh des 7,3 Zoll großen Displays erkennen. Hierbei wird auf dem ePaper Display zuerst weiß gestellt, anschließend wird nach einer Pause eine in der Firmware hart codierte Bitmap auf dem Display angezeigt. Zum Abschluss wird erneut ein weißes Bild dargestellt. In diesem Teilversuch wurde der Stromverbrauch vom WLAN noch nicht gemessen. Für diesen Versuch wurde Democode von Hersteller WaveShare verwendet, welcher in der Quelle zu finden ist <a href="../Quellenverzeichnis/#MW_09">[MW_09]</a>. </p>
+<p>In <a href="#_tab_MW_02">Tabelle 7.xx</a> kann man einen kompletten Refresh des 7,3 Zoll großen Displays erkennen. Hierbei wird auf dem ePaper Display zuerst weiß gestellt, anschließend wird nach einer Pause eine in der Firmware hart codierte Bitmap auf dem Display angezeigt. Zum Abschluss wird erneut ein weißes Bild dargestellt. In diesem Teilversuch wurde der Stromverbrauch vom WLAN noch nicht gemessen. Für diesen Versuch wurde Democode von Hersteller WaveShare verwendet, welcher in der Quelle zu finden ist <a href="../Quellenverzeichnis/#MW_09">[MW_09]</a>.</p>
 <table id="_tab_MW_02">
 <caption style="caption-side:bottom"> Der Stromverbrauch aufgeteilt in Zeitabschnitte beim 7,3" Display </caption><thead>
 <tr>
@@ -920,7 +917,11 @@ Die dargestellte Ausgänge auf der <a href="#_fig_BK_16">Abildung 7.xx</a>, näm
 </tr>
 </tbody>
 </table>
-<p>In <a href="#_tab_MW_9_7_Strom"></a> sieht man die Messwerte vom Stromverbrauch beim 9,7 Zoll Display. Hierbei wird der ESP32 und das zugehörige Treiber-Board mit Strom versorgt, anschließend das Treiber-Board initialisiert und nach den Eigenschaften des angeschlossenen ePaper Displays gefragt. Erst danach wird die Bitmap zuerst an das Treiber-Board übertragen und dann vom Treiber-Board auf das Display. Abschließend wird das Treiber-Board in den Idle wieder gesetzt und zum Schluss der ESP32 zusätzlich in den Deep-sleep. Für diesen Versuch wurde Democode von GitHub verwendet, welcher in der Quelle zu finden ist <a href="../Quellenverzeichnis/#MW_10">[MW_10]</a>. </p>
+<p><strong>Benjamin Klaric</strong> </p>
+<p>In <a href="#_fig_BK_20">Abbildung 7.xx</a> sind die geplotteten Werten von der <a href="#_tab_MW_02">Tabelle 7.xx</a> grapisch dargestellt.</p>
+<p><figure id="_fig_BK_20"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/Plot-Stromverbrauch.png"><img alt="" src="../img/Plot-Stromverbrauch.png" width="90%"/></a><figcaption> Plot von dem Stromvebrauch in Zeitabschnitten beim 7,3" Display </figcaption></figure></p>
+<p><strong>Mario Wegmann</strong> </p>
+<p>In <a href="#_tab_MW_9_7_Strom">Tabelle 7.xx</a> sieht man die Messwerte vom Stromverbrauch beim 9,7 Zoll Display. Hierbei wird der ESP32 und das zugehörige Treiber-Board mit Strom versorgt, anschließend das Treiber-Board initialisiert und nach den Eigenschaften des angeschlossenen ePaper Displays gefragt. Erst danach wird die Bitmap zuerst an das Treiber-Board übertragen und dann vom Treiber-Board auf das Display. Abschließend wird das Treiber-Board in den Idle wieder gesetzt und zum Schluss der ESP32 zusätzlich in den Deep-sleep. Für diesen Versuch wurde Democode von GitHub verwendet, welcher in der Quelle zu finden ist <a href="../Quellenverzeichnis/#MW_10">[MW_10]</a>.</p>
 <table id="_tab_MW_9_7_Strom">
 <caption style="caption-side:bottom"> Der Stromverbrauch aufgeteilt in Zeitabschnitte beim 9,7" Display </caption><thead>
 <tr>
@@ -981,6 +982,9 @@ Die dargestellte Ausgänge auf der <a href="#_fig_BK_16">Abildung 7.xx</a>, näm
 </tr>
 </tbody>
 </table>
+<p><strong>Benjamin Klaric</strong> </p>
+<p>In <a href="#_fig_BK_21">Abbildung 7.xx</a> sind die geplotteten Werten von der <a href="#_tab_MW_9_7_Strom">Tabelle 7.xx</a> grapisch dargestellt.</p>
+<p><figure id="_fig_BK_21"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/Plot-Stromverbrauch-2.png"><img alt="" src="../img/Plot-Stromverbrauch-2.png" width="60%"/></a><figcaption> Plot von dem Stromvebrauch in Zeitabschnitten beim 9,7" Display </figcaption></figure></p>
 <h3 id="interpretation">Interpretation<a class="headerlink" href="#interpretation" title="Permanent link">¶</a></h3>
 <p><strong>Benjamin Klaric</strong> </p>
 <p>Der Stromvebrauch sowohl von dem 7,3 Zoll als auch von dem 9,7 Zoll liefern eine angemessene Vebrauch im Zeit von einen vollen Refresh. Es gibt aber ein paar Sachen die man berücksichtigen muss, nämlich die Tatsache, dass ein vollen Refresh nicht jedes Mal durchgeführt sein muss und das der Stromvebrauch zusammen mit WiFi funken nicht in diesem Aufbau gemossen war.<br/>
