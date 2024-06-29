@@ -159,6 +159,36 @@ Noch mehr Stromeinsparung kann mit dem Deep-sleep realisiert werden. Dabei werde
 
 ## Firmwarebibliotheken
 
+**Ahmet Emirhan Göktas**
+
+Firmware-Bibliotheken sind wesentliche Werkzeuge für die Entwicklung embedded Systeme. Sie ermöglichen es Entwicklern, vordefinierte Funktionen und Klassen zur Interaktion mit Hardwarekomponenten zu verwenden, anstatt jedes Register und Bit manuell steuern zu müssen. Diese werden als "Hardware Abstraction Layers" oder "HALs" bezeichnet, die typischerweise vom Mikrocontroller-Hersteller oder der Community bereitgestellt und in C oder C++ geschrieben werden.
+
+HALs bieten mehrere Vorteile:
+
+- **Portabilität**: Derselbe Code kann mit minimalen Änderungen auf verschiedenen Mikrocontrollern verwendet werden.
+- **Einfachheit**: Der Code ist leichter zu lesen und zu verstehen, da Entwickler sich nicht mit niedrigen Details befassen müssen.
+- **Konsistenz**: HALs bieten eine konsistente API, was die Lernkurve beim Wechsel zwischen verschiedenen Mikrocontrollern verringert.
+
+### Arduino
+
+Arduino ist eine beliebte Open-Source-Elektronikplattform, die auf benutzerfreundlicher Hardware und Software basiert. Sie kommt mit einer eigenen integrierten Entwicklungsumgebung (IDE) und einem Satz von Bibliotheken, die das Schreiben und Hochladen von Code auf einen Mikrocontroller erleichtern. Die Projektdateien, bekannt als "Skizzen", haben die Erweiterung `.ino`, was eine von der Arduino-IDE verwaltete C++-Datei ist.
+
+Der größte Vorteil von Arduino ist die große Community und die Vielzahl verfügbarer Bibliotheken. Dies macht es einfach, ein neues Projekt zu starten, Rapid Prototyping durchzuführen und Lösungen für gängige Probleme zu finden, da wahrscheinlich bereits jemand ähnliche Probleme hatte und gelöst hat.
+
+Da Arduino jedoch eine High-Level-Plattform ist, die auf verschiedenen Mikrocontrollern funktioniert, ist es möglicherweise nicht die beste Wahl für leistungskritische Anwendungen. Darüber hinaus fehlt der Arduino-IDE, die für Anfänger entwickelt wurde, Funktionen wie Multi-File-Projekte oder Versionskontrolle, was in größeren Projekten hinderlich sein kann.
+
+### PlatformIO
+
+PlatformIO ist ein vielseitiges Entwicklungsekosystem, das mehr als 1500 eingebettete Boards und über 40 Entwicklungsplattformen unterstützt, darunter Arduino, Espressif IDF, STM32Cube und mehr. Es ist als Plugin für Visual Studio Code, Atom und JetBrains IDEs verfügbar und bietet eine einheitliche Schnittstelle zum Erstellen, Hochladen und Debuggen von Code auf verschiedenen Plattformen.
+
+PlatformIO verfügt über einen Bibliotheksmanager, der es Ihnen ermöglicht, Bibliotheken aus einem zentralen Repository zu suchen und zu installieren, was die Verwaltung von Abhängigkeiten erleichtert. Es integriert sich auch gut mit gängigen CI/CD-Tools und erleichtert automatisiertes Testen und Deployment. Dies macht PlatformIO zu einer ausgezeichneten Wahl für professionelle Entwicklungsumgebungen, in denen Skalierbarkeit und Wartbarkeit entscheidend sind.
+
+### Espressif IoT Development Framework (ESP-IDF)
+
+ESP-IDF ist das offizielle Entwicklungsframework für die ESP32- und ESP32-S-Serie von SoCs. Es basiert auf FreeRTOS und bietet eine umfassende API-Sammlung zur Konfiguration und Interaktion mit der Hardware. Geschrieben in C und zur Verwendung mit der Xtensa-Toolchain konzipiert, bietet ESP-IDF Bibliotheken für gängige Aufgaben wie Netzwerke, Dateisysteme und Peripheriegeräte. Es ist auch das Framework, das vom ESP32 Arduino Core verwendet wird.
+
+Das ESP-IDF ist gut dokumentiert und hat eine große Community, was es einfach macht, Hilfe zu bekommen, wenn Sie auf Probleme stoßen. Sein Hauptvorteil ist die Leistung und der niedrige Zugriff auf die Hardware, was es zu einer guten Wahl für leistungskritische Anwendungen macht. Es hat jedoch eine steilere Lernkurve im Vergleich zu Arduino und PlatformIO.
+
 ## Gehäuseentwicklung 
 _Jannis Gröger_
 
