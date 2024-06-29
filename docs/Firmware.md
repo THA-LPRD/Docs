@@ -508,7 +508,7 @@ Currently, the server has fallowing endpoints:
 
 ### Basic Authentication
 
-### HTTPS Support
+### HTTPS Unterstützung
 
 ## Systemansteuerung
 
