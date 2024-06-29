@@ -128,19 +128,30 @@ Die Halterungen für die Platinen der Beiden Epaper-Displays sind einfache Konst
 
 Die Front des Gehäuses besitzt einen rechteckigen Ausschnitt mit einer Falz nach innen, in die das Display dann gelegt wird. Um das Display vor hineinfallen ins Gehäuse zu schützen, wird einmal die Platinenhalterung direkt an der Rückseitige des Displays angebracht und zusätzlich noch kleine Überhänge konstruiert, die das Display von hinten stützen. Desweiteren ist ein rechteckiger Ausschnitt für den Benutzerknopf in der Front vorhanden.
 
-Da im Laufe der Gehäuseentwicklung Protoypen designt und anschließend getestet werden, entstehen mehrere Entwürfe für die Umsetzung. Die folgenden drei Abbildungen [Abbildung 1](#fig_jg_02), [Abbildung 2](#fig_jg_03) und  [Abbildung 3](#fig_jg_04) zeigen die verschiedenen Versionen der Rückseite des 7.3-Zoll-Gehäuses und jeweils die Veränderungen zur vorherigen Version. Die Rückseite des 9.7-Zoll-Gehäuse wurde anschließend nach dem Vorbild des kleineren Gehäuses designt, wie man in [Abbildung 4](#fig_jg_05) sieht. Die beiden Fronten sind zusammen mit dem Platinenhalter und der Abdeckung des Benutzerknopfes schließlich in [Abbildung5](#fig_jg_06) und [Abbildung 6](#fig_jg_07) zu sehen.
+Da im Laufe der Gehäuseentwicklung Protoypen designt und anschließend getestet werden, entstehen mehrere Entwürfe für die Umsetzung. Die folgenden drei Abbildungen [Abbildung 1](#fig_jg_02), [Abbildung 2](#fig_jg_03) und  [Abbildung 3](#fig_jg_04) zeigen die verschiedenen Versionen der Rückseite des 7.3-Zoll-Gehäuses und jeweils die Veränderungen zur vorherigen Version. Die Rückseite des 9.7-Zoll-Gehäuse wurde anschließend nach dem Vorbild des kleineren Gehäuses designt, wie man in [Abbildung 4](#fig_jg_05) sieht. Die beiden Fronten sind zusammen mit dem Platinenhalter und der Abdeckung des Benutzerknopfes schließlich in [Abbildung 5](#fig_jg_06) und [Abbildung 6](#fig_jg_07) zu sehen.
 
-Figure: Die erste Version der 7.3-Zoll Rückseite. {fig_jg_02}
+Figure: Die erste Version der 7.3-Zoll Rückseite. {#Cfig_jg_02}
 
 ![](img/7_zoll_rückseite_v1.png){width=70%}
+
+Nach der ersten Version des Gehäuses wurde das Design nochmal grundlegend verändert und auch die Befestigung der Akkupacks überdacht. Wie in [Abbildung 1](#fig_jg_02) zu erkennen ist, wurde zunächst vorgesehen, die Akkupacks von außen zugänglich zu machen, um einen leichteren Austausch zu ermöglichen ohne das Gehäuse von der Wand nehmen zu müssen.
 
 Figure: Die zweite Version der 7.3-Zoll Rückseite. {#fig_jg_03}
 
 ![](img/7_zoll_rückseite_v2.png){width=70%}
 
+In der zweiten Version ist nun schon mehr das finale Design wiederzufinden. Das Gehäuse wurde an den Stellen, wo nicht die Elektronik im inneren behalten wird, auf einen minimale Dicke reduziert und die Akkupacks befinden sich nun im Inneren, sodass das Gehäuse geöffnet werden muss, um diese zu tauschen.
+
 Figure: Die dritte und finale Version der 7.3-Zoll Rückseite. {#fig_jg_04}
 
 ![](img/7_zoll_rückseite_v3.png){width=70%}
+
+
+In [Abbildung 3](#fig_jg_04) sieht man nun das endgültige Design des Gehäuses. Im Vergleich zur vorherigen Version wurden die Seiten abgeschrägt, um ein noch schmaleren Eindruck des Gehäuses zu erwecken. Zudem wurden die Aufhängelöcher noch versetzt, um den Schwerpunkt des Gehäuses besser auszugleichen.
+
+Figure: Das Gehäuse für das 9.7-Zoll-Epaper-Display.{#fig_jg_05}
+
+![](img/)
 
 Figure: Die Front des 7.3-Zoll-Gehäuses mit Platinenhalter und Knopfabdeckung. {#fig_jg_06}
 
