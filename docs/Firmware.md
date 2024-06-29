@@ -17,7 +17,7 @@ Wie im Abschnitt [Grundlagen](PraktischeUTheoretischeGrund.md#firmwarebibliothek
 3. Klicken Sie auf die `Install`, um die PlatformIO IDE-Erweiterung zu installieren.
 4. Nachdem die Erweiterung installiert ist, können Sie die PlatformIO-Seitenleiste öffnen, indem Sie auf das PlatformIO-Symbol in der Seitenleiste klicken. Dies kann einige Minuten dauern, da PlatformIO das Backend herunterlädt und die Umgebung einrichtet.
 
-Abbildung 8.1: PlatformIO-Erweiterung in Visual Studio { #_abb8_1 }
+Figure: Abbildung 8.1: PlatformIO-Erweiterung in Visual Studio { #_abb8_1 }
 
 ![](img/PlatformIO-VSCode-Extension.webp){ width=60% }
 
@@ -31,7 +31,7 @@ Abbildung 8.1: PlatformIO-Erweiterung in Visual Studio { #_abb8_1 }
 6. Wählen Sie das Framework. In unserem Fall verwenden wir das `Arduino`-Framework.
 7. Drücken Sie abschließend die `Finish`, um das Projekt zu erstellen.
 
-Abbildung 8.2: Neues PlatformIO-Projekt erstellen { #_abb8_2 }
+Figure: Abbildung 8.2: Neues PlatformIO-Projekt erstellen { #_abb8_2 }
 
 ![](img/PlatformIO-New-Project.webp){ width=60% }
 
@@ -43,7 +43,7 @@ Abbildung 8.2: Neues PlatformIO-Projekt erstellen { #_abb8_2 }
 4. Klicken Sie auf die `Upload` im Abschnitt `General`, um die Firmware auf den Mikrocontroller zu flashen.
 5. Die `Upload File System Image` Taste im Abschnitt `Platform` kann verwendet werden, um das Dateisystem-Image auf den Mikrocontroller hochzuladen.
 
-Abbildung 8.3: Firmware auf den Mikrocontroller hochladen { #_abb8_3 }
+Figure: Abbildung 8.3: Firmware auf den Mikrocontroller hochladen { #_abb8_3 }
 
 ![](img/PlatformIO-Flashing.webp)
 
@@ -95,7 +95,33 @@ Das E-Paper-Display ist über die SPI-Schnittstelle mit dem ESP32-S3-Mikrocontro
 
 Die Akkulaufzeit ist ein wichtiger Faktor. Das Displaymodul muss in den Schlafmodus gehen können, wenn es nicht in Gebrauch ist, und bei Bedarf wieder aufwachen, um Energie zu sparen und die Akkulaufzeit zu verlängern.
 
-### Application
+## Klassendiagramm
+
+figure: Abbildung 8.4: Klassendiagramm der Application { #_abb8_4 }
+
+![](img/ClassDiagramApp.webp)
+
+figure: Abbildung 8.5: Klassendiagramm der Systemansteuerung { #_abb8_5 }
+
+![](img/ClassDiagramMCU.webp)
+
+figure: Abbildung 8.6: Klassendiagramm der E-Paper-Display-Library { #_abb8_6 }
+
+![](img/ClassDiagramEPDL.webp)
+
+## Application
+
+Die Applikation ist der Hauptteil der Firmware. Sie ist verantwortlich für die Konfiguration des Displaymoduls, die drahtlose Kommunikation, die Betriebsmodi und die SPI-Schnittstelle. Die Applikation ist in verschiedene Klassen unterteilt, die jeweils für unterschiedliche Teile der Applikation verantwortlich sind. Diese sind:
+
+- [`Application`](#applikation): Die Hauptklasse der Applikation. Sie ist eine Schnittstelle, die von den verschiedenen Betriebsmodi implementiert wird.
+- [`AppStandalone`](#standalone-mode): Der Standalone-Betriebsmodus. Das Displaymodul funktioniert ohne ein bestehendes WLAN.
+- [`AppNetwork`](#network-mode): Der Netzwerk-Betriebsmodus. Das Displaymodul funktioniert mit einem bestehenden WLAN.
+- [`AppServer`](#server-mode): Der Server-Betriebsmodus. Das Displaymodul wird von einem zentralen Server gesteuert.
+- [`AppDefault`](#default-mode): Der Standard-Betriebsmodus. Das Displaymodul befindet sich im Standardmodus, wenn es zum ersten Mal eingeschaltet wird oder wenn ein nicht behebbarer Fehler auftritt.
+- `Log`: Ein Namensraum, der für das Loggen von Nachrichten auf den seriellen Port verantwortlich ist.
+- `Config`: Ein Namensraum, der für die Konfiguration des Displaymoduls verantwortlich ist.
+
+### Ablauf der Applikation
 
 Die `Application`-Klasse ist die Hauptklasse der Anwendung. Der grundlegende Ablauf der Anwendung ist wie folgt:
 
@@ -103,6 +129,8 @@ Die `Application`-Klasse ist die Hauptklasse der Anwendung. Der grundlegende Abl
 2. Lesen der Konfiguration aus dem Dateisystem.
 3. Initialisierung des entsprechenden Modus.
 4. Ausführen der Anwendung.
+
+### Betriebsmodi
 
 #### Standardmodus
 
@@ -133,6 +161,9 @@ Der `Config`-Namensraum ist für die Konfiguration des Moduls verantwortlich. Di
 ### Logging
 
 Der `Log`-Namensraum ist für das Loggen von Nachrichten auf den seriellen Port verantwortlich. Das Log-Level kann in der Konfigurationsdatei festgelegt werden. Die Protokollstufe kann auf `TRACE`, `DEBUG`, `INFO`, `WARN`, `ERROR` oder `FATAL` eingestellt werden. Das Log-Level wird über die Konfigurationsdatei festgelegt und die Nachrichten werden nur geloggt, wenn die Protokollstufe auf eine Stufe eingestellt ist, die gleich oder höher ist als die Stufe der Nachricht.
+
+## HTTP-Server
+
 
 ## Systemansteuerung
 
