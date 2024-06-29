@@ -57,3 +57,4 @@ Der Client kommuniziert nur über den Server Webserver mit dem Mikrocontroller, 
 <a id="GL_13">**Asset**</a>
 
 Den Inhalt, den ein Displaymodul anzeigen soll. Ein Asset wird als PNG dem Displaymodul zur Verfügung gestellt. Die Bezeichnung Asset unterscheidet sich von einem Bild in dem Aspekt, dass ein Asset eine Gültigkeitsdauer hat und auch aus HTML-Code generiert werden kann. Erst für die Übertragung an ein Displaymodul wird ein Asset in ein Bild gewandelt. 
+
