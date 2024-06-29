@@ -113,11 +113,11 @@ figure: Abbildung 8.6: Klassendiagramm der E-Paper-Display-Library { #_abb8_6 }
 
 Die Applikation ist der Hauptteil der Firmware. Sie ist verantwortlich für die Konfiguration des Displaymoduls, die drahtlose Kommunikation, die Betriebsmodi und die SPI-Schnittstelle. Die Applikation ist in verschiedene Klassen unterteilt, die jeweils für unterschiedliche Teile der Applikation verantwortlich sind. Diese sind:
 
-- [`Application`](#applikation): Die Hauptklasse der Applikation. Sie ist eine Schnittstelle, die von den verschiedenen Betriebsmodi implementiert wird.
-- [`AppStandalone`](#standalone-mode): Der Standalone-Betriebsmodus. Das Displaymodul funktioniert ohne ein bestehendes WLAN.
-- [`AppNetwork`](#network-mode): Der Netzwerk-Betriebsmodus. Das Displaymodul funktioniert mit einem bestehenden WLAN.
-- [`AppServer`](#server-mode): Der Server-Betriebsmodus. Das Displaymodul wird von einem zentralen Server gesteuert.
-- [`AppDefault`](#default-mode): Der Standard-Betriebsmodus. Das Displaymodul befindet sich im Standardmodus, wenn es zum ersten Mal eingeschaltet wird oder wenn ein nicht behebbarer Fehler auftritt.
+- [`Application`](#application): Die Hauptklasse der Applikation. Sie ist eine Schnittstelle, die von den verschiedenen Betriebsmodi implementiert wird.
+- [`AppStandalone`](#standalone-modus): Der Standalone-Betriebsmodus. Das Displaymodul funktioniert ohne ein bestehendes WLAN.
+- [`AppNetwork`](#netzwerkmodus): Der Netzwerk-Betriebsmodus. Das Displaymodul funktioniert mit einem bestehenden WLAN.
+- [`AppServer`](#servermodus): Der Server-Betriebsmodus. Das Displaymodul wird von einem zentralen Server gesteuert.
+- [`AppDefault`](#standardmodus): Der Standard-Betriebsmodus. Das Displaymodul befindet sich im Standardmodus, wenn es zum ersten Mal eingeschaltet wird oder wenn ein nicht behebbarer Fehler auftritt.
 - `Log`: Ein Namensraum, der für das Loggen von Nachrichten auf den seriellen Port verantwortlich ist.
 - `Config`: Ein Namensraum, der für die Konfiguration des Displaymoduls verantwortlich ist.
 
@@ -165,6 +165,350 @@ Der `Log`-Namensraum ist für das Loggen von Nachrichten auf den seriellen Port 
 
 ## HTTP-Server
 
+The HTTP-Server is responsible for handling incoming HTTP requests. The server is implemented using the [`PsychicHttp`](https://github.com/hoeken/PsychicHttp) library, which is a lightweight and easy-to-use HTTP server library for the ESP32. We are using fallowing features from the library:
+
+- HTTP requests such as GET and POST with file upload support
+- Basic authentication
+- HTTPS support
+
+### HTTP Requests
+
+HTTP defines methods to indicate the desired action to be performed for a given resource. The methode names are case-sensitive and must be written in uppercase unlike the header names. These methods can be safe meaning they won't change anything on the server or idempotent meaning they can be called multiple times and the result will be the same, and finally they can be cacheable meaning the response can be stored and reused later.
+
+#### Get Request
+
+The GET method requests a representation of the specified resource. Requests using GET should only retrieve data and should have no other effect on the data. For example when entered to a website the browser sends a GET request to the server to get the HTML file of the website.
+
+The request [below](#__codelineno-0-1) is a simple GET request to get the index.html file from the server. This should return the main page of the website.
+
+```http
+GET /index.html HTTP/1.1
+Host: 192.168.4.1
+```
+
+[Another simple GET request](#__codelineno-1-1) to get the current configuration of the device, which should return in plain text the operating mode of the device such as `Standalone`, `Network`, or `Server`.
+
+```http
+GET /api/v1/GetOpMode HTTP/1.1
+Host: 192.168.4.1
+```
+
+Currently, the server has fallowing endpoints:
+
+<ul style="list-style-type: none; padding: 0;">
+    <li style="margin-left: -5px;">
+        <div style="background-color: var(--md-code-bg-color); padding: 10px; border-radius: 5px; color: var(--md-code-fg-color);">
+            <strong style="color: var(--md-code-hl-keyword-color);">GET
+                <code>/api/v1/GetDisplayModule</code></strong><br>
+            <p style="margin: 5px 0;">Returns the attached E-Paper display model.</p>
+            <p style="margin: 5px 0;"><strong>Possible return values:</strong></p>
+            <ul style="margin-left: 20px;">
+                <li><code style="color: var(--md-code-hl-string-color);">WS_7IN3G</code></li>
+                <li><code style="color: var(--md-code-hl-string-color);">WS_9IN7</code></li>
+            </ul>
+        </div>
+    </li>
+    <li style="margin-left: -5px;">
+        <div style="background-color: var(--md-code-bg-color); padding: 10px; border-radius: 5px; color: var(--md-code-fg-color);">
+            <strong style="color: var(--md-code-hl-keyword-color);">GET <code>/api/v1/GetOpMode</code></strong><br>
+            <p style="margin: 5px 0;">Returns the current operating mode of the device.</p>
+            <p style="margin: 5px 0;"><strong>Possible return values:</strong></p>
+            <ul style="margin-left: 20px;">
+                <li><code style="color: var(--md-code-hl-string-color);">Standalone</code></li>
+                <li><code style="color: var(--md-code-hl-string-color);">Network</code></li>
+                <li><code style="color: var(--md-code-hl-string-color);">Server</code></li>
+            </ul>
+        </div>
+    </li>
+    <li style="margin-left: -5px;">
+        <div style="background-color: var(--md-code-bg-color); padding: 10px; border-radius: 5px; color: var(--md-code-fg-color);">
+            <strong style="color: var(--md-code-hl-keyword-color);">GET <code>/api/v1/GetDisplayWidth</code></strong><br>
+            <p style="margin: 5px 0;">Returns the width of the attached E-Paper display in pixels.</p>
+            <p style="margin: 5px 0;"><strong>Possible return values:</strong></p>
+            <ul style="margin-left: 20px;">
+                <li><code style="color: var(--md-code-hl-string-color);">Positive integer</code></li>
+            </ul>
+        </div>
+    </li>
+    <li style="margin-left: -5px;">
+        <div style="background-color: var(--md-code-bg-color); padding: 10px; border-radius: 5px; color: var(--md-code-fg-color);">
+            <strong style="color: var(--md-code-hl-keyword-color);">GET <code>/api/v1/GetDisplayHeight</code></strong><br>
+            <p style="margin: 5px 0;">Returns the height of the attached E-Paper display in pixels.</p>
+            <p style="margin: 5px 0;"><strong>Possible return values:</strong></p>
+            <ul style="margin-left: 20px;">
+                <li><code style="color: var(--md-code-hl-string-color);">Positive integer</code></li>
+            </ul>
+        </div>
+    </li>
+    <li style="margin-left: -5px;">
+        <div style="background-color: var(--md-code-bg-color); padding: 10px; border-radius: 5px; color: var(--md-code-fg-color);">
+            <strong style="color: var(--md-code-hl-keyword-color);">GET <code>/api/v1/GetLogLevel</code></strong><br>
+            <p style="margin: 5px 0;">Returns the current log level of the device.</p>
+            <p style="margin: 5px 0;"><strong>Possible return values:</strong></p>
+            <ul style="margin-left: 20px;">
+                <li><code style="color: var(--md-code-hl-string-color);">Trace</code></li>
+                <li><code style="color: var(--md-code-hl-string-color);">Debug</code></li>
+                <li><code style="color: var(--md-code-hl-string-color);">Info</code></li>
+                <li><code style="color: var(--md-code-hl-string-color);">Warn</code></li>
+                <li><code style="color: var(--md-code-hl-string-color);">Error</code></li>
+                <li><code style="color: var(--md-code-hl-string-color);">Fatal</code></li>
+            </ul>
+        </div>
+    </li>
+    <li style="margin-left: -5px;">
+        <div style="background-color: var(--md-code-bg-color); padding: 10px; border-radius: 5px; color: var(--md-code-fg-color);">
+            <strong style="color: var(--md-code-hl-keyword-color);">GET <code>/api/v1/GetHTTPS</code></strong><br>
+            <p style="margin: 5px 0;">Returns whether the device is using HTTPS or not.</p>
+            <p style="margin: 5px 0;"><strong>Possible return values:</strong></p>
+            <ul style="margin-left: 20px;">
+                <li><code style="color: var(--md-code-hl-string-color);">true</code></li>
+                <li><code style="color: var(--md-code-hl-string-color);">false</code></li>
+            </ul>
+        </div>
+    </li>
+</ul>
+
+And these files are currently available on the server:
+
+<ul style="list-style-type: none; padding: 0;">
+    <li style="margin-left: -5px;">
+        <div style="background-color: var(--md-code-bg-color); padding: 10px; border-radius: 5px; color: var(--md-code-fg-color);">
+            <strong style="color: var(--md-code-hl-keyword-color);">GET
+                <code>/index.html</code></strong><br>
+            <p style="margin: 5px 0;">Returns the main page of the website.</p>
+        </div>
+    </li>
+    <li style="margin-left: -5px;">
+        <div style="background-color: var(--md-code-bg-color); padding: 10px; border-radius: 5px; color: var(--md-code-fg-color);">
+            <strong style="color: var(--md-code-hl-keyword-color);">GET
+                <code>/settings.html</code></strong><br>
+            <p style="margin: 5px 0;">Returns the settings page of the website.</p>
+        </div>
+    </li>
+    <li style="margin-left: -5px;">
+        <div style="background-color: var(--md-code-bg-color); padding: 10px; border-radius: 5px; color: var(--md-code-fg-color);">
+            <strong style="color: var(--md-code-hl-keyword-color);">GET
+                <code>/utils.js</code></strong><br>
+            <p style="margin: 5px 0;">Returns the utility JavaScript file.</p>
+        </div>
+    </li>
+    <li style="margin-left: -5px;">
+        <div style="background-color: var(--md-code-bg-color); padding: 10px; border-radius: 5px; color: var(--md-code-fg-color);">
+            <strong style="color: var(--md-code-hl-keyword-color);">GET
+                <code>/LPRD-Logo.webp</code></strong><br>
+            <p style="margin: 5px 0;">Returns the LPRD logo image.</p>
+        </div>
+    </li>
+    <li style="margin-left: -5px;">
+        <div style="background-color: var(--md-code-bg-color); padding: 10px; border-radius: 5px; color: var(--md-code-fg-color);">
+            <strong style="color: var(--md-code-hl-keyword-color);">GET
+                <code>/html2canvas.min.js</code></strong><br>
+            <p style="margin: 5px 0;">Returns the html2canvas library.</p>
+        </div>
+    </li>
+    <li style="margin-left: -5px;">
+        <div style="background-color: var(--md-code-bg-color); padding: 10px; border-radius: 5px; color: var(--md-code-fg-color);">
+            <strong style="color: var(--md-code-hl-keyword-color);">GET
+                <code>/icons88-settings-25-w.png</code></strong><br>
+            <p style="margin: 5px 0;">Returns the settings icon image.</p>
+        </div>
+    </li>
+    <li style="margin-left: -5px;">
+        <div style="background-color: var(--md-code-bg-color); padding: 10px; border-radius: 5px; color: var(--md-code-fg-color);">
+            <strong style="color: var(--md-code-hl-keyword-color);">GET
+                <code>/script.js</code></strong><br>
+            <p style="margin: 5px 0;">Returns the main JavaScript file.</p>
+        </div>
+    </li>
+    <li style="margin-left: -5px;">
+        <div style="background-color: var(--md-code-bg-color); padding: 10px; border-radius: 5px; color: var(--md-code-fg-color);">
+            <strong style="color: var(--md-code-hl-keyword-color);">GET
+                <code>/style.css</code></strong><br>
+            <p style="margin: 5px 0;">Returns the main CSS file.</p>
+        </div>
+    </li>
+    <li style="margin-left: -5px;">
+        <div style="background-color: var(--md-code-bg-color); padding: 10px; border-radius: 5px; color: var(--md-code-fg-color);">
+            <strong style="color: var(--md-code-hl-keyword-color);">GET 
+                <code>/layouts/various_templates</code></strong><br>
+            <p style="margin: 5px 0;">Returns the various templates page of the website.</p>
+            <p style="margin: 5px 0;"><strong>Note:</strong> This directory contains multiple HTML templates used for generating images, not for direct page serving.</p>
+        </div>
+    </li>
+</ul>
+
+#### Post Request
+
+The POST method is used to submit an entity to the specified resource, often causing a change in state on the server. For example, when a user submits a form on a website, the browser sends a POST request to the server with the form data. The typo of the request is defined by the `Content-Type` header.
+
+The request [below](#__codelineno-2-1) is a simple POST request to set the operating mode of the device. The body of the request should contain the new operating mode of the device such as `Standalone`, `Network`, or `Server`. The server should respond with a success message or an error message if the given mode is invalid.
+
+```http
+POST /api/v1/SetOpMode HTTP/1.1
+Host: 192.168.4.1
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 16
+
+mode=Standalone
+```
+
+Currently, the server has fallowing endpoints:
+
+<ul style="list-style-type: none; padding: 0;">
+    <li style="margin-left: -5px;">
+        <div style="background-color: var(--md-code-bg-color); padding: 10px; border-radius: 5px; color: var(--md-code-fg-color);">
+            <strong style="color: var(--md-code-hl-keyword-color);">POST
+                <code>/api/v1/SetOpMode</code></strong><br>
+            <p style="margin: 5px 0;">Sets the operating mode of the device.</p>
+            <p style="margin: 5px 0;"><strong>Request body:</strong></p>
+            <ul style="margin-left: 20px;">
+                <li><code style="color: var(--md-code-hl-string-color);">mode</code> - The new operating mode of the device.</li>
+            </ul>
+            <p style="margin: 5px 0;"><strong>Possible values:</strong></p>
+            <ul style="margin-left: 20px;">
+                <li><code style="color: var(--md-code-hl-string-color);">Standalone</code></li>
+                <li><code style="color: var(--md-code-hl-string-color);">Network</code></li>
+                <li><code style="color: var(--md-code-hl-string-color);">Server</code></li>
+            </ul>
+        </div>
+    </li>
+    <li style="margin-left: -5px;">
+        <div style="background-color: var(--md-code-bg-color); padding: 10px; border-radius: 5px; color: var(--md-code-fg-color);">
+            <strong style="color: var(--md-code-hl-keyword-color);">POST
+                <code>/api/v1/SetWiFiCred</code></strong><br>
+            <p style="margin: 5px 0;">Sets the Wi-Fi credentials of the device.</p>
+            <p style="margin: 5px 0;"><strong>Request body:</strong></p>
+            <ul style="margin-left: 20px;">
+                <li><code style="color: var(--md-code-hl-string-color);">ssid</code> - The SSID of the Wi-Fi network.</li>
+                <li><code style="color: var(--md-code-hl-string-color);">password</code> - The password of the Wi-Fi network.</li>
+            </ul>
+        </div>
+    </li>
+    <li style="margin-left: -5px;">
+        <div style="background-color: var(--md-code-bg-color); padding: 10px; border-radius: 5px; color: var(--md-code-fg-color);">
+            <strong style="color: var(--md-code-hl-keyword-color);">POST
+                <code>/api/v1/SetServerURL</code></strong><br>
+            <p style="margin: 5px 0;">Sets the server URL of the device.</p>
+            <p style="margin: 5px 0;"><strong>Request body:</strong></p>
+            <ul style="margin-left: 20px;">
+                <li><code style="color: var(--md-code-hl-string-color);">url</code> - The URL of the server.</li>
+            </ul>
+        </div>
+    </li>
+    <li style="margin-left: -5px;">
+        <div style="background-color: var(--md-code-bg-color); padding: 10px; border-radius: 5px; color: var(--md-code-fg-color);">
+            <strong style="color: var(--md-code-hl-keyword-color);">POST
+                <code>/api/v1/SetDisplayModule</code></strong><br>
+            <p style="margin: 5px 0;">Sets the attached E-Paper display model of the device.</p>
+            <p style="margin: 5px 0;"><strong>Request body:</strong></p>
+            <ul style="margin-left: 20px;">
+                <li><code style="color: var(--md-code-hl-string-color);">model</code> - The model of the E-Paper display.</li>
+            </ul>
+            <p style="margin: 5px 0;"><strong>Possible values:</strong></p>
+            <ul style="margin-left: 20px;">
+                <li><code style="color: var(--md-code-hl-string-color);">WS_7IN3G</code></li>
+                <li><code style="color: var(--md-code-hl-string-color);">WS_9IN7</code></li>
+            </ul>
+        </div>
+    </li>
+    <li style="margin-left: -5px;">
+        <div style="background-color: var(--md-code-bg-color); padding: 10px; border-radius: 5px; color: var(--md-code-fg-color);">
+            <strong style="color: var(--md-code-hl-keyword-color);">POST
+                <code>/api/v1/restart</code></strong><br>
+            <p style="margin: 5px 0;">Restarts the device.</p>
+        </div>
+    </li>
+    <li style="margin-left: -5px;">
+        <div style="background-color: var(--md-code-bg-color); padding: 10px; border-radius: 5px; color: var(--md-code-fg-color);">
+            <strong style="color: var(--md-code-hl-keyword-color);">POST
+                <code>/api/v1/SetLogLevel</code></strong><br>
+            <p style="margin: 5px 0;">Sets the log level of the device.</p>
+            <p style="margin: 5px 0;"><strong>Request body:</strong></p>
+            <ul style="margin-left: 20px;">
+                <li><code style="color: var(--md-code-hl-string-color);">level</code> - The log level of the device.</li>
+            </ul>
+            <p style="margin: 5px 0;"><strong>Possible values:</strong></p>
+            <ul style="margin-left: 20px;">
+                <li><code style="color: var(--md-code-hl-string-color);">Trace</code></li>
+                <li><code style="color: var(--md-code-hl-string-color);">Debug</code></li>
+                <li><code style="color: var(--md-code-hl-string-color);">Info</code></li>
+                <li><code style="color: var(--md-code-hl-string-color);">Warn</code></li>
+                <li><code style="color: var(--md-code-hl-string-color);">Error</code></li>
+                <li><code style="color: var(--md-code-hl-string-color);">Fatal</code></li>
+            </ul>
+        </div>
+    </li>
+    <li style="margin-left: -5px;">
+        <div style="background-color: var(--md-code-bg-color); padding: 10px; border-radius: 5px; color: var(--md-code-fg-color);">
+            <strong style="color: var(--md-code-hl-keyword-color);">POST
+                <code>/api/v1/SetHTTPAuth</code></strong><br>
+            <p style="margin: 5px 0;">Sets the HTTP authentication of the device.</p>
+            <p style="margin: 5px 0;"><strong>Request body:</strong></p>
+            <ul style="margin-left: 20px;">
+                <li><code style="color: var(--md-code-hl-string-color);">username</code> - The username for HTTP authentication.</li>
+                <li><code style="color: var(--md-code-hl-string-color);">password</code> - The password for HTTP authentication.</li>
+            </ul>
+        </div>
+    </li>
+    <li style="margin-left: -5px;">
+        <div style="background-color: var(--md-code-bg-color); padding: 10px; border-radius: 5px; color: var(--md-code-fg-color);">
+            <strong style="color: var(--md-code-hl-keyword-color);">POST
+                <code>/api/v1/SetHTTPS</code></strong><br>
+            <p style="margin: 5px 0;">Sets whether the device is using HTTPS or not.</p>
+            <p style="margin: 5px 0;"><strong>Request body:</strong></p>
+            <ul style="margin-left: 20px;">
+                <li><code style="color: var(--md-code-hl-string-color);">https</code> - Whether the device is using HTTPS or not.</li>
+            </ul>
+            <p style="margin: 5px 0;"><strong>Possible values:</strong></p>
+            <ul style="margin-left: 20px;">
+                <li><code style="color: var(--md-code-hl-string-color);">true</code></li>
+                <li><code style="color: var(--md-code-hl-string-color);">false</code></li>
+            </ul>
+        </div>
+    </li>
+    <li style="margin-left: -5px;">
+        <div style="background-color: var(--md-code-bg-color); padding: 10px; border-radius: 5px; color: var(--md-code-fg-color);">
+            <strong style="color: var(--md-code-hl-keyword-color);">POST
+                <code>/api/v1/mkdir</code></strong><br>
+            <p style="margin: 5px 0;">Creates a new directory in the file system.</p>
+            <p style="margin: 5px 0;"><strong>Request body:</strong></p>
+            <ul style="margin-left: 20px;">
+                <li><code style="color: var(--md-code-hl-string-color);">path</code> - The path of the new directory.</li>
+            </ul>
+            <p style="margin: 5px 0;"><strong>Note:</strong> This endpoint only for debugging purposes and it's not included in the final version.</p>
+        </div>
+    </li>
+    <li style="margin-left: -5px;">
+        <div style="background-color: var(--md-code-bg-color); padding: 10px; border-radius: 5px; color: var(--md-code-fg-color);">
+            <strong style="color: var(--md-code-hl-keyword-color);">POST
+                <code>/api/v1/ls</code></strong><br>
+            <p style="margin: 5px 0;">Lists the files in the specified directory.</p>
+            <p style="margin: 5px 0;"><strong>Request body:</strong></p>
+            <ul style="margin-left: 20px;">
+                <li><code style="color: var(--md-code-hl-string-color);">path</code> - The path of the directory.</li>
+            </ul>
+            <p style="margin: 5px 0;"><strong>Note:</strong> This endpoint only for debugging purposes and it's not included in the final version.</p>
+        </div>
+    </li>
+    <li style="margin-left: -5px;">
+        <div style="background-color: var(--md-code-bg-color); padding: 10px; border-radius: 5px; color: var(--md-code-fg-color);">
+            <strong style="color: var(--md-code-hl-keyword-color);">POST
+                <code>/api/v1/rm</code></strong><br>
+            <p style="margin: 5px 0;">Removes the specified file from the file system.</p>
+            <p style="margin: 5px 0;"><strong>Request body:</strong></p>
+            <ul style="margin-left: 20px;">
+                <li><code style="color: var(--md-code-hl-string-color);">path</code> - The path of the file to be removed.</li>
+            </ul>
+            <p style="margin: 5px 0;"><strong>Note:</strong> This endpoint only for debugging purposes and it's not included in the final version.</p>
+        </div>
+    </li>
+</ul>
+
+### File Upload
+
+### Basic Authentication
+
+### HTTPS Support
 
 ## Systemansteuerung
 
