@@ -207,7 +207,7 @@ Nach dem Prototyping und ausführlichen Testen, kann das überzeugende Modell sc
 ## Webanwendungen
 **Mario Wegmann**
 
-Aufgrund den anforderungen und der komplexität von Websiten ist es nicht mehr praktikabel Inhalte komplett händisch in HTML, CSS und JavaScript zu erstellen. Zu groß und fehleranfällig ist die Wartung eines solchen manuel erstellten Konstrukts. Ein Beispiel hierfür wäre das erweiteren einer neuen Unterseite in der Menüleiste. Hier müsste jede andere Unterseite anegpasst werden, um die neue Unterseite von allen anderen Unterseiten aus zu erreichen. 
+Aufgrund den anforderungen und der komplexität von größeren Websiten ist es nicht mehr praktikabel Inhalte komplett händisch in HTML, CSS und JavaScript zu erstellen. Zu groß und fehleranfällig ist die Wartung eines solchen manuel erstellten Konstrukts. Ein Beispiel hierfür wäre das erweiteren einer neuen Unterseite in der Menüleiste. Hier müsste jede andere Unterseite anegpasst werden, um die neue Unterseite von allen anderen Unterseiten aus zu erreichen. 
 
 Stattdessen hat es sich etabliert für Websiten mit viel statischen Inhalt sogenannte Static Site Generators zu nutzen. Hierbei liegt der Fokus nur noch auf die Erstellung des eigentlichen Inhalts über eine simple Textdatei. Nach Fertigstellung des Inhalts erzeugt der Generator dann das restliche Gerüst der Website, so werden die Unterseiten generiert, das Navigationsmenü erstellt, Bilder optimiert und das Layout anhand des angegebenen Themes angewendet. 
 
@@ -216,6 +216,8 @@ Neben Websiten mit statischen Inhalten gibt es auch Websiten, dessen Inhalt dyna
 Zuletzt gibt es auch Anwendungen die über den Webbrowser laufen und somit keine lokale Installation benötigen, ein Beispiel wäre hierfür die NextCloud, womit sich Dateien abspeichern, erstellen, ordnen und teilen lassen. Dank vieler Erweiterungen 
 
 Die letzen beiden genannten Kategorien erfordern viele Komponenten die zusammenarbeiten müssen um den Benutzer eine performante und benutzerfreundliche Erfahrung zu ermöglichen. Daher haben sich mehr und mehr verschiedene Technologien im Web entwickelt, die mit unterschiedlsichen Herangehensweisen versuchen die Anfoderungen zu erfüllen. 
+
+Dennoch gibts es auch noch Anwendungsfälle, wo es durchaus sinvoll ist bewusst auf weitere Technologien zu verzichten und nur mit HTML, CSS und JavaScript zu arbeiten. Ein Anwendungsfall wäre der Embedded Bereich, da dort die Ressourcen sehr knapp sind und somit die Last für Anfragen möglichst auf den zugreifenden Client ausgelagert werden sollten. 
 
 ### Webtechnologien
 **Mario Wegmann**
@@ -238,18 +240,17 @@ JavaScript ist eine Programmiersprache, welche im Browser ausgeführt werden kan
 
 React ist eine JavaScript-Bibliothek zur Erstellung von Benutzeroberflächen. Sie verwendet eine komponentenbasierte Architektur, die es Entwicklern ermöglicht, wiederverwendbare UI-Komponenten zu erstellen und den Status von Anwendungen effizient zu verwalten. React nutzt einen virtuellen DOM zur Optimierung von Updates und zur Verbesserung der Performance. Neben React sind Vue, Angular und Svelte weitere bekannte Frontent-Bibliotheken. 
 
-**PostgreSQL**
-
-PostgreSQL ist ein relationale Datenbankmanagementsystem (RDBMS). Ein RDBMS ist eine Software, die zur Verwaltung von Datenbanken verwendet wird, die auf dem relationalen Modell basieren. In diesem Modell werden Daten in Tabellen organisiert, die aus Zeilen und Spalten bestehen. Jede Tabelle repräsentiert eine Entität, und die Beziehungen zwischen den Tabellen werden durch Primär- und Fremdschlüssel definiert. PostgreSQL ist bekannt für seine Erweiterbarkeit, Standardkonformität und fortgeschrittene Features wie komplexe Abfragen und Transaktionen. MySQL ist ein weiteres bekanntes und verbreitetes RDBMS. 
-
 **Structured Query Language (SQL)**
 
 SQL ist eine standardisierte Programmiersprache, die zur Verwaltung und Manipulation von Daten in relationalen Datenbanken verwendet wird. Mit SQL können Benutzer Datenbanken erstellen, ändern, abfragen und verwalten. 
 
-**ORM**
-//TODO
+**Object Relational Mapper (ORM)**
 
-Prisma ORM ist nützlich, weil es die Arbeit mit Datenbanken durch typsichere, deklarative Datenmodellierung und effiziente Datenbankmigrationen erheblich vereinfacht und optimiert. Es generiert automatisch TypeScript-Typen, was zu umfassender Typsicherheit und intelligenter Autovervollständigung in IDEs führt, wodurch die Produktivität und Codequalität verbessert werden. Prisma abstrahiert komplexe SQL-Abfragen und ermöglicht einfache CRUD-Operationen, reduziert die Notwendigkeit für manuelles SQL-Schreiben und minimiert potenzielle Fehler. Zudem unterstützt es verschiedene Datenbanksysteme und verfügt über eine starke Community sowie umfangreiche Dokumentation, was den Einstieg und die kontinuierliche Nutzung erleichtert.
+ORMs sind nützlich, weil es die Arbeit mit Datenbanken durch typsichere, deklarative Datenmodellierung und effiziente Datenbankmigrationen erheblich vereinfachen und optimieren. Prisma ORM ist beispielsweise ein ORM, welches automatisch TypeScript-Typen generiert. Dies ermöglicht Typensicherheit und die nutzung von Autovervollständigung im Editor, wodurch die Produktivität und Codequalität verbessert wird. ORMs reduzieren die Notwendigkeit für manuelles SQL-Schreiben und minimieren somit potenzielle Fehler. Zudem unterstützen sie verschiedene Datenbanksysteme, somit ist ein wechsel des RDBMS mit nur wenig Änderung am Code möglich.
+
+**PostgreSQL**
+
+PostgreSQL ist ein relationale Datenbankmanagementsystem (RDBMS). Ein RDBMS ist eine Software, die zur Verwaltung von Datenbanken verwendet wird, die auf dem relationalen Modell basieren. In diesem Modell werden Daten in Tabellen organisiert, die aus Zeilen und Spalten bestehen. Jede Tabelle repräsentiert eine Entität, und die Beziehungen zwischen den Tabellen werden durch Primär- und Fremdschlüssel definiert. PostgreSQL ist bekannt für seine Erweiterbarkeit, Standardkonformität und fortgeschrittene Features wie komplexe Abfragen und Transaktionen. MySQL ist ein weiteres bekanntes und verbreitetes RDBMS. 
 
 **Webserver**
 
@@ -258,3 +259,5 @@ Es gibt verschiedene Möglichkeiten wie HTML, CSS und JavaScript bei einer Anfra
 Für die Umsetzung werden häufig Frameworks genutzt, ähnlich wie bei Static Site Generators, unterstützen Frameworks bei der realisierung von Websiten, indem es wiederkehrende Aufgaben vereinfacht und die Wiederverwendung von Code fördert. Durch die Abstraktion und Strukturierung von Code sowie die Objektorientierung der Daten wird die Entwicklungszeit verkürzt und die Wartbarkeit großer Anwendungen erheblich verbessert. NextCloud verwendet beispielsweise das PHP Framework Symfony [[MW_05]](Quellenverzeichnis.md#MW_05)
 
 **Reverse Proxy**
+
+Ein Reverse Proxy ermöglicht das anbieten von meheren Webanwendungen auf dem selben Server. Typischerweise nutzen Browser für HTTP Anfragen den Port 80 und für HTTPS den Port 443. Da mehere Webanwendungen auf dem gleichen System die Ports nicht mehrfach verwenden können, müssten andere Ports verwendet werden, was aber unpraktikabel für den Benutzer der Webanwendung ist. Der Einsatz eines Reverse Proxies bietet hier mehr flexibilität. Dieser hört als einziger auf die beiden Ports und nimmt die Anfragen entgegen, anhand verschiedenere Eigenschaften, wie z.B. Domainname im HTTP Header, kann dann die Entscheidung getroffen werden, an welchen Webserverdienst die Anfrage weitergeleitet wird. Reverse Proxies bieten hierbei oft noch weitere Funktionen an, wie die Lastverteilung auf mehere Dienste, das verschlüsseln der Verbindung mit HTTPS, oder auch das schützen der Webanwendung durch nur authentifizierten Zugriff über HTTP Basic Auth. 

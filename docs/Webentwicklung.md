@@ -6,7 +6,7 @@
 
 ## Web Bneutzer Oberfläche
 
-## Linux Server 
+## Linux Webanwendung 
 **Mario Wegmann**
 
 ### Verwendete Technologien
@@ -22,13 +22,98 @@ Für das speichern der Daten wurde PostgresSQL als Datenbank ausgewählt. Hierbe
 
 Für den Webserver wurden Linux und Docker verwendet. Das quelloffene Linux ist bekannt für seine Stabilität, Sicherheit und Performance, was es zu einer idealen Wahl für den Einsatz als Webserver macht. Docker ergänzt diese Vorteile durch die Bereitstellung einer containerisierten Umgebung, die eine konsistente und isolierte Ausführung von Anwendungen ermöglicht. Dies erleichtert die Skalierung und Verwaltung der Anwendung erheblich und sorgt dafür, dass sie in unterschiedlichen Umgebungen gleichbleibend funktioniert. Docker-Container bieten zudem eine einfache Möglichkeit, Abhängigkeiten zu verwalten und die Bereitstellung von Updates zu automatisieren. 
 
-Die Kombination dieser Technologien ermöglich effizient eine benutzerfreundliche, performante und wartbare Webanwendung zu entwicklen.
+Die Kombination dieser Technologien ermöglich effizient eine benutzerfreundliche, performante und wartbare Webanwendung zu entwicklen. 
 
 Wie die Einzelkomponenten zusammenspielen ist in [](#_fig_MW_techstack) ersichtlich.
 
 Figure: Der Techstack der Webanwendung { #_fig_MW_techstack }
 
 ![](img/Techstack.png){ width=60% }
+
+Der Code wurde größtenteils in VSCode verfasst und mit der Versionskontrolle git auf GitHub verwaltet. 
+
+### Aufbau der Webanwendung
+
+**Datenbankstruktur**
+
+In der PostgreSQL Datenbank gibt es zwei Tabellen, die erste Tabelle enthält alle Displaymodule, der Aufbau einer Displaymodul Entität ist in [](#_tab_MW_Display) erkennbar. Hierbei wird als Primary Key die MAC-Adresse verwendet, da diese bei der Produktion vom Hersteller eindeutig vergeben wird eignet sich diese sehr gut als Primary Key. Desweiteren werden ein frei definierbarer Anzeigename, die Auflösung des verbauten ePaper Displays, der Zeitpunkt, wann sich das Displaymodul das letze mal mit dem Server verbunden hat und das aktuell festgelegte Asset hinterlegt. 
+In [](#_tab_MW_Asset) ist die Asset-Entität aufgelistet, diese besteht aus einer zufällig generierten cuid für den Primary Key, einer Typenangabe ob statisch oder dynamisch, einem frei definierbaren Anzeigename, der Dateipfad auf dem Server Dateisystem, dem HTML Code für das erstellen des Assets, sofern es über HTML generiert wird und die Anzeigedauer. Die PNGs werden lokal auf dem Dateisystem des Servers abgelegt, somit kann die Datenbank einerseits schlank bleiben und der Webserver kann die PNGs einfach ausliefern. 
+
+Die meisten Eigenschaften wurden als Optional deklariert, damit die Entitäten auch schon erstellt werden können, auch wenn noch nicht alle Eigenschaften bekannt sind. 
+
+Table: Die Display-Entität { #_tab_MW_Display }
+
+| Key | Type | Eigenschaft |
+|-|-|-|
+|  mac_adr          | String | MAC-Adresse, Primary Key |
+|  friendly_name    | String | Anzeigename, Optional |
+|  width            | Int | Breite des Displays |
+|  height           | Int | Höhe des Displays |
+|  last_seen        | DateTime | Zuletzt gesehen, Optional | 
+|  currentAsset     | String | Aktuell anzuzeigendes Asset, Optional |
+|  currentAssetType | String | Typ des aktuell anzuzeigenden Assets, Optional |
+
+Table: Die Asset-Entität { #_tab_MW_Asset }
+
+| Key | Type | Eigenschaft |
+|-|-|-|
+|  id               | String  | Primary Key, cuid Algorithumus |
+|  type             | Type | Art des Assets, Optional, Kann "STATIC" oder "DYNAMIC" sein |
+|  friendly_name    | String | Anzeigename, Optional |
+|  file_path        | String | Pfad auf dem Dateisystem des Servers, Optional |
+|  html             | String | HTML Code zum generieren des PNGs, Optional |
+|  valid_for        | Int | Anzeigedauer des Assets, Optional |
+
+**Backend**
+
+Für einen standarisierte Verwendung der Daten wurde eine REST-API Schnittstelle umgesetzt. So können mit GET-Anfragen Daten angefragt, mit PUT-Anfragen Daten bearbeitet und mit DELETE-Anfragen Daten auch gelöscht werden. Sowohl das Frontend als auch die Displaymodule verwenden diese REST-API. 
+
+Eine vollständige Übersicht der möglichen REST-API Aufrufen ist in Tabelle [](#_tab_MW_03) ersichtlich. Platzhalter in eckigen Klammern werden dabei dynamisch in der Anfrage berücksichtigt. 
+
+Table: Die Unterstützen REST-API Aufrufe der Webanwendung { #_tab_MW_03 }
+
+| URL | Methode | Body | Rückgabe | Zweck |
+|-|-|-|-|-|
+| api/v1/assets | GET | - | JSON | Gibt alle vorhandenen Assets in JSON zurück. | 
+| api/v1/assets | PUT | HTML Form | JSON | Erstellt ein neues Asset. Falls im HTML Form ein Key `html` enthalten ist, wird der Inhalt als HTML interpretiert und ein PNG davon erzeugt und lokal abgespeichert. Falls im HTML Form eine PNG-Datei enthalten ist, so wird diese lokal abgespeichert. | 
+| api/v1/assets/[ID] | GET | - | JSON | Gibt das Asset mit der übergebenen ID als JSON zurück. |
+| api/v1/assets/[ID] | PUT | HTML Form | HTTP Status | Aktualisiert die Daten des Assets mit der passenden ID, falls HTML mitgesendet wird, so wird das PNG neu genriert und lokal abgespeichert. |
+| api/v1/assets/[ID] | DELETE | - | HTTP Status | Löscht das Asset mit der übergebenen ID.  |
+| api/v1/displays | GET | - | JSON | Gibt alle vorhandenen Displaymodule in JSON zurück. | 
+| api/v1/displays/[MAC] | GET | - | JSON | Gibt das Displaymodule mit der passenden MAC-Adresse in JSON zurück. | 
+| api/v1/displays/[MAC] | PUT | HTML Form oder JSON | HTTP Status | Aktualisiert die Infos des Displaymoduls mit der MAC-Adresse oder setzt das zugewiesene Asset neu.  | 
+| api/v1/displays/[MAC] | DELETE | - | HTTP Status | Löscht das Displaymodul mit der MAC-Adresse aus der Datenbank. |
+| api/v1/displays/config/[MAC] | GET | - | JSON | Gibt als JSON zurück, welches Asset gerade für das Displaymodul mit der MAC-Adresse zugewiesen ist und wie lange es angezeigt werden soll. |
+| api/v1/displays/register/[MAC] | PUT | JSON | JSON | Erstellt das Displaymodul mit der MAC-Adresse neu in der Datenbank und gibt das neu erstellte Displaymodul als JSON zurück. |
+
+**Frontend**
+
+Im Frontend gibt es fünf Unterseiten. Die Startseite enthält das Menü zu den anderen beiden Hauptunterseiten "Displays" und "Assets". In der Unterseite "Displays" befindet sich eine Auflistung aller dem Server bekannten Displaymodulen. Ein Displaymodul registriet sich dabei beim Server selbst, da es im Servermodus die register-URL aufruft und sich dem Server so bekannt macht. In [](#_fig_WA_Displays) ist erkennbar, das jedes Displaymodul seinem mit seinem Anzeigenamen und auch einer Vorschau des aktuell zugewiesenen Assets dargestellt wird. Ein Displaymodul kann in der Übersicht angeklickt werden, wodurch sich eine Detailansichtsseite öffnet. In dieser Detailseite, welche [](#_fig_WA_Display_Details) zeigt, können die Metadaten des Displays bearbeitet und gespeichert werden. Zusätzlich werden alle Assets angezeigt, sobald ein Asset angeklickt wird, wird dieses als neues Asset dem Display zugewiesen. 
+
+Figure: Die Übersichtsseite aller Displays { #_fig_WA_Displays}
+
+![](img/Handbuch/WA-Displays.png){ width=60% }
+
+
+
+Ähnlich verhält es sich mit der zweiten Hauptunterseite "Assets", die unter [](#_fig_WA_Assets) erkennbar ist. Auch hier werden alle vorhandenen Assets aufgelistet und können ausgewählt werden um eine Detailansicht, wie in [](#_fig_WA_Display_Details) gezeigt , zu öffnen und die Metadaten zu bearbeiten und das Asset zu löschen. In gegensatz zu Displaymodulen können Assets händisch angelegt werden, entweder kann dafür eine PNG Datei hochgeladen, oder HTML Code eingetragen werden, welcher abschließend wieder ein PNG produziert. Die Abbildungen [](#_fig_WA_Upload) und [](#_fig_WA_HTML) zeigen jeweils die beiden Vorgänge. 
+
+Figure: Eine Übersicht über alle vorhanden Assets { #_fig_WA_Assets }
+
+![](img/Handbuch/WA-Assets.png){ width=60% }
+
+Figure: Die Detailansicht eines Displays { #_fig_WA_Display_Details}
+
+![](img/Handbuch/WA-Display-Details.png){ width=60% }
+
+Figure: Das Formular zum hochladen von bestehenden PNGs { #_fig_WA_Upload }
+
+![](img/Handbuch/WA-Asset-Upload.png){ width=60% }
+
+Figure: Das Formular zum erstellen von PNGs aus HTML Code { #_fig_WA_HTML }
+
+![](img/Handbuch/WA-Asset-HTML.png){ width=60% }
+
 
 ### Testumgebung
 
@@ -53,15 +138,14 @@ Der administrative Zugriff auf die VM erfolgt über SSH.
 Nach der Übergabe wurden zuerst die standard Zugangsdaten der VM durch neue Zugangsdaten ersetzt und die SSH Anmeldung des root Benutzer gesperrt. Ebenso wurden für die Personen, welche Zugriff auf die VM benötigen jeweils neue Benuzter angelegt. Dabei wurde als Benutzerauthentifizierung SSH-Keys als Authentifizierungsmethode verwendet. 
 Anschließend wurden die installierten Pakete mit dem Advanced Packaging Tool (apt) Paketmanager auf die neuste Version aktualisiert. 
 
-Damit die VM während der Dauer des Projekts zuverlässig läuft und Probleme frühzeitig erkannt werden wurde eine Monitoring Lösung aufgesetzt und mit dem Discord Server der Projektgruppe verbunden. Die hier eingesetzte Lösung nennt sich Netdata. Der Netdata Agent ist opensource und kann kostenlos eingesetzt werden, dieser bringt von Haus aus viele Vorlagen mit um das Gesamtsystem gut zu überwachen und Warnungen, sowie Fehler proaktiv an die Administratoren zu melden. Taucht ein Fehler auf dem Server auf, so wird in der hier verwendenten Konfiguration, direkt eine Nachricht auf dem Discord der Projektgruppe gesendet.  
-
 ### Einrichtung der Webanwendung
 
 Nach der erfolgreichen Grundinstallation kann mit dem Aufsetzen der Testumgebung der Webanwendung begonnen werden. 
 Dafür werden zuerst die Pakete git und docker über den apt Packetmanager installiert. 
 
+Die PostgreSQL Datenbank wurde in einem Docker Container eingerichtet. Anschließend konnte das GitHub Projekt lokal auf dem Server  geklont werden. Vor dem ersten Start der Webanwendung kann mit Prisma ORM die Datenbank konfiguriert und initialisiert werden, Prisma ORM verwendet dabei die Informationen, die in der schema.prisma Datei angegeben sind. Danach lässt sich mit einem npm Befehl ein Development Server starten. 
 
-Docker
+Änderungen am Code werden nach dem speichern der Quelldatei sofort in den laufenden Development Server eingepflegt, was eine schnelle und effiziente Entwicklung ermöglicht. 
 
 ### Datensicherung und Monitoring
 Der Zweck der VM ist primär die Entwicklung der Webanwendung und somit nicht der produktive Einsatz. Da der Quellcode der Webanwendung über Git verwaltet wird und die Daten innerhalb der Datenbank reine Testdaten sind, wurde auf das einrichten einer Datensicherung verzichtet. 
@@ -69,4 +153,3 @@ Der Zweck der VM ist primär die Entwicklung der Webanwendung und somit nicht de
 Für eine produktive Umgebung ist eine sorgfältig überlegte Backupstrategie unabdingbar. Hierbei sollte genaustens überlegt werden, wie der Backupprozess implementiert und automatisiert wird und wie erstellte Backups auf Konsistenz und wiederherstellbarkeit überprüft werden können. Auch der Speicherort von Backups sollte bedacht werden und der 3-2-1 Regel folgen. 
 
 Auch wurde keine Monitoringlösung verwendet um den Zustand der VM und der darauf laufenden Dienste zu überwachen, auch hier ist es sinnvoll ein Konzept für die Produktivumgebung auszuarbeiten. 
-
