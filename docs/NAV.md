@@ -13,4 +13,3 @@
 * [Beschreibung der Lösung](BeschreibungDerLösung.md)
 * [Über LPRD](about.md)
 * [Quellenverzeichnis](Quellenverzeichnis.md)
-* [Handbuch](Handbuch.md)
