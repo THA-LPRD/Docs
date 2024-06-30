@@ -134,3 +134,55 @@ Autor, Titel, Bezugsquelle, Zugriffsdatum, Herausgabedatum
 
 <a id="MW_10">[MW_10] Mehrere Autoren, Quick hack to port the IT8951 display driver to Arduino
 , [https://github.com/clashman/it8951](https://github.com/clashman/it8951), 2024-06-29, 2019-11-14</a>
+
+<a id="AEG_01">[AEG_01] Mehrere Autoren, Hardware Abstraction Layers, [https://en.wikipedia.org/w/index.php?title=Hardware_abstraction&oldid=1229915402](https://en.wikipedia.org/w/index.php?title=Hardware_abstraction&oldid=1229915402), 2024-06-28, 2024-06-19</a>
+
+<a id="AEG_02">[AEG_02] Mehrere Autoren, Arduino IDE, [https://en.wikipedia.org/w/index.php?title=Arduino&oldid=1231008379](https://en.wikipedia.org/w/index.php?title=Arduino&oldid=1231008379), 2024-06-28, 2024-06-25, S 1, 7-9</a>
+
+<a id="AEG_03">[AEG_03] Mehrere Autoren, PlatformIO, [http://Platform.io](http://Platform.io), 2024-06-28, 2024-06-02</a>
+
+<a id="AEG_04">[AEG_04] Mehrere Autoren, ESP-IDF, [https://docs.platformio.org/en/stable/frameworks/espidf.html](https://docs.platformio.org/en/stable/frameworks/espidf.html), 2024-06-28, 2024-03-24</a>
+
+<a id="AEG_05">[AEG_05] Mehrere Autoren, ESP-IDF vs Arduino, [https://www.espboards.dev/blog/esp-idf-vs-arduino-core/](https://www.espboards.dev/blog/esp-idf-vs-arduino-core/), 2024-06-28, 2023-03-18</a>
+
+<a id="AEG_06">[AEG_06] Mehrere Autoren, Installieren von PlatformIO extension, [https://platformio.org/install/ide?install=vscode](https://platformio.org/install/ide?install=vscode), 2024-06-29, 2024-05-24</a>
+
+<a id="AEG_07">[AEG_07] Mehrere Autoren, Konfiguration von XIAO ESP32S, [https://docs.platformio.org/en/latest//boards/espressif32/seeed_xiao_esp32s3.html](https://docs.platformio.org/en/latest//boards/espressif32/seeed_xiao_esp32s3.html), 2024-06-29, 2024-03-06</a>
+
+<a id="AEG_08">[AEG_08] Vincent Driessen, Git flow, [https://nvie.com/posts/a-successful-git-branching-model/](https://nvie.com/posts/a-successful-git-branching-model/), 2024-06-29, 2024-03-05</a>
+
+<a id="AEG_09">[AEG_09] Mehrere Autoren, PsychicHttp Bibliothek und die Wiki, [https://github.com/hoeken/PsychicHttp](https://github.com/hoeken/PsychicHttp), 2024-06-29, 2024-05-28</a>
+
+<a id="AEG_10">[AEG_10] Mehrere Autoren, HTTP Methoden MDN, [https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods), 2024-06-29, 2024-06-29</a>
+
+<a id="AEG_11">[AEG_11] Mehrere Autoren, HTTP Methoden Wikipedia, [https://en.wikipedia.org/w/index.php?title=HTTP&oldid=1231005162#HTTP/1.1_request_messages](https://en.wikipedia.org/w/index.php?title=HTTP&oldid=1231005162#HTTP/1.1_request_messages), 2024-06-29, 2024-06-25, S. 10-11</a>
+
+<a id="AEG_12">[AEG_12] Mehrere Autoren, HTTP GET Request, [https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/GET](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/GET), 2024-06-29, 2024-05-21</a>
+
+<a id="AEG_13">[AEG_13] Mehrere Autoren, HTTP POST Request, [https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/POST](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/POST), 2024-06-29, 2024-06-09</a>
+
+<a id="AEG_14">[AEG_14] L. Masinter, RFC7578 über multipart/form-data, [https://www.rfc-editor.org/rfc/pdfrfc/rfc7578.txt.pdf](https://www.rfc-editor.org/rfc/pdfrfc/rfc7578.txt.pdf), 2024-06-29, 2015-06</a>
+
+<a id="AEG_15">[AEG_15] Mehrere Autoren, HTTP MIME types, [https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types), 2024-06-29, 2024-06-26</a>
+
+<a id="AEG_16">[AEG_16] Mehrere Autoren, multipart/form-data MDN, [https://developer.mozilla.org/en-US/docs/Learn/Forms/Sending_and_retrieving_form_data](https://developer.mozilla.org/en-US/docs/Learn/Forms/Sending_and_retrieving_form_data), 2024-06-29, 2024-05-22</a>
+
+<a id="AEG_17">[AEG_17] Mehrere Autoren, Basic Auth MDN, [https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication), 2024-06-29, 2024-05-22</a>
+
+<a id="AEG_18">[AEG_18] Mehrere Autoren, Was ist HTTPS, [https://en.wikipedia.org/w/index.php?title=HTTPS&oldid=1231015807](https://en.wikipedia.org/w/index.php?title=HTTPS&oldid=1231015807), 2024-06-29, 2024-06-26, S. 1</a>
+
+<a id="AEG_19">[AEG_19] Mehrere Autoren, Espressif dokumentation über GPIO, [https://docs.espressif.com/projects/esp-idf/en/v5.2.2/esp32s3/api-reference/peripherals/gpio.html](https://docs.espressif.com/projects/esp-idf/en/v5.2.2/esp32s3/api-reference/peripherals/gpio.html), 2024-06-29, 2023-10-12</a>
+
+<a id="AEG_20">[AEG_20] Mehrere Autoren, Espressif dokumentation über SPI, [https://docs.espressif.com/projects/esp-idf/en/v5.2.2/esp32s3/api-reference/peripherals/spi_master.html](https://docs.espressif.com/projects/esp-idf/en/v5.2.2/esp32s3/api-reference/peripherals/spi_master.html), 2024-06-29, 2024-10-08</a>
+
+<a id="AEG_21">[AEG_21] Mehrere Autoren, Was ist SPI, [https://en.wikipedia.org/w/index.php?title=Serial_Peripheral_Interface&oldid=1230957841](https://en.wikipedia.org/w/index.php?title=Serial_Peripheral_Interface&oldid=1230957841), 2024-06-29, 2024-06-25, S. 1-3</a>
+
+<a id="AEG_22">[AEG_22] Mehrere Autoren, Waveshare wiki 9.7" Display, [https://www.waveshare.com/wiki/9.7inch_e-Paper_HAT](https://www.waveshare.com/wiki/9.7inch_e-Paper_HAT), 2024-06-29, 2024-05-25</a>
+
+<a id="AEG_23">[AEG_23] Mehrere Autoren, Waveshare wiki 7.3" Display, [https://www.waveshare.com/wiki/7.3inch_e-Paper_HAT_(G)_Manual](https://www.waveshare.com/wiki/7.3inch_e-Paper_HAT_(G)_Manual), 2024-06-29, 2023-12-08</a>
+
+<a id="AEG_024">[AEG_024] Mehrere Autoren, Was ist PNG, [https://en.wikipedia.org/w/index.php?title=PNG&oldid=1222529480](https://en.wikipedia.org/w/index.php?title=PNG&oldid=1222529480), 2024-06-29, 2024-05-06, S. 1</a>
+
+<a id="AEG_25">[AEG_25] Mehrere Autoren, PNGdec Bibliothek, [https://github.com/bitbank2/PNGdec](https://github.com/bitbank2/PNGdec), 2024-06-29, 2024-04-19</a>
+
+<a id="AEG_26">[AEG_26] Mehrere Autoren, Euclidean distance, [https://en.wikipedia.org/w/index.php?title=Euclidean_distance&oldid=1214273566](https://en.wikipedia.org/w/index.php?title=Euclidean_distance&oldid=1214273566), 2024-06-29, 2024-03-17</a>

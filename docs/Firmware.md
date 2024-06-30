@@ -17,6 +17,7 @@ Wie im Abschnitt [Grundlagen](PraktischeUTheoretischeGrund.md#firmwarebibliothek
 2. Öffnen Sie das Erweiterungspanel entweder über die Seitenleiste oder durch Drücken von ++ctrl+shift+x++ und geben Sie `PlatformIO IDE` ein.
 3. Klicken Sie auf die `Install`, um die PlatformIO IDE-Erweiterung zu installieren.
 4. Nachdem die Erweiterung installiert ist, können Sie die PlatformIO-Seitenleiste öffnen, indem Sie auf das PlatformIO-Symbol in der Seitenleiste klicken. Dies kann einige Minuten dauern, da PlatformIO das Backend herunterlädt und die Umgebung einrichtet.
+[[AEG_06]](Quellenverzeichnis.md#AEG_06)
 
 Figure: Abbildung 8.1: PlatformIO-Erweiterung in Visual Studio { #_abb8_1 }
 
@@ -32,6 +33,7 @@ Figure: Abbildung 8.1: PlatformIO-Erweiterung in Visual Studio { #_abb8_1 }
 5. Wählen Sie das Board, das Sie verwenden. In unserem Fall verwenden wir das Board `Seeed Studio XIAO ESP32S3`.
 6. Wählen Sie das Framework. In unserem Fall verwenden wir das `Arduino`-Framework.
 7. Drücken Sie abschließend die `Finish`, um das Projekt zu erstellen.
+[[AEG_07]](Quellenverzeichnis.md#AEG_07)
 
 Figure: Abbildung 8.2: Neues PlatformIO-Projekt erstellen { #_abb8_2 }
 
@@ -53,7 +55,7 @@ Figure: Abbildung 8.3: Firmware auf den Mikrocontroller hochladen { #_abb8_3 }
 ### Versionskontrolle
 **Ahmet Emirhan Göktas**
 
-In diesem Projekt haben wir [git](https://git-scm.com/) als unser Versionskontrollsystem verwendet und dem Git-Flow-Modell gefolgt. Das Git-Flow-Modell ist ein von Vincent Driessen erstelltes Branching model für git. Es ist eine Reihe von Regeln, die verwendet werden, um die Verzweigungen in einem git-Repository zu verwalten. Die haupt Branches sind `master` und `dev`. Der `master`-Branch wird für produktionsbereiten Code verwendet, während der `dev`-Branch für Code verwendet wird, der sich in der Entwicklung befindet. Der `dev`-Branch wird abgezweigt, um Feature-Branches zu erstellen. Sobald das Feature abgeschlossen ist, wird der Feature-Branch wieder in den `dev`-Branch integriert. Wenn der Code im `dev`-Branch bereit für die Produktion ist, wird er in den `master`-Branch integriert.
+In diesem Projekt haben wir [git](https://git-scm.com/) als unser Versionskontrollsystem verwendet und dem Git-Flow-Modell gefolgt. Das Git-Flow-Modell ist ein von Vincent Driessen erstelltes Branching model für git. Es ist eine Reihe von Regeln, die verwendet werden, um die Verzweigungen in einem git-Repository zu verwalten. Die haupt Branches sind `master` und `dev`. Der `master`-Branch wird für produktionsbereiten Code verwendet, während der `dev`-Branch für Code verwendet wird, der sich in der Entwicklung befindet. Der `dev`-Branch wird abgezweigt, um Feature-Branches zu erstellen. Sobald das Feature abgeschlossen ist, wird der Feature-Branch wieder in den `dev`-Branch integriert. Wenn der Code im `dev`-Branch bereit für die Produktion ist, wird er in den `master`-Branch integriert. [[AEG_08]](Quellenverzeichnis.md#AEG_08)
 
 ## Anforderungen
 **Ahmet Emirhan Göktas**
@@ -175,7 +177,7 @@ In diesem Modus wird mit einem Webbrowser nicht direkt auf das Displaymodul selb
 ### Konfiguration
 **Ahmet Emirhan Göktas**
 
-Der `Config`-Namensraum ist für die Konfiguration des Moduls verantwortlich. Die Konfiguration wird in einer JSON-Datei im Dateisystem gespeichert. Beim Booten wird die `Load`-Methode verwendet, um die Konfiguration aus dem Dateisystem zu laden, sodass die Konfiguration direkt aus dem RAM verfügbar ist. Die `Save`-Methode kann dann verwendet werden, um die Konfiguration zurück in das Dateisystem zu speichern.
+Der `Config`-Namensraum ist für die Konfiguration des Moduls verantwortlich. Die Konfiguration wird in einer JSON-Datei im Dateisystem gespeichert. Beim Booten wird die `Load`-Methode verwendet, um die Konfiguration aus dem Dateisystem zu laden, sodass die Konfiguration direkt aus dem RAM verfügbar ist. Die `Save`-Methode kann dann verwendet werden, um die Konfiguration zurück in das Dateisystem zu speichern. Dabei verwenden wir die [ArduinoJson-Bibliothek](https://arduinojson.org/), um die JSON-Datei zu lesen und zu schreiben.
 
 ### Logging
 **Ahmet Emirhan Göktas**
@@ -190,7 +192,8 @@ The HTTP-Server is responsible for handling incoming HTTP requests. It is implem
 - Handling HTTP requests such as GET and POST with file upload support
 - Basic authentication
 - HTTPS support
-
+  [[AEG_09]](Quellenverzeichnis.md#AEG_09)
+- 
 ### HTTP Requests
 **Ahmet Emirhan Göktas**
 
@@ -208,6 +211,9 @@ HTTP definiert Methoden, um die gewünschte Aktion an einer gegebenen Ressource 
 - **Sicher**: Methoden, die nichts auf dem Server ändern.
 - **Idempotent**: Methoden, die mehrfach mit dem gleichen Ergebnis aufgerufen werden können.
 - **Cachefähig**: Methoden, deren Antworten gespeichert und später wiederverwendet werden können.
+
+[[AEG_10]](Quellenverzeichnis.md#AEG_10)
+[[AEG_11]](Quellenverzeichnis.md#AEG_11)
 
 #### GET-Anfrage
 **Ahmet Emirhan Göktas**
@@ -227,6 +233,7 @@ Host: 192.168.4.1
 GET /api/v1/GetOpMode HTTP/1.1
 Host: 192.168.4.1
 ```
+[[AEG_12]](Quellenverzeichnis.md#AEG_12)
 
 Derzeit hat der Server folgende Endpunkte:
 
@@ -367,6 +374,7 @@ Content-Length: 16
 
 mode=Standalone
 ```
+[[AEG_13]](Quellenverzeichnis.md#AEG_13)
 
 Derzeit hat der Server folgende Endpunkte:
 
@@ -530,6 +538,9 @@ Content-Type: text/plain
 Hello World!
 ------WebKitFormBoundary7MA4YWxkTrZu0gW--
 ```
+[[AEG_14]](Quellenverzeichnis.md#AEG_14)
+[[AEG_15]](Quellenverzeichnis.md#AEG_15)
+[[AEG_16]](Quellenverzeichnis.md#AEG_16)
 
 Der Server hat derzeit folgende Endpunkte:
 
@@ -573,13 +584,14 @@ GET /api/v1/GetDisplayModule HTTP/1.1
 Host: 192.168.4.1
 Authorization: Basic YWRtaW46YWRtaW4K=
 ```
+[[AEG_17]](Quellenverzeichnis.md#AEG_17)
 
 Alle oben aufgeführten Endpunkte sind mit Basic Authentication geschützt. Der Standardbenutzername und das Standardpasswort sind jeweils `admin`.
 
 ### HTTPS Unterstützung
 **Ahmet Emirhan Göktas**
 
-HTTPS ist eine Erweiterung von HTTP, um es sicherer zu machen, indem die zwischen dem Client und dem Server ausgetauschten Daten verschlüsselt werden. HTTPS verwendet SSL/TLS zur Verschlüsselung der Daten, was das Abhören und Manipulieren der Daten verhindert. Die Unterstützung von HTTPS kann einfach aktiviert werden, indem dem Server die Zertifikats- und Schlüsseldateien zur Verfügung gestellt werden. Der Server verwendet diese Dateien dann, um nach einem Neustart eine sichere Verbindung mit dem Client herzustellen.
+HTTPS ist eine Erweiterung von HTTP, um es sicherer zu machen, indem die zwischen dem Client und dem Server ausgetauschten Daten verschlüsselt werden. HTTPS verwendet SSL/TLS zur Verschlüsselung der Daten, was das Abhören und Manipulieren der Daten verhindert. Die Unterstützung von HTTPS kann einfach aktiviert werden, indem dem Server die Zertifikats- und Schlüsseldateien zur Verfügung gestellt werden. Der Server verwendet diese Dateien dann, um nach einem Neustart eine sichere Verbindung mit dem Client herzustellen. [[AEG_18]](Quellenverzeichnis.md#AEG_18)
 
 ## Systemansteuerung
 **Ahmet Emirhan Göktas**
@@ -597,17 +609,22 @@ Ein weiteres Beispiel ist der GPIO 43, der zur Steuerung der Stromversorgung des
 
 Es gibt auch praktische Methoden wie Neustart, Tiefschlafmodus und Einstellen eines Weckers. Es gibt auch eine Verzögerungsmethode, die es uns ermöglicht, die Ausführung des Programms zu pausieren, ohne den Watchdog-Timer auszulösen.
 
+[[AEG_19]](Quellenverzeichnis.md#AEG_19)
+
 ### SPI
 **Ahmet Emirhan Göktas**
 
-Das Serial Peripheral Interface (SPI) ist eine synchrone serielle Kommunikationsschnittstelle, die es Geräten ermöglicht, miteinander zu kommunizieren. Es wird häufig verwendet, um Mikrocontroller mit Peripheriegeräten wie Sensoren, Displays und Speichergeräten zu verbinden. Es besteht aus vier Signalen: MOSI (Master Out Slave In), MISO (Master In Slave Out), SCK (Serial Clock) und CS (Chip Select). Die Steuerung des SPI-Busses ist etwas mühsam, daher haben wir eine eigene Wrapper-Bibliothek um den esp-idf-SPI-Treiber erstellt.
+Das Serial Peripheral Interface (SPI) ist eine synchrone serielle Kommunikationsschnittstelle, die es Geräten ermöglicht, miteinander zu kommunizieren. Es wird häufig verwendet, um Mikrocontroller mit Peripheriegeräten wie Sensoren, Displays und Speichergeräten zu verbinden. Es besteht aus vier Signalen: MOSI (Master Out Slave In), MISO (Master In Slave Out), SCK (Serial Clock) und CS (Chip Select). Die Steuerung des SPI-Busses ist etwas mühsam, daher haben wir eine eigene Wrapper-Bibliothek um den esp-idf-SPI-Treiber erstellt. [[AEG_21]](Quellenverzeichnis.md#AEG_21)
 
 Zum Beispiel ist das E-Paper-Display über den SPI-Bus mit dem ESP32 verbunden. Wir verwenden den SPI-Bus, um Befehle und Daten an das Display zu senden, um den Bildschirm zu aktualisieren. Nachdem die Pins 9 für MOSI, 3 für MISO, 7 für SCK und 4 für CS an den SPI-Treiber übergeben wurden, können wir Daten einfach an das Display senden, ohne uns um die low-level Details kümmern zu müssen.
+[[AEG_20]](Quellenverzeichnis.md#AEG_20)
 
 ## E-Paper Display API
 **Ahmet Emirhan Göktas**
 
 Die E-Paper Display API ist verantwortlich für die Steuerung des E-Paper-Displays. Die API stellt Methoden zur Initialisierung des Displays und zur Aktualisierung des Displays mit neuen Bildern bereit. Sie abstrahiert die low-level Details des Displays und bietet eine einfache Schnittstelle zur Interaktion mit dem zugrundeliegenden Treiber. Jedes Displaymodell benötigt seinen eigenen Treiber. Derzeit haben wir Treiber für die Waveshare 7,3 Zoll (G) und 9,7 Zoll Displays.
+[[AEG_22]](Quellenverzeichnis.md#AEG_22)
+[[AEG_23]](Quellenverzeichnis.md#AEG_23)
 
 ### Framebuffer
 **Ahmet Emirhan Göktas**
@@ -620,6 +637,8 @@ Der Framebuffer ist ein Speicherpuffer, der direkt aus dem PSRAM des ESP32S3 zug
 Die ImageData Struktur wird verwendet, um die Bilddaten zu speichern, die auf dem E-Paper Display angezeigt werden sollen. Da wir begrenzte Mengen an RAM im ESP haben, erwartet die Struktur, dass Bilder in einer Datei im Dateisystem gespeichert werden. Das unterstützte Bildformat ist PNG, welches bereits Informationen wie Breite, Höhe und Farbtiefe enthält. Die Struktur wird vom Treiber gesteuert. Nachdem sie generiert wurde, können wir sie beim Treiber registrieren und ein Handle zur späteren Verwendung erhalten. Der Treiber kümmert sich dann um den Rest.
 
 Später können wir die Draw-Methode mit den gewünschten x- und y-Offsets aufrufen, um das Bild auf den Framebuffer zu zeichnen, das dann auf dem Bildschirm angezeigt wird. Der Treiber übergibt intern dem Bilddecoder die Farbpalette und den Framebuffer zum Zeichnen des Bildes. Der Bilddecoder verwendet die [PNGdec](https://github.com/bitbank2/PNGdec) Bibliothek zum Dekodieren des Bildes und erhält die Pixeldaten. Diese Daten werden dann in tatsächlich darstellbare Farben umgewandelt, indem die nächstgelegene Farbe aus der Farbpalette ermittelt wird.
+[[AEG_24]](Quellenverzeichnis.md#AEG_24)
+[[AEG_25]](Quellenverzeichnis.md#AEG_25)
 
 ### Colorpalette
 **Ahmet Emirhan Göktas**
@@ -647,6 +666,7 @@ Figure: {#_abb8_11}
 ![](img/Firmware/yellow-distance.svg)
 
 Aus diesen Berechnungen ergibt sich, dass die Farbe (204, 0, 70) der Farbe Rot in der Palette am nächsten ist.
+[[AEG_26]](Quellenverzeichnis.md#AEG_26)
 
 ### Treiber
 **Ahmet Emirhan Göktas**
