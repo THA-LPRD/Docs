@@ -404,8 +404,8 @@
 Bitte haben Sie hier einige Minuten Geduld. Falls das Verbinden mit einem externen WLAN oder Server nicht funktioniert hat, so öffnet das Display automatisch wieder nach ca. 5 min den eigenen Access Point und Sie können entweder die Konfiguration erneut versuchen oder fahren im Standalone-Modus fort.</p>
 <p>Natürlich können die Einstellungen jederzeit geändert werden.</p>
 <h2 id="hochladen-von-inhalten">Hochladen von Inhalten<a class="headerlink" href="#hochladen-von-inhalten" title="Permanent link">¶</a></h2>
-<p><strong>Julia Reuter</strong>
-Wenn Sie das System erfolgreich neu gestartet haben, sollten Sie auf folgende Seite (Abbildung 3) gelangen und können Sie mit dem Upload fortfahren</p>
+<p><strong>Julia Reuter</strong> </p>
+<p>Wenn Sie das System erfolgreich neu gestartet haben, sollten Sie auf folgende Seite (Abbildung 3) gelangen und können Sie mit dem Upload fortfahren</p>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/jr_home.png"><img alt="" src="../img/jr_home.png" width="100%"/></a></p>
 <p>Hierfür stehen zwei Optionen zur Verfügung:</p>
 <ul>
@@ -426,7 +426,7 @@ Wenn Sie das System erfolgreich neu gestartet haben, sollten Sie auf folgende Se
 <p><strong>Denken Sie daran, dass nach jedem erfolgreichen Bild-Upload das System in den deep-sleep gesetzt wird und nicht mehr erreichbar ist. Um den Inhalt zu ändern oder Einstellungen vorzunehmen, drücken Sie bitte den Knopf am unteren Display-Rand.</strong></p>
 <h2 id="netzwerkmodus">Netzwerkmodus<a class="headerlink" href="#netzwerkmodus" title="Permanent link">¶</a></h2>
 <p><strong>Julia Reuter</strong><br/>
-Nachdem Sie in den Einstellungen unter dem Punkt WiFi Konfiguration ihre WLAN-Daten eingeben und nach dem Speichern, das Display neu gestartet haben, sollte sich Ihr Modul automatisch mit dem entsprechenden WLAN verbinden. 
+Nachdem Sie in den Einstellungen unter dem Punkt WiFi Konfiguration ihre WLAN-Daten eingeben und nach dem Speichern, das Display neu gestartet haben, sollte sich Ihr Modul automatisch mit dem entsprechenden WLAN verbinden.<br/>
 Unter der zugewiesenen IP: …/index.html können Sie mit dem Upload wie gehabt fortfahren.</p>
 <h2 id="aufsetzen-des-linux-servers">Aufsetzen des Linux Servers<a class="headerlink" href="#aufsetzen-des-linux-servers" title="Permanent link">¶</a></h2>
 <p><strong>Mario Wegmann</strong></p>
@@ -443,8 +443,8 @@ Hier wurde der Caddy Reverse Proxy verwendet, aber auch Nginx oder Apache könne
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>update
 </span><span id="__span-1-2"><a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>caddy
 </span></code></pre></div>
-<p>Der Caddy Reverseproxy wird über eine Konfigurationsdatei verwaltet, diese sollte sich unter '/etc/caddy/Caddyfile' befinden. Mit dem folgenden Code wird ein einfacher Reverseproxy auf Port :3000 der Next.js Anwendung eingerichtet, dabei wird ein lokal liegendes SSL-Zertifikat verwendet und eine Basic Auth Authentifizierung. 
-Den Passwort Hash kann man direkt mit Caddy generieren, indem <code>caddy hash-password</code>verwendet wird, diese Hilfsfunktion fragt nach dem Passwort und gibt dann den Hash aus, welcher in der Caddyfile eingetragen werden kann. </p>
+<p>Der Caddy Reverseproxy wird über eine Konfigurationsdatei verwaltet, diese sollte sich unter '/etc/caddy/Caddyfile' befinden. Mit dem folgenden Code wird ein einfacher Reverseproxy auf Port :3000 der Next.js Anwendung eingerichtet, dabei wird ein lokal liegendes SSL-Zertifikat verwendet und eine Basic Auth Authentifizierung.<br/>
+Den Passwort Hash kann man direkt mit Caddy generieren, indem <code>caddy hash-password</code> verwendet wird, diese Hilfsfunktion fragt nach dem Passwort und gibt dann den Hash aus, welcher in der Caddyfile eingetragen werden kann. </p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>lprd.informatik.tha.de {
 </span><span id="__span-2-2"><a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a>        tls /etc/ssl/certs/lprd-fullchain.pem /etc/ssl/priavte/lprd-privkey.pem
 </span><span id="__span-2-3"><a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a>        basicauth * {
@@ -503,12 +503,12 @@ Diese sollte neu angelegt werden und den folgenden Inhalt enthalten: </p>
 <h3 id="neues-asset-erstellen">Neues Asset erstellen<a class="headerlink" href="#neues-asset-erstellen" title="Permanent link">¶</a></h3>
 <p>Es gibt zwei Möglichkeiten, ein Asset zu erstellen, es kann entweder ein fertiges PNG hochgeladen werden oder ein PNG aus einem HTML-Code erstellt werden. Dazu kann in der »Assets«-Unterseite, welche in <a href="#_fig_WA_Assets"></a> ersichtlich ist, einer der beiden Vorgänge über die Knöpfe gestartet werden. </p>
 <p><figure id="_fig_WA_Assets"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/Handbuch/WA-Assets.png"><img alt="" src="../img/Handbuch/WA-Assets.png" width="60%"/></a><figcaption> Eine Übersicht über alle vorhandenen Assets </figcaption></figure></p>
-<p><strong>PNG hochladen</strong></p>
+<p><strong>PNG hochladen</strong> </p>
 <p>Ein PNG kann auf der Unterseite Assets über den »Hochladen«-Knopf hochgeladen werden. 
 Beim Hochladen muss darauf geachtet werden, dass das PNG in der richtigen Auflösung für das Display ist, welches später das Asset anzeigen soll. Ebenso kann ein Name für das Asset und wie lange es angezeigt werden soll, angegeben werden. Das Hochladen beginnt mit einem Druck auf den »Hochladen«-Knopf. Die <a href="#_fig_WA_Upload"></a> zeigt das Formular. </p>
 <p><figure id="_fig_WA_Upload"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/Handbuch/WA-Asset-Upload.png"><img alt="" src="../img/Handbuch/WA-Asset-Upload.png" width="60%"/></a><figcaption> Das Formular zum Hochladen von bestehenden PNGs </figcaption></figure></p>
-<p><strong>PNG aus HTML erstellen</strong>
-Auf der Unterseite Assets gibt es auch den »Erstellen aus HTML«-Knopf, dieser öffnet ein Formular, in dem der Assetname, die Anzeigedauer und der HTML-Code eingegeben werden kann. Nach dem Druck auf den »Generieren«-Knopf wird ein PNG erstellt und lokal abgelegt. Die <a href="#_fig_WA_HTML"></a> zeigt das Formular. </p>
+<p><strong>PNG aus HTML erstellen</strong> </p>
+<p>Auf der Unterseite Assets gibt es auch den »Erstellen aus HTML«-Knopf, dieser öffnet ein Formular, in dem der Assetname, die Anzeigedauer und der HTML-Code eingegeben werden kann. Nach dem Druck auf den »Generieren«-Knopf wird ein PNG erstellt und lokal abgelegt. Die <a href="#_fig_WA_HTML"></a> zeigt das Formular. </p>
 <p><figure id="_fig_WA_HTML"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/Handbuch/WA-Asset-HTML.png"><img alt="" src="../img/Handbuch/WA-Asset-HTML.png" width="60%"/></a><figcaption> Das Formular zum Erstellen von PNGs aus HTML Code </figcaption></figure></p>
 <h3 id="vorhandenes-asset-bearbeiten">Vorhandenes Asset bearbeiten<a class="headerlink" href="#vorhandenes-asset-bearbeiten" title="Permanent link">¶</a></h3>
 <p>In der »Assets« Übersichtsseite kann jedes vorhandene Asset ausgewählt werden, um eine Detailansicht, welche in <a href="#_fig_WA_Asset_Details"></a> ersichtlich ist, anzuzeigen. Dort können der Name, die Anzeigedauer und der HTML-Code bearbeitet werden. 
