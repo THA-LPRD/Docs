@@ -308,7 +308,7 @@ Figure: Abbildung 6.22: Die erste Version der 7.3-Zoll-Rückseite. { #_abb_6_22 
 
 ![](img/7_zoll_rückseite_v1.png){width=70%}
 
-Nach der ersten Version des Gehäuses wurde das Design nochmal grundlegend verändert und auch die Befestigung der Akkupacks überdacht. Wie in [Abbildung 1](#fig_jg_02) zu erkennen ist, wurde zunächst vorgesehen, die Akkupacks von außen zugänglich zu machen, um einen leichteren Austausch zu ermöglichen ohne das Gehäuse von der Wand nehmen zu müssen.
+Nach der ersten Version des Gehäuses wurde das Design nochmal grundlegend verändert und auch die Befestigung der Akkupacks überdacht. Wie in [Abbildung 6.22](#_abb_6_22) zu erkennen ist, wurde zunächst vorgesehen, die Akkupacks von außen zugänglich zu machen, um einen leichteren Austausch zu ermöglichen ohne das Gehäuse von der Wand nehmen zu müssen.
 
 Figure: Abbildung 6.23: Die zweite Version der 7.3-Zoll-Rückseite. { #_abb_6_23 }
 
@@ -321,7 +321,7 @@ Figure: Abbildung 6.24: Die dritte und finale Version der 7.3-Zoll-Rückseite. {
 ![](img/7_zoll_rückseite_v3.png){width=70%}
 
 
-In [Abbildung 6.26](#_abb_6_26) sieht man nun das endgültige Design der Gehäuserückseite. Im Vergleich zur vorherigen Version wurden die Seiten abgeschrägt, um ein noch schmaleren Eindruck des Gehäuses zu erwecken. Zudem wurden die Aufhängelöcher noch versetzt, um den Schwerpunkt des Gehäuses besser auszugleichen.
+In [Abbildung 6.24](#_abb_6_24) sieht man nun das endgültige Design der Gehäuserückseite. Im Vergleich zur vorherigen Version wurden die Seiten abgeschrägt, um ein noch schmaleren Eindruck des Gehäuses zu erwecken. Zudem wurden die Aufhängelöcher noch versetzt, um den Schwerpunkt des Gehäuses besser auszugleichen.
 
 Figure: Abbildung 6.25: Die Rückseite des Gehäuses für das 9.7-Zoll-Epaper-Display.{ #_abb_6_25 }
 
@@ -505,7 +505,7 @@ Wie in der [Tabelle 6.4]( #_tab_6_4 ) ersichtlich, fließen bei der Verwendung v
 ## A-D-Wandler Messung
 **Benjamin Klaric**  
 
-Wie bereit in [7.5 Schaltungsentwurf](Hardware.md#schaltungsentwurf) unter **Akkuanschlüsse** erwähnt, wurde ein analoger GPIO-Pin des XIAO ESP32-S3 verwendet, um den Spannungspegel des Akkupacks zu überwachen.  
+Wie bereit in [6.5 Schaltungsentwurf](Hardware.md#schaltungsentwurf) unter **Akkuanschlüsse** erwähnt, wurde ein analoger GPIO-Pin des XIAO ESP32-S3 verwendet, um den Spannungspegel des Akkupacks zu überwachen.  
 Der XIAO ESP32-S3 bietet viele analoge Pins, wovon einer, nämlich der A9-Pin, für die oben genannte Überwachung genutzt wird. Dazu wird an diesem Pin ein Spannungsteiler aufgebaut, bei dem zwei 220 kΩ Widerstände parallel zu den Akku+ und Akku- Eingängen des Mikrocontrollers verbunden werden. Der Wert für die Widerstände wurde so gewählt, weil der Spannungsteiler immer Strom zieht, auch wenn sich der Mikrocontroller im Deep Sleep befindet, da die Widerstände direkt mit dem Akkupack verbunden sind. Mit zwei 220 kΩ Widerständen und einer Spannung zwischen 3,5V und 4,2V ergibt sich ein Verbrauch zwischen 8 µA und 9,5 µA gemäß dem Ohm'schen Gesetz, was akzeptabel ist.  
 Allerdings muss man darauf achten, dass die Widerstandswerte möglichst nah beieinander liegen, damit sich die Spannung möglichst genau halbiert. Falls die Widerstände nicht exakt gleich sind, kann man den Multiplikationsfaktor so anpassen, dass die ungenaue Aufteilung der Spannung berücksichtigt wird, indem man die Spannungsteiler-Gleichung aufstellt und anpasst, wie in [Abbildung 6.34](#_abb_6_34) zu sehen ist. Dabei entspricht das Widerstandsverhältnis dem Multiplikationsfaktor.  
 

@@ -326,7 +326,7 @@ Und diese Dateien sind derzeit auf dem Server verfügbar:
     <strong style="color: var(--md-code-hl-keyword-color);">GET
         <code>/LPRD-Logo.webp</code></strong><br>
     <p style="margin: 5px 0;">Gibt das LPRD-Logo-Bild zurück.</p>
-</div>`
+</div>
 
 <div style="margin: 10px; background-color: var(--md-code-bg-color); padding: 10px; border-radius: 5px; color: var(--md-code-fg-color);">
     <strong style="color: var(--md-code-hl-keyword-color);">GET

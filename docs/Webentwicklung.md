@@ -89,7 +89,7 @@ In der Browserkonsole wird die detaillierte Verfolgung von Ereignissen und Fehle
 Durch die Anpassung des Log-Levels (s. Tabelle 9.2.1) kann die Tiefe und Art der Protokollierung bestimmt werden, um die Menge und Art der Informationen, die das System auf der seriellen Konsole ausgibt zu steuern.
 So können spezifische Probleme zu diagnostiziert, oder das allgemeine Systemverhalten zu überwacht werden [[JR_16]](Quellenverzeichnis.md#jr_16).
 
-Tabel: Tabelle 8.1 Übersicht über die verscheidenen Log-Levels [[JR_17]](Quellenverzeichnis.md#jr_17)* { #_tab_8_1 }
+Tabel: Tabelle 8.1 Übersicht über die verscheidenen Log-Levels [[JR_17]](Quellenverzeichnis.md#jr_17) { #_tab_8_1 }
 
 | Level    | Beschreibung                                                                                          | Verwendung                                                                                     |
 |----------|-------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------|

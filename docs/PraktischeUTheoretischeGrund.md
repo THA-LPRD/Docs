@@ -279,7 +279,7 @@ Nach dem Design folgt dann die Fertigung eines oder mehrerer Prototypen, die auf
 
 Die einzelnen RPT-Verfahren unterscheiden sich in den möglichen Materialien, der Genauigkeit der Modelle, der Qualität der Oberfläche und der verbundene Aufwand für die Nachbearbeitung. Diese Unterschiede sind der [Abbildung 2.6](#_abb_2_6) zu entnehmen.
 
-Figure: Eigenschaften der verschiedenen Rapid-Prototyping-Verfahren [[JG_03]](Quellenverzeichnis.md#jg_03) { #_abb_2_6 }
+Figure: Abbildung 2.6: Eigenschaften der verschiedenen Rapid-Prototyping-Verfahren [[JG_03]](Quellenverzeichnis.md#jg_03) { #_abb_2_6 }
 
 ![](img/rpt_unterschiede.png){width=80%}
 
