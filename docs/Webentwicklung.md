@@ -35,6 +35,10 @@ Um trotzdem Abbildungen im html2canvas Screenshot darzustellen, besteht die Mög
 
 Die Bibliothek ist mit den meisten modernen Browsern kompatibel, einschließlich Firefox (ab Version 3.5), Google Chrome, Opera (ab Version 12), Internet Explorer (ab Version 9), Edge und Safari (ab Version 6) [[JR_11]](Quellenverzeichnis.md#jr_11).
 
+### Beschreibung der node-html-to-image
+**Mario Wegmann**
+
+Die node-html-to-image Bibliothek baut auf dem selben Prinzip, wie die html2canvas Bibliothek auf. Diese benötigt jedoch keinen bestehnden Browser mit GUI Oberfläche, sondern nutzt die headless-Variante von Chromium, um aus dem HTML ein Screenshot zu erstellen. [[MW_11]](Quellenverzeichnis.md#MW_11)
 
 ## Benutzerwebseite
 **Julia Reuter**
