@@ -26,7 +26,8 @@ Bei den ausgewählten Unternehmen und Produkten handelt es sich um:
 - **ROOMZ Display** der Firma ROOMZ in Freiburg (Schweiz) [[JR_03]](Quellenverzeichnis.md#jr_03)
 - **Touchscreen-Display** der Firma Beetronics mit Sitz in Düsseldorf [[JR_04]](Quellenverzeichnis.md#jr_04)
 
-Im Hinblick auf das Projekt lag der Fokus der Recherche auf folgenden Aspekten, welche im Anschluss tabellarisch (s. [](#_tab_3.1)) aufgelistet werden: 
+Im Hinblick auf das eigene Projekt lag der Fokus der Recherche auf folgenden Aspekten, welche im Anschluss tabellarisch (s.
+Tabelle 4.2) aufgelistet sind:
 
 - Display Art (LCD oder E-Paper)
 - Farbunterstützung
@@ -64,8 +65,8 @@ Tabelle 4.3.1 Vor-und Nachteile der vier Displayprodukte
 
 ### Abgeleitete Kriterien für das eigene Produkt
 
-Im Hinblick auf das eigene Projekt lag der Fokus der Recherche auf folgenden Aspekten, welche im Anschluss tabellarisch (s.
-Tabelle 4.2) aufgelistet sind:
+Basierend auf der Analyse der Vor- und Nachteile der Konkurrenzprodukte (vgl. Tabelle 4.3.1) sollten folgende Eigenschaften in
+die eigene Low-Power Raumanzeige integriert werden, um auf dem aktuellen Markt konkurrenzfähig zu sein:
 
 1. **E-Paper-Technologie:** Für minimalen Energieverbrauch und lange Akkulaufzeit
 2. **Lange Akkulaufzeit:** Nutzung von effizienten Batterien/Akkus für eine wartungsarme Lösung und unabhängigen Betrieb
