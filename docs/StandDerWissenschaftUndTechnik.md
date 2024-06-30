@@ -38,7 +38,7 @@ Tabelle 4.2) aufgelistet sind:
 
 ## Produktvergleich ausgewählter Unternehmen
 
-Tabelle 4.2 Übersicht und Vergleich der 4 ausgewählten Raumanzeigen 
+Table: Tabelle 3.1: Übersicht und Vergleich der 4 ausgewählten Raumanzeigen { #_tab_3_1 }
 
 | Kategorie                                 | Wizepanel [[JR_05]](Quellenverzeichnis.md#jr_05)                                                                                                           | Digitales Türschild [[JR_06]](Quellenverzeichnis.md#jr_06)                                                       | ROOMZ [[JR_03]](Quellenverzeichnis.md#jr_03)                                                                                                            | Beetronics [[JR_07]](Quellenverzeichnis.md#jr_07)                                                          |
 |-------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------|
@@ -54,7 +54,7 @@ Tabelle 4.2 Übersicht und Vergleich der 4 ausgewählten Raumanzeigen
 
 ### Vor- und Nachteile der einzelnen Produkte
 
-Tabelle 4.3.1 Vor-und Nachteile der vier Displayprodukte
+Table: Tabelle 3.2: Vor-und Nachteile der vier Displayprodukte { #_tab_3_2 }
 
 | Hersteller         | Vorteile                                                                                           | Nachteile                                                                                       |
 | ------------------ | -------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
@@ -65,7 +65,7 @@ Tabelle 4.3.1 Vor-und Nachteile der vier Displayprodukte
 
 ### Abgeleitete Kriterien für das eigene Produkt
 
-Basierend auf der Analyse der Vor- und Nachteile der Konkurrenzprodukte (vgl. Tabelle 4.3.1) sollten folgende Eigenschaften in
+Basierend auf der Analyse der Vor- und Nachteile der Konkurrenzprodukte (vgl. [Tabelle 3.1](#_tab_3_2)) sollten folgende Eigenschaften in
 die eigene Low-Power Raumanzeige integriert werden, um auf dem aktuellen Markt konkurrenzfähig zu sein:
 
 1. **E-Paper-Technologie:** Für minimalen Energieverbrauch und lange Akkulaufzeit

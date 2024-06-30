@@ -8,7 +8,7 @@
 
 <a id="jg_03"></a>[JG_03] Sandor Vanja, Christian Weber, Helmut Bley, Klaus Zeman, CAx für Ingenieure, Springer-Verlag Berlin Heidelberg, 2. Auflage 2009, ISBN: 978-3-540-36038-4, S.75ff, S. 242
 
-<a id="jg_04"></a>[JG_04] Hubert Högl, Fablab, [https://onlinelibrary.wiley.com/doi/full/10.1002/ciuz.201900004](https://onlinelibrary.wiley.com/doi/full/10.1002/ciuz.201900004), Zugriffsdatum: 2024-06-27, Herausgabedatum: 2023-02-01
+<a id="jg_04"></a>[JG_04] Hubert Högl, Fablab, [https://hhoegl.informatik.hs-augsburg.de/hhwiki/Fablab](https://hhoegl.informatik.hs-augsburg.de/hhwiki/Fablab), Zugriffsdatum: 2024-06-27, Herausgabedatum: 2023-02-01
 
 
 <a id="jg_05"></a> [JG_05] Thomas Jackson, Vollständig vergleichende Analys PLA vs. PETG, [https://sunlu.com.de/blogs/products-knowledge/vollstandige-vergleichende-analyse-pla-vs-petg#:~:text=PLA%20ist%20ein%20biologisch%20abbaubarer,sich%20aber%20leichter%20drucken%20l%C3%A4sst.](https://sunlu.com.de/blogs/products-knowledge/vollstandige-vergleichende-analyse-pla-vs-petg#:~:text=PLA%20ist%20ein%20biologisch%20abbaubarer,sich%20aber%20leichter%20drucken%20l%C3%A4sst.), Zugriffsdatum: 2024-06-27, Herausgabedatum: 2024-02-21

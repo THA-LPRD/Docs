@@ -57,9 +57,9 @@ Arbeitspackete können fair auf ein Team verteilt werden, um eine unfaire Arbeit
 Zeitpläne können über verschiedene Arten erstellt werden, es gibt die Gantt-Diagramme, Pfad-Diagramme, Meilensteinziele und weiteres.  
 Wir haben uns für die Gantt-Diagramme entschieden. Gantt-Diagramme erstellen Balken auf einer Timeline mit einem Start- und Enddatum. Diese Balkan können Aufgaben zugewiesen bekommen oder sub Aufgaben / Balken.  
 Zur Organisationen müssen die Balken klar gekennzeichnet werden und einem Plan folgen, sie müssen aufeinander aufbauen.
-Dies können wir in der Abbildung 5.3.1 sehen.
+Dies können wir in der [Abbildung 4.1](#_abb_4_1) sehen.
 
-Figure: Abbildung 5.3.1: Timeline Beispiel Projekt 
+Figure: Abbildung 4.1: Timeline Beispiel Projekt { #_abb_4_1 }
 
 ![](img/PraktischeUndTheoGrund/Timeline.png){ width=100% }
 

@@ -13,11 +13,9 @@ WLan sollte intern auf dem Board verbaut seien da unser Mikrocontroller unter ke
 Als letztes sollte der Mikrocontroller über einen deep sleep verfügen[[STA_06]](Quellenverzeichnis.md#STA_06).  
 So würden wir am meisten Strom sparen da unserer Mikrocontroller nach beenden einer aufgabe (wie z.b. ein neues Bild darstellen) wahrscheinlich für längere Zeit keine Aufgaben hat oder bekommt. Der Mikrocontroller sollte eine Schnittstelle für SPI besitzen für eine mögliche schnelle datenübertragung mit dem Display.  
   
-In Tabelle 3.1.1 sind die Mikrocontroller mit ihren Eigenschaften aufgelistet. Es wurden von insgesamt 3 Marken recharchiert. Diese währen Espressif, STMicroelectronics und Raspberry Pi.
+In [Tabelle 2.1](#_tab_2_1) sind die Mikrocontroller mit ihren Eigenschaften aufgelistet. Es wurden von insgesamt 3 Marken recharchiert. Diese währen Espressif, STMicroelectronics und Raspberry Pi.
   
 Die Mikrocontroller wurden nicht als SMD Chip gekauft sondern als development boards. Für Espressif recharchierten wir die XIAO ESP32 S3 und XIAO ESP32 C3 Boards von Seeed Studio und Die D1 Mini ESP8266 Boards von AZ-Delivery. Bei dem STM32 guckten wir uns den STM32WL55 an. Der RP2040 ist der RASP PI PICO von Raspberyy Pi.
-
-Table: Tabelle 3.1.1: Eigenschaften der Mikrocontroller
 
 | Eigenschaften | ESP32 S3 [[STA_01]](Quellenverzeichnis.md#STA_01) | ESP32 C3[[STA_02]](Quellenverzeichnis.md#STA_02) | ESP8266 [[STA_03]](Quellenverzeichnis.md#STA_03) |
 | -                     | -                 | -                 | -             | 
@@ -28,11 +26,13 @@ Table: Tabelle 3.1.1: Eigenschaften der Mikrocontroller
 | Idle Strom            | 22mA              | 24.4mA            | Maximum 500mA *| 
 | Sleep Strom           | 14 μA             | 43μA              |               | 
 | Schnittstellen | SPI, UART, IIC, IIS, 11xGPIO, 9xADC | SPI, IIC, UART, 11xGPIO, 9xADC | SPI, IIC, UART, 9xGPIO, ADC |
-| Weitere <br> Eigneschaften | Reset Button<br>Boot button<br>Battery Charge Chip für 100mA<br>Externe Antenne | Boot button<br>Reset Button<br>Battery Charge Chip für 100mA<br>Externe Antenne | Reset button möglich<br>Antenne in Platine verbaut | 
-
-
-*Keine Angaben außer Maximum  
+| Weitere <br> Eigneschaften | Reset Button<br>Boot button<br>Battery Charge Chip für 100mA<br>Externe Antenne | Boot button<br>Reset Button<br>Battery Charge Chip für 100mA<br>Externe Antenne | Reset button möglich<br>Antenne in Platine verbaut |
   
+<div>
+</div>
+
+Table: Tabelle 2.1: Eigenschaften der Mikrocontroller { #_tab_2_1 }
+
 | Eigenschaften         | STM32 [[STA_04]](Quellenverzeichnis.md#STA_04) | RP2040 [[STA_05]](Quellenverzeichnis.md#STA_05) |
 | -                     | -                                              | -                                               |
 | Prozessor | Singlecore<br>48MHz| Dual-core<br>133MHz |
@@ -44,6 +44,8 @@ Table: Tabelle 3.1.1: Eigenschaften der Mikrocontroller
 | Schnittstellen | 2xSPI, 3xIIC, 2xUART, 43xGPIO | SPI, 2xIIC, 2xUART, 30xGPIO |
 | Weitere <br> Eigneschaften |  |  
 
+*Keine Angaben außer Maximum  
+
 
 ## Stromsparende Display-Technologien
   
@@ -51,34 +53,34 @@ Table: Tabelle 3.1.1: Eigenschaften der Mikrocontroller
   
  
   
-für dieses Projekt brauchen wir ein Display das so wenig Strom verbraucht wie möglich, damit unser Room display solange wie möglich mit einer Akku Ladung aushält. Wir fokussierten unsere Recherche auf ePaper, bistabile LCDs und OLED displays.  
+Für dieses Projekt brauchen wir ein Display das so wenig Strom verbraucht wie möglich, damit unser Room display solange wie möglich mit einer Akku Ladung aushält. Wir fokussierten unsere Recherche auf ePaper, bistabile LCDs und OLED displays.  
 
 ### OLED
-OLED Bildschirme haben eine sehr gute Bildqualität und einen weiten betrachtungswinkel. Anstatt Halbleiter werden in den LEDs  Organische Molekühle verwendet die Licht erzeugen. Diese Molekühle befinden sich zwischen ander Anode und einer Kathode. Fließt nun Strom wird blau und gelbes Licht erzeugt, mit Farbfiltern entstehen die Restlichen Farben. OLED Bildschirme können sehr helle Bilder zu erzeugen mit starkem Kontrast oder Farbstarke Bilder, dies verbraucht aber mehr Strom mit mehr Helligkeit, was für dieses Projekt ein Nachteil ist. Ein Vorteil ist das schwarze Pixel kein Strom verbrauchen gegenüber älteren Displays[[STA_09]](Quellenverzeichnis.md#STA_09).    
+OLED Bildschirme haben eine sehr gute Bildqualität und einen weiten betrachtungswinkel. Anstatt Halbleiter werden in den LEDs  Organische Molekühle verwendet die Licht erzeugen. Diese Molekühle befinden sich zwischen ander Anode und einer Kathode. Fließt nun Strom wird blau und gelbes Licht erzeugt, mit Farbfiltern entstehen die Restlichen Farben. OLED Bildschirme können sehr helle Bilder zu erzeugen mit starkem Kontrast oder Farbstarke Bilder, dies verbraucht aber mehr Strom mit mehr Helligkeit, was für dieses Projekt ein Nachteil ist. Ein Vorteil ist, dass schwarze Pixel kein Strom verbrauchen gegenüber älteren Displays[[STA_09]](Quellenverzeichnis.md#STA_09).    
   
 ### Bistabile LCD
-Bistabile LCD Displays haben den Vorteil das sie im gegensatz zu LCD keinen durchgehenden Stromverbrauch haben, Strom wird nur dann verbraucht wenn das Bild gewechselt wird. Dafür benutzt das Display kleine Kristalle die mit Hilfe von einem Stromfluss einen von zwei zuständen annehmen kann, der Kristall lässt entweder Licht durch oder reflektiert es zurück, womit ein ein Schwarz und Weiß Bildschirm bauen kann. Benutzt mann mehrer Ebenen kann man sogar verschiedene Farben darstellen. Wenn das Bild des Displays nur selten geändert wird, bedeutet es einen sehr niedrigen durchschnittlichen Strom verbrauch. Der Nachteil ist das das Aktuellisieren des Bildes 2 bis 3 Sekunden dauert[[STA_08]](Quellenverzeichnis.md#STA_08).  
+Bistabile LCD Displays haben den Vorteil das sie im gegensatz zu LCD keinen durchgehenden Stromverbrauch haben, Strom wird nur dann verbraucht wenn das Bild gewechselt wird. Dafür benutzt das Display kleine Kristalle die mit Hilfe von einem Stromfluss einen von zwei Zuständen annehmen kann, der Kristall lässt entweder Licht durch oder reflektiert es zurück, womit man ein Schwarz und Weiß Bildschirm bauen kann. Benutzt man mehrere Ebenen kann man sogar verschiedene Farben darstellen. Wenn das Bild des Displays nur selten geändert wird, bedeutet es einen sehr niedrigen durchschnittlichen Strom verbrauch. Der Nachteil ist, dass das Aktualisieren des Bildes zwei bis drei Sekunden dauert [[STA_08]](Quellenverzeichnis.md#STA_08).  
   
 ### ePaper
-ePaper hat ein ähnliches Konzept wie Bistabile LCD Displays, sie verbrauchen nur dann Strom wenn das Bild aktuellsiert wird. Hier werden geladene Farbpartikel in sehr kleinen Zellen eingesperrt. Je nach welche Ladung auf eine Zelle ausgeübt wird, werden manche Farbpartikel angezogen oder weggestoßen. Der Nachteil ist das die Aktuellsierung eines Bildes je nach ePaper Display technologie sehr lange dauern kann, das ist weil, wie man sich vorstellen kann man muss man einen Pixel mehrmals laden um wirklich alle Farbpartikel abzustoßen die man abstoßen will oder genau umgekehrt. Das resultiert in einer Aktuelliesierungs rate von bis zu 26 Sekunden oder Kürzer je nach Farbleistung. Ein weiter Nachteil ist das Farbpartikel nur Negativ oder Positiv geladen werden können, was in nur 2 Farben resultiert. Durch mehrere Ebenen kann das Display mehrere Farben annehmen, aber bei weitem nicht so viele wie beim Bistablem LCD. Der Vorteil ist das sie noch weniger Strom verbauchen beim aktuellsieren als die Bistablien LCDs[[STA_07]](Quellenverzeichnis.md#STA_07).
+ePaper hat ein ähnliches Konzept wie Bistabile LCD Displays, sie verbrauchen nur dann Strom wenn das Bild aktualisiert wird. Hier werden geladene Farbpartikel in sehr kleinen Zellen eingesperrt. Je nachdem welche Ladung auf eine Zelle ausgeübt wird, werden manche Farbpartikel angezogen oder weggestoßen. Der Nachteil ist, dass die Aktualsierung eines Bildes je nach ePaper Display-Technologie sehr lange dauern kann. Das ist weil, wie man sich vorstellen kann, muss man einen Pixel mehrmals laden, um wirklich alle Farbpartikel abzustoßen, die man abstoßen will oder genau umgekehrt. Das resultiert in einer Aktualiesierungsrate von bis zu 26 Sekunden oder kürzer je nach Farbleistung. Ein weiter Nachteil ist, dass Farbpartikel nur negativ oder positiv geladen werden können, was in nur zwei Farben resultiert. Durch mehrere Ebenen kann das Display mehrere Farben annehmen, aber bei weitem nicht so viele wie beim Bistablem LCD. Der Vorteil ist, dass sie noch weniger Strom verbrauchen beim Aktualsieren als die Bistablien LCDs [[STA_07]](Quellenverzeichnis.md#STA_07).
 
 ## Akku-Technologien
 **Benjamin Klaric**
 
-Um das System möglichst autark zu machen, wurde es mit einem Akku betrieben. In Vorgang mit der Auswahl von passenden Akku-Technologien wurden die drei meistverbreiteten verglichen, nämlich die drei bedeutendsten Typen aus Lithium-Ionen-Akku Familie: klassische Lithium-Ionen-Akkus, oft benutzten Lithium-Polymer-Akkus und die sicheren Lithium-Eisen-Phosphat-Akkus. Genauer gesagt sollte man die Vor- und Nachteile von jeweiligen Akku-Typen genauer anschauen und dementsprechend eine Technologie auswählen. In den nächsten Abschnitt werden die drei genannten Technologien genauer angeschaut und die jeweiligen Vor- und Nachteile genannt.  
+Um das System möglichst autark zu machen, wurde es mit einem Akku betrieben. In Vorgang mit der Auswahl von passenden Akku-Technologien wurden die drei meistverbreiteten verglichen, nämlich die drei bedeutendsten Typen aus der Lithium-Ionen-Akku Familie: klassische Lithium-Ionen-Akkus, oft benutzten Lithium-Polymer-Akkus und die sicheren Lithium-Eisen-Phosphat-Akkus. Genauer gesagt sollte man die Vor- und Nachteile von jeweiligen Akku-Typen genauer anschauen und dementsprechend eine Technologie auswählen. In den nächsten Abschnitten werden die drei genannten Technologien genauer angeschaut und die jeweiligen Vor- und Nachteile genannt.  
 
 **Lithium-Ionen-Akkus (Li-Ion)**  
-Die meistverbreiteten Li-Ion-Akkus bieten relativ hohe Energiedichte, sind kostengünstig und langlebig. Die Li-Ion-Akkus kommen in verschiedenen Bauformen, wie z. B. 18650, 21700 usw. Dieser Art von Akkus besteht aus eine negative Elektrode, bzw. Kathode aus Grafit und einer positiven Elektrode bzw. Anode aus Lithiumcobaltoxid (LiCoO~2~), Lithiumnickeldioxid (LiNiO~2~) oder Lithiummanganatoxid (LiMn~2~O~4~). Diese Wahl von Chemie bietet eine gute Zyklenfestigkeit, was natürlich der Langlebigkeit entspricht. Im geladenen Lithium-Ionen-Akkus erzeugt ein elektrochemischer Prozess Spannung zwischen den Elektroden. Lithium-Ionen (Li+) bewegen sich dabei durch den Elektrolyten zwischen festen Übergangsmetall- und Grafitstrukturen der Elektroden, getrennt durch einen Separator. Das Funktionsprinzip von Li-Ion-Akkus bezieht sich dabei auf die Verschiebung von Lithium-Ionen. So wird die elektromotorische Kraft erzeugt. [[BK_01]](Quellenverzeichnis.md#BK_01)  
-Mit einer Nennspannung von 3,7V und der Entladekurve, die stabil über einen Großteil der Entladung bei Nennspannung bleibt, was bei [Abbildung 3.xx](#_fig_BK_01) zu sehen ist.  
+Die meistverbreiteten Li-Ion-Akkus bieten relativ hohe Energiedichte, sind kostengünstig und langlebig. Die Li-Ion-Akkus kommen in verschiedenen Bauformen, wie z. B. 18650, 21700 usw. Dieser Art von Akkus besteht aus einer negativer Elektrode, bzw. Kathode aus Grafit und einer positiven Elektrode bzw. Anode aus Lithiumcobaltoxid (LiCoO~2~), Lithiumnickeldioxid (LiNiO~2~) oder Lithiummanganatoxid (LiMn~2~O~4~). Diese Wahl von Chemie bietet eine gute Zyklenfestigkeit, was natürlich der Langlebigkeit entspricht. Im geladenen Lithium-Ionen-Akku erzeugt ein elektrochemischer Prozess Spannung zwischen den Elektroden. Lithium-Ionen (Li+) bewegen sich dabei durch den Elektrolyten zwischen festen Übergangsmetall- und Grafitstrukturen der Elektroden, getrennt durch einen Separator. Das Funktionsprinzip von Li-Ion-Akkus bezieht sich dabei auf die Verschiebung von Lithium-Ionen. So wird die elektromotorische Kraft erzeugt. [[BK_01]](Quellenverzeichnis.md#BK_01)  
+Mit einer Nennspannung von 3,7V und der Entladekurve, die stabil über einen Großteil der Entladung bei Nennspannung bleibt, was in der [Abbildung 2.1](#_abb_2_1) zu sehen ist.  
 In der Abbildung sind vier verschiedene Kurven dargestellt. Die dunkelgrüne Kurve repräsentiert die Spannung während des Ladevorgangs, während die dunkelblaue Kurve die Spannung während des Entladens zeigt. Die hellgrüne Kurve stellt den Strom während des Ladevorgangs dar, und die hellblaue Kurve zeigt den Strom während des Entladens. Alle vier Kurven sind gegen die Zeit geplottet.  
 
-Figure: Lade- (dunkelgrün) und Entladekurve(dunkelblau) von einer Li-Ion-Knopfzelle [[BK_02]](Quellenverzeichnis.md#BK_02) { #_fig_BK_01 }
+Figure: Abbildung 2.1: Lade- (dunkelgrün) und Entladekurve(dunkelblau) von einer Li-Ion-Knopfzelle [[BK_02]](Quellenverzeichnis.md#BK_02) { #_abb_2_1 }
 
 ![](img/Lade- und Entladekurve von Li-Ion-Akkus.png){ width=65% }
 
 Li-Ion-Akkus können aber nicht selber in Betrieb genommen werden, da die sich ohne eine Art von Überwachung tief entladen wurden oder beim Laden überladen geworden sind. Dazu werden Li-Ion-Akkus immer mit einem Batteriemanagementsystem benutzt, kurz BMS gesagt. Ein BMS kümmert sich darum, dass die Li-Ion-Akkus einen Cut-Off-Spannungspegel beim Laden und beim Entladen haben. Das BMS bietet auch Kurzschlussschutz und meistens eine Überstromerkennungsfunktionalität.  [[BK_03]](Quellenverzeichnis.md#BK_03)
 Li-Ion-Akkus, voll geladen, liegen bei ungefähr 4,25V und entladen sich bis 2,5V, wenn die an einen BMS angeschlossen sind.  
-Ein Merkmal von Li-Ion-Akkus ist die Art des Ladens, da sie eine spezielle Ladetechnik benötigen, nämlich die sogenannte CC-CV-Methode (Constant Current - Constant Voltage). Genauer gesagt, werden die Akkus die ersten ~80% mit einem konstanten Strom geladen und die restlichen ~20% mit einer konstanten Spannung. Dieses Verfahren ist in [Abbildung 3.xx](#_fig_BK_01) zu sehen, dargestellt durch die grüne und hellgrüne Kurve, allerdings nicht im Verhältnis 80%-20%. Dafür wurde ein besonderes Ladegerät benötigt. Mit richtiger Nutzung von Ladeverfahren haben die Akkus keinen Memory-Effekt und dementsprechend haben auch sehr geringe Selbstentladung.  
+Ein Merkmal von Li-Ion-Akkus ist die Art des Ladens, da sie eine spezielle Ladetechnik benötigen, nämlich die sogenannte CC-CV-Methode (Constant Current - Constant Voltage). Genauer gesagt, werden die Akkus die ersten ~80% mit einem konstanten Strom geladen und die restlichen ~20% mit einer konstanten Spannung. Dieses Verfahren ist in [Abbildung 2.1](#_abb_2_1) zu sehen, dargestellt durch die grüne und hellgrüne Kurve, allerdings nicht im Verhältnis 80%-20%. Dafür wird ein besonderes Ladegerät benötigt. Mit richtiger Nutzung von Ladeverfahren haben die Akkus keinen Memory-Effekt und dementsprechend auch sehr geringe Selbstentladung.  
 Die Li-Ion-Akkus sind meistens ein bisschen teurer als die anderen Akku-Technologien und benötigen die genannten speziellen Ladegeräte. [[BK_01]](Quellenverzeichnis.md#BK_01)  
 
 **Lithium-Polymer-Akkus (LiPo)**  
@@ -87,15 +89,14 @@ LiPo-Akkus verwenden flexible Kunststoffbeutel anstelle der zylindrischen Bauwei
 Ein Nachteil liegt jedoch in den Sicherheitsaspekten. LiPo-Akkus sind sehr empfindlich gegenüber Überhitzung, was in Rauch- und Gasentwicklung oder im Extremfall sogar zu Selbstentzündung führen kann. Dieses Risiko erhöht sich besonders bei unsachgemäßer Handhabung, übermäßiger Belastung oder mechanischer Beschädigung der Akkuzellen. [[BK_04]](Quellenverzeichnis.md#BK_04)
 
 **Lithium-Eisen-Phosphat-Akkus (LiFePO~4~)**  
-Die LiFePO~4~-Akkus gehören zur Familie der Lithium-Ionen-Technologie, verzichten sich jedoch auf das Kathodenmaterial Lithiumcobaltdioxid (LiCoO~2~), das in klassischen Li-Ion-Akkus verwendet wird.  
-Im Vergleich zu Li-Ionen-Akkus mit LiCoO2 bieten LiFePO4-Akkus eine höhere Sicherheit, da sie keine exothermen Reaktionen unter extremen Bedingungen zeigen, was das Risiko von Bränden und Explosionen erheblich verringert. Diese Akkus sind ideal für Anwendungen in Elektrofahrzeugen aufgrund ihrer höheren Entladestromkapazität, Nicht-Toxizität und längerer Lebensdauer im Vergleich zu Li-Ionen-Akkus mit LiCoO~2~. [[BK_05]](Quellenverzeichnis.md#BK_05)  
-Im Vergleich zu Li-Ion-Akkus liegt die Nennspannung von LiFePo~4~-Akkus bei 3,3V und bleibt stabil über einen Großteil der Entladung bei Nennspannung, was auf [Abbildung 3.xx](#_fig_BK_02) zu sehen ist.  
+Die LiFePO~4~-Akkus gehören zur Familie der Lithium-Ionen-Technologie, verzichten jedoch auf das Kathodenmaterial Lithiumcobaltdioxid (LiCoO~2~), das in klassischen Li-Ion-Akkus verwendet wird.  
+Im Vergleich zu Li-Ionen-Akkus mit LiCoO2 bieten LiFePO4-Akkus eine höhere Sicherheit, da sie keine exothermen Reaktionen unter extremen Bedingungen zeigen, was das Risiko von Bränden und Explosionen erheblich verringert. Diese Akkus sind ideal für Anwendungen in Elektrofahrzeugen aufgrund ihrer höheren Entladestromkapazität, Nicht-Toxizität und längerer Lebensdauer im Vergleich zu Li-Ionen-Akkus mit LiCoO~2~. [[BK_05]](Quellenverzeichnis.md#BK_05) Im Vergleich zu Li-Ion-Akkus liegt die Nennspannung von LiFePo~4~-Akkus bei 3,3V und bleibt stabil über einen Großteil der Entladung bei Nennspannung, was auf [Abbildung 2.2](#_abb_2_2) zu sehen ist.  
 
-Figure: Lade- (grün) und Entladekurve (rot) von LiFePO~4~-Akkus [[BK_06]](Quellenverzeichnis.md#BK_06) { #_fig_BK_02 }
+Figure: Abbildung 2.2: Lade- (grün) und Entladekurve (rot) von LiFePO~4~-Akkus [[BK_06]](Quellenverzeichnis.md#BK_06) { #_abb_2_2 }
 
 ![](img/Lade- und Entladekurve von LiFePO4-Akkus.png){ width=75% }
 
-Wie Li-Ion-Akkus benötigen die LiFePO~4~-Akkus auch eine Schutzschaltung in Form von BMS, allerdings besondere Art für LiFePO~4~-Akkus. Da die auch zur Familie von Li-Ion-Akkus gehören, werden die auch über gleiches Ladeverfahren wie Li-Ion-Akkus geladen. Die Entladeschlussspannung von diesen Akkus liegt typischerweise bei 2,0V und die Ladeschlussspannungen liegen in der Regel bei 3,6V. Die Werte sind aber von BMS abhängig.  
+Wie Li-Ion-Akkus benötigen die LiFePO~4~-Akkus auch eine Schutzschaltung in Form von BMS, allerdings besondere Art für LiFePO~4~-Akkus. Da sie auch zur Familie von Li-Ion-Akkus gehören, werden sie auch über gleiches Ladeverfahren wie Li-Ion-Akkus geladen. Die Entladeschlussspannung von diesen Akkus liegt typischerweise bei 2,0V und die Ladeschlussspannungen liegen in der Regel bei 3,6V. Die Werte sind aber von BMS abhängig.  
 Der einzige Nachteil dieser Akku-Technologie ist, dass im Vergleich zu den reinen Li-Ion-Akkus die Nennspannung niedriger liegt, bei 3,3V im Vergleich zu 3,7V. [[BK_05]](Quellenverzeichnis.md#BK_05)  
 
 <!-- STASA -->
@@ -108,21 +109,21 @@ Der einzige Nachteil dieser Akku-Technologie ist, dass im Vergleich zu den reine
   
 
 ### LoRa
-Low-Power-Wide-Area-Network-Technologie, auch genannt LoRa ist eine Stromsparende technologie um Daten über eine längere Distanz zu schicken. Dafür benutz LoRa die CSS-Modulationstechnik für eine Funkreichweite von mehreren Kilometern. Durch den niedriegen Stromverbrauch ist LoRa geeigent für hand held IoT Projekte, diese können Batterie betrieben werden für eine längere Zeit. Die Netzwerktopologie von LoRa ist Punkt-zu-Punkt oder Punkt-zu-Mehrpunkt-Netzwerke, oft in Kombination mit Gateways [[STA_12]](Quellenverzeichnis.md#STA_12).  
+Low-Power-Wide-Area-Network-Technologie, auch genannt LoRa ist eine stromsparende Technologie, um Daten über eine längere Distanz zu schicken. Dafür benutz LoRa die CSS-Modulationstechnik für eine Funkreichweite von mehreren Kilometern. Durch den niedrigen Stromverbrauch ist LoRa geeignet für mobile IoT-Projekte. Diese können batteriebetrieben werden für eine längere Zeit. Die Netzwerktopologie von LoRa sind Punkt-zu-Punkt oder Punkt-zu-Mehrpunkt, oft in Kombination mit Gateways [[STA_12]](Quellenverzeichnis.md#STA_12).  
   
-### WLan
-WLan ist die weitverbreiteste Netzwerk technologie für den normalen Haushalt. Es erlaubt Geräte oder Clients über Radio frequenzen sich mit einem Acces points zuverbinden, diese nutzten oft Stern- oder Baumtopologien. Durch die Schnelle geschwindigkeit von 2,4GHz oder 5GHz wird jedoch die Reichweite gekürzt [[STA_10]](Quellenverzeichnis.md#STA_10).
+### WLAN
+WLAN ist die weitverbreiteste Netzwerk-Technologie für den normalen Haushalt. Es erlaubt Geräten oder Clients über Radiofrequenzen sich mit einem Access Point zu verbinden. Diese nutzen oft Stern- oder Baumtopologien. Durch die Schnelle Geschwindigkeit von 2,4GHz oder 5GHz wird jedoch die Reichweite gekürzt [[STA_10]](Quellenverzeichnis.md#STA_10).
 
 ### Zigbee
-Zigbee wurde spezifisch dafür entwickelt, wenn man geringe Datenmengen verschicken will und einen geringen Stromverbrauch haben möchte.  Ihre geringe Reichweite ist kein problem, da Zigbee sehr schnell und zuverlässig ein mesh netzwerk aufbauen kann, das heist das Zigbee selbststädnig Netzwerkpfade baut und sogar bei einzelnden ausfällen selber einen neuen netzpfad findet [[STA_11]](Quellenverzeichnis.md#STA_11).  
+Zigbee wurde spezifisch dafür entwickelt, wenn man geringe Datenmengen verschicken will und einen geringen Stromverbrauch haben möchte.  Ihre geringe Reichweite ist kein Problem, da Zigbee sehr schnell und zuverlässig ein Mesh-Netzwerk aufbauen kann, das heist, dass Zigbee selbstständig Netzwerkpfade baut und sogar bei einzelnen Ausfällen selber einen neuen Netzpfad findet [[STA_11]](Quellenverzeichnis.md#STA_11).  
   
 ### Bluetooth
-Bluetooth ist ein 1990 entwickelte Punkt zu Punkt technologie die Ultra high frequency radio wellen nutzt, um über eine sehr kleine Reichweite Daten zu verschicken.
+Bluetooth ist eine 1990 entwickelte Punkt-zu-Punkt Technologie, die ultrahochfrequente Radiowellen nutzt, um über eine sehr kleine Reichweite Daten zu verschicken.
 
 
 ### Vergleiche der Funktechnologien
 
-Bei der Reichweite hat LoRa die längste Reichweite mit biszu 15 Kilometern aber mit einer niedrigen datenübertragung von nur 0,3kpbs bis 50 kbps, abhängig der Reichweite. WLan hat eine Reichweite biszu 100m mit wänden und biszu 300m Ausserorts, hat dafür aber eine sehr schnelle datenübertragung, mit neueren technologien wie Wi-Fi 6 sind mehrere Gbps möglich. Zigbee hat die gleiche Reichweite wie ein WLan Netzwerk, hat aber dafür den vorteil sehr zuverlässige mesh Netzwerke aufzubauen. Wie schon erwähnt besitzt sie eine niedrige datenübertragung von biszu 250 kbps aber dafür ist sie sehr Leistungs effizeint. Bluetooth hat eine Reichweite von nur 10m, besitzt aber eine mittlere und zuverlässige datenübertragung von 2 Mbps bis 3 Mbps und macht sich dafür sehr nützlich für persönliche zwecke.
+Bei der Reichweite hat LoRa die längste Reichweite mit bis zu 15 Kilometern, aber mit einer niedrigen Datenübertragung von nur 0,3 kpbs bis 50 kbps, abhängig von der Reichweite. WLAN hat eine Reichweite bis zu 100 m mit Wänden und bis zu 300 m ausserorts, hat dafür aber eine sehr schnelle Datenübertragung, mit neueren Technologien wie Wi-Fi 6 sind mehrere Gbps möglich. Zigbee hat die gleiche Reichweite wie ein WLAN-Netzwerk, hat aber dafür den Vorteil, sehr zuverlässige Mesh-Netzwerke aufzubauen. Wie schon erwähnt besitzt sie eine niedrige Datenübertragung von bis zu 250 kbps, aber dafür ist sie sehr leistungseffizeint. Bluetooth hat eine Reichweite von nur 10 m, besitzt aber eine mittlere und zuverlässige Datenübertragung von 2 Mbps bis 3 Mbps und macht sich dafür sehr nützlich für persönliche zwecke.
 <!-- STASA -->
 ## Bildverarbeitung 
 
@@ -133,44 +134,44 @@ Bei der Reichweite hat LoRa die längste Reichweite mit biszu 15 Kilometern aber
 
 ### Bitmaps
 
-Bitmaps speichern Bildern in einem Format, sodass jeder Pixel einzelnd Farbwerte zugeschrieben bekommt. Umso mehr Bits man einem Pixel zuweist, umso genauer kann man die Farbe darstellen.  
-Dies wird Color depth genannt, wird einem Pixel zum Beispiel nur 1 Bit zugewiesen, kann der Pixel entweder Die Farbe Schwarz (1) oder die Farbe Weis (0) anzeigen. Heutzutage werden Mehrere Formate genutzt, darunter sind die bekanntesten 8 Bit grey scale, RGB 565, 24 Bit RGB und 32 RGBA.  
-8 Bit grey scale erlaubt es einem Pixel 256 Verschiedene graustufen anzunehmen.  
-RGB 565 teilt jeweils Rot 5 Bits, Grün 6 Bits und 5 Bits für Blau für 65536 verschiedene Farb möglichkeiten, auch genannt High color.  
-24 Bit RGB,auch genannt true color, lässt einen Pixel 16777216 verschiedene Farben annehmen, jedem RGB channel wert wird jeweils ein Byte zugewiesen [[STA_14]](Quellenverzeichnis.md#STA_14). Dies wird einmal genaur in 3.5.1.1 dargestellt. 
+Bitmaps speichern Bilder in einem Format, sodass jeder Pixel einzeln Farbwerte zugeschrieben bekommt. Umso mehr Bits man einem Pixel zuweist, umso genauer kann man die Farbe darstellen.  
+Dies wird Farbtiefe genannt, wird einem Pixel zum Beispiel nur ein Bit zugewiesen, kann der Pixel entweder die Farbe Schwarz (1) oder die Farbe Weiß (0) anzeigen. Heutzutage werden mehrere Formate genutzt, darunter sind die bekanntesten 8 Bit grey-scale, RGB 565, 24-Bit RGB und 32-Bit RGBA.  
+* 8-Bit grey scale erlaubt es einem Pixel 256 verschiedene Graustufen anzunehmen.  
+* RGB 565 teilt jeweils Rot 5 Bits, Grün 6 Bits und 5 Bits für Blau für 65536 verschiedene Farbmöglichkeiten, auch genannt High color.  
+* 24-Bit RGB, auch genannt true color, lässt einen Pixel 16777216 verschiedene Farben annehmen, jedem RGB channel wert wird jeweils ein Byte zugewiesen [[STA_14]](Quellenverzeichnis.md#STA_14). Dies wird einmal genauer in [Abbildung 2.3](#_abb_2_3) dargestellt. 
 
-Figure: Abbildung 3.5.1.1: 24 Bit RGB Pixel
+Figure: Abbildung 2.3: 24 Bit RGB Pixel { #_abb_2_3 }
 
 ![](img/PraktischeUndTheoGrund/Pixel32bit.png){ width=100% }
 
 
-32 Bit RGBA ergänzt noch einen alpha channel. Dieser lässt den Pixel weitere information zur Transparenz der Farbe wissen. Mit RGBA sind 4294967296 verschiedene Farben mit Transparenz möglich.  
+32-Bit RGBA ergänzt noch einen alpha channel. Dieser lässt den Pixel weitere Informationen zur Transparenz der Farbe wissen. Mit RGBA sind 4294967296 verschiedene Farben mit Transparenz möglich.  
   
-Diese Informationen werden als Hexadezimahl Zahlen gespeichert, es gibt aber auch Indexed Bitmaps.
-Indexed Bitmaps können einen Farbwert eine Zahl zuweisen, benutzt ein Bild zum Beispiel eine Color depth von 24 Bit aber insgesamt weniger als 256 Farben, Kann man jede Farbe eine Zahl zuweisen. Damit können wir das Bild anstatt mit 24 bit pro Pixel mit 8 Bit pro Pixel darstellen, behält aber die color depth von 24 Bit bei [[STA_15]](Quellenverzeichnis.md#STA_15). Ein beispiel kann man in 3.5.1.2 sehen.
+Diese Informationen werden als Hexadezimahlzahlen gespeichert, es gibt aber auch Indexed Bitmaps.
+Indexed Bitmaps können einen Farbwert eine Zahl zuweisen, benutzt ein Bild zum Beispiel eine Color depth von 24 Bit aber insgesamt weniger als 256 Farben, Kann man jede Farbe eine Zahl zuweisen. Damit können wir das Bild anstatt mit 24 bit pro Pixel mit 8 Bit pro Pixel darstellen, behält aber die color depth von 24 Bit bei [[STA_15]](Quellenverzeichnis.md#STA_15). Ein beispiel kann man in [Abbildung 2.4](#_abb_2_4) sehen.
 
-Figure: Abbildung 3.5.1.2: Indexed Bitmap
+Figure: Abbildung 2.4: Indizierte Bitmap { #_abb_2_4 }
 
-![](img/PraktischeUndTheoGrund/IndexBMPPixel.png){ width=100% }
+![](img/PraktischeUndTheoGrund/IndexBMPPixel.png){ width=75% }
 
 
 ### Dithering
 
-Dithering kann dann verwendet werden Um color depth in einem Bild zu imitieren, wenn wenig Farben in einem Bild verwendet werden. Ein Beispiel, in einer Indexed Bitmap gibt es nur eine begrenzte zahl an Farben, dann kann dithering einen übergang zwischen 2 Farben erzeugen. Dadurch erscheint das Bild geschmeidiger oder als hätte es einen größere bit color depth.  
+Dithering kann dann verwendet werden, um Farbtiefe in einem Bild zu imitieren, wenn wenig Farben in einem Bild verwendet werden. Ein Beispiel, in einer Indiziert Bitmap gibt es nur eine begrenzte Zahl an Farben, dann kann Dithering einen Übergang zwischen zwei Farben erzeugen. Dadurch erscheint das Bild geschmeidiger oder als hätte es einen höhere Farbtiefe.  
   
-Dies geschieht durch verschiedene Algorithm, je nach welches verfahren von Dithering genutzt wird. Es gibt Diffusion Dither, Pattern Dither und Noise Dither. Jedes verfahren hat eine unterschiedliche vorangehensweise wie die Farben übergehen sollen. In [Abbildung3.xx]/(#_fig_STA_16) sind Ditherverfahren zu sehen.
+Dies geschieht durch verschiedene Algorithmen, je nachdem welches Verfahren von Dithering genutzt wird. Es gibt Diffusion Dither, Pattern Dither und Noise Dither. Jedes Verfahren hat eine unterschiedliche Vorangehensweise, wie die Farben übergehen sollen. In [Abbildung 2.5](#_abb_2_5) sind Ditherverfahren zu sehen.
 
-Figure: Abbildung 3.5.2.1 Verschiedene Ditherverfahren [[STA_16]](Quellenverzeichnis.md#STA_16) { #_fig_STA_16 }
+Figure: Abbildung 2.5 Verschiedene Ditherverfahren [[STA_16]](Quellenverzeichnis.md#STA_16) { #_abb_2_5 }
 
 ![](img/PraktischeUndTheoGrund/Dither.jpg){ width=14% }
   
 
 ### PNG dekodieren
-PNG dateien sind Bilder die kompriemiert wurden und dabei keinen Verlust an Bildqualität haben. Die Bilder werden durch eine Substitutionskompressionsmethode und eine Entropiekodierung kompriemiert. Die Substitutionskompressionsmethode versucht wiederkehrende Muster im Bild zu erkennen und diese dann Abzusepeichern. Die Entropiekodierung Baut wahrscheihnlichkeits Werte für Farben im Bild auf, PNG kann dann die Farben beim entkompriemieren nach wahrscheinlichkeit zurück sortieren.  
+PNG-Dateien sind Bilder, die komprimiert wurden und dabei keinen Verlust an Bildqualität haben. Die Bilder werden durch eine Substitutionskompressionsmethode und eine Entropiekodierung komprimiert. Die Substitutionskompressionsmethode versucht wiederkehrende Muster im Bild zu erkennen und diese dann Abzuspeichern. Die Entropiekodierung baut Wahrscheihnlichkeitswerte für Farben im Bild auf, PNG kann dann die Farben beim Dekompriemieren nach Wahrscheinlichkeit zurück sortieren.  
   
-Um die PNG zu dekodieren kann man die PNG datei auslesen lassen als Hex format. Die ersten 8 Hexzahlen sind immer die gleichen und signaliesieren das der folgende Abschnitt an Hexzahlen einer PNG angehören. Diese 8 Hexzahlen werden auch Magische Zahlen gennant, das währen die "89 50 4E 47 0D 0A 1A 0A" [[STA_17]](Quellenverzeichnis.md#STA_17).  
+Um die PNG zu dekodieren, kann man die PNG-Datei als Hex-Format auslesen lassen. Die ersten acht Hexzahlen sind immer die gleichen und signalisieren, dass der folgende Abschnitt an Hexzahlen einer PNG angehören. Diese 8 Hexzahlen werden auch Magische Zahlen genannt, das wären "89 50 4E 47 0D 0A 1A 0A" [[STA_17]](Quellenverzeichnis.md#STA_17).  
   
-Beim Auslesen sind die Hexwerte natürlich noch kompriemiert, mithilfe von einer libary wie zLib kann man die Farbwerte für jeden Pixel der PNG datei auslesen lassen [[STA_18]](Quellenverzeichnis.md#STA_18).
+Beim Auslesen sind die Hexwerte natürlich noch komprimiert, mit Hilfe von einer Bibliothek wie `zLib` kann man die Farbwerte für jeden Pixel der PNG-Datei auslesen lassen [[STA_18]](Quellenverzeichnis.md#STA_18).
 
 
 
@@ -203,7 +204,7 @@ Noch mehr Stromeinsparung kann mit dem Deep-sleep realisiert werden. Dabei werde
 ## Firmwarebibliotheken
 **Ahmet Emirhan Göktas**
 
-Firmware-Bibliotheken sind wesentliche Werkzeuge für die Entwicklung embedded Systeme. Sie ermöglichen es Entwicklern, vordefinierte Funktionen und Klassen zur Interaktion mit Hardwarekomponenten zu verwenden, anstatt jedes Register und Bit manuell steuern zu müssen. Diese werden als "Hardware Abstraction Layers" oder "HALs" bezeichnet, die typischerweise vom Mikrocontroller-Hersteller oder der Community bereitgestellt und in C oder C++ geschrieben werden.
+Firmware-Bibliotheken sind wesentliche Werkzeuge für die Entwicklung embedded Systemen. Sie ermöglichen es Entwicklern, vordefinierte Funktionen und Klassen zur Interaktion mit Hardwarekomponenten zu verwenden, anstatt jedes Register und Bit manuell steuern zu müssen. Diese werden als "Hardware Abstraction Layers" oder "HALs" bezeichnet, die typischerweise vom Mikrocontroller-Hersteller oder der Community bereitgestellt und in C oder C++ geschrieben werden.
 
 HALs bieten mehrere Vorteile:
 
@@ -225,9 +226,9 @@ Da Arduino jedoch eine High-Level-Plattform ist, die auf verschiedenen Mikrocont
 ### PlatformIO
 **Ahmet Emirhan Göktas**
 
-PlatformIO ist ein vielseitiges Entwicklungsekosystem, das mehr als 1500 eingebettete Boards und über 40 Entwicklungsplattformen unterstützt, darunter Arduino, Espressif IDF, STM32Cube und mehr. Es ist als Plugin für Visual Studio Code, Atom und JetBrains IDEs verfügbar und bietet eine einheitliche Schnittstelle zum Erstellen, Hochladen und Debuggen von Code auf verschiedenen Plattformen.
+PlatformIO ist ein vielseitiges Entwicklungsökosystem, das mehr als 1500 eingebettete Boards und über 40 Entwicklungsplattformen unterstützt, darunter Arduino, Espressif IDF, STM32Cube und mehr. Es ist als Plugin für Visual Studio Code, Atom und JetBrains IDEs verfügbar und bietet eine einheitliche Schnittstelle zum Erstellen, Hochladen und Debuggen von Code auf verschiedenen Plattformen.
 
-PlatformIO verfügt über einen Bibliotheksmanager, der es Ihnen ermöglicht, Bibliotheken aus einem zentralen Repository zu suchen und zu installieren, was die Verwaltung von Abhängigkeiten erleichtert. Es integriert sich auch gut mit gängigen CI/CD-Tools und erleichtert automatisiertes Testen und Deployment. Dies macht PlatformIO zu einer ausgezeichneten Wahl für professionelle Entwicklungsumgebungen, in denen Skalierbarkeit und Wartbarkeit entscheidend sind.
+PlatformIO verfügt über einen Bibliotheksmanager, der es ermöglicht, Bibliotheken aus einem zentralen Repository zu suchen und zu installieren, was die Verwaltung von Abhängigkeiten erleichtert. Es integriert sich auch gut mit gängigen CI/CD-Tools und erleichtert automatisiertes Testen und Deployment. Dies macht PlatformIO zu einer ausgezeichneten Wahl für professionelle Entwicklungsumgebungen, in denen Skalierbarkeit und Wartbarkeit entscheidend sind.
 [[AEG_03]](Quellenverzeichnis.md#AEG_03)
 
 ### Espressif IoT Development Framework (ESP-IDF)
@@ -235,7 +236,7 @@ PlatformIO verfügt über einen Bibliotheksmanager, der es Ihnen ermöglicht, Bi
 
 ESP-IDF ist das offizielle Entwicklungsframework für die ESP32- und ESP32-S-Serie von SoCs. Es basiert auf FreeRTOS und bietet eine umfassende API-Sammlung zur Konfiguration und Interaktion mit der Hardware. Geschrieben in C und zur Verwendung mit der Xtensa-Toolchain konzipiert, bietet ESP-IDF Bibliotheken für gängige Aufgaben wie Netzwerke, Dateisysteme und Peripheriegeräte. Es ist auch das Framework, das vom ESP32 Arduino Core verwendet wird.
 
-Das ESP-IDF ist gut dokumentiert und hat eine große Community, was es einfach macht, Hilfe zu bekommen, wenn Sie auf Probleme stoßen. Sein Hauptvorteil ist die Leistung und der niedrige Zugriff auf die Hardware, was es zu einer guten Wahl für leistungskritische Anwendungen macht. Es hat jedoch eine steilere Lernkurve im Vergleich zu Arduino und PlatformIO.
+Das ESP-IDF ist gut dokumentiert und hat eine große Community, was es einfach macht, Hilfe zu Problemen bekommen. Sein Hauptvorteil ist die Leistung und der niedrige Zugriff auf die Hardware, was es zu einer guten Wahl für leistungskritische Anwendungen macht. Es hat jedoch eine steilere Lernkurve im Vergleich zu Arduino und PlatformIO.
 [[AEG_04]](Quellenverzeichnis.md#AEG_04)
 [[AEG_05]](Quellenverzeichnis.md#AEG_05)
 
@@ -249,7 +250,7 @@ Um das Gehäuse für ein elektronisches Gerät zu entwickeln, müssen zunächst 
 
 Die Hauptfunktion eines Gehäuses ist der Schutz der einzelnen Bauteile, wobei hier auf verschiedene Faktoren zu achten ist. Zum einen muss das Gehäuse stabil genug sein, um die internen Komponenten vor mechanischen Einflüssen wie Stöße oder Druck zu schützen. Das Material muss dementsprechend passend ausgewählt werden, wobei auch die Geometrie des Gehäuses berücksichtigt werden muss. Häufig verwendete Materialien bei Elektrogeräten sind Kunststoffe oder Metalle wie bspw Aluminium. [[JG_01]](Quellenverzeichnis.md#jg_01)
 
-Zudem ist das Gehäuse dazu da, die Elektronik darin vor so äußeren Einflüssen wie beispielsweise Staub oder Wasser zu bewahren. Bei der Frage, vor welchen sogenannten Umwelteinflüssen ein Gehäuse schützt, hilft die Einteilung in IP-Schutzklassen, wobei das IP für International Protection steht und die verschiedenen Klassen nach der DIN 60529 spezifiziert sind. Die Bezeichnung der Klassen besteht hierbei aus zwei Kennziffern nach der IP Abkürzung: Die erste Ziffer macht erkenntlich, gegen welche Arten von Berührung und Fremdkörpern das Gehäuse schützt, während die zweite Ziffer den Schutz gegen Wasser benennt. Eine Gehäuse mit IP68 Spezifikation ist beispielsweise vollständig gegen Staubeintritt und vor andauerndem Untertauchen geschützt. Eine solche Zertifizierung kann jedoch nur durch bestimmte Instititionen ausgestellt werden. [[JG_02]](Quellenverzeichnis.md#jg_02)
+Zudem ist das Gehäuse dazu da, die Elektronik darin vor äußeren Einflüssen wie beispielsweise Staub oder Wasser zu bewahren. Bei der Frage, vor welchen sogenannten Umwelteinflüssen ein Gehäuse schützt, hilft die Einteilung in IP-Schutzklassen, wobei das IP für International Protection steht und die verschiedenen Klassen nach der DIN 60529 spezifiziert sind. Die Bezeichnung der Klassen besteht hierbei aus zwei Kennziffern nach der IP-Abkürzung: Die erste Ziffer macht erkenntlich, gegen welche Arten von Berührung und Fremdkörpern das Gehäuse schützt, während die zweite Ziffer den Schutz gegen Wasser benennt. Eine Gehäuse mit IP68 Spezifikation ist beispielsweise vollständig gegen Staubeintritt und vor andauerndem Untertauchen geschützt. Eine solche Zertifizierung kann jedoch nur durch bestimmte Instititionen ausgestellt werden. [[JG_02]](Quellenverzeichnis.md#jg_02)
 
 Ein weitere Funktion, der bei der Entwicklung des Gehäuses berücksichtigt werden muss, ist die Wärmeregulation, da die Elektronik sowohl vor Überhitzung, als auch vor zu starker Unterkühlung geschützt werden muss. Da elektronische Komponenten selbst Wärme erzeugen, spielt die Wärmeableitung eine größere Rolle, als der Schutz vor zu geringen Temperaturen. Diese kann durch Einsatz von Lüftern oder Kühlkörpern oder Einbau von Lüftungsschlitzen und die damit verbundene Konvektion bewerkstelligt werden. [[JG_02]](Quellenverzeichnis.md#jg_02)
 
@@ -261,11 +262,11 @@ Neben der Funktionalität stellen auch Ästhetik und Ergonomie gewisse Ansprüch
 
 ### Auswahl des Materials und der Fertigungstechnik
 
-Bei der Auswahl des Materials sind die oben genannten Aspekte von großer Bedeutung, da das verschiedene Materialen andere Eigenschaften besitzen und dementsprechend nicht jedes Material die gleichen Anforderungen erfüllt. Abhängig von der Materialauswahl ist im nöchsten Schritt dann die Auswahl der Fertigungstechnik, wobei hier zusätzlich auf die Anforderungen an die Geometrie des Gehäuses, die anzufertigende Stückzahl und der Material- sowie der Fertigungspreis geachtet werden muss.
+Bei der Auswahl des Materials sind die oben genannten Aspekte von großer Bedeutung, da verschiedene Materialien andere Eigenschaften besitzen und dementsprechend nicht jedes Material die gleichen Anforderungen erfüllt. Abhängig von der Materialauswahl ist im nächsten Schritt dann die Auswahl der Fertigungstechnik, wobei hier zusätzlich auf die Anforderungen an die Geometrie des Gehäuses, die anzufertigende Stückzahl und der Material- sowie der Fertigungspreis geachtet werden muss.
 
 ### Design und Verfahren des Rapid Prototyping 
 
-Sind Material und Fertigungstechnik gewählt, kann mit dem eigentlichen Design des Gehäuses begonnen werden. Heutzutage wird das Design häufig durch CAD-Software (computer-aided design Software) unterstützt, was Gehäuseentwicklern und -herstellern ermöglicht, ein präzises 3D-Modell des des gewünschten Produkts zu Erstellen. Durch Finite-Elemente-Modellierung, kurz FEM,  können Simulationen zum Testen der mechanischen oder thermischen Eigenschaften verwendet werden.[[JG_03]](Quellenverzeichnis.md#jg_03)
+Sind Material und Fertigungstechnik gewählt, kann mit dem eigentlichen Design des Gehäuses begonnen werden. Heutzutage wird das Design häufig durch CAD-Software (computer-aided design Software) unterstützt, was Gehäuseentwicklern und -herstellern ermöglicht, ein präzises 3D-Modell des gewünschten Produkts zu Erstellen. Durch Finite-Elemente-Modellierung, kurz FEM, können Simulationen zum Testen der mechanischen oder thermischen Eigenschaften verwendet werden.[[JG_03]](Quellenverzeichnis.md#jg_03)
 
 Nach dem Design folgt dann die Fertigung eines oder mehrerer Prototypen, die auf gewünschte Eigenschaften getestet werden, um eventuelle Schwachstellen auszumachen und Verbesserungen am Design vornehmen zu können. Hierbei werden immer häufiger Verfahren des Rapid Prototyping, im Folgenden auch RPT genannt, verwendet, was das "Erstellen von Prototypen aus einfach verarbeitbaren Materialien" [[JG_03]](Quellenverzeichnis.md#jg_03) bezeichnet. Hierbei wird das 3D-Modell aus der CAD-Software in ein "trianguliertes Oberflächenmodell überführt" [[JG_03]](Quellenverzeichnis.md#jg_03) und anschließend in einzelne Schichten mit einer festgelegten Dicke zerlegt. In unterschiedlichen Verfahren, von denen einige im Folgenden genannt werden, werden diese Schichten dann wieder zusammengefügt, wodurch ein Prototyp entsteht. [[JG_03]](Quellenverzeichnis.md#jg_03)
 
@@ -276,9 +277,9 @@ Nach dem Design folgt dann die Fertigung eines oder mehrerer Prototypen, die auf
 - Auch das Selective Laser Sintering ist ein RPT-Verfahren, bei dem die einzelnen Schichten aus pulverförmigen Material mit einem Laser an gewollten Stellen geschmolzen wird. Durch schichtweises Herunterfahren der Fläche, worauf sich die unterste Pulverschicht befindet, liegt das fertige Modell dann in einem Pulverbett. [[JG_03]](Quellenverzeichnis.md#jg_03)
 - Das 3D-Printing-Verfahren nutzt auch ein Schicht Pulver, wobei hier das Material mithilfe eines Binders verbunden wird. Auch hier wird das Modell an der obersten Schicht aufgebaut und der fertige Prototyp liegt in einem Pulverbett. [[JG_03]](Quellenverzeichnis.md#jg_03)
 
-Die einzelnen RPT-Verfahren unterscheiden sich in den möglichen Materialien, der Genauigkeit der Modelle, der Qualität der Oberfläche und der verbundene Aufwand für die Nachbearbeitung. Diese Unterschiede sind der Abbildung [](#_JG_01) zu entnehmen.
+Die einzelnen RPT-Verfahren unterscheiden sich in den möglichen Materialien, der Genauigkeit der Modelle, der Qualität der Oberfläche und der verbundene Aufwand für die Nachbearbeitung. Diese Unterschiede sind der [Abbildung 2.6](#_abb_2_6) zu entnehmen.
 
-Figure: Eigenschaften der verschiedenen Rapid-Prototyping-Verfahren [[JG_03]](Quellenverzeichnis.md#jg_03) { #_JG_01 }
+Figure: Eigenschaften der verschiedenen Rapid-Prototyping-Verfahren [[JG_03]](Quellenverzeichnis.md#jg_03) { #_abb_2_6 }
 
 ![](img/rpt_unterschiede.png){width=80%}
 

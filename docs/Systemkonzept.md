@@ -1,15 +1,15 @@
 # Systemkonzept
 **Julia Reuter**
 
-Basierend auf den Rechercheergebnissen aus Kapitel 3 hat das Team folgendes Systemkonzept für die Low-Power Raumanzeige entwickelt.
+Basierend auf den Rechercheergebnissen aus [Kapitel 3](StandDerWissenschaftUndTechnik.md) hat das Team folgendes Systemkonzept für die Low-Power Raumanzeige entwickelt.
 
 ## Grundaufbau der Hardware
 
-Abbildung 6.1 Visualisierung des Grundkonzepts des Systems 
+Figure: Abbildung 5.1 Visualisierung des Grundkonzepts des Systems  { #_abb_5_1 }
 
 ![](img/konzept.png){ width=100% }
 
-Wie in Abbildung 6.1 veranschaulicht, besteht das Low-Power Display Modul aus:
+Wie in [Abbildung 6.1](#_abb_5_1) veranschaulicht, besteht das Low-Power Display Modul aus:
 
 - Einem Akku, der die Stromversorgung des gesamten Systems gewährleistet
 - Einem Mikrocontroller, der die zentrale Steuereinheit bildet und die anzuzeigenden Informationen über WLAN empfängt, entsprechend aufbereitet und weitergibt
@@ -31,7 +31,7 @@ In der Projektdefinition ist die Hochschule als konkreter Kunde genannt, weshalb
 
 Dies bedeutet, dass Studenten schnell und unkompliziert herausfinden können, welche Räume gerade frei sind, um ungestört zu lernen oder Gruppenarbeiten durchzuführen. Dozenten können sicherstellen, dass ihre geplanten Veranstaltungen in den vorgesehenen Räumen stattfinden und bei Bedarf kurzfristige Änderungen kommunizieren. Auch das Verwaltungspersonal profitiert von einer effizienten Raumverwaltung, die durch das Anzeigen zusätzlicher Informationen, wie beispielsweise das Melden defekter Beamer, die Wartung der Räumlichkeiten verbessert.
 
-Um ein solches Netz an Displays an der Hochschule reibungslos betreiben zu können, ist, nach Vorbild der Konkurrenz (vgl. Kapitel 3), die zentrale Verwaltung über eine Serverkomponente sinnvoll. Es bietet sich hierbei an, je nach Standort bzw. Raum, IDs zu vergeben, sodass alle Inhalte korrekt zugeordnet werden können. Mithilfe einer Schnittstelle zu gängigen Kalendersystemen wie ICS oder WebUntis wird nicht nur über die Raumverfügbarkeit informiert, sondern auch der gesamte Tagesstundenplan der jeweiligen Hörsäle ist sofort ersichtlich.
+Um ein solches Netz an Displays an der Hochschule reibungslos betreiben zu können, ist, nach Vorbild der Konkurrenz (vgl. [Kapitel 3](StandDerWissenschaftUndTechnik.md)), die zentrale Verwaltung über eine Serverkomponente sinnvoll. Es bietet sich hierbei an, je nach Standort bzw. Raum, IDs zu vergeben, sodass alle Inhalte korrekt zugeordnet werden können. Mithilfe einer Schnittstelle zu gängigen Kalendersystemen wie ICS oder WebUntis wird nicht nur über die Raumverfügbarkeit informiert, sondern auch der gesamte Tagesstundenplan der jeweiligen Hörsäle ist sofort ersichtlich.
 
 Das Einsatzgebiet der Low-Power Raumanzeige ist jedoch nicht nur auf den Hochschulbereich beschränkt. Vor allem für den mobilen Einsatz oder für Privatpersonen ist das Einrichten und Verwalten eines Servers unpraktisch und zeitaufwändig. Deshalb ist das System so flexibel und generisch gehalten, dass es die Bedürfnisse unterschiedlicher Benutzergruppen erfüllt. 
 
@@ -47,6 +47,8 @@ Im Netzwerkmodus ist das Konzept ähnlich, mit dem Unterschied, dass sich sowohl
 
 ### Standalone-Modus
 
+Table: Tabelle 5.1: Standalone-Modus { #_tab_5_1 }
+
 ![](img/Standalone.png){ width=90% }
 
 | Modus       | Vorteile                                                                                          | Nachteile                                                                                          |
@@ -59,6 +61,8 @@ Im Netzwerkmodus ist das Konzept ähnlich, mit dem Unterschied, dass sich sowohl
 
 ### Netzwerk-Modus
 
+Table: Tabelle 5.2: Netzwerk-Modus { #_tab_5_2 }
+
 ![](img/netzwerk.png){ width=90% }
 
 | Modus       | Vorteile                                                                                          | Nachteile                                                                                          |
@@ -70,6 +74,8 @@ Im Netzwerkmodus ist das Konzept ähnlich, mit dem Unterschied, dass sich sowohl
 
 
 ### Server-Modus
+
+Table: Tabelle 5.3: Server-Modus { #_tab_5_3 }
 
 ![](img/server.png){ width=90% }
 

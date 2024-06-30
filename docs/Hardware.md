@@ -3,14 +3,14 @@
 ## Auswahl des Mikrocontrollers
 **Benjamin Klaric**
 
-In der Tabelle in Kapitel [3.1 Mikrocontroller](PraktischeUTheoretischeGrund.md#mikrocontroller) wurden schon die verschiedenen Möglichkeiten zur Auswahl von Mikrocontrollern dargestellt. Wenn man die Anforderungen, wie Anzahl GPIO Pins, Stromverbrauch in Sleep Modi, Bauform, interne Speicher und mögliche Vorteile über den anderen, wie z. B. intern gebauten Ladegerät, erschien schon ein eindeutiger Gewinner, in Form von XIAO ESP32-S3.  
+In der Tabelle in Kapitel [2.1 Mikrocontroller](PraktischeUTheoretischeGrund.md#mikrocontroller) wurden schon die verschiedenen Möglichkeiten zur Auswahl von Mikrocontrollern dargestellt. Wenn man die Anforderungen, wie Anzahl GPIO Pins, Stromverbrauch in Sleep Modi, Bauform, interne Speicher und mögliche Vorteile über den anderen, wie z. B. intern gebauten Ladegerät, erschien schon ein eindeutiger Gewinner, in Form von XIAO ESP32-S3.  
 Die verschiedenen STM32 Mikrocontroller waren auch lange Zeit in Betrachtung, wurden aber herausgelassen aufgrund der Tatsache, dass sie kein eingebautes Wi-Fi-Modul haben.  
 Der XIAO ESP32-S3 mit seinem kleinen Formfaktor, sehr geringen Stromverbrauch in Deep Sleep Modus, enormen Internen speicher (im Vergleich mit anderen Kandidaten) und Möglichkeit, die Akku über den USB-C-Anschluss zu laden, machen den Mikrocontroller sehr flexibel und für das Systemanforderungen passend. [[BK_07]](Quellenverzeichnis.md#BK_07)  
 Der Prozessor, der auf dem Mikrocontroller läuft, ist der leistungsstarke Xtensa LX7 Dual-Core, 32-Bit-Prozessor, mit bis zu 240 MHz Taktfrequenz. Mit internen 512 KB SRAM-Speichern ist er in der Lage, viele Operationen und Funktionen lokal durchzuführen. Neben dem SRAM-Speicher ist der Mikrocontroller auch extern mit 8 MB Flash und 8 MB PSRAM Speicher ausgestattet. Der Mikrocontroller ist auch mit interner Hardware Watchdog Timers ausgestattet, die in dem Fall, wo der Mikrocontroller hängend geblieben ist, eine Möglichkeit von Neustart des Systems anbietet. [[BK_08]](Quellenverzeichnis.md#BK_08)  
 Aufgrund der niedrigen Idle Strom von 22 mA und noch niedrigere Deep Sleep Strom von 14 μA stellt sich das Modul perfekt für ein autarkes System. Die Möglichkeit von Laden der Akkus durch das USB-C ist natürlich auch von Vorteil, allerdings mit einem niedrigen Ladestrom von 100 mA. Und das alles befindet sich auf einer kleinen Platine mit Maßen 21x17,5 mm, der ungefähre Große von einer 2-Euro-Münze. [[BK_07]](Quellenverzeichnis.md#BK_07)  
-Der XIAO ESP32-S3 stellt elf GPIO Pins zur Verfügung, was auf [Abildung 7.xx](#_fig_BK_03) zu sehen ist. Von diesen elf GPIO-Pins sind neun analoge Pins, an die man analoge Signale anschließen kann. Neben den UART-Pins, die für die serielle Kommunikation mit dem Mikrocontroller genutzt werden, bietet der XIAO ESP32-S3 auch eine SPI- und eine I2C-Schnittstelle. Diese Schnittstellen sind serielle synchrone Datenbusse, die zur Kommunikation mit verschiedenen Peripheriegeräten verwendet werden. Der 5V-Pin ist nur dann aktiv, wenn das Modul über den USB-C-Anschluss betrieben wird. Andererseits ist der 3,3V-Pin ist immer aktiv und dient als regulierter Ausgang mit einem maximalen Strom von 700 mA. [[BK_07]](Quellenverzeichnis.md#BK_07)  
+Der XIAO ESP32-S3 stellt elf GPIO Pins zur Verfügung, was auf [Abildung 6.1](#_abb_6_1) zu sehen ist. Von diesen elf GPIO-Pins sind neun analoge Pins, an die man analoge Signale anschließen kann. Neben den UART-Pins, die für die serielle Kommunikation mit dem Mikrocontroller genutzt werden, bietet der XIAO ESP32-S3 auch eine SPI- und eine I2C-Schnittstelle. Diese Schnittstellen sind serielle synchrone Datenbusse, die zur Kommunikation mit verschiedenen Peripheriegeräten verwendet werden können. Der 5V-Pin ist nur dann aktiv, wenn das Modul über den USB-C-Anschluss betrieben wird. Andererseits ist der 3,3V-Pin ist immer aktiv und dient als regulierter Ausgang mit einem maximalen Strom von 700 mA. [[BK_07]](Quellenverzeichnis.md#BK_07)  
 
-Figure: Pinout von XIAO ESP32-S3 [[BK_07]](Quellenverzeichnis.md#BK_07) { #_fig_BK_03 }
+Figure: Abbildung 6.1: Pinout von XIAO ESP32-S3 [[BK_07]](Quellenverzeichnis.md#BK_07) { #_abb_6_1 }
 
 ![](img/XIAO_Pinout.png){ width=85% }
 
@@ -22,20 +22,20 @@ Figure: Pinout von XIAO ESP32-S3 [[BK_07]](Quellenverzeichnis.md#BK_07) { #_fig_
 Unsere Display auswahl hat sich letztlich auf die ePaper Technologie und bistabile LCD-Technologie beschränkt, durch ihren Vorteil der deutigen Stromeffizienz. Zwischen diesen beiden Technologien haben wir uns für ePaper entschieden, der Vorteil, mit ePaper haben wir die Möglichkeit noch mehr Strom zu sparen und durch das Papierartige Display ist besitzt es eine bessere Lesbarkeit als Bistabile LCD.  
   
 ePaper besitzt weniger Farbmöglichkeiten, dadurch entschieden wir uns 2 Displays für das Projekt zu testen, ein Display ohne Farben, aber dafür schnelle Refresh-Time und Display mit Farben, aber mit einer längeren Refresh-Time.  
-Das erste Display kann man in Abbildung 7.2.2 sehen, es kommt mit einer Refresh-Time von 0,5 Sekunden, besitzt dafür aber nur 8 mögliche Greyscales.
+Das erste Display kann man in [Abbildung 6.3](#_abb_6_3) sehen, es kommt mit einer Refresh-Time von 0,5 Sekunden, besitzt dafür aber nur 8 mögliche Greyscales.
 Das zweite Display besitzt 4 Farben, Weiß, Schwarz, Gelb und Rot und kann mit in Abbildung 7.2.1 sehen. Dies kommt aber mit dem Nachteil von einer Refresh-Time von 16 Sekunden.
 
-Figure:  Abbildung 7.2.1: Waveshare 7.3inch ePaper Display 
+Figure:  Abbildung 6.2: Waveshare 7.3inch (G) ePaper Display { #_abb_6_2 }
 
 ![](img/PraktischeUndTheoGrund/Display73.png){ width=70%, }
 
-Figure: Abbildung 7.2.2: Waveshare 9.7inch ePaper Display { #_fig_Display97}
+Figure: Abbildung 6.3: Waveshare 9.7inch ePaper Display { #_abb_6_3 }
 
 ![](img/PraktischeUndTheoGrund/Displays97.png){ width=70% }
 
 Die erwähnten geringen Stromverbrauch haben wir selber nochmal getestet und kann man im im Kapitel [7.9 Strommessung von Mikrocontroller und Display](Hardware.md#strommessung-von-mikrocontroller-und-display) genauer nachlesen.  
   
-Ein kleiner Nachteil der Auswahl ist, dass verschiedene Displays verschiedene Anforderungen haben. Die Displays besitzen einen unterschiedlichen Spannungsverbrauch. Das 7.3 inch Display benutzt 3V und das größere 9.7 inch Display benutzt 5V.  
+Ein kleiner Nachteil der Auswahl ist, dass verschiedene Displays verschiedene Anforderungen haben. Die Displays besitzen einen unterschiedlichen Spannungsverbrauch. Das 7.3 inch Display benutzt 3.3V und das größere 9.7 inch Display benutzt 5V.  
 Dadurch haben wir uns entschieden, einen Schalter auf der Platine einzubauen, der dieses Problem löst und zwischen diesen Spannungen wechselt, genaueres kann man im Kapitel [7.5 Schaltungsentwurf](Hardware.md#schaltungsentwurf) nachlesen.
 
 
@@ -50,22 +50,22 @@ Aus Sicherheitsblick betrachtet wurden die LiFePo~4~-Akkus ausgewählt. Die Nenn
 Der nächste Schritt war, eine vernünftige Kapazität zu finden, sodass die Akkus das System lang genug betreiben konnten. Dazu hat man die Schätzungen mit Verbrauchmessungen unterstützt und ungefähr die benötigte Akku-Kapazität geschätzt. Eine Akkulaufzeit von einem Jahr war gewünscht und dementsprechend war die Große des Akkus gewählt, nämlich ~10000 mAh.  
 Ein Akku mit so einer Kapazität war aber nicht einfach zu finden. Deswegen wurde das Akkupack aus zwei ~5000 mAh Akkus gebaut. Um von zwei ~5000 mAh auf die gewünschte Kapazität zu kommen, wurden die Akkus in parallel verbunden, da so die Kapazität sich verdoppelt; im Vergleich, wenn man die in Reihe anschließt, so wird die Spannung verdoppelt.  
 Bei der Suche nach Akkus muss man einige Sachen beachten. Der Formfaktor der Akku, minimale Kapazität, ob der Akku schon ein eingebautes BMS hat und der Entladestrom.  
-Es würde die BAK N21700CD-53E ausgewählt, die auf [Abildung 7.xx](#_fig_BK_04) zu sehen ist.
+Es würde die BAK N21700CD-53E ausgewählt, die auf [Abildung 6.4](#_abb_6_4) zu sehen ist.
 
-Figure: Li-Ion-Akku [[BK_09]](Quellenverzeichnis.md#BK_09) { #_fig_BK_04 }
+Figure: Abbildung 6.4: Li-Ion-Akku [[BK_09]](Quellenverzeichnis.md#BK_09) { #_abb_6_4 }
 
 ![](img/Li-Ion-Akku.png){ width=60% }
 
-Aus der Tabelle der technischen Daten auf der [Abildung 7.xx](#_fig_BK_05) des betrachteten Akkus ist es klar zu sehen, dass alle benötigten Parameter erfüllt sind. Der Formfaktor ist aus der Durchmesser und Höhe (die ersten zwei Ziffern von Durchmesser und normalerweise erste drei Ziffern von Höhe → 21700).  
+Aus der Tabelle der technischen Daten auf der [Abildung 6.5](#_abb_6_5) des ausgewählten Akkus ist es klar zu sehen, dass alle benötigten Parameter erfüllt sind. Der Formfaktor ist aus der Durchmesser und Höhe (die ersten zwei Ziffern von Durchmesser und normalerweise erste drei Ziffern von Höhe → 21700).  
 
-Figure: Technische Daten von BAK N21700CD-53E [[BK_09]](Quellenverzeichnis.md#BK_09) { #_fig_BK_05 }
+Figure: Abbildung 6.5: Technische Daten von BAK N21700CD-53E [[BK_09]](Quellenverzeichnis.md#BK_09) { #_abb_6_5 }
 
 ![](img/Li-Ion-Akku-Tabelle.png){ width=65% }
 
 **BMS**  
 Um den Akkupack sicher betreiben zu können, wurde ein BMS benötigt. Wie bereits in [3.3 Akku-Technologien](PraktischeUTheoretischeGrund.md#akku-technologien) erwähnt, schützt ein BMS die Akkus vor Tiefentladung, Überladung, Kurzschluss und Überstrom.  
 
-Beim genaueren Blick auf ein 1S 2MOS BMS, auf [Abildung 7.xx](#_fig_BK_06), wo 1S die Anzahl der Zellen in Serie repräsentiert, erkennt man einen IC und zwei MOSFET Transistoren auf der Vorderseite. Die MOSFET Transistoren sind nämlich die NMOS-Transistoren und dienen als Schalter, die vom IC durch Gate-Spannung angesteuert werden.  
+Beim genaueren Blick auf ein 1S 2MOS BMS, auf [Abildung 6.6](#_abb_6_6), wo 1S die Anzahl der Zellen in Serie repräsentiert, erkennt man einen IC und zwei MOSFET Transistoren auf der Vorderseite. Die MOSFET Transistoren sind nämlich die NMOS-Transistoren und dienen als Schalter, die vom IC durch Gate-Spannung angesteuert werden.  
 
 **Überladungsschutz**: Wenn die Ladespannung 4,2V überschreitet, sendet der IC ein Signal, das die Gate-Spannung eines NMOS-Transistors steuert, wodurch dieser den Stromkreis unterbricht.  
 
@@ -77,15 +77,15 @@ Beim genaueren Blick auf ein 1S 2MOS BMS, auf [Abildung 7.xx](#_fig_BK_06), wo 1
 
 Das BMS, das auf [Abildung 7.xx](#_fig_BK_06) dargestellt ist, liefert alle diese Features und wurde für den Aufbau von dem Akkupack ausgewählt.  
 
-Figure: 1S 2MOS Batteriemanagementsystem [[BK_10]](Quellenverzeichnis.md#BK_10) { #_fig_BK_06 }
+Figure: Abbildung 6.6: 1S 2MOS Batteriemanagementsystem [[BK_10]](Quellenverzeichnis.md#BK_10) { #_abb_6_6 }
 
 ![](img/Li-Ion-BMS.png){ width=60% }
 
 **Ladegerät**  
 Wie bereits in [3.3 Akku-Technologien](PraktischeUTheoretischeGrund.md#akku-technologien), benötigen die Li-Ion-Akkus ein spezielles Ladegerät, nämlich ein Ladegerät, der in die Lage ist beim Laden der Akkus erste 80% konstanter Strom zu liefern und danach 20% die Akkus mit konstanter Spannung zu laden.  
-Man kann solche Ladegeräte ohne viele Schwierigkeiten finden, sind allerdings teuer. Bei der Suche nach einem muss man eine Sache beachten, nämlich die Zellenanzahl. Das ausgewählte Ladegerät ist auf der [Abildung 7.xx](#_fig_BK_07) zu sehen.
+Man kann solche Ladegeräte ohne viele Schwierigkeiten finden, sind allerdings teuer. Bei der Suche nach einem muss man eine Sache beachten, nämlich die Zellenanzahl. Das ausgewählte Ladegerät ist auf der [Abildung 6.7](#_abb_6_7) zu sehen.
 
-Figure: Ladegerät für Li-Ion-Akkus [[BK_11]](Quellenverzeichnis.md#BK_11) { #_fig_BK_07 }
+Figure: Abbildung 6.7: Ladegerät für Li-Ion-Akkus [[BK_11]](Quellenverzeichnis.md#BK_11) { #_abb_6_7 }
 
 ![](img/Li-Ion-Ladegeraet.png){ width=60% }
 
@@ -94,14 +94,14 @@ Figure: Ladegerät für Li-Ion-Akkus [[BK_11]](Quellenverzeichnis.md#BK_11) { #_
 
 ### Konzeptioneller Aufbau
 
-Bei der Auswahl der Akkukomponenten wurde die Entscheidung getroffen, mehrere Lithium-Ionen-Zellen zu verwenden. Da die Kapazität des Akkupacks vergrößert wird, die Batteriespannung jedoch weiterhin zwischen 2,5 V und 4,2 V liegen soll, werden die beiden Lithium-Ionen-Zellen parallel miteinander verbunden. Dadurch verdoppelt sich die Kapazität, während die Spannung gleich bleibt. Zudem wird der gemeinsame Pluspol mit dem Plus des Battery Management System verbunden und ebenso mit dem Minuspolen verfahren. Zum Verbinden von den Akkuzellen untereinander und mit dem BMS eignet sich ein Nickelband, welches auch als Hiluminband bekannt ist[[MW_07]](Quellenverzeichnis.md#MW_07). Der Aufbau des Akkus ist auch in den Abbildungen [](#_fig_MW_Akkukonzept) und [](#_fig_MW_Akkubild) ersichtlich. 
+Bei der Auswahl der Akkukomponenten wurde die Entscheidung getroffen, mehrere Lithium-Ionen-Zellen zu verwenden. Da die Kapazität des Akkupacks vergrößert wird, die Batteriespannung jedoch weiterhin zwischen 2,5 V und 4,2 V liegen soll, werden die beiden Lithium-Ionen-Zellen parallel miteinander verbunden. Dadurch verdoppelt sich die Kapazität, während die Spannung gleich bleibt. Zudem wird der gemeinsame Pluspol mit dem Plus des Battery Management System verbunden und ebenso mit dem Minuspolen verfahren. Zum Verbinden von den Akkuzellen untereinander und mit dem BMS eignet sich ein Nickelband, welches auch als Hiluminband bekannt ist[[MW_07]](Quellenverzeichnis.md#MW_07). Der Aufbau des Akkus ist auch in den Abbildungen [6.8](#_abb_6_8) und [6.9](#_abb_6_9) ersichtlich. 
 
-Figure: Konzeptioneller Aufbau des Akkus { #_fig_MW_Akkukonzept }
+Figure: Abbildung 6.8: Konzeptioneller Aufbau des Akkus { #_abb_6_8 }
 
 ![](img/Akku-Konzept.png){ width=60% }
 
 
-Figure: Foto des aufgebauten Akkus { #_fig_MW_Akkubild }
+Figure: Abbildung 6.9: Foto des aufgebauten Akkus { #_abb_6_9 }
 
 ![](img/Akku-Bild.jpeg){ width=60% }
 
@@ -130,38 +130,38 @@ Um das gesamte System optimal zu gestalten, wurde eine Platine entworfen, die al
 Alle Komponenten, die in der Schaltung beinhaltet sind, befinden sich in dem sogenannten Bill of Materials (kurz BOM).  
 
 **Ganze Schaltung**  
-Auf der [Abildung 7.xx](#_fig_BK_08) ist die vollständige Schaltung mit allen Teilschaltungen dargestellt.  
+Auf der [Abildung 6.10](#_abb_6_10) ist die vollständige Schaltung mit allen Teilschaltungen dargestellt.  
 
-Figure: Ganze Schaltung für das Mainboard des Systems { #_fig_BK_08 }
+Figure: Abbildung 6.10: Ganze Schaltung für das Mainboard des Systems { #_abb_6_10 }
 
-![](img/Schaltung/Ganze-Schaltung.png){ width=80% }
+![](img/Schaltung/Ganze-Schaltung.png){ width=90% }
 
-Wenn man die [Abildung 7.xx](#_fig_BK_08) betrachtet, sind die Verbindungen zwischen den Teilschaltungen und der Gesamtverdrahtung der Schaltung sichtbar. Spätere Abschnitte behandeln jede Teilschaltung einzeln, und es wird empfohlen, zur Gesamtabbildung der Schaltung zurückzukehren, um die Verbindung der erklärten Teilschaltungen im Gesamtkontext zu sehen.  
+Wenn man die [Abildung 6.10](#_abb_6_10) betrachtet, sind die Verbindungen zwischen den Teilschaltungen und der Gesamtverdrahtung der Schaltung sichtbar. Spätere Abschnitte behandeln jede Teilschaltung einzeln, und es wird empfohlen, zur Gesamtabbildung der Schaltung zurückzukehren, um die Verbindung der erklärten Teilschaltungen im Gesamtkontext zu sehen.  
 Ganz links in der Abbildung ist ein 100 nF Kondensator, speziell C5, zwischen 3,3V (V~CC~) und Ground (GND) parallel geschaltet. Dieser dient als Entkopplungskondensator, um Spannungsschwankungen zu reduzieren und die Stabilität der Stromversorgung sicherzustellen. Der 100 nF Kondensator fängt hochfrequente Störungen ab und glättet diese. Dadurch verbessert er die Betriebssicherheit des Systems, insbesondere während schneller Schaltvorgänge, indem er eine stabile Spannungsversorgung gewährleistet und die Signalqualität erhöht. Dieser Wert von 100 nF ist ein Standardwert für Entkopplungskondensatoren bei niedrigen Frequenzen. [[BK_12]](Quellenverzeichnis.md#BK_12) [[BK_13]](Quellenverzeichnis.md#BK_13)  
 Ein Kondensator mit der 1210 Bauform wurde aus Platzgründen gewählt, obwohl jeder 100 nF Kondensator diese Aufgabe erfüllen könnte. Die Wahl der Bauform von Kondensator und anderer Bauteile wurde entsprechend den Platzanforderungen getroffen.  
 
 **Mikrocontroller**  
-Wenn man die Teilschaltung des Mikrocontrollers auf der [Abildung 7.xx](#_fig_BK_09) betrachtet, fällt auf, dass außer dem Mikrocontroller keine weiteren Komponenten zu sehen sind. Die gesamte Schaltung wurde in Teilschaltungen oder sogenannte Subsheets, wie das Feature in KiCad genannt ist, aufgeteilt, um sie übersichtlicher darzustellen.  
+Wenn man die Teilschaltung des Mikrocontrollers auf der [Abildung 6.11](#_abb_6_11) betrachtet, fällt auf, dass außer dem Mikrocontroller keine weiteren Komponenten zu sehen sind. Die gesamte Schaltung wurde in Teilschaltungen oder sogenannte Subsheets, wie das Feature in KiCad genannt ist, aufgeteilt, um sie übersichtlicher darzustellen.  
 
-Figure: Ausgänge des Mikrocontrollers { #_fig_BK_09 }
+Figure: Abbildung 6.11: Ausgänge des Mikrocontrollers { #_abb_6_11 }
 
 ![](img/Schaltung/Mikrocontroller.png){ width=60% }
 
 In dieser Teilschaltung sind die Ausgänge des Mikrocontrollers hierarchischen Labels mit entsprechenden Namen zugeordnet.  
 
 **Akkuanschlüsse**  
-Die Akkuanschlüsse in der Teilschaltung beinhalten einen Stecker, konkret den J1, sowie einen Spannungsteiler, der aus R5 und R6 besteht. Diese Komponenten sind auf der [Abildung 7.xx](#_fig_BK_10) dargestellt.  
+Die Akkuanschlüsse in der Teilschaltung beinhalten einen Stecker, konkret den J1, sowie einen Spannungsteiler, der aus R5 und R6 besteht. Diese Komponenten sind auf der [Abildung 6.12](#_abb_6_12) dargestellt.  
 
-Figure: Schaltung von Akkuanschlüsse { #_fig_BK_10 }
+Figure: Abbildung 6.12: Schaltung von Akkuanschlüsse { #_abb_6_12 }
 
 ![](img/Schaltung/Akkuanschlüsse.png){ width=50% }
 
 Der Akkupack ist über den Stecker mit den Akkuanschlüssen des Mikrocontrollers verbunden. Parallel dazu ist ein Spannungsteiler aufgebaut. Der Zweck dieses Spannungsteilers besteht darin, die Spannung des Akkupacks zu messen, indem ein analoger GPIO-Pin des XIAO ESP32-S3 verwendet wird. Dadurch wird der Zustand des Akkupacks genau überwacht, um sicherzustellen, dass ausreichend Spannung für den Mikrocontroller bereitgestellt wird.  
 
 **Display-Enable**  
-Auf der [Abildung 7.xx](#_fig_BK_11) ist die sogenannte Display-Enable Schaltung zu sehen. Man kann drei Widerstände, nämlich den R1, R2 und R3 erkennen, neben den zwei MOSFETs, einen NMOS und einen PMOS Transistor.
+Auf der [Abildung 6.13](#_abb_6_13) ist die sogenannte Display-Enable Schaltung zu sehen. Man kann drei Widerstände, nämlich den R1, R2 und R3 erkennen, neben den zwei MOSFETs, einen NMOS und einen PMOS Transistor.
 
-Figure: Schaltung von Display Enable { #_fig_BK_11 }
+Figure: Abbildung 6.13: Schaltung von Display Enable { #_abb_6_13 }
 
 ![](img/Schaltung/Enable.png){ width=70% }
 
@@ -172,18 +172,18 @@ Der NMOS-Transistor (U3) schaltet ein, wenn der EN-Pin des Mikrocontrollers auf 
 Die ausgewählten MOSFETs wurden aufgrund ihrer niedrigen Schwellenspannung und ihres geringen R_DS(on)-Widerstands gewählt, was eine effiziente und zuverlässige Schaltung ermöglicht.  
 
 **Switch**  
-Man kann auf der [Abildung 7.xx](#_fig_BK_12) ein Switch erkennen, der dafür zuständig ist, die Betriebsspannung des Displays auszuwählen, zwischen direkten 3,3V oder dem Ausgang von Booster Schaltung.
+Man kann auf der [Abildung 6.14](#_abb_6_14) ein Switch erkennen, der dafür zuständig ist, die Betriebsspannung des Displays auszuwählen, zwischen direkten 3,3V oder dem Ausgang von Booster Schaltung.
 
-Figure: Switch für Ansteuerung der Betriebsspannung { #_fig_BK_12 }
+Figure: Abbildung 6.14: Switch für Ansteuerung der Betriebsspannung { #_abb_6_14 }
 
 ![](img/Schaltung/Switch.png){ width=50% }
 
 Der Switch wird per Bedarf mittels menschlichen Einfluss die Leitung zur Betriebsspannung von Display umleiten, zu Booster Schaltung oder direkt mit dem 3,3V Ausgang von Mikrocontroller verbinden. Diese Funktionalität ist so ausgedacht, sodass man die Platine generisch halten kann, um verschiedene Displays mit verschiedenen Betriebsspannungen anzusteuern.  
 
 **Boost-Konverter**  
-Die Boost-Konverter Schaltung, die auf der [Abildung 7.xx](#_fig_BK_13) dargestellt ist, hat die Aufgabe, die Betriebsspannung zu erhöhen.  
+Die Boost-Konverter Schaltung, die auf der [Abildung 6.15](#_abb_6_15) dargestellt ist, hat die Aufgabe, die Betriebsspannung zu erhöhen.  
 
-Figure: Booster Schaltung { #_fig_BK_13 }
+Figure: Abbildung 6.15: Booster Schaltung { #_abb_6_15 }
 
 ![](img/Schaltung/Booster.png){ width=70% }
 
@@ -191,18 +191,18 @@ Der Boost-Konverter befindet sich in der Mitte der Schaltung. Die L1 speichert E
 Der Boost-Konverter hat intern auch eine galvanische Trennung. Diese galvanische Trennung dient dazu, elektrische Isolation zwischen dem Eingang und dem Ausgang zu gewährleisten. Sie schützt vor elektrischen Störungen und sorgt dafür, dass keine direkten elektrischen Verbindungen zwischen den beiden Seiten bestehen. In diesem speziellen Fall wurde jedoch entschieden, die galvanische Trennung nicht zu nutzen, wegen niedriger Leistungsanforderungen des Systems und der Tatsache, dass die elektrische Isolation in Form von galvanischer Trennung nicht kritisch ist. [[BK_14]](Quellenverzeichnis.md#BK_14)  
 
 **IIC-Erweiterung**  
-Auf der [Abildung 7.xx](#_fig_BK_14) sind die IIC Ausgänge des Mikrocontrollers dargestellt, mit jeweils einem Pull-up Widerstand von 10 kΩ.  
+Auf der [Abildung 6.16](#_abb_6_16) sind die IIC Ausgänge des Mikrocontrollers dargestellt, mit jeweils einem Pull-up Widerstand von 10 kΩ.  
 
-Figure: IIC-Ausgänge { #_fig_BK_14 }
+Figure: Abbildung 6.16: IIC-Ausgänge { #_abb_6_16 }
 
 ![](img/Schaltung/IIC.png){ width=30% }
 
 Die IIC Pins von dem Mikrocontroller wurden auf die Platine frei zugänglich gemacht, sodass die Erweiterungsmöglichkeiten in Form eines Sensors oder Ähnliches einfacher zu implementieren sind. Momentan bleiben die unverbunden.  
 
 **Refresh-Knopf**  
-Der benötigte Knopf ist auf der [Abildung 7.xx](#_fig_BK_15) dargestellt. Die wird für manuellen Refresh des Displays benutzt.  
+Der benötigte Knopf ist auf der [Abildung 6.17](#_abb_6_17) dargestellt. Die wird für manuellen Refresh des Displays benutzt.  
 
-Figure: Schaltung von Refresh-Knopf { #_fig_BK_15 }
+Figure: Abbildung 6.17: Schaltung von Refresh-Knopf { #_abb_6_17 }
 
 ![](img/Schaltung/Knopf.png){ width=40% }
 
@@ -211,9 +211,9 @@ Der verwendete Knopf benötigt eine Entprellschaltung, um zuverlässig zu funkti
 Um das Prellen zu beseitigen, wird ein RC-Glied eingebaut, das als Hochpassfilter fungiert. Wenn der Taster offen ist, lädt sich der Kondensator C6 über die Widerstände R4 und R7 auf, wodurch die Spannung langsamer ansteigt. Ist der Taster geschlossen, wird der Kondensator über R4 mit einer kontrollierten Geschwindigkeit entladen. Der Widerstand R7 hat einen Wert von 10 kΩ, da es sich um einen Pull-up-Widerstand handelt. Für R4 wird ein Wert von 75 kΩ gewählt, um in Kombination mit dem Kondensator von 100 nF die gewünschte Zeitkonstante zu erreichen. [[BK_16]](Quellenverzeichnis.md#BK_16)  
 
 **Displayanschlüsse**  
-Die dargestellten Ausgänge auf der [Abildung 7.xx](#_fig_BK_16), nämlich den J2-Komponente, sind die Ausgänge, die man direkt mit dem Display über Dupont Pins verbinden kann.  
+Die dargestellten Ausgänge auf der [Abildung 6.18](#_abb_6_18), nämlich den J2-Komponente, sind die Ausgänge, die man direkt mit dem Display über Dupont Pins verbinden kann.  
 
-Figure: Ausgänge für das Display { #_fig_BK_16 }
+Figure: Abbildung 6.18: Ausgänge für das Display { #_abb_6_18 }
 
 ![](img/Schaltung/Displayanschlüsse.png){ width=30% }
 
@@ -243,15 +243,15 @@ Um die Platine auf die gewünschte Größe zu bringen, müssen die Grenzen defin
 Wie bereits erwähnt, wird auch ein Ground Polygon über beiden Seiten gezogen. Dies dient mehreren Zwecken: Eine gute Masseverbindung reduziert Störungen und verbessert die Signalintegrität, da die Ground-Fläche als niederohmiger Pfad für Rückströme fungiert. Ein großflächiges Ground-Polygon kann elektromagnetische Störungen (EMI) reduzieren, indem es als Abschirmung fungiert und Hochfrequenzsignale ableitet. Zudem hilft ein großes Ground-Polygon, Potenzialunterschiede auf der Platine zu minimieren, was wichtig ist, um unerwünschte Spannungsabfälle oder Spannungsspitzen zu vermeiden. [[BK_21]](Quellenverzeichnis.md#BK_21)  
 
 **Ergebnis**  
-Die fertige Platine sieht am Ende so aus, wie auf [Abildung 7.xx](#_fig_BK_17) dargestellt ist. Die rote Fläche repräsentiert das Ground-Polygon auf der oberen Seite und die blaue Fläche das Ground-Polygon auf der unteren Seite der Platine. Die zahlreichen Vias dienen dazu, die Ground-Polygone beider Seiten miteinander zu verbinden. Dies ist besonders wichtig, wenn auf einer Seite keine direkte Verbindung zum Ground möglich ist, zum Beispiel aufgrund anderer Leiterbahnen oder Komponenten.  
+Die fertige Platine sieht am Ende so aus, wie auf [Abildung 6.19](#_abb_6_19) dargestellt ist. Die rote Fläche repräsentiert das Ground-Polygon auf der oberen Seite und die blaue Fläche das Ground-Polygon auf der unteren Seite der Platine. Die zahlreichen Vias dienen dazu, die Ground-Polygone beider Seiten miteinander zu verbinden. Dies ist besonders wichtig, wenn auf einer Seite keine direkte Verbindung zum Ground möglich ist, zum Beispiel aufgrund anderer Leiterbahnen oder Komponenten.  
 
-Figure: Fertiges Platinendesign { #_fig_BK_17 }
+Figure: Abbildung 6.19: Fertiges Platinendesign { #_abb_6_19 }
 
 ![](img/PCB/PCB-Design.png){ width=90% }
 
-Wenn man auf 3D-Ansicht wechselt, wurden alle Bauteile, mit seinen 3D-Modellen sichtbar, wie auf [Abildung 7.xx](#_fig_BK_18) zu sehen ist. Es wurde ein Raytracing-Effekt verwendet, um die Bauteile realistischer darzustellen.
+Wenn man auf 3D-Ansicht wechselt, wurden alle Bauteile, mit seinen 3D-Modellen sichtbar, wie auf [Abildung 6.20](#_abb_6_20) zu sehen ist. Es wurde ein Raytracing-Effekt verwendet, um die Bauteile realistischer darzustellen.
 
-Figure: 3D-Ansicht von der Platine { #_fig_BK_18 }
+Figure: Abbildung 6.20: 3D-Ansicht von der Platine { #_abb_6_20 }
 
 ![](img/PCB/3D-Ansicht.png){ width=90% }
 
@@ -260,9 +260,9 @@ Figure: 3D-Ansicht von der Platine { #_fig_BK_18 }
 
 Nachdem die Platine und alle anderen Bauteile angekommen sind, wurde mit dem Zusammenbau der Platinen begonnen.  
 Da viele Bauteile mittels SMT (Surface Mounted Technology) mit der Platine verbunden sind, ist es normalerweise sinnvoll, das Löten mit einem Reflow-Ofen durchzuführen. Dafür benötigt man jedoch ein sogenanntes Stencil. Ein Stencil ist ein kleines Metallteil mit Löchern, die den Pads (Kontakten für die Bauteile auf der Platine) entsprechen. Mit einem Stencil kann die Lötpaste viel einfacher und präziser auf die Pads aufgetragen werden. Leider konnte aus Kostengründen kein Stencil bestellt werden, und das manuelle Auftragen der Paste auf 50 Pads ist sehr zeitaufwendig.  
-Deshalb wurde das Löten von Hand durchgeführt. Die verlötete Platine ist in [Abildung 7.xx](#_fig_BK_19) zu sehen.
+Deshalb wurde das Löten von Hand durchgeführt. Die verlötete Platine ist in [Abildung 6.21](#_abb_6_21) zu sehen.
 
-Figure: Fertige Platine ohne Mikrocontroller und Pin Headers { #_fig_BK_19 }
+Figure: Abbildung 6.21: Fertige Platine ohne Mikrocontroller und Pin Headers { #_abb_6_21 }
 
 ![](img/PCB/Nach-Löten.png){ width=90% }
 
@@ -302,36 +302,36 @@ Die Halterungen für die Platinen der Beiden Epaper-Displays sind einfache Konst
 
 Die Front des Gehäuses besitzt einen rechteckigen Ausschnitt mit einer Falz nach innen, in die das Display dann gelegt wird. Um das Display vor hineinfallen ins Gehäuse zu schützen, wird einmal die Platinenhalterung direkt an der Rückseitige des Displays angebracht und zusätzlich noch kleine Überhänge konstruiert, die das Display von hinten stützen. Desweiteren ist ein rechteckiger Ausschnitt für den Benutzerknopf in der Front vorhanden.
 
-Da im Laufe der Gehäuseentwicklung Protoypen designt und anschließend getestet werden, entstehen mehrere Entwürfe für die Umsetzung. Die folgenden drei Abbildungen [Abbildung 1](#fig_jg_02), [Abbildung 2](#fig_jg_03) und  [Abbildung 3](#fig_jg_04) zeigen die verschiedenen Versionen der Rückseite des 7.3-Zoll-Gehäuses und jeweils die Veränderungen zur vorherigen Version. Die Rückseite des 9.7-Zoll-Gehäuse wurde anschließend nach dem Vorbild des kleineren Gehäuses designt, wie man in [Abbildung 4](#fig_jg_05) sieht. Die beiden Fronten sind zusammen mit dem Platinenhalter und der Abdeckung des Benutzerknopfes schließlich in [Abbildung 5](#fig_jg_06) und [Abbildung 6](#fig_jg_07) zu sehen.
+Da im Laufe der Gehäuseentwicklung Protoypen designt und anschließend getestet werden, entstehen mehrere Entwürfe für die Umsetzung. Die folgenden drei Abbildungen [Abbildung 6.22](#_abb_6_22), [Abbildung 6.23](#_abb_6_23) und  [Abbildung 6.24](#_abb_6_24) zeigen die verschiedenen Versionen der Rückseite des 7.3-Zoll-Gehäuses und jeweils die Veränderungen zur vorherigen Version. Die Rückseite des 9.7-Zoll-Gehäuse wurde anschließend nach dem Vorbild des kleineren Gehäuses designt, wie man in [Abbildung 6.25](#_abb_6_25) sieht. Die beiden Fronten sind zusammen mit dem Platinenhalter und der Abdeckung des Benutzerknopfes schließlich in [Abbildung 6.26](#_abb_6_26) und [Abbildung 6.27](#_abb_6_27) zu sehen.
 
-Figure: Die erste Version der 7.3-Zoll-Rückseite. {#fig_jg_02}
+Figure: Abbildung 6.22: Die erste Version der 7.3-Zoll-Rückseite. { #_abb_6_22 }
 
 ![](img/7_zoll_rückseite_v1.png){width=70%}
 
 Nach der ersten Version des Gehäuses wurde das Design nochmal grundlegend verändert und auch die Befestigung der Akkupacks überdacht. Wie in [Abbildung 1](#fig_jg_02) zu erkennen ist, wurde zunächst vorgesehen, die Akkupacks von außen zugänglich zu machen, um einen leichteren Austausch zu ermöglichen ohne das Gehäuse von der Wand nehmen zu müssen.
 
-Figure: Die zweite Version der 7.3-Zoll-Rückseite. {#fig_jg_03}
+Figure: Abbildung 6.23: Die zweite Version der 7.3-Zoll-Rückseite. { #_abb_6_23 }
 
 ![](img/7_zoll_rückseite_v2.png){width=70%}
 
 In der zweiten Version ist nun schon mehr das finale Design wiederzufinden. Das Gehäuse wurde an den Stellen, wo nicht die Elektronik im inneren behalten wird, auf einen minimale Dicke reduziert und die Akkupacks befinden sich nun im Inneren, sodass das Gehäuse geöffnet werden muss, um diese zu tauschen.
 
-Figure: Die dritte und finale Version der 7.3-Zoll-Rückseite. {#fig_jg_04}
+Figure: Abbildung 6.24: Die dritte und finale Version der 7.3-Zoll-Rückseite. { #_abb_6_24 }
 
 ![](img/7_zoll_rückseite_v3.png){width=70%}
 
 
-In [Abbildung 3](#fig_jg_04) sieht man nun das endgültige Design des Gehäuses. Im Vergleich zur vorherigen Version wurden die Seiten abgeschrägt, um ein noch schmaleren Eindruck des Gehäuses zu erwecken. Zudem wurden die Aufhängelöcher noch versetzt, um den Schwerpunkt des Gehäuses besser auszugleichen.
+In [Abbildung 6.26](#_abb_6_26) sieht man nun das endgültige Design der Gehäuserückseite. Im Vergleich zur vorherigen Version wurden die Seiten abgeschrägt, um ein noch schmaleren Eindruck des Gehäuses zu erwecken. Zudem wurden die Aufhängelöcher noch versetzt, um den Schwerpunkt des Gehäuses besser auszugleichen.
 
-Figure: Die Rückseite des Gehäuses für das 9.7-Zoll-Epaper-Display.{#fig_jg_05}
+Figure: Abbildung 6.25: Die Rückseite des Gehäuses für das 9.7-Zoll-Epaper-Display.{ #_abb_6_25 }
 
 ![](img/10_zoll_rückseite.png){width=70%}
 
-Figure: Die Front des 7.3-Zoll-Gehäuses mit Platinenhalter und Knopfabdeckung. {#fig_jg_06}
+Figure: Abbildung 6.26: Die Front des 7.3-Zoll-Gehäuses mit Platinenhalter und Knopfabdeckung. { #_abb_6_26 }
 
 ![](img/7_zoll_front.png){width=70%}
 
-Figure: Die Front des 9.7-Zoll-Gehäuses mit Platinenhalter und Knopfabdeckung {#fig_jg_07}
+Figure: Abbildung 6.27: Die Front des 9.7-Zoll-Gehäuses mit Platinenhalter und Knopfabdeckung { #_abb_6_27 }
 
 ![](img/10_zoll_front.png){width=70%}
 
@@ -353,11 +353,11 @@ Bei der Füllung von Hohlräumen des Modells kann aus der Art und geometrischen 
 
 Um zu einen besseren Halt der Modells auf der Grundfläche des Drucker zu gewährleisten, gibt es verschieden Möglichkeiten zur Auswahl. Ein sogenannter Brim fügt beim Drucken den Außenkanten der Grundfläche eine einzelne Schicht bestimmter Breite hinzu, was die Verbindungsfläche zwischen Druck und Grundfläche erhöht. Ein Raft ist eine Art Polster zwischen dem gesamten Modell und der Druckplatte, was ein nachträgliches Verziehen des Modells durch Erkaltung des Materials verhindert. Eine letzte Variante ist ein Skirt, eine Linie auf der ersten Schicht um die Konturen der Grundfläche. Da diese nicht mit dem Modell verbunden ist, hat diese Variante keinen Einfluss auf Stabilität oder Verziehen des Drucks.[[JG_06]](Quellenverzeichnis.md#jg_06)
 
-Zusätzlich zu den bisher genannten Einstellungen, können noch weitere Parameter für den Druck bestimmt werden, diese werden jedoch nicht genauer erläutert und es werden die gegebenen Standardwerte der Slicer-Software genutzt. Die gewählten Werte der genannten Steuergrößen können der Tabelle [](#tab_jg_01) entnommen werden.
+Zusätzlich zu den bisher genannten Einstellungen, können noch weitere Parameter für den Druck bestimmt werden, diese werden jedoch nicht genauer erläutert und es werden die gegebenen Standardwerte der Slicer-Software genutzt. Die gewählten Werte der genannten Steuergrößen können der [Tabelle 6.1]( #_tab_6_1 ) entnommen werden.
 
  <center>
 
-Table: Tabelle x.x: Parameterwerte für 3D Druck der Gehäuseprototypen. {#tab_jg_01}
+Table: Tabelle 6.1: Parameterwerte für 3D Druck der Gehäuseprototypen. { #_tab_6_1 }
 
 | Parameter | Wert |
 |:---------:|:--------:|
@@ -371,19 +371,19 @@ Table: Tabelle x.x: Parameterwerte für 3D Druck der Gehäuseprototypen. {#tab_j
 </center>
 
 Nach dem Slicen wird der G-Code an den 3D-Drucker übergeben. Hier muss dann nur noch das passende Filament einsetzen und der Druck kann starten. Nach dem Ablösen des fertigen Modells von der Druckplatte wird teilweise noch mit Hilfe eines Skalpells nachgearbeitet, um die Ungenauigkeiten des Druckers auszugleichen. Anschließend werden die Teile auf Passgenauigkeit für die Komponenten getestet und dann die bereits oben genannten Änderungen vorgenommen. 
-In [Abbildung 7](#fig_jg_08) sieht man den Zwischenstand eines Drucks. Neben dem Gehöuse selbst ist auch die Stützstruktur in Form der Bäume sehr gut zu erkennen. 
+In [Abbildung 6.28](#_abb_6_28) sieht man den Zwischenstand eines Drucks. Neben dem Gehöuse selbst ist auch die Stützstruktur in Form der Bäume sehr gut zu erkennen. 
 
-Figure: Zwischenstand beim Drucken des 7.3-Zoll-Gehäuses. {#fig_jg_08}
+Figure: Abbildung 6.28: Zwischenstand beim Drucken des 7.3-Zoll-Gehäuses. {#_abb_6_28}
 
 ![](img/7_zoll_druck.JPEG){width=70%}
 
-Nach dem Fertigen des finalen Prototyp Gehäuses werden die elektronischen Komponenten eingesetzt und das Displaymodul zusammengebaut. Die fertigen Prototypen kann man in [Abbildung 8](#_fig_jg_09) und [Abbildung 9](#_fig_jg_10) betrachten.
+Nach dem Fertigen des finalen Prototyp Gehäuses werden die elektronischen Komponenten eingesetzt und das Displaymodul zusammengebaut. Die fertigen Prototypen kann man in [Abbildung 6.29](#_abb_6_29) und [Abbildung 6.30](#_abb_6_30) betrachten.
 
-Figure: Das finale Prototyp-Gehäuse des 9.7-Zoll-Gehäuses. { #_fig_jg_09 }
+Figure: Abbildung 6.29: Das finale Prototyp-Gehäuse des 9.7-Zoll-Gehäuses. { #_abb_6_29 }
 
 ![](img/10_zoll_prototyp.jpg){width=70%}
 
-Figure: Das finale Prototyp-Gehäuse des 7.3-Zoll-Gehäuses. { #_fig_jg_10 }
+Figure: Abbildung 6.30: Das finale Prototyp-Gehäuse des 7.3-Zoll-Gehäuses. { #_abb_6_30 }
 
 ![](img/7_zoll_prototyp.jpg){width=70%}
 
@@ -394,10 +394,10 @@ Figure: Das finale Prototyp-Gehäuse des 7.3-Zoll-Gehäuses. { #_fig_jg_10 }
 
 Der Prozess, um ein Bild per WLAN zu empfangen, zu verarbeiten und es auf einem ePaper Display darzustellen, ist sehr umfangreich und während der verschiedenen Phasen ist der Stromverbrauch sehr schwankend. Daher kann mit einer statischen Strommessung kein aussagekräftiges Messergebnis produziert werden. Um den Strom dynamisch zu messen und dabei schnelle Änderungen sichtbar zu machen, eignet sich daher ein Oszilloskop als Messinstrument. Da das Oszilloskop jedoch nur Spannungen messen kann, muss hier der Umweg über einen Shunt-Widerstand gemacht werden. Der Shunt-Widerstand wird dabei in Reihe zwischen der zu messenden Last und der Masse geschaltet, mit einem Tastkopf an beiden Enden des Shunt-Widerstands verbunden, kann nun der Spannungsabfall über den Shunt-Widerstand gemessen werden. Abschließend kann über das Ohm'sche Gesetz aus dem Widerstandswert und der Spannung der durchflossene Strom berechnet werden. Viele Oszilloskope bieten daher auch die Möglichkeit an, die Achsenbeschriftung auf mA umzuschalten, um Messergebnisse mit der korrekten Einheit festhalten zu können. Es muss jedoch beachtet werden, dass das Oszilloskope nicht automatisch das Ohm'sche Gesetz anwendet, da es keine Kenntnis über den Widerstandswert hat. Somit muss dies bei den Messergebnissen mit verrechnet werden oder alternativ darauf geachtet werden, dass der Widerstand wert des Shunt-Widerstands 1 Ω so genau wie möglich erreicht. Des Weiteren ist unbedingt darauf zu achten, dass der Shunt-Widerstand zwischen Last und Masse hängt, wenn es sich um eine netzbetriebene Schaltung handelt. Zwar wäre das Messergebnis theoretisch auch korrekt, jedoch würde durch die Erdung der Masse am Tastkopf ein Kurzschluss entstehen, wenn die Masse vom Tastkopf mit einem anderen Spannungspegel, als der Masse der Schaltung, verbunden wird. Dieser Kurzschluss könnte das Oszilloskop beschädigen. 
 
-In [](#_fig_MW_01) erkennt man den Versuchsaufbau für die Messung. Als Spannungsquelle dient ein Labornetzteil. Vom Pluspol des Labornetzteils führt ein Draht zum V~cc~ Pin des ESP32. Von GND des ESP32 führt ein Draht zum 1 Ω Shunt Widerstand. An diesem ist auch der Tastkopf des Oszilloskopes angeschlossen. Nach dem Shunt Widerstand führt ein Draht zu einem Multimeter. Das Multimeter dient zur Kontrolle, ob die vom Oszilloskop ausgegebenen Werte plausibel sind. Abschließend ist der zweite Kontakt vom Multimeter mit dem Minuspol des Labornetzteils verbunden. 
+In [Abbildung 6.31](#_abb_6_31) erkennt man den Versuchsaufbau für die Messung. Als Spannungsquelle dient ein Labornetzteil. Vom Pluspol des Labornetzteils führt ein Draht zum V~cc~ Pin des ESP32. Von GND des ESP32 führt ein Draht zum 1 Ω Shunt Widerstand. An diesem ist auch der Tastkopf des Oszilloskopes angeschlossen. Nach dem Shunt Widerstand führt ein Draht zu einem Multimeter. Das Multimeter dient zur Kontrolle, ob die vom Oszilloskop ausgegebenen Werte plausibel sind. Abschließend ist der zweite Kontakt vom Multimeter mit dem Minuspol des Labornetzteils verbunden. 
 
 
-Figure: Der Versuchsaufbau mit Oszilloskop, Multimeter und Labornetzteil { #_fig_MW_01 }
+Figure: Abbildung 6.31: Der Versuchsaufbau mit Oszilloskop, Multimeter und Labornetzteil { #_abb_6_31 }
 
 ![](img/Strommessung_7_3.jpeg){ width=80% }
 
@@ -405,9 +405,9 @@ Figure: Der Versuchsaufbau mit Oszilloskop, Multimeter und Labornetzteil { #_fig
 ### Messergebnisse
 **Mario Wegmann**  
 
-In [Tabelle 7.xx]( #_tab_MW_02 ) kann man einen kompletten Refresh des 7,3 Zoll großen Displays erkennen. Hierbei wird auf dem ePaper Display zuerst weiß gestellt, anschließend wird nach einer Pause eine in der Firmware hart codierte Bitmap auf dem Display angezeigt. Zum Abschluss wird erneut ein weißes Bild dargestellt. In diesem Teilversuch wurde der Stromverbrauch vom WLAN noch nicht gemessen. Für diesen Versuch wurde Democode von Hersteller WaveShare verwendet, welcher in der Quelle zu finden ist [[MW_09]](Quellenverzeichnis.md#MW_09).
+In [Tabelle 6.2]( #_tab_6_2 ) kann man einen kompletten Refresh des 7,3 Zoll großen Displays erkennen. Hierbei wird auf dem ePaper Display zuerst weiß gestellt, anschließend wird nach einer Pause eine in der Firmware hart codierte Bitmap auf dem Display angezeigt. Zum Abschluss wird erneut ein weißes Bild dargestellt. In diesem Teilversuch wurde der Stromverbrauch vom WLAN noch nicht gemessen. Für diesen Versuch wurde Democode von Hersteller WaveShare verwendet, welcher in der Quelle zu finden ist [[MW_09]](Quellenverzeichnis.md#MW_09).
 
-Table: Der Stromverbrauch aufgeteilt in Zeitabschnitte beim 7,3" Display { #_tab_MW_02 }
+Table: Tabelle 6.2: Der Stromverbrauch aufgeteilt in Zeitabschnitte beim 7,3" Display { #_tab_6_2 }
 
 | Bereich | Zustand	| Avg. Strom  [mA] |	Zeit [s] |
 |-|-|-|-|
@@ -436,17 +436,17 @@ Table: Der Stromverbrauch aufgeteilt in Zeitabschnitte beim 7,3" Display { #_tab
 
 **Benjamin Klaric**  
 
-In [Abbildung 7.xx](#_fig_BK_20) sind die geplotteten Werte von der [Tabelle 7.xx]( #_tab_MW_02 ) graphisch dargestellt.
+In [Abbildung 6.32](#_abb_6_32) sind die geplotteten Werte von der [Tabelle 6.2](#_tab_6_2) graphisch dargestellt.
 
-Figure: Plot von dem Stromvebrauch in Zeitabschnitten beim 7,3" Display { #_fig_BK_20 }
+Figure: Abbildung 6.32: Plot von dem Stromvebrauch in Zeitabschnitten beim 7,3" Display { #_abb_6_32 }
 
 ![](img/Plot-Stromverbrauch.png){ width=90% }
 
 **Mario Wegmann**  
 
-In [Tabelle 7.xx]( #_tab_MW_9_7_Strom ) sieht man die Messwerte vom Stromverbrauch beim 9,7 Zoll Display. Hierbei wird der ESP32 und das zugehörige Treiber-Board mit Strom versorgt, anschließend das Treiber-Board initialisiert und nach den Eigenschaften des angeschlossenen ePaper Displays gefragt. Erst danach wird die Bitmap zuerst an das Treiber-Board übertragen und dann vom Treiber-Board auf das Display. Abschließend wird das Treiber-Board in den Idle wieder gesetzt und zum Schluss der ESP32 zusätzlich in den Deep-sleep. Für diesen Versuch wurde Democode von GitHub verwendet, welcher in der Quelle zu finden ist [[MW_10]](Quellenverzeichnis.md#MW_10).
+In [Tabelle 6.3]( #_tab_6_3 ) sieht man die Messwerte vom Stromverbrauch beim 9,7 Zoll Display. Hierbei wird der ESP32 und das zugehörige Treiber-Board mit Strom versorgt, anschließend das Treiber-Board initialisiert und nach den Eigenschaften des angeschlossenen ePaper Displays gefragt. Erst danach wird die Bitmap zuerst an das Treiber-Board übertragen und dann vom Treiber-Board auf das Display. Abschließend wird das Treiber-Board in den Idle wieder gesetzt und zum Schluss der ESP32 zusätzlich in den Deep-sleep. Für diesen Versuch wurde Democode von GitHub verwendet, welcher in der Quelle zu finden ist [[MW_10]](Quellenverzeichnis.md#MW_10).
 
-Table: Der Stromverbrauch aufgeteilt in Zeitabschnitte beim 9,7" Display { #_tab_MW_9_7_Strom }
+Table: Tabelle 6.3 Der Stromverbrauch aufgeteilt in Zeitabschnitte beim 9,7" Display { #_tab_6_3 }
 
 | Bereich | Zustand	| Avg. Strom  [mA] |	Zeit [s] |
 |-|-|-|-|
@@ -461,17 +461,17 @@ Table: Der Stromverbrauch aufgeteilt in Zeitabschnitte beim 9,7" Display { #_tab
 
 **Benjamin Klaric**  
 
-In [Abbildung 7.xx](#_fig_BK_21) sind die geplotteten Wertee von der [Tabelle 7.xx]( #_tab_MW_9_7_Strom ) graphisch dargestellt.
+In [Abbildung 6.33](#_abb_6_33) sind die geplotteten Werte von der [Tabelle 6.3](#_tab_6_3) graphisch dargestellt.
 
-Figure: Plot von dem Stromvebrauch in Zeitabschnitten beim 9,7" Display { #_fig_BK_21 }
+Figure: Abbildung 6.33: Plot von dem Stromvebrauch in Zeitabschnitten beim 9,7" Display { #_abb_6_33 }
 
 ![](img/Plot-Stromverbrauch-2.png){ width=60% }
 
 **Mario Wegmann**  
 
-In [Tabelle 7.xx]( #_tab_MW_WIFI_Strom ) sind die Messwerte vom Stromverbrauch bei der Verwendung des ESP32 WLAN-Modems erkennbar. Hierbei ist zu beachten, dass der Verlauf nicht periodisch verläuft, sondern die relevanten Bereiche innerhalb einer Übertragung angegeben sind. 
+In [Tabelle 6.4]( #_tab_6_4 ) sind die Messwerte vom Stromverbrauch bei der Verwendung des ESP32 WLAN-Modems erkennbar. Hierbei ist zu beachten, dass der Verlauf nicht periodisch verläuft, sondern die relevanten Bereiche innerhalb einer Übertragung angegeben sind. 
 
-Table: Die relevanten Stromverbrauchsbereiche bei der Verwendung vom WLAN-Modem { #_tab_MW_WIFI_Strom }
+Table: Tabelle 6.4: Die relevanten Stromverbrauchsbereiche bei der Verwendung vom WLAN-Modem { #_tab_6_4 }
 
 | Bereich | Zustand	| Avg. Strom  [mA] |	Zeit [s] |
 |-|-|-|-|
@@ -488,18 +488,18 @@ Der Wi-Fi-Verbrauch wurde nicht berücksichtigt, da dieser von vielen Parametern
 Im nächsten Abschnitt erfolgt ein genauerer Blick auf die gemessenen Werte und deren Bedeutung.  
 
 **Stromverbrauch von 7,3" Display**  
-Das 7,3" Display hat eine längere Refresh-Zeit, was darauf zurückzuführen ist, dass es vier anstatt zwei Farben darstellen kann. Diese zusätzliche Farbunterstützung führt zu einer längeren Arbeitszeit und somit zu einem erhöhten Stromverbrauch. Der durchschnittliche Stromverbrauch des Displays kann anhand des Plots aus [Abbildung 7.xx](#_fig_BK_20) berechnet werden. Dieser liegt bei 62 mA über einen Zeitraum von 54,853 Sekunden, wobei der Verbrauch stark von der Länge der Arbeitszeit abhängt.  
+Das 7,3" Display hat eine längere Refresh-Zeit, was darauf zurückzuführen ist, dass es vier anstatt zwei Farben darstellen kann. Diese zusätzliche Farbunterstützung führt zu einer längeren Arbeitszeit und somit zu einem erhöhten Stromverbrauch. Der durchschnittliche Stromverbrauch des Displays kann anhand des Plots aus [Abbildung 6.32](#_abb_6_33) berechnet werden. Dieser liegt bei 62 mA über einen Zeitraum von 54,853 Sekunden, wobei der Verbrauch stark von der Länge der Arbeitszeit abhängt.  
 Durch den Verzicht auf einen vollständigen Refresh und die Nutzung eines Mikrocontrollers wie dem XIAO ESP32-S3, der im Deep Sleep Modus einen sehr geringen Stromverbrauch von 14 μA im Vergleich zu 9,78 mA aufweist, kann der durchschnittliche Stromverbrauch des Systems signifikant reduziert werden. Dies führt zu einer effizienteren Nutzung und einer Verringerung des Gesamtenergiebedarfs über längere Zeiträume.  
 
 **Stromverbrauch von 9,7" Display**  
 Das 9,7-Zoll-Display zeichnet sich durch eine sehr kurze Refresh-Zeit aus, was jedoch zu einem höheren Stromverbrauch bei jedem Refresh führt. Über einen Zeitraum von 4,885 Sekunden beträgt der durchschnittliche Stromverbrauch 97 mA. Dieser erhöhte Durchschnittsverbrauch wird durch die verkürzte Betriebszeit ausgeglichen.  
-In []( #_tab_MW_02 ) wird verdeutlicht, dass trotz des höheren Stromverbrauchs des 9,7-Zoll-Displays der Gesamtenergieverbrauch aufgrund der schnellen Refresh-Zeit kompensiert wird.  
+In [Tabelle 6.3]( #_tab_6_3 ) wird verdeutlicht, dass trotz des höheren Stromverbrauchs des 9,7-Zoll-Displays der Gesamtenergieverbrauch aufgrund der schnellen Refresh-Zeit kompensiert wird.  
 
 **Stromverbrauch von WLAN**
 
 **Mario Wegmann**
 
-Wie in der [Tabelle 7.xx]( #_tab_MW_WIFI_Strom ) ersichtlich, fließen bei der Verwendung vom WLAN-Modem deutlich höhere Ströme als beim reinen Betrieb mit einem Display. Jedoch ist auch erkennbar, dass gerade die aperiodischen Spitzen beim Senden mit 76 µS verhältnismäßig sehr kurz sind. Man kann somit den Beitrag der Spannungen vernachlässigen und von einem Durchschnittsverbrauch von circa 121 mA ausgehen, wenn das WLAN-Modem aktiv ist und Daten übertragen werden sollen. Dennoch empfiehlt es sich, die Nutzung vom WLAN-Modem möglichst gering zu halten. 
+Wie in der [Tabelle 6.4]( #_tab_6_4 ) ersichtlich, fließen bei der Verwendung vom WLAN-Modem deutlich höhere Ströme als beim reinen Betrieb mit einem Display. Jedoch ist auch erkennbar, dass gerade die aperiodischen Spitzen beim Senden mit 76 µS verhältnismäßig sehr kurz sind. Man kann somit den Beitrag der Spannungen vernachlässigen und von einem Durchschnittsverbrauch von circa 121 mA ausgehen, wenn das WLAN-Modem aktiv ist und Daten übertragen werden sollen. Dennoch empfiehlt es sich, die Nutzung vom WLAN-Modem möglichst gering zu halten. 
 
 
 ## A-D-Wandler Messung
@@ -507,18 +507,18 @@ Wie in der [Tabelle 7.xx]( #_tab_MW_WIFI_Strom ) ersichtlich, fließen bei der V
 
 Wie bereit in [7.5 Schaltungsentwurf](Hardware.md#schaltungsentwurf) unter **Akkuanschlüsse** erwähnt, wurde ein analoger GPIO-Pin des XIAO ESP32-S3 verwendet, um den Spannungspegel des Akkupacks zu überwachen.  
 Der XIAO ESP32-S3 bietet viele analoge Pins, wovon einer, nämlich der A9-Pin, für die oben genannte Überwachung genutzt wird. Dazu wird an diesem Pin ein Spannungsteiler aufgebaut, bei dem zwei 220 kΩ Widerstände parallel zu den Akku+ und Akku- Eingängen des Mikrocontrollers verbunden werden. Der Wert für die Widerstände wurde so gewählt, weil der Spannungsteiler immer Strom zieht, auch wenn sich der Mikrocontroller im Deep Sleep befindet, da die Widerstände direkt mit dem Akkupack verbunden sind. Mit zwei 220 kΩ Widerständen und einer Spannung zwischen 3,5V und 4,2V ergibt sich ein Verbrauch zwischen 8 µA und 9,5 µA gemäß dem Ohm'schen Gesetz, was akzeptabel ist.  
-Allerdings muss man darauf achten, dass die Widerstandswerte möglichst nah beieinander liegen, damit sich die Spannung möglichst genau halbiert. Falls die Widerstände nicht exakt gleich sind, kann man den Multiplikationsfaktor so anpassen, dass die ungenaue Aufteilung der Spannung berücksichtigt wird, indem man die Spannungsteiler-Gleichung aufstellt und anpasst, wie in [Abildung 7.xx](#_fig_BK_22) zu sehen ist. Dabei entspricht das Widerstandsverhältnis dem Multiplikationsfaktor.  
+Allerdings muss man darauf achten, dass die Widerstandswerte möglichst nah beieinander liegen, damit sich die Spannung möglichst genau halbiert. Falls die Widerstände nicht exakt gleich sind, kann man den Multiplikationsfaktor so anpassen, dass die ungenaue Aufteilung der Spannung berücksichtigt wird, indem man die Spannungsteiler-Gleichung aufstellt und anpasst, wie in [Abbildung 6.34](#_abb_6_34) zu sehen ist. Dabei entspricht das Widerstandsverhältnis dem Multiplikationsfaktor.  
 
-Figure: Umgeformte Spannungsteilerformel { #_fig_BK_22 }
+Figure: Abbildung 6.34: Umgeformte Spannungsteilerformel { #_abb_6_34 }
 
 ![](img/Formel.png){ width=60% }
 
 Die Messung muss man auch in Code implementieren, wobei von dem Hersteller der Code zur Verfügung gestellt ist. [[BK_23]](Quellenverzeichnis.md#BK_23)  
 Nach der Testmessung wurde festgestellt, dass die Messung nicht ganz genau ist, mit einem Fehler von etwa 100 mV. Dies könnte auf mehrere Gründe zurückzuführen sein, die sich aus dem Prinzip der Messung über einen analogen Pin mit Analog-Digital-Wandler (A-D-Wandler) ergeben.  
 Der A-D-Wandler im Mikrocontroller verwendet einen Abtastmechanismus, der kleine, schnelle Stromstöße verursacht. Diese können zu momentanen Spannungsabfällen aufgrund des hohen Widerstands der Spannungsteilerwiderstände führen. Daher beeinflussen hochfrequentes Rauschen oder Schwankungen in der Batteriespannung direkt den gemessenen Wert. Bei der Abtastung wird ein interner Kondensator kurzzeitig mit dem analogen Eingangspin verbunden. Dieser interne Kondensator muss sich schnell auf die Eingangsspannung aufladen. Wenn der Widerstand des Spannungsteilers hoch ist, kann er sich möglicherweise nicht schnell genug aufladen, was zu Messfehlern führt.  
-Um dieses Problem zu lösen, wurde ein Pufferkondensator von 100 nF parallel zu Akku+ und Akku- hinzugefügt. Dieser Wert ist ein typischer Wert für das Puffern in solchen Anwendungen. Dieser Kondensator fungiert als kleiner Energiespeicher, der dem A-D-Wandler die erforderliche Stromversorgung ohne signifikante Spannungsabfälle ermöglicht. Darüber hinaus filtert er hochfrequentes Rauschen heraus und reduziert die Auswirkungen von Schwankungen in der Batteriespannung. Wenn man [Abildung 7.xx](#_fig_BK_23) betrachtet, ist eine verbesserte und stabilere Kurve der Messdaten mit dem Kondensator zu erkennen. Für jeden Spannungspegel wurden 50 Datenpunkte sowohl mit als auch ohne Kondensator gemessen.  
+Um dieses Problem zu lösen, wurde ein Pufferkondensator von 100 nF parallel zu Akku+ und Akku- hinzugefügt. Dieser Wert ist ein typischer Wert für das Puffern in solchen Anwendungen. Dieser Kondensator fungiert als kleiner Energiespeicher, der dem A-D-Wandler die erforderliche Stromversorgung ohne signifikante Spannungsabfälle ermöglicht. Darüber hinaus filtert er hochfrequentes Rauschen heraus und reduziert die Auswirkungen von Schwankungen in der Batteriespannung. Wenn man [Abildung 6.35](#_abb_6_35) betrachtet, ist eine verbesserte und stabilere Kurve der Messdaten mit dem Kondensator zu erkennen. Für jeden Spannungspegel wurden 50 Datenpunkte sowohl mit als auch ohne Kondensator gemessen.  
 
-Figure: Plot von 50 Messwerten bei jedem Spannungspegel { #_fig_BK_23 }
+Figure: Plot von 50 Messwerten bei jedem Spannungspegel { #_abb_6_35 }
 
 ![](img/ADC-Plot.png){ width=100% }
 
