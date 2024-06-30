@@ -27,7 +27,9 @@ RUN python3 -m pip install --upgrade \
     mkdocs-static-i18n[material] \
     mkdocs-literate-nav \
     mike \
-    mkdocs-glightbox
+    mkdocs-glightbox \
+    mkdocs-caption
+    # git+https://github.com/flywire/caption
 
 # Install domWalters/mkdocs-to-pdf
 # Patched to add some bugfixes
