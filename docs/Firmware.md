@@ -192,8 +192,8 @@ The HTTP-Server is responsible for handling incoming HTTP requests. It is implem
 - Handling HTTP requests such as GET and POST with file upload support
 - Basic authentication
 - HTTPS support
-  [[AEG_09]](Quellenverzeichnis.md#AEG_09)
-- 
+[[AEG_09]](Quellenverzeichnis.md#AEG_09)
+ 
 ### HTTP Requests
 **Ahmet Emirhan Göktas**
 
