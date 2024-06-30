@@ -318,19 +318,19 @@ JavaScript ist eine Programmiersprache, welche im Browser ausgeführt werden kan
 
 **React**
 
-React ist eine JavaScript-Bibliothek zur Erstellung von Benutzeroberflächen. Sie verwendet eine komponentenbasierte Architektur, die es Entwicklern ermöglicht, wiederverwendbare UI-Komponenten zu erstellen und den Status von Anwendungen effizient zu verwalten. React nutzt einen virtuellen DOM zur Optimierung von Updates und zur Verbesserung der Performance. Neben React sind Vue, Angular und Svelte weitere bekannte Frontend-Bibliotheken. 
+React ist eine JavaScript-Bibliothek zur Erstellung von Benutzeroberflächen. Sie verwendet eine komponentenbasierte Architektur, die es Entwicklern ermöglicht, wiederverwendbare UI-Komponenten zu erstellen und den Status von Anwendungen effizient zu verwalten. React nutzt einen virtuellen DOM zur Optimierung von Updates und zur Verbesserung der Performance. Neben React sind Vue, Angular und Svelte weitere bekannte Frontend-Bibliotheken [[MW_12]](Quellenverzeichnis.md#MW_12). 
 
 **Structured Query Language (SQL)**
 
-SQL ist eine standardisierte Programmiersprache, die zur Verwaltung und Manipulation von Daten in relationalen Datenbanken verwendet wird. Mit SQL können Benutzer Datenbanken erstellen, ändern, abfragen und verwalten. 
+SQL ist eine standardisierte Programmiersprache, die zur Verwaltung und Manipulation von Daten in relationalen Datenbanken verwendet wird. Mit SQL können Benutzer Datenbanken erstellen, ändern, abfragen und verwalten [[MW_13]](Quellenverzeichnis.md#MW_13). 
 
 **Object Relational Mapper (ORM)**
 
-ORMs sind nützlich, weil sie die Arbeit mit Datenbanken durch typsichere, deklarative Datenmodellierung und effiziente Datenbankmigrationen erheblich vereinfachen und optimieren. Prisma ORM ist beispielsweise ein ORM, welches automatisch TypeScript-Typen generiert. Dies ermöglicht Typensicherheit und die Nutzung von Autovervollständigung im Editor, wodurch die Produktivität und Codequalität verbessert wird. ORMs reduzieren die Notwendigkeit für manuelles SQL-Schreiben und minimieren somit potenzielle Fehler. Zudem unterstützen sie verschiedene Datenbanksysteme, somit ist ein Wechsel des RDBMS mit nur wenig Änderungen am Code möglich.
+ORMs sind nützlich, weil sie die Arbeit mit Datenbanken durch typsichere, deklarative Datenmodellierung und effiziente Datenbankmigrationen erheblich vereinfachen und optimieren. Prisma ORM ist beispielsweise ein ORM, welches automatisch TypeScript-Typen generiert. Dies ermöglicht Typensicherheit und die Nutzung von Autovervollständigung im Editor, wodurch die Produktivität und Codequalität verbessert wird. ORMs reduzieren die Notwendigkeit für manuelles SQL-Schreiben und minimieren somit potenzielle Fehler. Zudem unterstützen sie verschiedene Datenbanksysteme, somit ist ein Wechsel des RDBMS mit nur wenig Änderungen am Code möglich [[MW_14]](Quellenverzeichnis.md#MW_14).
 
 **PostgreSQL**
 
-PostgreSQL ist ein relationale Datenbankmanagementsystem (RDBMS). Ein RDBMS ist eine Software, die zur Verwaltung von Datenbanken verwendet wird, die auf dem relationalen Modell basieren. In diesem Modell werden Daten in Tabellen organisiert, die aus Zeilen und Spalten bestehen. Jede Tabelle repräsentiert eine Entität, und die Beziehungen zwischen den Tabellen werden durch Primär- und Fremdschlüssel definiert. PostgreSQL ist bekannt für seine Erweiterbarkeit, Standardkonformität und fortgeschrittene Features wie komplexe Abfragen und Transaktionen. MySQL ist ein weiteres bekanntes und verbreitetes RDBMS. 
+PostgreSQL ist ein relationale Datenbankmanagementsystem (RDBMS). Ein RDBMS ist eine Software, die zur Verwaltung von Datenbanken verwendet wird, die auf dem relationalen Modell basieren. In diesem Modell werden Daten in Tabellen organisiert, die aus Zeilen und Spalten bestehen. Jede Tabelle repräsentiert eine Entität, und die Beziehungen zwischen den Tabellen werden durch Primär- und Fremdschlüssel definiert. PostgreSQL ist bekannt für seine Erweiterbarkeit, Standardkonformität und fortgeschrittene Features wie komplexe Abfragen und Transaktionen. MySQL ist ein weiteres bekanntes und verbreitetes RDBMS [[MW_15]](Quellenverzeichnis.md#MW_15). 
 
 **Webserver**
 
