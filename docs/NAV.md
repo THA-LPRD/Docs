@@ -9,6 +9,7 @@
 * [Webentwicklung](Webentwicklung.md)
 * [Ergebnisse](Ergebnisse.md)
 * [Fazit](Fazit.md)
+* [Quellen](Quellenverzeichnis.md)
 * [Glossar](Glossar.md)
 * [Beschreibung der Lösung](BeschreibungDerLösung.md)
 * [Über LPRD](about.md)

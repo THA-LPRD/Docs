@@ -3,6 +3,8 @@
 
 <!-- STASA -->
 ## Mikrocontroller 
+Stasa Lukic  
+  
 Das Gehirn des Projektes ist ein Mikrocontroller, es gibte verschiedene arten von Mikrocontrollern die man vergleichen muss um einen für sich passenden Mikrocontroller zu finden. Im folgendem Unterkapitel werden die von uns ausgewählten Mikrocontroller genauer dargestellt, ihre Eigenschaften, nachteile und auch vorteile.  
   
 Für das Projekt haben wir uns Prioritäten für den Mikrocontroller gesetzt. Als ersters sollte er genug Speicher haben sodas kein weiterer externer Speicher genutzt werden muss, dies würde unsere Kosten und gleichzeitig den Strombedarf senken da ein externes Speicher Modul Strom verbraucht und eine Latenz verursacht die längere arbeitszeiten bedeuten.  
@@ -16,23 +18,34 @@ Die Mikrocontroller wurden nicht als SMD Chip gekauft sondern als development bo
 
 Table: Eigenschaften der Mikrocontroller { #_tab_example2 }
 
-| Eigenschaften         | ESP32 S3 [[STA_01]](Quellenverzeichnis.md#STA_01)          | ESP32 C3[[STA_02]](Quellenverzeichnis.md#STA_02)          | ESP8266 [[STA_03]](Quellenverzeichnis.md#STA_03)       | STM32 [[STA_04]](Quellenverzeichnis.md#STA_04)         | RP2040 [[STA_05]](Quellenverzeichnis.md#STA_05)        | 
-| -                     | -                 | -                 | -             | -             | -             |
-| Prozessor             | Dual-core<br>240MHz | Single core<br>160MHz| Singlecore<br>160MHz| Singlecore<br>48MHz| Dual-core<br>133MHz |
-| Speicher              | 8MB Flash <br> 8MB PSRAM | 400KB SRAM<br>4MB Flash | 4MB Flash| 256KB Flash<br>64KB RAM | 2MB Flash<br>256KB RAM |
-| Wifi                  | 2,4GHz WLAN       | 2,4GHz WLAN<br>802.11b/g/n| 2,4GHz WLAN<br>802.11n | 2,4GHz LoRa|     Keins        |
-| Spannung | 3,3V | 3,3V | 3,3V | 5V | 5V |
-| Idle Strom            | 22mA              | 24.4mA            | Maximum 500mA *| 15 mA          | 24mA               |
-| Sleep Strom           | 14 μA             | 43μA              |               | 360nA              | 1,3mA            |
-| Schnittstellen | SPI, UART, IIC, IIS, 11xGPIO, 9xADC | SPI, IIC, UART, 11xGPIO, 9xADC | SPI, IIC, UART, 9xGPIO, ADC | 2xSPI, 3xIIC, 2xUART, 43xGPIO | SPI, 2xIIC, 2xUART, 30xGPIO |
-| Weitere <br> Eigneschaften | Reset Button<br>Boot button<br>Battery Charge Chip für 100mA<br>Externe Antenne | Boot button<br>Reset Button<br>Battery Charge Chip für 100mA<br>Externe Antenne | Reset button möglich<br>Antenne in Platine verbaut |  |  |
+| Eigenschaften | ESP32 S3 [[STA_01]](Quellenverzeichnis.md#STA_01) | ESP32 C3[[STA_02]](Quellenverzeichnis.md#STA_02) | ESP8266 [[STA_03]](Quellenverzeichnis.md#STA_03) |
+| -                     | -                 | -                 | -             | 
+| Prozessor             | Dual-core<br>240MHz | Single core<br>160MHz| Singlecore<br>160MHz|
+| Speicher              | 8MB Flash <br> 8MB PSRAM | 400KB SRAM<br>4MB Flash | 4MB Flash|
+| Wifi                  | 2,4GHz WLAN       | 2,4GHz WLAN<br>802.11b/g/n| 2,4GHz WLAN<br>802.11n | 
+| Spannung | 3,3V | 3,3V | 3,3V | 
+| Idle Strom            | 22mA              | 24.4mA            | Maximum 500mA *| 
+| Sleep Strom           | 14 μA             | 43μA              |               | 
+| Schnittstellen | SPI, UART, IIC, IIS, 11xGPIO, 9xADC | SPI, IIC, UART, 11xGPIO, 9xADC | SPI, IIC, UART, 9xGPIO, ADC |
+| Weitere <br> Eigneschaften | Reset Button<br>Boot button<br>Battery Charge Chip für 100mA<br>Externe Antenne | Boot button<br>Reset Button<br>Battery Charge Chip für 100mA<br>Externe Antenne | Reset button möglich<br>Antenne in Platine verbaut | 
 
 
 *Keine Angaben auser Maximum  
   
+| Eigenschaften         | STM32 [[STA_04]](Quellenverzeichnis.md#STA_04) | RP2040 [[STA_05]](Quellenverzeichnis.md#STA_05) |
+| -                     | -                                              | -                                               |
+| Prozessor | Singlecore<br>48MHz| Dual-core<br>133MHz |
+| Speicher |  256KB Flash<br>64KB RAM | 2MB Flash<br>256KB RAM |
+| Wifi | 2,4GHz LoRa|     Keins        |
+| Spannung | 5V | 5V |
+| Idle Strom            | 15 mA          | 24mA               |
+| Sleep Strom           | 360nA              | 1,3mA            |
+| Schnittstellen | 2xSPI, 3xIIC, 2xUART, 43xGPIO | SPI, 2xIIC, 2xUART, 30xGPIO |
+| Weitere <br> Eigneschaften |  |  
 
-<!-- STASA -->
 ## Stromsparende Display Technologien
+Stasa Lukic  
+  
 für dieses Projekt brauchen wir ein Display das so wenig Strom verbraucht wie möglich, damit unser Room display solange wie möglich mit einer Akku Ladung aushält. Wir fokussierten unsere Recherche auf ePaper, bistabile LCDs und OLED displays.  
 
 ### OLED
@@ -47,7 +60,8 @@ ePaper hat ein ähnliches Konzept wie Bistabile LCD Displays, sie verbrauchen nu
 ## Akku Technologien
 <!-- STASA -->
 ## Funktechnologien
-
+Stasa Lukic  
+  
 ### LoRa
 Low-Power-Wide-Area-Network-Technologie, auch genannt LoRa ist eine Stromsparende technologie um Daten über eine längere Distanz zu schicken. Dafür benutz LoRa die CSS-Modulationstechnik für eine Funkreichweite von mehreren Kilometern. Durch den niedriegen Stromverbrauch ist LoRa geeigent für hand held IoT Projekte, diese können Batterie betrieben werden für eine längere Zeit. Die Netzwerktopologie von LoRa ist Punkt-zu-Punkt oder Punkt-zu-Mehrpunkt-Netzwerke, oft in Kombination mit Gateways [[STA_12]](Quellenverzeichnis.md#STA_12).  
   
@@ -58,14 +72,15 @@ WLan ist die weitverbreiteste Netzwerk technologie für den normalen Haushalt. E
 Zigbee wurde spezifisch dafür entwickelt, wenn man geringe Datenmengen verschicken will und einen geringen Stromverbrauch haben möchte.  Ihre geringe Reichweite ist kein problem, da Zigbee sehr schnell und zuverlässig ein mesh netzwerk aufbauen kann, das heist das Zigbee selbststädnig Netzwerkpfade baut und sogar bei einzelnden ausfällen selber einen neuen netzpfad findet [[STA_11]](Quellenverzeichnis.md#STA_11).  
   
 ### Bluetooth
-Bluetooth ist ein 1990 entwickelte Punkt zu Punkt technologie die Ultra high frequency radio wellen nutzt, um über eine sehr kleine Reichweite Daten zu verschicken. [[STA_13]](Quellenverzeichnis.md#STA_13).
+Bluetooth ist ein 1990 entwickelte Punkt zu Punkt technologie die Ultra high frequency radio wellen nutzt, um über eine sehr kleine Reichweite Daten zu verschicken.
 
 ### Vergleiche der Funktechnologien
 
 Bei der Reichweite hat LoRa die längste Reichweite mit biszu 15 Kilometern aber mit einer niedrigen datenübertragung von nur 0,3kpbs bis 50 kbps, abhängig der Reichweite. WLan hat eine Reichweite biszu 100m mit wänden und biszu 300m Ausserorts, hat dafür aber eine sehr schnelle datenübertragung, mit neueren technologien wie Wi-Fi 6 sind mehrere Gbps möglich. Zigbee hat die gleiche Reichweite wie ein WLan Netzwerk, hat aber dafür den vorteil sehr zuverlässige mesh Netzwerke aufzubauen. Wie schon erwähnt besitzt sie eine niedrige datenübertragung von biszu 250 kbps aber dafür ist sie sehr Leistungs effizeint. Bluetooth hat eine Reichweite von nur 10m, besitzt aber eine mittlere und zuverlässige datenübertragung von 2 Mbps bis 3 Mbps und macht sich dafür sehr nützlich für persönliche zwecke.
 <!-- STASA -->
 ## Bildverarbeitung 
-
+Stasa Lukic  
+  
 ### Bitmaps
 
 Bitmaps speichern Bildern in einem Format, sodass jeder Pixel einzelnd Farbwerte zugeschrieben bekommt. Umso mehr Bits man einem Pixel zuweist, umso genauer kann man die Farbe darstellen.  
@@ -76,7 +91,7 @@ RGB 565 teilt jeweils Rot 5 Bits, Grün 6 Bits und 5 Bits für Blau für 65536 v
 
 Figure: 24 Bit RGB Pixel { #_fig_pixel32bit }
 
-![](img/PraktischeUndTheoGrund/Pixel32bit.png){ width=200% }
+![](img/PraktischeUndTheoGrund/Pixel32bit.png){ width=100% }
 
 
 32 Bit RGBA ergänzt noch einen alpha channel. Dieser lässt den Pixel weitere information zur Transparenz der Farbe wissen. Mit RGBA sind 4294967296 verschiedene Farben mit Transparenz möglich.  
@@ -86,14 +101,26 @@ Indexed Bitmaps können einen Farbwert eine Zahl zuweisen, benutzt ein Bild zum 
 
 Figure: Indexed Bitmap { #_fig_indexbmp }
 
-![](img/PraktischeUndTheoGrund/IndexBMPPixel.png){ width=200% }
+![](img/PraktischeUndTheoGrund/IndexBMPPixel.png){ width=100% }
 
 
 ### Dithering
 
-### Euclidean distance
+Dithering kann dann verwendet werden Um color depth in einem Bild zu imitieren, wenn wenig Farben in einem Bild verwendet werden. Ein Beispiel, in einer Indexed Bitmap gibt es nur eine begrenzte zahl an Farben, dann kann dithering einen übergang zwischen 2 Farben erzeugen. Dadurch erscheint das Bild geschmeidiger oder als hätte es einen größere bit color depth.  
+  
+Dies geschieht durch verschiedene Algorithm, je nach welches verfahren von Dithering genutzt wird. Es gibt Diffusion Dither, Pattern Dither und Noise Dither. Jedes verfahren hat eine unterschiedliche vorangehensweise wie die Farben übergehen sollen. 
+
+Figure: Verschiedene Dither verfahren [[STA_16]](Quellenverzeichnis.md#STA_16) { #_fig_dither }
+
+![](img/PraktischeUndTheoGrund/Dither.jpg){ width=50%, align=left }
 
 ### PNG dekodieren
+PNG dateien sind Bilder die kompriemiert wurden und dabei keinen Verlust an Bildqualität haben. Die Bilder werden durch eine Substitutionskompressionsmethode und eine Entropiekodierung kompriemiert. Die Substitutionskompressionsmethode versucht wiederkehrende Muster im Bild zu erkennen und diese dann Abzusepeichern. Die Entropiekodierung Baut wahrscheihnlichkeits Werte für Farben im Bild auf, PNG kann dann die Farben beim entkompriemieren nach wahrscheinlichkeit zurück sortieren.  
+  
+Um die PNG zu dekodieren kann man die PNG datei auslesen lassen als Hex format. Die ersten 8 Hexzahlen sind immer die gleichen und signaliesieren das der folgende Abschnitt an Hexzahlen einer PNG angehören. Diese 8 Hexzahlen werden auch Magische Zahlen gennant, das währen die "89 50 4E 47 0D 0A 1A 0A" [[STA_17]](Quellenverzeichnis.md#STA_17).  
+  
+Beim Auslesen sind die Hexwerte natürlich noch kompriemiert, mithilfe von einer libary wie zLib kann man die Farbwerte für jeden Pixel der PNG datei auslesen lassen [[STA_18]](Quellenverzeichnis.md#STA_18).
+
 
 
 
