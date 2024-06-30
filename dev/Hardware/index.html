@@ -141,16 +141,6 @@
 <div class="md-grid">
 <ul class="md-tabs__list">
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="..">
-        
-  
-    
-  
-  Startseite
-
-      </a>
-</li>
-<li class="md-tabs__item">
 <a class="md-tabs__link" href="../Einleitung/">
         
   
@@ -231,16 +221,6 @@
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../Ergebnisse/">
-        
-  
-    
-  
-  Ergebnisse
-
-      </a>
-</li>
-<li class="md-tabs__item">
 <a class="md-tabs__link" href="../Fazit/">
         
   
@@ -257,16 +237,6 @@
     
   
   Glossar
-
-      </a>
-</li>
-<li class="md-tabs__item">
-<a class="md-tabs__link" href="../BeschreibungDerL%C3%B6sung/">
-        
-  
-    
-  
-  Beschreibung der Lösung
 
       </a>
 </li>
@@ -316,13 +286,6 @@
 </a>
 </div>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="..">
-<span class="md-ellipsis">
-    Startseite
-  </span>
-</a>
-</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../Einleitung/">
 <span class="md-ellipsis">
@@ -498,13 +461,6 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#zusammenbau-des-displaymoduls">
-<span class="md-ellipsis">
-      Zusammenbau des Displaymoduls
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#strommessung-von-mikrocontroller-und-display">
 <span class="md-ellipsis">
       Strommessung von Mikrocontroller und Display
@@ -561,13 +517,6 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../Ergebnisse/">
-<span class="md-ellipsis">
-    Ergebnisse
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="../Fazit/">
 <span class="md-ellipsis">
     Fazit
@@ -578,13 +527,6 @@
 <a class="md-nav__link" href="../Glossar/">
 <span class="md-ellipsis">
     Glossar
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../BeschreibungDerL%C3%B6sung/">
-<span class="md-ellipsis">
-    Beschreibung der Lösung
   </span>
 </a>
 </li>
@@ -632,7 +574,7 @@ Das zweite Display besitzt 4 Farben, Weis, Schwarz, Gelb und Rot und kann mit in
 <p><figure id="_fig_Display97"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/PraktischeUndTheoGrund/Displays97.png"><img alt="" src="../img/PraktischeUndTheoGrund/Displays97.png" width="70%"/></a><figcaption> Abbildung 7.2.2: Waveshare 9.7inch ePaper Display </figcaption></figure></p>
 <p>Die erwähnten geringen Stromverbrauch haben wir selber nochmal getestet und kann man im im Kapitel <a href="./#strommessung-von-mikrocontroller-und-display">7.9 Strommessung von Mikrocontroller und Display</a> genauer nachlesen.  </p>
 <p>Ein kleiner Nachteil der Auswahl ist das verschiedene Displays verschiedene anforderungen haben. Die Displays beseitzten einen unterschiedlichen Spannungsverbrauch. Das 7.3 inch Display benutzt 3V und das größere 9.7 inch Display benutzt 5V.<br/>
-Dadurch haben wir uns entschieden einen schalter auf der Platine einzubauen der dieses Problem löst und zwischen diesen Spannungen wechselt, genaueres kann man im Kapitel <a href="./##Schaltungsentwurf">7.5 Schaltungsentwurf</a> nachlesen.</p>
+Dadurch haben wir uns entschieden einen schalter auf der Platine einzubauen der dieses Problem löst und zwischen diesen Spannungen wechselt, genaueres kann man im Kapitel <a href="./#schaltungsentwurf">7.5 Schaltungsentwurf</a> nachlesen.</p>
 <h2 id="auswahl-der-akkukomponenten">Auswahl der Akkukomponenten<a class="headerlink" href="#auswahl-der-akkukomponenten" title="Permanent link">¶</a></h2>
 <p><strong>Benjamin Klaric</strong></p>
 <p><strong>Akku</strong><br/>
@@ -728,7 +670,7 @@ Die dargestellten Ausgänge auf der <a href="#_fig_BK_16">Abildung 7.xx</a>, nä
 <p>Die ersten sieben Ausgänge kommen direkt von dem Mikrocontroller, wobei der achte Ausgang, konkret den V<sub>cc</sub> Ausgang, von dem Switch abhängig ist.  </p>
 <h2 id="platinendesign">Platinendesign<a class="headerlink" href="#platinendesign" title="Permanent link">¶</a></h2>
 <p><strong>Benjamin Klaric</strong> </p>
-<p>Mit der in <a href="../PraktischeUTheoretischeGrund/#schaltungsentwurf">7.5 Schaltungsentwurf</a> entwickelten Schaltung kann eine Platine entworfen werden. Hierfür wurde, wie bereits erwähnt, das ECAD-Programm KiCad verwendet, um die entworfene Schaltung auf einer Platine umzusetzen.<br/>
+<p>Mit der in <a href="./#schaltungsentwurf">7.5 Schaltungsentwurf</a> entwickelten Schaltung kann eine Platine entworfen werden. Hierfür wurde, wie bereits erwähnt, das ECAD-Programm KiCad verwendet, um die entworfene Schaltung auf einer Platine umzusetzen.<br/>
 Für die ausgewählten Komponenten müssen jedoch die entsprechenden <em>Footprints</em> gefunden werden. Ein Footprint definiert die Fläche und die Bohrungen, die eine Komponente benötigt, um auf der Platine montiert zu werden. Darüber hinaus werden 3D-Modelle ausgewählt, um eine bessere 3D-Ansicht in KiCad zu ermöglichen und mögliche Überlappungen der Komponenten besser zu erkennen.<br/>
 Dafür werden die Webseiten der Hersteller besucht, um die benötigten Dateien zu finden. Diese sind oft bereits verfügbar, jedoch nicht immer. In solchen Fällen ist es notwendig, mehrere Webseiten zu durchsuchen, um die erforderlichen Dateien zu finden, beispielsweise über Plattformen wie Ultra Librarian und SnapMagic. <a href="../Quellenverzeichnis/#BK_17">[BK_17]</a> <a href="../Quellenverzeichnis/#BK_18">[BK_18]</a> Auf diesen Plattformen können Symbole, Footprints und 3D-Modelle für viele Komponenten gefunden werden.<br/>
 Wenn man aus einer Schaltung eine Platine erstellen möchte, werden die Komponenten mit den dazugehörigen Footprints im PCB-Design-Programm bereits platziert angezeigt. Es ist dann erforderlich, sie an die richtigen Positionen zu bewegen, die Verdrahtung vorzunehmen und die Grenzen der Platine festzulegen. Anschließend muss ein Ground Polygon sowohl auf der oberen als auch auf der unteren Seite der Platine gezogen werden. Dabei sind die Designregeln des jeweiligen PCB-Herstellers zu beachten. In diesem Fall werden die Designregeln des Herstellers Aisler berücksichtigt, wie beispielsweise die Größe der Platine, die Größe der Vias usw. <a href="../Quellenverzeichnis/#BK_19">[BK_19]</a> Die einzelnen Schritte werden in den folgenden Abschnitten erklärt.  </p>
@@ -769,7 +711,7 @@ Deshalb wurde das Löten von Hand durchgeführt. Die verlötete Platine ist in <
 <li>Einer Halterung für die Platinen des Displays, die an der Front angebracht wird</li>
 <li>einer Rückseite, in der an der Rückwand die Halterungen für Akkupack und selbst entworfener Platine befestigt sind.</li>
 </ul>
-<p>Diese Teile werden jeweil mit Gewindeschrauben mit 2,5mm durchmesser verbunden. Die Rückseite kann konstruktionstechnisch nochmal in einen Quader für elektronische Bauteile und einer Schale für das Display unterteilt werden. Diese Teile sind jedoch fest an ihren Kanten verbunden (vgl ABB !!!!!!!!!!!!!!!!!!!!!!). Im folgenden werden die einzelnen Merkmale, die dem Gehäuse hinzugefügt werden, erläutert.</p>
+<p>Diese Teile werden jeweil mit Gewindeschrauben mit 2,5mm durchmesser verbunden. Die Rückseite kann konstruktionstechnisch nochmal in einen Quader für elektronische Bauteile und einer Schale für das Display unterteilt werden. Diese Teile sind jedoch fest an ihren Kanten verbunden. Im folgenden werden die einzelnen Merkmale, die dem Gehäuse hinzugefügt werden, erläutert.</p>
 <p>Um die einzelnen Komponenten im Inneren des Gehäuses zu fixieren, müssen für jede einzelne eine spezifische Halterung angefertigt werden. Die Akkupacks werden durch vier L-förmige Säulen, die jeweils eine Ecke der Packs umschließen, vor dem Hin und Herrutschen bewahrt. Das Herausfallen nach Vorne verhindert ein Steg, der mit zwei Schrauben über dem Akkupack angebracht wird. Die Platine wird durch zwei gegenüberliegende Nuten in der Unterseite des Gehäuses und einer konstruierten Wand im Gehäuse gehalten, indem sie seitlich in die Nuten eingeschoben wird. Hierbei wird an der Seite des Gehäuses eine Bohrung angebracht, um auch im montierten Zustand der Low Power Raumanzeige Zugang zum USB-C Anschluss des Mikrocontrollers zu haben.</p>
 <p>Da das Displaymodul wie oben erwähnt nicht in der Hand gehalten wird sondern fest vor bspw einem Hörsaal einer Hochschule platziert werden soll, werden an der Rückwand des Gehäuses zwei Langloch-Einhängeöffnungen angebracht. Um das Display dann an der Wand aufzuhängen, müssen einfach zwei Schrauben in der Wand eingeschraubt werden. Diese werden in die Öffnungen eingefädelt, dann wird das Displaymodul nach unten geschoben und ist damit an der Wand fixiert. Damit das Displaymodul auch mobil eingesetzt werden kann, wie beispielsweise bei einem Messestand, wird die untere Fläche des Gehäuses angeschrägt, dass man das Display stabil auf einen Tisch stellen kann.</p>
 <p>Wie bereits genannt, soll die Bedienung des Low Power Raumdisplays über einen Bentzerknopf gesteuert werden. Um die Benutzerfreundlichkeit zu gewährleisten, wird dieser an der Front des Displaymoduls angebracht, damit er leicht zugänglich und für alle sichtbar ist. Zusätzlich sollen die eingebauten "Boot"- und "Reset"-Knöpfe des ESP32 ebenso benutzbar bleiben, allerdings nur für den System-Administrator. Deshalb werden hierfür kleine Löcher an der Rückseite des Gehäuses angebracht, dass die Knöpfe ähnlich wie beim SIM Karten Slot eines Handys mit Hilfe eines schmalen Werkzeugs gedrückt werden können. Durch die Platzierung auf der Rückseite sind die Löcher zunächst für die Person, die vor dem Display steht, nicht sichtbar, sondern erst dann erreichbar, wenn das Displaymodul von der Wand genommen wird.</p>
@@ -777,7 +719,7 @@ Deshalb wurde das Löten von Hand durchgeführt. Die verlötete Platine ist in <
 <p>Die Halterungen für die Platinen der Beiden Epaper-Displays sind einfache Konstruktionen aus schmalen Stegen, die zylinderförmige Extrusionen besitzen, um die Platinen festzuschrauben. Hierbei unterscheiden sich die beiden Halterungen in ihren Dimensionen, da nicht nur die beiden Displays selbst, sondern auch die zugehörigen Platinen unterschiedliche Maße besitzen.</p>
 <p>Die Front des Gehäuses besitzt einen rechteckigen Ausschnitt mit einer Falz nach innen, in die das Display dann gelegt wird. Um das Display vor hineinfallen ins Gehäuse zu schützen, wird einmal die Platinenhalterung direkt an der Rückseitige des Displays angebracht und zusätzlich noch kleine Überhänge konstruiert, die das Display von hinten stützen. Desweiteren ist ein rechteckiger Ausschnitt für den Benutzerknopf in der Front vorhanden.</p>
 <p>Da im Laufe der Gehäuseentwicklung Protoypen designt und anschließend getestet werden, entstehen mehrere Entwürfe für die Umsetzung. Die folgenden drei Abbildungen <a href="#fig_jg_02">Abbildung 1</a>, <a href="#fig_jg_03">Abbildung 2</a> und  <a href="#fig_jg_04">Abbildung 3</a> zeigen die verschiedenen Versionen der Rückseite des 7.3-Zoll-Gehäuses und jeweils die Veränderungen zur vorherigen Version. Die Rückseite des 9.7-Zoll-Gehäuse wurde anschließend nach dem Vorbild des kleineren Gehäuses designt, wie man in <a href="#fig_jg_05">Abbildung 4</a> sieht. Die beiden Fronten sind zusammen mit dem Platinenhalter und der Abdeckung des Benutzerknopfes schließlich in <a href="#fig_jg_06">Abbildung 5</a> und <a href="#fig_jg_07">Abbildung 6</a> zu sehen.</p>
-<p><figure id="Cfig_jg_02"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/7_zoll_r%C3%BCckseite_v1.png"><img alt="" src="../img/7_zoll_r%C3%BCckseite_v1.png" width="70%"/></a><figcaption> Die erste Version der 7.3-Zoll-Rückseite. </figcaption></figure></p>
+<p><figure id="fig_jg_02"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/7_zoll_r%C3%BCckseite_v1.png"><img alt="" src="../img/7_zoll_r%C3%BCckseite_v1.png" width="70%"/></a><figcaption> Die erste Version der 7.3-Zoll-Rückseite. </figcaption></figure></p>
 <p>Nach der ersten Version des Gehäuses wurde das Design nochmal grundlegend verändert und auch die Befestigung der Akkupacks überdacht. Wie in <a href="#fig_jg_02">Abbildung 1</a> zu erkennen ist, wurde zunächst vorgesehen, die Akkupacks von außen zugänglich zu machen, um einen leichteren Austausch zu ermöglichen ohne das Gehäuse von der Wand nehmen zu müssen.</p>
 <p><figure id="fig_jg_03"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/7_zoll_r%C3%BCckseite_v2.png"><img alt="" src="../img/7_zoll_r%C3%BCckseite_v2.png" width="70%"/></a><figcaption> Die zweite Version der 7.3-Zoll-Rückseite. </figcaption></figure></p>
 <p>In der zweiten Version ist nun schon mehr das finale Design wiederzufinden. Das Gehäuse wurde an den Stellen, wo nicht die Elektronik im inneren behalten wird, auf einen minimale Dicke reduziert und die Akkupacks befinden sich nun im Inneren, sodass das Gehäuse geöffnet werden muss, um diese zu tauschen.</p>
@@ -835,16 +777,15 @@ Deshalb wurde das Löten von Hand durchgeführt. Die verlötete Platine ist in <
 <p>Nach dem Slicen wird der G-Code an den 3D-Drucker übergeben. Hier muss dann nur noch das passende Filament einsetzen und der Druck kann starten. Nach dem Ablösen des fertigen Modells von der Druckplatte wird teilweise noch mit Hilfe eines Skalpells nachgearbeitet, um die Ungenauigkeiten des Druckers auszugleichen. Anschließend werden die Teile auf Passgenauigkeit für die Komponenten getestet und dann die bereits oben genannten Änderungen vorgenommen. 
 In <a href="#fig_jg_08">Abbildung 7</a> sieht man den Zwischenstand eines Drucks. Neben dem Gehöuse selbst ist auch die Stützstruktur in Form der Bäume sehr gut zu erkennen. </p>
 <p><figure id="fig_jg_08"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/7_zoll_druck.JPEG"><img alt="" src="../img/7_zoll_druck.JPEG" width="70%"/></a><figcaption> Zwischenstand beim Drucken des 7.3-Zoll-Gehäuses. </figcaption></figure></p>
-<p>Nach dem Fertigen des finalen Prototyp Gehäuses werden die elektronischen Komponenten eingesetzt und das Displaymodul zusammengebaut. Die fertigen Prototypen kann man in <a href="#fig_jg_09">Abbildung 8</a> und <a href="#fig_jg_10">Abbildung 9</a> betrachten.</p>
-<p><figure id="fig_jg_09"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/10_zoll_prototyp.jpg"><img alt="" src="../img/10_zoll_prototyp.jpg" width="70%"/></a><figcaption> Das finale Prototyp-Gehäuse des 9.7-Zoll-Gehäuses. </figcaption></figure></p>
-<p><figure id="fig_jg_10"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/7_zoll_prototyp.jpg"><img alt="" src="../img/7_zoll_prototyp.jpg" width="70%"/></a><figcaption> Das finale Prototyp-Gehäuse des 7.3-Zoll-Gehäuses. </figcaption></figure></p>
-<h2 id="zusammenbau-des-displaymoduls">Zusammenbau des Displaymoduls<a class="headerlink" href="#zusammenbau-des-displaymoduls" title="Permanent link">¶</a></h2>
+<p>Nach dem Fertigen des finalen Prototyp Gehäuses werden die elektronischen Komponenten eingesetzt und das Displaymodul zusammengebaut. Die fertigen Prototypen kann man in <a href="#_fig_jg_09">Abbildung 8</a> und <a href="#_fig_jg_10">Abbildung 9</a> betrachten.</p>
+<p><figure id="_fig_jg_09"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/10_zoll_prototyp.jpg"><img alt="" src="../img/10_zoll_prototyp.jpg" width="70%"/></a><figcaption> Das finale Prototyp-Gehäuse des 9.7-Zoll-Gehäuses. </figcaption></figure></p>
+<p><figure id="_fig_jg_10"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/7_zoll_prototyp.jpg"><img alt="" src="../img/7_zoll_prototyp.jpg" width="70%"/></a><figcaption> Das finale Prototyp-Gehäuse des 7.3-Zoll-Gehäuses. </figcaption></figure></p>
 <h2 id="strommessung-von-mikrocontroller-und-display">Strommessung von Mikrocontroller und Display<a class="headerlink" href="#strommessung-von-mikrocontroller-und-display" title="Permanent link">¶</a></h2>
 <h3 id="versuchsaufbau">Versuchsaufbau<a class="headerlink" href="#versuchsaufbau" title="Permanent link">¶</a></h3>
 <p><strong>Mario Wegmann</strong></p>
 <p>Der Prozess, um ein Bild per WLAN zu empfangen, zu verarbeiten und es auf einem ePaper Display darzustellen, ist sehr umfangreich und während der verschiedenen Phasen ist der Stromverbrauch sehr schwankend. Daher kann mit einer statischen Strommessung kein aussagekräftiges Messergebnis produziert werden. Um den Strom dynamisch zu messen und dabei schnelle Änderungen sichtbar zu machen, eignet sich daher ein Oszilloskop als Messinstrument. Da das Oszilloskop jedoch nur Spannungen messen kann, muss hier der Umweg über einen Shunt-Widerstand gemacht werden. Der Shunt-Widerstand wird dabei in Reihe zwischen der zu messenden Last und der Masse geschaltet, mit einem Tastkopf an beiden Enden des Shunt-Widerstands verbunden, kann nun der Spannungsabfall über den Shunt-Widerstand gemessen werden. Abschließend kann über das Ohm'sche Gesetz aus dem Widerstandswert und der Spannung der durchflossene Strom berechnet werden. Viele Oszilloskope bieten daher auch die Möglichkeit an, die Achsenbeschriftung auf mA umzuschalten, um Messergebnisse mit der korrekten Einheit festhalten zu können. Es muss jedoch beachtet werden, dass das Oszilloskope nicht automatisch das Ohm'sche Gesetz anwendet, da es keine Kenntnis über den Widerstandswert hat. Somit muss dies bei den Messergebnissen mit verrechnet werden oder alternativ darauf geachtet werden, dass der Widerstand wert des Shunt-Widerstands 1 Ω so genau wie möglich erreicht. Des Weiteren ist unbedingt darauf zu achten, dass der Shunt-Widerstand zwischen Last und Masse hängt, wenn es sich um eine netzbetriebene Schaltung handelt. Zwar wäre das Messergebnis theoretisch auch korrekt, jedoch würde durch die Erdung der Masse am Tastkopf ein Kurzschluss entstehen, wenn die Masse vom Tastkopf mit einem anderen Spannungspegel, als der Masse der Schaltung, verbunden wird. Dieser Kurzschluss könnte das Oszilloskop beschädigen. </p>
 <p>In <a href="#_fig_MW_01"></a> erkennt man den Versuchsaufbau für die Messung. Als Spannungsquelle dient ein Labornetzteil. Vom Pluspol des Labornetzteils führt ein Draht zum V<sub>cc</sub> Pin des ESP32. Von GND des ESP32 führt ein Draht zum 1 Ω Shunt Widerstand. An diesem ist auch der Tastkopf des Oszilloskopes angeschlossen. Nach dem Shunt Widerstand führt ein Draht zu einem Multimeter. Das Multimeter dient zur Kontrolle, ob die vom Oszilloskop ausgegebenen Werte plausibel sind. Abschließend ist der zweite Kontakt vom Multimeter mit dem Minuspol des Labornetzteils verbunden. </p>
-<p><figure id="_fig_MW_01"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/Strommessung_7_6.jpeg"><img alt="" src="../img/Strommessung_7_6.jpeg" width="80%"/></a><figcaption> Der Versuchsaufbau mit Oszilloskop, Multimeter und Labornetzteil </figcaption></figure></p>
+<p><figure id="_fig_MW_01"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/Strommessung_7_3.jpeg"><img alt="" src="../img/Strommessung_7_3.jpeg" width="80%"/></a><figcaption> Der Versuchsaufbau mit Oszilloskop, Multimeter und Labornetzteil </figcaption></figure></p>
 <h3 id="messergebnisse">Messergebnisse<a class="headerlink" href="#messergebnisse" title="Permanent link">¶</a></h3>
 <p><strong>Mario Wegmann</strong> </p>
 <p>In <a href="#_tab_MW_02">Tabelle 7.xx</a> kann man einen kompletten Refresh des 7,3 Zoll großen Displays erkennen. Hierbei wird auf dem ePaper Display zuerst weiß gestellt, anschließend wird nach einer Pause eine in der Firmware hart codierte Bitmap auf dem Display angezeigt. Zum Abschluss wird erneut ein weißes Bild dargestellt. In diesem Teilversuch wurde der Stromverbrauch vom WLAN noch nicht gemessen. Für diesen Versuch wurde Democode von Hersteller WaveShare verwendet, welcher in der Quelle zu finden ist <a href="../Quellenverzeichnis/#MW_09">[MW_09]</a>.</p>
@@ -1074,7 +1015,7 @@ Das 9,7-Zoll-Display zeichnet sich durch eine sehr kurze Refresh-Zeit aus, was j
 In <a href="#_tab_MW_02"></a> wird verdeutlicht, dass trotz des höheren Stromverbrauchs des 9,7-Zoll-Displays der Gesamtenergieverbrauch aufgrund der schnellen Refresh-Zeit kompensiert wird.  </p>
 <h2 id="a-d-wandler-messung">A-D-Wandler Messung<a class="headerlink" href="#a-d-wandler-messung" title="Permanent link">¶</a></h2>
 <p><strong>Benjamin Klaric</strong> </p>
-<p>Wie bereit in <a href="../PraktischeUTheoretischeGrund/#schaltungsentwurf">7.5 Schaltungsentwurf</a> unter <strong>Akkuanschlüsse</strong> erwähnt, wurde ein analoger GPIO-Pin des XIAO ESP32-S3 verwendet, um den Spannungspegel des Akkupacks zu überwachen.  
+<p>Wie bereit in <a href="./#schaltungsentwurf">7.5 Schaltungsentwurf</a> unter <strong>Akkuanschlüsse</strong> erwähnt, wurde ein analoger GPIO-Pin des XIAO ESP32-S3 verwendet, um den Spannungspegel des Akkupacks zu überwachen.  
 Der XIAO ESP32-S3 bietet viele analoge Pins, wovon einer, nämlich der A9-Pin, für die oben genannte Überwachung genutzt wird. Dazu wird an diesem Pin ein Spannungsteiler aufgebaut, bei dem zwei 220 kΩ Widerstände parallel zu den Akku+ und Akku- Eingängen des Mikrocontrollers verbunden werden. Der Wert für die Widerstände wurde so gewählt, weil der Spannungsteiler immer Strom zieht, auch wenn sich der Mikrocontroller im Deep Sleep befindet, da die Widerstände direkt mit dem Akkupack verbunden sind. Mit zwei 220 kΩ Widerständen und einer Spannung zwischen 3,5V und 4,2V ergibt sich ein Verbrauch zwischen 8 µA und 9,5 µA gemäß dem Ohm'schen Gesetz, was akzeptabel ist.  
 Allerdings muss man darauf achten, dass die Widerstandswerte möglichst nah beieinander liegen, damit sich die Spannung möglichst genau halbiert. Falls die Widerstände nicht exakt gleich sind, kann man den Multiplikationsfaktor so anpassen, dass die ungenaue Aufteilung der Spannung berücksichtigt wird, indem man die Spannungsteiler-Gleichung aufstellt und anpasst, wie in <a href="#_fig_BK_22">Abildung 7.xx</a> zu sehen ist. Dabei entspricht das Widerstandsverhältnis dem Multiplikationsfaktor.  </p>
 <p><figure id="_fig_BK_22"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/Formel.png"><img alt="" src="../img/Formel.png" width="60%"/></a><figcaption> Umgeformte Spannungsteilerformel </figcaption></figure></p>
@@ -1182,9 +1123,9 @@ td {
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 5.5A3.5 3.5 0 0 1 15.5 9a3.5 3.5 0 0 1-3.5 3.5A3.5 3.5 0 0 1 8.5 9 3.5 3.5 0 0 1 12 5.5M5 8c.56 0 1.08.15 1.53.42-.15 1.43.27 2.85 1.13 3.96C7.16 13.34 6.16 14 5 14a3 3 0 0 1-3-3 3 3 0 0 1 3-3m14 0a3 3 0 0 1 3 3 3 3 0 0 1-3 3c-1.16 0-2.16-.66-2.66-1.62a5.536 5.536 0 0 0 1.13-3.96c.45-.27.97-.42 1.53-.42M5.5 18.25c0-2.07 2.91-3.75 6.5-3.75s6.5 1.68 6.5 3.75V20h-13v-1.75M0 20v-1.5c0-1.39 1.89-2.56 4.45-2.9-.59.68-.95 1.62-.95 2.65V20H0m24 0h-3.5v-1.75c0-1.03-.36-1.97-.95-2.65 2.56.34 4.45 1.51 4.45 2.9V20Z"></path></svg>
 </span>
 <nav>
-<a href="mailto:benjamin.klaric01@gmail.com">Benjamin Klaric</a>, 
-            <a href="mailto:118850444+bklaric1@users.noreply.github.com">Benjamin Klaric</a>, 
+<a href="mailto:118850444+bklaric1@users.noreply.github.com">Benjamin Klaric</a>, 
             <a href="mailto:jannisgroeger@gmail.com">Jannis</a>, 
+            <a href="mailto:benjamin.klaric01@gmail.com">bklaric</a>, 
             <a href="mailto:mario.wegmann@hs-augsburg.de">mwegmann</a>, 
             <a href="mailto:lukic.stasa@outlook.com">stasa</a>
 </nav>
