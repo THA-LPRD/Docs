@@ -10,3 +10,4 @@
 * [Glossar](Glossar.md)
 * [Über LPRD](about.md)
 * [Quellenverzeichnis](Quellenverzeichnis.md)
+* [Handbuch](Handbuch.md)

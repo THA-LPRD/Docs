@@ -1,4 +1,4 @@
-# Handbuch
+# Anhang 1: Handbuch
 
 ## Erste Schritte und Display Inbetriebnahme 
 **Julia Reuter**
@@ -13,7 +13,7 @@
     <ul>
       <li><strong>Modus:</strong> Festlegen des Betriebsmodus (Standalone ist der Default)</li>
       <li><strong>Displaymodul:</strong> Auswählen des gerade verbundenen Display-Moduls</li>
-      <li><strong>WiFi-Konfiguration:</strong> Eintragen der eigenen WLAN-Daten für den Netzwerkmodus</li>
+      <li><strong>WiFi-Konfiguration:</strong> Standlone: Konfigurieren der WLAN eigenen Access-Points, Netzwerk- und Servermodus: Zugangsdaten des bestehenden WLAN-Netzwerks</li>
       <li><strong>Serielles Konsolen Log Level:</strong> Für Debugging können verschiedene Konsolennachrichten aktiviert werden</li>
       <li><strong>HTTP Auth:</strong> Benutzerauthentifizierung (Festlegen Benutzerpasswort und Zugangsdaten der Benutzeroberfläche)</li>
       <li><strong>HTTPS-Setting:</strong> Über Hochladen einer Zertifikatsdatei kann die Benutzeroberfläche verschlüsselt werden</li>
