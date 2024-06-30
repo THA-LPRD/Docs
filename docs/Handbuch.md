@@ -61,7 +61,7 @@ War der Upload erfolgreich, so werden Sie benachrichtigt und das Bild sollte nac
 
 
 ## Netzwerkmodus
-**Julia Reuter*
+**Julia Reuter**  
 Nachdem Sie in den Einstellungen unter dem Punkt WiFi Konfiguration ihre WLAN-Daten eingeben und nach dem Speichern, das Display neu gestartet haben, sollte sich Ihr Modul automatisch mit dem entsprechenden WLAN verbinden. 
 Unter der zugewiesenen IP: …/index.html können Sie mit dem Upload wie gehabt fortfahren.
 
@@ -292,6 +292,10 @@ Hier ist eine Schritt-für-Schritt-Anleitung, wie Sie das Projekt auf Ihrem loka
 !!! note
 
     Abhängig vom verwendeten ESP32-Board kann es notwendig sein, die Boot-Taste zu drücken, bevor der ESP32 an den USB-Anschluss angeschlossen wird.
+
+## Bestellung von der Platine und benötigte Bauteilen
+**Benjamin Klaric**
+
 
 
 ## Quellen

@@ -94,7 +94,7 @@ S. 35f
 <a id="STA_15"></a>[STA_15] [https://en.wikipedia.org/wiki/Color_depth](https://en.wikipedia.org/wiki/Color_depth) 
 
 <!-- dithering -->
-<a id="STA_16"></a>[STA_16] [https://de.wikipedia.org/wiki/Dithering_(Bildbearbeitung)](https://de.wikipedia.org/wiki/Dithering_(Bildbearbeitung)) 
+<a id="STA_16"></a>[STA_16] [https://de.wikipedia.org/wiki/Dithering_(Bildbearbeitung) ](https://de.wikipedia.org/wiki/Dithering_(Bildbearbeitung) ) 
 
 <a id="STA_17"></a>[STA_17] [https://de.wikipedia.org/wiki/Portable_Network_Graphics#Technische_Details ](https://de.wikipedia.org/wiki/Portable_Network_Graphics#Technische_Details )
 
@@ -216,7 +216,7 @@ S. 35f
 
 <a id="AEG_23">[AEG_23] Mehrere Autoren, Waveshare wiki 7.3" Display, [https://www.waveshare.com/wiki/7.3inch_e-Paper_HAT_(G)_Manual](https://www.waveshare.com/wiki/7.3inch_e-Paper_HAT_(G)_Manual), 2024-06-29, 2023-12-08</a>
 
-<a id="AEG_024">[AEG_024] Mehrere Autoren, Was ist PNG, [https://en.wikipedia.org/w/index.php?title=PNG&oldid=1222529480](https://en.wikipedia.org/w/index.php?title=PNG&oldid=1222529480), 2024-06-29, 2024-05-06, S. 1</a>
+<a id="AEG_24">[AEG_24] Mehrere Autoren, Was ist PNG, [https://en.wikipedia.org/w/index.php?title=PNG&oldid=1222529480](https://en.wikipedia.org/w/index.php?title=PNG&oldid=1222529480), 2024-06-29, 2024-05-06, S. 1</a>
 
 <a id="AEG_25">[AEG_25] Mehrere Autoren, PNGdec Bibliothek, [https://github.com/bitbank2/PNGdec](https://github.com/bitbank2/PNGdec), 2024-06-29, 2024-04-19</a>
 

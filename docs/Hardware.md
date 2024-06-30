@@ -36,7 +36,7 @@ Figure: Abbildung 7.2.2: Waveshare 9.7inch ePaper Display { #_fig_Display97}
 Die erwähnten geringen Stromverbrauch haben wir selber nochmal getestet und kann man im im Kapitel [7.9 Strommessung von Mikrocontroller und Display](Hardware.md#strommessung-von-mikrocontroller-und-display) genauer nachlesen.  
   
 Ein kleiner Nachteil der Auswahl ist das verschiedene Displays verschiedene anforderungen haben. Die Displays beseitzten einen unterschiedlichen Spannungsverbrauch. Das 7.3 inch Display benutzt 3V und das größere 9.7 inch Display benutzt 5V.  
-Dadurch haben wir uns entschieden einen schalter auf der Platine einzubauen der dieses Problem löst und zwischen diesen Spannungen wechselt, genaueres kann man im Kapitel [7.5 Schaltungsentwurf](Hardware.md##Schaltungsentwurf) nachlesen.
+Dadurch haben wir uns entschieden einen schalter auf der Platine einzubauen der dieses Problem löst und zwischen diesen Spannungen wechselt, genaueres kann man im Kapitel [7.5 Schaltungsentwurf](Hardware.md#schaltungsentwurf) nachlesen.
 
 
 
@@ -222,7 +222,7 @@ Die ersten sieben Ausgänge kommen direkt von dem Mikrocontroller, wobei der ach
 ## Platinendesign
 **Benjamin Klaric**  
 
-Mit der in [7.5 Schaltungsentwurf](PraktischeUTheoretischeGrund.md#schaltungsentwurf) entwickelten Schaltung kann eine Platine entworfen werden. Hierfür wurde, wie bereits erwähnt, das ECAD-Programm KiCad verwendet, um die entworfene Schaltung auf einer Platine umzusetzen.  
+Mit der in [7.5 Schaltungsentwurf](Hardware.md#schaltungsentwurf) entwickelten Schaltung kann eine Platine entworfen werden. Hierfür wurde, wie bereits erwähnt, das ECAD-Programm KiCad verwendet, um die entworfene Schaltung auf einer Platine umzusetzen.  
 Für die ausgewählten Komponenten müssen jedoch die entsprechenden *Footprints* gefunden werden. Ein Footprint definiert die Fläche und die Bohrungen, die eine Komponente benötigt, um auf der Platine montiert zu werden. Darüber hinaus werden 3D-Modelle ausgewählt, um eine bessere 3D-Ansicht in KiCad zu ermöglichen und mögliche Überlappungen der Komponenten besser zu erkennen.  
 Dafür werden die Webseiten der Hersteller besucht, um die benötigten Dateien zu finden. Diese sind oft bereits verfügbar, jedoch nicht immer. In solchen Fällen ist es notwendig, mehrere Webseiten zu durchsuchen, um die erforderlichen Dateien zu finden, beispielsweise über Plattformen wie Ultra Librarian und SnapMagic. [[BK_17]](Quellenverzeichnis.md#BK_17) [[BK_18]](Quellenverzeichnis.md#BK_18) Auf diesen Plattformen können Symbole, Footprints und 3D-Modelle für viele Komponenten gefunden werden.  
 Wenn man aus einer Schaltung eine Platine erstellen möchte, werden die Komponenten mit den dazugehörigen Footprints im PCB-Design-Programm bereits platziert angezeigt. Es ist dann erforderlich, sie an die richtigen Positionen zu bewegen, die Verdrahtung vorzunehmen und die Grenzen der Platine festzulegen. Anschließend muss ein Ground Polygon sowohl auf der oberen als auch auf der unteren Seite der Platine gezogen werden. Dabei sind die Designregeln des jeweiligen PCB-Herstellers zu beachten. In diesem Fall werden die Designregeln des Herstellers Aisler berücksichtigt, wie beispielsweise die Größe der Platine, die Größe der Vias usw. [[BK_19]](Quellenverzeichnis.md#BK_19) Die einzelnen Schritte werden in den folgenden Abschnitten erklärt.  
@@ -288,7 +288,7 @@ Zum Entwickeln des 3D-Modells wird die CAD-Software "Autodesk Fusion" genutzt. D
 * Einer Halterung für die Platinen des Displays, die an der Front angebracht wird
 * einer Rückseite, in der an der Rückwand die Halterungen für Akkupack und selbst entworfener Platine befestigt sind.
 
-Diese Teile werden jeweil mit Gewindeschrauben mit 2,5mm durchmesser verbunden. Die Rückseite kann konstruktionstechnisch nochmal in einen Quader für elektronische Bauteile und einer Schale für das Display unterteilt werden. Diese Teile sind jedoch fest an ihren Kanten verbunden (vgl ABB !!!!!!!!!!!!!!!!!!!!!!). Im folgenden werden die einzelnen Merkmale, die dem Gehäuse hinzugefügt werden, erläutert.
+Diese Teile werden jeweil mit Gewindeschrauben mit 2,5mm durchmesser verbunden. Die Rückseite kann konstruktionstechnisch nochmal in einen Quader für elektronische Bauteile und einer Schale für das Display unterteilt werden. Diese Teile sind jedoch fest an ihren Kanten verbunden. Im folgenden werden die einzelnen Merkmale, die dem Gehäuse hinzugefügt werden, erläutert.
 
 Um die einzelnen Komponenten im Inneren des Gehäuses zu fixieren, müssen für jede einzelne eine spezifische Halterung angefertigt werden. Die Akkupacks werden durch vier L-förmige Säulen, die jeweils eine Ecke der Packs umschließen, vor dem Hin und Herrutschen bewahrt. Das Herausfallen nach Vorne verhindert ein Steg, der mit zwei Schrauben über dem Akkupack angebracht wird. Die Platine wird durch zwei gegenüberliegende Nuten in der Unterseite des Gehäuses und einer konstruierten Wand im Gehäuse gehalten, indem sie seitlich in die Nuten eingeschoben wird. Hierbei wird an der Seite des Gehäuses eine Bohrung angebracht, um auch im montierten Zustand der Low Power Raumanzeige Zugang zum USB-C Anschluss des Mikrocontrollers zu haben.
 
@@ -304,7 +304,7 @@ Die Front des Gehäuses besitzt einen rechteckigen Ausschnitt mit einer Falz nac
 
 Da im Laufe der Gehäuseentwicklung Protoypen designt und anschließend getestet werden, entstehen mehrere Entwürfe für die Umsetzung. Die folgenden drei Abbildungen [Abbildung 1](#fig_jg_02), [Abbildung 2](#fig_jg_03) und  [Abbildung 3](#fig_jg_04) zeigen die verschiedenen Versionen der Rückseite des 7.3-Zoll-Gehäuses und jeweils die Veränderungen zur vorherigen Version. Die Rückseite des 9.7-Zoll-Gehäuse wurde anschließend nach dem Vorbild des kleineren Gehäuses designt, wie man in [Abbildung 4](#fig_jg_05) sieht. Die beiden Fronten sind zusammen mit dem Platinenhalter und der Abdeckung des Benutzerknopfes schließlich in [Abbildung 5](#fig_jg_06) und [Abbildung 6](#fig_jg_07) zu sehen.
 
-Figure: Die erste Version der 7.3-Zoll-Rückseite. {#Cfig_jg_02}
+Figure: Die erste Version der 7.3-Zoll-Rückseite. {#fig_jg_02}
 
 ![](img/7_zoll_rückseite_v1.png){width=70%}
 
@@ -377,18 +377,15 @@ Figure: Zwischenstand beim Drucken des 7.3-Zoll-Gehäuses. {#fig_jg_08}
 
 ![](img/7_zoll_druck.JPEG){width=70%}
 
-Nach dem Fertigen des finalen Prototyp Gehäuses werden die elektronischen Komponenten eingesetzt und das Displaymodul zusammengebaut. Die fertigen Prototypen kann man in [Abbildung 8](#fig_jg_09) und [Abbildung 9](#fig_jg_10) betrachten.
+Nach dem Fertigen des finalen Prototyp Gehäuses werden die elektronischen Komponenten eingesetzt und das Displaymodul zusammengebaut. Die fertigen Prototypen kann man in [Abbildung 8](#_fig_jg_09) und [Abbildung 9](#_fig_jg_10) betrachten.
 
-Figure: Das finale Prototyp-Gehäuse des 9.7-Zoll-Gehäuses. {#fig_jg_09}
+Figure: Das finale Prototyp-Gehäuse des 9.7-Zoll-Gehäuses. { #_fig_jg_09 }
 
 ![](img/10_zoll_prototyp.jpg){width=70%}
 
-Figure: Das finale Prototyp-Gehäuse des 7.3-Zoll-Gehäuses. {#fig_jg_10}
+Figure: Das finale Prototyp-Gehäuse des 7.3-Zoll-Gehäuses. { #_fig_jg_10 }
 
 ![](img/7_zoll_prototyp.jpg){width=70%}
-
-
-## Zusammenbau des Displaymoduls
 
 ## Strommessung von Mikrocontroller und Display
 ### Versuchsaufbau
@@ -402,7 +399,7 @@ In [](#_fig_MW_01) erkennt man den Versuchsaufbau für die Messung. Als Spannung
 
 Figure: Der Versuchsaufbau mit Oszilloskop, Multimeter und Labornetzteil { #_fig_MW_01 }
 
-![](img/Strommessung_7_6.jpeg){ width=80% }
+![](img/Strommessung_7_3.jpeg){ width=80% }
 
 
 ### Messergebnisse
@@ -489,7 +486,7 @@ In []( #_tab_MW_02 ) wird verdeutlicht, dass trotz des höheren Stromverbrauchs 
 ## A-D-Wandler Messung
 **Benjamin Klaric**  
 
-Wie bereit in [7.5 Schaltungsentwurf](PraktischeUTheoretischeGrund.md#schaltungsentwurf) unter **Akkuanschlüsse** erwähnt, wurde ein analoger GPIO-Pin des XIAO ESP32-S3 verwendet, um den Spannungspegel des Akkupacks zu überwachen.  
+Wie bereit in [7.5 Schaltungsentwurf](Hardware.md#schaltungsentwurf) unter **Akkuanschlüsse** erwähnt, wurde ein analoger GPIO-Pin des XIAO ESP32-S3 verwendet, um den Spannungspegel des Akkupacks zu überwachen.  
 Der XIAO ESP32-S3 bietet viele analoge Pins, wovon einer, nämlich der A9-Pin, für die oben genannte Überwachung genutzt wird. Dazu wird an diesem Pin ein Spannungsteiler aufgebaut, bei dem zwei 220 kΩ Widerstände parallel zu den Akku+ und Akku- Eingängen des Mikrocontrollers verbunden werden. Der Wert für die Widerstände wurde so gewählt, weil der Spannungsteiler immer Strom zieht, auch wenn sich der Mikrocontroller im Deep Sleep befindet, da die Widerstände direkt mit dem Akkupack verbunden sind. Mit zwei 220 kΩ Widerständen und einer Spannung zwischen 3,5V und 4,2V ergibt sich ein Verbrauch zwischen 8 µA und 9,5 µA gemäß dem Ohm'schen Gesetz, was akzeptabel ist.  
 Allerdings muss man darauf achten, dass die Widerstandswerte möglichst nah beieinander liegen, damit sich die Spannung möglichst genau halbiert. Falls die Widerstände nicht exakt gleich sind, kann man den Multiplikationsfaktor so anpassen, dass die ungenaue Aufteilung der Spannung berücksichtigt wird, indem man die Spannungsteiler-Gleichung aufstellt und anpasst, wie in [Abildung 7.xx](#_fig_BK_22) zu sehen ist. Dabei entspricht das Widerstandsverhältnis dem Multiplikationsfaktor.  
 

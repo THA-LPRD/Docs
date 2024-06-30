@@ -31,7 +31,7 @@ Table: Tabelle 3.1.1: Eigenschaften der Mikrocontroller
 | Weitere <br> Eigneschaften | Reset Button<br>Boot button<br>Battery Charge Chip für 100mA<br>Externe Antenne | Boot button<br>Reset Button<br>Battery Charge Chip für 100mA<br>Externe Antenne | Reset button möglich<br>Antenne in Platine verbaut | 
 
 
-*Keine Angaben auser Maximum  
+*Keine Angaben außer Maximum  
   
 | Eigenschaften         | STM32 [[STA_04]](Quellenverzeichnis.md#STA_04) | RP2040 [[STA_05]](Quellenverzeichnis.md#STA_05) |
 | -                     | -                                              | -                                               |
@@ -45,7 +45,7 @@ Table: Tabelle 3.1.1: Eigenschaften der Mikrocontroller
 | Weitere <br> Eigneschaften |  |  
 
 
-## Stromsparende Display Technologien
+## Stromsparende Display-Technologien
   
   **Stasa Lukic**
   
@@ -100,7 +100,7 @@ Der einzige Nachteil dieser Akku-Technologie ist, dass im Vergleich zu den reine
 
 <!-- STASA -->
 
-## Funktechnologien
+## Funk-Technologien
   
   **Stasa Lukic**
   
@@ -158,9 +158,9 @@ Figure: Abbildung 3.5.1.2: Indexed Bitmap
 
 Dithering kann dann verwendet werden Um color depth in einem Bild zu imitieren, wenn wenig Farben in einem Bild verwendet werden. Ein Beispiel, in einer Indexed Bitmap gibt es nur eine begrenzte zahl an Farben, dann kann dithering einen übergang zwischen 2 Farben erzeugen. Dadurch erscheint das Bild geschmeidiger oder als hätte es einen größere bit color depth.  
   
-Dies geschieht durch verschiedene Algorithm, je nach welches verfahren von Dithering genutzt wird. Es gibt Diffusion Dither, Pattern Dither und Noise Dither. Jedes verfahren hat eine unterschiedliche vorangehensweise wie die Farben übergehen sollen. 
+Dies geschieht durch verschiedene Algorithm, je nach welches verfahren von Dithering genutzt wird. Es gibt Diffusion Dither, Pattern Dither und Noise Dither. Jedes verfahren hat eine unterschiedliche vorangehensweise wie die Farben übergehen sollen. In [Abbildung3.xx]/(#_fig_STA_16) sind Ditherverfahren zu sehen.
 
-Figure: Abbildung 3.5.2.1 Verschiedene Dither verfahren [[STA_16]](Quellenverzeichnis.md#STA_16)
+Figure: Abbildung 3.5.2.1 Verschiedene Ditherverfahren [[STA_16]](Quellenverzeichnis.md#STA_16) { #_fig_STA_16 }
 
 ![](img/PraktischeUndTheoGrund/Dither.jpg){ width=14% }
   

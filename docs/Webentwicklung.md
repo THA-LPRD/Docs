@@ -136,7 +136,7 @@ Wie die Einzelkomponenten zusammenspielen, ist in [](#_fig_MW_techstack) ersicht
 
 Figure: Der Techstack der Webanwendung { #_fig_MW_techstack }
 
-![](img/Techstack.png){ width=60% }
+![](img/TechStack.png){ width=60% }
 
 Der Code wurde größtenteils in VSCode verfasst und mit der Versionskontrolle git auf GitHub verwaltet. 
 

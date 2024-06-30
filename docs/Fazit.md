@@ -3,7 +3,7 @@
 
 ## Zusammenfassung
 
-Das Projekt zur Entwicklung eines Low Power Raumdisplays war in mehrern Hinsichten ein klarer Erfolg. Das Hauptziel, eine energieeffizientes Informationsanzeige zu entwickeln, wurde erfüllt und kann, wie in den Anforderungen vgl [Kapitel 6.3](Systemkonzept.md#potentielle_einsatzgebiete_der_low-power_raumanzeige) beschrieben, nicht nur an Hochschulen, sondern auch in Firmen, an Messeständen und in Privathaushalten genutzt werden. 
+Das Projekt zur Entwicklung eines Low Power Raumdisplays war in mehrern Hinsichten ein klarer Erfolg. Das Hauptziel, eine energieeffizientes Informationsanzeige zu entwickeln, wurde erfüllt und kann, wie in den Anforderungen vgl [Kapitel 6.3](Systemkonzept.md#potentielle-einsatzgebiete-der-low-power-raumanzeige) beschrieben, nicht nur an Hochschulen, sondern auch in Firmen, an Messeständen und in Privathaushalten genutzt werden. 
 
 Das Display zeichnet sich mit einer langen Akkuklaufzeit und sehr geringer Leistungsaufnahme durch die durchdachte Auswahl stromsparender Komponenten wie das E-Paper Display und softwareseitige Hardwareverwaltung wie die Implementierung des Deepsleeps. Durch die Aufbauen eines eigenes WLAN Acces Points des Mikrocontrollers und die Stromversorgung per Akku ist das Displaymodul komplett autark von Stromnetz und Netzwerk, was den Einsatzbereich und die Anwendungsszenarien deutlich erweitert.  
 
