@@ -1,5 +1,71 @@
 # Handbuch
 
+## Erste Schritte und Display Inbetriebnahme 
+**Julia Reuter**
+<ol>
+<li> Aufwecken des Display-Moduls per Knopfdruck am unteren Gehäuserand, damit es seinen Access-Point öffnet</li>
+<li> Verfügbare WLANs checken und "THA-LPRD-..." (Endung je nach Modul) auswählen und mit dem Default Passwort: "password" verbinden</li>
+
+  <li>Im Browser die Adresse 192.168.4.1/index.html aufrufen. Sie werden sich vermutlich beim ersten Aufrufen authentifizieren müssen.  
+      Default-Benutzer: "admin" und Passwort: "admin"
+  </li>
+  <li>Nun sollten Sie auf diese Settings Page gelangen, wo Sie folgendes einstellen können:
+    <ul>
+      <li><strong>Modus:</strong> Festlegen des Betriebsmodus (Standalone ist der Default)</li>
+      <li><strong>Displaymodul:</strong> Auswählen des gerade verbundenen Display-Moduls</li>
+      <li><strong>WiFi-Konfiguration:</strong> Eintragen der eigenen WLAN-Daten für den Netzwerkmodus</li>
+      <li><strong>Serielles Konsolen Log Level:</strong> Für Debugging können verschiedene Konsolennachrichten aktiviert werden</li>
+      <li><strong>HTTP Auth:</strong> Benutzerauthentifizierung (Festlegen Benutzerpasswort und Zugangsdaten der Benutzeroberfläche)</li>
+      <li><strong>HTTPS-Setting:</strong> Über Hochladen einer Zertifikatsdatei kann die Benutzeroberfläche verschlüsselt werden</li>
+      <li><strong>Server URL:</strong> Einfügen einer Server URL für den Servermodus</li>
+    </ul>
+  </li>
+</ol>
+
+![](img/jr_settings.png){ width=100% }
+
+Alle geänderten Einstellungen müssen jeweils gespeichert werden. Über den Restart-Button wird das System neu gestartet, damit die Änderungen übernommen werden.  
+Bitte haben Sie hier einige Minuten Geduld. Falls das Verbinden mit einem externen WLAN oder Server nicht funktioniert hat, so öffnet das Display automatisch wieder nach ca. 5 min den eigenen Access Point und Sie können entweder die Konfiguration erneut versuchen oder fahren im Standalone-Modus fort.
+
+Natürlich können die Einstellungen jederzeit geändert werden.
+
+## Hochladen von Inhalten
+**Julia Reuter**
+Wenn Sie das System erfolgreich neu gestartet haben, sollten Sie auf folgende Seite (Abbildung 3) gelangen und können Sie mit dem Upload fortfahren
+
+![](img/jr_home.png){ width=100% }
+
+Hierfür stehen zwei Optionen zur Verfügung:
+<ul>
+  <li><strong>PNG-Upload</strong> (Achtung: die Pixelauflösung des PNGs muss der Pixelauflösung des verbundenen Displays entsprechen)
+    <ul>
+      <li>Die Displayauflösung wird direkt beim Aufrufen an die Seite übermittelt und sollte angezeigt werden.</li>
+    </ul>
+  </li>
+  <li><strong>HTML-Design:</strong> In dem Textfeld kann mithilfe von HTML Code ein Layout erstellt werden, was von der Webseite automatisch zu einem Bild konvertiert und an das Display geschickt wird.</li>
+</ul>
+
+![](img/jr_png.png){ width=80% }
+
+<ul>
+  <li><strong>HTML-Vorlagen:</strong> Es können auch bereits vorgefertigte HTML-Vorlagen verwendet werden.</li>
+</ul>
+
+![](img/jr_vorlage.png){ width=100% }
+
+War der Upload erfolgreich, so werden Sie benachrichtigt und das Bild sollte nach wenigen Sekunden auf dem Display erscheinen.
+
+![](img/jr_success.png){ width=100% }
+
+**Denken Sie daran, dass nach jedem erfolgreichen Bild-Upload das System in den deep-sleep gesetzt wird und nicht mehr erreichbar ist. Um den Inhalt zu ändern oder Einstellungen vorzunehmen, drücken Sie bitte den Knopf am unteren Display-Rand.**
+
+
+## Netzwerkmodus
+**Julia Reuter*
+Nachdem Sie in den Einstellungen unter dem Punkt WiFi Konfiguration ihre WLAN-Daten eingeben und nach dem Speichern, das Display neu gestartet haben, sollte sich Ihr Modul automatisch mit dem entsprechenden WLAN verbinden. 
+Unter der zugewiesenen IP: …/index.html können Sie mit dem Upload wie gehabt fortfahren.
+
+
 ## Aufsetzen des Linux Servers
 **Mario Wegmann**
 

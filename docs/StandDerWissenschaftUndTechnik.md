@@ -1,4 +1,5 @@
-# Marktanalyse aktueller Trends und Technologien im Bereich digitaler Raumanzeigen @Julia Reuter
+# Marktanalyse aktueller Trends und Technologien
+**Julia Reuter**
 
 Die Motivation des Projektteams lag bei erster Betrachtung des Projektes Low-Power Raumanzeige für die THA hauptsächlich in der Steigerung der Effizienz und des eigenen Komforts, wodurch das Projekt eher als Nischenprodukt für den internen Gebrauch angesehen wurde.
 Diese Einstellung änderte sich jedoch schnell nach einiger Recherche.
@@ -10,7 +11,7 @@ All dieses Aspekte sind Merkmale für ein durchaus zukunfttaugliches Produkt und
 
 Im Folgenden werden nun vier hauptsächlich deutsche Unternehmen analysiert, welche als Inspiration für die eigene Raumanzeige dienten und durch ihr breites Spektrum dem Team zu neuen Ansätzen und Ideen verhalfen.
 
-## Analyse einiger Konkurrenzprodukte
+## Übersicht einiger Konkurrenzprodukte
 
 Bei den ausgewählten Unternehmen und Produkten handelt es sich um:
 
@@ -76,10 +77,10 @@ Um sich von den zahlreichen Konkurrenzprodukten abzuheben, gibt es einige Ansät
 Denn auch wenn es sich um ein E-Paper Display handelt, besteht die Möglichkeit eine gewisse Benutzerinteraktion für zum Beispiel spontane Raumbuchung zu integrieren, die energiesparend und auch ohne Touchfunktion umsetzbar ist. Auch ein E-Paper-Display mit Farbunterstützung würde dazu beitragen das eher schlichtes Produkt für den Kunden optisch ansprechender zu gestalten und sich von der Masse abzuheben.
 
 Das zentrale Alleinstellungsmerkmal ist jedoch das Entwickeln eines möglichst generischen Konzeptes, das sehr flexibel einsetzbar ist.
-Denn eine Einschränkung obigen System ist, dass alle zentral über eine Serverkomponente gesteuert werden und teilweise sogar eigene Funkverteiler brauchen.
+Denn eine Einschränkung der obigen Systeme ist, dass alle zentral über eine Serverkomponente gesteuert werden und teilweise sogar eigene Funkverteiler brauchen.
 Dies ist für den Benutzer mit viel Aufwand und Kosten verbunden und lohnt sich nur für sehr große Organisationen. 
 
-Zudem ist man stets von einer externen Softwarekomponente abhängig, denn die Display Ansteuerungsschnittstelle wird ebenfalls vom Hersteller in Form von einem Server (vgl. Wizepanel) oder einer App (vgl. ROOMZ) geliefert, sodass hier eine weitere große Abhängigkeit entsteht.
+Zudem ist man stets von einer externen Softwarekomponente abhängig, denn die Display Ansteuerungsschnittstelle wird ebenfalls vom Hersteller in Form von einem Server (vgl. Wizepanel) oder einer App (vgl. ROOMZ) geliefert. So ist das System bei Ausfall oder Fehlverhalten nicht mehr einsatzfähig, bis das Problem durch eine externe Partie, sprich dem Hersteller behoben wurde.
 
 Genau hier setzt das Projektteam an und entwickelt ein Konzept, indem die Raumanzeige nicht zwingend eine zusätzliche externe Infrastruktur benötigt. 
 Es soll ein Option für eine Standalone-Funktionalität geben, sodass das Low-Power Display sowohl völlig unabhängig von jeglicher zusätzlicher Soft- und Hardware ist und autark funkionieren kann.

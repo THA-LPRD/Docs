@@ -12,18 +12,45 @@
 
 <a id="jg_05"></a> [JG_05] Thomas Jackson, Vollständig vergleichende Analys PLA vs. PETG, [https://sunlu.com.de/blogs/products-knowledge/vollstandige-vergleichende-analyse-pla-vs-petg#:~:text=PLA%20ist%20ein%20biologisch%20abbaubarer,sich%20aber%20leichter%20drucken%20l%C3%A4sst.](https://sunlu.com.de/blogs/products-knowledge/vollstandige-vergleichende-analyse-pla-vs-petg#:~:text=PLA%20ist%20ein%20biologisch%20abbaubarer,sich%20aber%20leichter%20drucken%20l%C3%A4sst.), Zugriffsdatum: 2024-06-27, Herausgabedatum: 2024-02-21
 
-- <a id="jr_01"></a>[JR_01] Wizepanel Wilke Technology [https://wizepanel.de/produkte/#schilder](https://wizepanel.de/produkte/#schilder), zuletzt aufgerufen am 25.06.24
-- <a id="jr_02"></a>[JR_02] digitalSIGNAGE Digitale Türschilder [https://www.digitalsignage.de/digitale-tuerschilder.html](https://www.digitalsignage.de/digitale-tuerschilder.html), zuletzt aufgerufen am 25.06.24
-- <a id="jr_03"></a>[JR_03] ROOMZ Display [https://roomz.io/roomz_display](https://roomz.io/roomz_display), zuletzt aufgerufen am 25.06.24
-- <a id="jr_04"></a>[JR_04] Beetronics Touchscreen-Displays [https://www.beetronics.de/c-touchscreens](https://www.beetronics.de/c-touchscreens), zuletzt aufgerufen am 25.06.24
-- <a id="jr_05"></a>[JR_05] Wizepanel 9"7 classic Datenblatt [https://wizepanel.de/downloads/DATA_Sheet_WizePanel_97_Classic_DE.pdf](https://wizepanel.de/downloads/DATA_Sheet_WizePanel_97_Classic_DE.pdf), zuletzt aufgerufen am 25.06.24
-- <a id="jr_06"></a>[JR_06] digitalSIGNAGE digitales Signboard [https://www.digitalsignage.de/portfolio-hardware/xds-1078d-digital-signage-signboard.html](https://www.digitalsignage.de/portfolio-hardware/xds-1078d-digital-signage-signboard.html), zuletzt aufgerufen am 25.06.24
-- <a id="jr_07"></a>[JR_07] Beetronics 10 Zoll Touchscreen Datenblatt [https://www.beetronics.de/datasheets/product/341](https://www.beetronics.de/datasheets/product/341), zuletzt aufgerufen am 25.06.24
-- <a id="jr_08"></a>[JR_08] Wizepanel Handbuch, S.52 [https://wizepanel.de/downloads/WizePanel_Manual_EN.pdf](https://wizepanel.de/downloads/WizePanel_Manual_EN.pdf), zuletzt aufgerufen am 25.06.24
-- <a id="jr_09"></a>[JR_09] ROOMZ Sensor [https://roomz.io/roomz_sensor/?lang=de](https://roomz.io/roomz_sensor/?lang=de), zuletzt aufgerufen am 25.06.24
-- <a id="jr_09"></a>[JR_10] myRoomz App [https://roomz.io/roomz_sensor/?lang=de](https://roomz.io/roomz_sensor/?lang=de), zuletzt aufgerufen am 25.06.24
 
-Autor, Titel, Bezugsquelle, Zugriffsdatum, Herausgabedatum 
+<a id="jr_01"></a>[JR_01] Wilke Technology GmbH, Wizepanel Digitale Türschilder [https://wizepanel.de/produkte/#schilder](https://wizepanel.de/produkte/#schilder), Zugriffsdatum: 28-06-2024, Letzte Bearbeitung: 27-09-2023
+
+<a id="jr_02"></a>[JR_02] digitalSIGNAGE.de GmbH, Digitale Türschilder [https://www.digitalsignage.de/digitale-tuerschilder.html](https://www.digitalsignage.de/digitale-tuerschilder.html), Letzte Bearbeitung: 01-03-2024, Zugriffsdatum: 28-06-2024
+
+<a id="jr_03"></a>[JR_03] ROOMZ SA, ROOMZ Display [https://roomz.io/roomz_display](https://roomz.io/roomz_display), Zugriffsdatum: 28-06-2024, Letzte Bearbeitung: 10-06-2024
+
+<a id="jr_04"></a>[JR_04] Beetronics B.V., Touchscreen-Displays [https://www.beetronics.de/c-touchscreens](https://www.beetronics.de/c-touchscreens), Zugriffsdatum: 28-06-2024, Letzte Bearbeitung: 14-04-2024
+
+<a id="jr_05"></a>[JR_05] Wilke Technology GmbH, Wizepanel 9"7 classic Datenblatt [https://wizepanel.de/downloads/DATA_Sheet_WizePanel_97_Classic_DE.pdf](https://wizepanel.de/downloads/DATA_Sheet_WizePanel_97_Classic_DE.pdf), Zugriffsdatum: 28-06-2024, Letzte Bearbeitung: 03-08-2024
+
+<a id="jr_06"></a>[JR_06] digitalSIGNAGE.de GmbH, Digitales Signboard [https://www.digitalsignage.de/portfolio-hardware/xds-1078d-digital-signage-signboard.html](https://www.digitalsignage.de/portfolio-hardware/xds-1078d-digital-signage-signboard.html), Zugriffsdatum: 28-06-2024, Letzte Bearbeitung: nicht bekannt
+
+<a id="jr_07"></a>[JR_07] Beetronics B.V., 10 Zoll Touchscreen Datenblatt [https://www.beetronics.de/datasheets/product/341](https://www.beetronics.de/datasheets/product/341), Zugriffsdatum: 28-06-2024, Letzte Bearbeitung: nicht bekannt
+
+<a id="jr_08"></a>[JR_08] Wilke Technology GmbH, Wizepanel Handbuch, S.52 [https://wizepanel.de/downloads/WizePanel_Manual_EN.pdf](https://wizepanel.de/downloads/WizePanel_Manual_EN.pdf), Zugriffsdatum: 28-06-2024, Letzte Bearbeitung: 03-08-2024
+
+<a id="jr_09"></a>[JR_09] ROOMZ SA, ROOMZ Sensor [https://roomz.io/roomz_sensor/?lang=de](https://roomz.io/roomz_sensor/?lang=de), Zugriffsdatum: 28-06-2024, Letzte Bearbeitung: 04-10-2023
+
+<a id="jr_10"></a>[JR_10] ROOMZ SA, myRoomz App [https://roomz.io/myroomz-arbeitsplatzmanagement/?lang=de](https://roomz.io/myroomz-arbeitsplatzmanagement/?lang=de), Zugriffsdatum: 28-06-2024, Letzte Bearbeitung: 04-10-2023
+
+<a id="jr_11"></a>[JR_11] Niklas von Hertzen, Html2Canvas Dokumentation [https://html2canvas.hertzen.com/documentation](https://html2canvas.hertzen.com/documentation), Zugriffsdatum: 28-06-2024, Letzte Bearbeitung: 06-06-2024
+
+<a id="jr_12"></a>[JR_12] Diverse Autoren, Document Object Level (DOM) [https://de.wikipedia.org/w/index.php?title=Document_Object_Model&oldid=235351737#Standardisierung](https://de.wikipedia.org/w/index.php?title=Document_Object_Model&oldid=235351737#Standardisierung), Zugriffsdatum: 28-06-2024, Letzte Bearbeitung: 10-07-2023
+
+<a id="jr_13"></a>[JR_13] Diverse Autoren, Same-origin Policy [https://en.wikipedia.org/w/index.php?title=Same-origin_policy&oldid=1229277634#References](https://en.wikipedia.org/w/index.php?title=Same-origin_policy&oldid=1229277634#References), Zugriffsdatum: 28-06-2024, Letzte Bearbeitung: 15-06-2024 
+
+<a id="jr_14"></a>[JR_14] Diverse Autoren, Base64 [https://en.wikipedia.org/w/index.php?title=Base64&oldid=1230643470](https://en.wikipedia.org/w/index.php?title=Base64&oldid=1230643470), Zugriffsdatum: 28-06-2024, Letzte Bearbeitung: 23-06-2024 
+
+<a id="jr_15"></a>[JR_15] Niklas von Hertzen, Html2Canvas Features [https://html2canvas.hertzen.com/getting-started](https://html2canvas.hertzen.com/getting-started), Zugriffsdatum: 28-06-2024, Letzte Bearbeitung: 06-12-2023 
+
+<a id="jr_16"></a>[JR_16] Diverse Autoren, Web development tools [https://en.wikipedia.org/w/index.php?title=Web_development_tools&oldid=1231254703](https://en.wikipedia.org/w/index.php?title=Web_development_tools&oldid=1231254703), Zugriffsdatum: 29-06-2024, Letzte Bearbeitung: 27-06-2024 
+
+<a id="jr_17"></a>[JR_17] Diverse Autoren, Log4j [https://en.wikipedia.org/w/index.php?title=Log4j&oldid=1230768614](https://en.wikipedia.org/w/index.php?title=Log4j&oldid=1230768614), Zugriffsdatum: 29-06-2024, Letzte Bearbeitung: 24-06-2024 
+
+<a id="jr_18"></a>[JR_18] Internet Security Research Group (ISRG), Über Let's Encrypt [https://letsencrypt.org/de/about/](https://letsencrypt.org/de/about/), Zugriffsdatum: 29-06-2024, Letzte Bearbeitung: 25-06-2024 
+
+<a id="jr_19"></a>[JR_19] Niklas Von Hertzen, Github html2canvas [https://github.com/niklasvh/html2canvas](https://github.com/niklasvh/html2canvas), Zugriffsdatum: 30-06-2024, Letzte Bearbeitung: 29-06-2024 
+
 
 <a id="STA_01">[STA_01] https://wiki.seeedstudio.com/xiao_esp32s3_getting_started/</a>
 
