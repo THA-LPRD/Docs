@@ -1003,6 +1003,38 @@ In <a href="#fig_jg_08">Abbildung 7</a> sieht man den Zwischenstand eines Drucks
 <p><strong>Benjamin Klaric</strong> </p>
 <p>In <a href="#_fig_BK_21">Abbildung 7.xx</a> sind die geplotteten Wertee von der <a href="#_tab_MW_9_7_Strom">Tabelle 7.xx</a> graphisch dargestellt.</p>
 <p><figure id="_fig_BK_21"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/Plot-Stromverbrauch-2.png"><img alt="" src="../img/Plot-Stromverbrauch-2.png" width="60%"/></a><figcaption> Plot von dem Stromvebrauch in Zeitabschnitten beim 9,7" Display </figcaption></figure></p>
+<p><strong>Mario Wegmann</strong> </p>
+<p>In <a href="#_tab_MW_WIFI_Strom">Tabelle 7.xx</a> sind die Messwerte vom Stromverbrauch bei der Verwendung des ESP32 WLAN-Modems erkennbar. Hierbei ist zu beachten, dass der Verlauf nicht periodisch verläuft, sondern die relevanten Bereiche innerhalb einer Übertragung angegeben sind. </p>
+<table id="_tab_MW_WIFI_Strom">
+<caption style="caption-side:bottom"> Die relevanten Stromverbrauchsbereiche bei der Verwendung vom WLAN-Modem </caption><thead>
+<tr>
+<th>Bereich</th>
+<th>Zustand</th>
+<th>Avg. Strom  [mA]</th>
+<th>Zeit [s]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.</td>
+<td>ESP im Idle, WLAN Modem ausgeschaltet</td>
+<td>49,28</td>
+<td>5,001</td>
+</tr>
+<tr>
+<td>2.</td>
+<td>ESP im Idle, WLAN Modem eingeschaltet</td>
+<td>121,64</td>
+<td>1,004</td>
+</tr>
+<tr>
+<td>3.</td>
+<td>WLAN Modem aktiv (Pakettransport)</td>
+<td>603,44</td>
+<td>76 * 10<sup>-6</sup></td>
+</tr>
+</tbody>
+</table>
 <h3 id="interpretation">Interpretation<a class="headerlink" href="#interpretation" title="Permanent link">¶</a></h3>
 <p><strong>Benjamin Klaric</strong> </p>
 <p>Der Stromverbrauch sowohl des 7,3-Zoll- als auch des 9,7-Zoll-Displays ist während eines vollen Refreshs angemessen. Es gibt jedoch einige Dinge zu berücksichtigen, nämlich dass ein voller Refresh nicht jedes Mal durchgeführt werden muss und dass der Stromverbrauch in Verbindung mit der Wi-Fi-Nutzung nicht in dieser Konfiguration gemessen wurde.<br/>
@@ -1015,6 +1047,9 @@ Durch den Verzicht auf einen vollständigen Refresh und die Nutzung eines Mikroc
 <p><strong>Stromverbrauch von 9,7" Display</strong><br/>
 Das 9,7-Zoll-Display zeichnet sich durch eine sehr kurze Refresh-Zeit aus, was jedoch zu einem höheren Stromverbrauch bei jedem Refresh führt. Über einen Zeitraum von 4,885 Sekunden beträgt der durchschnittliche Stromverbrauch 97 mA. Dieser erhöhte Durchschnittsverbrauch wird durch die verkürzte Betriebszeit ausgeglichen.<br/>
 In <a href="#_tab_MW_02"></a> wird verdeutlicht, dass trotz des höheren Stromverbrauchs des 9,7-Zoll-Displays der Gesamtenergieverbrauch aufgrund der schnellen Refresh-Zeit kompensiert wird.  </p>
+<p><strong>Stromverbrauch von WLAN</strong></p>
+<p><strong>Mario Wegmann</strong></p>
+<p>Wie in der <a href="#_tab_MW_WIFI_Strom">Tabelle 7.xx</a> ersichtlich, fließen bei der Verwendung vom WLAN-Modem deutlich höhere Ströme als beim reinen Betrieb mit einem Display. Jedoch ist auch erkennbar, dass gerade die aperiodischen Spitzen beim Senden mit 76 µS verhältnismäßig sehr kurz sind. Man kann somit den Beitrag der Spannungen vernachlässigen und von einem Durchschnittsverbrauch von circa 121 mA ausgehen, wenn das WLAN-Modem aktiv ist und Daten übertragen werden sollen. Dennoch empfiehlt es sich, die Nutzung vom WLAN-Modem möglichst gering zu halten. </p>
 <h2 id="a-d-wandler-messung">A-D-Wandler Messung<a class="headerlink" href="#a-d-wandler-messung" title="Permanent link">¶</a></h2>
 <p><strong>Benjamin Klaric</strong> </p>
 <p>Wie bereit in <a href="./#schaltungsentwurf">7.5 Schaltungsentwurf</a> unter <strong>Akkuanschlüsse</strong> erwähnt, wurde ein analoger GPIO-Pin des XIAO ESP32-S3 verwendet, um den Spannungspegel des Akkupacks zu überwachen.  
@@ -1127,6 +1162,7 @@ td {
 <nav>
 <a href="mailto:118850444+bklaric1@users.noreply.github.com">Benjamin Klaric</a>, 
             <a href="mailto:jannisgroeger@gmail.com">Jannis</a>, 
+            <a href="mailto:mario.wegmann@tha.de">Marioheld</a>, 
             <a href="mailto:benjamin.klaric01@gmail.com">bklaric</a>, 
             <a href="mailto:mario.wegmann@hs-augsburg.de">mwegmann</a>, 
             <a href="mailto:lukic.stasa@outlook.com">stasa</a>
