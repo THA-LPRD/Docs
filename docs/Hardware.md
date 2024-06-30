@@ -467,6 +467,18 @@ Figure: Plot von dem Stromvebrauch in Zeitabschnitten beim 9,7" Display { #_fig_
 
 ![](img/Plot-Stromverbrauch-2.png){ width=60% }
 
+**Mario Wegmann**  
+
+In [Tabelle 7.xx]( #_tab_MW_WIFI_Strom ) sind die Messwerte vom Stromverbrauch bei der Verwendung des ESP32 WLAN-Modems erkennbar. Hierbei ist zu beachten, dass der Verlauf nicht periodisch verläuft, sondern die relevanten Bereiche innerhalb einer Übertragung angegeben sind. 
+
+Table: Die relevanten Stromverbrauchsbereiche bei der Verwendung vom WLAN-Modem { #_tab_MW_WIFI_Strom }
+
+| Bereich | Zustand	| Avg. Strom  [mA] |	Zeit [s] |
+|-|-|-|-|
+| 1. | ESP im Idle, WLAN Modem ausgeschaltet | 49,28 | 5,001 |
+| 2. | ESP im Idle, WLAN Modem eingeschaltet | 121,64 | 1,004 |
+| 3. | WLAN Modem aktiv (Pakettransport) | 603,44 | 76 * 10^-6^ |
+
 ### Interpretation
 **Benjamin Klaric**  
 
@@ -482,6 +494,13 @@ Durch den Verzicht auf einen vollständigen Refresh und die Nutzung eines Mikroc
 **Stromverbrauch von 9,7" Display**  
 Das 9,7-Zoll-Display zeichnet sich durch eine sehr kurze Refresh-Zeit aus, was jedoch zu einem höheren Stromverbrauch bei jedem Refresh führt. Über einen Zeitraum von 4,885 Sekunden beträgt der durchschnittliche Stromverbrauch 97 mA. Dieser erhöhte Durchschnittsverbrauch wird durch die verkürzte Betriebszeit ausgeglichen.  
 In []( #_tab_MW_02 ) wird verdeutlicht, dass trotz des höheren Stromverbrauchs des 9,7-Zoll-Displays der Gesamtenergieverbrauch aufgrund der schnellen Refresh-Zeit kompensiert wird.  
+
+**Stromverbrauch von WLAN**
+
+**Mario Wegmann**
+
+Wie in der [Tabelle 7.xx]( #_tab_MW_WIFI_Strom ) ersichtlich, fließen bei der Verwendung vom WLAN-Modem deutlich höhere Ströme als beim reinen Betrieb mit einem Display. Jedoch ist auch erkennbar, dass gerade die aperiodischen Spitzen beim Senden mit 76 µS verhältnismäßig sehr kurz sind. Man kann somit den Beitrag der Spannungen vernachlässigen und von einem Durchschnittsverbrauch von circa 121 mA ausgehen, wenn das WLAN-Modem aktiv ist und Daten übertragen werden sollen. Dennoch empfiehlt es sich, die Nutzung vom WLAN-Modem möglichst gering zu halten. 
+
 
 ## A-D-Wandler Messung
 **Benjamin Klaric**  
