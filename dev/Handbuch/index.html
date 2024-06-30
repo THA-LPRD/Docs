@@ -481,89 +481,104 @@ Nachdem Sie in den Einstellungen unter dem Punkt WiFi Konfiguration ihre WLAN-Da
 Unter der zugewiesenen IP: …/index.html können Sie mit dem Upload wie gehabt fortfahren.</p>
 <h2 id="aufsetzen-des-linux-servers">Aufsetzen des Linux Servers<a class="headerlink" href="#aufsetzen-des-linux-servers" title="Permanent link">¶</a></h2>
 <p><strong>Mario Wegmann</strong></p>
-<p>In der folgenden Anleitung werden Platzhalter mit <platzhaltername> markiert. </platzhaltername></p>
-<h3 id="grundinstallation">Grundinstallation<a class="headerlink" href="#grundinstallation" title="Permanent link">¶</a></h3>
-<p>sudo apt-get install git</p>
-<h3 id="testumgebung-fur-entwicklung">Testumgebung für Entwicklung<a class="headerlink" href="#testumgebung-fur-entwicklung" title="Permanent link">¶</a></h3>
-<p>// TODO
-Zu beginn muss Node.js installiert werden. 
-Da über den apt Packetmanager nur veraltete Versionen von Node.js bereitgestellt werden, wird hier der Node Version Manager verwendet. </p>
-<p>Dieser lässt sich über folgendes Bash Skript installieren. 
-<code>curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash</code>
-Nach der Installation empfiehlt es sich die SSH Sitzung neu zu starten, damit der <code>nvm</code> Befehl auch erkannt wird. 
+<h3 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">¶</a></h3>
+<p>In der folgenden Anleitung werden Platzhalter mit <code>&lt;Platzhaltername&gt;</code> markiert. </p>
+<p>Zu Beginn sollte ein Reverseproxy installiert werden, dies ist kein absolutes Muss, aber für weitere Funktionalitäten, wie HTTP BasicAuth und SSL-Zertifikate, durchaus hilfreich. 
+Hier wurde der Caddy Reverse Proxy verwendet, aber auch Nginx oder Apache können problemlos eingesetzt werden. </p>
+<p>Um Caddy zu installieren, wird das Repository von den Caddy Maintainern hinzugefügt.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>debian-keyring<span class="w"> </span>debian-archive-keyring<span class="w"> </span>apt-transport-https<span class="w"> </span>curl
+</span><span id="__span-0-2"><a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>curl<span class="w"> </span>-1sLf<span class="w"> </span><span class="s1">'https://dl.cloudsmith.io/public/caddy/stable/gpg.key'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>gpg<span class="w"> </span>--dearmor<span class="w"> </span>-o<span class="w"> </span>/usr/share/keyrings/caddy-stable-archive-keyring.gpg
+</span><span id="__span-0-3"><a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a>curl<span class="w"> </span>-1sLf<span class="w"> </span><span class="s1">'https://dl.cloudsmith.io/public/caddy/stable/debian.deb.txt'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/apt/sources.list.d/caddy-stable.list
+</span></code></pre></div>
+<p>Anschließend können die Repositorys neu geladen und Caddy installiert werden. </p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>update
+</span><span id="__span-1-2"><a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>caddy
+</span></code></pre></div>
+<p>Der Caddy Reverseproxy wird über eine Konfigurationsdatei verwaltet, diese sollte sich unter '/etc/caddy/Caddyfile' befinden. Mit dem folgenden Code wird ein einfacher Reverseproxy auf Port :3000 der Next.js Anwendung eingerichtet, dabei wird ein lokal liegendes SSL-Zertifikat verwendet und eine Basic Auth Authentifizierung. 
+Den Passwort Hash kann man direkt mit Caddy generieren, indem <code>caddy hash-password</code>verwendet wird, diese Hilfsfunktion fragt nach dem Passwort und gibt dann den Hash aus, welcher in der Caddyfile eingetragen werden kann. </p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>lprd.informatik.tha.de {
+</span><span id="__span-2-2"><a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a>        tls /etc/ssl/certs/lprd-fullchain.pem /etc/ssl/priavte/lprd-privkey.pem
+</span><span id="__span-2-3"><a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a>        basicauth * {
+</span><span id="__span-2-4"><a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a>                &lt;Benutzername&gt; &lt;Passwort Hash&gt;
+</span><span id="__span-2-5"><a href="#__codelineno-2-5" id="__codelineno-2-5" name="__codelineno-2-5"></a>        }
+</span><span id="__span-2-6"><a href="#__codelineno-2-6" id="__codelineno-2-6" name="__codelineno-2-6"></a>        reverse_proxy 127.0.0.1:3000
+</span><span id="__span-2-7"><a href="#__codelineno-2-7" id="__codelineno-2-7" name="__codelineno-2-7"></a>}
+</span></code></pre></div>
+<p>Danach muss Node.js installiert werden. 
+Da über den apt Paketmanager nur sehr langsam aktuelle Versionen von Node.js bereitgestellt werden, wird hier der Node Version Manager (nvm) verwendet. </p>
+<p>Dieser lässt sich über folgendes Bash Skript installieren. </p>
+<p><code>curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash</code></p>
+<p>Nach der Installation empfiehlt es sich, die SSH-Sitzung neu zu starten, damit der <code>nvm</code> Befehl auch erkannt wird. 
 Anschließend kann mit <code>nvm install 20</code> die LTS-Version Node.js 20 installiert werden. 
-Mit Node.js kommt auch der <code>npm</code> Packetmanager. Mit disem lässt sich React und Next.js installieren. 
-<code>npm install next@latest react@latest react-dom@latest</code></p>
-<p>Als nächstes muss ein SSH Key für Github hinterlegt werden, damit das Repository geklont werden kann. 
-Dafür wird als erstet ein SSH Key generiert. 
-Es empfiehlt sich dabei auch ein Passphrase zu vergeben und beim Speicherort einen eindeutigen Namen zu vergeben. 
-<code>ssh-keygen -t ed25519 -C "&lt;Github E-Mail Adresse&gt;"</code>
-Als nächstes wird der SSH Agent einmal gestartet um anschließend den SSH Key beim SSH Agent hinterlegen zu können. 
-<code>eval "$(ssh-agent -s)"</code>
-Beim hinzufügen muss auch die zuvor festgelegte Passpharse eingegeben werden. 
-<code>ssh-add &lt;Speicherort des zuvor erstellten SSH Keys angeben&gt;</code></p>
+Mit Node.js kommt auch der <code>npm</code> Paketmanager. Mit diesem lässt sich React und Next.js installieren. </p>
+<p><code>npm install next@latest react@latest react-dom@latest</code></p>
+<p>Als Nächstes wird <code>git</code>installiert, um den Sourcode herunterladen zu können. </p>
+<p><code>sudo apt-get install git</code></p>
+<p>Danach muss ein SSH Key für Github hinterlegt werden, damit das Repository geklont werden kann. 
+Dafür wird als Erstes ein SSH Key generiert. 
+Es empfiehlt sich dabei auch, eine Passphrase zu vergeben und beim Speicherort einen eindeutigen Namen zu vergeben. </p>
+<p><code>ssh-keygen -t ed25519 -C "&lt;Github E-Mail Adresse&gt;"</code></p>
+<p>Als Nächstes wird der SSH Agent einmal gestartet, um anschließend den SSH Key beim SSH Agent hinterlegen zu können. </p>
+<p><code>eval "$(ssh-agent -s)"</code></p>
+<p>Beim Hinzufügen muss auch die zuvor festgelegte Passphrase eingegeben werden. </p>
+<p><code>ssh-add &lt;Speicherort des zuvor erstellten SSH Keys angeben&gt;</code></p>
 <p>Der Public Teil des SSH Keys muss auch im Github Account hinterlegt werden. 
 Dafür die URL https://github.com/settings/keys aufrufen und einen neuen SSH Key hinzufügen. </p>
-<p>Nun kann das Repository der Webanwendung geklont werden. 
-<code>git clone git@github.com:THA-LPRD/web.git lprd</code></p>
-<p>Danach wird das Verzeichnis von der Next.js Anwendung betreten.
-<code>cd lprd/lprd-server</code></p>
-<p>Die Anwendung verwendet die offizielle Schriftart der THA. Die Schriftart TWK Everett darf wegen der, von der THA erworbenen, Lizenz jedoch nur Studierenden und Mitarbeitern der Technischen Hochschule Augsburg zur verfügung gestellt werden. Die Schriftart lässt sich unter folgender URL herunterladen: https://www.tha.de/Kommunikation/Corporate-Design.page 
-Anschließend müssen die zwei Schriftfamilien TWKEverett-Bold-web.ttf und TWKEverett-Medium-web.ttf TWKEverett-Medium-web.ttf müssen im Ordner lprd-server/components/fonts kopiert werden. </p>
-<p>Als nächstes kann die PostgreSQL Datenbank aufgesetzt werden. 
-Dafür kann das Docker Image oder auch ein bestehender PostgreSQL Server verwendet werden. 
-<code>sudo docker run --name lprd-postgres -p 5432:5432 -e POSTGRES_PASSWORD=&lt;SicherersDatenbankPasswort&gt; -d postgres</code></p>
+<p>Nun kann das Repository der Webanwendung geklont werden. </p>
+<p><code>git clone git@github.com:THA-LPRD/web.git lprd</code></p>
+<p>Danach wird das Verzeichnis von der Next.js Anwendung betreten.</p>
+<p><code>cd lprd/lprd-server</code></p>
+<p>Die Anwendung verwendet die offizielle Schriftart der THA. Die Schriftart TWK Everett darf, wegen der von der THA erworbenen, Lizenz jedoch nur Studierenden und Mitarbeitern der Technischen Hochschule Augsburg zur Verfügung gestellt werden. Die Schriftart lässt sich unter folgender URL herunterladen: https://www.tha.de/Kommunikation/Corporate-Design.page 
+Anschließend müssen die zwei Schriftfamilien TWKEverett-Bold-web.ttf und TWKEverett-Medium-web.ttf TWKEverett-Medium-web.ttf im Ordner lprd-server/components/fonts kopiert werden. </p>
+<p>Als Nächstes kann die PostgreSQL-Datenbank aufgesetzt werden. 
+Dafür kann das Docker Image oder auch ein bestehender PostgreSQL Server verwendet werden. </p>
+<p><code>sudo docker run --name lprd-postgres -v pgdata:/var/lib/postgresql/data -p 5432:5432 -e POSTGRES_PASSWORD=&lt;SicherersDatenbankPasswort&gt; -d postgres</code></p>
 <p>Die URL der Datenbank muss auch noch der Next.js Anwendung bekannt gemacht werden, dies geschieht über die .env Datei. 
-Diese sollte neue angelegt werden und den folgenden Inhalt enthalten: 
-<code>DATABASE_URL="postgresql://&lt;PostgresUser&gt;:&lt;PostgresUserPassword&gt;@&lt;PostgresServerIP/Hostname&gt;:5432"</code></p>
+Diese sollte neu angelegt werden und den folgenden Inhalt enthalten: </p>
+<p><code>DATABASE_URL="postgresql://&lt;PostgresUser&gt;:&lt;PostgresUserPassword&gt;@&lt;PostgresServerIP/Hostname&gt;:5432"</code></p>
 <p>Nach der Installation der Datenbank kann diese mit Prisma mit den notwendigen Tabellen befüllt werden. </p>
 <p><code>npx prisma migrate dev --name init</code></p>
+<p>Für die Konvertierung von HTML zu PNG wird die Library node-html-to-image verwendet. Diese nutzt Puppeteer als Basis für die Konvertierung. Beim direkten Testen auf dem Server kann es vorkommen, dass Puppeteer nicht startet, da es weitere Abhängigkeiten hat. Diese fehlenden Abhängigkeiten können mit dem folgenden Befehl herausgefunden werden: </p>
+<p><code>ldd /home/&lt;USER&gt;/.cache/puppeteer/chrome/linux-&lt;VERSION&gt;/chrome-linux64/chrome | grep not</code></p>
+<p>Im Fall der hier verwendeten Debian Installation mussten folgende Pakete noch zusätzlich installiert werden. </p>
+<p><code>sudo apt-get install libgbm1 libasound2 libxkbcommon0 libatk-bridge2.0-0 libnss3</code></p>
 <p>Die Vorbereitungen sind somit abgeschlossen und der Developmentserver kann gestartet werden.</p>
-<p><code>npm run dev</code></p>
+<p><code>npm run dev</code> </p>
 <p>Unter http://localhost:3000 ist der Server nun erreichbar. </p>
-<p>Der Developmentserver kann mit dem Tastenkürze Ctrl+C beendet werden. </p>
-<h3 id="produktivumgebung-bauen">Produktivumgebung bauen<a class="headerlink" href="#produktivumgebung-bauen" title="Permanent link">¶</a></h3>
-<p>// TODO Was mit Font?
-docker build -t nextjs-docker .
-docker run -p 80:3000 nextjs-docker</p>
-<h3 id="produktivumgebung-starten">Produktivumgebung starten<a class="headerlink" href="#produktivumgebung-starten" title="Permanent link">¶</a></h3>
-<p>// TODO
-CADDY
-Cert</p>
-<p>sudo apt-get install docker</p>
+<p>Der Developmentserver kann mit dem Tastenkürzel Ctrl+C beendet werden. </p>
 <h2 id="verwenden-der-webanwendung">Verwenden der Webanwendung<a class="headerlink" href="#verwenden-der-webanwendung" title="Permanent link">¶</a></h2>
 <p><strong>Mario Wegmann</strong></p>
 <h3 id="unterseiten">Unterseiten<a class="headerlink" href="#unterseiten" title="Permanent link">¶</a></h3>
-<p>Nachdem die Anwendung gestartet wurde kann die Adresse im Browser eingegeben werden. Die Startseite, wie in <a href="#_fig_WA_Startseite"></a> ersichtlich, zeigt das Menü für die Unterseiten an. Es gibt zwei Unterseiten, unter "Displays" werden alle bereits bekannten Displays aufgelistet. In der Unterseite "Assets" werden alle vorhanden Assets angezeigt. </p>
+<p>Nachdem die Anwendung gestartet wurde, kann die Adresse im Browser eingegeben werden. Die Startseite, wie in <a href="#_fig_WA_Startseite"></a> ersichtlich, zeigt das Menü für die Unterseiten an. Es gibt zwei Unterseiten, unter »Displays« werden alle bereits bekannten Displays aufgelistet. In der Unterseite »Assets« werden alle vorhandenen Assets angezeigt. </p>
 <p><figure id="_fig_WA_Startseite"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/Handbuch/WA-Startseite.png"><img alt="" src="../img/Handbuch/WA-Startseite.png" width="60%"/></a><figcaption> Die Startseite der Webanwendung </figcaption></figure></p>
 <h3 id="neues-asset-erstellen">Neues Asset erstellen<a class="headerlink" href="#neues-asset-erstellen" title="Permanent link">¶</a></h3>
-<p>Es gibt zwei Möglichkeiten ein Asset zu erstellen, es kann entweder ein fertiges PNG hochgeladen werden, oder ein PNG aus einem HTML Code erstellt werden. Dazu kann in der "Assets"-Unterseite, welche in <a href="#_fig_WA_Assets"></a> ersichtlich ist, einer der beiden Vorgänge über die Knöpfe gestartet werden. </p>
-<p><figure id="_fig_WA_Assets"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/Handbuch/WA-Assets.png"><img alt="" src="../img/Handbuch/WA-Assets.png" width="60%"/></a><figcaption> Eine Übersicht über alle vorhanden Assets </figcaption></figure></p>
+<p>Es gibt zwei Möglichkeiten, ein Asset zu erstellen, es kann entweder ein fertiges PNG hochgeladen werden oder ein PNG aus einem HTML-Code erstellt werden. Dazu kann in der »Assets«-Unterseite, welche in <a href="#_fig_WA_Assets"></a> ersichtlich ist, einer der beiden Vorgänge über die Knöpfe gestartet werden. </p>
+<p><figure id="_fig_WA_Assets"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/Handbuch/WA-Assets.png"><img alt="" src="../img/Handbuch/WA-Assets.png" width="60%"/></a><figcaption> Eine Übersicht über alle vorhandenen Assets </figcaption></figure></p>
 <p><strong>PNG hochladen</strong></p>
-<p>Ein PNG kann auf der Unterseite Assets über den "Hochladen"-Knopf hochgeladen werden. 
-Bei hochladen muss darauf geachtet werden, dass das PNG in der richtigen Auflösung für das Display ist, welches später das Asset anzeigen soll. Ebenso kann ein Name für das Asset und wie lange es angezeigt werden soll angegeben werden. Das hochladen beginnt mit einem Druck auf den "Hochladen"-Knopf. Die <a href="#_fig_WA_Upload"></a> zeigt das Formular. </p>
-<p><figure id="_fig_WA_Upload"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/Handbuch/WA-Asset-Upload.png"><img alt="" src="../img/Handbuch/WA-Asset-Upload.png" width="60%"/></a><figcaption> Das Formular zum hochladen von bestehenden PNGs </figcaption></figure></p>
+<p>Ein PNG kann auf der Unterseite Assets über den »Hochladen«-Knopf hochgeladen werden. 
+Beim Hochladen muss darauf geachtet werden, dass das PNG in der richtigen Auflösung für das Display ist, welches später das Asset anzeigen soll. Ebenso kann ein Name für das Asset und wie lange es angezeigt werden soll, angegeben werden. Das Hochladen beginnt mit einem Druck auf den »Hochladen«-Knopf. Die <a href="#_fig_WA_Upload"></a> zeigt das Formular. </p>
+<p><figure id="_fig_WA_Upload"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/Handbuch/WA-Asset-Upload.png"><img alt="" src="../img/Handbuch/WA-Asset-Upload.png" width="60%"/></a><figcaption> Das Formular zum Hochladen von bestehenden PNGs </figcaption></figure></p>
 <p><strong>PNG aus HTML erstellen</strong>
-Auf der Unterseite Assets gibt es auch den "Erstellen aus HTML"-Knopf, dieser öffnet ein Formular, in dem der Assetname, die Anzeigedauer und der HTML Code eingegeben werden kann. Nach dem druck auf den "Generieren"-Knopf wird ein PNG erstellt und lokal abgelegt. Die <a href="#_fig_WA_HTML"></a> zeigt das Formular. </p>
-<p><figure id="_fig_WA_HTML"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/Handbuch/WA-Asset-HTML.png"><img alt="" src="../img/Handbuch/WA-Asset-HTML.png" width="60%"/></a><figcaption> Das Formular zum erstellen von PNGs aus HTML Code </figcaption></figure></p>
+Auf der Unterseite Assets gibt es auch den »Erstellen aus HTML«-Knopf, dieser öffnet ein Formular, in dem der Assetname, die Anzeigedauer und der HTML-Code eingegeben werden kann. Nach dem Druck auf den »Generieren«-Knopf wird ein PNG erstellt und lokal abgelegt. Die <a href="#_fig_WA_HTML"></a> zeigt das Formular. </p>
+<p><figure id="_fig_WA_HTML"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/Handbuch/WA-Asset-HTML.png"><img alt="" src="../img/Handbuch/WA-Asset-HTML.png" width="60%"/></a><figcaption> Das Formular zum Erstellen von PNGs aus HTML Code </figcaption></figure></p>
 <h3 id="vorhandenes-asset-bearbeiten">Vorhandenes Asset bearbeiten<a class="headerlink" href="#vorhandenes-asset-bearbeiten" title="Permanent link">¶</a></h3>
-<p>In der "Assets" Übersichtsseite kann jedes vorhandene Asset ausgewählt werden um eine Detailansicht, welche in <a href="#_fig_WA_Asset_Details"></a> ersichtlich ist, anzuzeigen. Dort können der Name, die Anzeigedauer und der HTML Code bearbeitet werden. 
+<p>In der »Assets« Übersichtsseite kann jedes vorhandene Asset ausgewählt werden, um eine Detailansicht, welche in <a href="#_fig_WA_Asset_Details"></a> ersichtlich ist, anzuzeigen. Dort können der Name, die Anzeigedauer und der HTML-Code bearbeitet werden. 
 Ebenso kann ein Asset auch gelöscht werden. </p>
 <p><figure id="_fig_WA_Asset_Details"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/Handbuch/WA-Asset-Details.png"><img alt="" src="../img/Handbuch/WA-Asset-Details.png" width="60%"/></a><figcaption> Die Detailansicht eines Assets </figcaption></figure></p>
 <h3 id="neues-displaymodul-verbinden">Neues Displaymodul verbinden<a class="headerlink" href="#neues-displaymodul-verbinden" title="Permanent link">¶</a></h3>
-<p>Beim erstmaligen einschalten eines Displaymoduls, nach dem flashen, kann in der Einrichtungsseite des Displaymoduls der Servermodus als Betriebsmodus ausgewählt werden. Ebenso kann die Server URL im dazugehörigen Textfeld angegeben werden. </p>
-<p>Die weiteren Einstellungen verhalten sich gleich wie auch bei der Einrichtung vom Netzwerkmodus bereits erläutert wurde. </p>
-<p>Nachdem die Erstkonfiguration gespeichert und das Displaymodul neu gestartet wurde, versucht es sich automatisch mit dem eingetragenen WLAN und anschlißend mit dem eingetragenen Server zu verbinden. </p>
-<p>Falls das Displaymodul sich zum ersten mal mit diesem Server verbindet, wird es automatisch in der Datenbank eingetragen, anschließend geht das Display in den Deep-sleep Modus. </p>
+<p>Beim erstmaligen Einschalten eines Displaymoduls, nach dem Flashen, kann in der Einrichtungsseite des Displaymoduls der Servermodus als Betriebsmodus ausgewählt werden. Ebenso kann die Server URL im dazugehörigen Textfeld angegeben werden. </p>
+<p>Die weiteren Einstellungen verhalten sich gleich, wie auch bei der Einrichtung des Netzwerkmodus bereits erläutert wurde. </p>
+<p>Nachdem die Erstkonfiguration gespeichert und das Displaymodul neu gestartet wurde, versucht es sich automatisch mit dem eingetragenen WLAN und anschließend mit dem eingetragenen Server zu verbinden. </p>
+<p>Falls das Displaymodul sich zum ersten Mal mit diesem Server verbindet, wird es automatisch in der Datenbank eingetragen, anschließend geht das Display in den Deep-sleep Modus. </p>
 <h3 id="vorhandenes-display-bearbeiten">Vorhandenes Display bearbeiten<a class="headerlink" href="#vorhandenes-display-bearbeiten" title="Permanent link">¶</a></h3>
-<p>Ähnlich wie bei der Assets Übersicht, können auch die Displays in der "Display"-Unterseite, welche in <a href="#_fig_WA_Displays"></a> dargestellt ist, bearbeitet werden. In der Detailansicht, diese ist in <a href="#_fig_WA_Display_Details"></a> zu erkennen, eines Displays kann die MAC-Adresse und der Zeitpunkt, zu dem sich das Display zum letzen mal beim Server gemeldet hat, eingesehen werden. Der Name des Displays und die Auflösung können bearbeitet werden. </p>
+<p>Ähnlich wie bei der Assets-Übersicht können auch die Displays in der »Display«-Unterseite, welche in <a href="#_fig_WA_Displays"></a> dargestellt ist, bearbeitet werden. In der Detailansicht, diese ist in <a href="#_fig_WA_Display_Details"></a> zu erkennen, eines Displays kann die MAC-Adresse und der Zeitpunkt, zu dem sich das Display zum letzten Mal beim Server gemeldet hat, eingesehen werden. Der Name des Displays und die Auflösung können bearbeitet werden. </p>
 <p>Zuletzt kann ein Display auch wieder gelöscht werden. </p>
 <p><figure id="_fig_WA_Displays"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/Handbuch/WA-Displays.png"><img alt="" src="../img/Handbuch/WA-Displays.png" width="60%"/></a><figcaption> Die Übersichtsseite aller Displays </figcaption></figure></p>
 <p><figure id="_fig_WA_Display_Details"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/Handbuch/WA-Display-Details.png"><img alt="" src="../img/Handbuch/WA-Display-Details.png" width="60%"/></a><figcaption> Die Detailansicht eines Displays </figcaption></figure></p>
 <h3 id="neues-asset-auf-dem-display-anzeigen">Neues Asset auf dem Display anzeigen<a class="headerlink" href="#neues-asset-auf-dem-display-anzeigen" title="Permanent link">¶</a></h3>
-<p>Sobald ein Displaymodul sich in der Webanwendung registriet hat, kann in der Webanwendung das Display ausgewählt werden. Hier können grundlegene Informationen zum Display bearbeitet und ein neues aktives Asset gesetz werden. </p>
-<p>Mit einem Tastendruck auf den vorderseitigen Knopf, kann das Display aus dem Deep-sleep Modus wieder aufgeweckt werden. Immer nach dem Aufwecken versucht das Displaymodul sich mit dem Server zu verbinden und eine neue Konfiguration zu erhalten. Die Konfiguration enthält die URL des aktuell anzuzeigenden Assets und eine Dauer in Sekunden, die angiebt, wie lange das Asset angezeigt werden soll. </p>
-<p>Das Displaymodul lädt anschließend das Asset von der angegebenen URL herunter, zeigt es an und versetzt sich anschließend wieder in den Deep-sleep Modus. Zusätzlich wird noch ein Wakeup Timer auf die angegebene Dauer gesetzt. Dieser Timer weckt somit das Displaymodul automatisch nach ablauf der Anzeigedauer auf, damit sich das Displaymodul ein neues anzuzeigendes Asset herunterlädt. </p>
+<p>Sobald ein Displaymodul sich in der Webanwendung registriert hat, kann in der Webanwendung das Display ausgewählt werden. Hier können grundlegende Informationen zum Display bearbeitet und ein neues aktives Asset gesetzt werden. </p>
+<p>Mit einem Tastendruck auf den vorderseitigen Knopf kann das Display aus dem Deep-sleep Modus wieder aufgeweckt werden. Immer nach dem Aufwecken versucht das Displaymodul, sich mit dem Server zu verbinden und eine neue Konfiguration zu erhalten. Die Konfiguration enthält die URL des aktuell anzuzeigenden Assets und eine Dauer in Sekunden, die angibt, wie lange das Asset angezeigt werden soll. </p>
+<p>Das Displaymodul lädt anschließend das Asset von der angegebenen URL herunter, zeigt es an und versetzt sich anschließend wieder in den Deep-sleep Modus. Zusätzlich wird noch ein Wakeup Timer auf die angegebene Dauer gesetzt. Dieser Timer weckt somit das Displaymodul automatisch nach Ablauf der Anzeigedauer auf, damit sich das Displaymodul ein neues anzuzeigendes Asset herunterlädt. </p>
 <h2 id="arbeiten-an-der-displaymodul-firmware">Arbeiten an der Displaymodul-Firmware<a class="headerlink" href="#arbeiten-an-der-displaymodul-firmware" title="Permanent link">¶</a></h2>
 <p><strong>Ahmet Emirhan Göktas</strong></p>
 <p>Um an diesem Projekt zu arbeiten, müssen folgende Werkzeuge auf Ihrem Computer installiert sein:</p>
@@ -578,7 +593,7 @@ Ebenso kann ein Asset auch gelöscht werden. </p>
 <ol>
 <li>Installieren Sie die PlatformIO-Erweiterung für Visual Studio Code. Sie können die Erweiterung finden, indem Sie im Erweiterungstab nach <code>PlatformIO IDE</code> suchen.</li>
 <li>Klonen Sie das Repository auf Ihren lokalen Rechner:
-    <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>git<span class="w"> </span>clone<span class="w"> </span>--recursive<span class="w"> </span>https://github.com/THA-LPRD/MCU.git
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>git<span class="w"> </span>clone<span class="w"> </span>--recursive<span class="w"> </span>https://github.com/THA-LPRD/MCU.git
 </span></code></pre></div></li>
 <li>
 <p>Klicken Sie auf das PlatformIO-Symbol auf der linken Seite von Visual Studio Code. Dort sollten Sie eine Taste namens <code>Pick a folder</code> sehen. Klicken Sie darauf und wählen Sie den Ordner aus, in den Sie das Repository geklont haben.</p>
