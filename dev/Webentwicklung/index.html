@@ -290,16 +290,6 @@
 
       </a>
 </li>
-<li class="md-tabs__item">
-<a class="md-tabs__link" href="../Handbuch/">
-        
-  
-    
-  
-  Handbuch
-
-      </a>
-</li>
 </ul>
 </div>
 </nav>
@@ -407,20 +397,85 @@
       Framework und Library Auswahl
     </span>
 </a>
-</li>
+<nav aria-label="Framework und Library Auswahl" class="md-nav">
+<ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#konvertierungsverfahren-html-png-bitmap">
+<a class="md-nav__link" href="#beschreibung-der-html2canvas-bibliothek">
 <span class="md-ellipsis">
-      Konvertierungsverfahren (HTML → PNG → Bitmap)
+      Beschreibung der html2canvas Bibliothek
+    </span>
+</a>
+<nav aria-label="Beschreibung der html2canvas Bibliothek" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#einschrankungen-von-html2canvas">
+<span class="md-ellipsis">
+      Einschränkungen von html2canvas
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#web-bneutzer-oberflache">
+<a class="md-nav__link" href="#browserkompatibilitat">
 <span class="md-ellipsis">
-      Web Bneutzer Oberfläche
+      Browserkompatibilität
     </span>
 </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#benutzerwebseite">
+<span class="md-ellipsis">
+      Benutzerwebseite
+    </span>
+</a>
+<nav aria-label="Benutzerwebseite" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#aufbau-und-funktionalitaten">
+<span class="md-ellipsis">
+      Aufbau und Funktionalitäten
+    </span>
+</a>
+<nav aria-label="Aufbau und Funktionalitäten" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#png-upload">
+<span class="md-ellipsis">
+      PNG-Upload
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#html-design">
+<span class="md-ellipsis">
+      HTML-Design
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#settings-page">
+<span class="md-ellipsis">
+      Settings Page
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#manahmen-zur-steigerung-der-benutzerfreundlichkeit">
+<span class="md-ellipsis">
+      Maßnahmen zur Steigerung der Benutzerfreundlichkeit
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#linux-webanwendung">
@@ -520,13 +575,6 @@
   </span>
 </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../Handbuch/">
-<span class="md-ellipsis">
-    Handbuch
-  </span>
-</a>
-</li>
 </ul>
 </nav>
 </div>
@@ -539,8 +587,115 @@
 </a>
 <h1 id="webentwicklung">Webentwicklung<a class="headerlink" href="#webentwicklung" title="Permanent link">¶</a></h1>
 <h2 id="framework-und-library-auswahl">Framework und Library Auswahl<a class="headerlink" href="#framework-und-library-auswahl" title="Permanent link">¶</a></h2>
-<h2 id="konvertierungsverfahren-html-png-bitmap">Konvertierungsverfahren (HTML → PNG → Bitmap)<a class="headerlink" href="#konvertierungsverfahren-html-png-bitmap" title="Permanent link">¶</a></h2>
-<h2 id="web-bneutzer-oberflache">Web Bneutzer Oberfläche<a class="headerlink" href="#web-bneutzer-oberflache" title="Permanent link">¶</a></h2>
+<p><strong>Julia Reuter</strong></p>
+<p>Die Interaktion zwischen Benutzer und Raumanzeige soll so einfach und unkompliziert wie möglich gehalten werden und dennoch genügend Funktionalitäten unterstützen.
+Sie erfolgt deshalb über eine selbsterstellte Webseite, die mithilfe von HTML5, CSS sowie JavaScript designt wurde und über den ESP32-Webserver gehostet wird. 
+Als externe Bibliothek verwendet die Benutzerwebseite nur die Javascript Library html2canvas, um äußere Abhängigkeiten so weit wie möglich zu vermeiden.
+Mit über 182.000 Downloads und 45 Releases (zuletzt am 22.01.2022) <a href="../Quellenverzeichnis/#jr_19">[JR_19]</a>, wurde sich aufgrund der Popularität und der guten Pflege bewusst für diese Bibliothek entschieden. Der Javascript-Code kann heruntergeladen werden, sodass er lokal auf dem ESP32 gespeichert und eingebunden wird.</p>
+<h3 id="beschreibung-der-html2canvas-bibliothek">Beschreibung der html2canvas Bibliothek<a class="headerlink" href="#beschreibung-der-html2canvas-bibliothek" title="Permanent link">¶</a></h3>
+<p><strong>Julia Reuter</strong></p>
+<p>Die JavaScript Library html2canvas ermöglicht es, "Screenshots" von Webseiten oder Teilen davon direkt im Browser des Benutzers zu erstellen. Im Gegensatz zu herkömmlichen Screenshots, die das tatsächliche Aussehen der Webseite pixelgenau erfassen, basiert html2canvas auf dem DOM (Document Object Model). 
+Das Document Object Model ist eine plattform- und sprachunabhängige Schnittstelle, die HTML- und XML-Dokumente als strukturierte Baumdarstellungen repräsentiert. In einem DOM-Baum ist jedes Element, Attribut und Stück Text in einem Dokument als ein "Node" (Knoten) dargestellt und kann über unter anderem auch über eine vergebene ID einzeln angesprochen werden. Diese Knoten sind durch Beziehungen wie Eltern-Kind und Geschwisterknoten miteinander verbunden, wodurch eine hierarchische Struktur entsteht <a href="../Quellenverzeichnis/#jr_12">[JR_12]</a>.</p>
+<p>Auf Grundlage der im DOM verfügbaren Informationen erstellt die Html2Canvas-Bibliothek eine Repräsentation der Webseite.
+Hierfür durchläuft  der Scrip die DOM-Struktur und sammelt Informationen über alle vorhandenen Elemente. Diese Informationen nutzt es, um eine visuelle Darstellung der Seite zu generieren. Dabei werden diverse Eigenschaften der HTML-Elemente und CSS-Stile berücksichtigt, um die Struktur und das Erscheinungsbild der Webseite so genau wie möglich nachzubilden <a href="../Quellenverzeichnis/#jr_11">[JR_11]</a>.</p>
+<p>Um einen Screenshot eines spezifischen Teils einer Webseite zu erstellen, kann ein bestimmtes div-Element übergeben werden. Der Script durchläuft dann nur den Teil der DOM-Struktur, der mit dieser spezifischen ID verbunden ist. Dies ermöglicht es, präzise und gezielt nur bestimmte Abschnitte einer Webseite zu erfassen und darzustellen, anstatt die gesamte Seite zu berücksichtigen.</p>
+<h4 id="einschrankungen-von-html2canvas">Einschränkungen von html2canvas<a class="headerlink" href="#einschrankungen-von-html2canvas" title="Permanent link">¶</a></h4>
+<p>html2canvas unterstützt eine Vielzahl von CSS-Stilen und kann beispielsweise background-color, border-radius, font-family und text-shadow korrekt rendern. Allerdings werden komplexere Eigenschaften wie filter, mix-blend-mode oder zoom nicht unterstützt. </p>
+<p>Der wesentlichste Punkt bei der Verwendung von html2canvas ist jedoch die Behandlung von Bildern und anderen Medieninhalten. Bilder müssen unter derselben Herkunft (Same-Origin Policy) wie die Webseite liegen, damit die Bibliothek darauf zugreifen und sie korrekt darstellen kann. 
+Die Same-Origin Policy ist ein Sicherheitskonzept, das in Webbrowsern implementiert ist, um zu verhindern, dass Skripte von einem Ursprung auf Inhalte eines anderen Ursprungs zugreifen. Ein Ursprung wird durch das Protokoll, den Host und den Port definiert. Diese Richtlinie soll verhindern, dass bösartige Skripte auf sensible Daten zugreifen können, die von einer anderen Webseite stammen <a href="../Quellenverzeichnis/#jr_13">[JR_13]</a></p>
+<p>Da html2canvas auf Informationen aus dem DOM angewiesen ist, kann es Dateien aller Art, die von einem anderen Ursprung stammen, nicht direkt rendern. Dies führt dazu, dass eingebundene Bilder im erzeugten Screenshot fehlen oder unvollständig dargestellt werden <a href="../Quellenverzeichnis/#jr_11">[JR_11]</a>.</p>
+<p>Um trotzdem Abbildungen im html2canvas Screenshot darzustellen, besteht die Möglichkeit, diese in Base64 kodiert direkt in das HTML-Dokument einzubetten. Diese Kodierung ermöglicht es, das Bild als Zeichenkette darzustellen, die vom Browser unabhängig von der ursprünglichen Quelle verarbeitet werden kann. Dies umgeht die Same-Origin-Beschränkungen, führt jedoch zu einer erhöhten Datenmenge (33-37% Overhead im Vergleich zu der Originaldatei) und entsprechend längeren Ladezeiten <a href="../Quellenverzeichnis/#jr_14">[JR_14]</a></p>
+<h4 id="browserkompatibilitat">Browserkompatibilität<a class="headerlink" href="#browserkompatibilitat" title="Permanent link">¶</a></h4>
+<p>Die Bibliothek ist mit den meisten modernen Browsern kompatibel, einschließlich Firefox (ab Version 3.5), Google Chrome, Opera (ab Version 12), Internet Explorer (ab Version 9), Edge und Safari (ab Version 6) <a href="../Quellenverzeichnis/#jr_11">[JR_11]</a>.</p>
+<h2 id="benutzerwebseite">Benutzerwebseite<a class="headerlink" href="#benutzerwebseite" title="Permanent link">¶</a></h2>
+<p><strong>Julia Reuter</strong></p>
+<h3 id="aufbau-und-funktionalitaten">Aufbau und Funktionalitäten<a class="headerlink" href="#aufbau-und-funktionalitaten" title="Permanent link">¶</a></h3>
+<p>Die Webseite zur Steuerung der Anzeigeinhalte unterstützt folgende zwei Funktionalitäten: PNG-Upload und HTML-Design</p>
+<h4 id="png-upload">PNG-Upload<a class="headerlink" href="#png-upload" title="Permanent link">¶</a></h4>
+<p>Nutzer können per Knopfdruck ein PNG-Bild auswählen und hochladen, sodass es im Anschluss direkt auf dem verbundenen Display angezeigt wird. Wichtig zu beachten ist hierbei, dass das PNG exakt auf die Pixeldimensionen des Displays abgestimmt ist, da es sonst nicht auf dem Display dargestellt werden kann.
+Um unnötigen Ressourcenverbrauch durch Senden fehlerhafter Dateien zu vermeiden, wird vor dem Upload überprüft, ob es sich bei der hochgeladenen Datei um ein PNG handelt und ob die Breite und Höhe, der des angeschlossenen Displays entspricht.
+Falls die Abmessungen nicht stimmen, oder ein anderes Dateiformat ausgewählt wurde, wird der Upload abgelehnt und der Nutzer erhält eine entsprechende Fehlermeldung. Erst wenn die Bildgröße korrekt ist, wird die Datei per HTTP POST (vgl. Kapitel) an den Server gesendet, wo es anschließend weiter verarbeitet wird.</p>
+<h4 id="html-design">HTML-Design<a class="headerlink" href="#html-design" title="Permanent link">¶</a></h4>
+<p>Ein weitere Möglichkeit, das Display mit Inhalten zu versorgen, ist mithilfe von HTML und CSS ein Design zu erstellen und hochzuladen. 
+Der Benutzer kann in ein Textfeld HTML-Code eingeben und sich in Echtzeit eine Vorschau anzeigen lassen. Hierfür rendert die Webseite den Code bei jeder Eingabe in das Textfeld, sodass das Programmieren durch diese Art von Liveübertragung der Designfortschritt stets ersichtlich ist. Natürlich kann der Code auch außerhalb in einer Entwicklungsumgebeung wie VS-Code geschrieben und anschließend in das vorhandene Textfeld kopiert werden. 
+Damit nach Fertigstellung des Designs der HTML-Code an den Server gesendet werden kann, muss das HTML-Design zunächst in ein PNG konvertiert werden.
+Diese Konvertierung erfolgt per Knopfdruck durch die in Kapitel 9.1.1 beschriebene Bibliothek html2canvas. Nachdem der erfolgreichen Umwandlung wird auch dieses PNG auf die korrekten Dimensionen überprüft und an den Server übermittelt. Es liegt hier also am Benutzer, sein Design im korrekten Pixelformat zu erzeugen.</p>
+<p>Zusätzlich stehen dem Benutzer vordefinierte HTML-Vorlagen zur Auswahl, um den gesamten Prozess etwas zu verkürzen. Für bestimmte Anwendungsfälle wie bespielsweise ein Pausenschild vor der Bürotüre oder eine Stundenplananzeige vor dem Hörsal wurde ein Layout erstellt,dessen Inhalt über ein zusätzliches Textfeld personalisiert werden kann. Natürlich kann das Design auch direkt über den jweiligen HTML-Code angepasst werden, was dem Nutzer noch zusätzliche Felxibilität bietet. 
+Hintergrund dieses Vorlagen-Konzeptes ist, wenn mehrere Displays beispielsweise als Raumanzeigen vor Hörsälen eingesetzt werden, könnten ICS-Kalenderdaten aus WebUntis automatisiert in ein bestehendes Layout integriert werden. Dieser Schritt erspart viel Zeit und ist spätestens bei der Verwaltung von vielen Modulen im Server-Modus essentiell. </p>
+<h4 id="settings-page">Settings Page<a class="headerlink" href="#settings-page" title="Permanent link">¶</a></h4>
+<p>Neben den verschiedenen Design-Upload Varianten, bietet die Benutzerwebseite noch eine Einstellungsseite mit einigen Konfigurationsmöglichkeiten. </p>
+<ol>
+<li>Betriebsmodus</li>
+<li>Verbundenes Display-Modul</li>
+<li>WiFi-Konfiguration</li>
+<li>Serielles Konsolen Log-Level</li>
+<li>HTTP Authentifikation</li>
+<li>HTTPS Setting</li>
+<li>Server URL</li>
+</ol>
+<p><strong>Betriebsmodus</strong>
+Hier kann der Nutzer den Betriebsmodus der Anzeige (Standalone, Netzwerk, Server) über ein Dropdown-Menü ändern. Der Defaultmodus ist der Standalone, in dem sich das System auch befindet, wenn es auf Werkseinstellungen zurückgesetzt wurde.</p>
+<p><strong>Display-Modul</strong>
+Alle zur Verfügung stehenden Display-Module sind hier aufgelistet und können ausgewählt werden. Per Default gibt es momentan nur das Waveshare 7.3" 4 color und 9.7" 2 color Modul, wobei dies natürlich nach Belieben erweitert werden kann.</p>
+<p><strong>WiFi-Konfiguration</strong>
+Um die Low-Power Anzeige im Netzwerkmodus zu betreiben können hier die WLAN-Zugangsdaten (SSID und Passwort) eingegeben werden. Nach der Datenübertragung an den Server versucht sich das Modul beim nächsten Neustart mit den entsprechenden WLAN zu verbinden.</p>
+<p><strong>Serielles Konsolen Log-Level</strong>
+Diese Einstellung ist hauptächlich als Debugging-Maßnahme oder für Entwickler hilfreich. 
+In der Browserkonsole wird die detaillierte Verfolgung von Ereignissen und Fehlern ermöglicht, die während der Laufzeit der Anwendung auftreten. 
+Durch die Anpassung des Log-Levels (s. Tabelle 9.2.1) kann die Tiefe und Art der Protokollierung bestimmt werden, um die Menge und Art der Informationen, die das System auf der seriellen Konsole ausgibt zu steuern.
+So können spezifische Probleme zu diagnostiziert, oder das allgemeine Systemverhalten zu überwacht werden <a href="../Quellenverzeichnis/#jr_16">[JR_16]</a>.</p>
+<p><em>Tabelle 9.2.1 Übersicht über die verscheidenen Log-Levels <a href="../Quellenverzeichnis/#jr_17">[JR_17]</a></em></p>
+<table>
+<thead>
+<tr>
+<th>Level</th>
+<th>Beschreibung</th>
+<th>Verwendung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fatal</td>
+<td>Kritische Fehler, die dazu führen, dass das System nicht mehr weiterarbeiten kann.</td>
+<td>Wird verwendet, um schwerwiegende Probleme zu identifizieren, die sofortige Aufmerksamkeit erfordern.</td>
+</tr>
+<tr>
+<td>Error</td>
+<td>Schwerwiegende Fehler, die das System zwar nicht vollständig stoppen, aber zu signifikanten Problemen führen.</td>
+<td>Ideal zur Erkennung und Behebung von Fehlern, die die Funktionalität beeinträchtigen.</td>
+</tr>
+<tr>
+<td>Warning</td>
+<td>Warnungen über potenzielle Probleme, die zu Fehlern führen könnten.</td>
+<td>Hilfreich, um mögliche zukünftige Probleme zu erkennen und frühzeitig zu beheben.</td>
+</tr>
+<tr>
+<td>Info</td>
+<td>Allgemeine Informationen über den Systembetrieb.</td>
+<td>Nützlich für ein allgemeines Verständnis des Systemverhaltens und zur Überwachung des normalen Betriebs.</td>
+</tr>
+<tr>
+<td>Debug</td>
+<td>Detaillierte Debugging-Informationen, die bei der Fehlersuche helfen.</td>
+<td>Wird hauptsächlich von Entwicklern genutzt, um tiefergehende Probleme zu diagnostizieren und den Code zu debuggen.</td>
+</tr>
+<tr>
+<td>Trace</td>
+<td>Sehr detaillierte Protokolle, die fast alle Aktivitäten des Systems aufzeichnen.</td>
+<td>Wird verwendet, um tiefgreifende Einblicke in die Systemoperationen zu erhalten und komplexe Probleme zu analysieren.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>HTTP-Authentifikation</strong>
+Wenn das System konfiguriert werden soll, nachdem es sich in den Werkseinstellungen befand, muss der Benutzer mit Zugangsdaten anmelden, um auf die Webseite zugreifen zu können. Diese Zugangsdaten können hier geändert werden.</p>
+<p><strong>HTTPS Settings</strong>
+Die HTTPS-Einstellungen erlauben es dem Nutzer, HTTPS-Verschlüsselung der Webseite zu aktivieren und eine externe Zertifikatsdatei hochzuladen. Diese kann einfach und kostenfrei über beispielsweise den Dienst Let's Encrypt erstellt werden <a href="../Quellenverzeichnis/#jr_18">[JR_18]</a>. </p>
+<p>Nachdem alle gewünschten Einstellungen ausgewählt und gespeichert wurden, werden sie per HTTP POST an den Server gesendet, sodass die Änderungen nach einem Neustart des Systems in Kraft treten. </p>
+<h3 id="manahmen-zur-steigerung-der-benutzerfreundlichkeit">Maßnahmen zur Steigerung der Benutzerfreundlichkeit<a class="headerlink" href="#manahmen-zur-steigerung-der-benutzerfreundlichkeit" title="Permanent link">¶</a></h3>
+<p>Allgemein ist die Konfiguration des Displays sehr stark modulabhängig. Um trotzdem ausreichend Benutzerfreundlichkeit zu garantieren, werden beim Starten der Webseite gewisse Funktionen aufgerufen, um die Attribute des verbundenen Displays abzufragen. Die Serverkommunikation erfolgt kommunizieren mit dem Server über asynchrone HTTP-Anfragen, um die notwendigen Informationen zu erhalten und die Benutzeroberfläche entsprechend anzupassen.</p>
+<p>So werden beim Aufrufen der Webseite die Dimensionen des verbundenen Display-Moduls abgefragt und auf der Uploadseite angezeigt.
+Zusätzlich wird der Benutzer auf der Settings-Page über den eingestellten Display-Modus und die allgemeine Modulart informiert.</p>
+<p>Kann keine Verbindung zum Server aufgebaut werden, oder ist der Bildupload fehlgeschlagen, so wird der Benutzer informiert.</p>
 <h2 id="linux-webanwendung">Linux Webanwendung<a class="headerlink" href="#linux-webanwendung" title="Permanent link">¶</a></h2>
 <p><strong>Mario Wegmann</strong></p>
 <h3 id="verwendete-technologien">Verwendete Technologien<a class="headerlink" href="#verwendete-technologien" title="Permanent link">¶</a></h3>
@@ -880,7 +1035,7 @@ td {
 <span class="md-icon" title="Letztes Update">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"></path></svg>
 </span>
-<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 29, 2024</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 30, 2024</span>
 </span>
 <!-- Date of creation -->
 <!-- Authors (git-authors plugin) -->
@@ -889,7 +1044,7 @@ td {
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 5.5A3.5 3.5 0 0 1 15.5 9a3.5 3.5 0 0 1-3.5 3.5A3.5 3.5 0 0 1 8.5 9 3.5 3.5 0 0 1 12 5.5M5 8c.56 0 1.08.15 1.53.42-.15 1.43.27 2.85 1.13 3.96C7.16 13.34 6.16 14 5 14a3 3 0 0 1-3-3 3 3 0 0 1 3-3m14 0a3 3 0 0 1 3 3 3 3 0 0 1-3 3c-1.16 0-2.16-.66-2.66-1.62a5.536 5.536 0 0 0 1.13-3.96c.45-.27.97-.42 1.53-.42M5.5 18.25c0-2.07 2.91-3.75 6.5-3.75s6.5 1.68 6.5 3.75V20h-13v-1.75M0 20v-1.5c0-1.39 1.89-2.56 4.45-2.9-.59.68-.95 1.62-.95 2.65V20H0m24 0h-3.5v-1.75c0-1.03-.36-1.97-.95-2.65 2.56.34 4.45 1.51 4.45 2.9V20Z"></path></svg>
 </span>
 <nav>
-<a href="mailto:jannisgroeger@gmail.com">Jannis</a>, 
+<a href="mailto:jul.reuter@web.de">jr3511</a>, 
             <a href="mailto:mario.wegmann@hs-augsburg.de">mwegmann</a>, 
             <a href="mailto:lukic.stasa@outlook.com">stasa</a>
 </nav>
