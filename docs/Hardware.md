@@ -3,17 +3,21 @@
 ## Auswahl des Mikrocontrollers
 
 ## Auswahl der Displaytechnologie
+  
+  **Stasa Lukic**
+  
+
 Unsere Display auswahl hat sich letztlich auf die ePaper Technologie und Bistabile LCD Technologie beschränkt durch ihren vorteil der deutigen Stromeffiezenz. Zwischen diesen Beiden Technologien haben wir uns für ePaper entschieden, Der Vorteil, mit ePaper haben wir die möglichkeit noch mehr Strom zu sparen und durch das Papier artige Display ist besitzt es eine bessere Lesbarkeit als Bistabile LCD.  
   
 ePaper besitzt weniger Farb möglichkeiten, dadurch entschieden wir uns 2 Displays für das Projekt zu testen, ein Display Ohne Farben aber dafür schnelle refresh times und Display mit Farben aber mit einer längeren refresh time.  
-Das erste Display kann in Abbildung [](#_fig_Display97) sehen, Es kommt mit einer refresh rate von 0,5 Sekunden, besitzt dafür aber nur 8 mögliche Greyscales.
-Das zweite Display besitzt 4 Farben, Weis, Schwarz, Gelb und Rot und kann mit in Abbildung [](#_fig_Display73) sehen. Dies kommt aber mit dem Nachteil von einer refresh time von 16 Sekunden.
+Das erste Display kann man in Abbildung 7.2.2 sehen, Es kommt mit einer refresh rate von 0,5 Sekunden, besitzt dafür aber nur 8 mögliche Greyscales.
+Das zweite Display besitzt 4 Farben, Weis, Schwarz, Gelb und Rot und kann mit in Abbildung 7.2.1 sehen. Dies kommt aber mit dem Nachteil von einer refresh time von 16 Sekunden.
 
-Figure: Waveshare 7.3inch ePaper Display { #_fig_Display73}
+Figure:  Abbildung 7.2.1: Waveshare 7.3inch ePaper Display 
 
 ![](img/PraktischeUndTheoGrund/Display73.png){ width=70%, }
 
-Figure: Waveshare 9.7inch ePaper Display { #_fig_Display97}
+Figure: Abbildung 7.2.2: Waveshare 9.7inch ePaper Display { #_fig_Display97}
 
 ![](img/PraktischeUndTheoGrund/Displays97.png){ width=70% }
 

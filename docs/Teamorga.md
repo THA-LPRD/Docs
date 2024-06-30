@@ -1,7 +1,10 @@
 # Teamorganisation
 
 ## Kommunikation und Organisation 
-Stasa Lukic  
+  
+  **Stasa Lukic**
+  
+  
   
 ### Einleitung
 Für das Projekt wurden verschiedenste Programme genutzt um eine gute Kommunikation und Organisation innerhalb der Teammitglieder zu halten. Für eine effektive und effieziente Kommunikation und Organisation wurden für jeden bereich ein Programm verwendet die folgend angesprochen werden.  
@@ -36,7 +39,10 @@ Issues erleichtert die Organisation von Fehler im Code. Github besitzt ein Syste
 Für unsere technische Abgabe nurtzen wir MkDocs in Verbindung mit Github. MkDocs ist ein benutzterfreundliches Programm das mithilfe von Markdown gut Strukturierte Dokumentationen erstellt. Die MkDocs Dokumentation kann einfach konfiguriert werden indem man in der konfigurations datei mkdocs.yml gewollte einstellungen reinschreibt. In dieser Datei können auch plugins hinzugefügt werden, einer Dieser plugins ist "with-pdf", die es uns erlaubt aus der Dokumentation eine PDF zu expoterien.
 
 ## Rollenaufteilung 
-Stasa Lukic  
+  
+  **Stasa Lukic**
+  
+
   
 Unsere Teammitglieder wurden jeweils in Teams Aufgeteilt, in disen Teams haben sie die zugehörgien Aufgaben dann bearbeitet. Wir haben von Unseren 7 Mitgliedern (später 6) 2 Personen ins Software Team eingetragen, 2 Personen ins Hardware Team und 3 Personen ins Firmware Team. Jedes Team hat auch einen Teamleader ausgewählt, diese Person kann in Meeting Updates geben und fürs Team sprechen. Die sorgt für eine sehr effieziente und Organisierte kommunikation zwischen den Teams.  
   
@@ -44,14 +50,16 @@ Teamleader können diese Rolle auch nutzen um klare ziele zu setzten. Rollenauft
 Arbeitspackete können fair auf ein Team verteilt werden um eine unfaire Arbeits aufteilung  zu verhindern.
 
 ## Zeitplan
-Stasa Lukic  
   
+  **Stasa Lukic**
+  
+
 Zeitpläne können über verschiedene Arten erstellt werden, es gibt die Gantt-Diagramme, Pfad-diagramme, Meilenstein Ziele und weiteres.  
 Wir haben uns für die Für die Gantt-Diagramme entschieden. Gantt-Diagramme erstellen Balken auf einer Timeline mit einem Start und Enddatum. Diese Balkan können Aufgaben zugewiesen bekommen oder sub Aufgaben / Balken.  
 Zur Organisationen müssen die Balken klar gekennzeichnet werden und einem Plan folgen, sie müssen aufeinander aufbauen.
-Dies können wir in der Abbildung [](#_fig_timeline) sehen.
+Dies können wir in der Abbildung 5.3.1 sehen.
 
-Figure: Timeline Beispiel Projekt { #_fig_timeline}
+Figure: Abbildung 5.3.1: Timeline Beispiel Projekt 
 
 ![](img/PraktischeUndTheoGrund/Timeline.png){ width=100% }
 
