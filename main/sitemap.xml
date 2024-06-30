@@ -2,17 +2,82 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://tha-lprd.github.io/Docs/main/</loc>
-         <lastmod>2024-04-26</lastmod>
+         <lastmod>2024-06-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://tha-lprd.github.io/Docs/main/BeschreibungDerL%C3%B6sung/</loc>
+         <lastmod>2024-06-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://tha-lprd.github.io/Docs/main/Einleitung/</loc>
+         <lastmod>2024-06-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://tha-lprd.github.io/Docs/main/Fazit/</loc>
+         <lastmod>2024-06-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://tha-lprd.github.io/Docs/main/Firmware/</loc>
+         <lastmod>2024-06-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://tha-lprd.github.io/Docs/main/Glossar/</loc>
+         <lastmod>2024-06-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://tha-lprd.github.io/Docs/main/Handbuch/</loc>
+         <lastmod>2024-06-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://tha-lprd.github.io/Docs/main/Hardware/</loc>
+         <lastmod>2024-06-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tha-lprd.github.io/Docs/main/NAV/</loc>
-         <lastmod>2024-04-26</lastmod>
+         <lastmod>2024-06-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://tha-lprd.github.io/Docs/main/PraktischeUTheoretischeGrund/</loc>
+         <lastmod>2024-06-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://tha-lprd.github.io/Docs/main/Quellenverzeichnis/</loc>
+         <lastmod>2024-06-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://tha-lprd.github.io/Docs/main/StandDerWissenschaftUndTechnik/</loc>
+         <lastmod>2024-06-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://tha-lprd.github.io/Docs/main/Systemkonzept/</loc>
+         <lastmod>2024-06-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://tha-lprd.github.io/Docs/main/Teamorga/</loc>
+         <lastmod>2024-06-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://tha-lprd.github.io/Docs/main/Webentwicklung/</loc>
+         <lastmod>2024-06-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tha-lprd.github.io/Docs/main/about/</loc>
-         <lastmod>2024-04-26</lastmod>
+         <lastmod>2024-06-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

@@ -1,0 +1,1402 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="de">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="https://tha-lprd.github.io/Docs/main/Firmware/" rel="canonical"/>
+<link href="../Hardware/" rel="prev"/>
+<link href="../Webentwicklung/" rel="next"/>
+<link href="../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.0, mkdocs-material-9.5.27" name="generator"/>
+<title>Firmware - LPRD Docs</title>
+<link href="../assets/stylesheets/main.6543a935.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../assets/javascripts/glightbox.min.js"></script></link></head>
+<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#firmware">
+          Zum Inhalt
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<div data-md-color-scheme="default" data-md-component="outdated" hidden="">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Kopfzeile" class="md-header__inner md-grid">
+<a aria-label="LPRD Docs" class="md-header__button md-logo" data-md-component="logo" href=".." title="LPRD Docs">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+              LPRD Docs
+            </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+              
+                Firmware
+              
+            </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme)" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9h-1.9M20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69m-9.15 3.96h2.3L12 9l-1.15 3.65Z"></path></svg>
+</label>
+<input aria-label="" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"></path></svg>
+</label>
+<input aria-label="" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="indigo" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"></path></svg>
+</label>
+</form>
+<script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Suche" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Suche" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="Suche" class="md-search__options">
+<button aria-label="Zurücksetzen" class="md-search__icon md-icon" tabindex="-1" title="Zurücksetzen" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Suche wird initialisiert
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/THA-LPRD" title="Zum Repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    THA-LPRD
+  </div>
+</a>
+</div>
+<a aria-describedby="__tooltip_6" class="md-header__button md-header-nav__button md-icon" href="../pdf/document.pdf">
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+<path d="M128,0c-17.6,0-32,14.4-32,32v448c0,17.6,14.4,32,32,32h320c17.6,0,32-14.4,32-32V128L352,0H128z" fill="#E2E5E7"></path>
+<path d="m384 128h96l-128-128v96c0 17.6 14.4 32 32 32z" fill="#B0B7BD"></path>
+<polygon fill="#CAD1D8" points="480 224 384 128 480 128"></polygon>
+<path d="M416,416c0,8.8-7.2,16-16,16H48c-8.8,0-16-7.2-16-16V256c0-8.8,7.2-16,16-16h352c8.8,0,16,7.2,16,16  V416z" fill="#F15642"></path>
+<g fill="#fff">
+<path d="m101.74 303.15c0-4.224 3.328-8.832 8.688-8.832h29.552c16.64 0 31.616 11.136 31.616 32.48 0 20.224-14.976 31.488-31.616 31.488h-21.36v16.896c0 5.632-3.584 8.816-8.192 8.816-4.224 0-8.688-3.184-8.688-8.816v-72.032zm16.88 7.28v31.872h21.36c8.576 0 15.36-7.568 15.36-15.504 0-8.944-6.784-16.368-15.36-16.368h-21.36z"></path>
+<path d="m196.66 384c-4.224 0-8.832-2.304-8.832-7.92v-72.672c0-4.592 4.608-7.936 8.832-7.936h29.296c58.464 0 57.184 88.528 1.152 88.528h-30.448zm8.064-72.912v57.312h21.232c34.544 0 36.08-57.312 0-57.312h-21.232z"></path>
+<path d="m303.87 312.11v20.336h32.624c4.608 0 9.216 4.608 9.216 9.072 0 4.224-4.608 7.68-9.216 7.68h-32.624v26.864c0 4.48-3.184 7.92-7.664 7.92-5.632 0-9.072-3.44-9.072-7.92v-72.672c0-4.592 3.456-7.936 9.072-7.936h44.912c5.632 0 8.96 3.344 8.96 7.936 0 4.096-3.328 8.704-8.96 8.704h-37.248v0.016z"></path>
+</g>
+<path d="m400 432h-304v16h304c8.8 0 16-7.2 16-16v-16c0 8.8-7.2 16-16 16z" fill="#CAD1D8"></path>
+</svg>
+</a>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Hauptnavigation" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../Einleitung/">
+        
+  
+    
+  
+  Einleitung
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../PraktischeUTheoretischeGrund/">
+        
+  
+    
+  
+  Praktische und Theoretische Grundlagen
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../StandDerWissenschaftUndTechnik/">
+        
+  
+    
+  
+  Marktanalyse
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../Teamorga/">
+        
+  
+    
+  
+  Teamorganisation
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../Systemkonzept/">
+        
+  
+    
+  
+  Systemkonzept
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../Hardware/">
+        
+  
+    
+  
+  Hardware
+
+      </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="./">
+        
+  
+    
+  
+  Firmware
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../Webentwicklung/">
+        
+  
+    
+  
+  Webentwicklung
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../Fazit/">
+        
+  
+    
+  
+  Fazit
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../Glossar/">
+        
+  
+    
+  
+  Glossar
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../about/">
+        
+  
+    
+  
+  Über LPRD
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../Quellenverzeichnis/">
+        
+  
+    
+  
+  Quellenverzeichnis
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../Handbuch/">
+        
+  
+    
+  
+  Handbuch
+
+      </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="LPRD Docs" class="md-nav__button md-logo" data-md-component="logo" href=".." title="LPRD Docs">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+    LPRD Docs
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/THA-LPRD" title="Zum Repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    THA-LPRD
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Einleitung/">
+<span class="md-ellipsis">
+    Einleitung
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../PraktischeUTheoretischeGrund/">
+<span class="md-ellipsis">
+    Praktische und Theoretische Grundlagen
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../StandDerWissenschaftUndTechnik/">
+<span class="md-ellipsis">
+    Marktanalyse
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Teamorga/">
+<span class="md-ellipsis">
+    Teamorganisation
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Systemkonzept/">
+<span class="md-ellipsis">
+    Systemkonzept
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Hardware/">
+<span class="md-ellipsis">
+    Hardware
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    Firmware
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    Firmware
+  </span>
+</a>
+<nav aria-label="Inhaltsverzeichnis" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#entwicklungsumgebung">
+<span class="md-ellipsis">
+      Entwicklungsumgebung
+    </span>
+</a>
+<nav aria-label="Entwicklungsumgebung" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#platformio-mit-visual-studio-code">
+<span class="md-ellipsis">
+      PlatformIO mit Visual Studio Code
+    </span>
+</a>
+<nav aria-label="PlatformIO mit Visual Studio Code" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#installation">
+<span class="md-ellipsis">
+      Installation
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#projekt-erstellen">
+<span class="md-ellipsis">
+      Projekt erstellen
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mikrocontroller-flashen">
+<span class="md-ellipsis">
+      Mikrocontroller flashen
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#versionskontrolle">
+<span class="md-ellipsis">
+      Versionskontrolle
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#anforderungen">
+<span class="md-ellipsis">
+      Anforderungen
+    </span>
+</a>
+<nav aria-label="Anforderungen" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#drahtlose-kommunikation">
+<span class="md-ellipsis">
+      Drahtlose Kommunikation
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dateisystem">
+<span class="md-ellipsis">
+      Dateisystem
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#konfiguration">
+<span class="md-ellipsis">
+      Konfiguration
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#betriebsmodi">
+<span class="md-ellipsis">
+      Betriebsmodi
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#spi-schnittstelle">
+<span class="md-ellipsis">
+      SPI-Schnittstelle
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#niedriger-energieverbrauch">
+<span class="md-ellipsis">
+      Niedriger Energieverbrauch
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#klassendiagramm">
+<span class="md-ellipsis">
+      Klassendiagramm
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#application">
+<span class="md-ellipsis">
+      Application
+    </span>
+</a>
+<nav aria-label="Application" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ablauf-der-applikation">
+<span class="md-ellipsis">
+      Ablauf der Applikation
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#betriebsmodi_1">
+<span class="md-ellipsis">
+      Betriebsmodi
+    </span>
+</a>
+<nav aria-label="Betriebsmodi" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#standardmodus">
+<span class="md-ellipsis">
+      Standardmodus
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#standalone-modus">
+<span class="md-ellipsis">
+      Standalone-Modus
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#netzwerkmodus">
+<span class="md-ellipsis">
+      Netzwerkmodus
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#servermodus">
+<span class="md-ellipsis">
+      Servermodus
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#konfiguration_1">
+<span class="md-ellipsis">
+      Konfiguration
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#logging">
+<span class="md-ellipsis">
+      Logging
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#http-server">
+<span class="md-ellipsis">
+      HTTP-Server
+    </span>
+</a>
+<nav aria-label="HTTP-Server" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#http-requests">
+<span class="md-ellipsis">
+      HTTP Requests
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#http-anfragen">
+<span class="md-ellipsis">
+      HTTP-Anfragen
+    </span>
+</a>
+<nav aria-label="HTTP-Anfragen" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#get-anfrage">
+<span class="md-ellipsis">
+      GET-Anfrage
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#post-request">
+<span class="md-ellipsis">
+      POST Request
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#file-upload">
+<span class="md-ellipsis">
+      File Upload
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#basic-authentication">
+<span class="md-ellipsis">
+      Basic Authentication
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#https-unterstutzung">
+<span class="md-ellipsis">
+      HTTPS Unterstützung
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#systemansteuerung">
+<span class="md-ellipsis">
+      Systemansteuerung
+    </span>
+</a>
+<nav aria-label="Systemansteuerung" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#allgemeine-steuerung-und-gpio">
+<span class="md-ellipsis">
+      Allgemeine Steuerung und GPIO
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#spi">
+<span class="md-ellipsis">
+      SPI
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#e-paper-display-api">
+<span class="md-ellipsis">
+      E-Paper Display API
+    </span>
+</a>
+<nav aria-label="E-Paper Display API" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#framebuffer">
+<span class="md-ellipsis">
+      Framebuffer
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#imagedata">
+<span class="md-ellipsis">
+      ImageData
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#colorpalette">
+<span class="md-ellipsis">
+      Colorpalette
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#treiber">
+<span class="md-ellipsis">
+      Treiber
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Webentwicklung/">
+<span class="md-ellipsis">
+    Webentwicklung
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Fazit/">
+<span class="md-ellipsis">
+    Fazit
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Glossar/">
+<span class="md-ellipsis">
+    Glossar
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../about/">
+<span class="md-ellipsis">
+    Über LPRD
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Quellenverzeichnis/">
+<span class="md-ellipsis">
+    Quellenverzeichnis
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Handbuch/">
+<span class="md-ellipsis">
+    Handbuch
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<a class="md-content__button md-icon" href="https://github.com/THA-LPRD/docs/raw/dev/docs/Firmware.md" title="Quellcode der Seite anzeigen">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"></path></svg>
+</a>
+<h1 id="firmware">Firmware<a class="headerlink" href="#firmware" title="Permanent link">¶</a></h1>
+<h2 id="entwicklungsumgebung">Entwicklungsumgebung<a class="headerlink" href="#entwicklungsumgebung" title="Permanent link">¶</a></h2>
+<p><strong>Ahmet Emirhan Göktas</strong></p>
+<p><a href="../PraktischeUTheoretischeGrund/#platformio">PlatformIO</a> wurde als Entwicklungsumgebung für die LPRD-Firmware ausgewählt. Da die <a href="../PraktischeUTheoretischeGrund/#arduino">Arduino IDE</a> für die Komplexität des Projekts nicht geeignet ist, wird <a href="../PraktischeUTheoretischeGrund/#platformio">PlatformIO</a> als fortschrittlichere Alternative verwendet.</p>
+<h3 id="platformio-mit-visual-studio-code">PlatformIO mit Visual Studio Code<a class="headerlink" href="#platformio-mit-visual-studio-code" title="Permanent link">¶</a></h3>
+<p><strong>Ahmet Emirhan Göktas</strong></p>
+<p>Wie im Abschnitt <a href="../PraktischeUTheoretischeGrund/#firmwarebibliotheken">Grundlagen</a> erwähnt, kann <a href="../PraktischeUTheoretischeGrund/#platformio">PlatformIO</a> mit verschiedenen IDEs verwendet werden. Die meisten unserer Teammitglieder nutzen <a href="https://code.visualstudio.com/">Visual Studio Code</a> als ihre IDE. Daher möchten wir zeigen, wie man <a href="../PraktischeUTheoretischeGrund/#platformio">PlatformIO</a> für <a href="https://code.visualstudio.com/">Visual Studio Code</a> einrichtet.</p>
+<h4 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">¶</a></h4>
+<p><strong>Ahmet Emirhan Göktas</strong></p>
+<ol>
+<li>Installieren Sie <a href="https://code.visualstudio.com/">Visual Studio Code</a>.</li>
+<li>Öffnen Sie das Erweiterungspanel entweder über die Seitenleiste oder durch Drücken von <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-x">X</kbd></span> und geben Sie <code>PlatformIO IDE</code> ein.</li>
+<li>Klicken Sie auf die <code>Install</code>, um die PlatformIO IDE-Erweiterung zu installieren.</li>
+<li>Nachdem die Erweiterung installiert ist, können Sie die PlatformIO-Seitenleiste öffnen, indem Sie auf das PlatformIO-Symbol in der Seitenleiste klicken. Dies kann einige Minuten dauern, da PlatformIO das Backend herunterlädt und die Umgebung einrichtet.
+<a href="../Quellenverzeichnis/#AEG_06">[AEG_06]</a></li>
+</ol>
+<p><figure id="_abb7_1"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/Firmware/PlatformIO-VSCode-Extension.webp"><img alt="" src="../img/Firmware/PlatformIO-VSCode-Extension.webp" width="60%"/></a><figcaption> Abbildung 7.1: PlatformIO-Erweiterung in Visual Studio </figcaption></figure></p>
+<h4 id="projekt-erstellen">Projekt erstellen<a class="headerlink" href="#projekt-erstellen" title="Permanent link">¶</a></h4>
+<p><strong>Ahmet Emirhan Göktas</strong></p>
+<ol>
+<li>Öffnen Sie die VS Code-Befehlszeile durch Drücken von <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-p">P</kbd></span> und geben Sie <code>&gt;PlatformIO:PlatformIO Home</code> ein.</li>
+<li>Drücken Sie <code>Enter</code>, um die PlatformIO-Startseite zu öffnen.</li>
+<li>Klicken Sie auf der linken Seite der PlatformIO-Startseite auf die Registerkarte <code>Projects</code>.</li>
+<li>Klicken Sie auf die <code>New Project</code>.</li>
+<li>Wählen Sie das Board, das Sie verwenden. In unserem Fall verwenden wir das Board <code>Seeed Studio XIAO ESP32S3</code>.</li>
+<li>Wählen Sie das Framework. In unserem Fall verwenden wir das <code>Arduino</code>-Framework.</li>
+<li>Drücken Sie abschließend die <code>Finish</code>, um das Projekt zu erstellen.
+<a href="../Quellenverzeichnis/#AEG_07">[AEG_07]</a></li>
+</ol>
+<p><figure id="_abb8_2"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/Firmware/PlatformIO-New-Project.webp"><img alt="" src="../img/Firmware/PlatformIO-New-Project.webp" width="60%"/></a><figcaption> Abbildung 7.2: Neues PlatformIO-Projekt erstellen </figcaption></figure></p>
+<h4 id="mikrocontroller-flashen">Mikrocontroller flashen<a class="headerlink" href="#mikrocontroller-flashen" title="Permanent link">¶</a></h4>
+<p><strong>Ahmet Emirhan Göktas</strong></p>
+<ol>
+<li>Verbinden Sie den Mikrocontroller mit Ihrem Computer.</li>
+<li>Öffnen Sie die PlatformIO-Seitenleiste, indem Sie auf das PlatformIO-Symbol in der Seitenleiste klicken.</li>
+<li>Klicken Sie auf die Projektumgebung im Abschnitt <code>Project Tasks</code>.</li>
+<li>Klicken Sie auf die <code>Upload</code> im Abschnitt <code>General</code>, um die Firmware auf den Mikrocontroller zu flashen.</li>
+<li>Die <code>Upload File System Image</code> Taste im Abschnitt <code>Platform</code> kann verwendet werden, um das Dateisystem-Image auf den Mikrocontroller hochzuladen.</li>
+</ol>
+<p><figure id="_abb8_3"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/Firmware/PlatformIO-Flashing.webp"><img alt="" src="../img/Firmware/PlatformIO-Flashing.webp"/></a><figcaption> Abbildung 7.3: Firmware auf den Mikrocontroller hochladen </figcaption></figure></p>
+<h3 id="versionskontrolle">Versionskontrolle<a class="headerlink" href="#versionskontrolle" title="Permanent link">¶</a></h3>
+<p><strong>Ahmet Emirhan Göktas</strong></p>
+<p>In diesem Projekt haben wir <a href="https://git-scm.com/">git</a> als unser Versionskontrollsystem verwendet und dem Git-Flow-Modell gefolgt. Das Git-Flow-Modell ist ein von Vincent Driessen erstelltes Branching model für git. Es ist eine Reihe von Regeln, die verwendet werden, um die Verzweigungen in einem git-Repository zu verwalten. Die haupt Branches sind <code>master</code> und <code>dev</code>. Der <code>master</code>-Branch wird für produktionsbereiten Code verwendet, während der <code>dev</code>-Branch für Code verwendet wird, der sich in der Entwicklung befindet. Der <code>dev</code>-Branch wird abgezweigt, um Feature-Branches zu erstellen. Sobald das Feature abgeschlossen ist, wird der Feature-Branch wieder in den <code>dev</code>-Branch integriert. Wenn der Code im <code>dev</code>-Branch bereit für die Produktion ist, wird er in den <code>master</code>-Branch integriert. <a href="../Quellenverzeichnis/#AEG_08">[AEG_08]</a></p>
+<h2 id="anforderungen">Anforderungen<a class="headerlink" href="#anforderungen" title="Permanent link">¶</a></h2>
+<p><strong>Ahmet Emirhan Göktas</strong></p>
+<p>Wie bereits erwähnt, muss das LPRD bestimmte Anforderungen erfüllen. Diese Anforderungen bilden die Grundlage für die Firmware-Entwicklung. Die folgenden Anforderungen ergeben sich aus den Hardwareanforderungen:</p>
+<h3 id="drahtlose-kommunikation">Drahtlose Kommunikation<a class="headerlink" href="#drahtlose-kommunikation" title="Permanent link">¶</a></h3>
+<p><strong>Ahmet Emirhan Göktas</strong></p>
+<p>Das Gerät soll drahtlos gesteuert werden, um eine einfache Installation und Konfiguration zu ermöglichen und die Steuerung des Geräts von einem zentralen Server aus zu erlauben. Es gibt zwei Möglichkeiten, dies zu erreichen:</p>
+<ul>
+<li>Verbindung mit einem bestehenden drahtlosen Netzwerk.</li>
+<li>Erstellung eines eigenen drahtlosen Netzwerks.</li>
+</ul>
+<h3 id="dateisystem">Dateisystem<a class="headerlink" href="#dateisystem" title="Permanent link">¶</a></h3>
+<p><strong>Ahmet Emirhan Göktas</strong></p>
+<p>Das Displaymodul benötigt einen nichtflüchtigen Speicher, um die angezeigten Bilder sowie die Konfigurationen wie Netzwerkeinstellungen und Betriebsmodi zu speichern. Der ESP32-S3-Mikrocontroller bietet 8 MB Flash-Speicher, der mit dem LittleFS-Dateisystem genutzt wird.</p>
+<h3 id="konfiguration">Konfiguration<a class="headerlink" href="#konfiguration" title="Permanent link">¶</a></h3>
+<p><strong>Ahmet Emirhan Göktas</strong></p>
+<p>Das Displaymodul ist flexibel gestaltet und hat keine fest kodierte Konfiguration in der Firmware. Die Konfiguration kann vom Benutzer geändert werden und umfasst:</p>
+<ul>
+<li>WLAN-Netzwerkkonfiguration (SSID, Passwort)</li>
+<li>E-Paper-Display-Konfiguration (Modell)</li>
+<li>Betriebsmodus (Standalone, Netzwerk, Server)</li>
+<li>Serverkonfiguration (URL)</li>
+<li>Log-Level (für Debugging)</li>
+<li>HTTP-Server-Konfiguration (HTTP, HTTPS)</li>
+<li>Authentifizierung (Benutzername, Passwort)</li>
+</ul>
+<h3 id="betriebsmodi">Betriebsmodi<a class="headerlink" href="#betriebsmodi" title="Permanent link">¶</a></h3>
+<p><strong>Ahmet Emirhan Göktas</strong></p>
+<p>Das Displaymodul unterstützt verschiedene Betriebsmodi:</p>
+<ul>
+<li><strong>Standalone</strong>: Funktioniert ohne ein bestehendes WLAN-Netzwerk.</li>
+<li><strong>Netzwerk</strong>: Funktioniert mit einem bestehenden WLAN-Netzwerk.</li>
+<li><strong>Server</strong>: Wird von einem zentralen Server gesteuert.</li>
+<li><strong>Default</strong>: Der Standardmodus bei der ersten Inbetriebnahme oder bei nicht behebbaren Fehlern. Dieser Modus entspricht dem Standalone-Modus mit fest kodierten Einstellungen.</li>
+</ul>
+<h3 id="spi-schnittstelle">SPI-Schnittstelle<a class="headerlink" href="#spi-schnittstelle" title="Permanent link">¶</a></h3>
+<p><strong>Ahmet Emirhan Göktas</strong></p>
+<p>Das E-Paper-Display ist über die SPI-Schnittstelle mit dem ESP32-S3-Mikrocontroller verbunden. Diese Schnittstelle wird zur Kommunikation und Anzeige von Bildern auf dem E-Paper-Display genutzt und muss entsprechend initialisiert und konfiguriert werden.</p>
+<h3 id="niedriger-energieverbrauch">Niedriger Energieverbrauch<a class="headerlink" href="#niedriger-energieverbrauch" title="Permanent link">¶</a></h3>
+<p><strong>Ahmet Emirhan Göktas</strong></p>
+<p>Die Akkulaufzeit ist ein wichtiger Faktor. Das Displaymodul muss in den Schlafmodus gehen können, wenn es nicht in Gebrauch ist, und bei Bedarf wieder aufwachen, um Energie zu sparen und die Akkulaufzeit zu verlängern.</p>
+<h2 id="klassendiagramm">Klassendiagramm<a class="headerlink" href="#klassendiagramm" title="Permanent link">¶</a></h2>
+<p><strong>Ahmet Emirhan Göktas</strong></p>
+<p><figure id="_abb8_4"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/Firmware/ClassDiagramApp.webp"><img alt="" src="../img/Firmware/ClassDiagramApp.webp"/></a><figcaption> Abbildung 7.4: Klassendiagramm der Application </figcaption></figure></p>
+<p><figure id="_abb8_5"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/Firmware/ClassDiagramMCU.webp"><img alt="" src="../img/Firmware/ClassDiagramMCU.webp"/></a><figcaption> Abbildung 7.5: Klassendiagramm der Systemansteuerung </figcaption></figure></p>
+<p><figure id="_abb8_6"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/Firmware/ClassDiagramEPDL.webp"><img alt="" src="../img/Firmware/ClassDiagramEPDL.webp"/></a><figcaption> Abbildung 7.6: Klassendiagramm der E-Paper-Display-Library </figcaption></figure></p>
+<h2 id="application">Application<a class="headerlink" href="#application" title="Permanent link">¶</a></h2>
+<p><strong>Ahmet Emirhan Göktas</strong></p>
+<p>Die Applikation ist der Hauptteil der Firmware. Sie ist verantwortlich für die Konfiguration des Displaymoduls, die drahtlose Kommunikation, die Betriebsmodi und die SPI-Schnittstelle. Die Applikation ist in verschiedene Klassen unterteilt, die jeweils für unterschiedliche Teile der Applikation verantwortlich sind. Diese sind:</p>
+<ul>
+<li><a href="#application"><code>Application</code></a>: Die Hauptklasse der Applikation. Sie ist eine Schnittstelle, die von den verschiedenen Betriebsmodi implementiert wird.</li>
+<li><a href="#standalone-modus"><code>AppStandalone</code></a>: Der Standalone-Betriebsmodus. Das Displaymodul funktioniert ohne ein bestehendes WLAN.</li>
+<li><a href="#netzwerkmodus"><code>AppNetwork</code></a>: Der Netzwerk-Betriebsmodus. Das Displaymodul funktioniert mit einem bestehenden WLAN.</li>
+<li><a href="#servermodus"><code>AppServer</code></a>: Der Server-Betriebsmodus. Das Displaymodul wird von einem zentralen Server gesteuert.</li>
+<li><a href="#standardmodus"><code>AppDefault</code></a>: Der Standard-Betriebsmodus. Das Displaymodul befindet sich im Standardmodus, wenn es zum ersten Mal eingeschaltet wird oder wenn ein nicht behebbarer Fehler auftritt.</li>
+<li><code>Log</code>: Ein Namensraum, der für das Loggen von Nachrichten auf den seriellen Port verantwortlich ist.</li>
+<li><code>Config</code>: Ein Namensraum, der für die Konfiguration des Displaymoduls verantwortlich ist.</li>
+</ul>
+<h3 id="ablauf-der-applikation">Ablauf der Applikation<a class="headerlink" href="#ablauf-der-applikation" title="Permanent link">¶</a></h3>
+<p><strong>Ahmet Emirhan Göktas</strong></p>
+<p>Die <code>Application</code>-Klasse ist die Hauptklasse der Anwendung. Der grundlegende Ablauf der Anwendung ist wie folgt:</p>
+<ol>
+<li>Initialisierung des Dateisystems.</li>
+<li>Lesen der Konfiguration aus dem Dateisystem.</li>
+<li>Initialisierung des entsprechenden Modus.</li>
+<li>Ausführen der Anwendung.</li>
+</ol>
+<h3 id="betriebsmodi_1">Betriebsmodi<a class="headerlink" href="#betriebsmodi_1" title="Permanent link">¶</a></h3>
+<h4 id="standardmodus">Standardmodus<a class="headerlink" href="#standardmodus" title="Permanent link">¶</a></h4>
+<p><strong>Ahmet Emirhan Göktas</strong></p>
+<p>In diesem Modus wird das WLAN im Access-Point-Modus initialisiert, um dem Benutzer die direkte Verbindung mit dem Gerät zu ermöglichen. Nachdem das WLAN initialisiert ist, wird der HTTP-Server gestartet. Die Standardseite ist die Einstellungsseite, wobei keine Endpunkte für den Bild-Upload enthalten sind.</p>
+<p>Der Zweck dieses Modus besteht darin, dem Benutzer die Konfiguration des Geräts zu ermöglichen, unabhängig davon, ob etwas schiefgelaufen ist oder ein Werksreset durchgeführt wurde.</p>
+<h4 id="standalone-modus">Standalone-Modus<a class="headerlink" href="#standalone-modus" title="Permanent link">¶</a></h4>
+<p><strong>Ahmet Emirhan Göktas</strong></p>
+<p>In diesem Modus arbeitet das Gerät unabhängig von bestehenden Infrastrukturen. Es beginnt mit der Initialisierung des WLANs im Access-Point-Modus. Anschließend wird der HTTP-Server mit Endpunkten für alle Einstellungen sowie für den Bild-Upload initialisiert. Eine Callback-Funktion wird übergeben, die aufgerufen wird, wenn ein Bild hochgeladen wird, sodass das Bild auf dem E-Paper-Display angezeigt werden kann. Schließlich wird das E-Paper-Display initialisiert, um bereit zu sein, die Bilder anzuzeigen.</p>
+<p>Nachdem all diese Schritte erfolgreich abgeschlossen sind, ist das Gerät einsatzbereit. Man verbindet sich mit dem WLAN-Netzwerk des Geräts und ruft die Weboberfläche unter <code>http://192.168.4.1/index.html</code> auf. Das Gerät bleibt wach, bis ein Bild hochgeladen wird. Nach dem Hochladen wird das Bild auf dem E-Paper-Display angezeigt und das Modul geht in den Tiefschlaf, um die Akkulaufzeit zu verlängern und den Stromverbrauch zu minimieren.</p>
+<h4 id="netzwerkmodus">Netzwerkmodus<a class="headerlink" href="#netzwerkmodus" title="Permanent link">¶</a></h4>
+<p><strong>Ahmet Emirhan Göktas</strong></p>
+<p>Dieser Modus bietet einfachen Zugriff auf das Gerät, indem es sich mit einem bestehenden WLAN-Netzwerk verbindet. Das Gerät stellt die Verbindung zum WLAN-Netzwerk her, indem es die in der Konfigurationsdatei gespeicherten Anmeldeinformationen verwendet. Nach der Herstellung der Verbindung wird der HTTP-Server genauso wie im <a href="#standalone-modus">Standalone-Modus</a> initialisiert. Nachdem das Gerät im Netzwerk gefunden wurde, kann es über die IP-Adresse des Geräts ähnlich wie im <a href="#standalone-modus">Standalone-Modus</a> aufgerufen werden.</p>
+<p>Wenn während der Initialisierung ein Fehler auftritt, wie z. B. falsche WLAN-Anmeldeinformationen, die dazu führen, dass das Gerät nicht mehr erreichbar ist, wechselt das Gerät zurück in den <a href="#standardmodus">Standardmodus</a>, um dem Benutzer die Neukonfiguration des Geräts zu ermöglichen. Andernfalls bleibt die Routine dieselbe wie im <a href="#standalone-modus">Standalone-Modus</a>.</p>
+<h4 id="servermodus">Servermodus<a class="headerlink" href="#servermodus" title="Permanent link">¶</a></h4>
+<p><strong>Mario Wegmann</strong></p>
+<p>In diesem Modus wird mit einem Webbrowser nicht direkt auf das Displaymodul selbst zugegriffen, stattdessen holt sich jedes Displaymodul die notwendigen Informationen von einem zentralen Linux Webserver ab. Beim Konfigurieren im Standard-Modus wird neben den Zugangsdaten vom bestehenden WLAN-Netzwerk auch eine Server-URL mit angegeben. Bei jedem Aufwecken aus dem Deep-sleep verbindet sich das Displaymodul dann mit dem bestehenden WLAN und versucht den Server über HTTP(S) zu erreichen. Als Erstes wird überprüft, ob das Displaymodul dem Server bekannt ist, falls dies noch nicht der Fall ist, dann ruft das Displaymodul eine API-Route auf, um sich selbst als neues Display zu registrieren. Falls das Display bereits dem Server bekannt ist, wird die API-Route aufgerufen, um eine neue Darstellungs-Konfiguration anzufragen. In dieser Konfiguration meldet der Server dem Displaymodul, unter welcher URL das Displaymodul das aktuelle Asset heruntergeladen werden kann und wie lange dieses Asset angezeigt werden soll. Nach der erfolgreichen Kommunikation mit dem Server setzt das Displaymodul einen Wakeup Timer auf die Dauer der übergebenen Anzeigedauer und geht in den Deep-sleep Modus. </p>
+<h3 id="konfiguration_1">Konfiguration<a class="headerlink" href="#konfiguration_1" title="Permanent link">¶</a></h3>
+<p><strong>Ahmet Emirhan Göktas</strong></p>
+<p>Der <code>Config</code>-Namensraum ist für die Konfiguration des Moduls verantwortlich. Die Konfiguration wird in einer JSON-Datei im Dateisystem gespeichert. Beim Booten wird die <code>Load</code>-Methode verwendet, um die Konfiguration aus dem Dateisystem zu laden, sodass die Konfiguration direkt aus dem RAM verfügbar ist. Die <code>Save</code>-Methode kann dann verwendet werden, um die Konfiguration zurück in das Dateisystem zu speichern. Dabei verwenden wir die <a href="https://arduinojson.org/">ArduinoJson-Bibliothek</a>, um die JSON-Datei zu lesen und zu schreiben.</p>
+<h3 id="logging">Logging<a class="headerlink" href="#logging" title="Permanent link">¶</a></h3>
+<p><strong>Ahmet Emirhan Göktas</strong></p>
+<p>Der <code>Log</code>-Namensraum ist für das Loggen von Nachrichten auf den seriellen Port verantwortlich. Das Log-Level kann in der Konfigurationsdatei festgelegt werden. Die Protokollstufe kann auf <code>TRACE</code>, <code>DEBUG</code>, <code>INFO</code>, <code>WARN</code>, <code>ERROR</code> oder <code>FATAL</code> eingestellt werden. Das Log-Level wird über die Konfigurationsdatei festgelegt und die Nachrichten werden nur geloggt, wenn die Protokollstufe auf eine Stufe eingestellt ist, die gleich oder höher ist als die Stufe der Nachricht.</p>
+<h2 id="http-server">HTTP-Server<a class="headerlink" href="#http-server" title="Permanent link">¶</a></h2>
+<p><strong>Ahmet Emirhan Göktas</strong></p>
+<p>The HTTP-Server is responsible for handling incoming HTTP requests. It is implemented using the <a href="https://github.com/hoeken/PsychicHttp"><code>PsychicHttp</code></a> library, a lightweight and easy-to-use HTTP server library for the ESP32. We utilize the following features from the library:</p>
+<ul>
+<li>Handling HTTP requests such as GET and POST with file upload support</li>
+<li>Basic authentication</li>
+<li>HTTPS support
+<a href="../Quellenverzeichnis/#AEG_09">[AEG_09]</a></li>
+</ul>
+<h3 id="http-requests">HTTP Requests<a class="headerlink" href="#http-requests" title="Permanent link">¶</a></h3>
+<p><strong>Ahmet Emirhan Göktas</strong></p>
+<p>Der HTTP-Server ist dafür verantwortlich, eingehende HTTP-Anfragen zu bearbeiten. Er wird mit der <a href="https://github.com/hoeken/PsychicHttp"><code>PsychicHttp</code></a>-Bibliothek implementiert, einer leichtgewichtigen und einfach zu verwendenden HTTP-Server-Bibliothek für den ESP32. Wir nutzen die folgenden Funktionen der Bibliothek:</p>
+<ul>
+<li>Bearbeitung von HTTP-Anfragen wie GET und POST mit Unterstützung für Dateiupload</li>
+<li>Basis-Authentifizierung</li>
+<li>HTTPS-Unterstützung</li>
+</ul>
+<h3 id="http-anfragen">HTTP-Anfragen<a class="headerlink" href="#http-anfragen" title="Permanent link">¶</a></h3>
+<p><strong>Ahmet Emirhan Göktas</strong></p>
+<p>HTTP definiert Methoden, um die gewünschte Aktion an einer gegebenen Ressource anzugeben. Die Methodennamen sind groß- und kleinschreibungssensitiv und müssen in Großbuchstaben geschrieben werden, im Gegensatz zu Header-Namen. Diese Methoden können wie folgt kategorisiert werden:</p>
+<ul>
+<li><strong>Sicher</strong>: Methoden, die nichts auf dem Server ändern.</li>
+<li><strong>Idempotent</strong>: Methoden, die mehrfach mit dem gleichen Ergebnis aufgerufen werden können.</li>
+<li><strong>Cachefähig</strong>: Methoden, deren Antworten gespeichert und später wiederverwendet werden können.</li>
+</ul>
+<p><a href="../Quellenverzeichnis/#AEG_10">[AEG_10]</a>
+<a href="../Quellenverzeichnis/#AEG_11">[AEG_11]</a></p>
+<h4 id="get-anfrage">GET-Anfrage<a class="headerlink" href="#get-anfrage" title="Permanent link">¶</a></h4>
+<p><strong>Ahmet Emirhan Göktas</strong></p>
+<p>Die GET-Methode fordert eine Darstellung der angegebenen Ressource an. Anfragen mit GET sollten nur Daten abrufen und keine anderen Auswirkungen auf die Daten haben. Zum Beispiel sendet der Browser eine GET-Anfrage an den Server, um die HTML-Datei der Website abzurufen, wenn eine Website aufgerufen wird.</p>
+<p>Die Anfrage <a href="#__codelineno-0-1">unten</a> ist eine einfache GET-Anfrage, um die <code>index.html</code>-Datei vom Server abzurufen. Dies sollte die Hauptseite der Website zurückgeben.</p>
+<div class="language-http highlight"><pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nf">GET</span> <span class="nn">/index.html</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</span><span id="__span-0-2"><a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="na">Host</span><span class="o">:</span> <span class="l">192.168.4.1</span>
+</span></code></pre></div>
+<p><a href="#__codelineno-1-1">Ein weiteres Beispiel</a> für eine GET-Anfrage ist unten gezeigt, bei dem die aktuelle Konfiguration des Geräts angefordert wird. Dies sollte den Betriebsmodus des Geräts (z.B. <code>Standalone</code>, <code>Netzwerk</code> oder <code>Server</code>) im Klartext zurückgeben.</p>
+<p></p><div class="language-http highlight"><pre><span></span><code><span id="__span-1-1"><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="nf">GET</span> <span class="nn">/api/v1/GetOpMode</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</span><span id="__span-1-2"><a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="na">Host</span><span class="o">:</span> <span class="l">192.168.4.1</span>
+</span></code></pre></div>
+<a href="../Quellenverzeichnis/#AEG_12">[AEG_12]</a>
+<p>Derzeit hat der Server folgende Endpunkte:</p>
+<div style="margin: 10px; background-color: var(--md-code-bg-color); padding: 10px; border-radius: 5px; color: var(--md-code-fg-color);">
+<strong style="color: var(--md-code-hl-keyword-color);">GET
+        <code>/api/v1/GetDisplayModule</code></strong><br/>
+<p style="margin: 5px 0;">Gibt das angeschlossene E-Paper-Display-Modell zurück.</p>
+<p style="margin: 5px 0;"><strong>Mögliche Rückgabewerte:</strong></p>
+<ul style="margin-left: 10px;">
+<li><code style="color: var(--md-code-hl-string-color);">WS_7IN3G</code></li>
+<li><code style="color: var(--md-code-hl-string-color);">WS_9IN7</code></li>
+</ul>
+</div>
+<div style="margin: 10px; background-color: var(--md-code-bg-color); padding: 10px; border-radius: 5px; color: var(--md-code-fg-color);">
+<strong style="color: var(--md-code-hl-keyword-color);">GET <code>/api/v1/GetOpMode</code></strong><br/>
+<p style="margin: 5px 0;">Gibt den aktuellen Betriebsmodus des Geräts zurück.</p>
+<p style="margin: 5px 0;"><strong>Mögliche Rückgabewerte:</strong></p>
+<ul style="margin-left: 10px;">
+<li><code style="color: var(--md-code-hl-string-color);">Standalone</code></li>
+<li><code style="color: var(--md-code-hl-string-color);">Network</code></li>
+<li><code style="color: var(--md-code-hl-string-color);">Server</code></li>
+</ul>
+</div>
+<div style="margin: 10px; background-color: var(--md-code-bg-color); padding: 10px; border-radius: 5px; color: var(--md-code-fg-color);">
+<strong style="color: var(--md-code-hl-keyword-color);">GET <code>/api/v1/GetDisplayWidth</code></strong><br/>
+<p style="margin: 5px 0;">Gibt die Breite des angeschlossenen E-Paper-Displays in Pixel zurück.</p>
+<p style="margin: 5px 0;"><strong>Mögliche Rückgabewerte:</strong></p>
+<ul style="margin-left: 10px;">
+<li><code style="color: var(--md-code-hl-string-color);">Positive integer</code></li>
+</ul>
+</div>
+<div style="margin: 10px; background-color: var(--md-code-bg-color); padding: 10px; border-radius: 5px; color: var(--md-code-fg-color);">
+<strong style="color: var(--md-code-hl-keyword-color);">GET <code>/api/v1/GetDisplayHeight</code></strong><br/>
+<p style="margin: 5px 0;">Gibt die Höhe des angeschlossenen E-Paper-Displays in Pixel zurück.</p>
+<p style="margin: 5px 0;"><strong>Mögliche Rückgabewerte:</strong></p>
+<ul style="margin-left: 10px;">
+<li><code style="color: var(--md-code-hl-string-color);">Positive integer</code></li>
+</ul>
+</div>
+<div style="margin: 10px; background-color: var(--md-code-bg-color); padding: 10px; border-radius: 5px; color: var(--md-code-fg-color);">
+<strong style="color: var(--md-code-hl-keyword-color);">GET <code>/api/v1/GetLogLevel</code></strong><br/>
+<p style="margin: 5px 0;">Gibt das aktuelle Log-Level des Geräts zurück.</p>
+<p style="margin: 5px 0;"><strong>Mögliche Rückgabewerte:</strong></p>
+<ul style="margin-left: 10px;">
+<li><code style="color: var(--md-code-hl-string-color);">Trace</code></li>
+<li><code style="color: var(--md-code-hl-string-color);">Debug</code></li>
+<li><code style="color: var(--md-code-hl-string-color);">Info</code></li>
+<li><code style="color: var(--md-code-hl-string-color);">Warn</code></li>
+<li><code style="color: var(--md-code-hl-string-color);">Error</code></li>
+<li><code style="color: var(--md-code-hl-string-color);">Fatal</code></li>
+</ul>
+</div>
+<div style="margin: 10px; background-color: var(--md-code-bg-color); padding: 10px; border-radius: 5px; color: var(--md-code-fg-color);">
+<strong style="color: var(--md-code-hl-keyword-color);">GET <code>/api/v1/GetHTTPS</code></strong><br/>
+<p style="margin: 5px 0;">Gibt zurück, ob das Gerät HTTPS verwendet.</p>
+<p style="margin: 5px 0;"><strong>Mögliche Rückgabewerte:</strong></p>
+<ul style="margin-left: 10px;">
+<li><code style="color: var(--md-code-hl-string-color);">true</code></li>
+<li><code style="color: var(--md-code-hl-string-color);">false</code></li>
+</ul>
+</div>
+<p>Und diese Dateien sind derzeit auf dem Server verfügbar:</p>
+<div style="margin: 10px; background-color: var(--md-code-bg-color); padding: 10px; border-radius: 5px; color: var(--md-code-fg-color);">
+<strong style="color: var(--md-code-hl-keyword-color);">GET
+        <code>/index.html</code></strong><br/>
+<p style="margin: 5px 0;">Gibt die Hauptseite der Website zurück.</p>
+</div>
+<div style="margin: 10px; background-color: var(--md-code-bg-color); padding: 10px; border-radius: 5px; color: var(--md-code-fg-color);">
+<strong style="color: var(--md-code-hl-keyword-color);">GET
+        <code>/settings.html</code></strong><br/>
+<p style="margin: 5px 0;">Gibt die Einstellungsseite der Website zurück.</p>
+</div>
+<div style="margin: 10px; background-color: var(--md-code-bg-color); padding: 10px; border-radius: 5px; color: var(--md-code-fg-color);">
+<strong style="color: var(--md-code-hl-keyword-color);">GET
+        <code>/utils.js</code></strong><br/>
+<p style="margin: 5px 0;">Gibt die Hilfs-JavaScript-Datei zurück.</p>
+</div>
+<div style="margin: 10px; background-color: var(--md-code-bg-color); padding: 10px; border-radius: 5px; color: var(--md-code-fg-color);">
+<strong style="color: var(--md-code-hl-keyword-color);">GET
+        <code>/LPRD-Logo.webp</code></strong><br/>
+<p style="margin: 5px 0;">Gibt das LPRD-Logo-Bild zurück.</p>
+</div>
+<div style="margin: 10px; background-color: var(--md-code-bg-color); padding: 10px; border-radius: 5px; color: var(--md-code-fg-color);">
+<strong style="color: var(--md-code-hl-keyword-color);">GET
+        <code>/html2canvas.min.js</code></strong><br/>
+<p style="margin: 5px 0;">Gibt die html2canvas-Bibliothek zurück.</p>
+</div>
+<div style="margin: 10px; background-color: var(--md-code-bg-color); padding: 10px; border-radius: 5px; color: var(--md-code-fg-color);">
+<strong style="color: var(--md-code-hl-keyword-color);">GET
+        <code>/icons88-settings-25-w.png</code></strong><br/>
+<p style="margin: 5px 0;">Gibt das Einstellungs-Icon-Bild zurück.</p>
+</div>
+<div style="margin: 10px; background-color: var(--md-code-bg-color); padding: 10px; border-radius: 5px; color: var(--md-code-fg-color);">
+<strong style="color: var(--md-code-hl-keyword-color);">GET
+        <code>/script.js</code></strong><br/>
+<p style="margin: 5px 0;">Gibt die Haupt-JavaScript-Datei zurück.</p>
+</div>
+<div style="margin: 10px; background-color: var(--md-code-bg-color); padding: 10px; border-radius: 5px; color: var(--md-code-fg-color);">
+<strong style="color: var(--md-code-hl-keyword-color);">GET 
+        <code>/style.css</code></strong><br/>
+<p style="margin: 5px 0;">Gibt die Haupt-CSS-Datei zurück.</p>
+</div>
+<div style="margin: 10px; background-color: var(--md-code-bg-color); padding: 10px; border-radius: 5px; color: var(--md-code-fg-color);">
+<strong style="color: var(--md-code-hl-keyword-color);">GET 
+        <code>/layouts/various_templates</code></strong><br/>
+<p style="margin: 5px 0;">Gibt die Seite mit verschiedenen Vorlagen der Website zurück.</p>
+<p style="margin: 5px 0;"><strong>Hinweis:</strong> Dieses Verzeichnis enthält mehrere HTML-Vorlagen, die zum Generieren von Bildern verwendet werden, nicht zum direkten Seitenserver.</p>
+</div>
+<h4 id="post-request">POST Request<a class="headerlink" href="#post-request" title="Permanent link">¶</a></h4>
+<p><strong>Ahmet Emirhan Göktas</strong></p>
+<p>Die POST-Methode wird verwendet, um eine Entität an die angegebene Ressource zu übermitteln, was oft eine Änderung des Zustands des Servers zur Folge hat. Zum Beispiel, wenn ein Benutzer ein Formular auf einer Website absendet, sendet der Browser eine POST-Anfrage mit den Formulardaten an den Server. Der Typ der Anfrage wird durch den <code>Content-Type</code>-Header definiert.</p>
+<p>Die <a href="#__codelineno-2-1">untenstehende</a> Anfrage ist eine einfache POST-Anfrage, um den Betriebsmodus des Geräts festzulegen. Der Anfrage-Body sollte den neuen Betriebsmodus des Geräts enthalten (z.B. <code>Standalone</code>, <code>Network</code> oder <code>Server</code>). Der Server sollte mit einer Erfolgsmeldung oder einer Fehlermeldung antworten, wenn der angegebene Modus ungültig ist.</p>
+<p></p><div class="language-http highlight"><pre><span></span><code><span id="__span-2-1"><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="nf">POST</span> <span class="nn">/api/v1/SetOpMode</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</span><span id="__span-2-2"><a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="na">Host</span><span class="o">:</span> <span class="l">192.168.4.1</span>
+</span><span id="__span-2-3"><a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/x-www-form-urlencoded</span>
+</span><span id="__span-2-4"><a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="na">Content-Length</span><span class="o">:</span> <span class="l">16</span>
+</span><span id="__span-2-5"><a href="#__codelineno-2-5" id="__codelineno-2-5" name="__codelineno-2-5"></a>
+</span><span id="__span-2-6"><a href="#__codelineno-2-6" id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="nt">mode</span><span class="o">=</span><span class="s">Standalone</span>
+</span></code></pre></div>
+<a href="../Quellenverzeichnis/#AEG_13">[AEG_13]</a>
+<p>Derzeit hat der Server folgende Endpunkte:</p>
+<div style="margin: 10px; background-color: var(--md-code-bg-color); padding: 10px; border-radius: 5px; color: var(--md-code-fg-color);">
+<strong style="color: var(--md-code-hl-keyword-color);">POST
+        <code>/api/v1/SetOpMode</code></strong><br/>
+<p style="margin: 5px 0;">Legt den Betriebsmodus des Geräts fest.</p>
+<p style="margin: 5px 0;"><strong>Anfrage-Body:</strong></p>
+<ul style="margin-left: 10px;">
+<li><code style="color: var(--md-code-hl-string-color);">mode</code> - Der neue Betriebsmodus des Geräts.</li>
+</ul>
+<p style="margin: 5px 0;"><strong>Mögliche Werte:</strong></p>
+<ul style="margin-left: 10px;">
+<li><code style="color: var(--md-code-hl-string-color);">Standalone</code></li>
+<li><code style="color: var(--md-code-hl-string-color);">Network</code></li>
+<li><code style="color: var(--md-code-hl-string-color);">Server</code></li>
+</ul>
+</div>
+<div style="margin: 10px; background-color: var(--md-code-bg-color); padding: 10px; border-radius: 5px; color: var(--md-code-fg-color);">
+<strong style="color: var(--md-code-hl-keyword-color);">POST
+        <code>/api/v1/SetWiFiCred</code></strong><br/>
+<p style="margin: 5px 0;">Legt die WLAN-Zugangsdaten des Geräts fest.</p>
+<p style="margin: 5px 0;"><strong>Anfrage-Body:</strong></p>
+<ul style="margin-left: 10px;">
+<li><code style="color: var(--md-code-hl-string-color);">ssid</code> - Die SSID des WLAN-Netzwerks.</li>
+<li><code style="color: var(--md-code-hl-string-color);">password</code> - Das Passwort des WLAN-Netzwerks.</li>
+</ul>
+</div>
+<div style="margin: 10px; background-color: var(--md-code-bg-color); padding: 10px; border-radius: 5px; color: var(--md-code-fg-color);">
+<strong style="color: var(--md-code-hl-keyword-color);">POST
+        <code>/api/v1/SetServerURL</code></strong><br/>
+<p style="margin: 5px 0;">Legt die Server-URL des Geräts fest.</p>
+<p style="margin: 5px 0;"><strong>Anfrage-Body:</strong></p>
+<ul style="margin-left: 10px;">
+<li><code style="color: var(--md-code-hl-string-color);">url</code> - Die URL des Servers.</li>
+</ul>
+</div>
+<div style="margin: 10px; background-color: var(--md-code-bg-color); padding: 10px; border-radius: 5px; color: var(--md-code-fg-color);">
+<strong style="color: var(--md-code-hl-keyword-color);">POST
+        <code>/api/v1/SetDisplayModule</code></strong><br/>
+<p style="margin: 5px 0;">Legt das angeschlossene E-Paper-Display-Modell des Geräts fest.</p>
+<p style="margin: 5px 0;"><strong>Anfrage-Body:</strong></p>
+<ul style="margin-left: 10px;">
+<li><code style="color: var(--md-code-hl-string-color);">model</code> - Das Modell des E-Paper-Displays.</li>
+</ul>
+<p style="margin: 5px 0;"><strong>Mögliche Werte:</strong></p>
+<ul style="margin-left: 10px;">
+<li><code style="color: var(--md-code-hl-string-color);">WS_7IN3G</code></li>
+<li><code style="color: var(--md-code-hl-string-color);">WS_9IN7</code></li>
+</ul>
+</div>
+<div style="margin: 10px; background-color: var(--md-code-bg-color); padding: 10px; border-radius: 5px; color: var(--md-code-fg-color);">
+<strong style="color: var(--md-code-hl-keyword-color);">POST
+        <code>/api/v1/restart</code></strong><br/>
+<p style="margin: 5px 0;">Startet das Gerät neu.</p>
+</div>
+<div style="margin: 10px; background-color: var(--md-code-bg-color); padding: 10px; border-radius: 5px; color: var(--md-code-fg-color);">
+<strong style="color: var(--md-code-hl-keyword-color);">POST
+        <code>/api/v1/SetLogLevel</code></strong><br/>
+<p style="margin: 5px 0;">Legt das Log-Level des Geräts fest.</p>
+<p style="margin: 5px 0;"><strong>Anfrage-Body:</strong></p>
+<ul style="margin-left: 10px;">
+<li><code style="color: var(--md-code-hl-string-color);">level</code> - Das Log-Level des Geräts.</li>
+</ul>
+<p style="margin: 5px 0;"><strong>Mögliche Werte:</strong></p>
+<ul style="margin-left: 10px;">
+<li><code style="color: var(--md-code-hl-string-color);">Trace</code></li>
+<li><code style="color: var(--md-code-hl-string-color);">Debug</code></li>
+<li><code style="color: var(--md-code-hl-string-color);">Info</code></li>
+<li><code style="color: var(--md-code-hl-string-color);">Warn</code></li>
+<li><code style="color: var(--md-code-hl-string-color);">Error</code></li>
+<li><code style="color: var(--md-code-hl-string-color);">Fatal</code></li>
+</ul>
+</div>
+<div style="margin: 10px; background-color: var(--md-code-bg-color); padding: 10px; border-radius: 5px; color: var(--md-code-fg-color);">
+<strong style="color: var(--md-code-hl-keyword-color);">POST
+        <code>/api/v1/SetHTTPAuth</code></strong><br/>
+<p style="margin: 5px 0;">Legt die HTTP-Authentifizierung des Geräts fest.</p>
+<p style="margin: 5px 0;"><strong>Anfrage-Body:</strong></p>
+<ul style="margin-left: 10px;">
+<li><code style="color: var(--md-code-hl-string-color);">username</code> - Der Benutzername für die HTTP-Authentifizierung.</li>
+<li><code style="color: var(--md-code-hl-string-color);">password</code> - Das Passwort für die HTTP-Authentifizierung.</li>
+</ul>
+</div>
+<div style="margin: 10px; background-color: var(--md-code-bg-color); padding: 10px; border-radius: 5px; color: var(--md-code-fg-color);">
+<strong style="color: var(--md-code-hl-keyword-color);">POST
+        <code>/api/v1/SetHTTPS</code></strong><br/>
+<p style="margin: 5px 0;">Legt fest, ob das Gerät HTTPS verwendet oder nicht.</p>
+<p style="margin: 5px 0;"><strong>Anfrage-Body:</strong></p>
+<ul style="margin-left: 10px;">
+<li><code style="color: var(--md-code-hl-string-color);">https</code> - Ob das Gerät HTTPS verwendet oder nicht.</li>
+</ul>
+<p style="margin: 5px 0;"><strong>Mögliche Werte:</strong></p>
+<ul style="margin-left: 10px;">
+<li><code style="color: var(--md-code-hl-string-color);">true</code></li>
+<li><code style="color: var(--md-code-hl-string-color);">false</code></li>
+</ul>
+</div>
+<div style="margin: 10px; background-color: var(--md-code-bg-color); padding: 10px; border-radius: 5px; color: var(--md-code-fg-color);">
+<strong style="color: var(--md-code-hl-keyword-color);">POST
+        <code>/api/v1/mkdir</code></strong><br/>
+<p style="margin: 5px 0;">Erstellt ein neues Verzeichnis im Dateisystem.</p>
+<p style="margin: 5px 0;"><strong>Anfrage-Body:</strong></p>
+<ul style="margin-left: 10px;">
+<li><code style="color: var(--md-code-hl-string-color);">path</code> - Der Pfad des neuen Verzeichnisses.</li>
+</ul>
+<p style="margin: 5px 0;"><strong>Hinweis:</strong> Dieser Endpunkt dient nur zu Debugging-Zwecken und ist nicht in der finalen Version enthalten.</p>
+</div>
+<div style="margin: 10px; background-color: var(--md-code-bg-color); padding: 10px; border-radius: 5px; color: var(--md-code-fg-color);">
+<strong style="color: var(--md-code-hl-keyword-color);">POST
+        <code>/api/v1/ls</code></strong><br/>
+<p style="margin: 5px 0;">Listet die Dateien im angegebenen Verzeichnis auf.</p>
+<p style="margin: 5px 0;"><strong>Anfrage-Body:</strong></p>
+<ul style="margin-left: 10px;">
+<li><code style="color: var(--md-code-hl-string-color);">path</code> - Der Pfad des Verzeichnisses.</li>
+</ul>
+<p style="margin: 5px 0;"><strong>Hinweis:</strong> Dieser Endpunkt dient nur zu Debugging-Zwecken und ist nicht in der finalen Version enthalten.</p>
+</div>
+<div style="margin: 10px; background-color: var(--md-code-bg-color); padding: 10px; border-radius: 5px; color: var(--md-code-fg-color);">
+<strong style="color: var(--md-code-hl-keyword-color);">POST
+        <code>/api/v1/rm</code></strong><br/>
+<p style="margin: 5px 0;">Entfernt die angegebene Datei aus dem Dateisystem.</p>
+<p style="margin: 5px 0;"><strong>Anfrage-Body:</strong></p>
+<ul style="margin-left: 10px;">
+<li><code style="color: var(--md-code-hl-string-color);">path</code> - Der Pfad der zu entfernenden Datei.</li>
+</ul>
+<p style="margin: 5px 0;"><strong>Hinweis:</strong> Dieser Endpunkt dient nur zu Debugging-Zwecken und ist nicht in der finalen Version enthalten.</p>
+</div>
+<h3 id="file-upload">File Upload<a class="headerlink" href="#file-upload" title="Permanent link">¶</a></h3>
+<p><strong>Ahmet Emirhan Göktas</strong></p>
+<p>Datei-Uploads werden typischerweise mit der <a href="#post-request">POST</a> Methode behandelt. Für eine Datei-Upload-Anfrage muss der <code>Content-Type</code> Header auf <code>multipart/form-data</code> gesetzt sein und der Body entsprechend formatiert werden.</p>
+<p><code>Multipart/form-data</code> ist ein Medientyp, der das Senden mehrere verschiedene Inhaltsteile in einer einzigen HTTP-Anfrage ermöglicht. Jeder Teil wird durch eine einzigartige Begrenzungszeichenfolge getrennt und besteht aus einem Header und einem Body. Dieses Format ermöglicht die gleichzeitige Übertragung von Dateien und anderen Daten.</p>
+<p>Die Begrenzungszeichenfolge ist ein einzigartiger Trennstrich, der verwendet wird, um jeden Teil des multipart-Inhalts zu trennen. Der Server analysiert den Body der Anfrage und behandelt jeden Teil einzeln. Dies stellt sicher, dass Dateien, auch große, hochgeladen werden können, ohne typische Größenbeschränkungen für einzelne HTTP-Anfragen zu überschreiten.</p>
+<p><a href="#__codelineno-3-1">Nachfolgend</a> ist ein Beispiel für eine POST-Anfrage zum Hochladen einer Datei, die "Hello, World!" enthält, an den Server. Der Server sollte mit einer Erfolgsmeldung antworten, wenn die Datei erfolgreich gespeichert wird, oder mit einer Fehlermeldung, wenn dies fehlschlägt.</p>
+<p></p><div class="language-http highlight"><pre><span></span><code><span id="__span-3-1"><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="nf">POST</span> <span class="nn">/upload</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</span><span id="__span-3-2"><a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="na">Host</span><span class="o">:</span> <span class="l">example.com</span>
+</span><span id="__span-3-3"><a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="na">Content-Type</span><span class="o">:</span> <span class="l">multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW</span>
+</span><span id="__span-3-4"><a href="#__codelineno-3-4" id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="na">Content-Length</span><span class="o">:</span> <span class="l">210</span>
+</span><span id="__span-3-5"><a href="#__codelineno-3-5" id="__codelineno-3-5" name="__codelineno-3-5"></a>
+</span><span id="__span-3-6"><a href="#__codelineno-3-6" id="__codelineno-3-6" name="__codelineno-3-6"></a>------WebKitFormBoundary7MA4YWxkTrZu0gW
+</span><span id="__span-3-7"><a href="#__codelineno-3-7" id="__codelineno-3-7" name="__codelineno-3-7"></a>Content-Disposition: form-data; name="file"; filename="example.txt"
+</span><span id="__span-3-8"><a href="#__codelineno-3-8" id="__codelineno-3-8" name="__codelineno-3-8"></a>Content-Type: text/plain
+</span><span id="__span-3-9"><a href="#__codelineno-3-9" id="__codelineno-3-9" name="__codelineno-3-9"></a>
+</span><span id="__span-3-10"><a href="#__codelineno-3-10" id="__codelineno-3-10" name="__codelineno-3-10"></a>Hello World!
+</span><span id="__span-3-11"><a href="#__codelineno-3-11" id="__codelineno-3-11" name="__codelineno-3-11"></a>------WebKitFormBoundary7MA4YWxkTrZu0gW--
+</span></code></pre></div>
+<a href="../Quellenverzeichnis/#AEG_14">[AEG_14]</a>
+<a href="../Quellenverzeichnis/#AEG_15">[AEG_15]</a>
+<a href="../Quellenverzeichnis/#AEG_16">[AEG_16]</a>
+<p>Der Server hat derzeit folgende Endpunkte:</p>
+<div style="margin: 10px; background-color: var(--md-code-bg-color); padding: 10px; border-radius: 5px; color: var(--md-code-fg-color);">
+<strong style="color: var(--md-code-hl-keyword-color);">POST
+        <code>/api/v1/UploadImg</code></strong><br/>
+<p style="margin: 5px 0;">Lädt eine Bilddatei auf den Server hoch.</p>
+<p style="margin: 5px 0;"><strong>Anfrage-Body:</strong></p>
+<ul style="margin-left: 10px;">
+<li><code style="color: var(--md-code-hl-string-color);">file</code> - Die hochzuladende Bilddatei.</li>
+</ul>
+</div>
+<div style="margin: 10px; background-color: var(--md-code-bg-color); padding: 10px; border-radius: 5px; color: var(--md-code-fg-color);">
+<strong style="color: var(--md-code-hl-keyword-color);">POST
+        <code>/api/v1/UploadHTTPSKey</code></strong><br/>
+<p style="margin: 5px 0;">Lädt die HTTPS-Schlüsseldatei auf den Server hoch.</p>
+<p style="margin: 5px 0;"><strong>Anfrage-Body:</strong></p>
+<ul style="margin-left: 10px;">
+<li><code style="color: var(--md-code-hl-string-color);">file</code> - Die hochzuladende HTTPS-Schlüsseldatei.</li>
+</ul>
+</div>
+<div style="margin: 10px; background-color: var(--md-code-bg-color); padding: 10px; border-radius: 5px; color: var(--md-code-fg-color);">
+<strong style="color: var(--md-code-hl-keyword-color);">POST
+        <code>/api/v1/UploadHTTPSCert</code></strong><br/>
+<p style="margin: 5px 0;">Lädt die HTTPS-Zertifikatsdatei auf den Server hoch.</p>
+<p style="margin: 5px 0;"><strong>Anfrage-Body:</strong></p>
+<ul style="margin-left: 10px;">
+<li><code style="color: var(--md-code-hl-string-color);">file</code> - Die hochzuladende HTTPS-Zertifikatsdatei.</li>
+</ul>
+</div>
+<h3 id="basic-authentication">Basic Authentication<a class="headerlink" href="#basic-authentication" title="Permanent link">¶</a></h3>
+<p><strong>Ahmet Emirhan Göktas</strong></p>
+<p>HTTP Basic Authentication ist ein einfaches Authentifizierungsschema, das im HTTP-Protokoll integriert ist. Der Client sendet HTTP-Anfragen mit einem Authorization-Header, der das Wort <code>Basic</code> gefolgt von einem Leerzeichen und einer base64-codierten Zeichenkette <code>username:password</code> enthält. Der Server decodiert die base64-Zeichenkette und extrahiert den Benutzernamen und das Passwort zur Authentifizierung. Dann überprüft der Server die Anmeldeinformationen in seiner Datenbank und antwortet mit einem <code>401 Unauthorized</code>-Statuscode, wenn die Anmeldeinformationen ungültig sind. Das <a href="#__codelineno-5-1">untenstehende</a> Beispiel zeigt eine Anfrage mit grundlegender Authentifizierung.</p>
+<p></p><div class="language-http highlight"><pre><span></span><code><span id="__span-4-1"><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="nf">GET</span> <span class="nn">/api/v1/GetDisplayModule</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</span><span id="__span-4-2"><a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="na">Host</span><span class="o">:</span> <span class="l">192.168.4.1</span>
+</span><span id="__span-4-3"><a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="na">Authorization</span><span class="o">:</span> <span class="l">Basic YWRtaW46YWRtaW4K=</span>
+</span></code></pre></div>
+<a href="../Quellenverzeichnis/#AEG_17">[AEG_17]</a>
+<p>Alle oben aufgeführten Endpunkte sind mit Basic Authentication geschützt. Der Standardbenutzername und das Standardpasswort sind jeweils <code>admin</code>.</p>
+<h3 id="https-unterstutzung">HTTPS Unterstützung<a class="headerlink" href="#https-unterstutzung" title="Permanent link">¶</a></h3>
+<p><strong>Ahmet Emirhan Göktas</strong></p>
+<p>HTTPS ist eine Erweiterung von HTTP, um es sicherer zu machen, indem die zwischen dem Client und dem Server ausgetauschten Daten verschlüsselt werden. HTTPS verwendet SSL/TLS zur Verschlüsselung der Daten, was das Abhören und Manipulieren der Daten verhindert. Die Unterstützung von HTTPS kann einfach aktiviert werden, indem dem Server die Zertifikats- und Schlüsseldateien zur Verfügung gestellt werden. Der Server verwendet diese Dateien dann, um nach einem Neustart eine sichere Verbindung mit dem Client herzustellen. <a href="../Quellenverzeichnis/#AEG_18">[AEG_18]</a></p>
+<h2 id="systemansteuerung">Systemansteuerung<a class="headerlink" href="#systemansteuerung" title="Permanent link">¶</a></h2>
+<p><strong>Ahmet Emirhan Göktas</strong></p>
+<p>Um das Gerät einfach steuern zu können, haben wir den MCU-Namespace implementiert. Er bietet uns Methoden zum Neustarten des ESP, zum Versetzen in den Schlafmodus oder zum Einrichten des SPI-Busses.</p>
+<h3 id="allgemeine-steuerung-und-gpio">Allgemeine Steuerung und GPIO<a class="headerlink" href="#allgemeine-steuerung-und-gpio" title="Permanent link">¶</a></h3>
+<p><strong>Ahmet Emirhan Göktas</strong></p>
+<p>Es gibt verschiedene General Purpose Input/Output (GPIO)-Pins auf dem ESP32, die zur Steuerung externer Geräte verwendet werden können. Diese Pins können als Eingänge oder Ausgänge konfiguriert werden und können verwendet werden, um digitale Signale zu lesen oder zu schreiben, um externe Geräte zu steuern. Insgesamt stehen 48 GPIO-Pins auf dem ESP32S3 zur Verfügung. Es wird jedoch generell nicht empfohlen, alle zu verwenden, da einige für andere interne Funktionen wie Flash, RAM usw. benötigt werden. Es gibt auch RTC-GPIO-Pins, die verwendet werden können, um den ESP32 aus dem Tiefschlaf zu wecken.</p>
+<p>Zum Beispiel konfigurieren wir den GPIO-Pin 2 zu Beginn des Programms als Eingang, um zu überprüfen, ob ein Werksreset angefordert wird oder nicht. Später konfigurieren wir den Pin jedoch, um den ESP32 aus dem Tiefschlaf zu wecken.</p>
+<p>Ein weiteres Beispiel ist der GPIO 43, der zur Steuerung der Stromversorgung des E-Paper-Displays verwendet wird. Wir konfigurieren den Pin als Ausgang und schreiben ein hohes Signal auf den Pin, um das Display einzuschalten.</p>
+<p>Es gibt auch praktische Methoden wie Neustart, Tiefschlafmodus und Einstellen eines Weckers. Es gibt auch eine Verzögerungsmethode, die es uns ermöglicht, die Ausführung des Programms zu pausieren, ohne den Watchdog-Timer auszulösen.</p>
+<p><a href="../Quellenverzeichnis/#AEG_19">[AEG_19]</a></p>
+<h3 id="spi">SPI<a class="headerlink" href="#spi" title="Permanent link">¶</a></h3>
+<p><strong>Ahmet Emirhan Göktas</strong></p>
+<p>Das Serial Peripheral Interface (SPI) ist eine synchrone serielle Kommunikationsschnittstelle, die es Geräten ermöglicht, miteinander zu kommunizieren. Es wird häufig verwendet, um Mikrocontroller mit Peripheriegeräten wie Sensoren, Displays und Speichergeräten zu verbinden. Es besteht aus vier Signalen: MOSI (Master Out Slave In), MISO (Master In Slave Out), SCK (Serial Clock) und CS (Chip Select). Die Steuerung des SPI-Busses ist etwas mühsam, daher haben wir eine eigene Wrapper-Bibliothek um den esp-idf-SPI-Treiber erstellt. <a href="../Quellenverzeichnis/#AEG_21">[AEG_21]</a></p>
+<p>Zum Beispiel ist das E-Paper-Display über den SPI-Bus mit dem ESP32 verbunden. Wir verwenden den SPI-Bus, um Befehle und Daten an das Display zu senden, um den Bildschirm zu aktualisieren. Nachdem die Pins 9 für MOSI, 3 für MISO, 7 für SCK und 4 für CS an den SPI-Treiber übergeben wurden, können wir Daten einfach an das Display senden, ohne uns um die low-level Details kümmern zu müssen.
+<a href="../Quellenverzeichnis/#AEG_20">[AEG_20]</a></p>
+<h2 id="e-paper-display-api">E-Paper Display API<a class="headerlink" href="#e-paper-display-api" title="Permanent link">¶</a></h2>
+<p><strong>Ahmet Emirhan Göktas</strong></p>
+<p>Die E-Paper Display API ist verantwortlich für die Steuerung des E-Paper-Displays. Die API stellt Methoden zur Initialisierung des Displays und zur Aktualisierung des Displays mit neuen Bildern bereit. Sie abstrahiert die low-level Details des Displays und bietet eine einfache Schnittstelle zur Interaktion mit dem zugrundeliegenden Treiber. Jedes Displaymodell benötigt seinen eigenen Treiber. Derzeit haben wir Treiber für die Waveshare 7,3 Zoll (G) und 9,7 Zoll Displays.
+<a href="../Quellenverzeichnis/#AEG_22">[AEG_22]</a>
+<a href="../Quellenverzeichnis/#AEG_23">[AEG_23]</a></p>
+<h3 id="framebuffer">Framebuffer<a class="headerlink" href="#framebuffer" title="Permanent link">¶</a></h3>
+<p><strong>Ahmet Emirhan Göktas</strong></p>
+<p>Der Framebuffer ist ein Speicherpuffer, der direkt aus dem PSRAM des ESP32S3 zugewiesen wird. Der Framebuffer wird verwendet, um die Bilddaten an das Display zu senden. Er speichert die gegebenen Daten bereit zur Übertragung an das Display, während er seinen Speicherbedarf so klein wie möglich hält. Zum Beispiel unterstützt das 7,3 Zoll Display 4 Farben, daher benötigt es nur 2 Bits pro Pixel, wie auch das Display die Daten erwartet. Wenn wir also die ersten vier Pixel auf Schwarz setzen wollen, sollten die Daten <code>0000 0000</code> im Binärformat sein, wobei jedes 2 Bits einen Pixel darstellen. Die Anzahl der Bits pro Pixel kann beim Initialisieren des Framebuffers übergeben werden, der diese dann zur Kompression der Daten so weit wie möglich nutzt, um Speicher zu sparen, während dennoch ein einfacher Zugriff auf jeden Pixel möglich bleibt. Die Kompression für das 7,3 Zoll Display beträgt 2 Bits pro Pixel und ergibt eine Speicherersparnis von 75 % im Vergleich zu 8 Bits pro Pixel. Anstatt also 375 KB (480 × 800 / 1024) zuzuweisen, benötigen wir nur 93,75 KB (480 × 800 / 1024 / 4).</p>
+<h3 id="imagedata">ImageData<a class="headerlink" href="#imagedata" title="Permanent link">¶</a></h3>
+<p><strong>Ahmet Emirhan Göktas</strong></p>
+<p>Die ImageData Struktur wird verwendet, um die Bilddaten zu speichern, die auf dem E-Paper Display angezeigt werden sollen. Da wir begrenzte Mengen an RAM im ESP haben, erwartet die Struktur, dass Bilder in einer Datei im Dateisystem gespeichert werden. Das unterstützte Bildformat ist PNG, welches bereits Informationen wie Breite, Höhe und Farbtiefe enthält. Die Struktur wird vom Treiber gesteuert. Nachdem sie generiert wurde, können wir sie beim Treiber registrieren und ein Handle zur späteren Verwendung erhalten. Der Treiber kümmert sich dann um den Rest.</p>
+<p>Später können wir die Draw-Methode mit den gewünschten x- und y-Offsets aufrufen, um das Bild auf den Framebuffer zu zeichnen, das dann auf dem Bildschirm angezeigt wird. Der Treiber übergibt intern dem Bilddecoder die Farbpalette und den Framebuffer zum Zeichnen des Bildes. Der Bilddecoder verwendet die <a href="https://github.com/bitbank2/PNGdec">PNGdec</a> Bibliothek zum Dekodieren des Bildes und erhält die Pixeldaten. Diese Daten werden dann in tatsächlich darstellbare Farben umgewandelt, indem die nächstgelegene Farbe aus der Farbpalette ermittelt wird.
+<a href="../Quellenverzeichnis/#AEG_24">[AEG_24]</a>
+<a href="../Quellenverzeichnis/#AEG_25">[AEG_25]</a></p>
+<h3 id="colorpalette">Colorpalette<a class="headerlink" href="#colorpalette" title="Permanent link">¶</a></h3>
+<p><strong>Ahmet Emirhan Göktas</strong></p>
+<p>Dies ist eine Struktur, die wir verwenden können, um die Farben zu definieren, die wir haben möchten. Es kann später ein 16-Bit-Farbwert (RGB565) übergeben werden, um die nächstgelegene Farbe aus der Palette zu erhalten. Es verwendet den quadrierten euklidischen Abstand, um die nächstgelegene Farbe zu finden. Der euklidische Abstand ist die Quadratwurzel der Summe der quadrierten Differenzen zwischen den beiden Farben. Der quadrierte Abstand wird verwendet, um die Quadratwurzeloperation zu vermeiden, die rechnerisch aufwändig ist. Nach Berechnung jedes Abstands wird die Farbe mit dem kleinsten Abstand im Cache gespeichert, um später verwendet zu werden, und der Index der Farbe in der Palette wird zurückgegeben. Wenn wir zum Beispiel eine Palette mit 4 Farben haben: schwarz (0, 0, 0), weiß (255, 255, 255), rot (255, 0, 0) und gelb (255, 255, 0) und wir übergeben die Farbe (204, 0, 70) an die Palette, wird der Abstand zwischen jeder Farbe wie folgt berechnet:</p>
+<p><figure id="_abb8_7"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/Firmware/euclidean_distance.svg"><img alt="" src="../img/Firmware/euclidean_distance.svg"/></a><figcaption> </figcaption></figure></p>
+<p><figure id="_abb8_8"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/Firmware/black-distance.svg"><img alt="" src="../img/Firmware/black-distance.svg"/></a><figcaption> </figcaption></figure></p>
+<p><figure id="_abb8_9"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/Firmware/white-distance.svg"><img alt="" src="../img/Firmware/white-distance.svg"/></a><figcaption> </figcaption></figure></p>
+<p><figure id="_abb7_10"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/Firmware/red-distance.svg"><img alt="" src="../img/Firmware/red-distance.svg"/></a><figcaption> </figcaption></figure></p>
+<p><figure id="_abb7_11"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/Firmware/yellow-distance.svg"><img alt="" src="../img/Firmware/yellow-distance.svg"/></a><figcaption> </figcaption></figure></p>
+<p>Aus diesen Berechnungen ergibt sich, dass die Farbe (204, 0, 70) der Farbe Rot in der Palette am nächsten ist.
+<a href="../Quellenverzeichnis/#AEG_26">[AEG_26]</a></p>
+<h3 id="treiber">Treiber<a class="headerlink" href="#treiber" title="Permanent link">¶</a></h3>
+<p><strong>Ahmet Emirhan Göktas</strong></p>
+<p>Der Treiber ist der Hauptteil der E-Paper Display API. Er ist verantwortlich für die Initialisierung des Displays, die Aktualisierung des Displays mit neuen Bilddaten und die Handhabung der low-level Details des Displays. Es gibt eine Interface-Klasse, die jeder Treiber erben muss. Die Interface-Klasse stellt die grundlegenden Methoden bereit, die der Treiber implementieren muss. Der Treiber ist verantwortlich für die Einrichtung des Displays, das Senden der Befehle an das Display und die Aktualisierung des Displays mit neuen Bilddaten. Der Treiber kümmert sich auch um die low-level Details des Displays, wie das Einrichten des SPI-Busses, das Senden der Daten an das Display und die Aktualisierung des Displays mit neuen Bilddaten.`</p>
+<!-- Content moved into the footer -->
+<!-- <style>
+p, figcaption, ul, caption, table {
+    /* font-family: Verdana, Geneva, Tahoma, sans-serif !important; */
+    font-size: 13px;
+    /* font-size: 1rem; */
+}
+
+td {
+    padding: 4px 12px;
+}
+</style> -->
+</article>
+</div>
+<script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
+  Zurück zum Seitenanfang
+</button>
+</main>
+<!--
+  Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+<!-- Footer -->
+<footer class="md-footer">
+<style>
+        .md-source-file {
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 61rem;
+            margin-bottom: 0;
+            padding: 0 20.5px 0 20.5px;
+        }
+
+        .md-source-file__fact {
+            color: rgb(127,128,130);
+            text-decoration: none;
+        }
+
+        .md-source-file__fact a {
+            color: rgb(84, 136, 232);
+            text-decoration: none;
+        }
+
+        .md-source-file__fact :hover {
+            opacity: .7
+        }
+    </style>
+<!-- Render date of last update -->
+<!-- Render date of creation -->
+<!-- ---------------------------------------------------------------------- -->
+<!-- Render authors -->
+<!-- ---------------------------------------------------------------------- -->
+<!-- Render committers from GitHub -->
+<!-- Render committers from GitLab -->
+<!-- Render committers -->
+<!-- ---------------------------------------------------------------------- -->
+<!-- Determine date of last update -->
+<!-- Determine date of creation -->
+<!-- Source file information -->
+<aside class="md-source-file">
+<!-- Date of last update -->
+<span class="md-source-file__fact">
+<span class="md-icon" title="Letztes Update">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"></path></svg>
+</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 30, 2024</span>
+</span>
+<!-- Date of creation -->
+<!-- Authors (git-authors plugin) -->
+<span class="md-source-file__fact">
+<span class="md-icon" title="Mitwirkende">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 5.5A3.5 3.5 0 0 1 15.5 9a3.5 3.5 0 0 1-3.5 3.5A3.5 3.5 0 0 1 8.5 9 3.5 3.5 0 0 1 12 5.5M5 8c.56 0 1.08.15 1.53.42-.15 1.43.27 2.85 1.13 3.96C7.16 13.34 6.16 14 5 14a3 3 0 0 1-3-3 3 3 0 0 1 3-3m14 0a3 3 0 0 1 3 3 3 3 0 0 1-3 3c-1.16 0-2.16-.66-2.66-1.62a5.536 5.536 0 0 0 1.13-3.96c.45-.27.97-.42 1.53-.42M5.5 18.25c0-2.07 2.91-3.75 6.5-3.75s6.5 1.68 6.5 3.75V20h-13v-1.75M0 20v-1.5c0-1.39 1.89-2.56 4.45-2.9-.59.68-.95 1.62-.95 2.65V20H0m24 0h-3.5v-1.75c0-1.03-.36-1.97-.95-2.65 2.56.34 4.45 1.51 4.45 2.9V20Z"></path></svg>
+</span>
+<nav>
+<a href="mailto:emirhangoktas01@gmail.com">Emirhan Göktaş</a>, 
+            <a href="mailto:mario.wegmann@tha.de">Marioheld</a>, 
+            <a href="mailto:lukic.stasa@outlook.com">stasa</a>
+</nav>
+</span>
+<!-- Authors (git-committers plugin) -->
+</aside>
+<!-- Link to previous and/or next page -->
+<nav aria-label="Fußzeile" class="md-footer__inner md-grid">
+<!-- Link to previous page -->
+<a aria-label="Zurück: Hardware" class="md-footer__link md-footer__link--prev" href="../Hardware/">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</div>
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                    Zurück
+                </span>
+<div class="md-ellipsis">
+                    Hardware
+                </div>
+</div>
+</a>
+<!-- Link to next page -->
+<a aria-label="Weiter: Webentwicklung" class="md-footer__link md-footer__link--next" href="../Webentwicklung/">
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                    Weiter
+                </span>
+<div class="md-ellipsis">
+                    Webentwicklung
+                </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
+</div>
+</a>
+</nav>
+<!-- Further information -->
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Copyright © 2024 LPRD Project Maintainers
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+ ... <a class="link--pdf-download" download href="../pdf/document.pdf" title="PDF">download PDF</a></div>
+<!-- Social links -->
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<div class="md-progress" data-md-component="progress" role="progressbar"></div>
+<script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant.progress", "navigation.tabs", "navigation.indexes", "toc.integrate", "navigation.top", "search.suggest", "search.highlight", "content.action.view", "content.code.copy", "content.tabs.link", "content.tooltips", "navigation.footer"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}, "version": {"default": ["main", "dev"], "provider": "mike"}}</script>
+<script src="../assets/javascripts/bundle.ad660dcc.min.js"></script>
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>

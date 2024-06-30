@@ -1,0 +1,1250 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="de">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="https://tha-lprd.github.io/Docs/main/Hardware/" rel="canonical"/>
+<link href="../Systemkonzept/" rel="prev"/>
+<link href="../Firmware/" rel="next"/>
+<link href="../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.0, mkdocs-material-9.5.27" name="generator"/>
+<title>Hardware - LPRD Docs</title>
+<link href="../assets/stylesheets/main.6543a935.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../assets/javascripts/glightbox.min.js"></script></link></head>
+<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#hardware">
+          Zum Inhalt
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<div data-md-color-scheme="default" data-md-component="outdated" hidden="">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Kopfzeile" class="md-header__inner md-grid">
+<a aria-label="LPRD Docs" class="md-header__button md-logo" data-md-component="logo" href=".." title="LPRD Docs">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+              LPRD Docs
+            </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+              
+                Hardware
+              
+            </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme)" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9h-1.9M20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69m-9.15 3.96h2.3L12 9l-1.15 3.65Z"></path></svg>
+</label>
+<input aria-label="" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"></path></svg>
+</label>
+<input aria-label="" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="indigo" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"></path></svg>
+</label>
+</form>
+<script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Suche" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Suche" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="Suche" class="md-search__options">
+<button aria-label="Zurücksetzen" class="md-search__icon md-icon" tabindex="-1" title="Zurücksetzen" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Suche wird initialisiert
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/THA-LPRD" title="Zum Repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    THA-LPRD
+  </div>
+</a>
+</div>
+<a aria-describedby="__tooltip_6" class="md-header__button md-header-nav__button md-icon" href="../pdf/document.pdf">
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+<path d="M128,0c-17.6,0-32,14.4-32,32v448c0,17.6,14.4,32,32,32h320c17.6,0,32-14.4,32-32V128L352,0H128z" fill="#E2E5E7"></path>
+<path d="m384 128h96l-128-128v96c0 17.6 14.4 32 32 32z" fill="#B0B7BD"></path>
+<polygon fill="#CAD1D8" points="480 224 384 128 480 128"></polygon>
+<path d="M416,416c0,8.8-7.2,16-16,16H48c-8.8,0-16-7.2-16-16V256c0-8.8,7.2-16,16-16h352c8.8,0,16,7.2,16,16  V416z" fill="#F15642"></path>
+<g fill="#fff">
+<path d="m101.74 303.15c0-4.224 3.328-8.832 8.688-8.832h29.552c16.64 0 31.616 11.136 31.616 32.48 0 20.224-14.976 31.488-31.616 31.488h-21.36v16.896c0 5.632-3.584 8.816-8.192 8.816-4.224 0-8.688-3.184-8.688-8.816v-72.032zm16.88 7.28v31.872h21.36c8.576 0 15.36-7.568 15.36-15.504 0-8.944-6.784-16.368-15.36-16.368h-21.36z"></path>
+<path d="m196.66 384c-4.224 0-8.832-2.304-8.832-7.92v-72.672c0-4.592 4.608-7.936 8.832-7.936h29.296c58.464 0 57.184 88.528 1.152 88.528h-30.448zm8.064-72.912v57.312h21.232c34.544 0 36.08-57.312 0-57.312h-21.232z"></path>
+<path d="m303.87 312.11v20.336h32.624c4.608 0 9.216 4.608 9.216 9.072 0 4.224-4.608 7.68-9.216 7.68h-32.624v26.864c0 4.48-3.184 7.92-7.664 7.92-5.632 0-9.072-3.44-9.072-7.92v-72.672c0-4.592 3.456-7.936 9.072-7.936h44.912c5.632 0 8.96 3.344 8.96 7.936 0 4.096-3.328 8.704-8.96 8.704h-37.248v0.016z"></path>
+</g>
+<path d="m400 432h-304v16h304c8.8 0 16-7.2 16-16v-16c0 8.8-7.2 16-16 16z" fill="#CAD1D8"></path>
+</svg>
+</a>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Hauptnavigation" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../Einleitung/">
+        
+  
+    
+  
+  Einleitung
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../PraktischeUTheoretischeGrund/">
+        
+  
+    
+  
+  Praktische und Theoretische Grundlagen
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../StandDerWissenschaftUndTechnik/">
+        
+  
+    
+  
+  Marktanalyse
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../Teamorga/">
+        
+  
+    
+  
+  Teamorganisation
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../Systemkonzept/">
+        
+  
+    
+  
+  Systemkonzept
+
+      </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="./">
+        
+  
+    
+  
+  Hardware
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../Firmware/">
+        
+  
+    
+  
+  Firmware
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../Webentwicklung/">
+        
+  
+    
+  
+  Webentwicklung
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../Fazit/">
+        
+  
+    
+  
+  Fazit
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../Glossar/">
+        
+  
+    
+  
+  Glossar
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../about/">
+        
+  
+    
+  
+  Über LPRD
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../Quellenverzeichnis/">
+        
+  
+    
+  
+  Quellenverzeichnis
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../Handbuch/">
+        
+  
+    
+  
+  Handbuch
+
+      </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="LPRD Docs" class="md-nav__button md-logo" data-md-component="logo" href=".." title="LPRD Docs">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+    LPRD Docs
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/THA-LPRD" title="Zum Repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    THA-LPRD
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Einleitung/">
+<span class="md-ellipsis">
+    Einleitung
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../PraktischeUTheoretischeGrund/">
+<span class="md-ellipsis">
+    Praktische und Theoretische Grundlagen
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../StandDerWissenschaftUndTechnik/">
+<span class="md-ellipsis">
+    Marktanalyse
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Teamorga/">
+<span class="md-ellipsis">
+    Teamorganisation
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Systemkonzept/">
+<span class="md-ellipsis">
+    Systemkonzept
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    Hardware
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    Hardware
+  </span>
+</a>
+<nav aria-label="Inhaltsverzeichnis" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#auswahl-des-mikrocontrollers">
+<span class="md-ellipsis">
+      Auswahl des Mikrocontrollers
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#auswahl-der-displaytechnologie">
+<span class="md-ellipsis">
+      Auswahl der Displaytechnologie
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#auswahl-der-akkukomponenten">
+<span class="md-ellipsis">
+      Auswahl der Akkukomponenten
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#zusammenbau-der-akkupacks">
+<span class="md-ellipsis">
+      Zusammenbau der Akkupacks
+    </span>
+</a>
+<nav aria-label="Zusammenbau der Akkupacks" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#konzeptioneller-aufbau">
+<span class="md-ellipsis">
+      Konzeptioneller Aufbau
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#battery-management-system-anschlieen">
+<span class="md-ellipsis">
+      Battery Management System anschließen
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#vorbereiten-der-lithium-ionen-zellen">
+<span class="md-ellipsis">
+      Vorbereiten der Lithium-Ionen-Zellen
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#punktschweiverfahren-bei-lithium-ionen-zellen">
+<span class="md-ellipsis">
+      Punktschweißverfahren bei Lithium-Ionen-Zellen
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#isolieren-des-akkupacks">
+<span class="md-ellipsis">
+      Isolieren des Akkupacks
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#schaltungsentwurf">
+<span class="md-ellipsis">
+      Schaltungsentwurf
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#platinendesign">
+<span class="md-ellipsis">
+      Platinendesign
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#zusammenbau-der-platinen">
+<span class="md-ellipsis">
+      Zusammenbau der Platinen
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#gehause">
+<span class="md-ellipsis">
+      Gehäuse
+    </span>
+</a>
+<nav aria-label="Gehäuse" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#anforderungen">
+<span class="md-ellipsis">
+      Anforderungen
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#design">
+<span class="md-ellipsis">
+      Design
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#prototyping">
+<span class="md-ellipsis">
+      Prototyping
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#strommessung-von-mikrocontroller-und-display">
+<span class="md-ellipsis">
+      Strommessung von Mikrocontroller und Display
+    </span>
+</a>
+<nav aria-label="Strommessung von Mikrocontroller und Display" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#versuchsaufbau">
+<span class="md-ellipsis">
+      Versuchsaufbau
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#messergebnisse">
+<span class="md-ellipsis">
+      Messergebnisse
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#interpretation">
+<span class="md-ellipsis">
+      Interpretation
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#a-d-wandler-messung">
+<span class="md-ellipsis">
+      A-D-Wandler Messung
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Firmware/">
+<span class="md-ellipsis">
+    Firmware
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Webentwicklung/">
+<span class="md-ellipsis">
+    Webentwicklung
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Fazit/">
+<span class="md-ellipsis">
+    Fazit
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Glossar/">
+<span class="md-ellipsis">
+    Glossar
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../about/">
+<span class="md-ellipsis">
+    Über LPRD
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Quellenverzeichnis/">
+<span class="md-ellipsis">
+    Quellenverzeichnis
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Handbuch/">
+<span class="md-ellipsis">
+    Handbuch
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<a class="md-content__button md-icon" href="https://github.com/THA-LPRD/docs/raw/dev/docs/Hardware.md" title="Quellcode der Seite anzeigen">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"></path></svg>
+</a>
+<h1 id="hardware">Hardware<a class="headerlink" href="#hardware" title="Permanent link">¶</a></h1>
+<h2 id="auswahl-des-mikrocontrollers">Auswahl des Mikrocontrollers<a class="headerlink" href="#auswahl-des-mikrocontrollers" title="Permanent link">¶</a></h2>
+<p><strong>Benjamin Klaric</strong></p>
+<p>In der Tabelle in Kapitel <a href="../PraktischeUTheoretischeGrund/#mikrocontroller">2.1 Mikrocontroller</a> wurden schon die verschiedenen Möglichkeiten zur Auswahl von Mikrocontrollern dargestellt. Wenn man die Anforderungen, wie Anzahl GPIO Pins, Stromverbrauch in Sleep Modi, Bauform, interne Speicher und mögliche Vorteile über den anderen, wie z. B. intern gebauten Ladegerät, erschien schon ein eindeutiger Gewinner, in Form von XIAO ESP32-S3.  
+Die verschiedenen STM32 Mikrocontroller waren auch lange Zeit in Betrachtung, wurden aber herausgelassen aufgrund der Tatsache, dass sie kein eingebautes Wi-Fi-Modul haben.<br/>
+Der XIAO ESP32-S3 mit seinem kleinen Formfaktor, sehr geringen Stromverbrauch in Deep Sleep Modus, enormen Internen speicher (im Vergleich mit anderen Kandidaten) und Möglichkeit, die Akku über den USB-C-Anschluss zu laden, machen den Mikrocontroller sehr flexibel und für das Systemanforderungen passend. <a href="../Quellenverzeichnis/#BK_07">[BK_07]</a><br/>
+Der Prozessor, der auf dem Mikrocontroller läuft, ist der leistungsstarke Xtensa LX7 Dual-Core, 32-Bit-Prozessor, mit bis zu 240 MHz Taktfrequenz. Mit internen 512 KB SRAM-Speichern ist er in der Lage, viele Operationen und Funktionen lokal durchzuführen. Neben dem SRAM-Speicher ist der Mikrocontroller auch extern mit 8 MB Flash und 8 MB PSRAM Speicher ausgestattet. Der Mikrocontroller ist auch mit interner Hardware Watchdog Timers ausgestattet, die in dem Fall, wo der Mikrocontroller hängend geblieben ist, eine Möglichkeit von Neustart des Systems anbietet. <a href="../Quellenverzeichnis/#BK_08">[BK_08]</a><br/>
+Aufgrund der niedrigen Idle Strom von 22 mA und noch niedrigere Deep Sleep Strom von 14 μA stellt sich das Modul perfekt für ein autarkes System. Die Möglichkeit von Laden der Akkus durch das USB-C ist natürlich auch von Vorteil, allerdings mit einem niedrigen Ladestrom von 100 mA. Und das alles befindet sich auf einer kleinen Platine mit Maßen 21x17,5 mm, der ungefähre Große von einer 2-Euro-Münze. <a href="../Quellenverzeichnis/#BK_07">[BK_07]</a><br/>
+Der XIAO ESP32-S3 stellt elf GPIO Pins zur Verfügung, was auf <a href="#_abb_6_1">Abildung 6.1</a> zu sehen ist. Von diesen elf GPIO-Pins sind neun analoge Pins, an die man analoge Signale anschließen kann. Neben den UART-Pins, die für die serielle Kommunikation mit dem Mikrocontroller genutzt werden, bietet der XIAO ESP32-S3 auch eine SPI- und eine I2C-Schnittstelle. Diese Schnittstellen sind serielle synchrone Datenbusse, die zur Kommunikation mit verschiedenen Peripheriegeräten verwendet werden können. Der 5V-Pin ist nur dann aktiv, wenn das Modul über den USB-C-Anschluss betrieben wird. Andererseits ist der 3,3V-Pin ist immer aktiv und dient als regulierter Ausgang mit einem maximalen Strom von 700 mA. <a href="../Quellenverzeichnis/#BK_07">[BK_07]</a>  </p>
+<p><figure id="_abb_6_1"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/XIAO_Pinout.png"><img alt="" src="../img/XIAO_Pinout.png" width="85%"/></a><figcaption> Abbildung 6.1: Pinout von XIAO ESP32-S3 <a href="../Quellenverzeichnis/#BK_07">[BK_07]</a> </figcaption></figure></p>
+<h2 id="auswahl-der-displaytechnologie">Auswahl der Displaytechnologie<a class="headerlink" href="#auswahl-der-displaytechnologie" title="Permanent link">¶</a></h2>
+<p><strong>Stasa Lukic</strong></p>
+<p>Unsere Display auswahl hat sich letztlich auf die ePaper Technologie und bistabile LCD-Technologie beschränkt, durch ihren Vorteil der deutigen Stromeffizienz. Zwischen diesen beiden Technologien haben wir uns für ePaper entschieden, der Vorteil, mit ePaper haben wir die Möglichkeit noch mehr Strom zu sparen und durch das Papierartige Display ist besitzt es eine bessere Lesbarkeit als Bistabile LCD.  
+  
+ePaper besitzt weniger Farbmöglichkeiten, dadurch entschieden wir uns 2 Displays für das Projekt zu testen, ein Display ohne Farben, aber dafür schnelle Refresh-Time und Display mit Farben, aber mit einer längeren Refresh-Time.  
+Das erste Display kann man in <a href="#_abb_6_3">Abbildung 6.3</a> sehen, es kommt mit einer Refresh-Time von 0,5 Sekunden, besitzt dafür aber nur 8 mögliche Greyscales.
+Das zweite Display besitzt 4 Farben, Weiß, Schwarz, Gelb und Rot und kann mit in Abbildung 7.2.1 sehen. Dies kommt aber mit dem Nachteil von einer Refresh-Time von 16 Sekunden.</p>
+<p><figure id="_abb_6_2"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/PraktischeUndTheoGrund/Display73.png"><img alt="" src="../img/PraktischeUndTheoGrund/Display73.png" width="70%,"/></a><figcaption> Abbildung 6.2: Waveshare 7.3inch (G) ePaper Display </figcaption></figure></p>
+<p><figure id="_abb_6_3"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/PraktischeUndTheoGrund/Displays97.png"><img alt="" src="../img/PraktischeUndTheoGrund/Displays97.png" width="70%"/></a><figcaption> Abbildung 6.3: Waveshare 9.7inch ePaper Display </figcaption></figure></p>
+<p>Die erwähnten geringen Stromverbrauch haben wir selber nochmal getestet und kann man im im Kapitel <a href="./#strommessung-von-mikrocontroller-und-display">7.9 Strommessung von Mikrocontroller und Display</a> genauer nachlesen.  
+  
+Ein kleiner Nachteil der Auswahl ist, dass verschiedene Displays verschiedene Anforderungen haben. Die Displays besitzen einen unterschiedlichen Spannungsverbrauch. Das 7.3 inch Display benutzt 3.3V und das größere 9.7 inch Display benutzt 5V.  
+Dadurch haben wir uns entschieden, einen Schalter auf der Platine einzubauen, der dieses Problem löst und zwischen diesen Spannungen wechselt, genaueres kann man im Kapitel <a href="./#schaltungsentwurf">7.5 Schaltungsentwurf</a> nachlesen.</p>
+<h2 id="auswahl-der-akkukomponenten">Auswahl der Akkukomponenten<a class="headerlink" href="#auswahl-der-akkukomponenten" title="Permanent link">¶</a></h2>
+<p><strong>Benjamin Klaric</strong></p>
+<p><strong>Akku</strong><br/>
+Der ausgewählte Akku, aus verschiedenen Akku-Technologien, die in <a href="../PraktischeUTheoretischeGrund/#akku-technologien">3.3 Akku-Technologien</a> genannt waren, war der klassische Li-Ion-Akku aus mehreren Gründen. Aufgrund der Anzahl und Position des Systems, die von Akku betrieben sein wurde, war der Sicherheitsaspekt ein entscheidender Faktor. Deswegen wurden die LiPo-Akkus nicht mehr betrachtet.<br/>
+Der Vergleich zwischen Li-Ion-Akkus und LiFePo<sub>4</sub>-Akkus hatte eindeutige Unterschiede geliefert. Die LiFePo<sub>4</sub>-Akkus repräsentieren die sicherste Variante, andererseits hatten die Li-Ion-Akkus eine höhere Nennspannung von 3,7V.<br/>
+Aus Sicherheitsblick betrachtet wurden die LiFePo<sub>4</sub>-Akkus ausgewählt. Die Nennspannung von 3,2V hat jedoch gegen die LiFePo<sub>4</sub>-Akkus gesprochen, da der ausgewählte Mikrocontroller, nämlich den XIAO ESP32-S3, Betriebsspannung zwischen 3,2V und 4,2V angefordert hat. Obwohl die LiFePo<sub>4</sub>-Akkus die Betriebsspannung liefern konnten, konnten sie das System nicht betreiben, da die genannte Betriebsspannung in Fall ohne schwere Last gemeint ist. Wegen dies wurden allerdings die Li-Ion-Akkus gewählt.<br/>
+Der nächste Schritt war, eine vernünftige Kapazität zu finden, sodass die Akkus das System lang genug betreiben konnten. Dazu hat man die Schätzungen mit Verbrauchmessungen unterstützt und ungefähr die benötigte Akku-Kapazität geschätzt. Eine Akkulaufzeit von einem Jahr war gewünscht und dementsprechend war die Große des Akkus gewählt, nämlich ~10000 mAh.  
+Ein Akku mit so einer Kapazität war aber nicht einfach zu finden. Deswegen wurde das Akkupack aus zwei ~5000 mAh Akkus gebaut. Um von zwei ~5000 mAh auf die gewünschte Kapazität zu kommen, wurden die Akkus in parallel verbunden, da so die Kapazität sich verdoppelt; im Vergleich, wenn man die in Reihe anschließt, so wird die Spannung verdoppelt.<br/>
+Bei der Suche nach Akkus muss man einige Sachen beachten. Der Formfaktor der Akku, minimale Kapazität, ob der Akku schon ein eingebautes BMS hat und der Entladestrom.<br/>
+Es würde die BAK N21700CD-53E ausgewählt, die auf <a href="#_abb_6_4">Abildung 6.4</a> zu sehen ist.</p>
+<p><figure id="_abb_6_4"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/Li-Ion-Akku.png"><img alt="" src="../img/Li-Ion-Akku.png" width="60%"/></a><figcaption> Abbildung 6.4: Li-Ion-Akku <a href="../Quellenverzeichnis/#BK_09">[BK_09]</a> </figcaption></figure></p>
+<p>Aus der Tabelle der technischen Daten auf der <a href="#_abb_6_5">Abildung 6.5</a> des ausgewählten Akkus ist es klar zu sehen, dass alle benötigten Parameter erfüllt sind. Der Formfaktor ist aus der Durchmesser und Höhe (die ersten zwei Ziffern von Durchmesser und normalerweise erste drei Ziffern von Höhe → 21700).  </p>
+<p><figure id="_abb_6_5"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/Li-Ion-Akku-Tabelle.png"><img alt="" src="../img/Li-Ion-Akku-Tabelle.png" width="65%"/></a><figcaption> Abbildung 6.5: Technische Daten von BAK N21700CD-53E <a href="../Quellenverzeichnis/#BK_09">[BK_09]</a> </figcaption></figure></p>
+<p><strong>BMS</strong><br/>
+Um den Akkupack sicher betreiben zu können, wurde ein BMS benötigt. Wie bereits in <a href="../PraktischeUTheoretischeGrund/#akku-technologien">3.3 Akku-Technologien</a> erwähnt, schützt ein BMS die Akkus vor Tiefentladung, Überladung, Kurzschluss und Überstrom.  </p>
+<p>Beim genaueren Blick auf ein 1S 2MOS BMS, auf <a href="#_abb_6_6">Abildung 6.6</a>, wo 1S die Anzahl der Zellen in Serie repräsentiert, erkennt man einen IC und zwei MOSFET Transistoren auf der Vorderseite. Die MOSFET Transistoren sind nämlich die NMOS-Transistoren und dienen als Schalter, die vom IC durch Gate-Spannung angesteuert werden.  </p>
+<p><strong>Überladungsschutz</strong>: Wenn die Ladespannung 4,2V überschreitet, sendet der IC ein Signal, das die Gate-Spannung eines NMOS-Transistors steuert, wodurch dieser den Stromkreis unterbricht.  </p>
+<p><strong>Tiefentladungsschutz</strong>: Bei Tiefentladung wird ein ähnlicher Mechanismus aktiviert, allerdings bei 2,5V. Der IC sendet ein Signal an den zweiten NMOS-Transistor, um den Stromfluss zu unterbrechen, sobald die Spannung einen kritischen Wert erreicht.  </p>
+<p><strong>Überstromschutz</strong>: Der IC überwacht den Stromfluss kontinuierlich. Wenn der Strom über den zulässigen Grenzwert steigt, schaltet der IC einen der NMOS-Transistoren ab, um den Stromfluss zu unterbrechen und die Batterie vor Schäden zu schützen.  </p>
+<p><strong>Kurzschlussschutz</strong>: Auch bei einem Kurzschluss, bei dem sehr hohe Ströme fließen, erkennt der IC diese Situation und unterbricht sofort den Stromfluss durch Abschalten der NMOS-Transistoren.  </p>
+<p>Das BMS, das auf <a href="#_fig_BK_06">Abildung 7.xx</a> dargestellt ist, liefert alle diese Features und wurde für den Aufbau von dem Akkupack ausgewählt.  </p>
+<p><figure id="_abb_6_6"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/Li-Ion-BMS.png"><img alt="" src="../img/Li-Ion-BMS.png" width="60%"/></a><figcaption> Abbildung 6.6: 1S 2MOS Batteriemanagementsystem <a href="../Quellenverzeichnis/#BK_10">[BK_10]</a> </figcaption></figure></p>
+<p><strong>Ladegerät</strong><br/>
+Wie bereits in <a href="../PraktischeUTheoretischeGrund/#akku-technologien">3.3 Akku-Technologien</a>, benötigen die Li-Ion-Akkus ein spezielles Ladegerät, nämlich ein Ladegerät, der in die Lage ist beim Laden der Akkus erste 80% konstanter Strom zu liefern und danach 20% die Akkus mit konstanter Spannung zu laden.<br/>
+Man kann solche Ladegeräte ohne viele Schwierigkeiten finden, sind allerdings teuer. Bei der Suche nach einem muss man eine Sache beachten, nämlich die Zellenanzahl. Das ausgewählte Ladegerät ist auf der <a href="#_abb_6_7">Abildung 6.7</a> zu sehen.</p>
+<p><figure id="_abb_6_7"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/Li-Ion-Ladegeraet.png"><img alt="" src="../img/Li-Ion-Ladegeraet.png" width="60%"/></a><figcaption> Abbildung 6.7: Ladegerät für Li-Ion-Akkus <a href="../Quellenverzeichnis/#BK_11">[BK_11]</a> </figcaption></figure></p>
+<h2 id="zusammenbau-der-akkupacks">Zusammenbau der Akkupacks<a class="headerlink" href="#zusammenbau-der-akkupacks" title="Permanent link">¶</a></h2>
+<p><strong>Mario Wegmann</strong></p>
+<h3 id="konzeptioneller-aufbau">Konzeptioneller Aufbau<a class="headerlink" href="#konzeptioneller-aufbau" title="Permanent link">¶</a></h3>
+<p>Bei der Auswahl der Akkukomponenten wurde die Entscheidung getroffen, mehrere Lithium-Ionen-Zellen zu verwenden. Da die Kapazität des Akkupacks vergrößert wird, die Batteriespannung jedoch weiterhin zwischen 2,5 V und 4,2 V liegen soll, werden die beiden Lithium-Ionen-Zellen parallel miteinander verbunden. Dadurch verdoppelt sich die Kapazität, während die Spannung gleich bleibt. Zudem wird der gemeinsame Pluspol mit dem Plus des Battery Management System verbunden und ebenso mit dem Minuspolen verfahren. Zum Verbinden von den Akkuzellen untereinander und mit dem BMS eignet sich ein Nickelband, welches auch als Hiluminband bekannt ist<a href="../Quellenverzeichnis/#MW_07">[MW_07]</a>. Der Aufbau des Akkus ist auch in den Abbildungen <a href="#_abb_6_8">6.8</a> und <a href="#_abb_6_9">6.9</a> ersichtlich. </p>
+<p><figure id="_abb_6_8"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/Akku-Konzept.png"><img alt="" src="../img/Akku-Konzept.png" width="60%"/></a><figcaption> Abbildung 6.8: Konzeptioneller Aufbau des Akkus </figcaption></figure></p>
+<p><figure id="_abb_6_9"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/Akku-Bild.jpeg"><img alt="" src="../img/Akku-Bild.jpeg" width="60%"/></a><figcaption> Abbildung 6.9: Foto des aufgebauten Akkus </figcaption></figure></p>
+<h3 id="battery-management-system-anschlieen">Battery Management System anschließen<a class="headerlink" href="#battery-management-system-anschlieen" title="Permanent link">¶</a></h3>
+<p>Als Erstes sollte das BMS verdrahtet werden. In diesem Projekt wurde sich dafür entschieden, dass das Akkupack über einen Stecker mit dem Mainboard verbunden werden kann und somit modular ist. Somit wurde an den Ausgängen des BMS ein 2 Pin JST-X2 Stecker gelötet. Hierbei wurde sich im Team intern darauf geeinigt, dass der Pluspol rechts ist, wenn von der Drahtseite auf den Stecker geschaut wird und die Nase des Steckers nach oben zeigt. An den Pads für die Batteriepole wurde das Nickelband ebenso verlötet. </p>
+<h3 id="vorbereiten-der-lithium-ionen-zellen">Vorbereiten der Lithium-Ionen-Zellen<a class="headerlink" href="#vorbereiten-der-lithium-ionen-zellen" title="Permanent link">¶</a></h3>
+<p>Für einen sicheren Umgang mit Lithium-Ionen-Zellen ist es wichtig, mehrere Dinge zu beachten, bevor mehrere Zellen miteinander verbunden werden können. 
+Bereits beim Beschaffen von den Zellen sollte darauf geachtet werden, das identische Modell und eine gleiche Charge zu verwenden. 
+Zudem sollten Zellen, die verbunden werden sollen, möglichst gleich alt und auch gleich belastet werden oder im Optimalfall komplett neu sein. 
+Zuletzt sollte vor dem Verbinden darauf geachtet werden, dass die Zellen die gleiche Zellspannung aufweisen, um einem schlagartigen Ladungswechsel beim Verbinden vorzubeugen.</p>
+<p>Nachdem die einzelnen Zellen vorbereitet waren, wurden diese in die Plastikhalter eingelegt. Diese Plastikabstandshalter ergeben zusammen mit den Zellen ein stabiles Gesamtsystem und halten die Zellen davor ab, sich direkt zu berühren.  </p>
+<h3 id="punktschweiverfahren-bei-lithium-ionen-zellen">Punktschweißverfahren bei Lithium-Ionen-Zellen<a class="headerlink" href="#punktschweiverfahren-bei-lithium-ionen-zellen" title="Permanent link">¶</a></h3>
+<p>Lithium-Ionen-Zellen sind wärmeempfindlich und daher ist Weichlöten kein geeignetes Verfahren, um die Zellen mit dem Hiluminband zu verbinden, stattdessen eignet sich das Punktschweißverfahren. Hierbei wird das Nickelband an einem Pol einer Zelle gepresst und dann die zwei Elektroden des Punktschweißgerätes auf das Nickelband gedrückt. Bei dem in diesem Projekt verwendeten Gerät fließen durch die beiden Elektroden 650 Ampere bei 4,2 Volt, dieser hohe Strom führt zu einem Schweißpunkt, welcher das Nickelband und den Pol fest verbindet, jedoch aufgrund der kurzen Dauer des Prozesses von circa 5 Millisekunden kaum eine Wärmebelastung für die Akkuzelle darstellt. Das Nickelband, welches bereits mit dem BMS verbunden ist, wurde um ein weiteres Nickelband orthogonal dazu erweitert. Dadurch ergibt sich eine Nickelverbindung in T-Form. An beiden offenen Enden wurde jeweils ein Batteriepol angeschlossen. Dies wurde für die andere Polseite wiederholt <a href="../Quellenverzeichnis/#MW_08">[MW_08]</a>.</p>
+<h3 id="isolieren-des-akkupacks">Isolieren des Akkupacks<a class="headerlink" href="#isolieren-des-akkupacks" title="Permanent link">¶</a></h3>
+<p>Abschließend wurde Kapton Klebeband verwendet, um das Akkupack mit einer isolierenden Schicht zu umhüllen. Dadurch wird vermieden, dass unkontrolliert die Batteriepole mit anderen leitfähigen Materialien in Berührung kommen und sämtlicher Strom über das BMS geleitet wird. Kapton Klebeband ist dabei ein sehr guter elektrischer und thermischer Isolator. </p>
+<h2 id="schaltungsentwurf">Schaltungsentwurf<a class="headerlink" href="#schaltungsentwurf" title="Permanent link">¶</a></h2>
+<p><strong>Benjamin Klaric</strong> </p>
+<p>Um das gesamte System optimal zu gestalten, wurde eine Platine entworfen, die alle benötigten Komponenten und Schaltungen integriert, um die normale Funktionalität des Systems zu gewährleisten. Für die Entwicklung der Platine war ein präziser Schaltungsentwurf mit den richtigen Komponenten erforderlich. Der Schaltungsentwurf sowie der Platinentwurf wurden mithilfe der ECAD-Software KiCad erstellt. Die Auswahl der geeigneten Komponenten sowie eine detaillierte Beschreibung der Schaltung sind im folgenden Abschnitt beschrieben.<br/>
+Alle Komponenten, die in der Schaltung beinhaltet sind, befinden sich in dem sogenannten Bill of Materials (kurz BOM).  </p>
+<p><strong>Ganze Schaltung</strong><br/>
+Auf der <a href="#_abb_6_10">Abildung 6.10</a> ist die vollständige Schaltung mit allen Teilschaltungen dargestellt.  </p>
+<p><figure id="_abb_6_10"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/Schaltung/Ganze-Schaltung.png"><img alt="" src="../img/Schaltung/Ganze-Schaltung.png" width="90%"/></a><figcaption> Abbildung 6.10: Ganze Schaltung für das Mainboard des Systems </figcaption></figure></p>
+<p>Wenn man die <a href="#_abb_6_10">Abildung 6.10</a> betrachtet, sind die Verbindungen zwischen den Teilschaltungen und der Gesamtverdrahtung der Schaltung sichtbar. Spätere Abschnitte behandeln jede Teilschaltung einzeln, und es wird empfohlen, zur Gesamtabbildung der Schaltung zurückzukehren, um die Verbindung der erklärten Teilschaltungen im Gesamtkontext zu sehen.<br/>
+Ganz links in der Abbildung ist ein 100 nF Kondensator, speziell C5, zwischen 3,3V (V<sub>CC</sub>) und Ground (GND) parallel geschaltet. Dieser dient als Entkopplungskondensator, um Spannungsschwankungen zu reduzieren und die Stabilität der Stromversorgung sicherzustellen. Der 100 nF Kondensator fängt hochfrequente Störungen ab und glättet diese. Dadurch verbessert er die Betriebssicherheit des Systems, insbesondere während schneller Schaltvorgänge, indem er eine stabile Spannungsversorgung gewährleistet und die Signalqualität erhöht. Dieser Wert von 100 nF ist ein Standardwert für Entkopplungskondensatoren bei niedrigen Frequenzen. <a href="../Quellenverzeichnis/#BK_12">[BK_12]</a> <a href="../Quellenverzeichnis/#BK_13">[BK_13]</a> </p>
+<p><strong>Mikrocontroller</strong><br/>
+Wenn man die Teilschaltung des Mikrocontrollers auf der <a href="#_abb_6_11">Abildung 6.11</a> betrachtet, fällt auf, dass außer dem Mikrocontroller keine weiteren Komponenten zu sehen sind. Die gesamte Schaltung wurde in Teilschaltungen oder sogenannte Subsheets, wie das Feature in KiCad genannt ist, aufgeteilt, um sie übersichtlicher darzustellen.  </p>
+<p><figure id="_abb_6_11"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/Schaltung/Mikrocontroller.png"><img alt="" src="../img/Schaltung/Mikrocontroller.png" width="60%"/></a><figcaption> Abbildung 6.11: Ausgänge des Mikrocontrollers </figcaption></figure></p>
+<p>In dieser Teilschaltung sind die Ausgänge des Mikrocontrollers hierarchischen Labels mit entsprechenden Namen zugeordnet.  </p>
+<p><strong>Akkuanschlüsse</strong><br/>
+Die Akkuanschlüsse in der Teilschaltung beinhalten einen Stecker, konkret den J1, sowie einen Spannungsteiler, der aus R5 und R6 besteht. Diese Komponenten sind auf der <a href="#_abb_6_12">Abildung 6.12</a> dargestellt.  </p>
+<p><figure id="_abb_6_12"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/Schaltung/Akkuanschl%C3%BCsse.png"><img alt="" src="../img/Schaltung/Akkuanschl%C3%BCsse.png" width="50%"/></a><figcaption> Abbildung 6.12: Schaltung von Akkuanschlüsse </figcaption></figure></p>
+<p>Der Akkupack ist über den Stecker mit den Akkuanschlüssen des Mikrocontrollers verbunden. Parallel dazu ist ein Spannungsteiler aufgebaut. Der Zweck dieses Spannungsteilers besteht darin, die Spannung des Akkupacks zu messen, indem ein analoger GPIO-Pin des XIAO ESP32-S3 verwendet wird. Dadurch wird der Zustand des Akkupacks genau überwacht, um sicherzustellen, dass ausreichend Spannung für den Mikrocontroller bereitgestellt wird.  </p>
+<p><strong>Display-Enable</strong><br/>
+Auf der <a href="#_abb_6_13">Abildung 6.13</a> ist die sogenannte Display-Enable Schaltung zu sehen. Man kann drei Widerstände, nämlich den R1, R2 und R3 erkennen, neben den zwei MOSFETs, einen NMOS und einen PMOS Transistor.</p>
+<p><figure id="_abb_6_13"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/Schaltung/Enable.png"><img alt="" src="../img/Schaltung/Enable.png" width="70%"/></a><figcaption> Abbildung 6.13: Schaltung von Display Enable </figcaption></figure></p>
+<p>Die E-Paper-Technologie von Displays verbraucht tatsächlich keinen Strom im Idle-Zustand. Das Gleiche kann aber nicht für die kleinen Zwischenplatinen gesagt werden, die Parallelport-Kommunikationsverfahren zu SPI übersetzen. Diese verbrauchen ständig Strom, was eine unerwünschte Folge ist. Um den Stromverbrauch zu optimieren, wurde eine Schaltung entworfen, die die Stromversorgung des Displays durch Code trennt.<br/>
+Um die Schaltung per Code ansteuern zu können, wurden zwei MOSFETs verwendet: ein N-Channel MOSFET und ein P-Channel MOSFET. Der Ausgang des Mikrocontrollers geht über den 180 Ω Widerstand, nämlich R2, auf das Gate des N-Channel MOSFET (U3). Der 180 Ω Widerstand dient dazu, den Gate-Strom zu begrenzen und das Schalten des Transistors zu stabilisieren. Dazu wird auch ein Pulldown-Widerstand (R1) eingesetzt, da beim Einschalten des Mikrocontrollers der EN-Ausgang nicht sofort auf 0V gesetzt sein könnte. Ein Wert von 10 kΩ ist ein Standardwert, weil er ausreichend ist, um das Gate sicher auf 0V zu ziehen, ohne signifikanten Strom zu verbrauchen. Um ein unnötiges Einschalten des NMOS zu vermeiden, wurde der Pulldown-Widerstand gesetzt.<br/>
+Die Source-Leitung des NMOS ist mit dem Ground verbunden, da dies dem Funktionsprinzip des NMOS entspricht. Die Drain-Leitung ist mit dem Gate des P-Channel MOSFET (U4) verbunden und auch mit einem Pull-up-Widerstand (R3). Der Pull-up-Widerstand sorgt dafür, dass das Gate des PMOS auf 3,3V gehalten wird, wenn der NMOS nicht leitend ist, wodurch der PMOS ausgeschaltet bleibt.<br/>
+Der NMOS-Transistor (U3) schaltet ein, wenn der EN-Pin des Mikrocontrollers auf High (3,3V) geht. Dadurch wird das Gate des PMOS-Transistors auf 0V gezogen. Der PMOS-Transistor (U4) schaltet ein, wenn das Gate auf 0V gezogen wird, wodurch die Verbindung zwischen VCC und Switch geschlossen wird.<br/>
+Die ausgewählten MOSFETs wurden aufgrund ihrer niedrigen Schwellenspannung und ihres geringen Drain-Source-Widerstands gewählt, was eine effiziente und zuverlässige Schaltung ermöglicht.  </p>
+<p><strong>Switch</strong><br/>
+Man kann auf der <a href="#_abb_6_14">Abildung 6.14</a> ein Switch erkennen, der dafür zuständig ist, die Betriebsspannung des Displays auszuwählen, zwischen direkten 3,3V oder dem Ausgang von Booster Schaltung.</p>
+<p><figure id="_abb_6_14"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/Schaltung/Switch.png"><img alt="" src="../img/Schaltung/Switch.png" width="50%"/></a><figcaption> Abbildung 6.14: Switch für Ansteuerung der Betriebsspannung </figcaption></figure></p>
+<p>Der Switch wird per Bedarf mittels menschlichen Einfluss die Leitung zur Betriebsspannung von Display umleiten, zu Booster Schaltung oder direkt mit dem 3,3V Ausgang von Mikrocontroller verbinden. Diese Funktionalität ist so ausgedacht, sodass man die Platine generisch halten kann, um verschiedene Displays mit verschiedenen Betriebsspannungen anzusteuern.  </p>
+<p><strong>Boost-Konverter</strong><br/>
+Die Boost-Konverter Schaltung, die auf der <a href="#_abb_6_15">Abildung 6.15</a> dargestellt ist, hat die Aufgabe, die Betriebsspannung zu erhöhen.  </p>
+<p><figure id="_abb_6_15"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/Schaltung/Booster.png"><img alt="" src="../img/Schaltung/Booster.png" width="70%"/></a><figcaption> Abbildung 6.15: Booster Schaltung </figcaption></figure></p>
+<p>Der Boost-Konverter befindet sich in der Mitte der Schaltung. Die L1 speichert Energie in ihrem Magnetfeld, wenn Strom durch sie fließt. Während der Schaltzyklen des Boost-Konverters wird diese Energie verwendet, um die Spannung am Ausgang zu erhöhen. Wenn der Schalter innerhalb des Moduls geschlossen ist, fließt Strom durch die Induktivität und speichert Energie. Wenn der Schalter öffnet, wird die gespeicherte Energie freigesetzt, wodurch die Spannung über die Induktivität ansteigt und die Ausgangsspannung erhöht wird. Der Ausgangskondensator, nämlich den C3, glättet die Ausgangsspannung und reduziert das Rauschen am Ausgang des Boost-Konverters. Die L1 zusammen mit C3 nennt sich ein LC-Glied und dient als ein Tiefpassfilter, das hochfrequente Störungen und Rauschen herausfiltert und eine gleichmäßige Gleichspannung liefert.<br/>
+Der Eingangskondensator C1 reduziert Spannungsrauschen und glättet die Eingangsspannung, bevor sie in die Schaltung eintritt. Der sogenannte Bypass-Kondensator C2 dient dazu, hochfrequente Störungen und Rauschen herauszufiltern. Der C4 Kondensator wird verwendet, um elektromagnetische Interferenzen (EMI) zu reduzieren. Er hilft dabei, Rauschen und Störungen zu filtern, die durch die Schaltung erzeugt werden könnten, und sorgt für eine saubere Ausgangsspannung.<br/>
+Der Boost-Konverter hat intern auch eine galvanische Trennung. Diese galvanische Trennung dient dazu, elektrische Isolation zwischen dem Eingang und dem Ausgang zu gewährleisten. Sie schützt vor elektrischen Störungen und sorgt dafür, dass keine direkten elektrischen Verbindungen zwischen den beiden Seiten bestehen. In diesem speziellen Fall wurde jedoch entschieden, die galvanische Trennung nicht zu nutzen, wegen niedriger Leistungsanforderungen des Systems und der Tatsache, dass die elektrische Isolation in Form von galvanischer Trennung nicht kritisch ist. <a href="../Quellenverzeichnis/#BK_14">[BK_14]</a> </p>
+<p><strong>IIC-Erweiterung</strong><br/>
+Auf der <a href="#_abb_6_16">Abildung 6.16</a> sind die IIC Ausgänge des Mikrocontrollers dargestellt, mit jeweils einem Pull-up Widerstand von 10 kΩ.  </p>
+<p><figure id="_abb_6_16"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/Schaltung/IIC.png"><img alt="" src="../img/Schaltung/IIC.png" width="30%"/></a><figcaption> Abbildung 6.16: IIC-Ausgänge </figcaption></figure></p>
+<p>Die IIC Pins von dem Mikrocontroller wurden auf die Platine frei zugänglich gemacht, sodass die Erweiterungsmöglichkeiten in Form eines Sensors oder Ähnliches einfacher zu implementieren sind. Momentan bleiben die unverbunden.  </p>
+<p><strong>Refresh-Knopf</strong><br/>
+Der benötigte Knopf ist auf der <a href="#_abb_6_17">Abildung 6.17</a> dargestellt. Die wird für manuellen Refresh des Displays benutzt.  </p>
+<p><figure id="_abb_6_17"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/Schaltung/Knopf.png"><img alt="" src="../img/Schaltung/Knopf.png" width="40%"/></a><figcaption> Abbildung 6.17: Schaltung von Refresh-Knopf </figcaption></figure></p>
+<p>Wenn ein mechanischer Schalter oder Taster betätigt wird, kann es zu kurzen ungewollten Kontakten kommen, die als Prellen bezeichnet werden. Diese entstehen durch die mechanische Federung und Vibrationen des Schalters. In elektronischen Schaltungen kann dieses Prellen zu Fehlfunktionen führen, insbesondere wenn der Taster als Trigger dient.<br/>
+Der verwendete Knopf benötigt eine Entprellschaltung, um zuverlässig zu funktionieren, da er eine maximale Prellzeit von 10 ms aufweist. <a href="../Quellenverzeichnis/#BK_15">[BK_15]</a><br/>
+Um das Prellen zu beseitigen, wird ein RC-Glied eingebaut, das als Hochpassfilter fungiert. Wenn der Taster offen ist, lädt sich der Kondensator C6 über die Widerstände R4 und R7 auf, wodurch die Spannung langsamer ansteigt. Ist der Taster geschlossen, wird der Kondensator über R4 mit einer kontrollierten Geschwindigkeit entladen. Der Widerstand R7 hat einen Wert von 10 kΩ, da es sich um einen Pull-up-Widerstand handelt. Für R4 wird ein Wert von 75 kΩ gewählt, um in Kombination mit dem Kondensator von 100 nF die gewünschte Zeitkonstante zu erreichen. <a href="../Quellenverzeichnis/#BK_16">[BK_16]</a> </p>
+<p><strong>Displayanschlüsse</strong><br/>
+Die dargestellten Ausgänge auf der <a href="#_abb_6_18">Abildung 6.18</a>, nämlich den J2-Komponente, sind die Ausgänge, die man direkt mit dem Display über Dupont Pins verbinden kann.  </p>
+<p><figure id="_abb_6_18"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/Schaltung/Displayanschl%C3%BCsse.png"><img alt="" src="../img/Schaltung/Displayanschl%C3%BCsse.png" width="30%"/></a><figcaption> Abbildung 6.18: Ausgänge für das Display </figcaption></figure></p>
+<p>Die ersten sieben Ausgänge kommen direkt von dem Mikrocontroller, wobei der achte Ausgang, konkret den V<sub>cc</sub> Ausgang, von dem Switch abhängig ist.  </p>
+<h2 id="platinendesign">Platinendesign<a class="headerlink" href="#platinendesign" title="Permanent link">¶</a></h2>
+<p><strong>Benjamin Klaric</strong> </p>
+<p>Mit der in <a href="./#schaltungsentwurf">7.5 Schaltungsentwurf</a> entwickelten Schaltung kann eine Platine entworfen werden. Hierfür wurde, wie bereits erwähnt, das ECAD-Programm KiCad verwendet, um die entworfene Schaltung auf einer Platine umzusetzen.<br/>
+Für die ausgewählten Komponenten müssen jedoch die entsprechenden <em>Footprints</em> gefunden werden. Ein Footprint definiert die Fläche und die Bohrungen, die eine Komponente benötigt, um auf der Platine montiert zu werden. Darüber hinaus werden 3D-Modelle ausgewählt, um eine bessere 3D-Ansicht in KiCad zu ermöglichen und mögliche Überlappungen der Komponenten besser zu erkennen.<br/>
+Dafür werden die Webseiten der Hersteller besucht, um die benötigten Dateien zu finden. Diese sind oft bereits verfügbar, jedoch nicht immer. In solchen Fällen ist es notwendig, mehrere Webseiten zu durchsuchen, um die erforderlichen Dateien zu finden, beispielsweise über Plattformen wie Ultra Librarian und SnapMagic. <a href="../Quellenverzeichnis/#BK_17">[BK_17]</a> <a href="../Quellenverzeichnis/#BK_18">[BK_18]</a> Auf diesen Plattformen können Symbole, Footprints und 3D-Modelle für viele Komponenten gefunden werden.<br/>
+Wenn man aus einer Schaltung eine Platine erstellen möchte, werden die Komponenten mit den dazugehörigen Footprints im PCB-Design-Programm bereits platziert angezeigt. Es ist dann erforderlich, sie an die richtigen Positionen zu bewegen, die Verdrahtung vorzunehmen und die Grenzen der Platine festzulegen. Anschließend muss ein Ground Polygon sowohl auf der oberen als auch auf der unteren Seite der Platine gezogen werden. Dabei sind die Designregeln des jeweiligen PCB-Herstellers zu beachten. In diesem Fall werden die Designregeln des Herstellers Aisler berücksichtigt, wie beispielsweise die Größe der Platine, die Größe der Vias usw. <a href="../Quellenverzeichnis/#BK_19">[BK_19]</a> Die einzelnen Schritte werden in den folgenden Abschnitten erklärt.  </p>
+<p><strong>Platzierung</strong><br/>
+Das Platzieren der Komponenten an den richtigen Stellen ist eine wichtige Aufgabe, bei der einige wesentliche Aspekte berücksichtigt werden müssen.<br/>
+Es ist wichtig sicherzustellen, dass platzierte Komponenten sich nicht gegenseitig mit ihren Gehäusen stören. Ebenso spielt der Abstand zwischen den Komponenten eine entscheidende Rolle. Insbesondere für das manuelle Löten ist es vorteilhaft, wenn die Komponenten ausreichend Abstand zueinander haben.<br/>
+Ein weiterer wichtiger Aspekt ist der Einfluss der Platzierung der Komponenten auf das Routing bzw. die Verdrahtung der Verbindungen innerhalb der Schaltung.  </p>
+<p><strong>Routing</strong><br/>
+Die Komponenten müssen gemäß dem Schaltungsentwurf verbunden werden. Für das System wird eine Zweischichtplatine entworfen, die zwei Ebenen bietet, auf denen das Routing durchgeführt werden kann.<br/>
+Obwohl das Routing manuell durchgeführt werden könnte, wurde ein Autorouter verwendet, da es mit 25 Komponenten schwierig wäre, alles von Hand zu routen. Die Nutzung eines Autorouters reduziert zudem das Risiko von Fehlern, da er nach festgelegten Regeln stets optimal und korrekt routet. Für die Platine wurde der Autorouter mit dem Namen Freerouting in KiCad verwendet. <a href="../Quellenverzeichnis/#BK_20">[BK_20]</a><br/>
+Um Freerouting zu nutzen, muss zunächst aus dem Platinen-Designfenster eine .DSN-Datei exportiert und in Freerouting importiert werden. Das Ergebnis ist eine .SES-Datei (Specctra Session File), die anschließend wieder in KiCad importiert wird, um das Routing des Autorouters zu übernehmen. Eine detaillierte Anleitung zum Umgang mit Freerouting findet sich im offiziellen GitHub. <a href="../Quellenverzeichnis/#BK_20">[BK_20]</a><br/>
+Der Autorouter kann gut konfiguriert werden, z.B. bezüglich der Routenbreite, der Anzahl der Vias (Vias sind kleine Bohrungen, die beim Wechsel zwischen der oberen und unteren Seite der Platine verwendet werden), usw.  </p>
+<p><strong>Grenzen und Ground Polygon</strong><br/>
+Um die Platine auf die gewünschte Größe zu bringen, müssen die Grenzen definiert werden. Dies kann entweder vor oder nach dem Routing erfolgen.  
+Wie bereits erwähnt, wird auch ein Ground Polygon über beiden Seiten gezogen. Dies dient mehreren Zwecken: Eine gute Masseverbindung reduziert Störungen und verbessert die Signalintegrität, da die Ground-Fläche als niederohmiger Pfad für Rückströme fungiert. Ein großflächiges Ground-Polygon kann elektromagnetische Störungen (EMI) reduzieren, indem es als Abschirmung fungiert und Hochfrequenzsignale ableitet. Zudem hilft ein großes Ground-Polygon, Potenzialunterschiede auf der Platine zu minimieren, was wichtig ist, um unerwünschte Spannungsabfälle oder Spannungsspitzen zu vermeiden. <a href="../Quellenverzeichnis/#BK_21">[BK_21]</a> </p>
+<p><strong>Ergebnis</strong><br/>
+Die fertige Platine sieht am Ende so aus, wie auf <a href="#_abb_6_19">Abildung 6.19</a> dargestellt ist. Die rote Fläche repräsentiert das Ground-Polygon auf der oberen Seite und die blaue Fläche das Ground-Polygon auf der unteren Seite der Platine. Die zahlreichen Vias dienen dazu, die Ground-Polygone beider Seiten miteinander zu verbinden. Dies ist besonders wichtig, wenn auf einer Seite keine direkte Verbindung zum Ground möglich ist, zum Beispiel aufgrund anderer Leiterbahnen oder Komponenten.  </p>
+<p><figure id="_abb_6_19"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/PCB/PCB-Design.png"><img alt="" src="../img/PCB/PCB-Design.png" width="90%"/></a><figcaption> Abbildung 6.19: Fertiges Platinendesign </figcaption></figure></p>
+<p>Wenn man auf 3D-Ansicht wechselt, wurden alle Bauteile, mit seinen 3D-Modellen sichtbar, wie auf <a href="#_abb_6_20">Abildung 6.20</a> zu sehen ist. Es wurde ein Raytracing-Effekt verwendet, um die Bauteile realistischer darzustellen.</p>
+<p><figure id="_abb_6_20"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/PCB/3D-Ansicht.png"><img alt="" src="../img/PCB/3D-Ansicht.png" width="90%"/></a><figcaption> Abbildung 6.20: 3D-Ansicht von der Platine </figcaption></figure></p>
+<h2 id="zusammenbau-der-platinen">Zusammenbau der Platinen<a class="headerlink" href="#zusammenbau-der-platinen" title="Permanent link">¶</a></h2>
+<p><strong>Benjamin Klaric</strong> </p>
+<p>Nachdem die Platine und alle anderen Bauteile angekommen sind, wurde mit dem Zusammenbau der Platinen begonnen.<br/>
+Da viele Bauteile mittels SMT (Surface Mounted Technology) mit der Platine verbunden sind, ist es normalerweise sinnvoll, das Löten mit einem Reflow-Ofen durchzuführen. Dafür benötigt man jedoch ein sogenanntes Stencil. Ein Stencil ist ein kleines Metallteil mit Löchern, die den Pads (Kontakten für die Bauteile auf der Platine) entsprechen. Mit einem Stencil kann die Lötpaste viel einfacher und präziser auf die Pads aufgetragen werden. Leider konnte aus Kostengründen kein Stencil bestellt werden, und das manuelle Auftragen der Paste auf 50 Pads ist sehr zeitaufwendig.<br/>
+Deshalb wurde das Löten von Hand durchgeführt. Die verlötete Platine ist in <a href="#_abb_6_21">Abildung 6.21</a> zu sehen.</p>
+<p><figure id="_abb_6_21"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/PCB/Nach-L%C3%B6ten.png"><img alt="" src="../img/PCB/Nach-L%C3%B6ten.png" width="90%"/></a><figcaption> Abbildung 6.21: Fertige Platine ohne Mikrocontroller und Pin Headers </figcaption></figure></p>
+<h2 id="gehause">Gehäuse<a class="headerlink" href="#gehause" title="Permanent link">¶</a></h2>
+<p><strong>Jannis Gröger</strong></p>
+<h3 id="anforderungen">Anforderungen<a class="headerlink" href="#anforderungen" title="Permanent link">¶</a></h3>
+<p>Beim Entwurf des Gehäuse für das Low Power Raumdisplay sind die funktionalen Anforderungen einfach gehalten. Da das Gerät im Einsatz später stationär platziert ist, ist es weder mechanischen Stößen noch einer Art von Vibration zu schützen. Zudem wird es nicht in der Hand bedient, weshalb es auch keinen mechanischen Druck ausgesetzt ist. Daher ist nicht auf ein besonders robustes Material zu achten.</p>
+<p>Da der Einsatzort hauptsächlich im Gebäudeinneren vorgesehen ist,  ist ein Schutz gegen jegliche Art von Wasser zu vernachlässigen. Da das Display als Bendienung zwei Benutzerknöpfe besitzt, muss das Gehäuse gegen Berühren mit Fingern geschätzt werden, also sollte der Schutz gegen Berührung mindestens der Schutzart zwei zugeordnet werden können. <a href="../Quellenverzeichnis/#jg_02">[JG_02]</a></p>
+<p>Die Low Power Raumanzeige besitzt elektronische Komponenten, die keine großen Wärmemengen produzieren. Lediglich beim Laden der Akkupacks könnte ein kritische Wärmemenge entstehen, weswegen diese leicht aus dem Gehöuse entfernbar sein sollten, dass beim Laden genug Abwärme durch natürliche Konvektion gegeben ist.</p>
+<p>Da die Informationsanzeige mit WLAN mit dem Gerät des Betreibers kommunziert, sollte das Gehäuse die Komponenten nicht zu sehr elektromagnetisch von außen abschirmen und auch elektromagnetische Felder nach außen hin zulassen, da ansonten die Kommunkation gestört werden und das Displaymodul nicht mehr seine volle Funktionsfähigkeit aufweisen kann.</p>
+<h3 id="design">Design<a class="headerlink" href="#design" title="Permanent link">¶</a></h3>
+<p>Zum Entwickeln des 3D-Modells wird die CAD-Software "Autodesk Fusion" genutzt. Das Vorgehen hierbei besteht primär aus der Erstellung einer Skizze, aus der dann verschiedene Fläche extrudiert werden. Um komplexere Konstruktionen zu erlauben, wird dieses Vorgehen wiederholt, wobei die Skizzenfläche eine Oberfläche einer bereits vorhandenen Extrusion ist. Die beiden Gehäuse bestehen jeweils aus drei Teilen:</p>
+<ul>
+<li>Einer Front, in der das Display sitzt</li>
+<li>Einer Halterung für die Platinen des Displays, die an der Front angebracht wird</li>
+<li>einer Rückseite, in der an der Rückwand die Halterungen für Akkupack und selbst entworfener Platine befestigt sind.</li>
+</ul>
+<p>Diese Teile werden jeweil mit Gewindeschrauben mit 2,5mm durchmesser verbunden. Die Rückseite kann konstruktionstechnisch nochmal in einen Quader für elektronische Bauteile und einer Schale für das Display unterteilt werden. Diese Teile sind jedoch fest an ihren Kanten verbunden. Im folgenden werden die einzelnen Merkmale, die dem Gehäuse hinzugefügt werden, erläutert.</p>
+<p>Um die einzelnen Komponenten im Inneren des Gehäuses zu fixieren, müssen für jede einzelne eine spezifische Halterung angefertigt werden. Die Akkupacks werden durch vier L-förmige Säulen, die jeweils eine Ecke der Packs umschließen, vor dem Hin und Herrutschen bewahrt. Das Herausfallen nach Vorne verhindert ein Steg, der mit zwei Schrauben über dem Akkupack angebracht wird. Die Platine wird durch zwei gegenüberliegende Nuten in der Unterseite des Gehäuses und einer konstruierten Wand im Gehäuse gehalten, indem sie seitlich in die Nuten eingeschoben wird. Hierbei wird an der Seite des Gehäuses eine Bohrung angebracht, um auch im montierten Zustand der Low Power Raumanzeige Zugang zum USB-C Anschluss des Mikrocontrollers zu haben.</p>
+<p>Da das Displaymodul wie oben erwähnt nicht in der Hand gehalten wird sondern fest vor bspw einem Hörsaal einer Hochschule platziert werden soll, werden an der Rückwand des Gehäuses zwei Langloch-Einhängeöffnungen angebracht. Um das Display dann an der Wand aufzuhängen, müssen einfach zwei Schrauben in der Wand eingeschraubt werden. Diese werden in die Öffnungen eingefädelt, dann wird das Displaymodul nach unten geschoben und ist damit an der Wand fixiert. Damit das Displaymodul auch mobil eingesetzt werden kann, wie beispielsweise bei einem Messestand, wird die untere Fläche des Gehäuses angeschrägt, dass man das Display stabil auf einen Tisch stellen kann.</p>
+<p>Wie bereits genannt, soll die Bedienung des Low Power Raumdisplays über einen Bentzerknopf gesteuert werden. Um die Benutzerfreundlichkeit zu gewährleisten, wird dieser an der Front des Displaymoduls angebracht, damit er leicht zugänglich und für alle sichtbar ist. Zusätzlich sollen die eingebauten "Boot"- und "Reset"-Knöpfe des ESP32 ebenso benutzbar bleiben, allerdings nur für den System-Administrator. Deshalb werden hierfür kleine Löcher an der Rückseite des Gehäuses angebracht, dass die Knöpfe ähnlich wie beim SIM Karten Slot eines Handys mit Hilfe eines schmalen Werkzeugs gedrückt werden können. Durch die Platzierung auf der Rückseite sind die Löcher zunächst für die Person, die vor dem Display steht, nicht sichtbar, sondern erst dann erreichbar, wenn das Displaymodul von der Wand genommen wird.</p>
+<p>Damit die Software des ESP geflasht werden kann, beispielsweise nach Aktualisierung der Firmware, ohne dabei das Displaymodul auseinanderzubauen, wird an der Seite des Gehäuses eine Bohrung vorgenommen, sodass der USB-C Port des Mikrocontrollers jederzeit zugänglich ist.</p>
+<p>Die Halterungen für die Platinen der Beiden Epaper-Displays sind einfache Konstruktionen aus schmalen Stegen, die zylinderförmige Extrusionen besitzen, um die Platinen festzuschrauben. Hierbei unterscheiden sich die beiden Halterungen in ihren Dimensionen, da nicht nur die beiden Displays selbst, sondern auch die zugehörigen Platinen unterschiedliche Maße besitzen.</p>
+<p>Die Front des Gehäuses besitzt einen rechteckigen Ausschnitt mit einer Falz nach innen, in die das Display dann gelegt wird. Um das Display vor hineinfallen ins Gehäuse zu schützen, wird einmal die Platinenhalterung direkt an der Rückseitige des Displays angebracht und zusätzlich noch kleine Überhänge konstruiert, die das Display von hinten stützen. Desweiteren ist ein rechteckiger Ausschnitt für den Benutzerknopf in der Front vorhanden.</p>
+<p>Da im Laufe der Gehäuseentwicklung Protoypen designt und anschließend getestet werden, entstehen mehrere Entwürfe für die Umsetzung. Die folgenden drei Abbildungen <a href="#_abb_6_22">Abbildung 6.22</a>, <a href="#_abb_6_23">Abbildung 6.23</a> und  <a href="#_abb_6_24">Abbildung 6.24</a> zeigen die verschiedenen Versionen der Rückseite des 7.3-Zoll-Gehäuses und jeweils die Veränderungen zur vorherigen Version. Die Rückseite des 9.7-Zoll-Gehäuse wurde anschließend nach dem Vorbild des kleineren Gehäuses designt, wie man in <a href="#_abb_6_25">Abbildung 6.25</a> sieht. Die beiden Fronten sind zusammen mit dem Platinenhalter und der Abdeckung des Benutzerknopfes schließlich in <a href="#_abb_6_26">Abbildung 6.26</a> und <a href="#_abb_6_27">Abbildung 6.27</a> zu sehen.</p>
+<p><figure id="_abb_6_22"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/7_zoll_r%C3%BCckseite_v1.png"><img alt="" src="../img/7_zoll_r%C3%BCckseite_v1.png" width="70%"/></a><figcaption> Abbildung 6.22: Die erste Version der 7.3-Zoll-Rückseite. </figcaption></figure></p>
+<p>Nach der ersten Version des Gehäuses wurde das Design nochmal grundlegend verändert und auch die Befestigung der Akkupacks überdacht. Wie in <a href="#_abb_6_22">Abbildung 6.22</a> zu erkennen ist, wurde zunächst vorgesehen, die Akkupacks von außen zugänglich zu machen, um einen leichteren Austausch zu ermöglichen ohne das Gehäuse von der Wand nehmen zu müssen.</p>
+<p><figure id="_abb_6_23"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/7_zoll_r%C3%BCckseite_v2.png"><img alt="" src="../img/7_zoll_r%C3%BCckseite_v2.png" width="70%"/></a><figcaption> Abbildung 6.23: Die zweite Version der 7.3-Zoll-Rückseite. </figcaption></figure></p>
+<p>In der zweiten Version ist nun schon mehr das finale Design wiederzufinden. Das Gehäuse wurde an den Stellen, wo nicht die Elektronik im inneren behalten wird, auf einen minimale Dicke reduziert und die Akkupacks befinden sich nun im Inneren, sodass das Gehäuse geöffnet werden muss, um diese zu tauschen.</p>
+<p><figure id="_abb_6_24"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/7_zoll_r%C3%BCckseite_v3.png"><img alt="" src="../img/7_zoll_r%C3%BCckseite_v3.png" width="70%"/></a><figcaption> Abbildung 6.24: Die dritte und finale Version der 7.3-Zoll-Rückseite. </figcaption></figure></p>
+<p>In <a href="#_abb_6_24">Abbildung 6.24</a> sieht man nun das endgültige Design der Gehäuserückseite. Im Vergleich zur vorherigen Version wurden die Seiten abgeschrägt, um ein noch schmaleren Eindruck des Gehäuses zu erwecken. Zudem wurden die Aufhängelöcher noch versetzt, um den Schwerpunkt des Gehäuses besser auszugleichen.</p>
+<p><figure id="_abb_6_25"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/10_zoll_r%C3%BCckseite.png"><img alt="" src="../img/10_zoll_r%C3%BCckseite.png" width="70%"/></a><figcaption> Abbildung 6.25: Die Rückseite des Gehäuses für das 9.7-Zoll-Epaper-Display.</figcaption></figure></p>
+<p><figure id="_abb_6_26"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/7_zoll_front.png"><img alt="" src="../img/7_zoll_front.png" width="70%"/></a><figcaption> Abbildung 6.26: Die Front des 7.3-Zoll-Gehäuses mit Platinenhalter und Knopfabdeckung. </figcaption></figure></p>
+<p><figure id="_abb_6_27"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/10_zoll_front.png"><img alt="" src="../img/10_zoll_front.png" width="70%"/></a><figcaption> Abbildung 6.27: Die Front des 9.7-Zoll-Gehäuses mit Platinenhalter und Knopfabdeckung </figcaption></figure></p>
+<p>Bei der Front des 9.7-Zoll-Gehäuses wurde an der unteren Kante noch eine extra Stützstruktur angebracht, um das Flachbandkabel des Displays kontrolliert zu biegen und ein Ab- oder Einreißen zu verhindern. Zudem deckt der Platinenhalter im Gegensatz zu dem des kleineren Gehäuses einen größeren Teil des Displays ab, da es hier die einzige Art der Unterstützung des Displays von hinten ist.</p>
+<h3 id="prototyping">Prototyping<a class="headerlink" href="#prototyping" title="Permanent link">¶</a></h3>
+<p>Da es sich bei dem LoW Power Raumdisplay um eine Projektarbeit handelt und zunächst keine Serienproduktion vorgesehen ist, beschränkt sich die Entwicklung des Gehäuses auf den Entwurf zweier Prototypen, einmal mit einem 1.3-Zoll-Display und einmal mit einem 9.7-Zoll-Display. Hierbei wird das Rapid-Prototyping-Verfahren des Fused-Deposition-Modelling angewandt, da es neben geringen Kosten auch genug Stabilität für die genannten Anforderungen aufweist. Zudem ist es dem Projektteam möglich, direkt im eigenen Labor der Technischen Hochschule Augsburg dieses Verfahren anzuwenden. Es werden mehrere sogenannte FDM-Drucker zur Verfügung gestellt, ebenso wie die CAD-Software Inventor-Softwarepaket der Firma Autodesk. <a href="../Quellenverzeichnis/#jg_04">[JG_04]</a></p>
+<p>Die verwendeten FDM-Drucker, im Folgenden auch 3D-Drucker genannt, beschränken sich auf die Modelle 2 Extended+, 3 und S5 der Marke UltiMaker. Diese Drucker verwenden Filamente aus Polyactiden, kurz PLA, oder Polyethylenterephtalat mit Glykolmodifikation, auch PETG genannt mit einem Durchmesser von 2,85mm<sup>2</sup>. Die Materialien unterscheiden sich nur leicht in ihren Eigenschaften, wobei PETG stabiler und haltbarer ist, PLA dagegen ist hitzebeständiger und biologisch abbaubar.<a href="../Quellenverzeichnis/#jg_05">[JG_05]</a> Beide Materialien sind in ihrer Stabilität und Hitzebeständigkeit für den Zweck des Low Power Displays ausreichend.</p>
+<p>Nachdem die Modelle der Gehäuse im CAD Programm entworfen wurden, werden sie als .stl Dateien in einen sogenannten Slicer exportiert. Ein Slicer übernimmt die Aufgabe des Slicings, wobei ein 3D-Modell in einen für 3D Drucker verständlichen Maschinencode Namens G-Code umgewandelt wird. Zusätzlich können verschiedene Einstellungen vorgenommen werden, die die Druckqualität beeinflussen, wie beispielsweise Druckgeschwindigkeit oder Schichtdicke. <a href="../Quellenverzeichnis/#jg_06">[JG_06]</a></p>
+<p>Bei diesem Projekt wurde die Slicing Software Cura verwendet, welche ebenfalls von der Marke UltiMaker stammt. Als Schichthöhe werden Werte zwischen 0.1 und 0.2 mm bevorzugt. Bei der Schichtdicke gilt, je kleiner, desto besser ist die Oberflächengüte des Modells, allerdings wird dann auch mehr Zeit für den Druck benötigt.<a href="../Quellenverzeichnis/#jg_06">[JG_06]</a></p>
+<p>Ein weiterer einstellbarer Wert der mit der Schichtdicke zusammenhängt, ist die Dicke des Bodens und der Decke. Hier wird festgelegt, wie viele Schichten flächendeckend gedruckt werden sollen, bevor die Füllung des Modells beginnt. Ein ähnlicher Wert ist die Wandstärke, wobei hier die Anzahl der vertikalen Schichten ausgewählt wird.<a href="../Quellenverzeichnis/#jg_06">[JG_06]</a></p>
+<p>Bei der Füllung von Hohlräumen des Modells kann aus der Art und geometrischen Form der Füllung und der prozentualen Menge gewählt werden. Zudem kann noch die Art der Stützen bei Überhängen, sowie die Platzierung und der Winkel des Überhangs gewählt werden, der noch ohne Stütze gedruckt werden kann, bestimmt werden.<a href="../Quellenverzeichnis/#jg_06">[JG_06]</a></p>
+<p>Um zu einen besseren Halt der Modells auf der Grundfläche des Drucker zu gewährleisten, gibt es verschieden Möglichkeiten zur Auswahl. Ein sogenannter Brim fügt beim Drucken den Außenkanten der Grundfläche eine einzelne Schicht bestimmter Breite hinzu, was die Verbindungsfläche zwischen Druck und Grundfläche erhöht. Ein Raft ist eine Art Polster zwischen dem gesamten Modell und der Druckplatte, was ein nachträgliches Verziehen des Modells durch Erkaltung des Materials verhindert. Eine letzte Variante ist ein Skirt, eine Linie auf der ersten Schicht um die Konturen der Grundfläche. Da diese nicht mit dem Modell verbunden ist, hat diese Variante keinen Einfluss auf Stabilität oder Verziehen des Drucks.<a href="../Quellenverzeichnis/#jg_06">[JG_06]</a></p>
+<p>Zusätzlich zu den bisher genannten Einstellungen, können noch weitere Parameter für den Druck bestimmt werden, diese werden jedoch nicht genauer erläutert und es werden die gegebenen Standardwerte der Slicer-Software genutzt. Die gewählten Werte der genannten Steuergrößen können der <a href="#_tab_6_1">Tabelle 6.1</a> entnommen werden.</p>
+<p></p><center>
+<table id="_tab_6_1">
+<caption style="caption-side:bottom"> Tabelle 6.1: Parameterwerte für 3D Druck der Gehäuseprototypen. </caption><thead>
+<tr>
+<th style="text-align: center;">Parameter</th>
+<th style="text-align: center;">Wert</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Schichthöhe</td>
+<td style="text-align: center;">0.2 mm</td>
+</tr>
+<tr>
+<td style="text-align: center;">Boden-/Deckenstärke</td>
+<td style="text-align: center;">1.2 mm</td>
+</tr>
+<tr>
+<td style="text-align: center;">Wandstärke</td>
+<td style="text-align: center;">0.8 mm</td>
+</tr>
+<tr>
+<td style="text-align: center;">Füllung</td>
+<td style="text-align: center;">Gyroid, 20%</td>
+</tr>
+<tr>
+<td style="text-align: center;">Stützsturktur</td>
+<td style="text-align: center;">Baum, überall, 60°</td>
+</tr>
+<tr>
+<td style="text-align: center;">Verbdg Druckplatte</td>
+<td style="text-align: center;">Skirt</td>
+</tr>
+</tbody>
+</table>
+<p></p></center>
+<p>Nach dem Slicen wird der G-Code an den 3D-Drucker übergeben. Hier muss dann nur noch das passende Filament einsetzen und der Druck kann starten. Nach dem Ablösen des fertigen Modells von der Druckplatte wird teilweise noch mit Hilfe eines Skalpells nachgearbeitet, um die Ungenauigkeiten des Druckers auszugleichen. Anschließend werden die Teile auf Passgenauigkeit für die Komponenten getestet und dann die bereits oben genannten Änderungen vorgenommen. 
+In <a href="#_abb_6_28">Abbildung 6.28</a> sieht man den Zwischenstand eines Drucks. Neben dem Gehöuse selbst ist auch die Stützstruktur in Form der Bäume sehr gut zu erkennen. </p>
+<p><figure id="_abb_6_28"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/7_zoll_druck.JPEG"><img alt="" src="../img/7_zoll_druck.JPEG" width="70%"/></a><figcaption> Abbildung 6.28: Zwischenstand beim Drucken des 7.3-Zoll-Gehäuses. </figcaption></figure></p>
+<p>Nach dem Fertigen des finalen Prototyp Gehäuses werden die elektronischen Komponenten eingesetzt und das Displaymodul zusammengebaut. Die fertigen Prototypen kann man in <a href="#_abb_6_29">Abbildung 6.29</a> und <a href="#_abb_6_30">Abbildung 6.30</a> betrachten.</p>
+<p><figure id="_abb_6_29"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/10_zoll_prototyp.jpg"><img alt="" src="../img/10_zoll_prototyp.jpg" width="70%"/></a><figcaption> Abbildung 6.29: Das finale Prototyp-Gehäuse des 9.7-Zoll-Gehäuses. </figcaption></figure></p>
+<p><figure id="_abb_6_30"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/7_zoll_prototyp.jpg"><img alt="" src="../img/7_zoll_prototyp.jpg" width="70%"/></a><figcaption> Abbildung 6.30: Das finale Prototyp-Gehäuse des 7.3-Zoll-Gehäuses. </figcaption></figure></p>
+<h2 id="strommessung-von-mikrocontroller-und-display">Strommessung von Mikrocontroller und Display<a class="headerlink" href="#strommessung-von-mikrocontroller-und-display" title="Permanent link">¶</a></h2>
+<h3 id="versuchsaufbau">Versuchsaufbau<a class="headerlink" href="#versuchsaufbau" title="Permanent link">¶</a></h3>
+<p><strong>Mario Wegmann</strong></p>
+<p>Der Prozess, um ein Bild per WLAN zu empfangen, zu verarbeiten und es auf einem ePaper Display darzustellen, ist sehr umfangreich und während der verschiedenen Phasen ist der Stromverbrauch sehr schwankend. Daher kann mit einer statischen Strommessung kein aussagekräftiges Messergebnis produziert werden. Um den Strom dynamisch zu messen und dabei schnelle Änderungen sichtbar zu machen, eignet sich daher ein Oszilloskop als Messinstrument. Da das Oszilloskop jedoch nur Spannungen messen kann, muss hier der Umweg über einen Shunt-Widerstand gemacht werden. Der Shunt-Widerstand wird dabei in Reihe zwischen der zu messenden Last und der Masse geschaltet, mit einem Tastkopf an beiden Enden des Shunt-Widerstands verbunden, kann nun der Spannungsabfall über den Shunt-Widerstand gemessen werden. Abschließend kann über das Ohm'sche Gesetz aus dem Widerstandswert und der Spannung der durchflossene Strom berechnet werden. Viele Oszilloskope bieten daher auch die Möglichkeit an, die Achsenbeschriftung auf mA umzuschalten, um Messergebnisse mit der korrekten Einheit festhalten zu können. Es muss jedoch beachtet werden, dass das Oszilloskope nicht automatisch das Ohm'sche Gesetz anwendet, da es keine Kenntnis über den Widerstandswert hat. Somit muss dies bei den Messergebnissen mit verrechnet werden oder alternativ darauf geachtet werden, dass der Widerstand wert des Shunt-Widerstands 1 Ω so genau wie möglich erreicht. Des Weiteren ist unbedingt darauf zu achten, dass der Shunt-Widerstand zwischen Last und Masse hängt, wenn es sich um eine netzbetriebene Schaltung handelt. Zwar wäre das Messergebnis theoretisch auch korrekt, jedoch würde durch die Erdung der Masse am Tastkopf ein Kurzschluss entstehen, wenn die Masse vom Tastkopf mit einem anderen Spannungspegel, als der Masse der Schaltung, verbunden wird. Dieser Kurzschluss könnte das Oszilloskop beschädigen. </p>
+<p>In <a href="#_abb_6_31">Abbildung 6.31</a> erkennt man den Versuchsaufbau für die Messung. Als Spannungsquelle dient ein Labornetzteil. Vom Pluspol des Labornetzteils führt ein Draht zum V<sub>cc</sub> Pin des ESP32. Von GND des ESP32 führt ein Draht zum 1 Ω Shunt Widerstand. An diesem ist auch der Tastkopf des Oszilloskopes angeschlossen. Nach dem Shunt Widerstand führt ein Draht zu einem Multimeter. Das Multimeter dient zur Kontrolle, ob die vom Oszilloskop ausgegebenen Werte plausibel sind. Abschließend ist der zweite Kontakt vom Multimeter mit dem Minuspol des Labornetzteils verbunden. </p>
+<p><figure id="_abb_6_31"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/Strommessung_7_3.jpeg"><img alt="" src="../img/Strommessung_7_3.jpeg" width="80%"/></a><figcaption> Abbildung 6.31: Der Versuchsaufbau mit Oszilloskop, Multimeter und Labornetzteil </figcaption></figure></p>
+<h3 id="messergebnisse">Messergebnisse<a class="headerlink" href="#messergebnisse" title="Permanent link">¶</a></h3>
+<p><strong>Mario Wegmann</strong> </p>
+<p>In <a href="#_tab_6_2">Tabelle 6.2</a> kann man einen kompletten Refresh des 7,3 Zoll großen Displays erkennen. Hierbei wird auf dem ePaper Display zuerst weiß gestellt, anschließend wird nach einer Pause eine in der Firmware hart codierte Bitmap auf dem Display angezeigt. Zum Abschluss wird erneut ein weißes Bild dargestellt. In diesem Teilversuch wurde der Stromverbrauch vom WLAN noch nicht gemessen. Für diesen Versuch wurde Democode von Hersteller WaveShare verwendet, welcher in der Quelle zu finden ist <a href="../Quellenverzeichnis/#MW_09">[MW_09]</a>.</p>
+<table id="_tab_6_2">
+<caption style="caption-side:bottom"> Tabelle 6.2: Der Stromverbrauch aufgeteilt in Zeitabschnitte beim 7,3" Display </caption><thead>
+<tr>
+<th>Bereich</th>
+<th>Zustand</th>
+<th>Avg. Strom  [mA]</th>
+<th>Zeit [s]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.</td>
+<td>Bitmap an ePaper Display übertragen</td>
+<td>66,13</td>
+<td>1,032</td>
+</tr>
+<tr>
+<td>2.</td>
+<td>Bildschirminhalt leeren</td>
+<td>64.05</td>
+<td>1,624</td>
+</tr>
+<tr>
+<td>3.</td>
+<td>Bildschirminhalt leeren</td>
+<td>74,64</td>
+<td>2,608</td>
+</tr>
+<tr>
+<td>4.</td>
+<td>Bildschirminhalt leeren</td>
+<td>73,67</td>
+<td>2,689</td>
+</tr>
+<tr>
+<td>5.</td>
+<td>Bildschirminhalt leeren</td>
+<td>66,06</td>
+<td>3,675</td>
+</tr>
+<tr>
+<td>6.</td>
+<td>Bildschirminhalt leeren</td>
+<td>62,05</td>
+<td>2,214</td>
+</tr>
+<tr>
+<td>7.</td>
+<td>Delay</td>
+<td>48,99</td>
+<td>0,994</td>
+</tr>
+<tr>
+<td>8.</td>
+<td>Bitmap an ePaper Display übertragen</td>
+<td>66,77</td>
+<td>2,196</td>
+</tr>
+<tr>
+<td>9.</td>
+<td>Bitmap darstellen</td>
+<td>70,51</td>
+<td>1,847</td>
+</tr>
+<tr>
+<td>10.</td>
+<td>Bitmap darstellen</td>
+<td>82,34</td>
+<td>2,653</td>
+</tr>
+<tr>
+<td>11.</td>
+<td>Bitmap darstellen</td>
+<td>82,03</td>
+<td>2,703</td>
+</tr>
+<tr>
+<td>12.</td>
+<td>Bitmap darstellen</td>
+<td>70,94</td>
+<td>3,695</td>
+</tr>
+<tr>
+<td>13.</td>
+<td>Bitmap darstellen</td>
+<td>66,15</td>
+<td>2,009</td>
+</tr>
+<tr>
+<td>14.</td>
+<td>Delay</td>
+<td>49,19</td>
+<td>3,001</td>
+</tr>
+<tr>
+<td>15.</td>
+<td>Bitmap an ePaper Display übertragen</td>
+<td>67,69</td>
+<td>2,021</td>
+</tr>
+<tr>
+<td>16.</td>
+<td>Bildschirminhalt leeren</td>
+<td>62,90</td>
+<td>1,785</td>
+</tr>
+<tr>
+<td>17.</td>
+<td>Bildschirminhalt leeren</td>
+<td>73,83</td>
+<td>2,728</td>
+</tr>
+<tr>
+<td>18.</td>
+<td>Bildschirminhalt leeren</td>
+<td>73,51</td>
+<td>2,604</td>
+</tr>
+<tr>
+<td>19.</td>
+<td>Bildschirminhalt leeren</td>
+<td>65,99</td>
+<td>3,646</td>
+</tr>
+<tr>
+<td>20.</td>
+<td>Bildschirminhalt leeren</td>
+<td>61,93</td>
+<td>2,120</td>
+</tr>
+<tr>
+<td>21.</td>
+<td>Delay</td>
+<td>49,09</td>
+<td>2,008</td>
+</tr>
+<tr>
+<td>22.</td>
+<td>Deep-sleep</td>
+<td>9,777</td>
+<td>5,001</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Benjamin Klaric</strong> </p>
+<p>In <a href="#_abb_6_32">Abbildung 6.32</a> sind die geplotteten Werte von der <a href="#_tab_6_2">Tabelle 6.2</a> graphisch dargestellt.</p>
+<p><figure id="_abb_6_32"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/Plot-Stromverbrauch.png"><img alt="" src="../img/Plot-Stromverbrauch.png" width="90%"/></a><figcaption> Abbildung 6.32: Plot von dem Stromvebrauch in Zeitabschnitten beim 7,3" Display </figcaption></figure></p>
+<p><strong>Mario Wegmann</strong> </p>
+<p>In <a href="#_tab_6_3">Tabelle 6.3</a> sieht man die Messwerte vom Stromverbrauch beim 9,7 Zoll Display. Hierbei wird der ESP32 und das zugehörige Treiber-Board mit Strom versorgt, anschließend das Treiber-Board initialisiert und nach den Eigenschaften des angeschlossenen ePaper Displays gefragt. Erst danach wird die Bitmap zuerst an das Treiber-Board übertragen und dann vom Treiber-Board auf das Display. Abschließend wird das Treiber-Board in den Idle wieder gesetzt und zum Schluss der ESP32 zusätzlich in den Deep-sleep. Für diesen Versuch wurde Democode von GitHub verwendet, welcher in der Quelle zu finden ist <a href="../Quellenverzeichnis/#MW_10">[MW_10]</a>.</p>
+<table id="_tab_6_3">
+<caption style="caption-side:bottom"> Tabelle 6.3 Der Stromverbrauch aufgeteilt in Zeitabschnitte beim 9,7" Display </caption><thead>
+<tr>
+<th>Bereich</th>
+<th>Zustand</th>
+<th>Avg. Strom  [mA]</th>
+<th>Zeit [s]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.</td>
+<td>Idle mit angeschalteten Treiber-Board</td>
+<td>67,54</td>
+<td>0,929</td>
+</tr>
+<tr>
+<td>2.</td>
+<td>Init des Treiber-Boards</td>
+<td>94,87</td>
+<td>0,948</td>
+</tr>
+<tr>
+<td>3.</td>
+<td>Auslesen der Informationen des angeschlossenen ePaper Displays</td>
+<td>112,2</td>
+<td>0,497</td>
+</tr>
+<tr>
+<td>4.</td>
+<td>Übertragen der Bitmap über SPI an das Treiberboard</td>
+<td>103,4</td>
+<td>0,460</td>
+</tr>
+<tr>
+<td>5.</td>
+<td>Übertragen der Bitmap an das Display</td>
+<td>105,2</td>
+<td>0,570</td>
+</tr>
+<tr>
+<td>6.</td>
+<td>Bildschirminhalt auf dem ePaper Display darstellen</td>
+<td>109,9</td>
+<td>0,865</td>
+</tr>
+<tr>
+<td>7.</td>
+<td>Idle mit angeschalteten Treiber-Board</td>
+<td>66,48</td>
+<td>0,954</td>
+</tr>
+<tr>
+<td>8.</td>
+<td>Deep-sleep angeschalteten Treiber-Board</td>
+<td>29,22</td>
+<td>5,002</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Benjamin Klaric</strong> </p>
+<p>In <a href="#_abb_6_33">Abbildung 6.33</a> sind die geplotteten Werte von der <a href="#_tab_6_3">Tabelle 6.3</a> graphisch dargestellt.</p>
+<p><figure id="_abb_6_33"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/Plot-Stromverbrauch-2.png"><img alt="" src="../img/Plot-Stromverbrauch-2.png" width="60%"/></a><figcaption> Abbildung 6.33: Plot von dem Stromvebrauch in Zeitabschnitten beim 9,7" Display </figcaption></figure></p>
+<p><strong>Mario Wegmann</strong> </p>
+<p>In <a href="#_tab_6_4">Tabelle 6.4</a> sind die Messwerte vom Stromverbrauch bei der Verwendung des ESP32 WLAN-Modems erkennbar. Hierbei ist zu beachten, dass der Verlauf nicht periodisch verläuft, sondern die relevanten Bereiche innerhalb einer Übertragung angegeben sind. </p>
+<table id="_tab_6_4">
+<caption style="caption-side:bottom"> Tabelle 6.4: Die relevanten Stromverbrauchsbereiche bei der Verwendung vom WLAN-Modem </caption><thead>
+<tr>
+<th>Bereich</th>
+<th>Zustand</th>
+<th>Avg. Strom  [mA]</th>
+<th>Zeit [s]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.</td>
+<td>ESP im Idle, WLAN Modem ausgeschaltet</td>
+<td>49,28</td>
+<td>5,001</td>
+</tr>
+<tr>
+<td>2.</td>
+<td>ESP im Idle, WLAN Modem eingeschaltet</td>
+<td>121,64</td>
+<td>1,004</td>
+</tr>
+<tr>
+<td>3.</td>
+<td>WLAN Modem aktiv (Pakettransport)</td>
+<td>603,44</td>
+<td>76 * 10<sup>-6</sup></td>
+</tr>
+</tbody>
+</table>
+<h3 id="interpretation">Interpretation<a class="headerlink" href="#interpretation" title="Permanent link">¶</a></h3>
+<p><strong>Benjamin Klaric</strong> </p>
+<p>Der Stromverbrauch sowohl des 7,3-Zoll- als auch des 9,7-Zoll-Displays ist während eines vollen Refreshs angemessen. Es gibt jedoch einige Dinge zu berücksichtigen, nämlich dass ein voller Refresh nicht jedes Mal durchgeführt werden muss und dass der Stromverbrauch in Verbindung mit der Wi-Fi-Nutzung nicht in dieser Konfiguration gemessen wurde.<br/>
+Die Erklärung dafür, dass nicht bei jeder Gelegenheit ein voller Refresh erforderlich ist, liegt an den Spezifikationen des Displays. Gemäß diesen Spezifikationen soll das Display nach einer längeren Zeit ohne Refresh einen vollständigen Refresh durchführen. <a href="../Quellenverzeichnis/#BK_22">[BK_22]</a> Dies reduziert die Zeitspanne, in der das System unter Volllast arbeitet, und damit auch den durchschnittlichen Verbrauch.<br/>
+Der Wi-Fi-Verbrauch wurde nicht berücksichtigt, da dieser von vielen Parametern abhängt, die zum Zeitpunkt der Strommessung noch nicht optimiert waren. Dazu gehören die Code-Optimierung, die Steuerung der Wi-Fi-Nutzung und die Tatsache, dass das Modul, das für die Strommessung verwendet wurde, später nicht mehr genutzt wurde aufgrund des hohen Stromverbrauchs im Deep Sleep Modus.<br/>
+Im nächsten Abschnitt erfolgt ein genauerer Blick auf die gemessenen Werte und deren Bedeutung.  </p>
+<p><strong>Stromverbrauch von 7,3" Display</strong><br/>
+Das 7,3" Display hat eine längere Refresh-Zeit, was darauf zurückzuführen ist, dass es vier anstatt zwei Farben darstellen kann. Diese zusätzliche Farbunterstützung führt zu einer längeren Arbeitszeit und somit zu einem erhöhten Stromverbrauch. Der durchschnittliche Stromverbrauch des Displays kann anhand des Plots aus <a href="#_abb_6_33">Abbildung 6.32</a> berechnet werden. Dieser liegt bei 62 mA über einen Zeitraum von 54,853 Sekunden, wobei der Verbrauch stark von der Länge der Arbeitszeit abhängt.<br/>
+Durch den Verzicht auf einen vollständigen Refresh und die Nutzung eines Mikrocontrollers wie dem XIAO ESP32-S3, der im Deep Sleep Modus einen sehr geringen Stromverbrauch von 14 μA im Vergleich zu 9,78 mA aufweist, kann der durchschnittliche Stromverbrauch des Systems signifikant reduziert werden. Dies führt zu einer effizienteren Nutzung und einer Verringerung des Gesamtenergiebedarfs über längere Zeiträume.  </p>
+<p><strong>Stromverbrauch von 9,7" Display</strong><br/>
+Das 9,7-Zoll-Display zeichnet sich durch eine sehr kurze Refresh-Zeit aus, was jedoch zu einem höheren Stromverbrauch bei jedem Refresh führt. Über einen Zeitraum von 4,885 Sekunden beträgt der durchschnittliche Stromverbrauch 97 mA. Dieser erhöhte Durchschnittsverbrauch wird durch die verkürzte Betriebszeit ausgeglichen.<br/>
+In <a href="#_tab_6_3">Tabelle 6.3</a> wird verdeutlicht, dass trotz des höheren Stromverbrauchs des 9,7-Zoll-Displays der Gesamtenergieverbrauch aufgrund der schnellen Refresh-Zeit kompensiert wird.  </p>
+<p><strong>Stromverbrauch von WLAN</strong></p>
+<p><strong>Mario Wegmann</strong></p>
+<p>Wie in der <a href="#_tab_6_4">Tabelle 6.4</a> ersichtlich, fließen bei der Verwendung vom WLAN-Modem deutlich höhere Ströme als beim reinen Betrieb mit einem Display. Jedoch ist auch erkennbar, dass gerade die aperiodischen Spitzen beim Senden mit 76 µS verhältnismäßig sehr kurz sind. Man kann somit den Beitrag der Spannungen vernachlässigen und von einem Durchschnittsverbrauch von circa 121 mA ausgehen, wenn das WLAN-Modem aktiv ist und Daten übertragen werden sollen. Dennoch empfiehlt es sich, die Nutzung vom WLAN-Modem möglichst gering zu halten. </p>
+<h2 id="a-d-wandler-messung">A-D-Wandler Messung<a class="headerlink" href="#a-d-wandler-messung" title="Permanent link">¶</a></h2>
+<p><strong>Benjamin Klaric</strong> </p>
+<p>Wie bereit in <a href="./#schaltungsentwurf">6.5 Schaltungsentwurf</a> unter <strong>Akkuanschlüsse</strong> erwähnt, wurde ein analoger GPIO-Pin des XIAO ESP32-S3 verwendet, um den Spannungspegel des Akkupacks zu überwachen.  
+Der XIAO ESP32-S3 bietet viele analoge Pins, wovon einer, nämlich der A9-Pin, für die oben genannte Überwachung genutzt wird. Dazu wird an diesem Pin ein Spannungsteiler aufgebaut, bei dem zwei 220 kΩ Widerstände parallel zu den Akku+ und Akku- Eingängen des Mikrocontrollers verbunden werden. Der Wert für die Widerstände wurde so gewählt, weil der Spannungsteiler immer Strom zieht, auch wenn sich der Mikrocontroller im Deep Sleep befindet, da die Widerstände direkt mit dem Akkupack verbunden sind. Mit zwei 220 kΩ Widerständen und einer Spannung zwischen 3,5V und 4,2V ergibt sich ein Verbrauch zwischen 8 µA und 9,5 µA gemäß dem Ohm'schen Gesetz, was akzeptabel ist.  
+Allerdings muss man darauf achten, dass die Widerstandswerte möglichst nah beieinander liegen, damit sich die Spannung möglichst genau halbiert. Falls die Widerstände nicht exakt gleich sind, kann man den Multiplikationsfaktor so anpassen, dass die ungenaue Aufteilung der Spannung berücksichtigt wird, indem man die Spannungsteiler-Gleichung aufstellt und anpasst, wie in <a href="#_abb_6_34">Abbildung 6.34</a> zu sehen ist. Dabei entspricht das Widerstandsverhältnis dem Multiplikationsfaktor.  </p>
+<p><figure id="_abb_6_34"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/Formel.png"><img alt="" src="../img/Formel.png" width="60%"/></a><figcaption> Abbildung 6.34: Umgeformte Spannungsteilerformel </figcaption></figure></p>
+<p>Die Messung muss man auch in Code implementieren, wobei von dem Hersteller der Code zur Verfügung gestellt ist. <a href="../Quellenverzeichnis/#BK_23">[BK_23]</a>  
+Nach der Testmessung wurde festgestellt, dass die Messung nicht ganz genau ist, mit einem Fehler von etwa 100 mV. Dies könnte auf mehrere Gründe zurückzuführen sein, die sich aus dem Prinzip der Messung über einen analogen Pin mit Analog-Digital-Wandler (A-D-Wandler) ergeben.  
+Der A-D-Wandler im Mikrocontroller verwendet einen Abtastmechanismus, der kleine, schnelle Stromstöße verursacht. Diese können zu momentanen Spannungsabfällen aufgrund des hohen Widerstands der Spannungsteilerwiderstände führen. Daher beeinflussen hochfrequentes Rauschen oder Schwankungen in der Batteriespannung direkt den gemessenen Wert. Bei der Abtastung wird ein interner Kondensator kurzzeitig mit dem analogen Eingangspin verbunden. Dieser interne Kondensator muss sich schnell auf die Eingangsspannung aufladen. Wenn der Widerstand des Spannungsteilers hoch ist, kann er sich möglicherweise nicht schnell genug aufladen, was zu Messfehlern führt.  
+Um dieses Problem zu lösen, wurde ein Pufferkondensator von 100 nF parallel zu Akku+ und Akku- hinzugefügt. Dieser Wert ist ein typischer Wert für das Puffern in solchen Anwendungen. Dieser Kondensator fungiert als kleiner Energiespeicher, der dem A-D-Wandler die erforderliche Stromversorgung ohne signifikante Spannungsabfälle ermöglicht. Darüber hinaus filtert er hochfrequentes Rauschen heraus und reduziert die Auswirkungen von Schwankungen in der Batteriespannung. Wenn man <a href="#_abb_6_35">Abildung 6.35</a> betrachtet, ist eine verbesserte und stabilere Kurve der Messdaten mit dem Kondensator zu erkennen. Für jeden Spannungspegel wurden 50 Datenpunkte sowohl mit als auch ohne Kondensator gemessen.  </p>
+<p><figure id="_abb_6_35"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/ADC-Plot.png"><img alt="" src="../img/ADC-Plot.png" width="100%"/></a><figcaption> Abbildung 6.35: Plot von 50 Messwerten bei jedem Spannungspegel </figcaption></figure></p>
+<p>Allerdings besteht trotz der Verringerung des Fehlers noch ein Restfehler. Dies liegt, wie bereits erwähnt, an den hohen Widerstandswerten, die aufgrund des hohen Stromverbrauchs nicht weiter reduziert werden können.  
+Die Werte zeigen weniger Spitzen und bleiben stabiler bei einem bestimmten Wert, was von Vorteil ist. Zusätzlich wird in der Software ein kleiner Offset hinzugefügt.<br/>
+Eine andere Art der Messung könnte in Betracht gezogen werden, nämlich nicht die genaue Messung des aktuellen Spannungswerts, sondern die Messung der Änderung in Bezug auf den zu Beginn gemessenen Wert. Genauer gesagt könnte zu Beginn der Spannungswert des Akkupacks mit einem A-D-Wandler gemessen werden, und dann könnte der Abfall in Bezug auf diesen Wert überwacht werden, anstatt den aktuellen Spannungswert zu messen. Möglicherweise könnte dies bessere Ergebnisse liefern. Es ist bekannt, dass die Spannung bei einem voll geladenen Akkupack von 4,2V auf 3,5V abfallen darf, also um 0,7V. Dieser Abfall könnte auch bei der A-D-Wandler-Messung überwacht werden.  
+Leider war diese Art von Messung aus Zeitgründen nicht ausgetestet.  </p>
+<!-- Content moved into the footer -->
+<!-- <style>
+p, figcaption, ul, caption, table {
+    /* font-family: Verdana, Geneva, Tahoma, sans-serif !important; */
+    font-size: 13px;
+    /* font-size: 1rem; */
+}
+
+td {
+    padding: 4px 12px;
+}
+</style> -->
+</article>
+</div>
+<script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
+  Zurück zum Seitenanfang
+</button>
+</main>
+<!--
+  Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+<!-- Footer -->
+<footer class="md-footer">
+<style>
+        .md-source-file {
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 61rem;
+            margin-bottom: 0;
+            padding: 0 20.5px 0 20.5px;
+        }
+
+        .md-source-file__fact {
+            color: rgb(127,128,130);
+            text-decoration: none;
+        }
+
+        .md-source-file__fact a {
+            color: rgb(84, 136, 232);
+            text-decoration: none;
+        }
+
+        .md-source-file__fact :hover {
+            opacity: .7
+        }
+    </style>
+<!-- Render date of last update -->
+<!-- Render date of creation -->
+<!-- ---------------------------------------------------------------------- -->
+<!-- Render authors -->
+<!-- ---------------------------------------------------------------------- -->
+<!-- Render committers from GitHub -->
+<!-- Render committers from GitLab -->
+<!-- Render committers -->
+<!-- ---------------------------------------------------------------------- -->
+<!-- Determine date of last update -->
+<!-- Determine date of creation -->
+<!-- Source file information -->
+<aside class="md-source-file">
+<!-- Date of last update -->
+<span class="md-source-file__fact">
+<span class="md-icon" title="Letztes Update">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"></path></svg>
+</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 30, 2024</span>
+</span>
+<!-- Date of creation -->
+<!-- Authors (git-authors plugin) -->
+<span class="md-source-file__fact">
+<span class="md-icon" title="Mitwirkende">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 5.5A3.5 3.5 0 0 1 15.5 9a3.5 3.5 0 0 1-3.5 3.5A3.5 3.5 0 0 1 8.5 9 3.5 3.5 0 0 1 12 5.5M5 8c.56 0 1.08.15 1.53.42-.15 1.43.27 2.85 1.13 3.96C7.16 13.34 6.16 14 5 14a3 3 0 0 1-3-3 3 3 0 0 1 3-3m14 0a3 3 0 0 1 3 3 3 3 0 0 1-3 3c-1.16 0-2.16-.66-2.66-1.62a5.536 5.536 0 0 0 1.13-3.96c.45-.27.97-.42 1.53-.42M5.5 18.25c0-2.07 2.91-3.75 6.5-3.75s6.5 1.68 6.5 3.75V20h-13v-1.75M0 20v-1.5c0-1.39 1.89-2.56 4.45-2.9-.59.68-.95 1.62-.95 2.65V20H0m24 0h-3.5v-1.75c0-1.03-.36-1.97-.95-2.65 2.56.34 4.45 1.51 4.45 2.9V20Z"></path></svg>
+</span>
+<nav>
+<a href="mailto:118850444+bklaric1@users.noreply.github.com">Benjamin Klaric</a>, 
+            <a href="mailto:emirhangoktas01@gmail.com">Emirhan Göktaş</a>, 
+            <a href="mailto:jannisgroeger@gmail.com">Jannis</a>, 
+            <a href="mailto:mario.wegmann@tha.de">Marioheld</a>, 
+            <a href="mailto:benjamin.klaric01@gmail.com">bklaric</a>, 
+            <a href="mailto:mario.wegmann@hs-augsburg.de">mwegmann</a>, 
+            <a href="mailto:lukic.stasa@outlook.com">stasa</a>
+</nav>
+</span>
+<!-- Authors (git-committers plugin) -->
+</aside>
+<!-- Link to previous and/or next page -->
+<nav aria-label="Fußzeile" class="md-footer__inner md-grid">
+<!-- Link to previous page -->
+<a aria-label="Zurück: Systemkonzept" class="md-footer__link md-footer__link--prev" href="../Systemkonzept/">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</div>
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                    Zurück
+                </span>
+<div class="md-ellipsis">
+                    Systemkonzept
+                </div>
+</div>
+</a>
+<!-- Link to next page -->
+<a aria-label="Weiter: Firmware" class="md-footer__link md-footer__link--next" href="../Firmware/">
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                    Weiter
+                </span>
+<div class="md-ellipsis">
+                    Firmware
+                </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
+</div>
+</a>
+</nav>
+<!-- Further information -->
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Copyright © 2024 LPRD Project Maintainers
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+ ... <a class="link--pdf-download" download href="../pdf/document.pdf" title="PDF">download PDF</a></div>
+<!-- Social links -->
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<div class="md-progress" data-md-component="progress" role="progressbar"></div>
+<script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant.progress", "navigation.tabs", "navigation.indexes", "toc.integrate", "navigation.top", "search.suggest", "search.highlight", "content.action.view", "content.code.copy", "content.tabs.link", "content.tooltips", "navigation.footer"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}, "version": {"default": ["main", "dev"], "provider": "mike"}}</script>
+<script src="../assets/javascripts/bundle.ad660dcc.min.js"></script>
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>
