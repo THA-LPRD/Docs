@@ -603,7 +603,7 @@ Diese Einstellung ist hauptächlich als Debugging-Maßnahme oder für Entwickler
 In der Browserkonsole wird die detaillierte Verfolgung von Ereignissen und Fehlern ermöglicht, die während der Laufzeit der Anwendung auftreten. 
 Durch die Anpassung des Log-Levels (s. Tabelle 9.2.1) kann die Tiefe und Art der Protokollierung bestimmt werden, um die Menge und Art der Informationen, die das System auf der seriellen Konsole ausgibt zu steuern.
 So können spezifische Probleme zu diagnostiziert, oder das allgemeine Systemverhalten zu überwacht werden <a href="../Quellenverzeichnis/#jr_16">[JR_16]</a>.</p>
-<p><em>Tabelle 9.2.1 Übersicht über die verscheidenen Log-Levels <a href="../Quellenverzeichnis/#jr_17">[JR_17]</a></em></p>
+<p>Tabel: Tabelle 8.1 Übersicht über die verscheidenen Log-Levels <a href="../Quellenverzeichnis/#jr_17">[JR_17]</a>* { #_tab_8_1 }</p>
 <table>
 <thead>
 <tr>
@@ -658,23 +658,23 @@ Zusätzlich wird der Benutzer auf der Settings-Page über den eingestellten Disp
 <h2 id="linux-webanwendung">Linux Webanwendung<a class="headerlink" href="#linux-webanwendung" title="Permanent link">¶</a></h2>
 <p><strong>Mario Wegmann</strong></p>
 <h3 id="verwendete-technologien">Verwendete Technologien<a class="headerlink" href="#verwendete-technologien" title="Permanent link">¶</a></h3>
-<p>Wie im Kapitel <a href="../PraktischeUTheoretischeGrund/#webtechnologien">3.9.1 Webtechnologien</a> bereits erläutert, ist es für die Entwicklung einer komplexeren Webanwendung sehr sinnvoll, ein Webframework einzusetzen. 
-Hierbei gibt es eine große Auswahl an möglichen Frameworks und auch serverseitigen Programmiersprachen. Da JavaScript bereits im Standalonemodus, wie auch im Netzwerk-Modus, verwendet wird, um die Interaktion mit dem Displaymodul zu realisieren, ist es naheliegend, auch auf dem Server JavaScript zu nutzen. Diese Entscheidung ermöglichte eine einheitliche Codebasis sowohl im Frontend als auch im Backend, was die Entwicklung effizienter und die Wartung der Anwendung einfacher macht und zuletzt auch das Erlernen neuer Programmiersprachen auf eine reduziert. Zudem wurde die Möglichkeit genutzt, TypeScript anstatt JavaScript zu verwenden, um die Vorteile zu nutzen, welche ebenso bereits im Kapitel <a href="../PraktischeUTheoretischeGrund/#webtechnologien">3.9.1 Webtechnologien</a> erwähnt wurden. </p>
+<p>Wie im Kapitel <a href="../PraktischeUTheoretischeGrund/#webtechnologien">2.9.1 Webtechnologien</a> bereits erläutert, ist es für die Entwicklung einer komplexeren Webanwendung sehr sinnvoll, ein Webframework einzusetzen. 
+Hierbei gibt es eine große Auswahl an möglichen Frameworks und auch serverseitigen Programmiersprachen. Da JavaScript bereits im Standalonemodus, wie auch im Netzwerk-Modus, verwendet wird, um die Interaktion mit dem Displaymodul zu realisieren, ist es naheliegend, auch auf dem Server JavaScript zu nutzen. Diese Entscheidung ermöglichte eine einheitliche Codebasis sowohl im Frontend als auch im Backend, was die Entwicklung effizienter und die Wartung der Anwendung einfacher macht und zuletzt auch das Erlernen neuer Programmiersprachen auf eine reduziert. Zudem wurde die Möglichkeit genutzt, TypeScript anstatt JavaScript zu verwenden, um die Vorteile zu nutzen, welche ebenso bereits im Kapitel <a href="../PraktischeUTheoretischeGrund/#webtechnologien">2.9.1 Webtechnologien</a> erwähnt wurden. </p>
 <p>Für das Frontend wurde React ausgewählt. Durch React lassen sich Komponenten realisieren, welche modular wiederverwendet werden können. Dadurch wird es vermieden, doppelten Code zu verfassen und Änderungen an einer Komponente werden global in der gesamten Webanwendung widergespiegelt. </p>
 <p>Als Webframework wurde Next.js ausgewählt, da es React unter anderem um serverseitiges Rendering erweitert. Darüber hinaus bietet Next.js eine nahtlose Integration von API-Routen und Middleware, was die Entwicklung von Full-Stack-Anwendungen erleichtert. </p>
 <p>Für das Speichern der Daten wurde PostgreSQL als Datenbank ausgewählt. Hierbei wird Prisma ORM als Zwischenschicht eingesetzt, damit die Modelle der relationanlen Datenbank als Objekte mit statischen Typen generiert werden. </p>
 <p>Für den Webserver wurden Linux und teilweise Docker verwendet. Das quelloffene Linux ist bekannt für seine Stabilität, Sicherheit und Performance, was es zu einer idealen Wahl für den Einsatz als Webserver macht. Docker ergänzt diese Vorteile durch die Bereitstellung einer containerisierten Umgebung, die eine konsistente und isolierte Ausführung von Anwendungen ermöglicht. Dies erleichtert die Skalierung und Verwaltung der Anwendung erheblich und sorgt dafür, dass sie in unterschiedlichen Umgebungen gleichbleibend funktioniert. Docker-Container bieten zudem eine einfache Möglichkeit, Abhängigkeiten zu verwalten und die Bereitstellung von Updates zu automatisieren. </p>
 <p>Die Kombination dieser Technologien ermöglicht effizient eine benutzerfreundliche, performante und wartbare Webanwendung zu entwickeln. </p>
-<p>Wie die Einzelkomponenten zusammenspielen, ist in <a href="#_fig_MW_techstack"></a> ersichtlich.</p>
-<p><figure id="_fig_MW_techstack"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/TechStack.png"><img alt="" src="../img/TechStack.png" width="60%"/></a><figcaption> Der Techstack der Webanwendung </figcaption></figure></p>
+<p>Wie die Einzelkomponenten zusammenspielen, ist in <a href="#_abb_8_1">Abbildung 8.1</a> ersichtlich.</p>
+<p><figure id="_abb_8_1"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/TechStack.png"><img alt="" src="../img/TechStack.png" width="60%"/></a><figcaption> Abbildung 8.1: Der Techstack der Webanwendung </figcaption></figure></p>
 <p>Der Code wurde größtenteils in VSCode verfasst und mit der Versionskontrolle git auf GitHub verwaltet. </p>
 <h3 id="aufbau-der-webanwendung">Aufbau der Webanwendung<a class="headerlink" href="#aufbau-der-webanwendung" title="Permanent link">¶</a></h3>
 <p><strong>Datenbankstruktur</strong></p>
-<p>In der PostgreSQL Datenbank gibt es zwei Tabellen, die erste Tabelle enthält alle Displaymodule, der Aufbau einer Displaymodul-Entität ist in <a href="#_tab_MW_Display"></a> erkennbar. Hierbei wird als Primary Key die MAC-Adresse verwendet, da diese bei der Produktion vom Hersteller eindeutig vergeben wird, eignet sich diese sehr gut als Primary Key. Des Weiteren werden ein frei definierbarer Anzeigename, die Auflösung des verbauten ePaper Displays, der Zeitpunkt, wann sich das Displaymodul das letzte Mal mit dem Server verbunden hat und das aktuell festgelegte Asset hinterlegt. 
-In <a href="#_tab_MW_Asset"></a> ist die Asset-Entität aufgelistet, diese besteht aus einer zufällig generierten cuid für den Primary Key, einer Typenangabe, ob statisch oder dynamisch, einem frei definierbaren Anzeigename, der Dateipfad auf dem Server Dateisystem, dem HTML Code für das Erstellen des Assets, sofern es über HTML generiert wird und die Anzeigedauer. Die PNGs werden lokal auf dem Dateisystem des Servers abgelegt, somit kann die Datenbank einerseits schlank bleiben und der Webserver kann die PNGs einfach ausliefern. </p>
+<p>In der PostgreSQL Datenbank gibt es zwei Tabellen, die erste Tabelle enthält alle Displaymodule, der Aufbau einer Displaymodul-Entität ist in <a href="#_tab_8_2">Tabelle 8.2</a> erkennbar. Hierbei wird als Primary Key die MAC-Adresse verwendet, da diese bei der Produktion vom Hersteller eindeutig vergeben wird, eignet sich diese sehr gut als Primary Key. Des Weiteren werden ein frei definierbarer Anzeigename, die Auflösung des verbauten ePaper Displays, der Zeitpunkt, wann sich das Displaymodul das letzte Mal mit dem Server verbunden hat und das aktuell festgelegte Asset hinterlegt. 
+In <a href="#_tab_8_3">Tabelle 8.3</a> ist die Asset-Entität aufgelistet, diese besteht aus einer zufällig generierten cuid für den Primary Key, einer Typenangabe, ob statisch oder dynamisch, einem frei definierbaren Anzeigename, der Dateipfad auf dem Server Dateisystem, dem HTML Code für das Erstellen des Assets, sofern es über HTML generiert wird und die Anzeigedauer. Die PNGs werden lokal auf dem Dateisystem des Servers abgelegt, somit kann die Datenbank einerseits schlank bleiben und der Webserver kann die PNGs einfach ausliefern. </p>
 <p>Die meisten Eigenschaften wurden als optional deklariert, damit die Entitäten auch schon erstellt werden können, auch wenn noch nicht alle Eigenschaften bekannt sind. </p>
-<table id="_tab_MW_Display">
-<caption style="caption-side:bottom"> Die Display-Entität </caption><thead>
+<table id="_tab_8_2">
+<caption style="caption-side:bottom"> Tabelle 8.2: Die Display-Entität </caption><thead>
 <tr>
 <th>Key</th>
 <th>Type</th>
@@ -719,8 +719,8 @@ In <a href="#_tab_MW_Asset"></a> ist die Asset-Entität aufgelistet, diese beste
 </tr>
 </tbody>
 </table>
-<table id="_tab_MW_Asset">
-<caption style="caption-side:bottom"> Die Asset-Entität </caption><thead>
+<table id="_tab_8_3">
+<caption style="caption-side:bottom"> Tabelle 8.3: Die Asset-Entität </caption><thead>
 <tr>
 <th>Key</th>
 <th>Type</th>
@@ -762,9 +762,9 @@ In <a href="#_tab_MW_Asset"></a> ist die Asset-Entität aufgelistet, diese beste
 </table>
 <p><strong>Backend</strong></p>
 <p>Für eine standardisierte Verwendung der Daten wurde eine REST-API-Schnittstelle umgesetzt. So können mit GET-Anfragen Daten angefragt, mit PUT-Anfragen Daten bearbeitet und mit DELETE-Anfragen Daten auch gelöscht werden. Sowohl das Frontend als auch die Displaymodule verwenden diese REST-API. </p>
-<p>Eine vollständige Übersicht der möglichen REST-API-Aufrufe ist in Tabelle <a href="#_tab_MW_03"></a> ersichtlich. Platzhalter in eckigen Klammern werden dabei dynamisch in der Anfrage berücksichtigt. </p>
-<table id="_tab_MW_03">
-<caption style="caption-side:bottom"> Die Unterstützen REST-API Aufrufe der Webanwendung </caption><thead>
+<p>Eine vollständige Übersicht der möglichen REST-API-Aufrufe ist in <a href="#_tab_8_4">Tabelle 8.4</a> ersichtlich. Platzhalter in eckigen Klammern werden dabei dynamisch in der Anfrage berücksichtigt. </p>
+<table id="_tab_8_4">
+<caption style="caption-side:bottom"> Tabelle 8.4: Die Unterstützen REST-API Aufrufe der Webanwendung </caption><thead>
 <tr>
 <th>URL</th>
 <th>Methode</th>
@@ -854,17 +854,18 @@ In <a href="#_tab_MW_Asset"></a> ist die Asset-Entität aufgelistet, diese beste
 </tbody>
 </table>
 <p><strong>Frontend</strong></p>
-<p>Im Frontend gibt es fünf Unterseiten. Die Startseite enthält das Menü zu den anderen beiden Hauptunterseiten »Displays« und »Assets«. In der Unterseite »Displays« befindet sich eine Auflistung aller dem Server bekannten Displaymodulen. Ein Displaymodul registriert sich dabei beim Server selbst, da es im Servermodus die Register-URL aufruft und sich dem Server so bekannt macht. In <a href="#_fig_WA_Displays"></a> ist erkennbar, dass jedes Displaymodul seinem mit seinem Anzeigenamen und auch einer Vorschau des aktuell zugewiesenen Assets dargestellt wird. Ein Displaymodul kann in der Übersicht angeklickt werden, wodurch sich eine Detailansichtsseite öffnet. In dieser Detailseite, welche <a href="#_fig_WA_Display_Details"></a> zeigt, können die Metadaten des Displays bearbeitet und gespeichert werden. Zusätzlich werden alle Assets angezeigt, sobald ein Asset angeklickt wird, wird dieses als neues Asset dem Display zugewiesen. </p>
-<p><figure id="_fig_WA_Displays"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/Handbuch/WA-Displays.png"><img alt="" src="../img/Handbuch/WA-Displays.png" width="60%"/></a><figcaption> Die Übersichtsseite aller Displays </figcaption></figure></p>
-<p><figure id="_fig_WA_Display_Details"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/Handbuch/WA-Display-Details.png"><img alt="" src="../img/Handbuch/WA-Display-Details.png" width="60%"/></a><figcaption> Die Detailansicht eines Displays </figcaption></figure></p>
-<p>Ähnlich verhält es sich mit der zweiten Hauptunterseite »Assets«, die unter <a href="#_fig_WA_Assets"></a> erkennbar ist. Auch hier werden alle vorhandenen Assets aufgelistet und können ausgewählt werden, um eine Detailansicht, wie in <a href="#_fig_WA_Display_Details"></a> gezeigt, zu öffnen und die Metadaten zu bearbeiten und das Asset zu löschen. Im Gegensatz zu Displaymodulen können Assets händisch angelegt werden, entweder kann dafür eine PNG-Datei hochgeladen oder HTML-Code eingetragen werden, welcher abschließend wieder ein PNG produziert. Die Abbildungen <a href="#_fig_WA_Upload"></a> und <a href="#_fig_WA_HTML"></a> zeigen jeweils die beiden Vorgänge. </p>
-<p><figure id="_fig_WA_Assets"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/Handbuch/WA-Assets.png"><img alt="" src="../img/Handbuch/WA-Assets.png" width="60%"/></a><figcaption> Eine Übersicht über alle vorhanden Assets </figcaption></figure></p>
-<p><figure id="_fig_WA_Upload"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/Handbuch/WA-Asset-Upload.png"><img alt="" src="../img/Handbuch/WA-Asset-Upload.png" width="60%"/></a><figcaption> Das Formular zum hochladen von bestehenden PNGs </figcaption></figure></p>
-<p><figure id="_fig_WA_HTML"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/Handbuch/WA-Asset-HTML.png"><img alt="" src="../img/Handbuch/WA-Asset-HTML.png" width="60%"/></a><figcaption> Das Formular zum erstellen von PNGs aus HTML Code </figcaption></figure></p>
+<p>Im Frontend gibt es fünf Unterseiten. Die Startseite enthält das Menü zu den anderen beiden Hauptunterseiten »Displays« und »Assets«. In der Unterseite »Displays« befindet sich eine Auflistung aller dem Server bekannten Displaymodulen. Ein Displaymodul registriert sich dabei beim Server selbst, da es im Servermodus die Register-URL aufruft und sich dem Server so bekannt macht. In <a href="#_abb_8_2">Abbildung 8.2</a> ist erkennbar, dass jedes Displaymodul seinem mit seinem Anzeigenamen und auch einer Vorschau des aktuell zugewiesenen Assets dargestellt wird. Ein Displaymodul kann in der Übersicht angeklickt werden, wodurch sich eine Detailansichtsseite öffnet. In dieser Detailseite, welche <a href="#_abb_8_3">Abbildung 8.3</a> zeigt, können die Metadaten des Displays bearbeitet und gespeichert werden. Zusätzlich werden alle Assets angezeigt, sobald ein Asset angeklickt wird, wird dieses als neues Asset dem Display zugewiesen. </p>
+<p><figure id="_abb_8_2"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/Handbuch/WA-Displays.png"><img alt="" src="../img/Handbuch/WA-Displays.png" width="60%"/></a><figcaption> Abbildung 8.2: Die Übersichtsseite aller Displays </figcaption></figure></p>
+<p><figure id="_abb_8_3"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/Handbuch/WA-Display-Details.png"><img alt="" src="../img/Handbuch/WA-Display-Details.png" width="60%"/></a><figcaption> Abbildung 8.3: Die Detailansicht eines Displays </figcaption></figure></p>
+<p>Ähnlich verhält es sich mit der zweiten Hauptunterseite »Assets«, die unter <a href="#_abb_8_4">Abbildung 8.4</a> erkennbar ist. Auch hier werden alle vorhandenen Assets aufgelistet und können ausgewählt werden, um eine Detailansicht, wie in <a href="#_abb_8_5">Abbildung 8.5</a> gezeigt, zu öffnen und die Metadaten zu bearbeiten und das Asset zu löschen. Im Gegensatz zu Displaymodulen können Assets händisch angelegt werden, entweder kann dafür eine PNG-Datei hochgeladen oder HTML-Code eingetragen werden, welcher abschließend wieder ein PNG produziert. Die Abbildungen <a href="#_fig_8_6">Abbildung 8.6</a> und <a href="#_abb_8_7">Abbildung 8.7</a> zeigen jeweils die beiden Vorgänge. </p>
+<p><figure id="_abb_8_4"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/Handbuch/WA-Assets.png"><img alt="" src="../img/Handbuch/WA-Assets.png" width="60%"/></a><figcaption> Abbildung 8.4: Eine Übersicht über alle vorhanden Assets </figcaption></figure></p>
+<p><figure id="_abb_8_5"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/Handbuch/WA-Asset-Details.png"><img alt="" src="../img/Handbuch/WA-Asset-Details.png" width="60%"/></a><figcaption> Abbildung 8.5: Die Detailansicht eines Assets </figcaption></figure></p>
+<p><figure id="_fig_8_6"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/Handbuch/WA-Asset-Upload.png"><img alt="" src="../img/Handbuch/WA-Asset-Upload.png" width="60%"/></a><figcaption> Abbildung 8.6: Das Formular zum hochladen von bestehenden PNGs </figcaption></figure></p>
+<p><figure id="_abb_8_7"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../img/Handbuch/WA-Asset-HTML.png"><img alt="" src="../img/Handbuch/WA-Asset-HTML.png" width="60%"/></a><figcaption> Abbildung 8.7: Das Formular zum erstellen von PNGs aus HTML Code </figcaption></figure></p>
 <h3 id="testumgebung">Testumgebung<a class="headerlink" href="#testumgebung" title="Permanent link">¶</a></h3>
-<p>Als Testumgebung wurde beim Rechenzentrum (RZ) eine Linux-VM beantragt. Die vom Rechenzentrum erhaltene VM hat die in <a href="#_tab_MW_01"></a> genannten Eigenschaften. </p>
-<table id="_tab_MW_01">
-<caption style="caption-side:bottom"> Die Systemeigenschaften der vom RZ erhaltenen VM.  </caption><thead>
+<p>Als Testumgebung wurde beim Rechenzentrum (RZ) eine Linux-VM beantragt. Die vom Rechenzentrum erhaltene VM hat die in <a href="#_tab_8_5">Tabelle 8.5</a> genannten Eigenschaften. </p>
+<table id="_tab_8_5">
+<caption style="caption-side:bottom"> Tabelle 8.5: Die Systemeigenschaften der vom RZ erhaltenen VM.  </caption><thead>
 <tr>
 <th>Eigenschaft</th>
 <th>Wert</th>
@@ -1003,7 +1004,8 @@ td {
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 5.5A3.5 3.5 0 0 1 15.5 9a3.5 3.5 0 0 1-3.5 3.5A3.5 3.5 0 0 1 8.5 9 3.5 3.5 0 0 1 12 5.5M5 8c.56 0 1.08.15 1.53.42-.15 1.43.27 2.85 1.13 3.96C7.16 13.34 6.16 14 5 14a3 3 0 0 1-3-3 3 3 0 0 1 3-3m14 0a3 3 0 0 1 3 3 3 3 0 0 1-3 3c-1.16 0-2.16-.66-2.66-1.62a5.536 5.536 0 0 0 1.13-3.96c.45-.27.97-.42 1.53-.42M5.5 18.25c0-2.07 2.91-3.75 6.5-3.75s6.5 1.68 6.5 3.75V20h-13v-1.75M0 20v-1.5c0-1.39 1.89-2.56 4.45-2.9-.59.68-.95 1.62-.95 2.65V20H0m24 0h-3.5v-1.75c0-1.03-.36-1.97-.95-2.65 2.56.34 4.45 1.51 4.45 2.9V20Z"></path></svg>
 </span>
 <nav>
-<a href="mailto:mario.wegmann@tha.de">Marioheld</a>, 
+<a href="mailto:emirhangoktas01@gmail.com">Emirhan Göktaş</a>, 
+            <a href="mailto:mario.wegmann@tha.de">Marioheld</a>, 
             <a href="mailto:benjamin.klaric01@gmail.com">bklaric</a>, 
             <a href="mailto:jul.reuter@web.de">jr3511</a>, 
             <a href="mailto:mario.wegmann@hs-augsburg.de">mwegmann</a>, 
