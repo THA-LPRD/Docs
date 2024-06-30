@@ -26,7 +26,6 @@ Die erwähnten geringen Stromverbrauch haben wir selber nochmal getestet und kan
 Ein kleiner Nachteil der Auswahl ist das verschiedene Displays verschiedene anforderungen haben. Die Displays beseitzten einen unterschiedlichen Spannungsverbrauch. Das 7.3 inch Display benutzt 3V und das größere 9.7 inch Display benutzt 5V.  
 Dadurch haben wir uns entschieden einen schalter auf der Platine einzubauen der dieses Problem löst und zwischen diesen Spannungen wechselt, genaueres kann man im Kapitel [7.5 Schaltungsentwurf](Hardware.md##Schaltungsentwurf) nachlesen.
 
-[7.5 Schaltungsentwurf](Hardware.md##Schaltungsentwurf)
 
 ## Zusammenbau der Akkupacks
 
