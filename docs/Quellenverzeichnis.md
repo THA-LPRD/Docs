@@ -170,6 +170,21 @@ S. 35f
 <a id="MW_10">[MW_10] Mehrere Autoren, Quick hack to port the IT8951 display driver to Arduino
 , [https://github.com/clashman/it8951](https://github.com/clashman/it8951), 2024-06-29, 2019-11-14</a>
 
+<a id="MW_11">[MW_11] Frin, Yvonnick, node-html-to-image
+, [https://github.com/frinyvonnick/node-html-to-image](https://github.com/frinyvonnick/node-html-to-image), 2024-06-30, 2023-08-05</a>
+
+<a id="MW_12">[MW_12] Mehrere Autoren, React
+, [https://de.wikipedia.org/w/index.php?title=React&oldid=246001260](https://de.wikipedia.org/w/index.php?title=React&oldid=246001260), 2024-06-30, 2024-06-17</a>
+
+<a id="MW_13">[MW_13] Mehrere Autoren, SQL
+, [https://de.wikipedia.org/w/index.php?title=SQL&oldid=239068065](https://de.wikipedia.org/w/index.php?title=SQL&oldid=239068065), 2024-06-30, 2023-11-23</a>
+
+<a id="MW_14">[MW_14] Mehrere Autoren, Objektrelationale Abbildung
+, [https://de.wikipedia.org/w/index.php?title=Objektrelationale_Abbildung&oldid=230015918](https://de.wikipedia.org/w/index.php?title=Objektrelationale_Abbildung&oldid=230015918), 2024-06-30, 2023-01-19</a>
+
+<a id="MW_15">[MW_15] Mehrere Autoren, PostgreSQL
+, [https://de.wikipedia.org/w/index.php?title=PostgreSQL&oldid=244163584](https://de.wikipedia.org/w/index.php?title=PostgreSQL&oldid=244163584), 2024-06-30, 2024-04-18</a>
+
 <a id="AEG_01">[AEG_01] Mehrere Autoren, Hardware Abstraction Layers, [https://en.wikipedia.org/w/index.php?title=Hardware_abstraction&oldid=1229915402](https://en.wikipedia.org/w/index.php?title=Hardware_abstraction&oldid=1229915402), 2024-06-28, 2024-06-19</a>
 
 <a id="AEG_02">[AEG_02] Mehrere Autoren, Arduino IDE, [https://en.wikipedia.org/w/index.php?title=Arduino&oldid=1231008379](https://en.wikipedia.org/w/index.php?title=Arduino&oldid=1231008379), 2024-06-28, 2024-06-25, S 1, 7-9</a>
