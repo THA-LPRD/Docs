@@ -9,7 +9,7 @@ Figure: Abbildung 5.1 Visualisierung des Grundkonzepts des Systems  { #_abb_5_1 
 
 ![](img/konzept.png){ width=100% }
 
-Wie in [Abbildung 6.1](#_abb_5_1) veranschaulicht, besteht das Low-Power Display Modul aus:
+Wie in [Abbildung 5.1](#_abb_5_1) veranschaulicht, besteht das Low-Power Display Modul aus:
 
 - Einem Akku, der die Stromversorgung des gesamten Systems gewährleistet
 - Einem Mikrocontroller, der die zentrale Steuereinheit bildet und die anzuzeigenden Informationen über WLAN empfängt, entsprechend aufbereitet und weitergibt
@@ -47,9 +47,11 @@ Im Netzwerkmodus ist das Konzept ähnlich, mit dem Unterschied, dass sich sowohl
 
 ### Standalone-Modus
 
-Table: Tabelle 5.1: Standalone-Modus { #_tab_5_1 }
+Figure: Abbildung 5.2: Standalone-Modus { #_abb_5_2 }
 
 ![](img/Standalone.png){ width=90% }
+
+Table: Tabelle 5.1: Standalone-Modus { #_tab_5_1 }
 
 | Modus       | Vorteile                                                                                          | Nachteile                                                                                          |
 |-------------|---------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------|
@@ -61,9 +63,11 @@ Table: Tabelle 5.1: Standalone-Modus { #_tab_5_1 }
 
 ### Netzwerk-Modus
 
-Table: Tabelle 5.2: Netzwerk-Modus { #_tab_5_2 }
+Figure: Abbildung 5.3: Netzwerk-Modus { #_abb_5_3 }
 
 ![](img/netzwerk.png){ width=90% }
+
+Table: Tabelle 5.2: Netzwerk-Modus { #_tab_5_2 }
 
 | Modus       | Vorteile                                                                                          | Nachteile                                                                                          |
 |-------------|---------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------|
@@ -75,9 +79,11 @@ Table: Tabelle 5.2: Netzwerk-Modus { #_tab_5_2 }
 
 ### Server-Modus
 
-Table: Tabelle 5.3: Server-Modus { #_tab_5_3 }
+Figure: Abbildung 5.4: Server-Modus { #_abb_5_4 }
 
 ![](img/server.png){ width=90% }
+
+Table: Tabelle 5.3: Server-Modus { #_tab_5_3 }
 
 | Modus       | Vorteile                                                                                          | Nachteile                                                                                          |
 |-------------|---------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------|
