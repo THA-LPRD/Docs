@@ -30,7 +30,8 @@ Bitte haben Sie hier einige Minuten Geduld. Falls das Verbinden mit einem extern
 Natürlich können die Einstellungen jederzeit geändert werden.
 
 ## Hochladen von Inhalten
-**Julia Reuter**
+**Julia Reuter**  
+
 Wenn Sie das System erfolgreich neu gestartet haben, sollten Sie auf folgende Seite (Abbildung 3) gelangen und können Sie mit dem Upload fortfahren
 
 ![](img/jr_home.png){ width=100% }
@@ -59,12 +60,10 @@ War der Upload erfolgreich, so werden Sie benachrichtigt und das Bild sollte nac
 
 **Denken Sie daran, dass nach jedem erfolgreichen Bild-Upload das System in den deep-sleep gesetzt wird und nicht mehr erreichbar ist. Um den Inhalt zu ändern oder Einstellungen vorzunehmen, drücken Sie bitte den Knopf am unteren Display-Rand.**
 
-
 ## Netzwerkmodus
 **Julia Reuter**  
-Nachdem Sie in den Einstellungen unter dem Punkt WiFi Konfiguration ihre WLAN-Daten eingeben und nach dem Speichern, das Display neu gestartet haben, sollte sich Ihr Modul automatisch mit dem entsprechenden WLAN verbinden. 
+Nachdem Sie in den Einstellungen unter dem Punkt WiFi Konfiguration ihre WLAN-Daten eingeben und nach dem Speichern, das Display neu gestartet haben, sollte sich Ihr Modul automatisch mit dem entsprechenden WLAN verbinden.  
 Unter der zugewiesenen IP: …/index.html können Sie mit dem Upload wie gehabt fortfahren.
-
 
 ## Aufsetzen des Linux Servers
 **Mario Wegmann**
@@ -91,8 +90,8 @@ sudo apt-get update
 sudo apt-get install caddy
 ```
 
-Der Caddy Reverseproxy wird über eine Konfigurationsdatei verwaltet, diese sollte sich unter '/etc/caddy/Caddyfile' befinden. Mit dem folgenden Code wird ein einfacher Reverseproxy auf Port :3000 der Next.js Anwendung eingerichtet, dabei wird ein lokal liegendes SSL-Zertifikat verwendet und eine Basic Auth Authentifizierung. 
-Den Passwort Hash kann man direkt mit Caddy generieren, indem `caddy hash-password`verwendet wird, diese Hilfsfunktion fragt nach dem Passwort und gibt dann den Hash aus, welcher in der Caddyfile eingetragen werden kann. 
+Der Caddy Reverseproxy wird über eine Konfigurationsdatei verwaltet, diese sollte sich unter '/etc/caddy/Caddyfile' befinden. Mit dem folgenden Code wird ein einfacher Reverseproxy auf Port :3000 der Next.js Anwendung eingerichtet, dabei wird ein lokal liegendes SSL-Zertifikat verwendet und eine Basic Auth Authentifizierung.  
+Den Passwort Hash kann man direkt mit Caddy generieren, indem `caddy hash-password` verwendet wird, diese Hilfsfunktion fragt nach dem Passwort und gibt dann den Hash aus, welcher in der Caddyfile eingetragen werden kann. 
 
 ```yml
 lprd.informatik.tha.de {
@@ -199,7 +198,7 @@ Figure: Eine Übersicht über alle vorhandenen Assets { #_fig_WA_Assets }
 ![](img/Handbuch/WA-Assets.png){ width=60% }
 
 
-**PNG hochladen**
+**PNG hochladen**  
 
 Ein PNG kann auf der Unterseite Assets über den »Hochladen«-Knopf hochgeladen werden. 
 Beim Hochladen muss darauf geachtet werden, dass das PNG in der richtigen Auflösung für das Display ist, welches später das Asset anzeigen soll. Ebenso kann ein Name für das Asset und wie lange es angezeigt werden soll, angegeben werden. Das Hochladen beginnt mit einem Druck auf den »Hochladen«-Knopf. Die [](#_fig_WA_Upload) zeigt das Formular. 
@@ -209,7 +208,8 @@ Figure: Das Formular zum Hochladen von bestehenden PNGs { #_fig_WA_Upload }
 ![](img/Handbuch/WA-Asset-Upload.png){ width=60% }
 
 
-**PNG aus HTML erstellen**
+**PNG aus HTML erstellen**  
+
 Auf der Unterseite Assets gibt es auch den »Erstellen aus HTML«-Knopf, dieser öffnet ein Formular, in dem der Assetname, die Anzeigedauer und der HTML-Code eingegeben werden kann. Nach dem Druck auf den »Generieren«-Knopf wird ein PNG erstellt und lokal abgelegt. Die [](#_fig_WA_HTML) zeigt das Formular. 
 
 
@@ -321,6 +321,9 @@ Figure: Knopf für Aisler Plugin { #_fig_Aisler-Button }
 
 Wenn man darauf druckt, wird man auf die Webseite von Aisler genommen, mit schon angelegten Projekt für das Bestellung. Nachher soll man einfach die Schritten von Aisler Webseite folgen um die Platine zu bestellen.  
 Die Bauteilen kann man unter `/pcb/bom/ibom.html` sehen. Es öffnet sich ein Browser Fenster wo man interaktiv eine BOM Tabelle und die Platine sehen kann. Wenn man den Maus auf die Bauteile hinbewegt, wurde dementsprechenden Bauteilen auf die Platine in rot markiert sein werden.  
+
+  
+  
 
 ## Quellen
 https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent?platform=linux#generating-a-new-ssh-key 
