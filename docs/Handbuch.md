@@ -8,10 +8,11 @@ In der folgenden Anleitung werden Platzhalter mit <Platzhaltername> markiert.
 
 sudo apt-get install git
 
+
 ### Testumgebung für Entwicklung
 // TODO
 Zu beginn muss Node.js installiert werden. 
-Da über den apt Packetmanager nur veraltete Versionen von Node.js bereitgestellt werden, wird hier der Node Version Manager verwendet. 
+Da über den apt Packetmanager nur sehr langsam aktuelle Versionen von Node.js bereitgestellt werden, wird hier der Node Version Manager (nvm) verwendet. 
 
 Dieser lässt sich über folgendes Bash Skript installieren. 
 `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash`
@@ -43,7 +44,7 @@ Anschließend müssen die zwei Schriftfamilien TWKEverett-Bold-web.ttf und TWKEv
 
 Als nächstes kann die PostgreSQL Datenbank aufgesetzt werden. 
 Dafür kann das Docker Image oder auch ein bestehender PostgreSQL Server verwendet werden. 
-`sudo docker run --name lprd-postgres -p 5432:5432 -e POSTGRES_PASSWORD=<SicherersDatenbankPasswort> -d postgres`
+`sudo docker run --name lprd-postgres -v pgdata:/var/lib/postgresql/data -p 5432:5432 -e POSTGRES_PASSWORD=<SicherersDatenbankPasswort> -d postgres`
 
 Die URL der Datenbank muss auch noch der Next.js Anwendung bekannt gemacht werden, dies geschieht über die .env Datei. 
 Diese sollte neue angelegt werden und den folgenden Inhalt enthalten: 
@@ -53,19 +54,38 @@ Nach der Installation der Datenbank kann diese mit Prisma mit den notwendigen Ta
 
 `npx prisma migrate dev --name init`
 
+Für die Konvertierung von HTML zu PNG wird die Library node-html-to-image verwendet. Diese nutzt Puppeteer als Basis für die Konvertierung. Beim direkten Testen auf dem Server kann es vorkommen, dass Puppeteer nicht startet, da es weitere Abhängigkeiten hat. Diese fehlenden Abhängigkeiten können mit dem folgenden Befehl herausgefunden werden: 
+`ldd /home/<USER>/.cache/puppeteer/chrome/linux-<VERSION>/chrome-linux64/chrome | grep not`
+
+Im Fall der hier verwendeten Debian Installation mussten folgende Pakete noch zusätzlich installiert werden
+`sudo apt-get install libgbm1 libasound2 libxkbcommon0 libatk-bridge2.0-0 libnss3`
+
 Die Vorbereitungen sind somit abgeschlossen und der Developmentserver kann gestartet werden.
 
-`npm run dev`
+`npm run dev` 
 
 Unter http://localhost:3000 ist der Server nun erreichbar. 
 
 Der Developmentserver kann mit dem Tastenkürze Ctrl+C beendet werden. 
 
+
+
+
+
+
+
+
 ### Produktivumgebung bauen
 
-// TODO Was mit Font?
-docker build -t nextjs-docker .
-docker run -p 80:3000 nextjs-docker
+sudo docker network create lprd
+
+sudo docker run --name lprd-postgres -v pgdata:/var/lib/postgresql/data -p 5432 --net lprd -e POSTGRES_PASSWORD=<SicherersDatenbankPasswort> -d postgres
+
+
+
+
+sudo docker build -t lprd-docker .
+sudo docker run -p 3000:3000 -v lprddata:/app/public/uploads --net lprd -e DATABASE_URL="postgresql://postgres:postgres@lprd-postgres:5432" lprd-docker
 
 ### Produktivumgebung starten
 
