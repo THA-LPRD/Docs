@@ -461,8 +461,23 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"></path></svg>
 </a>
 <h1 id="fazit">Fazit<a class="headerlink" href="#fazit" title="Permanent link">¶</a></h1>
+<p><strong>Jannis Gröger</strong></p>
 <h2 id="zusammenfassung">Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Permanent link">¶</a></h2>
+<p>Das Projekt zur Entwicklung eines Low Power Raumdisplays war in mehrern Hinsichten ein klarer Erfolg. Das Hauptziel, eine energieeffizientes Informationsanzeige zu entwickeln, wurde erfüllt und kann, wie in den Anforderungen vgl <a href="../Systemkonzept/#potentielle_einsatzgebiete_der_low-power_raumanzeige">Kapitel 6.3</a> beschrieben, nicht nur an Hochschulen, sondern auch in Firmen, an Messeständen und in Privathaushalten genutzt werden. </p>
+<p>Das Display zeichnet sich mit einer langen Akkuklaufzeit und sehr geringer Leistungsaufnahme durch die durchdachte Auswahl stromsparender Komponenten wie das E-Paper Display und softwareseitige Hardwareverwaltung wie die Implementierung des Deepsleeps. Durch die Aufbauen eines eigenes WLAN Acces Points des Mikrocontrollers und die Stromversorgung per Akku ist das Displaymodul komplett autark von Stromnetz und Netzwerk, was den Einsatzbereich und die Anwendungsszenarien deutlich erweitert.  </p>
+<p>Zudem lässt sich die Raumanzeige durch den frontseitigen Benutzerknopf und die implementierte Website sehr leicht steuern und einfach bedienen. Die Verwaltung mehrerer Displays im Server-Modus geschieht ebenfalls über eine Website, die sich in der Struktur sehr ähnlich sind, was die Benutzerfreundlichkeit steigert.</p>
+<p>Das schlanke und durchdachte Design des Gehäuses ermöglicht nicht nur eine einfache Montage, sondern auch ein leichtes Austauschen der Akkupacks beim Laden, ein Zurücksetzen des Displaymoduls ohne viel Aufwand und ein Debugging oder Systemflash durch die Zugänglichkeit zum Mikrocontroller.</p>
+<p>Insgesamt bietet das entwickelte Low Power Raumdisplay eine zukunftsweisende Lösung für verschiedene Einsatzszenarien, von Bürogebäuden über öffentliche Einrichtungen bis hin zu privaten Haushalten. Es trägt zur Reduzierung des Energieverbrauchs bei und unterstützt damit nachhaltige und umweltfreundliche Technologien.</p>
+<p>Abschließend kann festgehalten werden, dass die Projektarbeit nicht nur zur Weiterentwicklung technischer Kompetenzen beigetragen hat, sondern auch einen praktischen Nutzen bietet, der im Einklang mit den heutigen Anforderungen an Energieeffizienz und Benutzerfreundlichkeit steht. Die positiven Testergebnisse und das Feedback aus ersten praktischen Anwendungen bestätigen den Erfolg des Projekts und zeigen das Potential für eine breite Markteinführung.</p>
 <h2 id="ausblick">Ausblick<a class="headerlink" href="#ausblick" title="Permanent link">¶</a></h2>
+<p>Da die Projektarbeit in ihrem zeitlichen Rahmen begrenzt ist, ist eine Beschränkung auf eine begrenzte Anzahl an Features nicht nur sinnvoll, sondern auch essentiell. Im Folgenden werden mögliche Erweiterungen und Verbesserungen der Low Power Raumanzeige genannt, die bei einer Weiterentwicklung berücksichtigt werden können. </p>
+<p>Eine interessante Information über das Display selbst ist der momentane Akkustand, dass verhindert werden kann, dass das Display nicht mehr mit Strom versorgt wird und seine Funktion damit verliert. Denkbar wäre hier die Messung der Akkukapazität und das Anzeigen dieser auf dem Display, sodass der Betreiber einen einfachen Überblick darüber bekommt, wann er die Akkus eines Moduls tauschen oder laden muss. </p>
+<p>Zudem ist eine Verbesserung der entworfenen Platine eine Erweiterung, die in Betracht gezogen werden kann. Durch das Anbringen von so genannten Mounting Holes, könnte die Platine leichter im Gehäuse befestigt werden, und das feste Verlöten des Mikrocontrollers auf der Platine würde die gesamte Dicke des PCBs verringern. Dadurch könnten entsprechende Veränderungen am Design des Gehäuses vorgenommen werden, um ein noch dünneres und robusteres Modul zu bekommen.</p>
+<p>Eine weitere mögliche Verbesserung ist die Implementierung eines Light Sleeps, der es ermöglicht, das Display jeder Zeit erreichbar zu machen. So kann beispielsweise im Netzwerk Modus nicht nur eine Bildaktualisierung vorgenommen werden, wenn der Benutzer auf den Refresh Knopf drückt, sondern auch dann, wenn der Betreiber ein neues Bild über die Website hochlädt.</p>
+<p>Die momentane Erstellung von Anzeigebilder aus vorhanden Templates, in die der Betreiber des Displays Daten händisch einträgt, könnte in Zukunft automatisiert passieren. Damit könnte eine Erstellung eines Zeitplans aus externen Quellen wie zum Beispiel einem Kalender per CalDAV realisiert werden. Zudem könnte auch aus Raumbelegungsdaten einer Software wie Beispielsweise WebUntis ein Zeitplan erstellt, was für Bildungseinrichtungen von großem Interesse sein kann.</p>
+<p>Die Funktion des frontseitigen Benutzerknopfes sind auch vielseitig erweiterbar. Beispielsweise das Wechseln zwischen mehreren Anzeigebildern oder das Buchen eines Raumes, welches dann auch in einem Raumbelegungsplan angezeigt wird, sind vorstellbare Verbesserungen.</p>
+<p>Das momentane unterstützte 7.3-Zoll-Display benötigt für jede Bildaktualisierung eine längere Zeit und flackert stark, um die Pigmente des E-Papers richtig zu platzieren. Dies ist nicht nur umständlich für den Benutzer, sondern kann auch ein möglicher Trigger für Menschen mit photosensitiver Epilepsie sein. Beim 9.7-Zoll-Display ist die Aktualisierung um einiges schneller mit eine Zeit von unter einer Sekunde, jedoch werden hierbei keine Farben unterstützt. Eine Verbesserung wäre die Nutzung eines Displays, welches die sogenannte "Fast Refresh" Technologie des 9.7-Zoll-Displays wie auch eine Farbunterstützung ähnlich wie bei dem 7.3-Zoll-Display besitzt.</p>
+<p>Die genannten Verbesserungs- und Erweiterungsmöglichkeiten bieten die Chance auf eine noch bessere Benutzerfreundlichkeit und leichtere Bedienung, um die Anwendungsfälle zu optimieren und das Einsatzspektrum zu erweitern.</p>
 <!-- Content moved into the footer -->
 <!-- <style>
 p, figcaption, ul, caption, table {
@@ -549,16 +564,17 @@ td {
 <span class="md-icon" title="Letztes Update">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"></path></svg>
 </span>
-<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 24, 2024</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 30, 2024</span>
 </span>
 <!-- Date of creation -->
 <!-- Authors (git-authors plugin) -->
 <span class="md-source-file__fact">
 <span class="md-icon" title="Mitwirkende">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 5.5A3.5 3.5 0 0 1 15.5 9a3.5 3.5 0 0 1-3.5 3.5A3.5 3.5 0 0 1 8.5 9 3.5 3.5 0 0 1 12 5.5M5 8c.56 0 1.08.15 1.53.42-.15 1.43.27 2.85 1.13 3.96C7.16 13.34 6.16 14 5 14a3 3 0 0 1-3-3 3 3 0 0 1 3-3m14 0a3 3 0 0 1 3 3 3 3 0 0 1-3 3c-1.16 0-2.16-.66-2.66-1.62a5.536 5.536 0 0 0 1.13-3.96c.45-.27.97-.42 1.53-.42M5.5 18.25c0-2.07 2.91-3.75 6.5-3.75s6.5 1.68 6.5 3.75V20h-13v-1.75M0 20v-1.5c0-1.39 1.89-2.56 4.45-2.9-.59.68-.95 1.62-.95 2.65V20H0m24 0h-3.5v-1.75c0-1.03-.36-1.97-.95-2.65 2.56.34 4.45 1.51 4.45 2.9V20Z"></path></svg>
 </span>
 <nav>
-<a href="mailto:lukic.stasa@outlook.com">stasa</a>
+<a href="mailto:jannisgroeger@gmail.com">Jannis</a>, 
+            <a href="mailto:lukic.stasa@outlook.com">stasa</a>
 </nav>
 </span>
 <!-- Authors (git-committers plugin) -->
