@@ -20,7 +20,7 @@ Als Webframework wurde Next.js ausgewählt, da es React unter anderem um servers
 
 Für das Speichern der Daten wurde PostgreSQL als Datenbank ausgewählt. Hierbei wird Prisma ORM als Zwischenschicht eingesetzt, damit die Modelle der relationanlen Datenbank als Objekte mit statischen Typen generiert werden. 
 
-Für den Webserver wurden Linux und Docker verwendet. Das quelloffene Linux ist bekannt für seine Stabilität, Sicherheit und Performance, was es zu einer idealen Wahl für den Einsatz als Webserver macht. Docker ergänzt diese Vorteile durch die Bereitstellung einer containerisierten Umgebung, die eine konsistente und isolierte Ausführung von Anwendungen ermöglicht. Dies erleichtert die Skalierung und Verwaltung der Anwendung erheblich und sorgt dafür, dass sie in unterschiedlichen Umgebungen gleichbleibend funktioniert. Docker-Container bieten zudem eine einfache Möglichkeit, Abhängigkeiten zu verwalten und die Bereitstellung von Updates zu automatisieren. 
+Für den Webserver wurden Linux und teilweise Docker verwendet. Das quelloffene Linux ist bekannt für seine Stabilität, Sicherheit und Performance, was es zu einer idealen Wahl für den Einsatz als Webserver macht. Docker ergänzt diese Vorteile durch die Bereitstellung einer containerisierten Umgebung, die eine konsistente und isolierte Ausführung von Anwendungen ermöglicht. Dies erleichtert die Skalierung und Verwaltung der Anwendung erheblich und sorgt dafür, dass sie in unterschiedlichen Umgebungen gleichbleibend funktioniert. Docker-Container bieten zudem eine einfache Möglichkeit, Abhängigkeiten zu verwalten und die Bereitstellung von Updates zu automatisieren. 
 
 Die Kombination dieser Technologien ermöglicht effizient eine benutzerfreundliche, performante und wartbare Webanwendung zu entwickeln. 
 
@@ -70,6 +70,7 @@ Für eine standardisierte Verwendung der Daten wurde eine REST-API-Schnittstelle
 
 Eine vollständige Übersicht der möglichen REST-API-Aufrufe ist in Tabelle [](#_tab_MW_03) ersichtlich. Platzhalter in eckigen Klammern werden dabei dynamisch in der Anfrage berücksichtigt. 
 
+
 Table: Die Unterstützen REST-API Aufrufe der Webanwendung { #_tab_MW_03 }
 
 | URL | Methode | Body | Rückgabe | Zweck |
@@ -94,15 +95,16 @@ Figure: Die Übersichtsseite aller Displays { #_fig_WA_Displays}
 
 ![](img/Handbuch/WA-Displays.png){ width=60% }
 
+Figure: Die Detailansicht eines Displays { #_fig_WA_Display_Details}
+
+![](img/Handbuch/WA-Display-Details.png){ width=60% }
+
 Ähnlich verhält es sich mit der zweiten Hauptunterseite »Assets«, die unter [](#_fig_WA_Assets) erkennbar ist. Auch hier werden alle vorhandenen Assets aufgelistet und können ausgewählt werden, um eine Detailansicht, wie in [](#_fig_WA_Display_Details) gezeigt, zu öffnen und die Metadaten zu bearbeiten und das Asset zu löschen. Im Gegensatz zu Displaymodulen können Assets händisch angelegt werden, entweder kann dafür eine PNG-Datei hochgeladen oder HTML-Code eingetragen werden, welcher abschließend wieder ein PNG produziert. Die Abbildungen [](#_fig_WA_Upload) und [](#_fig_WA_HTML) zeigen jeweils die beiden Vorgänge. 
 
 Figure: Eine Übersicht über alle vorhanden Assets { #_fig_WA_Assets }
 
 ![](img/Handbuch/WA-Assets.png){ width=60% }
 
-Figure: Die Detailansicht eines Displays { #_fig_WA_Display_Details}
-
-![](img/Handbuch/WA-Display-Details.png){ width=60% }
 
 Figure: Das Formular zum hochladen von bestehenden PNGs { #_fig_WA_Upload }
 

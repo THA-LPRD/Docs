@@ -78,9 +78,11 @@ Figure: Konzeptioneller Aufbau des Akkus { #_fig_MW_Akkukonzept }
 
 ![](img/Akku-Konzept.png){ width=60% }
 
+
 Figure: Foto des aufgebauten Akkus { #_fig_MW_Akkubild }
 
 ![](img/Akku-Bild.jpeg){ width=60% }
+
 
 ### Battery Management System anschließen
 Als Erstes sollte das BMS verdrahtet werden. In diesem Projekt wurde sich dafür entschieden, dass das Akkupack über einen Stecker mit dem Mainboard verbunden werden kann und somit modular ist. Somit wurde an den Ausgängen des BMS ein 2 Pin JST-X2 Stecker gelötet. Hierbei wurde sich im Team intern darauf geeinigt, dass der Pluspol rechts ist, wenn von der Drahtseite auf den Stecker geschaut wird und die Nase des Steckers nach oben zeigt. An den Pads für die Batteriepole wurde das Nickelband ebenso verlötet. 
