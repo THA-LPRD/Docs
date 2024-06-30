@@ -267,8 +267,7 @@ Figure: Fertige Platine ohne Mikrocontroller und Pin Headers { #_fig_BK_19 }
 ![](img/PCB/Nach-Löten.png){ width=90% }
 
 ## Gehäuse
-
-_Jannis Gröger_
+**Jannis Gröger**
 
 ### Anforderungen
 
@@ -278,12 +277,12 @@ Da der Einsatzort hauptsächlich im Gebäudeinneren vorgesehen ist,  ist ein Sch
 
 Die Low Power Raumanzeige besitzt elektronische Komponenten, die keine großen Wärmemengen produzieren. Lediglich beim Laden der Akkupacks könnte ein kritische Wärmemenge entstehen, weswegen diese leicht aus dem Gehöuse entfernbar sein sollten, dass beim Laden genug Abwärme durch natürliche Konvektion gegeben ist.
 
-Da die Informationsanzeige mit WLAN mit dem Gerät des Betreibers kommunziert, Sollte das Gehäuse die Komponenten nicht zu sehr elektromagnetisch von außen abschirmen und auch elektromagnetische Felder nach außen hin zulassen, da ansonten die Kommunkation gestört werden und das Displaymodul nicht mehr seine volle Funktionsfähigkeit aufweisen kann.
+Da die Informationsanzeige mit WLAN mit dem Gerät des Betreibers kommunziert, sollte das Gehäuse die Komponenten nicht zu sehr elektromagnetisch von außen abschirmen und auch elektromagnetische Felder nach außen hin zulassen, da ansonten die Kommunkation gestört werden und das Displaymodul nicht mehr seine volle Funktionsfähigkeit aufweisen kann.
 
 
 ### Design
 
-Zum Entwickeln des 3D-Modells wird die CAD-Software "Autodesk Fusion" genutzt. Das Vorgehen hierbei besteht primär aus der Erstellung einer Skizze, aus der dann verschiedene Fläche extrudiert werden. Um komplexere Konstruktionen zu erlauben, wird dieses Vorgehen wiederholt, wobei die Skizzenfläche eine Oberfläche einer bereits vorhandenen Extrusion ist. Die beiden Gehäuse bestehen jeweils aus drei Teilen: 
+Zum Entwickeln des 3D-Modells wird die CAD-Software "Autodesk Fusion" genutzt. Das Vorgehen hierbei besteht primär aus der Erstellung einer Skizze, aus der dann verschiedene Fläche extrudiert werden. Um komplexere Konstruktionen zu erlauben, wird dieses Vorgehen wiederholt, wobei die Skizzenfläche eine Oberfläche einer bereits vorhandenen Extrusion ist. Die beiden Gehäuse bestehen jeweils aus drei Teilen:
 
 * Einer Front, in der das Display sitzt
 * Einer Halterung für die Platinen des Displays, die an der Front angebracht wird
@@ -297,16 +296,96 @@ Da das Displaymodul wie oben erwähnt nicht in der Hand gehalten wird sondern fe
 
 Wie bereits genannt, soll die Bedienung des Low Power Raumdisplays über einen Bentzerknopf gesteuert werden. Um die Benutzerfreundlichkeit zu gewährleisten, wird dieser an der Front des Displaymoduls angebracht, damit er leicht zugänglich und für alle sichtbar ist. Zusätzlich sollen die eingebauten "Boot"- und "Reset"-Knöpfe des ESP32 ebenso benutzbar bleiben, allerdings nur für den System-Administrator. Deshalb werden hierfür kleine Löcher an der Rückseite des Gehäuses angebracht, dass die Knöpfe ähnlich wie beim SIM Karten Slot eines Handys mit Hilfe eines schmalen Werkzeugs gedrückt werden können. Durch die Platzierung auf der Rückseite sind die Löcher zunächst für die Person, die vor dem Display steht, nicht sichtbar, sondern erst dann erreichbar, wenn das Displaymodul von der Wand genommen wird.
 
+Damit die Software des ESP geflasht werden kann, beispielsweise nach Aktualisierung der Firmware, ohne dabei das Displaymodul auseinanderzubauen, wird an der Seite des Gehäuses eine Bohrung vorgenommen, sodass der USB-C Port des Mikrocontrollers jederzeit zugänglich ist.
+
 Die Halterungen für die Platinen der Beiden Epaper-Displays sind einfache Konstruktionen aus schmalen Stegen, die zylinderförmige Extrusionen besitzen, um die Platinen festzuschrauben. Hierbei unterscheiden sich die beiden Halterungen in ihren Dimensionen, da nicht nur die beiden Displays selbst, sondern auch die zugehörigen Platinen unterschiedliche Maße besitzen.
 
-Die Front des Gehäuses besitzt einen rechteckigen Ausschnitt mit einer Falz nach innen, in die das Display dann gelegt wird. Um das Display vor hineinfallen ins Gehäuse zu schützen, wird einmal die Platinenhalterung direkt an der Rückseitige des Displays angebracht und zusätzlich noch kleine Überhänge konstruiert, die das Display von hinten stützen. Desweiteren ist ein rechteckigen Ausschnitt für den Benutzerknopf in der Front angebracht. 
+Die Front des Gehäuses besitzt einen rechteckigen Ausschnitt mit einer Falz nach innen, in die das Display dann gelegt wird. Um das Display vor hineinfallen ins Gehäuse zu schützen, wird einmal die Platinenhalterung direkt an der Rückseitige des Displays angebracht und zusätzlich noch kleine Überhänge konstruiert, die das Display von hinten stützen. Desweiteren ist ein rechteckiger Ausschnitt für den Benutzerknopf in der Front vorhanden.
+
+Da im Laufe der Gehäuseentwicklung Protoypen designt und anschließend getestet werden, entstehen mehrere Entwürfe für die Umsetzung. Die folgenden drei Abbildungen [Abbildung 1](#fig_jg_02), [Abbildung 2](#fig_jg_03) und  [Abbildung 3](#fig_jg_04) zeigen die verschiedenen Versionen der Rückseite des 7.3-Zoll-Gehäuses und jeweils die Veränderungen zur vorherigen Version. Die Rückseite des 9.7-Zoll-Gehäuse wurde anschließend nach dem Vorbild des kleineren Gehäuses designt, wie man in [Abbildung 4](#fig_jg_05) sieht. Die beiden Fronten sind zusammen mit dem Platinenhalter und der Abdeckung des Benutzerknopfes schließlich in [Abbildung 5](#fig_jg_06) und [Abbildung 6](#fig_jg_07) zu sehen.
+
+Figure: Die erste Version der 7.3-Zoll-Rückseite. {#Cfig_jg_02}
+
+![](img/7_zoll_rückseite_v1.png){width=70%}
+
+Nach der ersten Version des Gehäuses wurde das Design nochmal grundlegend verändert und auch die Befestigung der Akkupacks überdacht. Wie in [Abbildung 1](#fig_jg_02) zu erkennen ist, wurde zunächst vorgesehen, die Akkupacks von außen zugänglich zu machen, um einen leichteren Austausch zu ermöglichen ohne das Gehäuse von der Wand nehmen zu müssen.
+
+Figure: Die zweite Version der 7.3-Zoll-Rückseite. {#fig_jg_03}
+
+![](img/7_zoll_rückseite_v2.png){width=70%}
+
+In der zweiten Version ist nun schon mehr das finale Design wiederzufinden. Das Gehäuse wurde an den Stellen, wo nicht die Elektronik im inneren behalten wird, auf einen minimale Dicke reduziert und die Akkupacks befinden sich nun im Inneren, sodass das Gehäuse geöffnet werden muss, um diese zu tauschen.
+
+Figure: Die dritte und finale Version der 7.3-Zoll-Rückseite. {#fig_jg_04}
+
+![](img/7_zoll_rückseite_v3.png){width=70%}
+
+
+In [Abbildung 3](#fig_jg_04) sieht man nun das endgültige Design des Gehäuses. Im Vergleich zur vorherigen Version wurden die Seiten abgeschrägt, um ein noch schmaleren Eindruck des Gehäuses zu erwecken. Zudem wurden die Aufhängelöcher noch versetzt, um den Schwerpunkt des Gehäuses besser auszugleichen.
+
+Figure: Die Rückseite des Gehäuses für das 9.7-Zoll-Epaper-Display.{#fig_jg_05}
+
+![](img/10_zoll_rückseite.png){width=70%}
+
+Figure: Die Front des 7.3-Zoll-Gehäuses mit Platinenhalter und Knopfabdeckung. {#fig_jg_06}
+
+![](img/7_zoll_front.png){width=70%}
+
+Figure: Die Front des 9.7-Zoll-Gehäuses mit Platinenhalter und Knopfabdeckung {#fig_jg_07}
+
+![](img/10_zoll_front.png){width=70%}
+
+Bei der Front des 9.7-Zoll-Gehäuses wurde an der unteren Kante noch eine extra Stützstruktur angebracht, um das Flachbandkabel des Displays kontrolliert zu biegen und ein Ab- oder Einreißen zu verhindern. Zudem deckt der Platinenhalter im Gegensatz zu dem des kleineren Gehäuses einen größeren Teil des Displays ab, da es hier die einzige Art der Unterstützung des Displays von hinten ist.
 
 ### Prototyping
 
 Da es sich bei dem LoW Power Raumdisplay um eine Projektarbeit handelt und zunächst keine Serienproduktion vorgesehen ist, beschränkt sich die Entwicklung des Gehäuses auf den Entwurf zweier Prototypen, einmal mit einem 1.3-Zoll-Display und einmal mit einem 9.7-Zoll-Display. Hierbei wird das Rapid-Prototyping-Verfahren des Fused-Deposition-Modelling angewandt, da es neben geringen Kosten auch genug Stabilität für die genannten Anforderungen aufweist. Zudem ist es dem Projektteam möglich, direkt im eigenen Labor der Technischen Hochschule Augsburg dieses Verfahren anzuwenden. Es werden mehrere sogenannte FDM-Drucker zur Verfügung gestellt, ebenso wie die CAD-Software Inventor-Softwarepaket der Firma Autodesk. [[JG_04]](Quellenverzeichnis.md#jg_04)
 
-Die verwendeten FDM-Drucker beschränken sich auf die Modelle 2 Extended+, 3 und S5 der Marke Ultimaker. Diese Drucker verwenden Filamente aus Polyactiden, kurz PLA, oder Polyethylenterephtalat mit Glykolmodifikation, auch PETG genannt mit einem Durchmesser von 2,85mm<sup>2</sup>. Die Materialien unterscheiden sich nur leicht in ihren Eigenschaften, wobei PETG stabiler und haltbarer ist, PLA dagegen ist hitzebeständiger und biologisch abbaubar.[[JG_05]](Quellenverzeichnis.md#jg_05) Beide Materialien sind in ihrer Stabilität und hitzebeständigkeit für den Zweck des Low Power Displays ausreichend.
+Die verwendeten FDM-Drucker, im Folgenden auch 3D-Drucker genannt, beschränken sich auf die Modelle 2 Extended+, 3 und S5 der Marke UltiMaker. Diese Drucker verwenden Filamente aus Polyactiden, kurz PLA, oder Polyethylenterephtalat mit Glykolmodifikation, auch PETG genannt mit einem Durchmesser von 2,85mm<sup>2</sup>. Die Materialien unterscheiden sich nur leicht in ihren Eigenschaften, wobei PETG stabiler und haltbarer ist, PLA dagegen ist hitzebeständiger und biologisch abbaubar.[[JG_05]](Quellenverzeichnis.md#jg_05) Beide Materialien sind in ihrer Stabilität und Hitzebeständigkeit für den Zweck des Low Power Displays ausreichend.
 
+Nachdem die Modelle der Gehäuse im CAD Programm entworfen wurden, werden sie als .stl Dateien in einen sogenannten Slicer exportiert. Ein Slicer übernimmt die Aufgabe des Slicings, wobei ein 3D-Modell in einen für 3D Drucker verständlichen Maschinencode Namens G-Code umgewandelt wird. Zusätzlich können verschiedene Einstellungen vorgenommen werden, die die Druckqualität beeinflussen, wie beispielsweise Druckgeschwindigkeit oder Schichtdicke. [[JG_06]](Quellenverzeichnis.md#jg_06)
+
+Bei diesem Projekt wurde die Slicing Software Cura verwendet, welche ebenfalls von der Marke UltiMaker stammt. Als Schichthöhe werden Werte zwischen 0.1 und 0.2 mm bevorzugt. Bei der Schichtdicke gilt, je kleiner, desto besser ist die Oberflächengüte des Modells, allerdings wird dann auch mehr Zeit für den Druck benötigt.[[JG_06]](Quellenverzeichnis.md#jg_06)
+
+Ein weiterer einstellbarer Wert der mit der Schichtdicke zusammenhängt, ist die Dicke des Bodens und der Decke. Hier wird festgelegt, wie viele Schichten flächendeckend gedruckt werden sollen, bevor die Füllung des Modells beginnt. Ein ähnlicher Wert ist die Wandstärke, wobei hier die Anzahl der vertikalen Schichten ausgewählt wird.[[JG_06]](Quellenverzeichnis.md#jg_06)
+
+Bei der Füllung von Hohlräumen des Modells kann aus der Art und geometrischen Form der Füllung und der prozentualen Menge gewählt werden. Zudem kann noch die Art der Stützen bei Überhängen, sowie die Platzierung und der Winkel des Überhangs gewählt werden, der noch ohne Stütze gedruckt werden kann, bestimmt werden.[[JG_06]](Quellenverzeichnis.md#jg_06)
+
+Um zu einen besseren Halt der Modells auf der Grundfläche des Drucker zu gewährleisten, gibt es verschieden Möglichkeiten zur Auswahl. Ein sogenannter Brim fügt beim Drucken den Außenkanten der Grundfläche eine einzelne Schicht bestimmter Breite hinzu, was die Verbindungsfläche zwischen Druck und Grundfläche erhöht. Ein Raft ist eine Art Polster zwischen dem gesamten Modell und der Druckplatte, was ein nachträgliches Verziehen des Modells durch Erkaltung des Materials verhindert. Eine letzte Variante ist ein Skirt, eine Linie auf der ersten Schicht um die Konturen der Grundfläche. Da diese nicht mit dem Modell verbunden ist, hat diese Variante keinen Einfluss auf Stabilität oder Verziehen des Drucks.[[JG_06]](Quellenverzeichnis.md#jg_06)
+
+Zusätzlich zu den bisher genannten Einstellungen, können noch weitere Parameter für den Druck bestimmt werden, diese werden jedoch nicht genauer erläutert und es werden die gegebenen Standardwerte der Slicer-Software genutzt. Die gewählten Werte der genannten Steuergrößen können der Tabelle [](#tab_jg_01) entnommen werden.
+
+ <center>
+
+Table: Tabelle x.x: Parameterwerte für 3D Druck der Gehäuseprototypen. {#tab_jg_01}
+
+| Parameter | Wert |
+|:---------:|:--------:|
+| Schichthöhe | 0.2 mm |
+| Boden-/Deckenstärke | 1.2 mm | 
+| Wandstärke | 0.8 mm |
+| Füllung | Gyroid, 20% |
+| Stützsturktur | Baum, überall, 60° |
+| Verbdg Druckplatte | Skirt |
+
+</center>
+
+Nach dem Slicen wird der G-Code an den 3D-Drucker übergeben. Hier muss dann nur noch das passende Filament einsetzen und der Druck kann starten. Nach dem Ablösen des fertigen Modells von der Druckplatte wird teilweise noch mit Hilfe eines Skalpells nachgearbeitet, um die Ungenauigkeiten des Druckers auszugleichen. Anschließend werden die Teile auf Passgenauigkeit für die Komponenten getestet und dann die bereits oben genannten Änderungen vorgenommen. 
+In [Abbildung 7](#fig_jg_08) sieht man den Zwischenstand eines Drucks. Neben dem Gehöuse selbst ist auch die Stützstruktur in Form der Bäume sehr gut zu erkennen. 
+
+Figure: Zwischenstand beim Drucken des 7.3-Zoll-Gehäuses. {#fig_jg_08}
+
+![](img/7_zoll_druck.JPEG){width=70%}
+
+Nach dem Fertigen des finalen Prototyp Gehäuses werden die elektronischen Komponenten eingesetzt und das Displaymodul zusammengebaut. Die fertigen Prototypen kann man in [Abbildung 8](#fig_jg_09) und [Abbildung 9](#fig_jg_10) betrachten.
+
+Figure: Das finale Prototyp-Gehäuse des 9.7-Zoll-Gehäuses. {#fig_jg_09}
+
+![](img/10_zoll_prototyp.jpg){width=70%}
+
+Figure: Das finale Prototyp-Gehäuse des 7.3-Zoll-Gehäuses. {#fig_jg_10}
+
+![](img/7_zoll_prototyp.jpg){width=70%}
 
 
 ## Zusammenbau des Displaymoduls

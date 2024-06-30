@@ -240,7 +240,7 @@ Das ESP-IDF ist gut dokumentiert und hat eine große Community, was es einfach m
 [[AEG_05]](Quellenverzeichnis.md#AEG_05)
 
 ## Gehäuseentwicklung 
-_Jannis Gröger_
+**Jannis Gröger**
 
 
 Um das Gehäuse für ein elektronisches Gerät zu entwickeln, müssen zunächst die Anforderung festgelegt werden. Hierbei kann man in zwischen funktionalen und ästhtischen und ergonomischen Anforderungen unterscheiden. Grundsätzlich soll ein Gehäuse die Komponenten und die Elektronik nicht nur vor äußeren Einflüssen wie Staub, Schmutz oder mechanischen Stößen schützen, sondern trägt auch zur Wärmeableitung bei und spielt eine wichtige Rolle bei der Benutzung des Geräts. Im Folgenden werden die Grundlagen und die essentiellen Überlegungen bei der Entwicklung eines Gehäuses behandelt.
