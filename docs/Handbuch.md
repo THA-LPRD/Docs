@@ -155,6 +155,41 @@ Mit einem Tastendruck auf den vorderseitigen Knopf, kann das Display aus dem Dee
 
 Das Displaymodul lädt anschließend das Asset von der angegebenen URL herunter, zeigt es an und versetzt sich anschließend wieder in den Deep-sleep Modus. Zusätzlich wird noch ein Wakeup Timer auf die angegebene Dauer gesetzt. Dieser Timer weckt somit das Displaymodul automatisch nach ablauf der Anzeigedauer auf, damit sich das Displaymodul ein neues anzuzeigendes Asset herunterlädt. 
 
+## Arbeiten an der Displaymodul-Firmware
+**Ahmet Emirhan Göktas**
+
+Um an diesem Projekt zu arbeiten, müssen folgende Werkzeuge auf Ihrem Computer installiert sein:
+
+- PlatformIO
+- Ein Code-Editor (z.B. Visual Studio Code)
+- Git
+- Verfügbarer USB-Anschluss (zum Flashen der Firmware)
+
+### Einrichten des Projekts
+
+Hier ist eine Schritt-für-Schritt-Anleitung, wie Sie das Projekt auf Ihrem lokalen Rechner für Visual Studio Code einrichten.
+
+1. Installieren Sie die PlatformIO-Erweiterung für Visual Studio Code. Sie können die Erweiterung finden, indem Sie im Erweiterungstab nach `PlatformIO IDE` suchen.
+2. Klonen Sie das Repository auf Ihren lokalen Rechner:
+    ```bash
+    git clone --recursive https://github.com/THA-LPRD/MCU.git
+    ```
+3. Klicken Sie auf das PlatformIO-Symbol auf der linken Seite von Visual Studio Code. Dort sollten Sie eine Taste namens `Pick a folder` sehen. Klicken Sie darauf und wählen Sie den Ordner aus, in den Sie das Repository geklont haben.
+
+    ![PlatformIO Projekt öffnen](img/Handbuch/PlatformIODev.webp)
+
+4. PlatformIO sollte das Projekt automatisch erkennen und die Umgebung für Sie konfigurieren. Nachdem Sie die richtige Umgebung ausgewählt haben, können Sie mit der Arbeit am Projekt beginnen.
+5. Sie können die Firmware auf den ESP32 flashen, indem Sie auf das PlatformIO-Symbol auf der linken Seite von Visual Studio Code klicken und dann auf die Taste `Upload` klicken.
+6. Wenn Sie die Ausgabe des seriellen Monitors sehen möchten, können Sie auf das PlatformIO-Symbol auf der linken Seite von Visual Studio Code klicken und dann auf die Taste `Serial Monitor` klicken.
+7. Sie können auch die Taste `Upload File System Image` verwenden, um die Dateien im Ordner `data` auf den ESP32 hochzuladen.
+   
+    ![ESP32 flashen](img/Handbuch/PlatfromIO-Env.webp)
+
+!!! note
+
+    Abhängig vom verwendeten ESP32-Board kann es notwendig sein, die Boot-Taste zu drücken, bevor der ESP32 an den USB-Anschluss angeschlossen wird.
+
+
 ## Quellen
 https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent?platform=linux#generating-a-new-ssh-key 
 https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account
