@@ -293,10 +293,30 @@ Hier ist eine Schritt-für-Schritt-Anleitung, wie Sie das Projekt auf Ihrem loka
 
     Abhängig vom verwendeten ESP32-Board kann es notwendig sein, die Boot-Taste zu drücken, bevor der ESP32 an den USB-Anschluss angeschlossen wird.
 
-## Bestellung von der Platine und benötigte Bauteilen
+## Bestellung von der Platine und benötigten Bauteilen
 **Benjamin Klaric**
 
+Um die Platine zu bestellen muss man das erstens das GitHub Repo, auf dem sich die Files von der Platine befinden, clonen (https://github.com/bklaric1/xiao_esp32_s3_mainboard.git). Auf dem Repo gibt es zwei Branches, nämlich den *main* und den *feature_subsheets*. Beide Branches können für das Bestellen von der Platine benutzt sein werden.  
+Nachdem soll man das ECAD Programm KiCad installieren, unter dem https://www.kicad.org/download/ Link. Man soll Version 8+ installieren, da die Files auf KiCad 8 erzeugt werden und sind nicht backwards kompatibel.  
+Man soll einfach den *.kicad_pro* File öffnen und es soll sich automatisch KiCad öffnen.  
+Unter den **Plugin and Content Manager**, die auf [](#_fig_KiCad) dargestellt ist, kann man ein Plugin für Aisler (oder JLCPCB) zu KiCad hinzufügen, um die Bestellung einfacher zu machen. Für Aisler sieht der Plugin so aus, wie es auf [](#_fig_Plugin) dargestellt ist.  
 
+Figure: KiCad Fenster { #_fig_KiCad }
+
+![](img/Handbuch/KiCad-Fenster.png){ width=60% }
+
+Figure: Aisler Plugin { #_fig_Plugin }
+
+![](img/Handbuch/Plugin.png){ width=60% }
+
+Nachdem die Installation erfolgreich war, erschiet ein neues Knopf in PCB Editor Fenster, oben mittig, wie auf [](#_fig_Aisler-Button) zu sehen ist.  
+
+Figure: Knopf für Aisler Plugin { #_fig_Aisler-Button }
+
+![](img/Handbuch/Aisler-Button.png){ width=60% }
+
+Wenn man darauf druckt, wird man auf die Webseite von Aisler genommen, mit schon angelegten Projekt für das Bestellung. Nachher soll man einfach die Schritten von Aisler Webseite folgen um die Platine zu bestellen.  
+Die Bauteilen kann man unter /pcb/bom/ibom.html sehen. Es öffnet sich ein Browser Fenster wo man interaktiv eine BOM Tabelle und die Platine sehen kann. Wenn man den Maus auf die Bauteile hinbewegt, wurde dementsprechenden Bauteilen auf die Platine in rot markiert sein werden.
 
 ## Quellen
 https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent?platform=linux#generating-a-new-ssh-key 
