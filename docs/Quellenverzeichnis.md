@@ -106,13 +106,19 @@ Autor, Titel, Bezugsquelle, Zugriffsdatum, Herausgabedatum
 
 <a id="BK_16">[BK_16] Würth Elektronik, Kontakt-Entprellschaltung für Taster, https://www.we-online.com/catalog/media/o185485v410%20SN015b%20DE.pdf, Zugriffsdatum: 2024-06-29, Herausgabedatum: 2020-08-31, Seiten 1-2</a>  
 
-<a id="BK_17">[BK_17] Author, Name, Link, Zugriffsdatum: , Herausgabedatum: , Seite </a>  
+<a id="BK_17">[BK_17] Ultra Librarian, https://www.ultralibrarian.com, Zugriffsdatum: 2024-06-30, Herausgabedatum: 2024-06-19, Seite </a>  
 
-<a id="BK_18">[BK_18] Author, Name, Link, Zugriffsdatum: , Herausgabedatum: , Seite </a>  
+<a id="BK_18">[BK_18] SnapMagic, https://www.snapeda.com/home/, Zugriffsdatum: 2024-06-30, Herausgabedatum: 2024-06-25, Seite </a>  
 
-<a id="BK_19">[BK_19] Author, Name, Link, Zugriffsdatum: , Herausgabedatum: , Seite </a>  
+<a id="BK_19">[BK_19] Thea, 2 Layer Simple Design Rules, https://community.aisler.net/t/2-layer-simple-design-rules/3735, Zugriffsdatum: 2024-06-30, Herausgabedatum: 2024-05-22, Seite 4</a>  
 
-<a id="BK_20">[BK_20] 7.3inch e-Paper HAT (G) Manual, https://www.waveshare.com/wiki/7.3inch_e-Paper_HAT_(G)_Manual#Resource, Zugriffsdatum: 2024-06-29, Herausgabedatum: 2024-12-08, Seite 4</a>  
+<a id="BK_20">[BK_20] Mehrere Authoren, Freerouthing, https://freerouting.org, https://github.com/freerouting/freerouting, Zugriffsdatum: 2024-06-30, Herausgabedatum: 2024-06-29, Seiten 1-6 </a>  
+
+<a id="BK_21">[BK_21] Tim Williams, The ground plane: Lord of the Board, http://elmac.co.uk/Lord_of_the_board.pdf, Zugriffsdatum: 2024-06-30, Herausgabedatum: 2007-09, Seiten 1-6</a>  
+
+<a id="BK_22">[BK_22] 7.3inch e-Paper HAT (G) Manual, https://www.waveshare.com/wiki/7.3inch_e-Paper_HAT_(G)_Manual#Resource, Zugriffsdatum: 2024-06-29, Herausgabedatum: 2024-02-28, Seite 4</a>  
+
+<a id="BK_23">[BK_23] msfujino, Battery voltage monitor and AD conversion for XIAO_ESP32C, https://wiki.seeedstudio.com/XIAO_ESP32C3_Getting_Started/#check-the-battery-voltage, Zugriffsdatum: 2024-06-30, Herausgabedatum: 2023-12-15, Seite </a>  
 
 <a id="MW_01">[MW_01] Andreas Gärtner, Nutzungsbedingungen virtuelle Maschinen (VM), [https://howto.informatik.hs-augsburg.de/index.php?title=Nutzungsbedingungen_virtuelle_Maschinen_(VM)&oldid=389](https://howto.informatik.hs-augsburg.de/index.php?title=Nutzungsbedingungen_virtuelle_Maschinen_(VM)&oldid=389), 2024-06-26, 2024-06-17, S. 2</a>
 

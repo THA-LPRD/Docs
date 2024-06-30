@@ -21,7 +21,7 @@ Figure: Pinout von XIAO ESP32-S3 [[BK_07]](Quellenverzeichnis.md#BK_07) { #_fig_
 **Benjamin Klaric**
 
 **Akku**  
-Der ausgewählte Akku, aus verschiedenen Akku-Technologien, die in [3.3.1 Vergleich und Auswahl von verschiedenen Akku-Technologien](PraktischeUTheoretischeGrund.md#vergleich-und-auswahl-von-verschiedenen-akku-technologien) genannt waren, war der klassische Li-Ion-Akku, aus mehreren Gründen. Aufgrund der Anzahl und Position des Systems, die von Akku betrieben sein wurde, war der Sicherheitsaspekt ein entscheidender Faktor. Deswegen wurden die LiPo-Akkus nicht mehr betrachtet.  
+Der ausgewählte Akku, aus verschiedenen Akku-Technologien, die in [3.3 Akku-Technologien](PraktischeUTheoretischeGrund.md#akku-technologien) genannt waren, war der klassische Li-Ion-Akku aus mehreren Gründen. Aufgrund der Anzahl und Position des Systems, die von Akku betrieben sein wurde, war der Sicherheitsaspekt ein entscheidender Faktor. Deswegen wurden die LiPo-Akkus nicht mehr betrachtet.  
 Der Vergleich zwischen Li-Ion-Akkus und LiFePo~4~-Akkus hatte eindeutige Unterschiede geliefert. Die LiFePo~4~-Akkus repräsentieren die sicherste Variante, andererseits hatten die Li-Ion-Akkus eine höhere Nennspannung von 3,7V.  
 Aus Sicherheitsblick betrachtet wurden die LiFePo~4~-Akkus ausgewählt. Die Nennspannung von 3,2V hat jedoch gegen die LiFePo~4~-Akkus gesprochen, da der ausgewählte Mikrocontroller, nämlich den XIAO ESP32-S3, Betriebsspannung zwischen 3,2V und 4,2V angefordert hat. Obwohl die LiFePo~4~-Akkus die Betriebsspannung liefern konnten, konnten sie das System nicht betreiben, da die genannte Betriebsspannung in Fall ohne schwere Last gemeint ist. Wegen dies wurden allerdings die Li-Ion-Akkus gewählt.  
 Der nächste Schritt war, eine vernünftige Kapazität zu finden, sodass die Akkus das System lang genug betreiben konnten. Dazu hat man die Schätzungen mit Verbrauchmessungen unterstützt und ungefähr die benötigte Akku-Kapazität geschätzt. Eine Akkulaufzeit von einem Jahr war gewünscht und dementsprechend war die Große des Akkus gewählt, nämlich ~10000 mAh.  
@@ -43,7 +43,7 @@ Figure: Technische Daten von BAK N21700CD-53E [[BK_09]](Quellenverzeichnis.md#BK
 **BMS**  
 Um den Akkupack sicher betreiben zu können, wurde ein BMS benötigt. Wie bereits in [3.3 Akku-Technologien](PraktischeUTheoretischeGrund.md#akku-technologien) unter Akku-Technologien erwähnt, schützt ein BMS die Akkus vor Tiefentladung, Überladung, Kurzschluss und Überstrom.  
 
-Beim genaueren Blick auf ein 1S 2MOS BMS, auf [Abildung 7.xx](#_fig_BK_06), wo 1S die Anzahl der Zellen in Serie repräsentiert, erkennt man ein IC und zwei MOSFET Transistoren auf die Vorderseite. Die MOSFET Transistoren sind nämlich die NMOS-Transistoren und dienen als Schalter, die vom IC durch Gate-Spannung angesteuert werden.  
+Beim genaueren Blick auf ein 1S 2MOS BMS, auf [Abildung 7.xx](#_fig_BK_06), wo 1S die Anzahl der Zellen in Serie repräsentiert, erkennt man einen IC und zwei MOSFET Transistoren auf der Vorderseite. Die MOSFET Transistoren sind nämlich die NMOS-Transistoren und dienen als Schalter, die vom IC durch Gate-Spannung angesteuert werden.  
 
 **Überladungsschutz**: Wenn die Ladespannung 4,2V überschreitet, sendet der IC ein Signal, das die Gate-Spannung eines NMOS-Transistors steuert, wodurch dieser den Stromkreis unterbricht.  
 
@@ -60,8 +60,8 @@ Figure: 1S 2MOS Batteriemanagementsystem [[BK_10]](Quellenverzeichnis.md#BK_10) 
 ![](img/Li-Ion-BMS.png){ width=60% }
 
 **Ladegerät**  
-Wie bereits in [3.3 Akku-Technologien](PraktischeUTheoretischeGrund.md#akku-technologien), benötigen die Li-Ion-Akkus ein spezielles Ladegerät, nämlich ein Ladegerät, der in die Lage ist beim Laden der Akkus, erste 80% konstanter Strom zu liefern und danach 20% die Akkus mit konstanter Spannung zu laden.  
-Man kann solche Ladegeräten ohen viele Schwierigkeiten finden, sind allerdings teuer. Bei der Suche nach einen muss man eine Sache beachten, nämlich den Zellenanzahl. Die ausgewählte Ladegerät ist auf die [Abildung 7.xx](#_fig_BK_07) zu sehen.  
+Wie bereits in [3.3 Akku-Technologien](PraktischeUTheoretischeGrund.md#akku-technologien), benötigen die Li-Ion-Akkus ein spezielles Ladegerät, nämlich ein Ladegerät, der in die Lage ist beim Laden der Akkus erste 80% konstanter Strom zu liefern und danach 20% die Akkus mit konstanter Spannung zu laden.  
+Man kann solche Ladegeräte ohne viele Schwierigkeiten finden, sind allerdings teuer. Bei der Suche nach einem muss man eine Sache beachten, nämlich die Zellenanzahl. Das ausgewählte Ladegerät ist auf der [Abildung 7.xx](#_fig_BK_07) zu sehen.  
 
 Figure: Ladegerät für Li-Ion-Akkus [[BK_11]](Quellenverzeichnis.md#BK_11) { #_fig_BK_07 }
 
@@ -106,13 +106,13 @@ Um das gesamte System optimal zu gestalten, wurde eine Platine entworfen, die al
 Alle Komponenten, die in der Schaltung beinhaltet sind, befinden sich in dem sogenannten Bill of Materials (kurz BOM).  
 
 **Ganze Schaltung**  
-Auf die [Abildung 7.xx](#_fig_BK_08) ist die vollständige Schaltung mit allen Teilschaltungen dargestellt.  
+Auf der [Abildung 7.xx](#_fig_BK_08) ist die vollständige Schaltung mit allen Teilschaltungen dargestellt.  
 
 Figure: Ganze Schaltung für das Mainboard des Systems { #_fig_BK_08 }
 
 ![](img/Schaltung/Ganze-Schaltung.png){ width=80% }
 
-Wenn man die [Abildung 7.xx](#_fig_BK_08) betrachtet, sind die Verbindungen zwischen den Teilschaltungen und die Gesamtverdrahtung der Schaltung sichtbar. Spätere Abschnitte behandeln jede Teilschaltung einzeln, und es wird empfohlen, zur Gesamtabbildung der Schaltung zurückzukehren, um die Verbindung der erklärten Teilschaltungen im Gesamtkontext zu sehen.  
+Wenn man die [Abildung 7.xx](#_fig_BK_08) betrachtet, sind die Verbindungen zwischen den Teilschaltungen und der Gesamtverdrahtung der Schaltung sichtbar. Spätere Abschnitte behandeln jede Teilschaltung einzeln, und es wird empfohlen, zur Gesamtabbildung der Schaltung zurückzukehren, um die Verbindung der erklärten Teilschaltungen im Gesamtkontext zu sehen.  
 Ganz links in der Abbildung ist ein 100 nF Kondensator, speziell C5, zwischen 3,3V (V~CC~) und Ground (GND) parallel geschaltet. Dieser dient als Entkopplungskondensator, um Spannungsschwankungen zu reduzieren und die Stabilität der Stromversorgung sicherzustellen. Der 100 nF Kondensator fängt hochfrequente Störungen ab und glättet diese. Dadurch verbessert er die Betriebssicherheit des Systems, insbesondere während schneller Schaltvorgänge, indem er eine stabile Spannungsversorgung gewährleistet und die Signalqualität erhöht. Dieser Wert von 100 nF ist ein Standardwert für Entkopplungskondensatoren bei niedrigen Frequenzen. [[BK_12]](Quellenverzeichnis.md#BK_12) [[BK_13]](Quellenverzeichnis.md#BK_13)  
 Ein Kondensator mit der 1210 Bauform wurde aus Platzgründen gewählt, obwohl jeder 100 nF Kondensator diese Aufgabe erfüllen könnte. Die Wahl der Bauform von Kondensator und anderer Bauteile wurde entsprechend den Platzanforderungen getroffen.  
 
@@ -141,10 +141,10 @@ Figure: Schaltung von Display Enable { #_fig_BK_11 }
 
 ![](img/Schaltung/Enable.png){ width=70% }
 
-Der E-Paper Technologie von Displays verbraucht tatsächlich keinen Strom im Idle-Zustand. Das gleiche kann aber nicht für die kleinen Zwischenplatinen gesagt werden, die Parallelport-Kommunikationsverfahren zu SPI übersetzen. Diese verbrauchen ständig Strom, was eine unerwünschte Folge ist. Um den Stromverbrauch zu optimieren, wurde eine Schaltung entworfen, die die Stromversorgung des Displays durch Code trennt.  
-Um die Schaltung per Code ansteuern zu können, wurden zwei MOSFETs verwendet: ein N-Channel MOSFET und ein P-Channel MOSFET. Der Ausgang des Mikrocontrollers geht über den 180 Ω Widerstand, nämlich R2, auf das Gate des N-Channel MOSFET (U3). Der 180 Ω Widerstand dient dazu, den Gate-Strom zu begrenzen und das Schalten des Transistors zu stabilisieren. Dazu wird auch ein Pulldown-Widerstand (R1) eingesetzt, da beim Einschalten des Mikrocontrollers der EN-Ausgang nicht sofort auf 0V gesetzt sein könnte. Ein Wert von 10 kΩ ist ein Standardwert, weil er ausreichend ist, um das Gate sicher auf 0V zu ziehen, ohne signifikant Strom zu verbrauchen. Um ein unnötiges Einschalten des NMOS zu vermeiden, wurde der Pulldown-Widerstand gesetzt.  
-Die Source-Leitung des NMOS ist mit dem Ground verbunden, da dies dem Funktionsprinzip des NMOS entspricht. Die Drain-Leitung ist mit dem Gate des P-Channel MOSFET (U4) verbunden und auch mit einem Pull-up-Widerstand (R3). Der Pull-up-Widerstand sorgt dafür, dass das Gate des PMOS auf 3,3V gehalten wird, wenn der NMOS nicht leitend ist, wodurch der PMOS ausgeschaltet bleibt.  
-Der NMOS-Transistor (U3) schaltet ein, wenn der EN-Pin des Mikrocontrollers auf High (3,3V) geht. Dadurch wird das Gate des PMOS-Transistors auf 0V gezogen. Der PMOS-Transistor (U4) schaltet ein, wenn das Gate auf 0V gezogen wird, wodurch die Verbindung zwischen VCC und Switch geschlossen wird.  
+Die E-Paper-Technologie von Displays verbraucht tatsächlich keinen Strom im Idle-Zustand. Das Gleiche kann aber nicht für die kleinen Zwischenplatinen gesagt werden, die Parallelport-Kommunikationsverfahren zu SPI übersetzen. Diese verbrauchen ständig Strom, was eine unerwünschte Folge ist. Um den Stromverbrauch zu optimieren, wurde eine Schaltung entworfen, die die Stromversorgung des Displays durch Code trennt.  
+Um die Schaltung per Code ansteuern zu können, wurden zwei MOSFETs verwendet: ein N-Channel MOSFET und ein P-Channel MOSFET. Der Ausgang des Mikrocontrollers geht über den 180 Ω Widerstand, nämlich R2, auf das Gate des N-Channel MOSFET (U3). Der 180 Ω Widerstand dient dazu, den Gate-Strom zu begrenzen und das Schalten des Transistors zu stabilisieren. Dazu wird auch ein Pulldown-Widerstand (R1) eingesetzt, da beim Einschalten des Mikrocontrollers der EN-Ausgang nicht sofort auf 0V gesetzt sein könnte. Ein Wert von 10 kΩ ist ein Standardwert, weil er ausreichend ist, um das Gate sicher auf 0V zu ziehen, ohne signifikanten Strom zu verbrauchen. Um ein unnötiges Einschalten des NMOS zu vermeiden, wurde der Pulldown-Widerstand gesetzt.  
+Die Source-Leitung des NMOS ist mit dem Ground verbunden, da dies dem Funktionsprinzip des NMOS entspricht. Die Drain-Leitung ist mit dem Gate des P-Channel MOSFET (U4) verbunden und auch mit einem Pull-up-Widerstand (R3). Der Pull-up-Widerstand sorgt dafür, dass das Gate des PMOS auf 3,3V gehalten wird, wenn der NMOS nicht leitend ist, wodurch der PMOS ausgeschaltet bleibt.  
+Der NMOS-Transistor (U3) schaltet ein, wenn der EN-Pin des Mikrocontrollers auf High (3,3V) geht. Dadurch wird das Gate des PMOS-Transistors auf 0V gezogen. Der PMOS-Transistor (U4) schaltet ein, wenn das Gate auf 0V gezogen wird, wodurch die Verbindung zwischen VCC und Switch geschlossen wird.  
 Die ausgewählten MOSFETs wurden aufgrund ihrer niedrigen Schwellenspannung und ihres geringen R_DS(on)-Widerstands gewählt, was eine effiziente und zuverlässige Schaltung ermöglicht.  
 
 **Switch**  
@@ -156,15 +156,15 @@ Figure: Switch für Ansteuerung der Betriebsspannung { #_fig_BK_12 }
 
 Der Switch wird per Bedarf mittels menschlichen Einfluss die Leitung zur Betriebsspannung von Display umleiten, zu Booster Schaltung oder direkt mit dem 3,3V Ausgang von Mikrocontroller verbinden. Diese Funktionalität ist so ausgedacht, sodass man die Platine generisch halten kann, um verschiedene Displays mit verschiedenen Betriebsspannungen anzusteuern.  
 
-**Boost-Converter**  
-Die Boost-Converter Schaltung, die auf der [Abildung 7.xx](#_fig_BK_13) dargestellt ist, hat die Aufgabe, die Betriebsspannung zu erhöhen.  
+**Boost-Konverter**  
+Die Boost-Konverter Schaltung, die auf der [Abildung 7.xx](#_fig_BK_13) dargestellt ist, hat die Aufgabe, die Betriebsspannung zu erhöhen.  
 
 Figure: Booster Schaltung { #_fig_BK_13 }
 
 ![](img/Schaltung/Booster.png){ width=70% }
 
-Der Boost-Converter befindet sich in der Mitte der Schaltung. Die L1 speichert Energie in ihrem Magnetfeld, wenn Strom durch sie fließt. Während der Schaltzyklen des Boost-Converters wird diese Energie verwendet, um die Spannung am Ausgang zu erhöhen. Wenn der Schalter innerhalb des Moduls geschlossen ist, fließt Strom durch die Induktivität und speichert Energie. Wenn der Schalter öffnet, wird die gespeicherte Energie freigesetzt, wodurch die Spannung über der Induktivität ansteigt und die Ausgangsspannung erhöht wird. Das Ausgangskondensator, nämlich den C3, glättet die Ausgangsspannung und reduziert das Rauschen am Ausgang des Boost-Converters. Die L1 zusammen mit C3 nennt sich ein LC-Glied und dient als ein Tiefpassfilter, das hochfrequente Störungen und Rauschen herausfiltert und eine gleichmäßige Gleichspannung liefert. Der Eingangskondensator C1 reduziert Spannungsrauschen und glättet die Eingangsspannung, bevor sie in die Schaltung eintritt. Die sogennante Bypass Kondensator C2 dient dazu, hochfrequente Störungen und Rauschen herauszufiltern. Der C4 Kondensator wird verwendet, um elektromagnetische Interferenzen (EMI) zu reduzieren. Er hilft dabei, Rauschen und Störungen zu filtern, die durch die Schaltung erzeugt werden könnten und sorgt für eine saubere Ausgangsspannung.  
-Der Boost-Converter hat intern auch eine galvanische Trennung. Diese galvanische Trennung dient dazu, elektrische Isolation zwischen dem Eingang und dem Ausgang zu gewährleisten. Sie schützt vor elektrischen Störungen und sorgt dafür, dass keine direkten elektrischen Verbindungen zwischen den beiden Seiten bestehen. In diesem speziellen Fall wurde jedoch entschieden, die galvanische Trennung nicht zu nutzen, wegen niedrigen Leistungsanforderung des Systems und der Tatsache, dass die elektrische Isolation in Form von galvanischer Trennung nicht kritisch ist. [[BK_14]](Quellenverzeichnis.md#BK_14)  
+Der Boost-Konverter befindet sich in der Mitte der Schaltung. Die L1 speichert Energie in ihrem Magnetfeld, wenn Strom durch sie fließt. Während der Schaltzyklen des Boost-Konverters wird diese Energie verwendet, um die Spannung am Ausgang zu erhöhen. Wenn der Schalter innerhalb des Moduls geschlossen ist, fließt Strom durch die Induktivität und speichert Energie. Wenn der Schalter öffnet, wird die gespeicherte Energie freigesetzt, wodurch die Spannung über die Induktivität ansteigt und die Ausgangsspannung erhöht wird. Der Ausgangskondensator, nämlich den C3, glättet die Ausgangsspannung und reduziert das Rauschen am Ausgang des Boost-Konverters. Die L1 zusammen mit C3 nennt sich ein LC-Glied und dient als ein Tiefpassfilter, das hochfrequente Störungen und Rauschen herausfiltert und eine gleichmäßige Gleichspannung liefert. Der Eingangskondensator C1 reduziert Spannungsrauschen und glättet die Eingangsspannung, bevor sie in die Schaltung eintritt. Der sogenannte Bypass-Kondensator C2 dient dazu, hochfrequente Störungen und Rauschen herauszufiltern. Der C4 Kondensator wird verwendet, um elektromagnetische Interferenzen (EMI) zu reduzieren. Er hilft dabei, Rauschen und Störungen zu filtern, die durch die Schaltung erzeugt werden könnten, und sorgt für eine saubere Ausgangsspannung.  
+Der Boost-Konverter hat intern auch eine galvanische Trennung. Diese galvanische Trennung dient dazu, elektrische Isolation zwischen dem Eingang und dem Ausgang zu gewährleisten. Sie schützt vor elektrischen Störungen und sorgt dafür, dass keine direkten elektrischen Verbindungen zwischen den beiden Seiten bestehen. In diesem speziellen Fall wurde jedoch entschieden, die galvanische Trennung nicht zu nutzen, wegen niedriger Leistungsanforderungen des Systems und der Tatsache, dass die elektrische Isolation in Form von galvanischer Trennung nicht kritisch ist. [[BK_14]](Quellenverzeichnis.md#BK_14)  
 
 **IIC-Erweiterung**  
 Auf der [Abildung 7.xx](#_fig_BK_14) sind die IIC Ausgänge des Mikrocontrollers dargestellt, mit jeweils einem Pull-up Widerstand von 10 kΩ.  
@@ -176,7 +176,7 @@ Figure: IIC-Ausgänge { #_fig_BK_14 }
 Die IIC Pins von dem Mikrocontroller wurden auf die Platine frei zugänglich gemacht, sodass die Erweiterungsmöglichkeiten in Form eines Sensors oder Ähnliches einfacher zu implementieren sind. Momentan bleiben die unverbunden.  
 
 **Refresh-Knopf**  
-Die benötigte Knopf ist auf der [Abildung 7.xx](#_fig_BK_15) dargestellt. Die wird für manuelles Refresh des Displays benutzt.  
+Der benötigte Knopf ist auf der [Abildung 7.xx](#_fig_BK_15) dargestellt. Die wird für manuellen Refresh des Displays benutzt.  
 
 Figure: Schaltung von Refresh-Knopf { #_fig_BK_15 }
 
@@ -187,22 +187,60 @@ Der verwendete Knopf benötigt eine Entprellschaltung, um zuverlässig zu funkti
 Um das Prellen zu beseitigen, wird ein RC-Glied eingebaut, das als Hochpassfilter fungiert. Wenn der Taster offen ist, lädt sich der Kondensator C6 über die Widerstände R4 und R7 auf, wodurch die Spannung langsamer ansteigt. Ist der Taster geschlossen, wird der Kondensator über R4 mit einer kontrollierten Geschwindigkeit entladen. Der Widerstand R7 hat einen Wert von 10 kΩ, da es sich um einen Pull-up-Widerstand handelt. Für R4 wird ein Wert von 75 kΩ gewählt, um in Kombination mit dem Kondensator von 100 nF die gewünschte Zeitkonstante zu erreichen. [[BK_16]](Quellenverzeichnis.md#BK_16)  
 
 **Displayanschlüsse**  
-Die dargestellte Ausgänge auf der [Abildung 7.xx](#_fig_BK_16), nämlich den J2 Komponente, sind die Ausgänge, die man direkt mit dem Display über Dupont Pins verbinden kann.  
+Die dargestellten Ausgänge auf der [Abildung 7.xx](#_fig_BK_16), nämlich den J2-Komponente, sind die Ausgänge, die man direkt mit dem Display über Dupont Pins verbinden kann.  
 
 Figure: Ausgänge für das Display { #_fig_BK_16 }
 
-![](img/Schaltung/Displayanschlüsse.png){ width=20% }
+![](img/Schaltung/Displayanschlüsse.png){ width=30% }
 
-Die erste sieben Ausgänge kömmen direkt von dem Mikrocontroller, wobei der achte Ausgang, konkret den V~cc~ Ausgang, von dem Switch abhängig ist.  
+Die ersten sieben Ausgänge kommen direkt von dem Mikrocontroller, wobei der achte Ausgang, konkret den V~cc~ Ausgang, von dem Switch abhängig ist.  
 
-## Platinen Design
+## Platinendesign
 **Benjamin Klaric**  
-- Über Autorouter reden  
-- Über Design Rules von Aisler reden  
-- Was für eine Platine von Aisler wir gekauft haben  
 
-## Zusammenbau der PCBs
+Mit der in [7.5 Schaltungsentwurf](PraktischeUTheoretischeGrund.md#schaltungsentwurf) entwickelten Schaltung kann eine Platine entworfen werden. Hierfür wurde, wie bereits erwähnt, das ECAD-Programm KiCad verwendet, um die entworfene Schaltung auf einer Platine umzusetzen.  
+Für die ausgewählten Komponenten müssen jedoch die entsprechenden *Footprints* gefunden werden. Ein Footprint definiert die Fläche und die Bohrungen, die eine Komponente benötigt, um auf der Platine montiert zu werden. Darüber hinaus werden 3D-Modelle ausgewählt, um eine bessere 3D-Ansicht in KiCad zu ermöglichen und mögliche Überlappungen der Komponenten besser zu erkennen.  
+Dafür werden die Webseiten der Hersteller besucht, um die benötigten Dateien zu finden. Diese sind oft bereits verfügbar, jedoch nicht immer. In solchen Fällen ist es notwendig, mehrere Webseiten zu durchsuchen, um die erforderlichen Dateien zu finden, beispielsweise über Plattformen wie Ultra Librarian und SnapMagic. [[BK_17]](Quellenverzeichnis.md#BK_17) [[BK_18]](Quellenverzeichnis.md#BK_18) Auf diesen Plattformen können Symbole, Footprints und 3D-Modelle für viele Komponenten gefunden werden.  
+Wenn man aus einer Schaltung eine Platine erstellen möchte, werden die Komponenten mit den dazugehörigen Footprints im PCB-Design-Programm bereits platziert angezeigt. Es ist dann erforderlich, sie an die richtigen Positionen zu bewegen, die Verdrahtung vorzunehmen und die Grenzen der Platine festzulegen. Anschließend muss ein Ground Polygon sowohl auf der oberen als auch auf der unteren Seite der Platine gezogen werden. Dabei sind die Designregeln des jeweiligen PCB-Herstellers zu beachten. In diesem Fall werden die Designregeln des Herstellers Aisler berücksichtigt, wie beispielsweise die Größe der Platine, die Größe der Vias usw. [[BK_19]](Quellenverzeichnis.md#BK_19) Die einzelnen Schritte werden in den folgenden Abschnitten erklärt.  
+
+**Platzierung**  
+Das Platzieren der Komponenten an den richtigen Stellen ist eine wichtige Aufgabe, bei der einige wesentliche Aspekte berücksichtigt werden müssen.  
+Es ist wichtig sicherzustellen, dass platzierte Komponenten sich nicht gegenseitig mit ihren Gehäusen stören. Ebenso spielt der Abstand zwischen den Komponenten eine entscheidende Rolle. Insbesondere für das manuelle Löten ist es vorteilhaft, wenn die Komponenten ausreichend Abstand zueinander haben.  
+Ein weiterer wichtiger Aspekt ist der Einfluss der Platzierung der Komponenten auf das Routing bzw. die Verdrahtung der Verbindungen innerhalb der Schaltung.  
+
+**Routing**
+Die Komponenten müssen gemäß dem Schaltungsentwurf verbunden werden. Für das System wird eine Zweischichtplatine entworfen, die zwei Ebenen bietet, auf denen das Routing durchgeführt werden kann.  
+Obwohl das Routing manuell durchgeführt werden könnte, wurde ein Autorouter verwendet, da es mit 25 Komponenten schwierig wäre, alles von Hand zu routen. Die Nutzung eines Autorouters reduziert zudem das Risiko von Fehlern, da er nach festgelegten Regeln stets optimal und korrekt routet. Für die Platine wurde der Autorouter mit dem Namen Freerouting in KiCad verwendet. [[BK_20]](Quellenverzeichnis.md#BK_20)  
+Um Freerouting zu nutzen, muss zunächst aus dem Platinen-Designfenster eine .DSN-Datei exportiert und in Freerouting importiert werden. Das Ergebnis ist eine .SES-Datei (Specctra Session File), die anschließend wieder in KiCad importiert wird, um das Routing des Autorouters zu übernehmen. Eine detaillierte Anleitung zum Umgang mit Freerouting findet sich im offiziellen GitHub.  [[BK_20]](Quellenverzeichnis.md#BK_20)  
+Der Autorouter kann gut konfiguriert werden, z.B. bezüglich der Routenbreite, der Anzahl der Vias (Vias sind kleine Bohrungen, die beim Wechsel zwischen der oberen und unteren Seite der Platine verwendet werden) usw.  
+
+**Grenzen und Ground Polygon**  
+Um die Platine auf die gewünschte Größe zu bringen, müssen die Grenzen definiert werden. Dies kann entweder vor oder nach dem Routing erfolgen.  
+Wie bereits erwähnt, wird auch ein Ground Polygon über beiden Seiten gezogen. Dies dient mehreren Zwecken: Eine gute Masseverbindung reduziert Störungen und verbessert die Signalintegrität, da die Ground-Fläche als niederohmiger Pfad für Rückströme fungiert. Ein großflächiges Ground-Polygon kann elektromagnetische Störungen (EMI) reduzieren, indem es als Abschirmung fungiert und Hochfrequenzsignale ableitet. Zudem hilft ein großes Ground-Polygon, Potenzialunterschiede auf der Platine zu minimieren, was wichtig ist, um unerwünschte Spannungsabfälle oder Spannungsspitzen zu vermeiden. [[BK_21]](Quellenverzeichnis.md#BK_21)  
+  
+**Ergebnis**  
+Die fertige Platine sieht am Ende so aus, wie auf [Abildung 7.xx](#_fig_BK_17) dargestellt ist. Die rote Fläche repräsentiert das Ground-Polygon auf der oberen Seite und die blaue Fläche das Ground-Polygon auf der unteren Seite der Platine. Die zahlreichen Vias dienen dazu, die Ground-Polygone beider Seiten miteinander zu verbinden. Dies ist besonders wichtig, wenn auf einer Seite keine direkte Verbindung zum Ground möglich ist, zum Beispiel aufgrund anderer Leiterbahnen oder Komponenten.  
+
+Figure: Fertiges Platinendesign { #_fig_BK_17 }
+
+![](img/PCB/PCB-Design.png){ width=90% }
+
+Wenn man auf 3D-Ansicht wechselt, wurden alle Bauteile, mit seinen 3D-Modellen sichtbar, wie auf [Abildung 7.xx](#_fig_BK_18) zu sehen ist. Es wurde ein Raytracing-Effekt verwendet, um die Bauteile realistischer darzustellen.
+
+Figure: 3D-Ansicht von der Platine { #_fig_BK_18 }
+
+![](img/PCB/3D-Ansicht.png){ width=90% }
+
+## Zusammenbau der Platinen
 **Benjamin Klaric**  
+
+Nachdem die Platine und alle anderen Bauteile angekommen sind, wurde mit dem Zusammenbau der Platinen begonnen.  
+Da viele Bauteile mittels SMT (Surface Mounted Technology) mit der Platine verbunden sind, ist es normalerweise sinnvoll, das Löten mit einem Reflow-Ofen durchzuführen. Dafür benötigt man jedoch ein sogenanntes Stencil. Ein Stencil ist ein kleines Metallteil mit Löchern, die den Pads (Kontakten für die Bauteile auf der Platine) entsprechen. Mit einem Stencil kann die Lötpaste viel einfacher und präziser auf die Pads aufgetragen werden. Leider konnte aus Kostengründen kein Stencil bestellt werden, und das manuelle Auftragen der Paste auf 50 Pads ist sehr zeitaufwendig.  
+Deshalb wurde das Löten von Hand durchgeführt. Die verlötete Platine ist in [Abildung 7.xx](#_fig_BK_19) zu sehen.
+
+Figure: Fertige Platine ohne Mikrocontroller und Pin Headers { #_fig_BK_19 }
+
+![](img/PCB/Nach-Löten.png){ width=90% }
 
 ## Gehäuse
 
@@ -298,7 +336,7 @@ Table: Der Stromverbrauch aufgeteilt in Zeitabschnitte beim 7,3" Display { #_tab
 
 **Benjamin Klaric**  
 
-In [Abbildung 7.xx](#_fig_BK_20) sind die geplotteten Werten von der [Tabelle 7.xx]( #_tab_MW_02 ) grapisch dargestellt.
+In [Abbildung 7.xx](#_fig_BK_20) sind die geplotteten Werte von der [Tabelle 7.xx]( #_tab_MW_02 ) graphisch dargestellt.
 
 Figure: Plot von dem Stromvebrauch in Zeitabschnitten beim 7,3" Display { #_fig_BK_20 }
 
@@ -323,7 +361,7 @@ Table: Der Stromverbrauch aufgeteilt in Zeitabschnitte beim 9,7" Display { #_tab
 
 **Benjamin Klaric**  
 
-In [Abbildung 7.xx](#_fig_BK_21) sind die geplotteten Werten von der [Tabelle 7.xx]( #_tab_MW_9_7_Strom ) grapisch dargestellt.
+In [Abbildung 7.xx](#_fig_BK_21) sind die geplotteten Wertee von der [Tabelle 7.xx]( #_tab_MW_9_7_Strom ) graphisch dargestellt.
 
 Figure: Plot von dem Stromvebrauch in Zeitabschnitten beim 9,7" Display { #_fig_BK_21 }
 
@@ -332,10 +370,10 @@ Figure: Plot von dem Stromvebrauch in Zeitabschnitten beim 9,7" Display { #_fig_
 ### Interpretation
 **Benjamin Klaric**  
 
-Der Stromvebrauch sowohl von dem 7,3 Zoll als auch von dem 9,7 Zoll liefern eine angemessene Vebrauch im Zeit von einen vollen Refresh. Es gibt aber ein paar Sachen die man berücksichtigen muss, nämlich die Tatsache, dass ein vollen Refresh nicht jedes Mal durchgeführt sein muss und das der Stromvebrauch zusammen mit WiFi funken nicht in diesem Aufbau gemossen war.  
-Die Erklärung, das den vollen Refresh nicht jedes Mal gemacht sein muss, liegt an den Spezifikationen von dem Display. Ein Display soll nach eine längere Zeit ohne Refresh, ein vollen Refresh bekommen. [[BK_20]](Quellenverzeichnis.md#BK_20) Das verringert die Zeit, wo das System mit vollen Last arbeitet und damit auch den durchscnittliche Verbrauch.  
-Den WiFi Verbrauch wurde nicht berucksichtigen, da dieser Verbrauch von vielen Parametern abhägig war, die in der Zeit von Strommessung noch nicht festgegeben sein konnten, wie der Optimierung von Code, der WiFi Nutzung ansteuert und die Tatsache, dass das Modul, die für Strommesung benutzt war, später nicht mehr benutzt wurde, wegen höhen Stromverbrauch in Deep Sleep Modus.  
-In nächsten Abschnitt erfolgt ein genaueren Blick auf gemessenen Werten und deren Bedeutung.  
+Der Stromverbrauch sowohl des 7,3-Zoll- als auch des 9,7-Zoll-Displays ist während eines vollen Refreshs angemessen. Es gibt jedoch einige Dinge zu berücksichtigen, nämlich dass ein voller Refresh nicht jedes Mal durchgeführt werden muss und dass der Stromverbrauch in Verbindung mit der Wi-Fi-Nutzung nicht in dieser Konfiguration gemessen wurde.  
+Die Erklärung dafür, dass nicht bei jeder Gelegenheit ein voller Refresh erforderlich ist, liegt an den Spezifikationen des Displays. Gemäß diesen Spezifikationen soll das Display nach einer längeren Zeit ohne Refresh einen vollständigen Refresh durchführen. [[BK_22]](Quellenverzeichnis.md#BK_22) Dies reduziert die Zeitspanne, in der das System unter Volllast arbeitet, und damit auch den durchschnittlichen Verbrauch.  
+Der Wi-Fi-Verbrauch wurde nicht berücksichtigt, da dieser von vielen Parametern abhängt, die zum Zeitpunkt der Strommessung noch nicht optimiert waren. Dazu gehören die Code-Optimierung, die Steuerung der Wi-Fi-Nutzung und die Tatsache, dass das Modul, das für die Strommessung verwendet wurde, später nicht mehr genutzt wurde aufgrund des hohen Stromverbrauchs im Deep Sleep Modus.  
+Im nächsten Abschnitt erfolgt ein genauerer Blick auf die gemessenen Werte und deren Bedeutung.  
 
 **Stromverbrauch von 7,3" Display**  
 Das 7,3" Display hat eine längere Refresh-Zeit, was darauf zurückzuführen ist, dass es vier anstatt zwei Farben darstellen kann. Diese zusätzliche Farbunterstützung führt zu einer längeren Arbeitszeit und somit zu einem erhöhten Stromverbrauch. Der durchschnittliche Stromverbrauch des Displays kann anhand des Plots aus [Abbildung 7.xx](#_fig_BK_20) berechnet werden. Dieser liegt bei 62 mA über einen Zeitraum von 54,853 Sekunden, wobei der Verbrauch stark von der Länge der Arbeitszeit abhängt.  
@@ -345,11 +383,28 @@ Durch den Verzicht auf einen vollständigen Refresh und die Nutzung eines Mikroc
 Das 9,7-Zoll-Display zeichnet sich durch eine sehr kurze Refresh-Zeit aus, was jedoch zu einem höheren Stromverbrauch bei jedem Refresh führt. Über einen Zeitraum von 4,885 Sekunden beträgt der durchschnittliche Stromverbrauch 97 mA. Dieser erhöhte Durchschnittsverbrauch wird durch die verkürzte Betriebszeit ausgeglichen.  
 In []( #_tab_MW_02 ) wird verdeutlicht, dass trotz des höheren Stromverbrauchs des 9,7-Zoll-Displays der Gesamtenergieverbrauch aufgrund der schnellen Refresh-Zeit kompensiert wird.  
 
-## ADC Messung
+## A-D-Wandler Messung
 **Benjamin Klaric**  
 
-[Abildung 7.xx](#_fig_BK_21)  
+Wie bereit in [7.5 Schaltungsentwurf](PraktischeUTheoretischeGrund.md#schaltungsentwurf) unter **Akkuanschlüsse** erwähnt, wurde ein analoger GPIO-Pin des XIAO ESP32-S3 verwendet, um den Spannungspegel des Akkupacks zu überwachen.  
+Der XIAO ESP32-S3 bietet viele analoge Pins, wovon einer, nämlich der A9-Pin, für die oben genannte Überwachung genutzt wird. Dazu wird an diesem Pin ein Spannungsteiler aufgebaut, bei dem zwei 220 kΩ Widerstände parallel zu den Akku+ und Akku- Eingängen des Mikrocontrollers verbunden werden. Der Wert für die Widerstände wurde so gewählt, weil der Spannungsteiler immer Strom zieht, auch wenn sich der Mikrocontroller im Deep Sleep befindet, da die Widerstände direkt mit dem Akkupack verbunden sind. Mit zwei 220 kΩ Widerständen und einer Spannung zwischen 3,5V und 4,2V ergibt sich ein Verbrauch zwischen 8 µA und 9,5 µA gemäß dem Ohm'schen Gesetz, was akzeptabel ist.  
+Allerdings muss man darauf achten, dass die Widerstandswerte möglichst nah beieinander liegen, damit sich die Spannung möglichst genau halbiert. Falls die Widerstände nicht exakt gleich sind, kann man den Multiplikationsfaktor so anpassen, dass die ungenaue Aufteilung der Spannung berücksichtigt wird, indem man die Spannungsteiler-Gleichung aufstellt und anpasst, wie in [Abildung 7.xx](#_fig_BK_22) zu sehen ist. Dabei entspricht das Widerstandsverhältnis dem Multiplikationsfaktor.  
 
-Figure: Plot von 50 Messwerten bei jedem Spannungspegel { #_fig_BK_21 }
+Figure: Umgeformte Spannungsteilerformel { #_fig_BK_22 }
+
+![](img/Formel.png){ width=60% }
+
+Die Messung muss man auch in Code implementieren, wobei von dem Hersteller der Code zur Verfügung gestellt ist. [[BK_23]](Quellenverzeichnis.md#BK_23)  
+
+Nach der Testmessung wurde festgestellt, dass die Messung nicht ganz genau ist, mit einem Fehler von etwa 100 mV. Dies könnte auf mehrere Gründe zurückzuführen sein, die sich aus dem Prinzip der Messung über einen analogen Pin mit Analog-Digital-Wandler (A-D-Wandler) ergeben.  
+Der A-D-Wandler im Mikrocontroller verwendet einen Abtastmechanismus, der kleine, schnelle Stromstöße verursacht. Diese können zu momentanen Spannungsabfällen aufgrund des hohen Widerstands der Spannungsteilerwiderstände führen. Daher beeinflussen hochfrequentes Rauschen oder Schwankungen in der Batteriespannung direkt den gemessenen Wert. Bei der Abtastung wird ein interner Kondensator kurzzeitig mit dem analogen Eingangspin verbunden. Dieser interne Kondensator muss sich schnell auf die Eingangsspannung aufladen. Wenn der Widerstand des Spannungsteilers hoch ist, kann er sich möglicherweise nicht schnell genug aufladen, was zu Messfehlern führt.  
+Um dieses Problem zu lösen, wurde ein Pufferkondensator von 100 nF parallel zu Akku+ und Akku- hinzugefügt. Dieser Wert ist ein typischer Wert für das Puffern in solchen Anwendungen. Dieser Kondensator fungiert als kleiner Energiespeicher, der dem A-D-Wandler die erforderliche Stromversorgung ohne signifikante Spannungsabfälle ermöglicht. Darüber hinaus filtert er hochfrequentes Rauschen heraus und reduziert die Auswirkungen von Schwankungen in der Batteriespannung. Wenn man [Abildung 7.xx](#_fig_BK_23) betrachtet, ist eine verbesserte und stabilere Kurve der Messdaten mit dem Kondensator zu erkennen. Für jeden Spannungspegel wurden 50 Datenpunkte sowohl mit als auch ohne Kondensator gemessen.  
+
+Figure: Plot von 50 Messwerten bei jedem Spannungspegel { #_fig_BK_23 }
 
 ![](img/ADC-Plot.png){ width=100% }
+
+Allerdings besteht trotz der Verringerung des Fehlers noch ein Restfehler. Dies liegt, wie bereits erwähnt, an den hohen Widerstandswerten, die aufgrund des hohen Stromverbrauchs nicht weiter reduziert werden können.  
+Die Werte zeigen weniger Spitzen und bleiben stabiler bei einem bestimmten Wert, was von Vorteil ist. Zusätzlich wird in der Software ein kleiner Offset hinzugefügt.  
+Eine andere Art der Messung könnte in Betracht gezogen werden, nämlich nicht die genaue Messung des aktuellen Spannungswerts, sondern die Messung der Änderung in Bezug auf den zu Beginn gemessenen Wert. Genauer gesagt könnte zu Beginn der Spannungswert des Akkupacks mit einem A-D-Wandler gemessen werden, und dann könnte der Abfall in Bezug auf diesen Wert überwacht werden, anstatt den aktuellen Spannungswert zu messen. Möglicherweise könnte dies bessere Ergebnisse liefern. Es ist bekannt, dass die Spannung bei einem voll geladenen Akkupack von 4,2V auf 3,5V abfallen darf, also um 0,7V. Dieser Abfall könnte auch bei der A-D-Wandler-Messung überwacht werden.  
+Leider war diese Art von Messung aus Zeitgründen nicht ausgetestet.  
