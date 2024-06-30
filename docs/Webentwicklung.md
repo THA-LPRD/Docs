@@ -89,7 +89,7 @@ In der Browserkonsole wird die detaillierte Verfolgung von Ereignissen und Fehle
 Durch die Anpassung des Log-Levels (s. Tabelle 9.2.1) kann die Tiefe und Art der Protokollierung bestimmt werden, um die Menge und Art der Informationen, die das System auf der seriellen Konsole ausgibt zu steuern.
 So können spezifische Probleme zu diagnostiziert, oder das allgemeine Systemverhalten zu überwacht werden [[JR_16]](Quellenverzeichnis.md#jr_16).
 
-*Tabelle 9.2.1 Übersicht über die verscheidenen Log-Levels [[JR_17]](Quellenverzeichnis.md#jr_17)*
+Tabel: Tabelle 8.1 Übersicht über die verscheidenen Log-Levels [[JR_17]](Quellenverzeichnis.md#jr_17)* { #_tab_8_1 }
 
 | Level    | Beschreibung                                                                                          | Verwendung                                                                                     |
 |----------|-------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------|
@@ -123,8 +123,8 @@ Kann keine Verbindung zum Server aufgebaut werden, oder ist der Bildupload fehlg
 
 ### Verwendete Technologien
 
-Wie im Kapitel [3.9.1 Webtechnologien](PraktischeUTheoretischeGrund.md#webtechnologien) bereits erläutert, ist es für die Entwicklung einer komplexeren Webanwendung sehr sinnvoll, ein Webframework einzusetzen. 
-Hierbei gibt es eine große Auswahl an möglichen Frameworks und auch serverseitigen Programmiersprachen. Da JavaScript bereits im Standalonemodus, wie auch im Netzwerk-Modus, verwendet wird, um die Interaktion mit dem Displaymodul zu realisieren, ist es naheliegend, auch auf dem Server JavaScript zu nutzen. Diese Entscheidung ermöglichte eine einheitliche Codebasis sowohl im Frontend als auch im Backend, was die Entwicklung effizienter und die Wartung der Anwendung einfacher macht und zuletzt auch das Erlernen neuer Programmiersprachen auf eine reduziert. Zudem wurde die Möglichkeit genutzt, TypeScript anstatt JavaScript zu verwenden, um die Vorteile zu nutzen, welche ebenso bereits im Kapitel [3.9.1 Webtechnologien](PraktischeUTheoretischeGrund.md#webtechnologien) erwähnt wurden. 
+Wie im Kapitel [2.9.1 Webtechnologien](PraktischeUTheoretischeGrund.md#webtechnologien) bereits erläutert, ist es für die Entwicklung einer komplexeren Webanwendung sehr sinnvoll, ein Webframework einzusetzen. 
+Hierbei gibt es eine große Auswahl an möglichen Frameworks und auch serverseitigen Programmiersprachen. Da JavaScript bereits im Standalonemodus, wie auch im Netzwerk-Modus, verwendet wird, um die Interaktion mit dem Displaymodul zu realisieren, ist es naheliegend, auch auf dem Server JavaScript zu nutzen. Diese Entscheidung ermöglichte eine einheitliche Codebasis sowohl im Frontend als auch im Backend, was die Entwicklung effizienter und die Wartung der Anwendung einfacher macht und zuletzt auch das Erlernen neuer Programmiersprachen auf eine reduziert. Zudem wurde die Möglichkeit genutzt, TypeScript anstatt JavaScript zu verwenden, um die Vorteile zu nutzen, welche ebenso bereits im Kapitel [2.9.1 Webtechnologien](PraktischeUTheoretischeGrund.md#webtechnologien) erwähnt wurden. 
 
 Für das Frontend wurde React ausgewählt. Durch React lassen sich Komponenten realisieren, welche modular wiederverwendet werden können. Dadurch wird es vermieden, doppelten Code zu verfassen und Änderungen an einer Komponente werden global in der gesamten Webanwendung widergespiegelt. 
 
@@ -136,9 +136,9 @@ Für den Webserver wurden Linux und teilweise Docker verwendet. Das quelloffene 
 
 Die Kombination dieser Technologien ermöglicht effizient eine benutzerfreundliche, performante und wartbare Webanwendung zu entwickeln. 
 
-Wie die Einzelkomponenten zusammenspielen, ist in [](#_fig_MW_techstack) ersichtlich.
+Wie die Einzelkomponenten zusammenspielen, ist in [Abbildung 8.1](#_abb_8_1) ersichtlich.
 
-Figure: Der Techstack der Webanwendung { #_fig_MW_techstack }
+Figure: Abbildung 8.1: Der Techstack der Webanwendung { #_abb_8_1 }
 
 ![](img/TechStack.png){ width=60% }
 
@@ -148,12 +148,12 @@ Der Code wurde größtenteils in VSCode verfasst und mit der Versionskontrolle g
 
 **Datenbankstruktur**
 
-In der PostgreSQL Datenbank gibt es zwei Tabellen, die erste Tabelle enthält alle Displaymodule, der Aufbau einer Displaymodul-Entität ist in [](#_tab_MW_Display) erkennbar. Hierbei wird als Primary Key die MAC-Adresse verwendet, da diese bei der Produktion vom Hersteller eindeutig vergeben wird, eignet sich diese sehr gut als Primary Key. Des Weiteren werden ein frei definierbarer Anzeigename, die Auflösung des verbauten ePaper Displays, der Zeitpunkt, wann sich das Displaymodul das letzte Mal mit dem Server verbunden hat und das aktuell festgelegte Asset hinterlegt. 
-In [](#_tab_MW_Asset) ist die Asset-Entität aufgelistet, diese besteht aus einer zufällig generierten cuid für den Primary Key, einer Typenangabe, ob statisch oder dynamisch, einem frei definierbaren Anzeigename, der Dateipfad auf dem Server Dateisystem, dem HTML Code für das Erstellen des Assets, sofern es über HTML generiert wird und die Anzeigedauer. Die PNGs werden lokal auf dem Dateisystem des Servers abgelegt, somit kann die Datenbank einerseits schlank bleiben und der Webserver kann die PNGs einfach ausliefern. 
+In der PostgreSQL Datenbank gibt es zwei Tabellen, die erste Tabelle enthält alle Displaymodule, der Aufbau einer Displaymodul-Entität ist in [Tabelle 8.2](#_tab_8_2) erkennbar. Hierbei wird als Primary Key die MAC-Adresse verwendet, da diese bei der Produktion vom Hersteller eindeutig vergeben wird, eignet sich diese sehr gut als Primary Key. Des Weiteren werden ein frei definierbarer Anzeigename, die Auflösung des verbauten ePaper Displays, der Zeitpunkt, wann sich das Displaymodul das letzte Mal mit dem Server verbunden hat und das aktuell festgelegte Asset hinterlegt. 
+In [Tabelle 8.3](#_tab_8_3) ist die Asset-Entität aufgelistet, diese besteht aus einer zufällig generierten cuid für den Primary Key, einer Typenangabe, ob statisch oder dynamisch, einem frei definierbaren Anzeigename, der Dateipfad auf dem Server Dateisystem, dem HTML Code für das Erstellen des Assets, sofern es über HTML generiert wird und die Anzeigedauer. Die PNGs werden lokal auf dem Dateisystem des Servers abgelegt, somit kann die Datenbank einerseits schlank bleiben und der Webserver kann die PNGs einfach ausliefern. 
 
 Die meisten Eigenschaften wurden als optional deklariert, damit die Entitäten auch schon erstellt werden können, auch wenn noch nicht alle Eigenschaften bekannt sind. 
 
-Table: Die Display-Entität { #_tab_MW_Display }
+Table: Tabelle 8.2: Die Display-Entität { #_tab_8_2 }
 
 | Key | Type | Eigenschaft |
 |-|-|-|
@@ -165,7 +165,7 @@ Table: Die Display-Entität { #_tab_MW_Display }
 |  currentAsset     | String | Aktuell anzuzeigendes Asset, Optional |
 |  currentAssetType | String | Typ des aktuell anzuzeigenden Assets, Optional |
 
-Table: Die Asset-Entität { #_tab_MW_Asset }
+Table: Tabelle 8.3: Die Asset-Entität { #_tab_8_3 }
 
 | Key | Type | Eigenschaft |
 |-|-|-|
@@ -180,10 +180,10 @@ Table: Die Asset-Entität { #_tab_MW_Asset }
 
 Für eine standardisierte Verwendung der Daten wurde eine REST-API-Schnittstelle umgesetzt. So können mit GET-Anfragen Daten angefragt, mit PUT-Anfragen Daten bearbeitet und mit DELETE-Anfragen Daten auch gelöscht werden. Sowohl das Frontend als auch die Displaymodule verwenden diese REST-API. 
 
-Eine vollständige Übersicht der möglichen REST-API-Aufrufe ist in Tabelle [](#_tab_MW_03) ersichtlich. Platzhalter in eckigen Klammern werden dabei dynamisch in der Anfrage berücksichtigt. 
+Eine vollständige Übersicht der möglichen REST-API-Aufrufe ist in [Tabelle 8.4](#_tab_8_4) ersichtlich. Platzhalter in eckigen Klammern werden dabei dynamisch in der Anfrage berücksichtigt. 
 
 
-Table: Die Unterstützen REST-API Aufrufe der Webanwendung { #_tab_MW_03 }
+Table: Tabelle 8.4: Die Unterstützen REST-API Aufrufe der Webanwendung { #_tab_8_4 }
 
 | URL | Methode | Body | Rückgabe | Zweck |
 |-|-|-|-|-|
@@ -201,37 +201,40 @@ Table: Die Unterstützen REST-API Aufrufe der Webanwendung { #_tab_MW_03 }
 
 **Frontend**
 
-Im Frontend gibt es fünf Unterseiten. Die Startseite enthält das Menü zu den anderen beiden Hauptunterseiten »Displays« und »Assets«. In der Unterseite »Displays« befindet sich eine Auflistung aller dem Server bekannten Displaymodulen. Ein Displaymodul registriert sich dabei beim Server selbst, da es im Servermodus die Register-URL aufruft und sich dem Server so bekannt macht. In [](#_fig_WA_Displays) ist erkennbar, dass jedes Displaymodul seinem mit seinem Anzeigenamen und auch einer Vorschau des aktuell zugewiesenen Assets dargestellt wird. Ein Displaymodul kann in der Übersicht angeklickt werden, wodurch sich eine Detailansichtsseite öffnet. In dieser Detailseite, welche [](#_fig_WA_Display_Details) zeigt, können die Metadaten des Displays bearbeitet und gespeichert werden. Zusätzlich werden alle Assets angezeigt, sobald ein Asset angeklickt wird, wird dieses als neues Asset dem Display zugewiesen. 
+Im Frontend gibt es fünf Unterseiten. Die Startseite enthält das Menü zu den anderen beiden Hauptunterseiten »Displays« und »Assets«. In der Unterseite »Displays« befindet sich eine Auflistung aller dem Server bekannten Displaymodulen. Ein Displaymodul registriert sich dabei beim Server selbst, da es im Servermodus die Register-URL aufruft und sich dem Server so bekannt macht. In [Abbildung 8.2](#_abb_8_2) ist erkennbar, dass jedes Displaymodul seinem mit seinem Anzeigenamen und auch einer Vorschau des aktuell zugewiesenen Assets dargestellt wird. Ein Displaymodul kann in der Übersicht angeklickt werden, wodurch sich eine Detailansichtsseite öffnet. In dieser Detailseite, welche [Abbildung 8.3](#_abb_8_3) zeigt, können die Metadaten des Displays bearbeitet und gespeichert werden. Zusätzlich werden alle Assets angezeigt, sobald ein Asset angeklickt wird, wird dieses als neues Asset dem Display zugewiesen. 
 
-Figure: Die Übersichtsseite aller Displays { #_fig_WA_Displays}
+Figure: Abbildung 8.2: Die Übersichtsseite aller Displays { #_abb_8_2 }
 
 ![](img/Handbuch/WA-Displays.png){ width=60% }
 
-Figure: Die Detailansicht eines Displays { #_fig_WA_Display_Details}
+Figure: Abbildung 8.3: Die Detailansicht eines Displays { #_abb_8_3 }
 
 ![](img/Handbuch/WA-Display-Details.png){ width=60% }
 
-Ähnlich verhält es sich mit der zweiten Hauptunterseite »Assets«, die unter [](#_fig_WA_Assets) erkennbar ist. Auch hier werden alle vorhandenen Assets aufgelistet und können ausgewählt werden, um eine Detailansicht, wie in [](#_fig_WA_Display_Details) gezeigt, zu öffnen und die Metadaten zu bearbeiten und das Asset zu löschen. Im Gegensatz zu Displaymodulen können Assets händisch angelegt werden, entweder kann dafür eine PNG-Datei hochgeladen oder HTML-Code eingetragen werden, welcher abschließend wieder ein PNG produziert. Die Abbildungen [](#_fig_WA_Upload) und [](#_fig_WA_HTML) zeigen jeweils die beiden Vorgänge. 
+Ähnlich verhält es sich mit der zweiten Hauptunterseite »Assets«, die unter [Abbildung 8.4](#_abb_8_4) erkennbar ist. Auch hier werden alle vorhandenen Assets aufgelistet und können ausgewählt werden, um eine Detailansicht, wie in [Abbildung 8.5](#_abb_8_5) gezeigt, zu öffnen und die Metadaten zu bearbeiten und das Asset zu löschen. Im Gegensatz zu Displaymodulen können Assets händisch angelegt werden, entweder kann dafür eine PNG-Datei hochgeladen oder HTML-Code eingetragen werden, welcher abschließend wieder ein PNG produziert. Die Abbildungen [Abbildung 8.6](#_fig_8_6) und [Abbildung 8.7](#_abb_8_7) zeigen jeweils die beiden Vorgänge. 
 
-Figure: Eine Übersicht über alle vorhanden Assets { #_fig_WA_Assets }
+Figure: Abbildung 8.4: Eine Übersicht über alle vorhanden Assets { #_abb_8_4 }
 
 ![](img/Handbuch/WA-Assets.png){ width=60% }
 
+Figure: Abbildung 8.5: Die Detailansicht eines Assets { #_abb_8_5 }
 
-Figure: Das Formular zum hochladen von bestehenden PNGs { #_fig_WA_Upload }
+![](img/Handbuch/WA-Asset-Details.png){ width=60% }
+
+Figure: Abbildung 8.6: Das Formular zum hochladen von bestehenden PNGs { #_fig_8_6 }
 
 ![](img/Handbuch/WA-Asset-Upload.png){ width=60% }
 
-Figure: Das Formular zum erstellen von PNGs aus HTML Code { #_fig_WA_HTML }
+Figure: Abbildung 8.7: Das Formular zum erstellen von PNGs aus HTML Code { #_abb_8_7 }
 
 ![](img/Handbuch/WA-Asset-HTML.png){ width=60% }
 
 
 ### Testumgebung
 
-Als Testumgebung wurde beim Rechenzentrum (RZ) eine Linux-VM beantragt. Die vom Rechenzentrum erhaltene VM hat die in []( #_tab_MW_01 ) genannten Eigenschaften. 
+Als Testumgebung wurde beim Rechenzentrum (RZ) eine Linux-VM beantragt. Die vom Rechenzentrum erhaltene VM hat die in [Tabelle 8.5]( #_tab_8_5 ) genannten Eigenschaften. 
 
-Table: Die Systemeigenschaften der vom RZ erhaltenen VM.  { #_tab_MW_01 }
+Table: Tabelle 8.5: Die Systemeigenschaften der vom RZ erhaltenen VM.  { #_tab_8_5 }
 
 | Eigenschaft | Wert |
 |-------|------|

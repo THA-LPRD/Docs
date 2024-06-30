@@ -19,7 +19,7 @@ Wie im Abschnitt [Grundlagen](PraktischeUTheoretischeGrund.md#firmwarebibliothek
 4. Nachdem die Erweiterung installiert ist, können Sie die PlatformIO-Seitenleiste öffnen, indem Sie auf das PlatformIO-Symbol in der Seitenleiste klicken. Dies kann einige Minuten dauern, da PlatformIO das Backend herunterlädt und die Umgebung einrichtet.
 [[AEG_06]](Quellenverzeichnis.md#AEG_06)
 
-Figure: Abbildung 8.1: PlatformIO-Erweiterung in Visual Studio { #_abb8_1 }
+Figure: Abbildung 7.1: PlatformIO-Erweiterung in Visual Studio { #_abb7_1 }
 
 ![](img/Firmware/PlatformIO-VSCode-Extension.webp){ width=60% }
 
@@ -35,7 +35,7 @@ Figure: Abbildung 8.1: PlatformIO-Erweiterung in Visual Studio { #_abb8_1 }
 7. Drücken Sie abschließend die `Finish`, um das Projekt zu erstellen.
 [[AEG_07]](Quellenverzeichnis.md#AEG_07)
 
-Figure: Abbildung 8.2: Neues PlatformIO-Projekt erstellen { #_abb8_2 }
+Figure: Abbildung 7.2: Neues PlatformIO-Projekt erstellen { #_abb8_2 }
 
 ![](img/Firmware/PlatformIO-New-Project.webp){ width=60% }
 
@@ -48,7 +48,7 @@ Figure: Abbildung 8.2: Neues PlatformIO-Projekt erstellen { #_abb8_2 }
 4. Klicken Sie auf die `Upload` im Abschnitt `General`, um die Firmware auf den Mikrocontroller zu flashen.
 5. Die `Upload File System Image` Taste im Abschnitt `Platform` kann verwendet werden, um das Dateisystem-Image auf den Mikrocontroller hochzuladen.
 
-Figure: Abbildung 8.3: Firmware auf den Mikrocontroller hochladen { #_abb8_3 }
+Figure: Abbildung 7.3: Firmware auf den Mikrocontroller hochladen { #_abb8_3 }
 
 ![](img/Firmware/PlatformIO-Flashing.webp)
 
@@ -111,15 +111,15 @@ Die Akkulaufzeit ist ein wichtiger Faktor. Das Displaymodul muss in den Schlafmo
 ## Klassendiagramm
 **Ahmet Emirhan Göktas**
 
-Figure: Abbildung 8.4: Klassendiagramm der Application { #_abb8_4 }
+Figure: Abbildung 7.4: Klassendiagramm der Application { #_abb8_4 }
 
 ![](img/Firmware/ClassDiagramApp.webp)
 
-Figure: Abbildung 8.5: Klassendiagramm der Systemansteuerung { #_abb8_5 }
+Figure: Abbildung 7.5: Klassendiagramm der Systemansteuerung { #_abb8_5 }
 
 ![](img/Firmware/ClassDiagramMCU.webp)
 
-Figure: Abbildung 8.6: Klassendiagramm der E-Paper-Display-Library { #_abb8_6 }
+Figure: Abbildung 7.6: Klassendiagramm der E-Paper-Display-Library { #_abb8_6 }
 
 ![](img/Firmware/ClassDiagramEPDL.webp)
 
@@ -657,11 +657,11 @@ Figure: {#_abb8_9}
 
 ![](img/Firmware/white-distance.svg)
 
-Figure: {#_abb8_10}
+Figure: {#_abb7_10}
 
 ![](img/Firmware/red-distance.svg)
 
-Figure: {#_abb8_11}
+Figure: {#_abb7_11}
 
 ![](img/Firmware/yellow-distance.svg)
 

@@ -6,9 +6,9 @@ Komplettes Set bestehend aus Display, Mikrocontroller, Akku, Platine und Gehäus
 
 <a id="GL_02">**Display**</a>
 
-Das Display, welches angesteuert und mit Strom und Daten versorgt werden muss. 
+Das Display, welches angesteuert und mit Strom und Daten versorgt werden muss. Ein solches Display kann Beispielweise in [Abbildung 10.1](#_abb_10_1) gesehen werden.
 
-Figure: Ein exemplarisches ePaper Display
+Figure: Abbildung 10.1: Ein exemplarisches ePaper Display { #_abb_10_1 }
 
 ![](img/ePaper-Display.png){ width=80% }
 
