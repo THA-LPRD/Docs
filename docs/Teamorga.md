@@ -1,11 +1,7 @@
 # Teamorganisation
 
-## Kommunikation und Organisation 
-  
-  **Stasa Lukic**
-  
-  
-  
+## Kommunikation  
+
 ### Einleitung
 Für das Projekt wurden verschiedenste Programme genutzt, um eine gute Kommunikation und Organisation innerhalb der Teammitglieder zu halten. Für eine effektive und effiziente Kommunikation und Organisation wurde für jeden Bereich ein Programm verwendet, die folgend angesprochen wird.  
 
@@ -24,8 +20,7 @@ Zoom, Discord und WhatsApp waren unsere Programme für eine direkte Kommunikatio
 Über WhatsApp kann man schnell ein Projektmitglied etwas fragen, Termine vereinbaren oder anderes.  
 Zoom und Discord wurden für wöchentliche Meetings genutzt, aber auch für längere Arbeitssessions. Der Vorteil hierbei liegt, dass man von verschiedensten Orten eine direkte Kommunikation aufbauen kann und so gleichzeitig miteinander weiter arbeiten kann.
 
-
-### Github
+### Github  
 
 Um unseren Programmcode miteinander zuteilen, nutzen wir Github. Github lässt mehrere Personen an einem Programmcode schreiben, mithilfe von sehr einfachen und schlauen Verfahren.  Gedownloadete Projekte von Github können direkt bearbeitet werden. Branches lassen mehrere Personen an einem Projekt arbeiten. Wir nutzen einen Dev Branch von Main wo wir persönliche Feature-Branche gemerged haben, sobald sie geschrieben und getestet wurden. Sobald das jedes Feature fertig ist und alles auf dem Dev Branch gemerged ist, kann man den Dev Branch auf Main mergen und hat somit einen fertigen Code.  
 
@@ -33,26 +28,23 @@ Commits sind Codeupdates, die man auf die Github "Cloud" hochlädt. Sie erlauben
   
 Issues erleichtert die Organisation von Fehler im Code. Github besitzt ein System, das es flexibel erlaubt sogenannte Issues zu eröffnen. Diese Issues werden dann genutzt, um Arbeitspakete zu verfolgen, Probleme anzusprechen oder Feedback zu erhalten.
 
-
-### MkDocs
+### MkDocs  
 
 Für unsere technische Abgabe nutzen wir MkDocs in Verbindung mit Github. MkDocs ist ein benutzerfreundliches Programm, das mithilfe von Markdown gut strukturierte Dokumentationen erstellt. Die MkDocs Dokumentation kann einfach konfiguriert werden, indem man in der Konfigurationsdatei mkdocs.yml gewollte Einstellungen reinschreibt. In dieser Datei können auch Plugins hinzugefügt werden,  einer dieser Plugins ist "with-pdf", die es uns erlaubt, aus der Dokumentation eine PDF zu exportieren.
 
-## Rollenaufteilung 
-  
-  **Stasa Lukic**
-  
 
-  
+## Organisation  
+
+
+## Rollenaufteilung  
+
 Unsere Teammitglieder wurden jeweils in Teams aufgeteilt, in diesen Teams haben sie die zugehörigen Aufgaben dann bearbeitet. Wir haben von unseren 7 Mitgliedern (später 6) 2 Personen ins Softwareteam eingetragen, 2 Personen ins Hardwareteam und 3 Personen ins Firmwareteam. Jedes Team hat auch einen Teamleader ausgewählt, diese Person kann in Meeting Updates geben und fürs Team sprechen. Die sorgt für eine sehr effiziente und organisierte Kommunikation zwischen den Teams.  
   
 Teamleader können diese Rolle auch nutzen, um klare Ziele zu setzen. Rollenaufteilung innerhalb der Teams macht auch dann Sinn, um Stärken einzelner Teammitglieder, in einem Themenbereich zu nutzen. So erhält man nicht nur bessere Resultate, die Person selbst kann ihre Stärken noch einmal feinschleifen.  
 Arbeitspackete können fair auf ein Team verteilt werden, um eine unfaire Arbeitsaufteilung zu verhindern.
 
+
 ## Zeitplan
-  
-  **Stasa Lukic**
-  
 
 Zeitpläne können über verschiedene Arten erstellt werden, es gibt die Gantt-Diagramme, Pfad-Diagramme, Meilensteinziele und weiteres.  
 Wir haben uns für die Gantt-Diagramme entschieden. Gantt-Diagramme erstellen Balken auf einer Timeline mit einem Start- und Enddatum. Diese Balkan können Aufgaben zugewiesen bekommen oder sub Aufgaben / Balken.  
@@ -67,6 +59,11 @@ Figure: Abbildung 4.1: Timeline Beispiel Projekt { #_abb_4_1 }
 Diese Timeline kennzeichnet klare Ziele und visualisiert den Plan von Projektanfang zu Ende. Natürlich ist es schwer genau zusagen, wie lange eine Aufgabe dauern wird zu erledigen, Probleme können auch nicht vorausgesagt werden, dadurch bauen wir am Ende einen Zeitpuffer ein. Dauert eine Aufgabe länger als angegeben, können wir diese Zeit vom Puffer "klauen". Durch die Visualisierung und Struktur können Projektmitglieder ihre Zeit besser einplanen und haben Eigenverantwortung, diese Deadlines zu erreichen, dadurch haben wir einen durchgehenden Fortschritt am Projekt.
 
 
+## Budgetplan  
 
 
+## Ressourcenplanung  
+
+
+## Software  
 
