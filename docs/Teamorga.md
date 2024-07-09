@@ -5,9 +5,9 @@
 
 ### Einleitung  
 
-Die Kommunikation in dem Projekt ist sehr wichtig und wird auch so bei diesem Projekt gestaltet. Dafür werden viele Programme benutzt, um die Kommunikation zwischen den Teammitgliedern und die Kommunikation mit den Kunden effektiv und effizient zu halten. Die verwendeten Programme werden in folgenden Unterkapiteln erwähnt und ausführlicher erklärt.  
+Die Zwischenkommunikation unter Teammitgliedern in dem Projekt ist sehr wichtig und wird auch so bei diesem Projekt gestaltet. Dafür werden viele Programme benutzt, um die Kommunikation zwischen den Teammitgliedern und die Kommunikation mit den Kunden effektiv und effizient zu halten. Die verwendeten Programme werden in folgenden Unterkapiteln erwähnt und ausführlicher erklärt.  
 
-### Notion
+### Notion  
 
 Für Notizen, das Erstellen von Protokollen und die Erstellung einer Zeitleiste wurde Notion verwendet. Dieses Programm wurde aufgrund seiner Flexibilität und Zugänglichkeit ausgewählt. Dank dieser großen Flexibilität erlaubt Notion das Einbinden verschiedener Plugins, wie Gantt-Diagramme und viele andere. Zudem wird in Notion der Text mit einer Kombination von Schreibformaten formatiert. Man kann in Notion mit Markdown-Syntax schreiben oder die verschiedenen Befehle von Notion verwenden. Dies bietet viele Möglichkeiten, schnell unterschiedliche Elemente zu erstellen, wie Tabellen, Code-Blöcke usw.  
 Die Tatsache, dass dieses Programm sowohl unter verschiedenen Betriebssystemen läuft, als auch über einen Browser erreichbar ist, macht es besonders attraktiv.  
@@ -91,6 +91,38 @@ Man kann deutlich erkennen, dass für einige Ressourcen weniger Budget bereitges
 
 ## Ressourcenplanung  
 
+Aufgrund der folgenden zeitlichen Aufteilung der Arbeitspakete (vgl. Abb. 4.6.1), sah die Belastung der einzelnen Teammitglieder während des Projektes wie folgt aus (vgl. Abb. 4.6.2).
+
+Figure: Abbildung 4.6.1: Zeitliche Aufteilung der Arbeitspakete { #_abb_4.6.1 }
+
+![](img/Belastung.png){ width=80% }
+
+Figure: Abbildung 4.6.2: Belastungsdiagramm der einzelnen Teammitglieder { #_abb_4.6.2 }
+
+![](img/Kapazität.png){ width=90% }
+
 
 ## Software  
+**Mario Wegmann**
 
+Neben den zuvor genannten organisatorischen Techniken nutzen wir für das Projekt auch verschiedene spezielle Programme, welche uns in dem Umgang als Team unterstützen. 
+
+### Echtzeit-Kommunikation
+
+Zum direkten Austausch in der Gruppe oder mit einzelnen Gruppenmitgliedern nutzen wir WhatsApp, Discord und Zoom. In dem Messenger WhatsApp ist es möglich, schnell mit Personen oder der gesamten Gruppe zu kommunizieren und somit Rückfragen oder Absprachen auf kurzen Wegen zu klären. Dank der Unterteilung in Channels und Threads können in dem Gruppenchat-Tool Discord größere und längere Diskussionen über einzelne Themen abgehalten werden. Auch können über Discord Videoanrufe abgehalten werden, wodurch Arbeiten im Team komplett remote oder hybrid einfach möglich sind. Zuletzt wird für Online-Absprachen mit dem Kunden Zoom verwendet, da der Kunde dieses Tool bereits verwendet und es somit als Vorgabe angegeben hat. 
+
+### Notizen
+
+Um schnelle Notizen zu erstellen und diese auch gemeinsam parallel zu verfassen, wird das Tool Notion verwendet. In Notion kann ein Workspace eingerichtet und Mitglieder dort eingeladen werden. In diesem Workspace können schnell neue Seiten erstellt werden, welche alle Mitglieder live gemeinsam bearbeiten können. Auch können in einer Seite einfach Links und Anhänge hinzugefügt und Personen im Text erwähnt werden. Durch diese flexible und schnelle Arbeitsweise eignet sich Notion, um Zwischenergebnisse, Erkenntnisse und Protokolle festzuhalten.  
+
+### Codeverwaltung
+
+Der Sourcecode des Projekts wird mit der Versionsverwaltung Git verwaltet. Git bietet Unterstützung, um als Team an einer Codebase zu arbeiten. So werden Zwischenstände von Code, sogenannte Commits, konsequent getrackt und es kann nachträglich zu älteren Ständen zurückgewechselt werden. Auch kann der Code in Branches aufgeteilt werden, wodurch neue experimentelle Funktionen erstellt und getestet werden können und anschließend ins System gemerged oder verworfen werden können, ohne dass das restliche Team auf einen funktionierenden Stand des Codes verzichten muss. Im Rahmen dieser Projektarbeit wurde sich hierbei an die Richtlinien von Git Flow gehalten, welche eine Branch-Strategie vorgeben. Als Ort für die Git-Repositorys wurde GitHub ausgewählt. Zwar bietet die Technische Hochschule Augsburg auch eigene GitLab Instanzen, jedoch können nur Mitarbeiter und Studierende der THA darauf zugreifen. Da ein Kriterium des Projektes auch die Veröffentlichung des Sourcecodes ist, wurde daher der frei zugängliche Anbieter GitHub gewählt.   
+
+### Dateiverwaltung
+
+Größere Dateien, wie Präsentationen, Videos und Bilder, werden in der Nextcloud abgespeichert. Die Technische Hochschule Augsburg bietet bereits eine Nextcloud Instanz für alle Mitarbeiter und Studierende an, somit bietet sich die Cloudspeicher-Lösung als ideales Werkzeug zum gemeinsamen Arbeiten an großen Dateien an. 
+
+### Dokumentation
+
+Um die Technische Dokumentation zu verfassen, wurde die Software MKDocs mit dem Material Theme ausgewählt. Das Dokumentationstool MKDocs nimmt in Markdown verfasste Dateien entgegen und erstellt daraus automatisch Websites. Zusätzlich können mit dem with-pdf Plugin auch PDFs als Exportformat gewählt werden. Durch die Verwendung der Markdown-Syntax wird der Autor gezwungen, eine genormte Formatierung einzuhalten und es wird sichergestellt, dass beispielsweise Überschriften über das komplette Dokument hinweg einheitlich dargestellt werden. Die Autoren können sich somit mehr mit dem Inhalt auseinandersetzen und müssen sich keine Gedanken über das Layout machen. 
