@@ -1,13 +1,21 @@
 # Teamorganisation
 
 ## Kommunikation  
-**Benjamin Klaric**
+**Benjamin Klaric**  
 
-### Einleitung  
+Die Zwischenkommunikation unter Teammitgliedern in dem Projekt und mit der Kunde ist sehr wichtig und wird auch so bei diesem Projekt gestaltet. Dafür werden viele Methoden und dazu auch Programme benutzt, um die Kommunikation zwischen den Teammitgliedern und die Kommunikation mit der Kunde effektiv und effizient zu halten.  
 
-Die Zwischenkommunikation unter Teammitgliedern in dem Projekt ist sehr wichtig und wird auch so bei diesem Projekt gestaltet. Dafür werden viele Programme benutzt, um die Kommunikation zwischen den Teammitgliedern und die Kommunikation mit den Kunden effektiv und effizient zu halten. Die verwendeten Programme werden in folgenden Unterkapiteln erwähnt und ausführlicher erklärt.  
+### Interne Kommunikation  
 
+Die Kommunikation zwischen Teammitgliedern wurde als ein wichtiger Punkt genommen und dementsprechend geschätzt.  
+Es wurden wöchentliche Treffen gestaltet, sowohl online als auch vor Ort, aber auch hybrid. Der Zweck der wöchentlichen Treffen liegt darin, dass jedes Teammitglied eine Chance hat, den jetzigen Stand zu erwähnen, was momentan gut läuft und wo die aktuellen Probleme liegen, zu erwähnen und die Gedanken mit anderen Teammitgliedern gegenseitig auszutauschen. Meistens wurden so neue Ideen oder Lösungsvorschläge herausgefunden.  
+Genauso bieten die wöchentlichen Treffen eine Möglichkeit, den gesamten Stand des Projekts zu sehen und dazu die problematischen bzw. unproblematischen Bereiche zu entdecken, wo man den anderen Teammitgliedern helfen soll.  
 
+### Externe Kommunikation  
+
+Neben der internen Kommunikation wurde auch die wöchentliche Besprechung mit dem Kunden hochgehalten.  
+Diese Meetings sind wichtig, um die neuen Ideen für den Kunden darzustellen oder sich gegenseitig Fragen auszutauschen, um einen besseren Einblick in die Bedürfnisse des Kunden zu erhalten.  
+Der Zweck dieser Meetings wurde sich auch in möglichen Änderungen der angefragten Wünsche von der Kundenseite geäußert. Es ist möglich, dass sich die Anfragen des Kunden ändern und es besteht auch die Möglichkeit, durch diese Meetings, die neuen Anfragen oder Anregungen zeitgleich anzunehmen.  
 
 ## Organisation  
 **Ahmet Emirhan Göktas**
@@ -31,7 +39,7 @@ Innerhalb des Projektteams, welches aus sechs Personen besteht, wurden zusätzli
 
 Table: Tabelle 4.1: Die IMV-Matrix der Projektarbeit: I: Informierend, M: Mitarbeitend, V: Verantwortlich { #_tab_4_1 }
 
-|Team|Benjamin Klarić|Ahmet Emirhan Göktas|Jannis Gröger|Julia Reuter|Mario Wegmann|Staša Lukić|
+|Team|Benjamin<br>Klarić|Ahmet<br>Emirhan<br>Göktas|Jannis<br>Gröger|Julia<br>Reuter|Mario<br>Wegmann|Staša<br>Lukić|
 |-|-|-|-|-|-|-|
 |Hardware|V||||M|M|
 |Firmware||V|M|M|M|M|
@@ -103,31 +111,32 @@ Die strukturierte Definition der Arbeitspakete und die präzise Planung des Zeit
 
 Die detaillierten Arbeitspakete und der vollständige Zeitplan sind in den angehängten PDF-Dokumenten zu finden, die eine vertiefte Einsicht in die Projektplanung und -durchführung bieten.
 
+
 ## Budgetplan  
 **Benjamin Klaric**  
 
 Das Budget wurde anfangs des Projekts fest vorgegeben, wobei pro Teammitglied 50€ vergeben werden. Mit sieben Mitgliedern wurde für das Projekt 350€ vorgerechnet. Das Budget muss dann sinnvoll zwischen Bereichen verteilt sein.  
 Da bei dem Projekt einzige Kosten in dem Hardwarebereich vorkommen, da für das Projekt nur Open-Source-Software verwendet wird, wurde nur für diesen Bereich die Budgetverteilung geplant. Am Anfang des Projekts wurden ungefähr die Kosten geschätzt und die Entwicklung von Kosten, also ob man für bestimmte Ressourcen genau den geplanten Budgetteil verwendet hat oder mehr, bzw. weniger, wurde gefolgt.  
-Die Budgetplanung am Anfang des Projekts ist auf [Abbildung 4.2](#_abb_4_2) zu sehen.  
+Die Budgetplanung am Anfang des Projekts ist auf [Abbildung 4.1](#_abb_4_1) zu sehen.  
 
-Figure: Abbildung 4.2: Geschätzte Budgetverteilung am Anfang des Projekts { #_abb_4_2 }
+Figure: Abbildung 4.1: Geschätzte Budgetverteilung am Anfang des Projekts { #_abb_4_1 }
 
-![](img/ProjektManagement/Budget_Anfang.png){ width=80% }
+![](img/ProjektManagement/Budget_Anfang.png){ width=40% }
 
 Dort ist zu sehen, dass für manche, bzw. fast alle Ausgaben schon eine Ressource oder Grund von diesen Kosten angegeben steht. Natürlich sind das nur die geschätzten Kosten, allerdings sollte man die geschätzten Kosten im Blick haben.  
-Im Laufe des Projekts wurden jedoch manche Kosten überschritten und manche unterschritten. Dazu werden alle Kosten in eine andere Tabelle eingetragen, wo jedes Teammitglied einen Überblick hatte, sodass die Situation mit Überschreitung des Budgets nicht passieren würde. Die Tabelle ist auf [Abbildung 4.3](#_abb_4_3) dargestellt.  
+Im Laufe des Projekts wurden jedoch manche Kosten überschritten und manche unterschritten. Dazu werden alle Kosten in eine andere Tabelle eingetragen, wo jedes Teammitglied einen Überblick hatte, sodass die Situation mit Überschreitung des Budgets nicht passieren würde. Die Tabelle ist auf [Abbildung 4.2](#_abb_4_2) dargestellt.  
 
-Figure: Abbildung 4.3: Tabelle zum Eintragen der Kosten { #_abb_4_3 }
+Figure: Abbildung 4.2: Tabelle zum Eintragen der Kosten { #_abb_4_2 }
 
-![](img/ProjektManagement/Budget_Verlauf.png){ width=80% }
+![](img/ProjektManagement/Budget_Verlauf.png){ width=60% }
 
 In der Tabelle wurde auch der Status der Ressourcen verfolgt mit einem Status, wobei momentan alle auf *geliefert* stehen, wurden aber als *nicht bestellt*, *bestellt* und *geliefert* gekennzeichnet.  
 
-Am Ende des Projekts hat man natürlich einen klaren Überblick von allen Kosten und kann davon einen Vergleich ausziehen. In Bezug auf [Abbildung 4.2](#_abb_4_2) wurden die tatsächlichen Kosten mit den geschätzten verglichen und dabei die Differenz dargestellt. Das ist auf [Abbildung 4.4](#_abb_4_4) zu sehen.  
+Am Ende des Projekts hat man natürlich einen klaren Überblick von allen Kosten und kann davon einen Vergleich ausziehen. In Bezug auf [Abbildung 4.1](#_abb_4_1) wurden die tatsächlichen Kosten mit den geschätzten verglichen und dabei die Differenz dargestellt. Das ist auf [Abbildung 4.3](#_abb_4_3) zu sehen.  
 
-igure: Abbildung 4.4: Ganze Budgetverteilung am Ende des Projekts { #_abb_4_4 }
+Figure: Abbildung 4.3: Ganze Budgetverteilung am Ende des Projekts { #_abb_4_3 }
 
-![](img/ProjektManagement/Budget_Ende.png){ width=80% }
+![](img/ProjektManagement/Budget_Ende.png){ width=60% }
 
 Man kann deutlich erkennen, dass für einige Ressourcen weniger Budget bereitgestellt wurde, während für andere mehr. Dadurch ist man letztlich knapp unter dem Gesamtbudget geblieben, und die Budgetplanung hat sich als eine gute Entscheidung festgestellt.  
 
