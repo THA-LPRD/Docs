@@ -140,10 +140,16 @@ Figure: Abbildung 4.6.1: Zeitliche Aufteilung der Arbeitspakete { #_abb_4.6.1 }
 
 ![](img/Belastung.png){ width=80% }
 
+Um eine Übersicht der bevorstehenden Belastung des Teams zu erhalten, wurden in Abb. 4.6.1 alle Arbeitspakete pro Kalenderwoche aufgeführt. Sichtbar wird hier unter anderem auch die Dauer der einzelnen Pakete, sodass im Notfall auch ein Kapazitätsmangel durch Schwerpunktsetzung ausgeglichen werden kann. Besonders in Kalenderwoche 12, 16 und 17 war dies der Fall.
+
+
 Figure: Abbildung 4.6.2: Belastungsdiagramm der einzelnen Teammitglieder { #_abb_4.6.2 }
 
 ![](img/Kapazität.png){ width=90% }
 
+Das Belastungsdiagramm aus Abb. 4.6.2 zeigt die tatsächliche prozentuale Auslastung aller Teammitglieder pro Kalenderwoche. Das Ziel der Projektleitung war hier alle Mitglieder möglichst gleichmäßig auszulasten. Dies ist weitestgehend gelungen, wobei in KW 16 19 Arbeitspakete gleichzeitig bearbeitet werden mussten, sodass hier eine maximale Arbeitslast entstand. 
+
+Allgemein lässt jedoch sich sagen, dass das Team als Ressource effizient genutzt wurde, ohne die vorhanden Kapazitätem zu überschreiten.
 
 ## Software  
 **Mario Wegmann**
