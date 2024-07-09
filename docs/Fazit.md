@@ -1,11 +1,11 @@
 # Fazit
 **Jannis Gröger**
 
-## Zusammenfassung
+## Umsetzung der Implementierung
 
-Das Projekt zur Entwicklung eines Low Power Raumdisplays war in mehrern Hinsichten ein klarer Erfolg. Das Hauptziel, eine energieeffizientes Informationsanzeige zu entwickeln, wurde erfüllt und kann, wie in den Anforderungen vgl [Kapitel 5.3](Systemkonzept.md#potentielle-einsatzgebiete-der-low-power-raumanzeige) beschrieben, nicht nur an Hochschulen, sondern auch in Firmen, an Messeständen und in Privathaushalten genutzt werden. 
+Das Projekt zur Entwicklung eines Low Power Raumdisplays war in mehrern Hinsichten ein klarer Erfolg. Das Hauptziel, eine energieeffizientes Informationsanzeige zu entwickeln, wurde erfüllt und kann, wie in den Anforderungen vgl [Kapitel 5.3](Systemkonzept.md#potentielle-einsatzgebiete-der-low-power-raumanzeige) beschrieben, nicht nur an Hochschulen, sondern auch in Firmen, an Messeständen und in Privathaushalten genutzt werden.
 
-Das Display zeichnet sich mit einer langen Akkuklaufzeit und sehr geringer Leistungsaufnahme durch die durchdachte Auswahl stromsparender Komponenten wie das E-Paper Display und softwareseitige Hardwareverwaltung wie die Implementierung des Deepsleeps. Durch die Aufbauen eines eigenes WLAN Acces Points des Mikrocontrollers und die Stromversorgung per Akku ist das Displaymodul komplett autark von Stromnetz und Netzwerk, was den Einsatzbereich und die Anwendungsszenarien deutlich erweitert.  
+Das Display zeichnet sich mit einer langen Akkuklaufzeit und sehr geringer Leistungsaufnahme durch die durchdachte Auswahl stromsparender Komponenten wie das E-Paper Display und softwareseitige Hardwareverwaltung wie die Implementierung des Deepsleeps. Durch das Aufbauen eines eigenes WLAN Acces Points des Mikrocontrollers und die Stromversorgung per Akku ist das Displaymodul komplett autark von Stromnetz und Netzwerk, was den Einsatzbereich und die Anwendungsszenarien deutlich erweitert.  
 
 Zudem lässt sich die Raumanzeige durch den frontseitigen Benutzerknopf und die implementierte Website sehr leicht steuern und einfach bedienen. Die Verwaltung mehrerer Displays im Server-Modus geschieht ebenfalls über eine Website, die sich in der Struktur sehr ähnlich sind, was die Benutzerfreundlichkeit steigert.
 
@@ -14,6 +14,16 @@ Das schlanke und durchdachte Design des Gehäuses ermöglicht nicht nur eine ein
 Insgesamt bietet das entwickelte Low Power Raumdisplay eine zukunftsweisende Lösung für verschiedene Einsatzszenarien, von Bürogebäuden über öffentliche Einrichtungen bis hin zu privaten Haushalten. Es trägt zur Reduzierung des Energieverbrauchs bei und unterstützt damit nachhaltige und umweltfreundliche Technologien.
 
 Abschließend kann festgehalten werden, dass die Projektarbeit nicht nur zur Weiterentwicklung technischer Kompetenzen beigetragen hat, sondern auch einen praktischen Nutzen bietet, der im Einklang mit den heutigen Anforderungen an Energieeffizienz und Benutzerfreundlichkeit steht. Die positiven Testergebnisse und das Feedback aus ersten praktischen Anwendungen bestätigen den Erfolg des Projekts und zeigen das Potential für eine breite Markteinführung.
+
+
+## Arbeit im Projektteam
+
+Neben den technischen Herausforderungen bei der Umsetzung des Projekts treten auch Herausforderungen beim Teammanagement und bei der Projektorganisation auf. Die zu Beginn verteilten Rollen im Team selbst wurden im Laufe des Projekts verändert und an eine Änderungen der Zuständigkeiten angepasst. Die Organisation des Hardware-, des Firmware- und des Softwareteams durch die jeweiligen Teamleiter sowie die Organisation der gesamten Projektgruppe und die Absprache mit dem Kunden verliefen reibungslos und ohne schwerwiegende Probleme.
+
+Die regelmäßigen Treffen als internes Projektteam sowie der ständige Austausch mit dem Kunden halfen nicht nur, das Projekt mit den Zielen und Ansprüchen auf aktuelle Änderungen anzugleichen, sondern dienten auch der Orientierung und einer strukturierten Aufgabenverteilung für alle Teammitglieder. Durch die vorher genannte Unterstützung durch Software und spezielle Techniken konnten Organisation und Kommunikation vereinfacht werden, was maßgeblich zum Projekterfolg beitrug.
+
+Durch eine späte Einigung zwischen Projektgruppe und Kunden pber die endgültigen Anforderungen an das Produktes, konnte mit der Umsetzung nicht zum geplanten Zeitpunkt begonnen werden.
+Dieser Aspekt ebenso wie der Ausfall eines Teammitgliedes, was eine Umverteilung der Aufgaben und neue Zuständigkeiten für die Teammitglieder zur Folge hatte, führten dazu, dass der Zeitplan nicht eingehalten werden konnte. Der Abschluss des Projektes fand dennoch pünktlich statt und auch die geforderten Produktleistungen konnten im Zeitrahmen des Projekts erfüllt werden. 
 
 ## Ausblick
 
