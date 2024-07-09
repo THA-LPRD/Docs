@@ -7,34 +7,10 @@
 
 Die Zwischenkommunikation unter Teammitgliedern in dem Projekt ist sehr wichtig und wird auch so bei diesem Projekt gestaltet. Dafür werden viele Programme benutzt, um die Kommunikation zwischen den Teammitgliedern und die Kommunikation mit den Kunden effektiv und effizient zu halten. Die verwendeten Programme werden in folgenden Unterkapiteln erwähnt und ausführlicher erklärt.  
 
-### Notion  
 
-Für Notizen, das Erstellen von Protokollen und die Erstellung einer Zeitleiste wurde Notion verwendet. Dieses Programm wurde aufgrund seiner Flexibilität und Zugänglichkeit ausgewählt. Dank dieser großen Flexibilität erlaubt Notion das Einbinden verschiedener Plugins, wie Gantt-Diagramme und viele andere. Zudem wird in Notion der Text mit einer Kombination von Schreibformaten formatiert. Man kann in Notion mit Markdown-Syntax schreiben oder die verschiedenen Befehle von Notion verwenden. Dies bietet viele Möglichkeiten, schnell unterschiedliche Elemente zu erstellen, wie Tabellen, Code-Blöcke usw.  
-Die Tatsache, dass dieses Programm sowohl unter verschiedenen Betriebssystemen läuft, als auch über einen Browser erreichbar ist, macht es besonders attraktiv.  
-Der Vorteil von Notion besteht darin, dass man einen Arbeitsbereich erschaffen kann, auf den mehrere Personen gleichzeitig zugreifen und dort arbeiten können, ohne dass es zu irgendwelchen Merge-Konflikten kommt. Notion wird hauptsächlich verwendet, um schnell Notizen zu erstellen, beispielsweise um Messversuche zu beschreiben oder Protokolle zu führen. Außerdem wurde eine Zeitleiste erstellt, um die Aufgaben über die Zeit zu verteilen.  
-
-### Nextcloud
-
-Nextcloud ist die Hochschule eigene kostenlose Cloud; diese wurde genutzt, um wichtige Dokumente zu sichern und für später einfach zugänglich zu machen. Dort wurde auch gleichzeitig auf Dokumenten gearbeitet, da man auch Dokumente, wie Spreadsheets, erstellen kann.  
-
-### Zoom, Discord und Whatsapp
-
-Zoom, Discord und WhatsApp sind die Programme, die man für direkte Kommunikation genutzt hat.  
-Über WhatsApp wurden schnell Nachrichten zwischen Teammitgliedern ausgetauscht, wie Fragen, Termine vereinbaren oder Ähnliches.  
-Zoom und Discord wurden für wöchentliche Meetings genutzt, aber auch für längere Arbeitssessions. Zoom war grundsätzlich für wöchentliche Meetings mit der Kunde benutzt und Discord für online oder hybride Arbeit zwischen Teammitgliedern, aber auch für Teammeetings.  
-
-### Github  
-
-Um den Programmcode in der Cloud zu speichern und zugänglich zu machen, wurde GitHub verwendet. Auf GitHub kann man ein Repository erstellen, in dem verschiedene Branches angelegt werden können, sodass mehrere Teammitglieder am gleichen Code arbeiten können, ohne sich gegenseitig mit Merge-Konflikten und Ähnlichem zu stören.  
-Mithilfe von Commits ist es möglich, eine Versionskontrolle des Programmcodes zu haben, wobei die älteren Commits aller Branches auf dem Server erreichbar sind. Diese können einfach mit dem aktuellen Stand des Branches verglichen werden, um mögliche Fehler, die in der Weiterarbeit auftreten, zu identifizieren.  
-Die Issues erleichtern die Organisation von Fehlern, indem sie Probleme mit dem Code markieren und für alle sichtbar machen.  
-
-### MkDocs  
-
-Um die technische Dokumentation zu erstellen, wurden MkDocs in Verbindung mit GitHub und Docker verwendet. Der Grund dafür ist, dass man Versionskontrolle hat und nicht alle Plugins auf dem eigenen Rechner installieren muss, da alles innerhalb eines Docker-Containers läuft. Die Dokumentation wird mithilfe von Markdown strukturiert, und es wird eine Webseite erstellt, auf der die Dokumentation zugänglich ist.  
-Ein Vorteil von MkDocs ist, dass man das Programm mithilfe der Datei mkdocs.yml sehr einfach anpassen und gewünschte Erweiterungen schnell hinzufügen kann. Damit lässt sich die Formatierung der Dokumentation personalisieren. Zum Beispiel erlaubt das Plugin *with-pdf*, die Dokumentation von der Webseite als PDF zu exportieren.  
 
 ## Organisation  
+
 
 
 ## Rollenaufteilung  
@@ -173,11 +149,11 @@ Zum direkten Austausch in der Gruppe oder mit einzelnen Gruppenmitgliedern nutze
 
 ### Notizen
 
-Um schnelle Notizen zu erstellen und diese auch gemeinsam parallel zu verfassen, wird das Tool Notion verwendet. In Notion kann ein Workspace eingerichtet und Mitglieder dort eingeladen werden. In diesem Workspace können schnell neue Seiten erstellt werden, welche alle Mitglieder live gemeinsam bearbeiten können. Auch können in einer Seite einfach Links und Anhänge hinzugefügt und Personen im Text erwähnt werden. Durch diese flexible und schnelle Arbeitsweise eignet sich Notion, um Zwischenergebnisse, Erkenntnisse und Protokolle festzuhalten.  
+Um schnelle und flexieble Notizen zu erstellen und diese auch gemeinsam parallel zu verfassen, wird das Tool Notion verwendet. In Notion können Arbeitsbereiche eingerichtet und Mitglieder dort eingeladen werden. In diesen Arbeitsbereichen können schnell neue Seiten erstellt werden, welche alle Mitglieder live gemeinsam bearbeiten können. Auch können in einer Seite einfach Links und Anhänge hinzugefügt und Personen im Text erwähnt werden. Durch diese flexible und schnelle Arbeitsweise eignet sich Notion, um Zwischenergebnisse, Erkenntnisse und Protokolle festzuhalten.  
 
 ### Codeverwaltung
 
-Der Sourcecode des Projekts wird mit der Versionsverwaltung Git verwaltet. Git bietet Unterstützung, um als Team an einer Codebase zu arbeiten. So werden Zwischenstände von Code, sogenannte Commits, konsequent getrackt und es kann nachträglich zu älteren Ständen zurückgewechselt werden. Auch kann der Code in Branches aufgeteilt werden, wodurch neue experimentelle Funktionen erstellt und getestet werden können und anschließend ins System gemerged oder verworfen werden können, ohne dass das restliche Team auf einen funktionierenden Stand des Codes verzichten muss. Im Rahmen dieser Projektarbeit wurde sich hierbei an die Richtlinien von Git Flow gehalten, welche eine Branch-Strategie vorgeben. Als Ort für die Git-Repositorys wurde GitHub ausgewählt. Zwar bietet die Technische Hochschule Augsburg auch eigene GitLab Instanzen, jedoch können nur Mitarbeiter und Studierende der THA darauf zugreifen. Da ein Kriterium des Projektes auch die Veröffentlichung des Sourcecodes ist, wurde daher der frei zugängliche Anbieter GitHub gewählt.   
+Der Sourcecode des Projekts wird mit der Versionsverwaltung Git verwaltet. Git bietet Unterstützung, um als Team an einer Codebase zu arbeiten. So werden Zwischenstände von Code, sogenannte Commits, konsequent getrackt und es kann nachträglich zu älteren Ständen zurückgewechselt werden. Auch kann der Code in Branches aufgeteilt werden, wodurch neue experimentelle Funktionen erstellt und getestet werden können und anschließend ins System gemerged oder verworfen werden können, ohne dass das restliche Team auf einen funktionierenden Stand des Codes verzichten muss. Im Rahmen dieser Projektarbeit wurde sich hierbei an die Richtlinien von Git Flow gehalten, welche eine Branch-Strategie vorgeben. Zudem können mit Issues Fehler im Sourcecode erkenntlich gemacht, und deren Behebung koordiniert werden. Als Ort für die Git-Repositorys wurde GitHub ausgewählt. Zwar bietet die Technische Hochschule Augsburg auch eigene GitLab Instanzen, jedoch können nur Mitarbeiter und Studierende der THA darauf zugreifen. Da ein Kriterium des Projektes auch die Veröffentlichung des Sourcecodes ist, wurde daher der frei zugängliche Anbieter GitHub gewählt. 
 
 ### Dateiverwaltung
 
@@ -185,4 +161,4 @@ Größere Dateien, wie Präsentationen, Videos und Bilder, werden in der Nextclo
 
 ### Dokumentation
 
-Um die Technische Dokumentation zu verfassen, wurde die Software MKDocs mit dem Material Theme ausgewählt. Das Dokumentationstool MKDocs nimmt in Markdown verfasste Dateien entgegen und erstellt daraus automatisch Websites. Zusätzlich können mit dem with-pdf Plugin auch PDFs als Exportformat gewählt werden. Durch die Verwendung der Markdown-Syntax wird der Autor gezwungen, eine genormte Formatierung einzuhalten und es wird sichergestellt, dass beispielsweise Überschriften über das komplette Dokument hinweg einheitlich dargestellt werden. Die Autoren können sich somit mehr mit dem Inhalt auseinandersetzen und müssen sich keine Gedanken über das Layout machen. 
+Um die Technische Dokumentation zu verfassen, wurde die Software MKDocs mit dem Material Theme ausgewählt. Das Dokumentationstool MKDocs nimmt in Markdown verfasste Dateien entgegen und erstellt daraus automatisch Websites. Zusätzlich können mit dem with-pdf Plugin auch PDFs als Exportformat gewählt werden. Durch die Verwendung der Markdown-Syntax wird der Autor gezwungen, eine genormte Formatierung einzuhalten und es wird sichergestellt, dass beispielsweise Überschriften über das komplette Dokument hinweg einheitlich dargestellt werden. Die Autoren können sich somit mehr mit dem Inhalt auseinandersetzen und müssen sich keine Gedanken über das Layout machen. Zudem wurden die MkDocs Umgebung in Docker Devcontainer realisiert, somit musste die Umgebung nicht händisch auf den Computern der Autoren installiert werden, sondern alle konnten auf der gleichen virtuelle Umgebung arbeiten. 
