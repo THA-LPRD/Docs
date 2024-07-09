@@ -10,11 +10,21 @@ Die Zwischenkommunikation unter Teammitgliedern in dem Projekt ist sehr wichtig 
 
 
 ## Organisation  
+**Ahmet Emirhan Göktas**
 
+Das Projekt begann mit der Entgegennahme und Analyse des Lastenhefts vom Kunden. Daraus wurde ein detailliertes Pflichtenheft formuliert, welches als zentrale Grundlage für die weitere Projektplanung dient. In Zusammenarbeit mit dem Kunden wurden spezifische Kriterien festgelegt und abgestimmt, um die Anforderungen und Erwartungen präzise zu erfüllen.
 
+Im Anschluss daran wurden umfassende Planungen in den Bereichen Zeit, Kapazität und Budget durchgeführt. Diese Planungen sind entscheidend für eine strukturierte und effiziente Umsetzung des Projekts:
+
+**Zeitplanung:** Sicherstellung der termingerechten Erreichung aller Meilensteine, wobei alle Projektphasen und -schritte zeitlich koordiniert und in einem detaillierten Zeitplan festgehalten wurden.
+
+**Kapazitätsplanung:** Effiziente Nutzung der Ressourcen, um Engpässe zu vermeiden.
+
+**Budgetplanung:** Verwaltung der finanziellen Mittel innerhalb der festgelegten Grenzen.
+
+Die nachfolgenden Kapiteln geben eine detaillierte Darstellung der einzelnen Aspekte unserer Planung und Umsetzung.
 
 ## Rollenaufteilung  
-
 **Mario Wegmann**
 
 Innerhalb des Projektteams, welches aus sechs Personen besteht, wurden zusätzlich Unterteams erstellt, welche jeweils einen Schwerpunkt zugewiesen bekommen. Für diese Projektarbeit haben sich die drei Schwerpunkte Hardware, Firmware und Websoftware ergeben. In der [Tabelle 4.1](#_tab_4_1) ist eine passende IMV-Matrix einsehbar. 
@@ -29,14 +39,12 @@ Table: Tabelle 4.1: Die IMV-Matrix der Projektarbeit: I: Informierend, M: Mitarb
 
 Durch das Aufteilen in Unterteams wird eine effizientere Arbeitsweise ermöglicht. Zum einen können sich Mitglieder bei der Recherche ganz auf die Ihnen zugewiesenen Schwerpunkte konzentrieren. Und zum anderen müssen viele Entscheidungen nicht im kompletten Team abgestimmt werden. Dabei ist es wichtig, dass sich die Teams untereinander regelmäßig austauschen. In diesen wiederkehrenden Meetings werden dann der Stand und die Kenntnisse ausgetauscht, sowie sichergestellt, dass die Schnittstellen und Ziele der Einzelbereiche weiterhin deckungsgleich sind. 
 
-
-## Arbeitspakete und Zeitplanung
+## Arbeitspakete
+**Alihan Sari**
 
 Im Rahmen unseres Projekts wurde eine umfassende Planung durchgeführt, die sowohl die Aufteilung der Arbeitspakete, als auch die Erstellung eines detaillierten Zeitplans umfasst.
 
 ### Zusammenfassung der Arbeitspakete
-
-#### Strukturierung der Arbeitspakete
 
 Für die strukturierte Planung und Umsetzung des Projekts wurden die Arbeitspakete in zwei Hauptkategorien unterteilt: **Hardware** und **Software**. Jede dieser Hauptkategorien wurde in spezifische Untergruppen unterteilt, die jeweils unterschiedliche Aspekte des Projekts abdecken. Die Struktur und Zielsetzung der Arbeitspakete wurden grob unten aufgelistet. Aufgrund des Umfangs der Arbeitspakete, ist die Liste in der separaten Datei Arbeitspakete.xlsx ausgelagert worden. :
 
@@ -63,9 +71,9 @@ Die Arbeitspakete wurden unter Berücksichtigung der Projektziele und der erford
   - **Firmware:** Entwicklung der Firmware zur Sicherstellung der Kommunikation zwischen dem Server und dem Display sowie die Vernetzung der Firmware-Komponenten.
   - **Webapp:** Unterteilung in Backend für Datenbankmanagement und Frontend für die Benutzeroberfläche, um die Benutzerinteraktion und Datenverarbeitung zu ermöglichen.
 
-#### Zeitplanung
+## Zeitplanung
 
-##### Gantt-Diagramm
+### Gantt-Diagramm
 
 Das **Gantt-Diagramm** ist das primäres Werkzeug zur zeitlichen Planung und Überwachung des Projektfortschritts. Es stellt die Aufgaben auf einer Zeitachse dar und zeigt die geplanten Start- und Endtermine sowie Meilensteine im Projektverlauf.
 
@@ -77,7 +85,7 @@ Das **Gantt-Diagramm** ist das primäres Werkzeug zur zeitlichen Planung und Üb
 
 Das Gantt-Diagramm zeigt die Zeitplanung für die einzelnen Arbeitspakete sowie deren Abhängigkeiten und Meilensteine.
 
-##### Netzplan
+### Netzplan
 
 Der **Netzplan** wurde verwendet, um die Abhängigkeiten zwischen den Aufgaben zu visualisieren und den kritischen Pfad zu identifizieren. Er half uns dabei, die logischen Beziehungen zwischen den Aufgaben zu verstehen und die Projektstruktur zu optimieren.
 
@@ -94,7 +102,6 @@ Aufgrund der Größe der Pläne, sind das GANTT-Diagramm und der Netzplan in GAN
 Die strukturierte Definition der Arbeitspakete und die präzise Planung des Zeitplans waren entscheidend für den Erfolg des Projekts. Durch die Unterteilung in Hardware- und Software-Komponenten konnten wir die verschiedenen Projektbereiche gezielt angehen. Die Verwendung des Gantt-Diagramms ermöglichte eine detaillierte zeitliche Planung und Fortschrittsüberwachung, während der Netzplan dazu diente, die Aufgabenabfolgen zu verstehen und den kritischen Pfad zu identifizieren.
 
 Die detaillierten Arbeitspakete und der vollständige Zeitplan sind in den angehängten PDF-Dokumenten zu finden, die eine vertiefte Einsicht in die Projektplanung und -durchführung bieten.
-
 
 ## Budgetplan  
 **Benjamin Klaric**  
