@@ -1,37 +1,38 @@
 # Teamorganisation
 
 ## Kommunikation  
+**Benjamin Klaric**
 
-### Einleitung
-Für das Projekt wurden verschiedenste Programme genutzt, um eine gute Kommunikation und Organisation innerhalb der Teammitglieder zu halten. Für eine effektive und effiziente Kommunikation und Organisation wurde für jeden Bereich ein Programm verwendet, die folgend angesprochen wird.  
+### Einleitung  
+
+Die Kommunikation in dem Projekt ist sehr wichtig und wird auch so bei diesem Projekt gestaltet. Dafür werden viele Programme benutzt, um die Kommunikation zwischen den Teammitgliedern und die Kommunikation mit den Kunden effektiv und effizient zu halten. Die verwendeten Programme werden in folgenden Unterkapiteln erwähnt und ausführlicher erklärt.  
 
 ### Notion
 
-Für Notizen, Protokolle, Timelines und Dokumentierungen benutzen wir Notion. Dieses Programm erlaubt es uns schnell und einfach verschiedenste Sachen aufzuschreiben, egal ob es sich um eine Tabelle, Aufgaben, Timeline oder anderes handelt.  
-Der Vorteil von Notion ist, dass man einen Workspace erschafft, den man sich wie ein großes Dokument vorstellen kann, aber mehrere Leute können gleichzeitig auf dieses Dokument zugreifen. Dies nutzen wir, um eine Timeline mit wichtigen Terminen oder ein Gantt Chart für das Projekt aufzubauen, wo wir sehen können, wie wir im Zeitplan stehen, sind wir einem Arbeitspunkt der Zeit voraus oder zu spät. Updates können wir uns aufschreiben, um uns gegenseitig den Stand der Dinge zu kommunizieren ohne auf eine Antwort warten zu müssen. 
+Für Notizen, das Erstellen von Protokollen und die Erstellung einer Zeitleiste wurde Notion verwendet. Dieses Programm wurde aufgrund seiner Flexibilität und Zugänglichkeit ausgewählt. Dank dieser großen Flexibilität erlaubt Notion das Einbinden verschiedener Plugins, wie Gantt-Diagramme und viele andere. Zudem wird in Notion der Text mit einer Kombination von Schreibformaten formatiert. Man kann in Notion mit Markdown-Syntax schreiben oder die verschiedenen Befehle von Notion verwenden. Dies bietet viele Möglichkeiten, schnell unterschiedliche Elemente zu erstellen, wie Tabellen, Code-Blöcke usw.  
+Die Tatsache, dass dieses Programm sowohl unter verschiedenen Betriebssystemen läuft, als auch über einen Browser erreichbar ist, macht es besonders attraktiv.  
+Der Vorteil von Notion besteht darin, dass man einen Arbeitsbereich erschaffen kann, auf den mehrere Personen gleichzeitig zugreifen und dort arbeiten können, ohne dass es zu irgendwelchen Merge-Konflikten kommt. Notion wird hauptsächlich verwendet, um schnell Notizen zu erstellen, beispielsweise um Messversuche zu beschreiben oder Protokolle zu führen. Außerdem wurde eine Zeitleiste erstellt, um die Aufgaben über die Zeit zu verteilen.  
 
 ### Nextcloud
 
-Nextcloud ist die Hochschule eigene kostenlose Cloud, diese nutzen wir, um wichtige Dokumente zu sichern und für später einfach zugänglich zu machen.
+Nextcloud ist die Hochschule eigene kostenlose Cloud; diese wurde genutzt, um wichtige Dokumente zu sichern und für später einfach zugänglich zu machen. Dort wurde auch gleichzeitig auf Dokumenten gearbeitet, da man auch Dokumente, wie Spreadsheets, erstellen kann.  
 
 ### Zoom, Discord und Whatsapp
 
-Zoom, Discord und WhatsApp waren unsere Programme für eine direkte Kommunikation.  
-Über WhatsApp kann man schnell ein Projektmitglied etwas fragen, Termine vereinbaren oder anderes.  
-Zoom und Discord wurden für wöchentliche Meetings genutzt, aber auch für längere Arbeitssessions. Der Vorteil hierbei liegt, dass man von verschiedensten Orten eine direkte Kommunikation aufbauen kann und so gleichzeitig miteinander weiter arbeiten kann.
+Zoom, Discord und WhatsApp sind die Programme, die man für direkte Kommunikation genutzt hat.  
+Über WhatsApp wurden schnell Nachrichten zwischen Teammitgliedern ausgetauscht, wie Fragen, Termine vereinbaren oder Ähnliches.  
+Zoom und Discord wurden für wöchentliche Meetings genutzt, aber auch für längere Arbeitssessions. Zoom war grundsätzlich für wöchentliche Meetings mit der Kunde benutzt und Discord für online oder hybride Arbeit zwischen Teammitgliedern, aber auch für Teammeetings.  
 
 ### Github  
 
-Um unseren Programmcode miteinander zuteilen, nutzen wir Github. Github lässt mehrere Personen an einem Programmcode schreiben, mithilfe von sehr einfachen und schlauen Verfahren.  Gedownloadete Projekte von Github können direkt bearbeitet werden. Branches lassen mehrere Personen an einem Projekt arbeiten. Wir nutzen einen Dev Branch von Main wo wir persönliche Feature-Branche gemerged haben, sobald sie geschrieben und getestet wurden. Sobald das jedes Feature fertig ist und alles auf dem Dev Branch gemerged ist, kann man den Dev Branch auf Main mergen und hat somit einen fertigen Code.  
-
-Commits sind Codeupdates, die man auf die Github "Cloud" hochlädt. Sie erlauben die Möglichkeit ältere Commits anzusehen und mit dem neu geschrieben Code zu vergleichen, dies hat den Vorteil, dass wenn ein Fehler im Code nicht gefunden werden kann, man auch den Stand des älteren Commits wiederzuverwenden.  
-  
-Issues erleichtert die Organisation von Fehler im Code. Github besitzt ein System, das es flexibel erlaubt sogenannte Issues zu eröffnen. Diese Issues werden dann genutzt, um Arbeitspakete zu verfolgen, Probleme anzusprechen oder Feedback zu erhalten.
+Um den Programmcode in der Cloud zu speichern und zugänglich zu machen, wurde GitHub verwendet. Auf GitHub kann man ein Repository erstellen, in dem verschiedene Branches angelegt werden können, sodass mehrere Teammitglieder am gleichen Code arbeiten können, ohne sich gegenseitig mit Merge-Konflikten und Ähnlichem zu stören.  
+Mithilfe von Commits ist es möglich, eine Versionskontrolle des Programmcodes zu haben, wobei die älteren Commits aller Branches auf dem Server erreichbar sind. Diese können einfach mit dem aktuellen Stand des Branches verglichen werden, um mögliche Fehler, die in der Weiterarbeit auftreten, zu identifizieren.  
+Die Issues erleichtern die Organisation von Fehlern, indem sie Probleme mit dem Code markieren und für alle sichtbar machen.  
 
 ### MkDocs  
 
-Für unsere technische Abgabe nutzen wir MkDocs in Verbindung mit Github. MkDocs ist ein benutzerfreundliches Programm, das mithilfe von Markdown gut strukturierte Dokumentationen erstellt. Die MkDocs Dokumentation kann einfach konfiguriert werden, indem man in der Konfigurationsdatei mkdocs.yml gewollte Einstellungen reinschreibt. In dieser Datei können auch Plugins hinzugefügt werden,  einer dieser Plugins ist "with-pdf", die es uns erlaubt, aus der Dokumentation eine PDF zu exportieren.
-
+Um die technische Dokumentation zu erstellen, wurden MkDocs in Verbindung mit GitHub und Docker verwendet. Der Grund dafür ist, dass man Versionskontrolle hat und nicht alle Plugins auf dem eigenen Rechner installieren muss, da alles innerhalb eines Docker-Containers läuft. Die Dokumentation wird mithilfe von Markdown strukturiert, und es wird eine Webseite erstellt, auf der die Dokumentation zugänglich ist.  
+Ein Vorteil von MkDocs ist, dass man das Programm mithilfe der Datei mkdocs.yml sehr einfach anpassen und gewünschte Erweiterungen schnell hinzufügen kann. Damit lässt sich die Formatierung der Dokumentation personalisieren. Zum Beispiel erlaubt das Plugin *with-pdf*, die Dokumentation von der Webseite als PDF zu exportieren.  
 
 ## Organisation  
 
@@ -60,6 +61,32 @@ Diese Timeline kennzeichnet klare Ziele und visualisiert den Plan von Projektanf
 
 
 ## Budgetplan  
+**Benjamin Klaric**  
+
+Das Budget wurde anfangs des Projekts fest vorgegeben, wobei pro Teammitglied 50€ vergeben werden. Mit sieben Mitgliedern wurde für das Projekt 350€ vorgerechnet. Das Budget muss dann sinnvoll zwischen Bereichen verteilt sein.  
+Da bei dem Projekt einzige Kosten in dem Hardwarebereich vorkommen, da für das Projekt nur Open-Source-Software verwendet wird, wurde nur für diesen Bereich die Budgetverteilung geplant. Am Anfang des Projekts wurden ungefähr die Kosten geschätzt und die Entwicklung von Kosten, also ob man für bestimmte Ressourcen genau den geplanten Budgetteil verwendet hat oder mehr, bzw. weniger, wurde gefolgt.  
+Die Budgetplanung am Anfang des Projekts ist auf [Abbildung 4.2](#_abb_4_2) zu sehen.  
+
+Figure: Abbildung 4.2: Geschätzte Budgetverteilung am Anfang des Projekts { #_abb_4_2 }
+
+![](img/ProjektManagement/Budget_Anfang.png){ width=80% }
+
+Dort ist zu sehen, dass für manche, bzw. fast alle Ausgaben schon eine Ressource oder Grund von diesen Kosten angegeben steht. Natürlich sind das nur die geschätzten Kosten, allerdings sollte man die geschätzten Kosten im Blick haben.  
+Im Laufe des Projekts wurden jedoch manche Kosten überschritten und manche unterschritten. Dazu werden alle Kosten in eine andere Tabelle eingetragen, wo jedes Teammitglied einen Überblick hatte, sodass die Situation mit Überschreitung des Budgets nicht passieren würde. Die Tabelle ist auf [Abbildung 4.3](#_abb_4_3) dargestellt.  
+
+Figure: Abbildung 4.3: Tabelle zum Eintragen der Kosten { #_abb_4_3 }
+
+![](img/ProjektManagement/Budget_Verlauf.png){ width=80% }
+
+In der Tabelle wurde auch der Status der Ressourcen verfolgt mit einem Status, wobei momentan alle auf *geliefert* stehen, wurden aber als *nicht bestellt*, *bestellt* und *geliefert* gekennzeichnet.  
+
+Am Ende des Projekts hat man natürlich einen klaren Überblick von allen Kosten und kann davon einen Vergleich ausziehen. In Bezug auf [Abbildung 4.2](#_abb_4_2) wurden die tatsächlichen Kosten mit den geschätzten verglichen und dabei die Differenz dargestellt. Das ist auf [Abbildung 4.4](#_abb_4_4) zu sehen.  
+
+igure: Abbildung 4.4: Ganze Budgetverteilung am Ende des Projekts { #_abb_4_4 }
+
+![](img/ProjektManagement/Budget_Ende.png){ width=80% }
+
+Man kann deutlich erkennen, dass für einige Ressourcen weniger Budget bereitgestellt wurde, während für andere mehr. Dadurch ist man letztlich knapp unter dem Gesamtbudget geblieben, und die Budgetplanung hat sich als eine gute Entscheidung festgestellt.  
 
 
 ## Ressourcenplanung  
