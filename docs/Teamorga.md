@@ -54,19 +54,70 @@ Table: Tabelle 4.1: Die IMV-Matrix der Projektarbeit: I: Informierend, M: Mitarb
 Durch das Aufteilen in Unterteams wird eine effizientere Arbeitsweise ermöglicht. Zum einen können sich Mitglieder bei der Recherche ganz auf die Ihnen zugewiesenen Schwerpunkte konzentrieren. Und zum anderen müssen viele Entscheidungen nicht im kompletten Team abgestimmt werden. Dabei ist es wichtig, dass sich die Teams untereinander regelmäßig austauschen. In diesen wiederkehrenden Meetings werden dann der Stand und die Kenntnisse ausgetauscht, sowie sichergestellt, dass die Schnittstellen und Ziele der Einzelbereiche weiterhin deckungsgleich sind. 
 
 
-## Zeitplan
+## Arbeitspakete und Zeitplanung
 
-Zeitpläne können über verschiedene Arten erstellt werden, es gibt die Gantt-Diagramme, Pfad-Diagramme, Meilensteinziele und weiteres.  
-Wir haben uns für die Gantt-Diagramme entschieden. Gantt-Diagramme erstellen Balken auf einer Timeline mit einem Start- und Enddatum. Diese Balkan können Aufgaben zugewiesen bekommen oder sub Aufgaben / Balken.  
-Zur Organisationen müssen die Balken klar gekennzeichnet werden und einem Plan folgen, sie müssen aufeinander aufbauen.
-Dies können wir in der [Abbildung 4.1](#_abb_4_1) sehen.
+Im Rahmen unseres Projekts wurde eine umfassende Planung durchgeführt, die sowohl die Aufteilung der Arbeitspakete, als auch die Erstellung eines detaillierten Zeitplans umfasst.
 
-Figure: Abbildung 4.1: Timeline Beispiel Projekt { #_abb_4_1 }
+### Zusammenfassung der Arbeitspakete
 
-![](img/PraktischeUndTheoGrund/Timeline.png){ width=100% }
+#### Strukturierung der Arbeitspakete
 
+Für die strukturierte Planung und Umsetzung des Projekts wurden die Arbeitspakete in zwei Hauptkategorien unterteilt: **Hardware** und **Software**. Jede dieser Hauptkategorien wurde in spezifische Untergruppen unterteilt, die jeweils unterschiedliche Aspekte des Projekts abdecken. Die Struktur und Zielsetzung der Arbeitspakete wurden grob unten aufgelistet. Aufgrund des Umfangs der Arbeitspakete, ist die Liste in der separaten Datei Arbeitspakete.xlsx ausgelagert worden. :
 
-Diese Timeline kennzeichnet klare Ziele und visualisiert den Plan von Projektanfang zu Ende. Natürlich ist es schwer genau zusagen, wie lange eine Aufgabe dauern wird zu erledigen, Probleme können auch nicht vorausgesagt werden, dadurch bauen wir am Ende einen Zeitpuffer ein. Dauert eine Aufgabe länger als angegeben, können wir diese Zeit vom Puffer "klauen". Durch die Visualisierung und Struktur können Projektmitglieder ihre Zeit besser einplanen und haben Eigenverantwortung, diese Deadlines zu erreichen, dadurch haben wir einen durchgehenden Fortschritt am Projekt.
+| Hauptkategorie | Unterkategorie | Beschreibung der Aufgaben                                                                 | Beispiele für Aufgaben                                      |
+|----------------|----------------|----------------------------------------------------------------------------------------------|----------------------------------------------------------------|
+| **Hardware**   | **Mikrocontroller**  | Auswahl des Mikrocontrollers, Ermittlung von Möglichkeiten für externen Speicher            | Auswahl des Mikrocontrollers, Evaluierung von Speichermöglichkeiten |
+|                | **Display**         | Auswahl eines E-Paper Displays, Untersuchung der Kommunikationsprotokolle und Stromverbrauch | Auswahl des Displays, Protokollanalyse, Stromverbrauch messen   |
+|                | **Akku**            | Festlegung des Akkutyps, Kapazitätsbestimmung, Implementierung eines BMS und Akku-Packs       | Auswahl des Akkus, Kapazitätsberechnung, Entwicklung eines Akku-Packs |
+| **Software**   | **Firmware**        | Entwicklung der Firmware zur Kommunikation zwischen Server und Display, Erstellen eines Displaytreibers | Implementierung der Kommunikationsprotokolle, Firmware-Entwicklung |
+|                | **Webapp**          | Entwicklung der Webapp, unterteilt in Backend (Datenbankschema) und Frontend (Benutzeroberfläche) | Backend: Datenbankdesign, Frontend: Gestaltung der Benutzeroberfläche |
+|                | **Backend**         | Erstellung des Datenbankschemas für die Webapp                                                | Design des Datenbankschemas für die Webanwendung               |
+|                | **Frontend**        | Gestaltung der Benutzeroberfläche für Servermodus und andere Modi                           | Erstellung des Interfaces für verschiedene Betriebsmodi         |
+
+**Zielsetzung und Aufbau der Arbeitspakete:**
+
+Die Arbeitspakete wurden unter Berücksichtigung der Projektziele und der erforderlichen Komponenten in **Hardware** und **Software** gegliedert. Die **Hardware**-Komponenten umfassen die Auswahl und Integration der physischen Bestandteile des Systems, während die **Software**-Komponenten die Entwicklung der Anwendungen und Systemsoftware umfassen.
+
+- **Hardware:**
+  - **Mikrocontroller:** Auswahl eines geeigneten Mikrocontrollers und Definition der externen Speicheroptionen, um die Hardware-Grundlage zu schaffen.
+  - **Display:** Auswahl eines E-Paper Displays sowie Analyse von Kommunikationsprotokollen und Stromverbrauch, um die Anzeigeeinheit zu gestalten.
+  - **Akku:** Festlegung des richtigen Akkus, Bestimmung der Kapazität, Implementierung eines Batteriemanagementsystems (BMS) und Zusammenstellung eines Akku-Packs, um die Energieversorgung zu sichern.
+
+- **Software:**
+  - **Firmware:** Entwicklung der Firmware zur Sicherstellung der Kommunikation zwischen dem Server und dem Display sowie die Vernetzung der Firmware-Komponenten.
+  - **Webapp:** Unterteilung in Backend für Datenbankmanagement und Frontend für die Benutzeroberfläche, um die Benutzerinteraktion und Datenverarbeitung zu ermöglichen.
+
+#### Zeitplanung
+
+##### Gantt-Diagramm
+
+Das **Gantt-Diagramm** ist das primäres Werkzeug zur zeitlichen Planung und Überwachung des Projektfortschritts. Es stellt die Aufgaben auf einer Zeitachse dar und zeigt die geplanten Start- und Endtermine sowie Meilensteine im Projektverlauf.
+
+**Wichtige Funktionen des Gantt-Diagramms:**
+
+- **Zeitliche Visualisierung:** Das Gantt-Diagramm zeigte die zeitliche Abfolge der Aufgaben, einschließlich der Start- und Endtermine sowie der Dauer jeder Aufgabe.
+- **Fortschrittsverfolgung:** Es ermöglichte die Verfolgung des Fortschritts und die Anpassung des Zeitplans bei Abweichungen.
+- **Meilensteine:** Wichtige Meilensteine wurden hervorgehoben, um den Projektfortschritt zu messen und sicherzustellen, dass die Ziele termingerecht erreicht werden.
+
+Das Gantt-Diagramm zeigt die Zeitplanung für die einzelnen Arbeitspakete sowie deren Abhängigkeiten und Meilensteine.
+
+##### Netzplan
+
+Der **Netzplan** wurde verwendet, um die Abhängigkeiten zwischen den Aufgaben zu visualisieren und den kritischen Pfad zu identifizieren. Er half uns dabei, die logischen Beziehungen zwischen den Aufgaben zu verstehen und die Projektstruktur zu optimieren.
+
+**Wichtige Funktionen des Netzplans:**
+
+- **Abhängigkeitsanalyse:** Der Netzplan visualisierte, welche Aufgaben voneinander abhängen und in welcher Reihenfolge sie durchgeführt werden müssen.
+- **Kritischer Pfad:** Durch den Netzplan konnten wir den kritischen Pfad bestimmen, der die Gesamtdauer des Projekts beeinflusst und somit die Aufgaben identifizieren, die für den rechtzeitigen Abschluss des Projekts entscheidend sind.
+- **Risikomanagement:** Der Netzplan ermöglichte es uns, potenzielle Risiken und Engpässe frühzeitig zu erkennen und entsprechende Maßnahmen zu planen.
+
+Der Netzplan zeigt die Abfolge und Abhängigkeiten der Aufgaben im Projekt und hilft dabei, den kritischen Pfad zu identifizieren.
+
+Aufgrund der Größe der Pläne, sind das GANTT-Diagramm und der Netzplan in GANNT.pdf und Netzplan.pdf ausgelagert worden.
+
+Die strukturierte Definition der Arbeitspakete und die präzise Planung des Zeitplans waren entscheidend für den Erfolg des Projekts. Durch die Unterteilung in Hardware- und Software-Komponenten konnten wir die verschiedenen Projektbereiche gezielt angehen. Die Verwendung des Gantt-Diagramms ermöglichte eine detaillierte zeitliche Planung und Fortschrittsüberwachung, während der Netzplan dazu diente, die Aufgabenabfolgen zu verstehen und den kritischen Pfad zu identifizieren.
+
+Die detaillierten Arbeitspakete und der vollständige Zeitplan sind in den angehängten PDF-Dokumenten zu finden, die eine vertiefte Einsicht in die Projektplanung und -durchführung bieten.
 
 
 ## Budgetplan  
