@@ -13,10 +13,19 @@ Für das Projekt wurden verschiedenste Programme genutzt, um eine gute Kommunika
 
 ## Rollenaufteilung  
 
-Unsere Teammitglieder wurden jeweils in Teams aufgeteilt, in diesen Teams haben sie die zugehörigen Aufgaben dann bearbeitet. Wir haben von unseren 7 Mitgliedern (später 6) 2 Personen ins Softwareteam eingetragen, 2 Personen ins Hardwareteam und 3 Personen ins Firmwareteam. Jedes Team hat auch einen Teamleader ausgewählt, diese Person kann in Meeting Updates geben und fürs Team sprechen. Die sorgt für eine sehr effiziente und organisierte Kommunikation zwischen den Teams.  
-  
-Teamleader können diese Rolle auch nutzen, um klare Ziele zu setzen. Rollenaufteilung innerhalb der Teams macht auch dann Sinn, um Stärken einzelner Teammitglieder, in einem Themenbereich zu nutzen. So erhält man nicht nur bessere Resultate, die Person selbst kann ihre Stärken noch einmal feinschleifen.  
-Arbeitspackete können fair auf ein Team verteilt werden, um eine unfaire Arbeitsaufteilung zu verhindern.
+**Mario Wegmann**
+
+Innerhalb des Projektteams, welches aus sechs Personen besteht, wurden zusätzlich Unterteams erstellt, welche jeweils einen Schwerpunkt zugewiesen bekommen. Für diese Projektarbeit haben sich die drei Schwerpunkte Hardware, Firmware und Websoftware ergeben. In der [Tabelle 4.1](#_tab_4_1) ist eine passende IMV-Matrix einsehbar. 
+
+Table: Tabelle 4.1: Die IMV-Matrix der Projektarbeit: I: Informierend, M: Mitarbeitend, V: Verantwortlich { #_tab_4_1 }
+
+|Team|Benjamin Klarić|Ahmet Emirhan Göktas|Jannis Gröger|Julia Reuter|Mario Wegmann|Staša Lukić|
+|-|-|-|-|-|-|-|
+|Hardware|V||||M|M|
+|Firmware||V|M|M|M|M|
+|Websoftware||M||M|V||
+
+Durch das Aufteilen in Unterteams wird eine effizientere Arbeitsweise ermöglicht. Zum einen können sich Mitglieder bei der Recherche ganz auf die Ihnen zugewiesenen Schwerpunkte konzentrieren. Und zum anderen müssen viele Entscheidungen nicht im kompletten Team abgestimmt werden. Dabei ist es wichtig, dass sich die Teams untereinander regelmäßig austauschen. In diesen wiederkehrenden Meetings werden dann der Stand und die Kenntnisse ausgetauscht, sowie sichergestellt, dass die Schnittstellen und Ziele der Einzelbereiche weiterhin deckungsgleich sind. 
 
 
 ## Zeitplan
