@@ -39,11 +39,14 @@ Innerhalb des Projektteams, welches aus sechs Personen besteht, wurden zusätzli
 
 Table: Tabelle 4.1: Die IMV-Matrix der Projektarbeit: I: Informierend, M: Mitarbeitend, V: Verantwortlich { #_tab_4_1 }
 
-|Team|Benjamin<br>Klarić|Ahmet<br>Emirhan<br>Göktas|Jannis<br>Gröger|Julia<br>Reuter|Mario<br>Wegmann|Staša<br>Lukić|
-|-|-|-|-|-|-|-|
-|Hardware|V||||M|M|
-|Firmware||V|M|M|M|M|
-|Websoftware||M||M|V||
+|Name|Hardware|Firmware|Websoftware|
+|-|-|-|-|
+|Benjamin Klarić|V|||
+|Ahmet Emirhan Göktas||V|M|
+|Jannis Gröger||M||
+|Julia Reuter||M|M|
+|Mario Wegmann|M|M|V|
+|Staša Lukić|M|M||
 
 Durch das Aufteilen in Unterteams wird eine effizientere Arbeitsweise ermöglicht. Zum einen können sich Mitglieder bei der Recherche ganz auf die Ihnen zugewiesenen Schwerpunkte konzentrieren. Und zum anderen müssen viele Entscheidungen nicht im kompletten Team abgestimmt werden. Dabei ist es wichtig, dass sich die Teams untereinander regelmäßig austauschen. In diesen wiederkehrenden Meetings werden dann der Stand und die Kenntnisse ausgetauscht, sowie sichergestellt, dass die Schnittstellen und Ziele der Einzelbereiche weiterhin deckungsgleich sind. 
 
