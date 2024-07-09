@@ -64,6 +64,16 @@ Diese Timeline kennzeichnet klare Ziele und visualisiert den Plan von Projektanf
 
 ## Ressourcenplanung  
 
+Aufgrund der folgenden zeitlichen Aufteilung der Arbeitspakete (vgl. Abb. 4.6.1), sah die Belastung der einzelnen Teammitglieder während des Projektes wie folgt aus (vgl. Abb. 4.6.2).
+
+Figure: Abbildung 4.6.1: Zeitliche Aufteilung der Arbeitspakete { #_abb_4.6.1 }
+
+![](img/Belastung.png){ width=80% }
+
+Figure: Abbildung 4.6.2: Belastungsdiagramm der einzelnen Teammitglieder { #_abb_4.6.2 }
+
+![](img/Kapazität.png){ width=90% }
+
 
 ## Software  
 
